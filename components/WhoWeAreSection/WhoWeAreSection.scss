@@ -1,0 +1,162 @@
+.who-we-are-section {
+  position: relative;
+  width: calc(100% - 3rem);
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0.5rem auto 1.5rem;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: 1.25rem;
+}
+
+.who-we-are-section-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+
+  .who-we-are-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.who-we-are-section-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.who-we-are-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 900px;
+}
+
+.who-we-are-section-label {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: #932efa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.who-we-are-section-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+  width: 80%;
+}
+
+.who-we-are-section-content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.who-we-are-section-paragraph {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: #4d525f;
+  margin: 0;
+  text-align: center;
+}
+
+.who-we-are-section-paragraph.secondary {
+  transition: all 0.3s ease;
+}
+
+.read-more-btn {
+  display: none; // Hidden on desktop
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: clamp(0.75rem, 2vw, 1rem) 0;
+  align-self: center;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #932efa;
+  }
+
+  .arrow {
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+    &.down {
+      transform: translateY(0);
+    }
+
+    &.up {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .who-we-are-section {
+    padding: clamp(3.5rem, 7vw, 5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .who-we-are-section {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .who-we-are-section-paragraph.secondary {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &.expanded {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+
+  .read-more-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .who-we-are-section {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(0.875rem, 2vw, 1rem);
+  }
+}

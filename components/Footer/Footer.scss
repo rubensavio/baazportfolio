@@ -1,0 +1,240 @@
+.footer {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(3rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem)
+    clamp(2rem, 4vw, 3rem);
+  position: relative;
+  border-top: 1px solid #e5e5e5;
+
+  // Purple gradient background effect
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(147, 46, 250, 0.15) 0%,
+      rgba(147, 46, 250, 0.05) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.footer-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  margin-bottom: clamp(3rem, 5vw, 4rem);
+}
+
+// Logo and Brand Section
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 400px;
+}
+
+.footer-brand {
+  a {
+    display: inline-block;
+    line-height: 0;
+  }
+}
+
+.footer-logo {
+  height: 48px;
+  width: 100px;
+}
+
+.footer-tagline {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+}
+
+// Footer Links Section
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.footer-column-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+
+  li {
+    a,
+    a:visited {
+      font-family: "Urbanist", sans-serif;
+      font-size: clamp(0.875rem, 1.25vw, 1rem);
+      font-weight: 600;
+      color: #4d525f;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #1a1a1a;
+      }
+    }
+  }
+}
+
+// Footer Bottom Section
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-copyright {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.25vw, 0.9375rem);
+  font-weight: 600;
+  color: #4d525f;
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  gap: clamp(1.5rem, 3vw, 2rem);
+
+  a {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.875rem, 1.25vw, 0.9375rem);
+    font-weight: 600;
+    color: #4d525f;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #1a1a1a;
+    }
+  }
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .footer {
+    padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 3vw, 2rem)
+      clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  .footer-content {
+    gap: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: clamp(2.5rem, 4vw, 3rem);
+  }
+
+  .footer-links {
+    gap: clamp(1.75rem, 3.5vw, 3rem);
+  }
+
+  .footer-bottom {
+    padding-top: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .footer {
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 2.5vw, 1.5rem)
+      clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .footer-brand {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-logo {
+    height: 40px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding-top: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .footer-legal {
+    flex-direction: row;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .footer {
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.875rem, 2vw, 1rem)
+      clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+
+  .footer-content {
+    gap: clamp(1.75rem, 3.5vw, 2rem);
+    margin-bottom: clamp(1.75rem, 3.5vw, 2rem);
+  }
+
+  .footer-logo {
+    height: 36px;
+  }
+
+  .footer-links {
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .footer-bottom {
+    padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+}

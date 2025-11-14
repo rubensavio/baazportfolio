@@ -1,0 +1,150 @@
+.enterprise-cta {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+}
+
+.enterprise-cta-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.enterprise-cta-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-radius: 24px;
+  padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enterprise-cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+
+  .enterprise-cta-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.6;
+  }
+}
+
+.enterprise-cta-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  width: 100%;
+}
+
+.enterprise-cta-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.enterprise-cta-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+}
+
+.enterprise-cta-button {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 600;
+  color: #ffffff;
+  background: #0066ff;
+  border: none;
+  border-radius: 30px;
+  padding: clamp(1rem, 2vw, 1.125rem) clamp(2rem, 4vw, 2.5rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .enterprise-cta {
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .enterprise-cta-container {
+    max-width: 90%;
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(1.75rem, 3.5vw, 2.5rem);
+    min-height: 350px;
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .enterprise-cta {
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .enterprise-cta-container {
+    max-width: 95%;
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 3vw, 2rem);
+    min-height: 300px;
+  }
+
+  .enterprise-cta-content {
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .enterprise-cta-button {
+    width: 80%;
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .enterprise-cta {
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .enterprise-cta-container {
+    padding: clamp(1.75rem, 3.5vw, 2rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .enterprise-cta-button {
+    width: 90%;
+  }
+}

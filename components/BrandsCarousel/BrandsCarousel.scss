@@ -1,0 +1,107 @@
+.brands-carousel {
+  width: 100%;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.brands-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.brands-carousel-track {
+  --gap-size: clamp(2rem, 4.5vw, 4.5rem);
+  --logo-width: 187px;
+  display: flex;
+  gap: var(--gap-size);
+  align-items: center;
+  width: fit-content;
+  animation: scrollContinuous 10s linear infinite;
+  will-change: transform;
+}
+
+.brand-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Default sizes, can be overridden via inline style from component
+  width: 187px;
+  height: 40px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+@keyframes scrollContinuous {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    // Move exactly one set (6 brands) - this creates seamless loop
+    // Calculate: 6 logos width + 5 gaps
+    transform: translateX(calc(-187px * 6 - var(--gap-size) * 5));
+  }
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .brand-logo {
+    // Default tablet sizes, can be overridden via inline style
+    width: 164px;
+    height: 36.03px;
+  }
+
+  .brands-carousel-track {
+    --gap-size: clamp(1.5rem, 3vw, 2rem);
+    --logo-width: 164px;
+    gap: var(--gap-size);
+    animation: scrollContinuousTablet 10s linear infinite;
+  }
+
+  @keyframes scrollContinuousTablet {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      // Move exactly one set (6 brands) - using CSS variable for gap
+      transform: translateX(calc(-164px * 6 - var(--gap-size) * 5));
+    }
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .brand-logo {
+    // Default mobile sizes, can be overridden via inline style
+    width: 164px;
+    height: 36.03px;
+  }
+
+  .brands-carousel-track {
+    --gap-size: clamp(1.5rem, 3vw, 2rem);
+    --logo-width: 164px;
+    gap: var(--gap-size);
+    animation: scrollContinuousMobile 10s linear infinite;
+  }
+
+  @keyframes scrollContinuousMobile {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      // Move exactly one set (6 brands) - using CSS variable for gap
+      transform: translateX(calc(-164px * 6 - var(--gap-size) * 5));
+    }
+  }
+}

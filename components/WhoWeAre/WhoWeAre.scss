@@ -1,0 +1,216 @@
+.who-we-are {
+  width: 100%;
+  padding: clamp(1.6rem, 1vw, 0rem) clamp(1.5rem, 4vw, 3rem);
+  background-color: #ffffff;
+}
+
+.who-we-are-container {
+  max-width: 78rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.who-we-are-header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-we-are-label {
+  display: block;
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.75rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: #932efa;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+  letter-spacing: 0.01em;
+}
+
+.who-we-are-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.75rem, 3.7vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.who-we-are-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.service-card {
+  width: 100%;
+  max-width: 290px;
+  height: 250px;
+  border-radius: 20px;
+  padding: clamp(1.5rem, 3.2vw, 2.2rem) clamp(1rem, 2vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  opacity: 1;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.service-icon {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(3rem, 6vw, 4rem);
+  width: 100%;
+  min-height: clamp(3rem, 6vw, 4rem);
+
+  img {
+    width: clamp(3rem, 6vw, 4rem);
+    height: clamp(3rem, 6vw, 4rem);
+    min-width: clamp(3rem, 6vw, 4rem);
+    min-height: clamp(3rem, 6vw, 4rem);
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.service-title {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: clamp(1.25rem, 2.5vw, 24px);
+  letter-spacing: 0%;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1rem) 0;
+}
+
+.service-description {
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(0.875rem, 1.5vw, 16px);
+  line-height: clamp(1.25rem, 2.5vw, 24px);
+  letter-spacing: 0%;
+  text-align: center;
+  color: #4d525f;
+  margin: 0;
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .who-we-are {
+    width: 90%;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 3vw, 2rem);
+    padding-top: 1.5rem;
+  }
+
+  .who-we-are-label {
+    font-size: clamp(1.15rem, 1.5vw, 1.15rem);
+    font-weight: 700;
+  }
+
+  .who-we-are-header {
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+
+  .who-we-are-cards {
+    grid-template-columns: repeat(2, 1fr);
+    // gap: clamp(01rem, 1.5vw, 2rem);
+    gap: 2rem;
+  }
+
+  .service-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: clamp(1.5rem, 3.2vw, 2.2rem) clamp(1rem, 4vw, 4rem);
+    height: clamp(280px, 30vw, 244px);
+  }
+
+  .service-title {
+    font-size: clamp(1.45rem, 2.35vw, 1.45rem);
+    line-height: clamp(1.25rem, 2.5vw, 24px);
+  }
+
+  .service-description {
+    font-size: clamp(0.975rem, 1.8vw, 1.2rem);
+    line-height: clamp(1.35rem, 2.5vw, 24px);
+    letter-spacing: 0%;
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .who-we-are {
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .who-we-are-header {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .who-we-are-cards {
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 2vw, 1.5rem);
+    width: 90%;
+  }
+
+  .service-card {
+    max-width: 100%;
+    // height: auto;
+    height: clamp(250px, 50vw, 500px);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .who-we-are {
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .who-we-are-label {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    font-weight: 700;
+  }
+
+  .who-we-are-cards {
+    gap: clamp(1.3rem, 2vw, 1.5rem);
+  }
+
+  .service-card {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .service-title {
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
+    line-height: clamp(1.25rem, 2.5vw, 24px);
+  }
+
+  .service-description {
+    font-size: clamp(0.875rem, 1.5vw, 16px);
+    line-height: clamp(1.35rem, 2.5vw, 24px);
+    letter-spacing: 0%;
+  }
+}

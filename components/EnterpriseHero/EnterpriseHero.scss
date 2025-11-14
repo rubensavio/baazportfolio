@@ -1,0 +1,105 @@
+.enterprise-hero {
+  position: relative;
+  width: calc(100% - 3rem);
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0.5rem auto 1.5rem;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: 1.25rem;
+}
+
+.enterprise-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+
+  .enterprise-hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.enterprise-hero-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.enterprise-hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 900px;
+}
+
+.enterprise-hero-label {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: #932efa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.enterprise-hero-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+  width: 80%;
+}
+
+.enterprise-hero-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: #4d525f;
+  margin: 0;
+  text-align: center;
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .enterprise-hero {
+    padding: clamp(3.5rem, 7vw, 5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .enterprise-hero {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .enterprise-hero-heading {
+    width: 100%;
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .enterprise-hero {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(0.875rem, 2vw, 1rem);
+  }
+}
+

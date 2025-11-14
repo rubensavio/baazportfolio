@@ -1,0 +1,113 @@
+.enterprise-benefits {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+}
+
+.enterprise-benefits-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enterprise-benefits-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+  max-width: 800px;
+}
+
+.enterprise-benefits-label {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: #932efa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.enterprise-benefits-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.enterprise-benefits-list {
+  width: 100%;
+  background-color: #fbf6ef;
+  border-radius: 20px;
+  padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+  text-align: center;
+}
+
+.benefit-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+}
+
+.benefit-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.9375rem, 1.5vw, 1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .enterprise-benefits {
+    padding: clamp(3.5rem, 7vw, 5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .enterprise-benefits-list {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(1.75rem, 3.5vw, 2.5rem);
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .enterprise-benefits {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .enterprise-benefits-list {
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 3vw, 2rem);
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .enterprise-benefits {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .enterprise-benefits-list {
+    padding: clamp(1.75rem, 3.5vw, 2rem) clamp(1.25rem, 2.5vw, 1.5rem);
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+}

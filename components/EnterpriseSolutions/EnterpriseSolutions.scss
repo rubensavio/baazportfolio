@@ -1,0 +1,193 @@
+.enterprise-solutions {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+}
+
+.enterprise-solutions-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enterprise-solutions-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+  max-width: 900px;
+}
+
+.enterprise-solutions-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.enterprise-solutions-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+  width: 90%;
+}
+
+.enterprise-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-card {
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.solution-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  padding: clamp(1rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.solution-content {
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.solution-icon {
+  width: clamp(2.5rem, 5vw, 3rem);
+  height: clamp(2.5rem, 5vw, 3rem);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.solution-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+}
+
+.solution-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+.solution-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.625rem);
+  width: 100%;
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: #000000;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000000;
+      font-weight: 700;
+    }
+  }
+}
+
+// Tablet Styles
+@media (max-width: 64rem) {
+  .enterprise-solutions {
+    padding: clamp(3.5rem, 7vw, 5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .enterprise-solutions-grid {
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .solution-header {
+    padding: clamp(0.875rem, 1.75vw, 1rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .solution-content {
+    padding: clamp(1.25rem, 2.5vw, 1.5rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+}
+
+// Mobile Styles
+@media (max-width: 48rem) {
+  .enterprise-solutions {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .enterprise-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .solution-header {
+    padding: clamp(0.875rem, 1.75vw, 1rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .solution-content {
+    padding: clamp(1.25rem, 2.5vw, 1.5rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+}
+
+// Small Mobile Styles
+@media (max-width: 30rem) {
+  .enterprise-solutions {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .enterprise-solutions-grid {
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+}

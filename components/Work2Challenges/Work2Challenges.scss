@@ -1,0 +1,96 @@
+.work2-challenges-section {
+  width: 100%;
+  background: #fef9f3;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.work2-challenges-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 6vw, 4rem);
+}
+
+.challenges-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  text-align: left;
+}
+
+.challenges-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.challenges-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.section-subtitle {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+}
+
+.challenges-list,
+.success-list {
+  padding-left: clamp(1.5rem, 3vw, 2rem);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1.1rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: #000000;
+
+    strong {
+      font-weight: 700;
+      color: #000000;
+    }
+  }
+}
+
+.success-list {
+  list-style: decimal;
+
+  li {
+    padding-left: clamp(0.5rem, 1vw, 0.75rem);
+  }
+}
+
+// Tablet styles
+@media (max-width: 768px) {
+  .work2-challenges-section {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1.5rem, 4vw, 2.5rem);
+  }
+}
+
+// Mobile styles
+@media (max-width: 480px) {
+  .work2-challenges-section {
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .work2-challenges-wrapper {
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .challenges-content {
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+}
