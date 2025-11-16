@@ -45,7 +45,7 @@ const BrandsCarousel = () => {
       name: "Societe Generale",
       logo: "/assets/Brands/SocieteGenerale.jpeg",
       width: "187px",
-      height: "70px",
+      height: "25px",
     },
     {
       id: 7,
@@ -59,7 +59,7 @@ const BrandsCarousel = () => {
       name: "WalMart",
       logo: "/assets/Brands/WallMart.jpeg",
       width: "187px",
-      height: "80px",
+      height: "30px",
     },
     {
       id: 9,
@@ -73,35 +73,35 @@ const BrandsCarousel = () => {
       name: "ICICI Bank",
       logo: "/assets/Brands/IcicBank.jpeg",
       width: "187px",
-      height: "70px",
+      height: "50px",
     },
     {
       id: 11,
       name: "Embassy Group",
       logo: "/assets/Brands/EmbasyGroup.jpeg",
       width: "187px",
-      height: "80px",
+      height: "60px",
     },
     {
       id: 12,
       name: "Enel",
       logo: "/assets/Brands/Enel.jpeg",
       width: "187px",
-      height: "80px",
+      height: "60px",
     },
     {
       id: 13,
       name: "Karnataka Bank",
       logo: "/assets/Brands/KBL.jpeg",
       width: "187px",
-      height: "80px",
+      height: "60px",
     },
     {
       id: 14,
       name: "Comcast",
       logo: "/assets/Brands/Comcast.jpeg",
       width: "187px",
-      height: "80px",
+      height: "60px",
     },
     {
       id: 15,
@@ -148,7 +148,14 @@ const BrandsCarousel = () => {
                   height: brand.height,
                 }}
               >
-                <img src={brand.logo} alt={brand.name} />
+                <img
+                  src={brand.logo}
+                  alt={brand.name}
+                  style={{
+                    opacity:
+                      typeof brand.opacity === "number" ? brand.opacity : 0.6,
+                  }}
+                />
               </div>
             ))}
           </div>
