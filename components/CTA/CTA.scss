@@ -179,7 +179,6 @@
 
   .cta-buttons {
     flex-direction: column;
-    width: 60%;
     gap: 0.75rem;
   }
 
@@ -216,9 +215,5 @@
 
   .cta-description {
     font-size: clamp(0.8125rem, 3vw, 0.9375rem);
-  }
-
-  .cta-buttons {
-    width: 60%;
   }
 }

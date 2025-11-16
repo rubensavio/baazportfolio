@@ -28,9 +28,9 @@ const Hero = () => {
                 isLoaded ? "animate-in" : ""
               }`}
             >
-              Turning{" "}
+              We Mix Creativity <br />
               <span className="hero-heading-highlight">
-                Big Ideas Into Scalable Products
+                with Boring Consulting & Software Development
               </span>
             </h1>
             <p
@@ -38,11 +38,14 @@ const Hero = () => {
                 isLoaded ? "animate-in" : ""
               }`}
             >
-              From Concept to Code: 100+ Success Stories Since 2018 Expertise in
-              eCommerce, AI/ML, Fintech, AR/VR & Beyond
+              As a result, we don't just build softwares.
+              <br />
+              We build unfair advantage for your business.
             </p>
             <Link
-              href="/book-call"
+              href="https://calendar.app.google/BBo3UYaic9yomaSo7"
+              target="_blank"
+              rel="noopener noreferrer"
               className={`hero-cta desktop-cta-btn animate-fade-up animate-delay-400 ${
                 isLoaded ? "animate-in" : ""
               }`}
@@ -66,7 +69,9 @@ const Hero = () => {
 
           {/* Mobile/Tablet CTA Button - Positioned at bottom */}
           <Link
-            href="/book-call"
+            href="https://calendar.app.google/BBo3UYaic9yomaSo7"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`hero-cta mobile-cta-btn animate-fade-up animate-delay-400 ${
               isLoaded ? "animate-in" : ""
             }`}

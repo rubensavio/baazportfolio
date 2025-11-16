@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -23,7 +23,12 @@ const EnterpriseCTA = () => {
             <p className="enterprise-cta-description">
               Talk to our enterprise specialists about your project requirements
             </p>
-            <Link href="/book-call" className="enterprise-cta-button">
+            <Link
+              href="https://calendar.app.google/BBo3UYaic9yomaSo7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="enterprise-cta-button"
+            >
               Talk to Our Enterprise Consultant
             </Link>
           </div>

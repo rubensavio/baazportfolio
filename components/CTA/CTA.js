@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -13,13 +13,18 @@ const CTA = () => {
       <div className="cta-wrapper">
         <div className="cta-container">
           <div className="cta-background">
-            <img src="/assets/readyToBuildBg.svg" alt="CTA background" className="cta-bg-image" />
+            <img
+              src="/assets/readyToBuildBg.svg"
+              alt="CTA background"
+              className="cta-bg-image"
+            />
           </div>
 
-          <div className="cta-content animate-on-scroll animate-fade-up" ref={contentRef}>
-            <h2 className="cta-heading">
-              Ready to build something amazing?
-            </h2>
+          <div
+            className="cta-content animate-on-scroll animate-fade-up"
+            ref={contentRef}
+          >
+            <h2 className="cta-heading">Ready to build something amazing?</h2>
             <p className="cta-description">
               We'd love to hear about your idea, product, or challenge. Whether
               you're a startup, scale-up, or enterprise, we're here to turn your
@@ -27,7 +32,12 @@ const CTA = () => {
             </p>
 
             <div className="cta-buttons">
-              <Link href="/book-call" className="cta-button secondary">
+              <Link
+                href="https://calendar.app.google/BBo3UYaic9yomaSo7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button secondary"
+              >
                 Schedule a call
               </Link>
               <Link href="/get-in-touch" className="cta-button primary">

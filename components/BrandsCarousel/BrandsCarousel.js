@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import "./BrandsCarousel.scss";
@@ -28,24 +28,87 @@ const BrandsCarousel = () => {
     },
     {
       id: 4,
-      name: "Nalli",
-      logo: "/assets/Brands/Nalli.svg",
-      width: "187px",
-      height: "40px",
-    },
-    {
-      id: 5,
-      name: "Pestle",
-      logo: "/assets/Brands/Pestle.svg",
-      width: "187px",
-      height: "40px",
-    },
-    {
-      id: 6,
       name: "Uber",
       logo: "/assets/Brands/Uber.svg",
       width: "187px",
       height: "30px",
+    },
+    {
+      id: 5,
+      name: "Kroger",
+      logo: "/assets/Brands/Kroger.jpeg",
+      width: "187px",
+      height: "120px",
+    },
+    {
+      id: 6,
+      name: "Societe Generale",
+      logo: "/assets/Brands/SocieteGenerale.jpeg",
+      width: "187px",
+      height: "70px",
+    },
+    {
+      id: 7,
+      name: "Societe Generale",
+      logo: "/assets/Brands/UniPer.jpeg",
+      width: "187px",
+      height: "90px",
+    },
+    {
+      id: 8,
+      name: "WalMart",
+      logo: "/assets/Brands/WallMart.jpeg",
+      width: "187px",
+      height: "80px",
+    },
+    {
+      id: 9,
+      name: "Volkswagen",
+      logo: "/assets/Brands/VolksWagen.jpeg",
+      width: "187px",
+      height: "70px",
+    },
+    {
+      id: 10,
+      name: "ICICI Bank",
+      logo: "/assets/Brands/IcicBank.jpeg",
+      width: "187px",
+      height: "70px",
+    },
+    {
+      id: 11,
+      name: "Embassy Group",
+      logo: "/assets/Brands/EmbasyGroup.jpeg",
+      width: "187px",
+      height: "80px",
+    },
+    {
+      id: 12,
+      name: "Enel",
+      logo: "/assets/Brands/Enel.jpeg",
+      width: "187px",
+      height: "80px",
+    },
+    {
+      id: 13,
+      name: "Karnataka Bank",
+      logo: "/assets/Brands/KBL.jpeg",
+      width: "187px",
+      height: "80px",
+    },
+    {
+      id: 14,
+      name: "Comcast",
+      logo: "/assets/Brands/Comcast.jpeg",
+      width: "187px",
+      height: "80px",
+    },
+    {
+      id: 15,
+      name: "BCI",
+      logo: "/assets/Brands/BCI.jpeg",
+      width: "187px",
+      height: "50px",
     },
   ];
 
@@ -60,11 +123,22 @@ const BrandsCarousel = () => {
     ...brands,
   ];
 
+  // Keep speed consistent regardless of brand count
+  // ~1.6s per logo width looks smooth; tweak as desired
+  const durationPerLogoSec = 1.6;
+  const animationDurationSec = brands.length * durationPerLogoSec;
+
   return (
     <section className="brands-carousel">
       <div className="brands-carousel-container">
         <div className="brands-carousel-wrapper">
-          <div className="brands-carousel-track">
+          <div
+            className="brands-carousel-track"
+            style={{
+              ["--count"]: brands.length,
+              ["--duration"]: `${animationDurationSec}s`,
+            }}
+          >
             {duplicatedBrands.map((brand, index) => (
               <div
                 key={`${brand.id}-${index}`}

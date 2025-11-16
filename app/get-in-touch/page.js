@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import "./page.scss";
 
 const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
@@ -14,6 +15,12 @@ const Footer = dynamic(() => import("../../components/Footer/Footer"), {
 });
 
 export default function GetInTouch() {
+  // Read redirect params in a client-safe way
+  const searchParams = useSearchParams();
+  const sent = searchParams?.get("sent") === "1";
+  const error = searchParams?.get("error") === "1";
+  const [isMounted, setIsMounted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,60 +29,21 @@ export default function GetInTouch() {
     description: "",
   });
 
+  useEffect(() => {
+    setIsMounted(true);
+    if (sent) {
+      alert("Thanks! Your message has been sent.");
+    } else if (error) {
+      alert("Sorry, something went wrong. Please try again.");
+    }
+  }, [sent, error]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const data = {
-      name: formData.name,
-      email: formData.email,
-      company: formData.company,
-      category: formData.category,
-      description: formData.description,
-    };
-
-    // Show loading state
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = "Sending...";
-    submitButton.disabled = true;
-
-    fetch(
-      "https://script.google.com/macros/s/AKfycbwxOTAO3R8NeDjdklw1PpqkQHW7_II9BdjEpjhb3DFCUDUDgVnDrUbESI3dTd5ijDeF4g/exec",
-      {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    )
-      .then(() => {
-        alert("Form submitted successfully! We'll get back to you soon.");
-        setFormData({
-          name: "",
-          email: "",
-          company: "",
-          category: "",
-          description: "",
-        });
-      })
-      .catch((err) => {
-        alert("Error submitting form. Please try again.");
-        console.error(err);
-      })
-      .finally(() => {
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-      });
   };
 
   return (
@@ -94,9 +62,24 @@ export default function GetInTouch() {
               Tell us about your project and we'll get back to you with a
               detailed proposal and next steps.
             </p>
+            {isMounted && sent && (
+              <p className="form-success" role="status">
+                Thanks! Your message has been sent.
+              </p>
+            )}
+            {isMounted && error && (
+              <p className="form-error" role="alert">
+                Sorry, something went wrong. Please try again.
+              </p>
+            )}
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form
+            className="contact-form"
+            action="/api/send-contact"
+            method="POST"
+            onSubmit={() => setSubmitting(true)}
+          >
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name" className="form-label">
@@ -187,8 +170,12 @@ export default function GetInTouch() {
               ></textarea>
             </div>
 
-            <button type="submit" className="form-submit-button">
-              Send Message
+            <button
+              type="submit"
+              className="form-submit-button"
+              disabled={submitting}
+            >
+              {submitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>

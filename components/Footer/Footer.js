@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -12,11 +12,14 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="footer-brand">
             <Link href="/">
-              <img src="/assets/Logo.svg" alt="Baaz logo" className="footer-logo" />
+              <img
+                src="/assets/Logo.svg"
+                alt="Baaz logo"
+                className="footer-logo"
+              />
             </Link>
             <p className="footer-tagline">
-              Software product development on steroids. Building world-class
-              digital products since 2018.
+              Enterprise-grade products, without the enterprise wait.
             </p>
           </div>
 
@@ -27,7 +30,9 @@ const Footer = () => {
               <h3 className="footer-column-title">Services</h3>
               <ul className="footer-list">
                 <li>
-                  <Link href="/services/product-strategy">Product strategy</Link>
+                  <Link href="/services/product-strategy">
+                    Product strategy
+                  </Link>
                 </li>
                 <li>
                   <Link href="/services/ui-ux-design">UI/UX Design</Link>
@@ -50,9 +55,6 @@ const Footer = () => {
               <ul className="footer-list">
                 <li>
                   <Link href="/about">About Us</Link>
-                </li>
-                <li>
-                  <a href="#case-studies">Case studies</a>
                 </li>
                 <li>
                   <Link href="/enterprise">Enterprise</Link>

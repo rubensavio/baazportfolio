@@ -18,11 +18,13 @@
 .brands-carousel-track {
   --gap-size: clamp(2rem, 4.5vw, 4.5rem);
   --logo-width: 187px;
+  --count: 6; // default, overridden inline
+  --duration: 10s; // default, overridden inline
   display: flex;
   gap: var(--gap-size);
   align-items: center;
   width: fit-content;
-  animation: scrollContinuous 10s linear infinite;
+  animation: scrollContinuous var(--duration) linear infinite;
   will-change: transform;
 }
 
@@ -48,9 +50,13 @@
     transform: translateX(0);
   }
   100% {
-    // Move exactly one set (6 brands) - this creates seamless loop
-    // Calculate: 6 logos width + 5 gaps
-    transform: translateX(calc(-187px * 6 - var(--gap-size) * 5));
+    // Move exactly one set (count brands): count * width + (count - 1) * gap
+    transform: translateX(
+      calc(
+        -1 * (var(--logo-width) * var(--count) + var(--gap-size) *
+              (var(--count) - 1))
+      )
+    );
   }
 }
 
@@ -65,8 +71,9 @@
   .brands-carousel-track {
     --gap-size: clamp(1.5rem, 3vw, 2rem);
     --logo-width: 164px;
+    --count: var(--count);
     gap: var(--gap-size);
-    animation: scrollContinuousTablet 10s linear infinite;
+    animation: scrollContinuousTablet var(--duration) linear infinite;
   }
 
   @keyframes scrollContinuousTablet {
@@ -74,8 +81,12 @@
       transform: translateX(0);
     }
     100% {
-      // Move exactly one set (6 brands) - using CSS variable for gap
-      transform: translateX(calc(-164px * 6 - var(--gap-size) * 5));
+      transform: translateX(
+        calc(
+          -1 * (var(--logo-width) * var(--count) + var(--gap-size) *
+                (var(--count) - 1))
+        )
+      );
     }
   }
 }
@@ -91,8 +102,9 @@
   .brands-carousel-track {
     --gap-size: clamp(1.5rem, 3vw, 2rem);
     --logo-width: 164px;
+    --count: var(--count);
     gap: var(--gap-size);
-    animation: scrollContinuousMobile 10s linear infinite;
+    animation: scrollContinuousMobile var(--duration) linear infinite;
   }
 
   @keyframes scrollContinuousMobile {
@@ -100,8 +112,12 @@
       transform: translateX(0);
     }
     100% {
-      // Move exactly one set (6 brands) - using CSS variable for gap
-      transform: translateX(calc(-164px * 6 - var(--gap-size) * 5));
+      transform: translateX(
+        calc(
+          -1 * (var(--logo-width) * var(--count) + var(--gap-size) *
+                (var(--count) - 1))
+        )
+      );
     }
   }
 }

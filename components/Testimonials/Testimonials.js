@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
@@ -16,7 +16,7 @@ const Testimonials = () => {
       text: "Baaz delivered beyond expectations. Their team truly understands product development and business needs. We launched faster and smarter with their help.",
       name: "Ravi Verma",
       title: "Digital Marketing Specialist",
-      avatar: "/assets/uerDP.svg",
+      avatar: "/assets/RaviVerma.jpeg",
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Testimonials = () => {
       text: "Baaz transformed our early-stage idea into a polished, scalable fintech product. Their attention to detail and communication made all the difference.",
       name: "Daniel Thompson",
       title: "Product Designer",
-      avatar: "/assets/uerDP.svg",
+      avatar: "/assets/DanielThompson.jpeg",
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const Testimonials = () => {
       text: "Working with Baaz was a game-changer. They delivered a robust solution on time and within budget. Highly recommended!",
       name: "Sarah Johnson",
       title: "CEO, TechStart",
-      avatar: "/assets/uerDP.svg",
+      avatar: "/assets/SarahJohnson.jpeg",
     },
   ];
 
@@ -53,11 +53,12 @@ const Testimonials = () => {
       <div className="testimonials-wrapper">
         <div className="testimonials-content">
           {/* Left side - Header and Navigation */}
-          <div className="testimonials-header animate-on-scroll animate-fade-up" ref={headerRef}>
+          <div
+            className="testimonials-header animate-on-scroll animate-fade-up"
+            ref={headerRef}
+          >
             <span className="testimonials-label">TESTIMONIAL</span>
-            <h2 className="testimonials-heading">
-              We've build trust with reviews from real users
-            </h2>
+            <h2 className="testimonials-heading">Our customer's word</h2>
             <p className="testimonials-description">
               Boost your credibility by featuring genuine testimonials from real
               users, showcasing their positive experiences and satisfaction with
@@ -112,7 +113,10 @@ const Testimonials = () => {
           </div>
 
           {/* Right side - Testimonial Cards */}
-          <div className="testimonials-cards animate-on-scroll animate-fade-left animate-delay-200" ref={cardRef}>
+          <div
+            className="testimonials-cards animate-on-scroll animate-fade-left animate-delay-200"
+            ref={cardRef}
+          >
             <div
               className="testimonials-track"
               style={{
@@ -167,4 +171,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-

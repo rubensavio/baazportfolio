@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -33,9 +33,7 @@ const Navbar = () => {
           <li className="navbar-item">
             <Link
               href="/"
-              className={`navbar-link ${
-                pathname === "/" ? "active" : ""
-              }`}
+              className={`navbar-link ${pathname === "/" ? "active" : ""}`}
             >
               Home
             </Link>
@@ -43,9 +41,7 @@ const Navbar = () => {
           <li className="navbar-item">
             <Link
               href="/about"
-              className={`navbar-link ${
-                pathname === "/about" ? "active" : ""
-              }`}
+              className={`navbar-link ${pathname === "/about" ? "active" : ""}`}
             >
               About Us
             </Link>
@@ -60,15 +56,15 @@ const Navbar = () => {
                 e.preventDefault();
               }}
             >
-              <span className="link-text">Work</span>
+              <span className="link-text">Our Products</span>
               <span className="dropdown-icon">▼</span>
             </a>
             <ul className="dropdown-menu">
               <li>
-                <Link href="/work1">Work 1</Link>
+                <Link href="/work1">Defect Detection in Manufacturing</Link>
               </li>
               <li>
-                <Link href="/work2">Work 2</Link>
+                <Link href="/work2">Tech Hiring Automation</Link>
               </li>
             </ul>
           </li>
@@ -121,7 +117,7 @@ const Navbar = () => {
                     toggleWorkDropdown();
                   }}
                 >
-                  Work
+                  Our Products
                   <span
                     className={`dropdown-icon ${
                       isWorkDropdownOpen ? "open" : ""
@@ -134,12 +130,12 @@ const Navbar = () => {
                   <ul className="mobile-dropdown-menu">
                     <li>
                       <Link href="/work1" onClick={toggleMenu}>
-                        Work 1
+                        Defect Detection in Manufacturing
                       </Link>
                     </li>
                     <li>
                       <Link href="/work2" onClick={toggleMenu}>
-                        Work 2
+                        Tech Hiring Automation
                       </Link>
                     </li>
                   </ul>

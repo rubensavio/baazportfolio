@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./CaseStudyHero.scss";
 
 const CaseStudyHero = () => {
@@ -62,6 +62,98 @@ const CaseStudyHero = () => {
     },
   ];
 
+  // Count-up helper that animates only on first mount (or when visible)
+  const CountUpText = ({ value, duration = 1200 }) => {
+    // Parse left (exact), numeric core, and right (exact)
+    const { left, number, decimals, right } = useMemo(() => {
+      const raw = String(value);
+      // Prefer a robust number grab
+      let match = raw.match(/^(.*?)(\d*\.?\d+|\d+)(.*)$/);
+      let numericPart = match && match[2] ? match[2] : "";
+      if (!numericPart) {
+        const alt = raw.match(/(\d*\.?\d+|\d+)/);
+        if (alt) {
+          numericPart = alt[0];
+          const idx = raw.indexOf(numericPart);
+          match = [
+            raw,
+            raw.slice(0, idx),
+            numericPart,
+            raw.slice(idx + numericPart.length),
+          ];
+        }
+      }
+      const decimalIndex = numericPart.indexOf(".");
+      const decimals =
+        decimalIndex >= 0 ? numericPart.length - decimalIndex - 1 : 0;
+      return {
+        left: (match && match[1]) ?? "",
+        number: numericPart ? Number(numericPart) : NaN,
+        decimals,
+        right: (match && match[3]) ?? "",
+      };
+    }, [value]);
+
+    const [display, setDisplay] = useState(String(value)); // SSR-safe initial
+    const startedRef = useRef(false);
+    const elRef = useRef(null);
+
+    useEffect(() => {
+      if (Number.isNaN(number)) return;
+
+      const nowFn =
+        typeof performance !== "undefined" && performance.now
+          ? () => performance.now()
+          : () => Date.now();
+
+      const startAnimation = () => {
+        if (startedRef.current) return;
+        startedRef.current = true;
+
+        const startTs = nowFn();
+        const endTs = startTs + duration;
+
+        const animate = (now) => {
+          const t = Math.min(1, (now - startTs) / (endTs - startTs));
+          const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+          const current = number * eased;
+          const formattedNumber =
+            decimals > 0
+              ? current.toFixed(decimals)
+              : Math.round(current).toString();
+          setDisplay(`${left}${formattedNumber}${right}`);
+          if (t < 1) requestAnimationFrame(animate);
+        };
+
+        // Initialize from zero
+        const initialNumber = decimals > 0 ? (0).toFixed(decimals) : "0";
+        setDisplay(`${left}${initialNumber}${right}`);
+        requestAnimationFrame(animate);
+      };
+
+      if (typeof IntersectionObserver !== "undefined" && elRef.current) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                startAnimation();
+                observer.disconnect();
+              }
+            });
+          },
+          { threshold: 0.25 }
+        );
+        observer.observe(elRef.current);
+        return () => observer.disconnect();
+      }
+
+      // Fallback if IO not available
+      startAnimation();
+    }, [number, decimals, left, right, duration]);
+
+    return <span ref={elRef}>{display}</span>;
+  };
+
   return (
     <section className="case-study-hero">
       <div className="case-study-hero-background">
@@ -72,12 +164,26 @@ const CaseStudyHero = () => {
         />
       </div>
       <div className="case-study-hero-wrapper">
-        <span className={`case-study-label animate-fade-up ${isLoaded ? 'animate-in' : ''}`}>Case Study</span>
-        <h1 className={`case-study-heading animate-fade-up animate-delay-100 ${isLoaded ? 'animate-in' : ''}`}>
+        <span
+          className={`case-study-label animate-fade-up ${
+            isLoaded ? "animate-in" : ""
+          }`}
+        >
+          Case Study
+        </span>
+        <h1
+          className={`case-study-heading animate-fade-up animate-delay-100 ${
+            isLoaded ? "animate-in" : ""
+          }`}
+        >
           Viz Pro - When AI Becomes Your Factory's Eagle-Eyed Quality Inspector
         </h1>
 
-        <div className={`problem-content animate-fade-up animate-delay-200 ${isLoaded ? 'animate-in' : ''}`}>
+        <div
+          className={`problem-content animate-fade-up animate-delay-200 ${
+            isLoaded ? "animate-in" : ""
+          }`}
+        >
           <p className="problem-description">
             <span className="problem-title-label">The Problem:</span> The
             Million-Dollar Microscopic Mayhem Meet Dr. Rajesh Sharma, Quality
@@ -98,7 +204,10 @@ const CaseStudyHero = () => {
                   className="stat-card"
                   style={{ backgroundColor: stat.bgColor }}
                 >
-                  <div className="stat-value">{stat.value}</div>
+                  <div className="stat-value">
+                    <CountUpText value={stat.value} />
+                  </div>
+
                   <div className="stat-label">{stat.label}</div>
                   <div className="stat-description">{stat.description}</div>
                 </div>
