@@ -24,10 +24,14 @@ function isValidEmail(email) {
 }
 
 export async function POST(req) {
+  console.log("=== SEND-CONTACT API CALLED ===");
+  console.log("Request received at:", new Date().toISOString());
+
   try {
     // Support standard form POST (application/x-www-form-urlencoded), multipart/form-data, and JSON
     let body;
     const contentType = req.headers.get("content-type") || "";
+    console.log("Content-Type:", contentType);
 
     if (contentType.includes("application/json")) {
       body = await req.json();
@@ -99,14 +103,30 @@ export async function POST(req) {
     }
 
     // Check if SMTP is configured
+    console.log("Checking SMTP configuration...");
+    const smtpConfig = {
+      hasHost: !!process.env.SMTP_HOST,
+      hasUser: !!process.env.SMTP_USER,
+      hasPass: !!process.env.SMTP_PASS,
+      host: process.env.SMTP_HOST || "MISSING",
+      user: process.env.SMTP_USER ? "SET (hidden)" : "MISSING",
+      pass: process.env.SMTP_PASS ? "SET (hidden)" : "MISSING",
+      port: process.env.SMTP_PORT || "MISSING",
+      secure: process.env.SMTP_SECURE || "MISSING",
+    };
+    console.log("SMTP Config Status:", smtpConfig);
+
     if (
       !process.env.SMTP_HOST ||
       !process.env.SMTP_USER ||
       !process.env.SMTP_PASS
     ) {
-      console.error(
-        "SMTP configuration missing. Please set SMTP_HOST, SMTP_USER, and SMTP_PASS in environment variables."
-      );
+      console.error("❌ SMTP configuration missing!");
+      console.error("Missing:", {
+        SMTP_HOST: !process.env.SMTP_HOST ? "MISSING" : "OK",
+        SMTP_USER: !process.env.SMTP_USER ? "MISSING" : "OK",
+        SMTP_PASS: !process.env.SMTP_PASS ? "MISSING" : "OK",
+      });
       const timestamp = Date.now();
       return new Response(null, {
         status: 303,
@@ -116,6 +136,8 @@ export async function POST(req) {
         },
       });
     }
+
+    console.log("✅ SMTP configuration found");
 
     const toEmail = process.env.CONTACT_TO_EMAIL || "chit@baaz.live";
     const fromEmail =
@@ -139,17 +161,20 @@ export async function POST(req) {
     });
 
     // Verify transporter configuration (optional - skip if it fails, try sending anyway)
+    console.log("Attempting SMTP verification...");
     try {
       await transporter.verify();
+      console.log("✅ SMTP verification successful");
     } catch (verifyErr) {
       console.warn(
-        "SMTP verification failed, but will attempt to send:",
+        "⚠️ SMTP verification failed, but will attempt to send:",
         verifyErr.message
       );
       // Continue anyway - some SMTP servers don't support verify()
     }
 
     // Escape all user input to prevent XSS
+    console.log("Preparing email...");
     const subject = "New Lead from Get in Touch";
     const html = `
       <h3>New Lead</h3>
@@ -160,6 +185,9 @@ export async function POST(req) {
       <p><b>Description:</b> ${escapeHtml(description)}</p>
     `;
 
+    console.log("Sending email to:", toEmail);
+    console.log("From:", fromEmail);
+
     await transporter.sendMail({
       to: toEmail,
       from: fromEmail,
@@ -167,6 +195,8 @@ export async function POST(req) {
       html,
       replyTo: email,
     });
+
+    console.log("✅ Email sent successfully!");
 
     // Redirect back with success flag
     // Use absolute URL for Vercel compatibility
@@ -191,16 +221,36 @@ export async function POST(req) {
     });
   } catch (err) {
     // Log the error on the server for debugging (Vercel logs)
-    console.error("send-contact error:", err);
-    console.error("Error details:", {
-      message: err.message,
-      stack: err.stack,
-      env: {
-        hasHost: !!process.env.SMTP_HOST,
-        hasUser: !!process.env.SMTP_USER,
-        hasPass: !!process.env.SMTP_PASS,
-      },
+    console.error("=== SEND-CONTACT ERROR ===");
+    console.error("Error message:", err.message);
+    console.error("Error code:", err.code);
+    console.error("Error name:", err.name);
+    console.error("Full error:", err);
+
+    // Check specific error types
+    if (err.code === "EAUTH") {
+      console.error(
+        "❌ SMTP Authentication failed - check SMTP_USER and SMTP_PASS"
+      );
+    } else if (err.code === "ECONNECTION" || err.code === "ETIMEDOUT") {
+      console.error(
+        "❌ SMTP Connection failed - check SMTP_HOST and SMTP_PORT"
+      );
+    } else if (err.code === "ESOCKET") {
+      console.error("❌ SMTP Socket error - network/firewall issue");
+    }
+
+    console.error("Environment check:", {
+      hasHost: !!process.env.SMTP_HOST,
+      hasUser: !!process.env.SMTP_USER,
+      hasPass: !!process.env.SMTP_PASS,
+      host: process.env.SMTP_HOST || "NOT SET",
+      port: process.env.SMTP_PORT || "NOT SET",
+      secure: process.env.SMTP_SECURE || "NOT SET",
     });
+
+    console.error("Stack trace:", err.stack);
+    console.error("========================");
 
     // Redirect back with error flag; avoid leaking details to client
     const baseUrl = process.env.VERCEL_URL
