@@ -32,20 +32,10 @@
 }
 
 .hero-container {
-  position: relative;
   z-index: 1;
   width: 100%;
   // max-width: 90rem;
   margin: 0 auto;
-  .highlight-strike {
-    position: absolute;
-    left: clamp(0.5rem, 9.5vw, 9.5%);
-    top: clamp(1rem, 26vh, 26%);
-    width: clamp(8rem, 32vw, 32%);
-    height: auto;
-    z-index: 1;
-    object-fit: contain;
-  }
 }
 
 .hero-content {
@@ -75,10 +65,24 @@
   letter-spacing: 0.005em;
   max-width: 100%;
   text-align: left;
-  position: relative;
-  .hero-heading-highlight {
-    display: inline;
-    white-space: normal;
+
+  .hero-heading-strikes-container {
+    position: relative;
+    .hero-heading-highlight {
+      display: inline;
+      white-space: normal;
+    }
+
+    .highlight-strike {
+      position: absolute;
+      right: clamp(-0.5rem, -9.5vw, -9.5%);
+      bottom: -10%;
+      width: clamp(8rem, 80vw, 80%);
+      height: auto;
+      z-index: 1;
+      object-fit: contain;
+      aspect-ratio: auto;
+    }
   }
 }
 

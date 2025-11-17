@@ -15,20 +15,23 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-container">
-        <img
-          src="/assets/HomeScreenStrikBlue.svg"
-          alt="Highlight underline"
-          className={`highlight-strike ${isLoaded ? "animate-in" : ""}`}
-        />
         <div className="hero-content">
-          {/* Left Section - Text Content */}
+          {/* Left Section - Text Content */}{" "}
           <div className="hero-text">
             <h1
               className={`hero-heading animate-fade-up ${
                 isLoaded ? "animate-in" : ""
               }`}
             >
-              We Mix Creativity <br />
+              <span className="hero-heading-strikes-container">
+                We Mix Creativity{" "}
+                <img
+                  src="/assets/HomeScreenStrikBlue.svg"
+                  alt="Highlight underline"
+                  className={`highlight-strike ${isLoaded ? "animate-in" : ""}`}
+                />
+              </span>
+              <br />
               <span className="hero-heading-highlight">
                 with Boring Consulting & Software Development
               </span>
@@ -51,7 +54,6 @@ const Hero = () => {
               Get in touch
             </Link>
           </div>
-
           {/* Right Section - Illustration */}
           <div
             className={`hero-illustration animate-fade-right animate-delay-300 ${
@@ -64,7 +66,6 @@ const Hero = () => {
               className={`hero-icon ${isLoaded ? "animate-icon-in" : ""}`}
             />
           </div>
-
           {/* Mobile/Tablet CTA Button - Positioned at bottom */}
           <Link
             href="/get-in-touch"
