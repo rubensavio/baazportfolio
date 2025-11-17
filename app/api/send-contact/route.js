@@ -69,16 +69,32 @@ export async function POST(req) {
 
     // Basic validation
     if (!name || !email || !company || !country || !description) {
+      console.error("Validation failed - missing fields:", {
+        hasName: !!name,
+        hasEmail: !!email,
+        hasCompany: !!company,
+        hasCountry: !!country,
+        hasDescription: !!description,
+      });
+      const timestamp = Date.now();
       return new Response(null, {
         status: 303,
-        headers: { Location: "/get-in-touch?error=1" },
+        headers: {
+          Location: `/get-in-touch?error=1&t=${timestamp}`,
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        },
       });
     }
 
     if (!isValidEmail(email)) {
+      console.error("Validation failed - invalid email:", email);
+      const timestamp = Date.now();
       return new Response(null, {
         status: 303,
-        headers: { Location: "/get-in-touch?error=1" },
+        headers: {
+          Location: `/get-in-touch?error=1&t=${timestamp}`,
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        },
       });
     }
 
@@ -91,9 +107,13 @@ export async function POST(req) {
       console.error(
         "SMTP configuration missing. Please set SMTP_HOST, SMTP_USER, and SMTP_PASS in environment variables."
       );
+      const timestamp = Date.now();
       return new Response(null, {
         status: 303,
-        headers: { Location: "/get-in-touch?error=1" },
+        headers: {
+          Location: `/get-in-touch?error=1&t=${timestamp}`,
+          "Cache-Control": "no-store, no-cache, must-revalidate",
+        },
       });
     }
 
@@ -153,15 +173,20 @@ export async function POST(req) {
     const baseUrl = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : process.env.NEXT_PUBLIC_SITE_URL || "";
+    // Add timestamp to prevent caching
+    const timestamp = Date.now();
     const redirectUrl = baseUrl
-      ? `${baseUrl}/get-in-touch?sent=1`
-      : "/get-in-touch?sent=1";
+      ? `${baseUrl}/get-in-touch?sent=1&t=${timestamp}`
+      : `/get-in-touch?sent=1&t=${timestamp}`;
 
     return new Response(null, {
       status: 303,
       headers: {
         Location: redirectUrl,
-        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Cache-Control":
+          "no-store, no-cache, must-revalidate, proxy-revalidate",
+        Pragma: "no-cache",
+        Expires: "0",
       },
     });
   } catch (err) {
@@ -181,15 +206,20 @@ export async function POST(req) {
     const baseUrl = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : process.env.NEXT_PUBLIC_SITE_URL || "";
+    // Add timestamp to prevent caching
+    const timestamp = Date.now();
     const redirectUrl = baseUrl
-      ? `${baseUrl}/get-in-touch?error=1`
-      : "/get-in-touch?error=1";
+      ? `${baseUrl}/get-in-touch?error=1&t=${timestamp}`
+      : `/get-in-touch?error=1&t=${timestamp}`;
 
     return new Response(null, {
       status: 303,
       headers: {
         Location: redirectUrl,
-        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Cache-Control":
+          "no-store, no-cache, must-revalidate, proxy-revalidate",
+        Pragma: "no-cache",
+        Expires: "0",
       },
     });
   }
