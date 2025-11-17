@@ -169,15 +169,8 @@ export async function POST(req) {
     });
 
     // Redirect back with success flag
-    // Use absolute URL for Vercel compatibility
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_SITE_URL || "";
-    // Add timestamp to prevent caching
     const timestamp = Date.now();
-    const redirectUrl = baseUrl
-      ? `${baseUrl}/get-in-touch?sent=1&t=${timestamp}`
-      : `/get-in-touch?sent=1&t=${timestamp}`;
+    const redirectUrl = `https://baaz.pro/get-in-touch?sent=1&t=${timestamp}`;
 
     return new Response(null, {
       status: 303,
@@ -203,14 +196,8 @@ export async function POST(req) {
     });
 
     // Redirect back with error flag; avoid leaking details to client
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : process.env.NEXT_PUBLIC_SITE_URL || "";
-    // Add timestamp to prevent caching
     const timestamp = Date.now();
-    const redirectUrl = baseUrl
-      ? `${baseUrl}/get-in-touch?error=1&t=${timestamp}`
-      : `/get-in-touch?error=1&t=${timestamp}`;
+    const redirectUrl = `https://baaz.pro/get-in-touch?error=1&t=${timestamp}`;
 
     return new Response(null, {
       status: 303,
