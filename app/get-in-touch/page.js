@@ -21,11 +21,13 @@ function GetInTouchForm() {
   const error = searchParams?.get("error") === "1";
   const [isMounted, setIsMounted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [countries, setCountries] = useState([]);
+  const [loadingCountries, setLoadingCountries] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    category: "",
+    country: "",
     description: "",
   });
 
@@ -37,6 +39,51 @@ function GetInTouchForm() {
       alert("Sorry, something went wrong. Please try again.");
     }
   }, [sent, error]);
+
+  // Fetch countries list on mount
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch(
+          "https://restcountries.com/v3.1/all?fields=name,cca2"
+        );
+        if (response.ok) {
+          const data = await response.json();
+          // Sort countries alphabetically by name
+          const sortedCountries = data
+            .map((country) => ({
+              name: country.name.common,
+              code: country.cca2,
+            }))
+            .sort((a, b) => a.name.localeCompare(b.name));
+          setCountries(sortedCountries);
+        } else {
+          // Fallback to a basic list if API fails
+          setCountries([
+            { name: "United States", code: "US" },
+            { name: "United Kingdom", code: "GB" },
+            { name: "Canada", code: "CA" },
+            { name: "India", code: "IN" },
+            { name: "Australia", code: "AU" },
+          ]);
+        }
+      } catch (err) {
+        console.error("Failed to fetch countries:", err);
+        // Fallback list
+        setCountries([
+          { name: "United States", code: "US" },
+          { name: "United Kingdom", code: "GB" },
+          { name: "Canada", code: "CA" },
+          { name: "India", code: "IN" },
+          { name: "Australia", code: "AU" },
+        ]);
+      } finally {
+        setLoadingCountries(false);
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -132,24 +179,28 @@ function GetInTouchForm() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="category" className="form-label">
-                  Category
+                <label htmlFor="country" className="form-label">
+                  Country
                 </label>
                 <select
-                  id="category"
-                  name="category"
+                  id="country"
+                  name="country"
                   className="form-select"
-                  value={formData.category}
+                  value={formData.country}
                   onChange={handleChange}
                   required
+                  disabled={loadingCountries}
                 >
-                  <option value="">Select Category</option>
-                  <option value="Real Estate">Real Estate</option>
-                  <option value="Event Management">Event Management</option>
-                  <option value="Job Portal">Job Portal</option>
-                  <option value="Healthcare">Healthcare</option>
-                  <option value="Ecommerce">Ecommerce</option>
-                  <option value="Other">Other</option>
+                  <option value="">
+                    {loadingCountries
+                      ? "Loading countries..."
+                      : "Select Country"}
+                  </option>
+                  {countries.map((country) => (
+                    <option key={country.code} value={country.name}>
+                      {country.name}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -201,30 +252,32 @@ function GetInTouchForm() {
 
 export default function GetInTouch() {
   return (
-    <Suspense fallback={
-      <div className="get-in-touch-page">
-        <Headroom>
-          <Navbar />
-        </Headroom>
-        <section className="contact-form-section">
-          <div className="contact-form-wrapper">
-            <div className="form-header">
-              <h1 className="form-title">
-                Let's help you solve your complex problem
-              </h1>
-              <p className="form-subtitle">
-                Tell us about your project and we'll get back to you with a
-                detailed proposal and next steps.
-              </p>
+    <Suspense
+      fallback={
+        <div className="get-in-touch-page">
+          <Headroom>
+            <Navbar />
+          </Headroom>
+          <section className="contact-form-section">
+            <div className="contact-form-wrapper">
+              <div className="form-header">
+                <h1 className="form-title">
+                  Let's help you solve your complex problem
+                </h1>
+                <p className="form-subtitle">
+                  Tell us about your project and we'll get back to you with a
+                  detailed proposal and next steps.
+                </p>
+              </div>
+              <div style={{ padding: "2rem", textAlign: "center" }}>
+                Loading...
+              </div>
             </div>
-            <div style={{ padding: "2rem", textAlign: "center" }}>
-              Loading...
-            </div>
-          </div>
-        </section>
-        <Footer />
-      </div>
-    }>
+          </section>
+          <Footer />
+        </div>
+      }
+    >
       <GetInTouchForm />
     </Suspense>
   );

@@ -42,6 +42,16 @@ export async function POST(req) {
       body = Object.fromEntries(form.entries());
     }
 
+    // Log received body for debugging (in production, remove sensitive data)
+    console.log("Received form data:", {
+      hasName: !!body?.name,
+      hasEmail: !!body?.email,
+      hasCompany: !!body?.company,
+      hasCountry: !!body?.country,
+      hasDescription: !!body?.description,
+      keys: Object.keys(body || {}),
+    });
+
     // Extract and sanitize form data (URL decode if needed)
     const decodeValue = (value) => {
       try {
@@ -54,11 +64,11 @@ export async function POST(req) {
     const name = decodeValue(body?.name).trim();
     const email = decodeValue(body?.email).trim();
     const company = decodeValue(body?.company).trim();
-    const category = decodeValue(body?.category).trim();
+    const country = decodeValue(body?.country).trim();
     const description = decodeValue(body?.description).trim();
 
     // Basic validation
-    if (!name || !email || !company || !category || !description) {
+    if (!name || !email || !company || !country || !description) {
       return new Response(null, {
         status: 303,
         headers: { Location: "/get-in-touch?error=1" },
@@ -126,7 +136,7 @@ export async function POST(req) {
       <p><b>Name:</b> ${escapeHtml(name)}</p>
       <p><b>Email:</b> ${escapeHtml(email)}</p>
       <p><b>Company:</b> ${escapeHtml(company)}</p>
-      <p><b>Category:</b> ${escapeHtml(category)}</p>
+      <p><b>Country:</b> ${escapeHtml(country)}</p>
       <p><b>Description:</b> ${escapeHtml(description)}</p>
     `;
 
