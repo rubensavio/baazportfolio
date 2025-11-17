@@ -20,7 +20,7 @@ export async function POST(req) {
       description = "",
     } = body || {};
 
-    const toEmail = process.env.CONTACT_TO_EMAIL || "laxman@baaz.live";
+    const toEmail = process.env.CONTACT_TO_EMAIL || "chit@baaz.live";
     const fromEmail =
       process.env.CONTACT_FROM_EMAIL ||
       process.env.SMTP_USER ||
