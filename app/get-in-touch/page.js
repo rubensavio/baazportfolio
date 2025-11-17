@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -14,7 +14,7 @@ const Footer = dynamic(() => import("../../components/Footer/Footer"), {
   ssr: false,
 });
 
-export default function GetInTouch() {
+function GetInTouchForm() {
   // Read redirect params in a client-safe way
   const searchParams = useSearchParams();
   const sent = searchParams?.get("sent") === "1";
@@ -196,5 +196,36 @@ export default function GetInTouch() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function GetInTouch() {
+  return (
+    <Suspense fallback={
+      <div className="get-in-touch-page">
+        <Headroom>
+          <Navbar />
+        </Headroom>
+        <section className="contact-form-section">
+          <div className="contact-form-wrapper">
+            <div className="form-header">
+              <h1 className="form-title">
+                Let's help you solve your complex problem
+              </h1>
+              <p className="form-subtitle">
+                Tell us about your project and we'll get back to you with a
+                detailed proposal and next steps.
+              </p>
+            </div>
+            <div style={{ padding: "2rem", textAlign: "center" }}>
+              Loading...
+            </div>
+          </div>
+        </section>
+        <Footer />
+      </div>
+    }>
+      <GetInTouchForm />
+    </Suspense>
   );
 }
