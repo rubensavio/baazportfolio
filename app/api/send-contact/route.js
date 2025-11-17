@@ -102,10 +102,22 @@ export async function POST(req) {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      // Add connection timeout for serverless environments
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
 
-    // Verify transporter configuration
-    await transporter.verify();
+    // Verify transporter configuration (optional - skip if it fails, try sending anyway)
+    try {
+      await transporter.verify();
+    } catch (verifyErr) {
+      console.warn(
+        "SMTP verification failed, but will attempt to send:",
+        verifyErr.message
+      );
+      // Continue anyway - some SMTP servers don't support verify()
+    }
 
     // Escape all user input to prevent XSS
     const subject = "New Lead from Get in Touch";
@@ -127,17 +139,48 @@ export async function POST(req) {
     });
 
     // Redirect back with success flag
+    // Use absolute URL for Vercel compatibility
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : process.env.NEXT_PUBLIC_SITE_URL || "";
+    const redirectUrl = baseUrl
+      ? `${baseUrl}/get-in-touch?sent=1`
+      : "/get-in-touch?sent=1";
+
     return new Response(null, {
       status: 303,
-      headers: { Location: "/get-in-touch?sent=1" },
+      headers: {
+        Location: redirectUrl,
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+      },
     });
   } catch (err) {
     // Log the error on the server for debugging (Vercel logs)
     console.error("send-contact error:", err);
+    console.error("Error details:", {
+      message: err.message,
+      stack: err.stack,
+      env: {
+        hasHost: !!process.env.SMTP_HOST,
+        hasUser: !!process.env.SMTP_USER,
+        hasPass: !!process.env.SMTP_PASS,
+      },
+    });
+
     // Redirect back with error flag; avoid leaking details to client
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : process.env.NEXT_PUBLIC_SITE_URL || "";
+    const redirectUrl = baseUrl
+      ? `${baseUrl}/get-in-touch?error=1`
+      : "/get-in-touch?error=1";
+
     return new Response(null, {
       status: 303,
-      headers: { Location: "/get-in-touch?error=1" },
+      headers: {
+        Location: redirectUrl,
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+      },
     });
   }
 }
