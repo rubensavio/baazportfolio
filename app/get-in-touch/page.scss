@@ -116,6 +116,8 @@
   border-radius: 8px;
   padding: clamp(0.75rem, 1.5vw, 1rem);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 
   &::placeholder {
     color: #9ca3af;
@@ -135,6 +137,8 @@
   background-position: right 1rem center;
   padding-right: 2.5rem;
   cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-textarea {
@@ -280,4 +284,3 @@
     width: 100%;
   }
 }
-
