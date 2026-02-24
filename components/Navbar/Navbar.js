@@ -5,9 +5,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./Navbar.scss";
 
+const INDUSTRIES = [
+  { slug: "fintech", label: "FinTech" },
+  { slug: "construction", label: "Construction" },
+  { slug: "retail", label: "Retail" },
+  { slug: "healthcare", label: "Healthcare" },
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false);
+  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -18,13 +26,17 @@ const Navbar = () => {
     setIsWorkDropdownOpen(!isWorkDropdownOpen);
   };
 
+  const toggleIndustriesDropdown = () => {
+    setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
         <div className="navbar-logo">
           <Link href="/">
-            <img src="/assets/Logo.svg" alt="baaz logo" />
+            <img src="/assets/Logo.svg" alt="baaz logo" width={120} height={32} />
           </Link>
         </div>
 
@@ -67,6 +79,37 @@ const Navbar = () => {
                 <Link href="/work2">Tech Hiring Automation</Link>
               </li>
             </ul>
+          </li>
+          <li className="navbar-item dropdown">
+            <a
+              href="#"
+              className={`navbar-link ${
+                pathname?.startsWith("/industry") ? "active" : ""
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <span className="link-text">Industries</span>
+              <span className="dropdown-icon">▼</span>
+            </a>
+            <ul className="dropdown-menu">
+              {INDUSTRIES.map(({ slug, label }) => (
+                <li key={slug}>
+                  <Link href={`/industry/${slug}`}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="navbar-item">
+            <Link
+              href="/blog"
+              className={`navbar-link ${
+                pathname?.startsWith("/blog") ? "active" : ""
+              }`}
+            >
+              Blog
+            </Link>
           </li>
           <li className="navbar-item">
             <Link
@@ -140,6 +183,43 @@ const Navbar = () => {
                     </li>
                   </ul>
                 )}
+              </li>
+              <li className="mobile-menu-item mobile-dropdown">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleIndustriesDropdown();
+                  }}
+                >
+                  Industries
+                  <span
+                    className={`dropdown-icon ${
+                      isIndustriesDropdownOpen ? "open" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </a>
+                {isIndustriesDropdownOpen && (
+                  <ul className="mobile-dropdown-menu">
+                    {INDUSTRIES.map(({ slug, label }) => (
+                      <li key={slug}>
+                        <Link
+                          href={`/industry/${slug}`}
+                          onClick={toggleMenu}
+                        >
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li className="mobile-menu-item">
+                <Link href="/blog" onClick={toggleMenu}>
+                  Blog
+                </Link>
               </li>
               <li className="mobile-menu-item">
                 <Link href="/enterprise" onClick={toggleMenu}>

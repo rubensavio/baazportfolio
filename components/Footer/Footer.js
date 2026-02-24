@@ -16,6 +16,8 @@ const Footer = () => {
                 src="/assets/Logo.svg"
                 alt="Baaz logo"
                 className="footer-logo"
+                width={120}
+                height={32}
               />
             </Link>
             <p className="footer-tagline">
@@ -31,20 +33,39 @@ const Footer = () => {
               <ul className="footer-list">
                 <li>
                   <Link href="/services/product-strategy">
-                    Product strategy
+                    Product Strategy
                   </Link>
                 </li>
                 <li>
                   <Link href="/services/ui-ux-design">UI/UX Design</Link>
                 </li>
                 <li>
-                  <Link href="/services/web-development">Web Development</Link>
+                  <Link href="/services/web-development">Custom Software</Link>
                 </li>
                 <li>
-                  <Link href="/services/mobile-app">Mobile Apps</Link>
+                  <Link href="/services/mobile-app">Mobile App</Link>
                 </li>
                 <li>
-                  <Link href="/services/ai-solution">AI Solution</Link>
+                  <Link href="/services/ai-solution">AI Development</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Industries Column */}
+            <div className="footer-column">
+              <h3 className="footer-column-title">Industries</h3>
+              <ul className="footer-list">
+                <li>
+                  <Link href="/industry/fintech">FinTech</Link>
+                </li>
+                <li>
+                  <Link href="/industry/construction">Construction Tech</Link>
+                </li>
+                <li>
+                  <Link href="/industry/retail">Retail</Link>
+                </li>
+                <li>
+                  <Link href="/industry/healthcare">Healthcare</Link>
                 </li>
               </ul>
             </div>
@@ -55,6 +76,9 @@ const Footer = () => {
               <ul className="footer-list">
                 <li>
                   <Link href="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link href="/blog">Blog</Link>
                 </li>
                 <li>
                   <Link href="/enterprise">Enterprise</Link>

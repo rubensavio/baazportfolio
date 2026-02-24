@@ -2,15 +2,12 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import CaseStudyHero from "../../components/CaseStudyHero/CaseStudyHero";
 
 const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
   ssr: false,
 });
-const CaseStudyHero = dynamic(
-  () => import("../../components/CaseStudyHero/CaseStudyHero"),
-  { ssr: false }
-);
 const SolutionSection = dynamic(
   () => import("../../components/SolutionSection/SolutionSection"),
   { ssr: false }

@@ -1,7 +1,7 @@
 .case-study-hero {
   position: relative;
   width: calc(100% - 3rem);
-  min-height: auto;
+  min-height: clamp(18rem, 45vw, 26rem);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -29,6 +29,8 @@ const Hero = () => {
                   src="/assets/HomeScreenStrikBlue.svg"
                   alt="Highlight underline"
                   className={`highlight-strike ${isLoaded ? "animate-in" : ""}`}
+                  width={320}
+                  height={48}
                 />
               </span>
               <br />
@@ -64,6 +66,9 @@ const Hero = () => {
               src="/assets/HomeHeroSectionIcon.svg"
               alt="Developer illustration"
               className={`hero-icon ${isLoaded ? "animate-icon-in" : ""}`}
+              width={480}
+              height={400}
+              fetchPriority="high"
             />
           </div>
           {/* Mobile/Tablet CTA Button - Positioned at bottom */}
@@ -82,6 +87,8 @@ const Hero = () => {
           src="/assets/HomeHeroSectionBg.svg"
           alt="Hero background"
           className="hero-bg-image"
+          width={1200}
+          height={600}
         />
       </div>
     </section>

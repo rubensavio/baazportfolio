@@ -161,6 +161,9 @@ const CaseStudyHero = () => {
           src="/assets/workHeroSectionBg.svg"
           alt="Case Study background"
           className="case-study-hero-bg-image"
+          width={1200}
+          height={600}
+          fetchPriority="high"
         />
       </div>
       <div className="case-study-hero-wrapper">

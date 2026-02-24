@@ -261,9 +261,9 @@ export default function GetInTouch() {
           <section className="contact-form-section">
             <div className="contact-form-wrapper">
               <div className="form-header">
-                <h1 className="form-title">
+                <h2 className="form-title">
                   Let's help you solve your complex problem
-                </h1>
+                </h2>
                 <p className="form-subtitle">
                   Tell us about your project and we'll get back to you with a
                   detailed proposal and next steps.

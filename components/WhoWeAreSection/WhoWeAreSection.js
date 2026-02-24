@@ -20,9 +20,9 @@ const WhoWeAreSection = () => {
           }`}
         >
           <span className="who-we-are-section-label">Who We Are</span>
-          <h1 className="who-we-are-section-heading">
+          <h2 className="who-we-are-section-heading">
             Building World Class Softwares Since 2018
-          </h1>
+          </h2>
         </div>
 
         <div

@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from 'next/dynamic';
+import "./page.scss";
 
 const Headroom = dynamic(() => import('react-headroom'), { ssr: false });
 const Navbar = dynamic(() => import('../../components/Navbar/Navbar'), { ssr: false });
@@ -16,6 +17,9 @@ export default function AboutUs() {
       <Headroom>
         <Navbar />
       </Headroom>
+      <header className="about-us-header" aria-label="About Baaz">
+        <h1 className="about-us-title">About Us</h1>
+      </header>
       <WhoWeAreSection />
       <OurValues />
       <CTA />

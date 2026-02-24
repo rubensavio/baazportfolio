@@ -139,6 +139,32 @@
   z-index: 1;
 }
 
+.our-expertise-industries {
+  max-width: 93%;
+  width: 100%;
+  margin: 2rem auto 0;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.our-expertise-industries-text {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+
+  a {
+    color: #5b71f6;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 // Tablet Styles
 @media (max-width: 64rem) {
   .our-expertise {

@@ -2,15 +2,12 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import Work2Hero from "../../components/Work2Hero/Work2Hero";
 
 const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
   ssr: false,
 });
-const Work2Hero = dynamic(
-  () => import("../../components/Work2Hero/Work2Hero"),
-  { ssr: false }
-);
 const Work2Solution = dynamic(
   () => import("../../components/Work2Solution/Work2Solution"),
   { ssr: false }

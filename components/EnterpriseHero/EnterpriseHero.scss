@@ -1,7 +1,7 @@
 .enterprise-hero {
   position: relative;
   width: calc(100% - 3rem);
-  min-height: auto;
+  min-height: clamp(16rem, 40vw, 22rem);
   display: flex;
   align-items: center;
   overflow: hidden;

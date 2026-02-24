@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import Link from "next/link";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "./OurExpertise.scss";
 
@@ -62,6 +63,22 @@ const OurExpertise = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="our-expertise-industries animate-on-scroll animate-fade-up" ref={cardsRef}>
+        <p className="our-expertise-industries-text">
+          We serve{" "}
+          <Link href="/industry/fintech">FinTech</Link>,{" "}
+          <Link href="/industry/construction">Construction Tech</Link>,{" "}
+          <Link href="/industry/retail">Retail</Link>, and{" "}
+          <Link href="/industry/healthcare">Healthcare</Link>.
+        </p>
+        <p className="our-expertise-industries-text">
+          Read our guides:{" "}
+          <Link href="/blog/how-to-choose-software-development-partner">How to choose a software development partner</Link>,{" "}
+          <Link href="/blog/how-to-build-ai-powered-product">How to build an AI-powered product</Link>, and more on our{" "}
+          <Link href="/blog">Blog</Link>.
+        </p>
       </div>
     </section>
   );
