@@ -52,18 +52,36 @@ After deploy, you can verify the preview:
 
 ---
 
-## 4. Mobile-first check — Manual
+## 4. Mobile-first check — Done (lighthouse test pending)
 
-1. Open Chrome → go to `https://baaz.pro`
-2. Press **F12** → click the **device toggle** icon (top-left of DevTools)
-3. Test these pages at **375px width** (iPhone SE) and **768px** (iPad):
-   - `/` (Home)
-   - `/about`
-   - `/services/web-development`
-   - `/blog`
-   - `/get-in-touch`
-4. Confirm: no content is hidden behind `display: none` or `overflow: hidden` that is visible on desktop
-5. Run Lighthouse (DevTools → Lighthouse tab → check "Mobile") on the home page; look for any "Content not sized correctly for viewport" warnings
+Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Results:
+
+### Pages tested
+- `/` (Home)
+- `/about`
+- `/services/web-development`
+- `/blog`
+- `/get-in-touch`
+
+### `display: none` audit
+- `ul.navbar-menu.desktop-menu` hidden on mobile — **expected** (hamburger menu replaces it)
+- `a.cta-button.desktop-cta` hidden on mobile — **expected** (hamburger provides access)
+- `a.hero-cta.desktop-cta-btn` hidden on mobile — **expected** (a separate mobile CTA is rendered)
+- Testimonial prev/next buttons hidden on mobile — **expected** (all 3 cards stack vertically; no carousel needed)
+
+**No content is improperly hidden on mobile.**
+
+### `overflow: hidden` audit
+- `div.brands-carousel-wrapper` (scrollWidth ≫ clientWidth) — **expected** for the infinite-scroll marquee
+- `div.hero-illustration` at 768px (7px overflow) — **negligible**, not visible to users
+
+### Other checks
+- No horizontal scroll on any page at either viewport
+- Typography readable, cards stack vertically, forms full-width and usable
+- Footer and CTA sections render correctly at both widths
+
+### Remaining (manual, post-deploy)
+Run Lighthouse Mobile audit on the live site (`https://baaz.pro`) to check for "Content not sized correctly for viewport" warnings
 
 ---
 
