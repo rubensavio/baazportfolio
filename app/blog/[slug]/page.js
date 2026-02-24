@@ -11,6 +11,9 @@ const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
   ssr: false,
 });
+const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"), {
+  ssr: false,
+});
 const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
   ssr: false,
 });
@@ -60,11 +63,33 @@ export default function BlogPostPage() {
     );
   }
 
+  const faqSchema = data.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: data.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <div className="blog-page">
       <Headroom>
         <Navbar />
       </Headroom>
+
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <article className="blog-article">
         <header className="blog-hero">
@@ -100,6 +125,10 @@ export default function BlogPostPage() {
             </section>
           ))}
         </div>
+
+        {data.faqs && (
+          <FAQ faqs={data.faqs} />
+        )}
 
         <div className="blog-explore">
           <p className="blog-explore-text">

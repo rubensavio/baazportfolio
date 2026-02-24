@@ -21,6 +21,9 @@ const EnterpriseHero = () => {
           <p className="enterprise-hero-description">
             We're a custom software development agency for enterprise. We build applications that drive efficiency, security, and scalability for large organizations.
           </p>
+          <p className="enterprise-hero-definition">
+            Enterprise product engineering is the end-to-end process of designing, building, testing, and deploying digital products for large organisations — combining software development, UX design, and product strategy into a unified delivery model that balances speed with governance, innovation with stability.
+          </p>
         </div>
       </div>
 

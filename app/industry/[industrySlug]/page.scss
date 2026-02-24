@@ -67,6 +67,21 @@
   margin: 0;
 }
 
+.industry-definition {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4d525f;
+  margin: 0;
+  padding: clamp(1rem, 1.5vw, 1.25rem) clamp(1.5rem, 2vw, 2rem);
+  background: #f8f9fb;
+  border-left: 3px solid #5b71f6;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+  width: 100%;
+}
+
 .industry-intro {
   font-family: "Urbanist", sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.25rem);

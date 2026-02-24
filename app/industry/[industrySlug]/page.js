@@ -11,6 +11,9 @@ const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
   ssr: false,
 });
+const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"), {
+  ssr: false,
+});
 const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
   ssr: false,
 });
@@ -52,11 +55,33 @@ export default function IndustryPage() {
     );
   }
 
+  const faqSchema = data.faqs
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: data.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <div className="industry-page">
       <Headroom>
         <Navbar />
       </Headroom>
+
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <section className="industry-hero">
         <div className="industry-hero-background">
@@ -71,6 +96,9 @@ export default function IndustryPage() {
         </div>
         <div className="industry-hero-wrapper">
           <h1 className="industry-heading">{data.title}</h1>
+          {data.definition && (
+            <p className="industry-definition">{data.definition}</p>
+          )}
           <p className="industry-intro">{data.intro}</p>
         </div>
       </section>
@@ -114,6 +142,10 @@ export default function IndustryPage() {
           </section>
         ))}
       </div>
+
+      {data.faqs && (
+        <FAQ faqs={data.faqs} />
+      )}
 
       <CTA />
       <Footer />

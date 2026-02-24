@@ -1,0 +1,115 @@
+.faq-section {
+  width: calc(100% - 3rem);
+  max-width: 900px;
+  margin: 0 auto clamp(2rem, 4vw, 3rem);
+  padding: 0 0.5rem;
+}
+
+.faq-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.faq-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1rem, 1.5vw, 1.25rem) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #000000;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #5b71f6;
+  }
+}
+
+.faq-question-text {
+  flex: 1;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #5b71f6;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0;
+}
+
+.faq-item--open .faq-answer {
+  max-height: 500px;
+  padding-bottom: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.faq-item--open .faq-icon {
+  transform: rotate(90deg);
+}
+
+.faq-answer-text {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4d525f;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-section {
+    width: calc(100% - 1.5rem);
+  }
+
+  .faq-question {
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    padding: clamp(0.875rem, 1.25vw, 1rem) 0;
+  }
+}
