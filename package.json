@@ -9,7 +9,7 @@
     "page-speed": "node scripts/page-speed-audit.js"
   },
   "dependencies": {
-    "next": "16.0.3",
+    "next": "16.0.10",
     "nodemailer": "^7.0.10",
     "react": "19.2.0",
     "react-dom": "19.2.0",
