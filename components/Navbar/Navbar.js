@@ -121,6 +121,16 @@ const Navbar = () => {
               Enterprise
             </Link>
           </li>
+          <li className="navbar-item">
+            <Link
+              href="/ecommerce"
+              className={`navbar-link ${
+                pathname === "/ecommerce" ? "active" : ""
+              }`}
+            >
+              E-commerce
+            </Link>
+          </li>
         </ul>
 
         {/* Desktop CTA Button */}
@@ -224,6 +234,11 @@ const Navbar = () => {
               <li className="mobile-menu-item">
                 <Link href="/enterprise" onClick={toggleMenu}>
                   Enterprise
+                </Link>
+              </li>
+              <li className="mobile-menu-item">
+                <Link href="/ecommerce" onClick={toggleMenu}>
+                  E-commerce
                 </Link>
               </li>
             </ul>

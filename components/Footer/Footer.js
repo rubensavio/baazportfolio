@@ -1,10 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { getRegionLabel } from "../../lib/regions";
 import "./Footer.scss";
 
 const Footer = () => {
+  const [regionLabel, setRegionLabel] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setRegionLabel(getRegionLabel(window.location.hostname));
+    }
+  }, []);
+
   return (
     <footer className="footer">
       <div className="footer-wrapper">
@@ -23,6 +32,9 @@ const Footer = () => {
             <p className="footer-tagline">
               Enterprise-grade products, without the enterprise wait.
             </p>
+            {regionLabel && (
+              <p className="footer-region-line">{regionLabel}</p>
+            )}
           </div>
 
           {/* Footer Links */}

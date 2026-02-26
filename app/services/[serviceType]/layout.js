@@ -1,6 +1,7 @@
 import { servicesData } from "../../../lib/servicesData";
+import { getAlternates } from "../../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
-    alternates: { canonical: `${baseUrl}/services/${serviceType}` },
+    alternates: getAlternates(`/services/${serviceType}`),
     openGraph: {
       title,
       description,

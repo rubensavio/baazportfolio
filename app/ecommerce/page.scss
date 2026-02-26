@@ -1,0 +1,1173 @@
+/* ── HERO ────────────────────────────────────────────────────────── */
+
+.ecom-hero {
+  position: relative;
+  width: calc(100% - 3rem);
+  min-height: clamp(16rem, 40vw, 22rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #ffffff;
+  margin: 0.5rem auto 1.5rem;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+  border-radius: 1.25rem;
+}
+
+.ecom-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+
+  .ecom-hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.ecom-hero-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ecom-hero-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 900px;
+}
+
+.ecom-hero-label {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: #932efa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ecom-hero-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+  width: 80%;
+}
+
+.ecom-hero-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: #4d525f;
+  margin: 0;
+}
+
+.ecom-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 600;
+  color: #ffffff;
+  background: #0066ff;
+  border: none;
+  border-radius: 30px;
+  padding: clamp(0.875rem, 1.75vw, 1rem) clamp(1.75rem, 3.5vw, 2.25rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+
+  &:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+  }
+}
+
+/* ── SHARED SECTION LABEL ────────────────────────────────────────── */
+
+.ecom-section-label {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 600;
+  color: #932efa;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── PAIN POINTS ─────────────────────────────────────────────────── */
+
+.ecom-pain {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-pain-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-pain-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  max-width: 800px;
+}
+
+.ecom-pain-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-pain-subtext {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+}
+
+.ecom-pain-container {
+  width: 100%;
+  background-color: #f5f5f7;
+  border-radius: 16px;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/HowWeWorkBg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+.ecom-pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.ecom-pain-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+
+  &.pain-step-1 { grid-column: 1; grid-row: 1; }
+  &.pain-step-2 { grid-column: 2; grid-row: 1; }
+  &.pain-step-3 { grid-column: 3; grid-row: 1; }
+  &.pain-step-4 { grid-column: 1; grid-row: 2; }
+  &.pain-step-5 { grid-column: 2; grid-row: 2; }
+
+  &.pain-step-1::after,
+  &.pain-step-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(-1 * clamp(0.75rem, 1.5vw, 1.25rem));
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, #f5f5f7 0%, #d1d5db 45%, #f5f5f7 100%);
+  }
+
+  &.pain-step-4::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(-1 * clamp(0.75rem, 1.5vw, 1.25rem));
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, #f5f5f7 0%, #d1d5db 45%, #f5f5f7 100%);
+  }
+}
+
+.ecom-pain-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.ecom-pain-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1a1a1a;
+  margin: 0 0 clamp(0.5rem, 1vw, 0.75rem) 0;
+}
+
+.ecom-pain-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+}
+
+.ecom-pain-conclusion {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+  padding: clamp(1rem, 1.5vw, 1.25rem) clamp(1.5rem, 2vw, 2rem);
+  background: #f8f9fb;
+  border-left: 3px solid #5b71f6;
+  border-radius: 0 8px 8px 0;
+  max-width: 700px;
+}
+
+/* ── APPROACH ────────────────────────────────────────────────────── */
+
+.ecom-approach {
+  width: 100%;
+  background-color: #f8f9fb;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-approach-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-approach-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+  max-width: 800px;
+}
+
+.ecom-approach-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-approach-subtext {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+}
+
+.ecom-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  width: 100%;
+}
+
+.ecom-approach-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.ecom-approach-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-approach-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.9375rem, 1.25vw, 1rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+.ecom-approach-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #5b71f6;
+      font-weight: 700;
+    }
+  }
+}
+
+/* ── SERVICES ────────────────────────────────────────────────────── */
+
+.ecom-services {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-services-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+  max-width: 900px;
+}
+
+.ecom-services-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-services-subtext {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+  width: 90%;
+}
+
+.ecom-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  max-width: 1200px;
+}
+
+.ecom-service-card {
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.ecom-service-card-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  padding: clamp(1rem, 2vw, 1.25rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: 20px 20px 0 0;
+}
+
+.ecom-service-number {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.ecom-service-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+}
+
+.ecom-service-card-body {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.ecom-service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.625rem);
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: #000000;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000000;
+      font-weight: 700;
+    }
+  }
+}
+
+.ecom-service-goal {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.9375rem, 1.25vw, 1rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #5b71f6;
+  margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ── CASE STUDY ──────────────────────────────────────────────────── */
+
+.ecom-casestudy {
+  width: 100%;
+  background-color: #f8f9fb;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-casestudy-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-casestudy-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.ecom-casestudy-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-casestudy-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.ecom-casestudy-results,
+.ecom-casestudy-actions {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  h3 {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 clamp(1rem, 2vw, 1.25rem) 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+
+    li {
+      font-family: "Urbanist", sans-serif;
+      font-size: clamp(0.9375rem, 1.25vw, 1rem);
+      font-weight: 500;
+      line-height: 1.6;
+      color: #374151;
+      padding-left: 1.25rem;
+      position: relative;
+
+      &::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #22c55e;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.ecom-casestudy-tagline {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+  padding: clamp(1rem, 1.5vw, 1.25rem) clamp(1.5rem, 2vw, 2rem);
+  background: #ffffff;
+  border-left: 3px solid #22c55e;
+  border-radius: 0 8px 8px 0;
+}
+
+/* ── PROOF BLOCKS ────────────────────────────────────────────────── */
+
+.ecom-proof {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-proof-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.ecom-proof-card {
+  background: #fbf6ef;
+  border-radius: 20px;
+  padding: clamp(2rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+}
+
+.ecom-proof-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-proof-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: #374151;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #932efa;
+      font-weight: 700;
+    }
+  }
+}
+
+.ecom-proof-tagline {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── TECHNOLOGY ──────────────────────────────────────────────────── */
+
+.ecom-tech {
+  width: 100%;
+  background-color: #f8f9fb;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-tech-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-tech-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+  max-width: 800px;
+}
+
+.ecom-tech-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-tech-subtext {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0;
+}
+
+.ecom-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  width: 100%;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.ecom-tech-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: clamp(2rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.25rem);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ecom-tech-title {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.375rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-tech-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 600;
+    line-height: 1.5;
+    color: #000000;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #5b71f6;
+      font-weight: 700;
+    }
+  }
+}
+
+.ecom-tech-tagline {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── AUDIENCE ────────────────────────────────────────────────────── */
+
+.ecom-audience {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-audience-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ecom-audience-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.ecom-audience-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ecom-audience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 clamp(2rem, 4vw, 3rem) 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  width: 100%;
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    background: #f3f0ff;
+    border: 1px solid #e0d4fc;
+    border-radius: 30px;
+    padding: 0.625rem 1.5rem;
+    white-space: nowrap;
+  }
+}
+
+.ecom-audience-tagline {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.6;
+  color: #4d525f;
+  text-align: center;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── CTA ─────────────────────────────────────────────────────────── */
+
+.ecom-cta {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.ecom-cta-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.ecom-cta-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  border-radius: 24px;
+  padding: clamp(3rem, 6vw, 4rem) clamp(2rem, 4vw, 3rem);
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ecom-cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+
+  .ecom-cta-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.6;
+  }
+}
+
+.ecom-cta-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+  width: 100%;
+}
+
+.ecom-cta-heading {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ecom-cta-description {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+}
+
+.ecom-cta-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+
+  li {
+    font-family: "Urbanist", sans-serif;
+    font-size: clamp(0.9375rem, 1.25vw, 1rem);
+    font-weight: 500;
+    color: #d1d5db;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #22c55e;
+      font-weight: 700;
+    }
+  }
+}
+
+.ecom-cta-note {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.9375rem, 1.25vw, 1rem);
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.ecom-cta-button {
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 600;
+  color: #ffffff;
+  background: #0066ff;
+  border: none;
+  border-radius: 30px;
+  padding: clamp(1rem, 2vw, 1.125rem) clamp(2rem, 4vw, 2.5rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────── */
+
+@media (max-width: 64rem) {
+  .ecom-hero {
+    padding: clamp(3.5rem, 7vw, 5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .ecom-pain,
+  .ecom-approach,
+  .ecom-services,
+  .ecom-casestudy,
+  .ecom-proof,
+  .ecom-tech,
+  .ecom-audience {
+    padding: clamp(3.5rem, 7vw, 5rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .ecom-cta {
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .ecom-cta-container {
+    max-width: 90%;
+    min-height: 350px;
+  }
+
+  .ecom-pain-container {
+    padding: clamp(2rem, 4vw, 2.5rem) clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .ecom-pain-step {
+    &.pain-step-1::after,
+    &.pain-step-2::after,
+    &.pain-step-4::after {
+      right: calc(-1 * clamp(0.5rem, 1vw, 0.75rem));
+    }
+  }
+
+  .ecom-pain-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 48rem) {
+  .ecom-hero {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .ecom-hero-heading {
+    width: 100%;
+  }
+
+  .ecom-pain-container {
+    padding: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .ecom-pain-grid {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2.5rem, 4vw, 3rem);
+  }
+
+  .ecom-pain-step {
+    align-items: center;
+    text-align: center;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .ecom-pain-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ecom-pain-title {
+    text-align: center;
+  }
+
+  .ecom-pain-description {
+    text-align: center;
+    width: 80%;
+  }
+
+  .ecom-approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecom-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecom-casestudy-content {
+    grid-template-columns: 1fr;
+  }
+
+  .ecom-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecom-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecom-pain,
+  .ecom-approach,
+  .ecom-services,
+  .ecom-casestudy,
+  .ecom-proof,
+  .ecom-tech,
+  .ecom-audience {
+    padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .ecom-cta {
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .ecom-cta-container {
+    max-width: 95%;
+    min-height: 300px;
+  }
+
+  .ecom-cta-button {
+    width: 80%;
+  }
+
+  .ecom-audience-list li {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 30rem) {
+  .ecom-hero {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .ecom-pain,
+  .ecom-approach,
+  .ecom-services,
+  .ecom-casestudy,
+  .ecom-proof,
+  .ecom-tech,
+  .ecom-audience {
+    padding: clamp(2.5rem, 5vw, 3rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .ecom-cta {
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .ecom-cta-container {
+    padding: clamp(1.75rem, 3.5vw, 2rem) clamp(1.25rem, 2.5vw, 1.5rem);
+  }
+
+  .ecom-cta-button {
+    width: 90%;
+  }
+}

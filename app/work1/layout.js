@@ -1,8 +1,10 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import { getAlternates } from "../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
+  alternates: getAlternates("/work1"),
   title:
     "Defect Detection in Manufacturing | Baaz — Enterprise Product Engineering",
   description:

@@ -1,8 +1,10 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import { getAlternates } from "../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
+  alternates: getAlternates("/about"),
   title: "About Us | Baaz — Enterprise Product Engineering",
   description:
     "Baaz is a Bangalore-based software product development studio. Building world-class digital products since 2018. Learn about our team, values, and approach.",

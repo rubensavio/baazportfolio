@@ -1,9 +1,11 @@
 import "./globals.css";
+import { getAlternates } from "../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
+  alternates: getAlternates("/"),
   title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
   description:
     "Baaz is a product engineering agency. We build world-class digital products since 2018: product strategy, UI/UX design, custom software development, mobile apps, and AI software development.",

@@ -1,8 +1,10 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import { getAlternates } from "../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
+  alternates: getAlternates("/blog"),
   title: "Blog | Baaz — Enterprise Product Engineering",
   description:
     "Guides and insights on product engineering, software development, and building AI-powered products. ThoughtWorks alternatives, how to choose a partner, and more.",

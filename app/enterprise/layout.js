@@ -1,8 +1,10 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import { getAlternates } from "../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
+  alternates: getAlternates("/enterprise"),
   title:
     "Custom Software Development Agency for Enterprise | Baaz — Product Engineering",
   description:

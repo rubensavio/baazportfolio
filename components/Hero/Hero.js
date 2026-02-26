@@ -2,14 +2,21 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { getRegionLabel } from "../../lib/regions";
 import "./Hero.scss";
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [regionLabel, setRegionLabel] = useState("");
 
   useEffect(() => {
-    // Trigger animations after component mounts
     setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setRegionLabel(getRegionLabel(window.location.hostname));
+    }
   }, []);
 
   return (
@@ -18,6 +25,9 @@ const Hero = () => {
         <div className="hero-content">
           {/* Left Section - Text Content */}{" "}
           <div className="hero-text">
+            {regionLabel && (
+              <p className="hero-region-line animate-fade-up">{regionLabel}</p>
+            )}
             <h1
               className={`hero-heading animate-fade-up ${
                 isLoaded ? "animate-in" : ""

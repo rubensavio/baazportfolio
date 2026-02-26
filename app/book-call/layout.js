@@ -1,8 +1,10 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import { getAlternates } from "../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
+  alternates: getAlternates("/book-call"),
   title: "Book a Call | Baaz — Enterprise Product Engineering",
   description:
     "Schedule a call with Baaz. Discuss your product vision, technical challenges, or project scope. We respond quickly.",

@@ -8,6 +8,7 @@ import "./OurExpertise.scss";
 const OurExpertise = () => {
   const headerRef = useScrollAnimation();
   const cardsRef = useScrollAnimation({ threshold: 0.2 });
+  const industriesRef = useScrollAnimation();
 
   const expertise = [
     {
@@ -65,7 +66,7 @@ const OurExpertise = () => {
         </div>
       </div>
 
-      <div className="our-expertise-industries animate-on-scroll animate-fade-up" ref={cardsRef}>
+      <div className="our-expertise-industries animate-on-scroll animate-fade-up" ref={industriesRef}>
         <p className="our-expertise-industries-text">
           We serve{" "}
           <Link href="/industry/fintech">FinTech</Link>,{" "}

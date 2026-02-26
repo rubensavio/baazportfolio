@@ -4,40 +4,40 @@ Code changes for the Technical SEO checklist are done. The items below are for *
 
 ---
 
-## 1. XML sitemap submission — Manual
+## 1. XML sitemap submission — Done
 
 ### Google Search Console
 
 1. Go to https://search.google.com/search-console
-2. Click **Add property** → choose **URL prefix** → enter `https://baaz.pro`
+2. Click **Add property** → choose **URL prefix** → enter `https://www.baaz.pro`
 3. Verify ownership (DNS TXT record, HTML file upload, or Google Analytics — pick whichever is easiest for your hosting)
 4. Once verified, go to **Sitemaps** (left sidebar)
-5. Enter `https://baaz.pro/sitemap.xml` → click **Submit**
+5. Enter `https://www.baaz.pro/sitemap.xml` → click **Submit**
 6. Wait 24–48 hours; check back to confirm "Success" status
 
 ### Bing Webmaster Tools
 
 1. Go to https://www.bing.com/webmasters
-2. Sign in → **Add your site** → enter `https://baaz.pro`
+2. Sign in → **Add your site** → enter `https://www.baaz.pro`
 3. You can import from GSC (fastest) or verify manually via DNS/meta tag
 4. Once verified, go to **Sitemaps** (left sidebar)
-5. Enter `https://baaz.pro/sitemap.xml` → click **Submit**
+5. Enter `https://www.baaz.pro/sitemap.xml` → click **Submit**
 
 ---
 
-## 2. Broken links and redirect chains — Manual
+## 2. Broken links and redirect chains — Done
 
 ### Using Screaming Frog (free up to 500 URLs)
 
 1. Download from https://www.screamingfrog.co.uk/seo-spider/
-2. Enter `https://baaz.pro` in the URL bar → click **Start**
+2. Enter `https://www.baaz.pro` in the URL bar → click **Start**
 3. After the crawl, filter by **Response Codes → Client Error (4xx)** — fix any broken internal links
 4. Check **Response Codes → Redirection (3xx)** — look for redirect chains (A → B → C) and shorten them
 5. Export the results and fix links in your codebase or hosting config
 
 ### Alternative: Ahrefs Site Audit
 
-1. Go to https://ahrefs.com → Site Audit → New project → enter `https://baaz.pro`
+1. Go to https://ahrefs.com → Site Audit → New project → enter `https://www.baaz.pro`
 2. Run the crawl; review the "Broken links" and "Redirect chains" reports
 
 ---
@@ -47,8 +47,8 @@ Code changes for the Technical SEO checklist are done. The items below are for *
 The code points to `/assets/ogdefault.png` and the image is at `public/assets/ogdefault.png`. No further action needed in code.
 
 After deploy, you can verify the preview:
-- https://developers.facebook.com/tools/debug/ — enter `https://baaz.pro`
-- https://cards-dev.twitter.com/validator — enter `https://baaz.pro`
+- https://developers.facebook.com/tools/debug/ — enter `https://www.baaz.pro`
+- https://cards-dev.twitter.com/validator — enter `https://www.baaz.pro`
 
 ---
 
@@ -81,11 +81,11 @@ Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Resu
 - Footer and CTA sections render correctly at both widths
 
 ### Remaining (manual, post-deploy)
-Run Lighthouse Mobile audit on the live site (`https://baaz.pro`) to check for "Content not sized correctly for viewport" warnings
+Run Lighthouse Mobile audit on the live site (`https://www.baaz.pro`) to check for "Content not sized correctly for viewport" warnings
 
 ---
 
-## 5. Hreflang (US, UK, UAE) — Deferred
+## 5. Hreflang (US, UK, UAE) — Done
 
 No action needed now. The site is single-locale (`lang="en"`).
 
@@ -107,7 +107,7 @@ Use this across all directories:
 
 **Tagline:** Enterprise Product Engineering Agency
 
-**Website:** https://baaz.pro
+**Website:** https://www.baaz.pro
 
 **Founded:** 2018
 
@@ -140,16 +140,16 @@ Use this across all directories:
 Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 **Portfolio / Case Studies:**
-- `https://baaz.pro/work1` — AI-powered visual inspection platform
-- `https://baaz.pro/work2` — Tech hiring automation platform
+- `https://www.baaz.pro/work1` — AI-powered visual inspection platform
+- `https://www.baaz.pro/work2` — Tech hiring automation platform
 
-**Contact Page:** https://baaz.pro/get-in-touch
+**Contact Page:** https://www.baaz.pro/get-in-touch
 
 **Logo:** Use `public/assets/Logo.svg` from the project (export as PNG if the platform requires it)
 
 ---
 
-### 6.1 Clutch.co
+### 6.1 Clutch.co (done)
 
 1. Go to https://clutch.co/register
 2. Click **"Create Free Profile"** or **"Claim Your Company"** (search for Baaz first)
@@ -165,7 +165,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 ---
 
-### 6.2 G2
+### 6.2 G2 (unable to create)
 
 1. Go to https://www.g2.com/products/new
 2. Search for Baaz first; if not listed, click **"List Your Product"**
@@ -178,7 +178,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 ---
 
-### 6.3 GoodFirms
+### 6.3 GoodFirms - done
 
 1. Go to https://www.goodfirms.co/add-company
 2. Register with company email
@@ -192,7 +192,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 ---
 
-### 6.4 DesignRush
+### 6.4 DesignRush - looks to be existing already
 
 1. Go to https://www.designrush.com/agency/profile/create (or look for "List Your Agency")
 2. Fill in:
@@ -204,7 +204,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 ---
 
-### 6.5 Manifest
+### 6.5 Manifest - auto connected with clutch.co
 
 1. Go to https://manifest.co (look for "Add Your Company" or "Get Listed")
 2. Fill in:
@@ -215,7 +215,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 ---
 
-### 6.6 TopDevelopers.co
+### 6.6 TopDevelopers.co - not working
 
 1. Go to https://www.topdevelopers.co/submit-agency
 2. Fill in:

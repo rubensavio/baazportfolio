@@ -70,6 +70,13 @@
   margin: 0;
 }
 
+.footer-region-line {
+  font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0;
+}
+
 // Footer Links Section
 .footer-links {
   display: grid;

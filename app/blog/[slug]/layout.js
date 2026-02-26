@@ -1,7 +1,8 @@
 import { blogData } from "../../../lib/blogData";
 import { BreadcrumbScript } from "../../../lib/breadcrumbSchema";
+import { getAlternates } from "../../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
@@ -13,13 +14,14 @@ export async function generateMetadata({ params }) {
       title: "Blog | Baaz — Enterprise Product Engineering",
       description:
         "Guides and insights on product engineering, software development, and building AI-powered products. From Baaz.",
+      alternates: getAlternates(`/blog/${slug}`),
     };
   }
 
   return {
     title: data.metaTitle,
     description: data.metaDescription,
-    alternates: { canonical: `${baseUrl}/blog/${slug}` },
+    alternates: getAlternates(`/blog/${slug}`),
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,

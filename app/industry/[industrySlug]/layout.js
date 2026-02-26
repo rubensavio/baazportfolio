@@ -1,6 +1,7 @@
 import { industryData } from "../../../lib/industryData";
+import { getAlternates } from "../../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 function buildBreadcrumbSchema(industrySlug, data) {
   return {
@@ -29,14 +30,14 @@ export async function generateMetadata({ params }) {
       title: "Industries | Baaz — Enterprise Product Engineering",
       description:
         "We build software for FinTech, construction tech, retail, and healthcare. Custom product engineering since 2018.",
-      alternates: { canonical: `${baseUrl}/industry/${industrySlug}` },
+      alternates: getAlternates(`/industry/${industrySlug}`),
     };
   }
 
   return {
     title: data.metaTitle,
     description: data.metaDescription,
-    alternates: { canonical: `${baseUrl}/industry/${industrySlug}` },
+    alternates: getAlternates(`/industry/${industrySlug}`),
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,

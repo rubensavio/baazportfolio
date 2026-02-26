@@ -1,8 +1,10 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import { getAlternates } from "../../lib/regions";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://baaz.pro";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 
 export const metadata = {
+  alternates: getAlternates("/get-in-touch"),
   title: "Get in Touch | Baaz — Enterprise Product Engineering",
   description:
     "Contact Baaz for product strategy, UI/UX design, custom software development, mobile apps, or AI solutions. We build digital products that scale.",
