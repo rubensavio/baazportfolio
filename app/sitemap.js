@@ -20,6 +20,7 @@ export default function sitemap() {
     withAlternates("/book-call", { url: `${baseUrl}/book-call`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 }),
     withAlternates("/blog", { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 }),
     withAlternates("/ecommerce", { url: `${baseUrl}/ecommerce`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
+    withAlternates("/gtm-engineering", { url: `${baseUrl}/gtm-engineering`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
   ];
 
   const serviceRoutes = Object.keys(servicesData).map((slug) =>
