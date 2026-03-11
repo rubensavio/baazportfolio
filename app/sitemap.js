@@ -21,6 +21,7 @@ export default function sitemap() {
     withAlternates("/blog", { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 }),
     withAlternates("/ecommerce", { url: `${baseUrl}/ecommerce`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
     withAlternates("/gtm-engineering", { url: `${baseUrl}/gtm-engineering`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
+    withAlternates("/project-rescue", { url: `${baseUrl}/project-rescue`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
   ];
 
   const serviceRoutes = Object.keys(servicesData).map((slug) =>

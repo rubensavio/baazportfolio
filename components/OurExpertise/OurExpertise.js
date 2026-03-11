@@ -80,6 +80,10 @@ const OurExpertise = () => {
           <Link href="/blog/how-to-build-ai-powered-product">How to build an AI-powered product</Link>, and more on our{" "}
           <Link href="/blog">Blog</Link>.
         </p>
+        <p className="our-expertise-industries-text">
+          Stuck with a failing vendor?{" "}
+          <Link href="/project-rescue">Software project rescue</Link> is one of our core competencies — over 50% of our projects are mid-project takeovers.
+        </p>
       </div>
     </section>
   );

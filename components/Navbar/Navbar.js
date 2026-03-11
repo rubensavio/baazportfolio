@@ -16,6 +16,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false);
   const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -28,6 +29,10 @@ const Navbar = () => {
 
   const toggleIndustriesDropdown = () => {
     setIsIndustriesDropdownOpen(!isIndustriesDropdownOpen);
+  };
+
+  const toggleServicesDropdown = () => {
+    setIsServicesDropdownOpen(!isServicesDropdownOpen);
   };
 
   return (
@@ -50,14 +55,6 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li className="navbar-item">
-            <Link
-              href="/about"
-              className={`navbar-link ${pathname === "/about" ? "active" : ""}`}
-            >
-              About Us
-            </Link>
-          </li>
           <li className="navbar-item dropdown">
             <a
               href="#"
@@ -77,6 +74,34 @@ const Navbar = () => {
               </li>
               <li>
                 <Link href="/work2">Tech Hiring Automation</Link>
+              </li>
+            </ul>
+          </li>
+          <li className="navbar-item dropdown">
+            <a
+              href="#"
+              className={`navbar-link ${
+                ["/enterprise", "/ecommerce", "/gtm-engineering", "/project-rescue"].includes(pathname) ? "active" : ""
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <span className="link-text">Our Services</span>
+              <span className="dropdown-icon">▼</span>
+            </a>
+            <ul className="dropdown-menu">
+              <li>
+                <Link href="/enterprise">Enterprise</Link>
+              </li>
+              <li>
+                <Link href="/ecommerce">E-commerce</Link>
+              </li>
+              <li>
+                <Link href="/gtm-engineering">GTM Engineering</Link>
+              </li>
+              <li>
+                <Link href="/project-rescue">Project Rescue</Link>
               </li>
             </ul>
           </li>
@@ -113,32 +138,10 @@ const Navbar = () => {
           </li>
           <li className="navbar-item">
             <Link
-              href="/enterprise"
-              className={`navbar-link ${
-                pathname === "/enterprise" ? "active" : ""
-              }`}
+              href="/about"
+              className={`navbar-link ${pathname === "/about" ? "active" : ""}`}
             >
-              Enterprise
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link
-              href="/ecommerce"
-              className={`navbar-link ${
-                pathname === "/ecommerce" ? "active" : ""
-              }`}
-            >
-              E-commerce
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link
-              href="/gtm-engineering"
-              className={`navbar-link ${
-                pathname === "/gtm-engineering" ? "active" : ""
-              }`}
-            >
-              GTM Engineering
+              About Us
             </Link>
           </li>
         </ul>
@@ -165,11 +168,6 @@ const Navbar = () => {
               <li className="mobile-menu-item">
                 <Link href="/" onClick={toggleMenu}>
                   Home
-                </Link>
-              </li>
-              <li className="mobile-menu-item">
-                <Link href="/about" onClick={toggleMenu}>
-                  About Us
                 </Link>
               </li>
               <li className="mobile-menu-item mobile-dropdown">
@@ -199,6 +197,48 @@ const Navbar = () => {
                     <li>
                       <Link href="/work2" onClick={toggleMenu}>
                         Tech Hiring Automation
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li className="mobile-menu-item mobile-dropdown">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleServicesDropdown();
+                  }}
+                >
+                  Our Services
+                  <span
+                    className={`dropdown-icon ${
+                      isServicesDropdownOpen ? "open" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </a>
+                {isServicesDropdownOpen && (
+                  <ul className="mobile-dropdown-menu">
+                    <li>
+                      <Link href="/enterprise" onClick={toggleMenu}>
+                        Enterprise
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/ecommerce" onClick={toggleMenu}>
+                        E-commerce
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/gtm-engineering" onClick={toggleMenu}>
+                        GTM Engineering
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/project-rescue" onClick={toggleMenu}>
+                        Project Rescue
                       </Link>
                     </li>
                   </ul>
@@ -242,18 +282,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="mobile-menu-item">
-                <Link href="/enterprise" onClick={toggleMenu}>
-                  Enterprise
-                </Link>
-              </li>
-              <li className="mobile-menu-item">
-                <Link href="/ecommerce" onClick={toggleMenu}>
-                  E-commerce
-                </Link>
-              </li>
-              <li className="mobile-menu-item">
-                <Link href="/gtm-engineering" onClick={toggleMenu}>
-                  GTM Engineering
+                <Link href="/about" onClick={toggleMenu}>
+                  About Us
                 </Link>
               </li>
             </ul>
