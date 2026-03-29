@@ -26,14 +26,47 @@ export const metadata = {
   },
 };
 
-const organizationSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Baaz",
-  url: baseUrl,
-  logo: `${baseUrl}/assets/Logo.svg`,
-  description:
-    "Baaz is a Bangalore-based software product development studio. We build scalable digital products with Product Strategy, UI/UX Design, Web Development, Mobile Apps, and AI Solutions.",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+      name: "Baaz",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/assets/Logo.svg`,
+      },
+      description:
+        "Baaz is a Bangalore-based product engineering agency. Since 2018, we specialize in Product Engineering, MVP Development, and Digital Transformation—helping teams ship scalable digital products with product strategy, UI/UX design, custom software, mobile apps, and AI solutions.",
+      slogan: "Enterprise-grade products, without the enterprise wait.",
+      foundingDate: "2018-01-01",
+      knowsAbout: [
+        "Enterprise Product Engineering",
+        "Product Engineering",
+        "MVP Development",
+        "Digital Transformation",
+      ],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${baseUrl}/#professional-service`,
+      name: "Baaz — Product Engineering, MVP & Digital Transformation",
+      url: baseUrl,
+      image: `${baseUrl}/assets/Logo.svg`,
+      description:
+        "Baaz provides professional services in Product Engineering (end-to-end product design and build), MVP Development (rapid validation and launch of minimum viable products), and Digital Transformation (modernizing technology, processes, and customer experiences).",
+      serviceType: [
+        "Enterprise Product Engineering",
+        "Product Engineering",
+        "MVP Development",
+        "Digital Transformation",
+      ],
+      provider: { "@id": `${baseUrl}/#organization` },
+      areaServed: "Worldwide",
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -54,7 +87,7 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>

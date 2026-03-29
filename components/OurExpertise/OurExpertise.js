@@ -14,9 +14,9 @@ const OurExpertise = () => {
     {
       id: 1,
       number: "01",
-      title: "Product Engineering",
+      title: "Enterprise Product Engineering",
       description:
-        "End-to-end development of digital products with a focus on intuitive user experience and scalable architecture.",
+        "Deliver: greenfield products, major releases, and platform modules with production-grade architecture. Engage: phased discovery-to-launch programs or embedded pods aligned to your roadmap. Choose when: you need end-to-end ownership from problem framing through shipped software—not one-off tickets. Outcome-led milestones and written acceptance criteria keep delivery reviewable for engineering and business stakeholders.",
       icon: "/assets/Product-Engineering.svg",
     },
     {
@@ -24,7 +24,7 @@ const OurExpertise = () => {
       number: "02",
       title: "Emerging Technologies",
       description:
-        "Integrate cutting-edge AI/ML, AR/VR and generative AI solutions to future-proof your business.",
+        "Deliver: pragmatic adoption of AI/ML, AR/VR, and generative-AI features where they improve measurable product outcomes. Trust: evaluation protocols, data-boundary agreements, human-in-the-loop patterns, and benchmarks defined before model claims are marketed internally. Limitation: we do not promise model accuracy or compliance coverage without an agreed evaluation set and governance plan.",
       icon: "/assets/Engineering-Technologies.svg",
     },
     {
@@ -32,32 +32,45 @@ const OurExpertise = () => {
       number: "03",
       title: "Enterprise Solutions",
       description:
-        "Custom enterprise applications, ERP systems and internal tools designed for your specific business needs.",
+        "Deliver: custom enterprise applications, workflow tools, customer portals, and ERP-adjacent integrations your teams use daily. Engage: modernization programs, internal platforms, and vendor coordination when multiple systems must stay coherent. Choose when: off-the-shelf SaaS stops fitting process reality and you need software shaped to policy, operations, and regional rules.",
       icon: "/assets/Enterprise-Solutions.svg",
     },
   ];
 
   return (
-    <section className="our-expertise">
+    <section className="our-expertise" aria-labelledby="our-expertise-heading">
       <div className="our-expertise-header animate-on-scroll animate-fade-up" ref={headerRef}>
         <span className="our-expertise-label">Our Expertise</span>
-        <h2 className="our-expertise-heading">
-          We deliver innovative solutions across diverse technologies and
-          industry verticals.
+        <h2 id="our-expertise-heading" className="our-expertise-heading">
+          Enterprise product engineering for teams that cannot afford toy demos.
         </h2>
+        <p className="our-expertise-lede">
+          <strong>Enterprise product engineering</strong>, as Baaz practices it, means
+          shipping and evolving software products inside organizational
+          constraints: uptime expectations, security review cycles, regulated
+          data handling, legacy integrations, and multi-team coordination. We
+          bring the same craft to{" "}
+          <Link href="/industry/fintech">FinTech</Link>,{" "}
+          <Link href="/industry/construction">Construction Tech</Link>,{" "}
+          <Link href="/industry/retail">Retail</Link>, and{" "}
+          <Link href="/industry/healthcare">Healthcare</Link>—verticals where
+          compliance and operational software surface area are non-negotiable.
+        </p>
       </div>
 
       <div className="our-expertise-container">
         <div className="our-expertise-cards animate-on-scroll animate-fade-up animate-delay-200" ref={cardsRef}>
           {expertise.map((item, index) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className="expertise-card"
               style={{ animationDelay: `${0.1 * (index + 2)}s` }}
             >
-              <span className="card-number">{item.number}</span>
+              <span className="card-number" aria-hidden="true">
+                {item.number}
+              </span>
               <div className="card-icon">
-                <img src={item.icon} alt={item.title} />
+                <img src={item.icon} alt="" />
               </div>
               <h3 className="card-title">{item.title}</h3>
               <p className="card-description">{item.description}</p>
@@ -68,21 +81,25 @@ const OurExpertise = () => {
 
       <div className="our-expertise-industries animate-on-scroll animate-fade-up" ref={industriesRef}>
         <p className="our-expertise-industries-text">
-          We serve{" "}
-          <Link href="/industry/fintech">FinTech</Link>,{" "}
-          <Link href="/industry/construction">Construction Tech</Link>,{" "}
-          <Link href="/industry/retail">Retail</Link>, and{" "}
-          <Link href="/industry/healthcare">Healthcare</Link>.
+          Deep-dive guides:{" "}
+          <Link href="/blog/how-to-choose-software-development-partner">
+            How to choose a software development partner
+          </Link>
+          ,{" "}
+          <Link href="/blog/how-to-build-ai-powered-product">
+            How to build an AI-powered product
+          </Link>
+          , and the full archive on our <Link href="/blog">Blog</Link>.
         </p>
         <p className="our-expertise-industries-text">
-          Read our guides:{" "}
-          <Link href="/blog/how-to-choose-software-development-partner">How to choose a software development partner</Link>,{" "}
-          <Link href="/blog/how-to-build-ai-powered-product">How to build an AI-powered product</Link>, and more on our{" "}
-          <Link href="/blog">Blog</Link>.
-        </p>
-        <p className="our-expertise-industries-text">
-          Stuck with a failing vendor?{" "}
-          <Link href="/project-rescue">Software project rescue</Link> is one of our core competencies — over 50% of our projects are mid-project takeovers.
+          <Link href="/project-rescue">Software project rescue</Link> is a core
+          competency. In Baaz&apos;s active portfolio, roughly half of engagements
+          began as mid-project takeovers—cases where Baaz replaced or augmented a
+          prior vendor after missed milestones or quality gaps.{" "}
+          <em>
+            This figure reflects Baaz&apos;s internal project classification, not an
+            independent third-party study.
+          </em>
         </p>
       </div>
     </section>

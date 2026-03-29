@@ -53,7 +53,10 @@ const Hero = () => {
                 isLoaded ? "animate-in" : ""
               }`}
             >
-              As a result, we don't just build softwares.
+              Baaz practices{" "}
+              <strong>enterprise product engineering</strong>—strategy through
+              build and post-launch operations—for teams that need
+              production-grade software, not demos.
               <br />
               We build unfair advantage for your business.
             </p>

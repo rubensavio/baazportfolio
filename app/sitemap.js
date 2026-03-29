@@ -19,6 +19,12 @@ export default function sitemap() {
     withAlternates("/get-in-touch", { url: `${baseUrl}/get-in-touch`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 }),
     withAlternates("/book-call", { url: `${baseUrl}/book-call`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 }),
     withAlternates("/blog", { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 }),
+    withAlternates("/case-studies", {
+      url: `${baseUrl}/case-studies`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    }),
     withAlternates("/ecommerce", { url: `${baseUrl}/ecommerce`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
     withAlternates("/gtm-engineering", { url: `${baseUrl}/gtm-engineering`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
     withAlternates("/project-rescue", { url: `${baseUrl}/project-rescue`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 }),
