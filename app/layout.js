@@ -6,22 +6,29 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
 export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
-  title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
+  title: "Custom Software Development Agency | Baaz — India",
   description:
-    "Baaz is a product engineering agency. We build world-class digital products since 2018: product strategy, UI/UX design, custom software development, mobile apps, and AI software development.",
+    "Custom software development agency for startups and enterprises. Product strategy, UI/UX, web, mobile, and AI—shipping from India since 2018.",
   openGraph: {
-    title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
+    title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Baaz is a product engineering agency. We build world-class digital products since 2018.",
+      "Custom software development agency for startups and enterprises. Strategy, design, web, mobile, and AI since 2018.",
     url: baseUrl,
     siteName: "Baaz",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Baaz — Enterprise Product Engineering" }],
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Baaz — Custom Software Development Agency",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
+    title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Baaz is a product engineering agency. We build world-class digital products since 2018.",
+      "Custom software development agency for startups and enterprises. Strategy, design, web, mobile, and AI since 2018.",
     images: ["/assets/ogdefault.png"],
   },
 };
@@ -39,12 +46,12 @@ const structuredData = {
         url: `${baseUrl}/assets/Logo.svg`,
       },
       description:
-        "Baaz is a Bangalore-based product engineering agency. Since 2018, we specialize in Product Engineering, MVP Development, and Digital Transformation—helping teams ship scalable digital products with product strategy, UI/UX design, custom software, mobile apps, and AI solutions.",
+        "Baaz is a Bangalore-based custom software development agency. Since 2018 we ship product strategy, UI/UX, custom web and mobile software, and AI solutions for startups and enterprises worldwide.",
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       knowsAbout: [
+        "Custom Software Development",
         "Enterprise Product Engineering",
-        "Product Engineering",
         "MVP Development",
         "Digital Transformation",
       ],
@@ -56,10 +63,10 @@ const structuredData = {
       url: baseUrl,
       image: `${baseUrl}/assets/Logo.svg`,
       description:
-        "Baaz provides professional services in Product Engineering (end-to-end product design and build), MVP Development (rapid validation and launch of minimum viable products), and Digital Transformation (modernizing technology, processes, and customer experiences).",
+        "Baaz provides custom software development, product engineering, MVP development, and digital transformation—strategy through design, build, and launch.",
       serviceType: [
+        "Custom Software Development",
         "Enterprise Product Engineering",
-        "Product Engineering",
         "MVP Development",
         "Digital Transformation",
       ],

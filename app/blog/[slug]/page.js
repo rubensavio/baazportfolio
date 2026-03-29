@@ -115,11 +115,40 @@ export default function BlogPostPage() {
                   {section.heading}
                 </h2>
                 <div className="blog-section-body">
-                  {section.body.map((paragraph, pIndex) => (
+                  {section.body?.map((paragraph, pIndex) => (
                     <p key={pIndex} className="blog-section-paragraph">
                       {paragraph}
                     </p>
                   ))}
+                  {section.table && (
+                    <div className="blog-table-wrapper">
+                      <table className="blog-comparison-table">
+                        {section.table.caption && (
+                          <caption className="blog-table-caption">
+                            {section.table.caption}
+                          </caption>
+                        )}
+                        <thead>
+                          <tr>
+                            {section.table.headers.map((header, hi) => (
+                              <th key={hi} scope="col">
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row, ri) => (
+                            <tr key={ri}>
+                              {row.map((cell, ci) => (
+                                <td key={ci}>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
               </div>
             </section>

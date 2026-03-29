@@ -120,6 +120,53 @@
   margin: 0;
 }
 
+.blog-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 0.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e8eaf2;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-comparison-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-family: "Urbanist", sans-serif;
+  font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
+  line-height: 1.45;
+  text-align: left;
+}
+
+.blog-table-caption {
+  caption-side: top;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: clamp(0.8125rem, 1.05vw, 0.875rem);
+  text-align: left;
+}
+
+.blog-comparison-table th,
+.blog-comparison-table td {
+  padding: 0.65rem 0.85rem;
+  vertical-align: top;
+  border-bottom: 1px solid #e8eaf2;
+  color: #4d525f;
+}
+
+.blog-comparison-table th {
+  background: #f4f6fc;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.blog-comparison-table tbody tr:last-child th,
+.blog-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .blog-explore {
   width: 100%;
   max-width: 900px;

@@ -74,8 +74,45 @@
   max-width: 100%;
   text-align: left;
 
+  &.hero-heading-primary {
+    font-size: clamp(1.35rem, 3.2vw, 2.65rem);
+    line-height: 1.22;
+    max-width: 22ch;
+  }
+
   .hero-heading-strikes-container {
     position: relative;
+    .hero-heading-highlight {
+      display: inline;
+      white-space: normal;
+    }
+
+    .highlight-strike {
+      position: absolute;
+      right: clamp(-0.5rem, -9.5vw, -9.5%);
+      bottom: -10%;
+      width: clamp(8rem, 80vw, 80%);
+      height: auto;
+      z-index: 1;
+      object-fit: contain;
+      aspect-ratio: auto;
+    }
+  }
+}
+
+.hero-brand-tagline {
+  font-size: clamp(1.25rem, 3.2vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.005em;
+  max-width: 100%;
+  text-align: left;
+
+  .hero-heading-strikes-container {
+    position: relative;
+
     .hero-heading-highlight {
       display: inline;
       white-space: normal;

@@ -10,6 +10,7 @@ export async function generateMetadata({ params }) {
   const title =
     data.metaTitle || `${data.label} | Baaz — Enterprise Product Engineering`;
   const description =
+    data.metaDescription ||
     data.description ||
     "Building world-class digital products since 2018. Expert team delivering Product Strategy, UI/UX Design, Web Development, Mobile Apps, and AI Solutions.";
 
@@ -36,12 +37,14 @@ function buildServiceSchema(serviceType, data) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: data.label,
-    description: data.description,
+    description: data.metaDescription || data.description,
+    url: `${baseUrl}/services/${serviceType}`,
     provider: {
       "@type": "Organization",
       name: "Baaz",
       url: baseUrl,
     },
+    areaServed: { "@type": "Place", name: "Worldwide" },
   };
 }
 

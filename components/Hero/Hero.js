@@ -29,15 +29,23 @@ const Hero = () => {
               <p className="hero-region-line animate-fade-up">{regionLabel}</p>
             )}
             <h1
-              className={`hero-heading animate-fade-up ${
+              className={`hero-heading hero-heading-primary animate-fade-up ${
                 isLoaded ? "animate-in" : ""
               }`}
+            >
+              Custom Software Development Agency for Startups &amp; Enterprises
+            </h1>
+            <p
+              className={`hero-brand-tagline animate-fade-up ${
+                isLoaded ? "animate-in" : ""
+              }`}
+              aria-label="Baaz tagline"
             >
               <span className="hero-heading-strikes-container">
                 We Mix Creativity{" "}
                 <img
                   src="/assets/HomeScreenStrikBlue.svg"
-                  alt="Highlight underline"
+                  alt=""
                   className={`highlight-strike ${isLoaded ? "animate-in" : ""}`}
                   width={320}
                   height={48}
@@ -47,7 +55,7 @@ const Hero = () => {
               <span className="hero-heading-highlight">
                 with Boring Consulting & Software Development
               </span>
-            </h1>
+            </p>
             <p
               className={`hero-description animate-fade-up animate-delay-200 ${
                 isLoaded ? "animate-in" : ""
