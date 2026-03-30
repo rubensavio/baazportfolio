@@ -1,14 +1,14 @@
 import { servicesData } from "../../../lib/servicesData";
 import { getAlternates } from "../../../lib/regions";
+import { getSiteUrl } from "../../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
   const serviceType = resolved?.serviceType;
   const data = servicesData[serviceType] || servicesData["product-strategy"];
-  const title =
-    data.metaTitle || `${data.label} | Baaz — Enterprise Product Engineering`;
+  const title = data.metaTitle || `${data.label} | Baaz`;
   const description =
     data.metaDescription ||
     data.description ||

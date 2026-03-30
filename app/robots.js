@@ -1,8 +1,7 @@
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+import { getSiteUrl } from "../lib/siteUrl";
 
 const shared = {
   allow: "/",
-  disallow: ["/_next/"],
 };
 
 const userAgents = [
@@ -17,6 +16,7 @@ const userAgents = [
 ];
 
 export default function robots() {
+  const baseUrl = getSiteUrl();
   return {
     rules: userAgents.map((userAgent) => ({ userAgent, ...shared })),
     sitemap: `${baseUrl}/sitemap.xml`,

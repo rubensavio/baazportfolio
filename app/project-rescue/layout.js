@@ -1,8 +1,9 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { rescueFaqs } from "../../lib/projectRescueFaqs";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 const pageDescription =
   "Stalled software project? Bad vendor experience? We take over mid-project, stabilize your codebase, and deliver what was promised. 50% of our projects are successful mid-project rescues.";

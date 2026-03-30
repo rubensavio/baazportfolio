@@ -4,12 +4,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./CaseStudyHero.scss";
 
 const CaseStudyHero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   const statistics = [
     {
       id: 1,
@@ -167,26 +161,14 @@ const CaseStudyHero = () => {
         />
       </div>
       <div className="case-study-hero-wrapper">
-        <span
-          className={`case-study-label animate-fade-up ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <span className="case-study-label animate-fade-up animate-in">
           Case Study
         </span>
-        <h1
-          className={`case-study-heading animate-fade-up animate-delay-100 ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <h1 className="case-study-heading animate-fade-up animate-delay-100 animate-in">
           Viz Pro - When AI Becomes Your Factory's Eagle-Eyed Quality Inspector
         </h1>
 
-        <div
-          className={`problem-content animate-fade-up animate-delay-200 ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <div className="problem-content animate-fade-up animate-delay-200 animate-in">
           <p className="problem-description">
             <span className="problem-title-label">The Problem:</span> The
             Million-Dollar Microscopic Mayhem Meet Dr. Rajesh Sharma, Quality

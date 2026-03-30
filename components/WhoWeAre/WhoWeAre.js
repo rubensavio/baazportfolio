@@ -4,6 +4,25 @@ import React from "react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "./WhoWeAre.scss";
 
+const staffAugVsBaaz = [
+  {
+    aspect: "Day-to-day direction",
+    staffAug:
+      "Your managers assign work and priorities to augmented contributors.",
+    baaz: "Named milestones, documented acceptance criteria, and delivery ownership for shipped increments.",
+  },
+  {
+    aspect: "Success signal",
+    staffAug: "Often measured by utilization, headcount, or hours billed.",
+    baaz: "Reviewable product increments aligned to roadmap and stated outcomes.",
+  },
+  {
+    aspect: "Team shape",
+    staffAug: "Individuals slotted into existing processes.",
+    baaz: "Cross-functional pods spanning strategy, design, build, and scaling where scoped.",
+  },
+];
+
 const phases = [
   {
     phase: "Discover & define",
@@ -68,6 +87,7 @@ const services = [
 const WhoWeAre = () => {
   const headerRef = useScrollAnimation();
   const tableRef = useScrollAnimation({ threshold: 0.15 });
+  const comparisonTableRef = useScrollAnimation({ threshold: 0.15 });
   const trustRef = useScrollAnimation({ threshold: 0.15 });
   const cardsRef = useScrollAnimation({ threshold: 0.2 });
 
@@ -87,7 +107,10 @@ const WhoWeAre = () => {
             discovery, UX and UI, full-stack build, release, and post-launch
             scaling—for organizations that need reliability, auditability,
             integrations, and uptime alongside velocity. Operating since 2018
-            (Bangalore-based, serving teams worldwide), we structure delivery in
+            from Bangalore and serving teams worldwide, Baaz has shipped 100+
+            web and mobile applications (per Baaz&apos;s internal delivery
+            records) across sectors including FinTech, retail, eCommerce, and
+            healthcare-adjacent workflows. We structure delivery in
             cross-functional pods with named milestones and documented acceptance
             criteria so progress is reviewable without translating vendor jargon.
           </p>
@@ -134,6 +157,35 @@ const WhoWeAre = () => {
                     <td>{row.phase}</td>
                     <td>{row.youGet}</td>
                     <td>{row.outputs}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div
+          className="who-we-are-table-wrap who-we-are-table-wrap--comparison animate-on-scroll animate-fade-up animate-delay-100"
+          ref={comparisonTableRef}
+        >
+          <p className="who-we-are-table-caption">
+            Staff augmentation vs. Baaz enterprise product engineering (summary)
+          </p>
+          <div className="who-we-are-table-scroll">
+            <table className="who-we-are-table">
+              <thead>
+                <tr>
+                  <th scope="col">Aspect</th>
+                  <th scope="col">Typical staff augmentation</th>
+                  <th scope="col">Baaz enterprise product engineering</th>
+                </tr>
+              </thead>
+              <tbody>
+                {staffAugVsBaaz.map((row) => (
+                  <tr key={row.aspect}>
+                    <td>{row.aspect}</td>
+                    <td>{row.staffAug}</td>
+                    <td>{row.baaz}</td>
                   </tr>
                 ))}
               </tbody>

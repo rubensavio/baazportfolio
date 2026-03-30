@@ -14,6 +14,11 @@ const Footer = dynamic(() => import('../../components/Footer/Footer'), { ssr: fa
 
 const enterpriseFaqs = [
   {
+    question: "What enterprise services does Baaz provide?",
+    answer:
+      "Baaz provides enterprise custom software development as part of enterprise product engineering: discovery and roadmapping, UX/UI design, full-stack implementation (web, APIs, mobile when scoped), integrations with systems such as SAP, Oracle, Salesforce, or custom backends, and post-launch scaling. Baaz is headquartered in Bangalore (Bengaluru), Karnataka, India, and serves global clients with milestone-based delivery and written acceptance criteria.",
+  },
+  {
     question: "What is enterprise software development?",
     answer:
       "Enterprise software development is the process of designing, building, and maintaining large-scale software applications for organisations with complex requirements — including multi-department workflows, role-based access, regulatory compliance, legacy system integration, and high-availability infrastructure. It differs from standard software development in its emphasis on security, scalability, and governance.",

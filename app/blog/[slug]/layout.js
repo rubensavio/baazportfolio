@@ -1,8 +1,9 @@
 import { blogData } from "../../../lib/blogData";
 import { BreadcrumbScript } from "../../../lib/breadcrumbSchema";
 import { getAlternates } from "../../../lib/regions";
+import { getSiteUrl } from "../../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
@@ -11,9 +12,9 @@ export async function generateMetadata({ params }) {
 
   if (!data) {
     return {
-      title: "Blog | Baaz — Enterprise Product Engineering",
+      title: "Product Engineering & Software Blog | Baaz",
       description:
-        "Guides and insights on product engineering, software development, and building AI-powered products. From Baaz.",
+        "Guides on product engineering, custom software, and AI—from Baaz. Browse the blog for partner selection, rescue, and shipping advice.",
       alternates: getAlternates(`/blog/${slug}`),
     };
   }

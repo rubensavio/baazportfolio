@@ -40,7 +40,7 @@
 }
 
 .blog-label {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.75rem, 1.1vw, 0.875rem);
   font-weight: 700;
   color: #5b71f6;
@@ -50,7 +50,7 @@
 }
 
 .blog-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -59,7 +59,7 @@
 }
 
 .blog-intro {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: 400;
   line-height: 1.6;
@@ -97,7 +97,7 @@
 }
 
 .blog-section-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
   line-height: 1.3;
@@ -112,7 +112,7 @@
 }
 
 .blog-section-paragraph {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.25vw, 1.125rem);
   font-weight: 400;
   line-height: 1.6;
@@ -133,7 +133,7 @@
   width: 100%;
   min-width: 640px;
   border-collapse: collapse;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
   line-height: 1.45;
   text-align: left;
@@ -176,7 +176,7 @@
 }
 
 .blog-explore-text {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
   font-weight: 500;
   line-height: 1.6;

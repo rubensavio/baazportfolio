@@ -1,28 +1,26 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/enterprise"),
-  title:
-    "Custom Software Development Agency for Enterprise | Baaz — Product Engineering",
+  title: "Enterprise Custom Software Development | Baaz",
   description:
-    "Custom software development agency for enterprise. Scalable solutions, internal tools, and digital transformation. We build for large organizations.",
+    "Baaz delivers enterprise custom software from Bangalore since 2018—internal platforms, integrations, security-aware architecture, and product engineering at scale for global organizations.",
   openGraph: {
-    title:
-      "Custom Software Development Agency for Enterprise | Baaz — Product Engineering",
+    title: "Enterprise Custom Software Development | Baaz",
     description:
-      "Custom software development agency for enterprise. Scalable solutions for large organizations.",
+      "Scalable custom software for enterprises—internal platforms, integrations, and transformation. Product engineering from Baaz, Bangalore.",
     url: `${baseUrl}/enterprise`,
     siteName: "Baaz",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Custom Software Development Agency for Enterprise | Baaz — Product Engineering",
+    title: "Enterprise Custom Software Development | Baaz",
     description:
-      "Custom software development agency for enterprise. Scalable solutions for large organizations.",
+      "Scalable custom software for enterprises—platforms, integrations, digital transformation. Engineering from Baaz since 2018.",
   },
 };
 

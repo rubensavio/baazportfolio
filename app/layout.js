@@ -1,23 +1,39 @@
+import { Urbanist, Outfit } from "next/font/google";
 import "./globals.css";
 import { getAlternates } from "../lib/regions";
+import { getSiteUrl } from "../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  variable: "--font-urbanist",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
   title: "Custom Software Development Agency | Baaz — India",
   description:
-    "Custom software development agency for startups and enterprises. Product strategy, UI/UX, web, mobile, and AI—shipping from India since 2018.",
+    "Custom software for startups and enterprises: product strategy, UI/UX, web, mobile, and AI. Bangalore-based Baaz—shipping since 2018. Book a call to scope your build.",
   openGraph: {
     title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Custom software development agency for startups and enterprises. Strategy, design, web, mobile, and AI since 2018.",
+      "Product strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Startups to enterprises. Book a call to discuss your roadmap.",
     url: baseUrl,
     siteName: "Baaz",
     images: [
       {
-        url: "/og-default.png",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "Baaz — Custom Software Development Agency",
@@ -28,8 +44,8 @@ export const metadata = {
     card: "summary_large_image",
     title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Custom software development agency for startups and enterprises. Strategy, design, web, mobile, and AI since 2018.",
-    images: ["/assets/ogdefault.png"],
+      "Product strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Book a call to scope your build.",
+    images: [ogImage],
   },
 };
 
@@ -46,7 +62,7 @@ const structuredData = {
         url: `${baseUrl}/assets/Logo.svg`,
       },
       description:
-        "Baaz is a Bangalore-based custom software development agency. Since 2018 we ship product strategy, UI/UX, custom web and mobile software, and AI solutions for startups and enterprises worldwide.",
+        "Baaz is a Bangalore-based custom software and product engineering company, operating since 2018. It delivers enterprise product engineering—strategy, UI/UX, full-stack web and mobile development, and post-launch scaling—for startups and enterprises worldwide, with 100+ shipped applications per Baaz's internal portfolio records.",
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       knowsAbout: [
@@ -78,14 +94,11 @@ const structuredData = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${urbanist.variable} ${outfit.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
         <link
           rel="preload"
           as="image"

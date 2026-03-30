@@ -1,23 +1,25 @@
 import HomePageClient from "../components/HomePageClient/HomePageClient";
 import HomeFaqJsonLd from "../components/HomeFaqJsonLd";
 import { getAlternates } from "../lib/regions";
+import { getSiteUrl } from "../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/"),
   title: "Custom Software Development Agency | Baaz — India",
   description:
-    "Custom software development agency for startups and enterprises. Strategy, UI/UX, web, mobile, and AI—shipping production-grade products from India since 2018.",
+    "Baaz is a Bangalore-based custom software agency shipping production-grade web and mobile products worldwide since 2018. Enterprise product engineering: strategy, UI/UX, full-stack build, and post-launch scaling for startups and enterprises.",
   openGraph: {
     title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Custom software development agency for startups and enterprises. Strategy, design, web, mobile, and AI—from Bangalore to worldwide clients since 2018.",
+      "Bangalore-based Baaz ships production-grade custom web and mobile software worldwide since 2018. Enterprise product engineering: strategy, design, full-stack build, and scaling.",
     url: baseUrl,
     siteName: "Baaz",
     images: [
       {
-        url: "/og-default.png",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "Baaz — Custom Software Development Agency",
@@ -28,8 +30,8 @@ export const metadata = {
     card: "summary_large_image",
     title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Custom software development agency for startups and enterprises. Strategy, design, web, mobile, and AI since 2018.",
-    images: ["/assets/ogdefault.png"],
+      "Baaz: custom software from Bangalore since 2018—strategy, design, web, mobile, and AI for startups and enterprises worldwide.",
+    images: [ogImage],
   },
 };
 

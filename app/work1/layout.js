@@ -1,28 +1,26 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/work1"),
-  title:
-    "Defect Detection in Manufacturing | Baaz — Enterprise Product Engineering",
+  title: "Manufacturing AI Defect Detection Case Study | Baaz",
   description:
-    "Case study: How Baaz built an AI-powered defect detection system for manufacturing. Computer vision, quality assurance, and scalable deployment.",
+    "Case study: AI-powered defect detection for manufacturing—computer vision, QA workflows, and production deployment. How Baaz shipped measurable quality gains on the factory floor.",
   openGraph: {
-    title:
-      "Defect Detection in Manufacturing | Baaz — Enterprise Product Engineering",
+    title: "Manufacturing AI Defect Detection Case Study | Baaz",
     description:
-      "Case study: How Baaz built an AI-powered defect detection system for manufacturing.",
+      "AI defect detection for manufacturing: computer vision, QA, and production rollout—Baaz case study.",
     url: `${baseUrl}/work1`,
     siteName: "Baaz",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Defect Detection in Manufacturing | Baaz — Enterprise Product Engineering",
+    title: "Manufacturing AI Defect Detection Case Study | Baaz",
     description:
-      "Case study: How Baaz built an AI-powered defect detection system for manufacturing.",
+      "AI defect detection for manufacturing: computer vision, QA, and production rollout from Baaz.",
   },
 };
 

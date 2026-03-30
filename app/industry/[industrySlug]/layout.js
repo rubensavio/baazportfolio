@@ -1,7 +1,8 @@
 import { industryData } from "../../../lib/industryData";
 import { getAlternates } from "../../../lib/regions";
+import { getSiteUrl } from "../../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 function buildBreadcrumbSchema(industrySlug, data) {
   return {
@@ -27,9 +28,9 @@ export async function generateMetadata({ params }) {
 
   if (!data) {
     return {
-      title: "Industries | Baaz — Enterprise Product Engineering",
+      title: "Industries We Serve | Baaz",
       description:
-        "We build software for FinTech, construction tech, retail, and healthcare. Custom product engineering since 2018.",
+        "Custom software for FinTech, construction, retail, and healthcare—product engineering from Baaz, Bangalore, since 2018. Explore industry pages or get in touch.",
       alternates: getAlternates(`/industry/${industrySlug}`),
     };
   }

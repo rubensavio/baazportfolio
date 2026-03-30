@@ -1,25 +1,26 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/blog"),
-  title: "Blog | Baaz — Enterprise Product Engineering",
+  title: "Product Engineering & Software Blog | Baaz",
   description:
-    "Guides and insights on product engineering, software development, and building AI-powered products. ThoughtWorks alternatives, how to choose a partner, and more.",
+    "Guides on product engineering, custom software, choosing a development partner, and AI product builds—practical posts from Baaz, shipping from Bangalore since 2018.",
   openGraph: {
-    title: "Blog | Baaz — Enterprise Product Engineering",
+    title: "Product Engineering & Software Blog | Baaz",
     description:
-      "Guides and insights on product engineering, software development, and building AI-powered products.",
+      "Practical guides: partners, agencies, rescue, and AI—from the Baaz product engineering team.",
     url: `${baseUrl}/blog`,
     siteName: "Baaz",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Baaz — Enterprise Product Engineering",
+    title: "Product Engineering & Software Blog | Baaz",
     description:
-      "Guides and insights on product engineering, software development, and building AI-powered products.",
+      "Product engineering and software insights—how to hire, ship, and scale—from Baaz.",
   },
 };
 

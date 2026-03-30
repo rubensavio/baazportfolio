@@ -1,16 +1,9 @@
 "use client";
 
 import React, { useMemo, useRef, useState, useEffect } from "react";
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "./Work2Hero.scss";
 
 const Work2Hero = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   const statistics = [
     {
       id: 1,
@@ -157,26 +150,14 @@ const Work2Hero = () => {
         />
       </div>
       <div className="work2-hero-wrapper">
-        <span
-          className={`work2-label animate-fade-up ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <span className="work2-label animate-fade-up animate-in">
           Case Study
         </span>
-        <h1
-          className={`work2-heading animate-fade-up animate-delay-100 ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <h1 className="work2-heading animate-fade-up animate-delay-100 animate-in">
           Suprflow - From Resume Chaos to Recruitment Zen
         </h1>
 
-        <div
-          className={`problem-content animate-fade-up animate-delay-200 ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <div className="problem-content animate-fade-up animate-delay-200 animate-in">
           <p className="problem-description">
             <span className="problem-title-label">The Problem:</span> When HR
             Feels Like Playing Whack-a-Mole with Resumes Meet Sarah Chen, VP of
@@ -187,11 +168,7 @@ const Work2Hero = () => {
           </p>
 
           <div className="nightmare-numbers">
-            <div
-              className={`statistics-grid animate-fade-up animate-delay-300 ${
-                isLoaded ? "animate-in" : ""
-              }`}
-            >
+            <div className="statistics-grid animate-fade-up animate-delay-300 animate-in">
               {statistics.map((stat) => (
                 <div
                   key={stat.id}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { rescueFaqs } from "../../lib/projectRescueFaqs";
@@ -224,11 +224,8 @@ const auditBenefits = [
 ];
 
 export default function ProjectRescue() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsLoaded(true);
   }, []);
 
   return (
@@ -251,7 +248,7 @@ export default function ProjectRescue() {
         </div>
         <div className="rescue-hero-wrapper">
           <div
-            className={`rescue-hero-header animate-fade-up ${isLoaded ? "animate-in" : ""}`}
+            className="rescue-hero-header animate-fade-up animate-in"
           >
             <span className="rescue-hero-label">
               Project Rescue &amp; Recovery
@@ -261,6 +258,12 @@ export default function ProjectRescue() {
               <br />
               No Restart Required.
             </h1>
+            <p className="rescue-hero-direct-answer">
+              <strong>Software project rescue</strong> is taking over a stalled
+              or failing build, auditing and stabilizing the codebase, and
+              shipping production releases—often preserving most existing
+              work—when a prior vendor or team could not deliver.
+            </p>
             <p className="rescue-hero-description">
               Baaz is a software project rescue agency. Over 50% of our
               engagements are mid-project takeovers — from companies burned by

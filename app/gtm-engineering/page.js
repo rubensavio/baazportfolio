@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import "./page.scss";
@@ -285,11 +285,8 @@ const serviceSchema = {
 };
 
 export default function GtmEngineering() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsLoaded(true);
   }, []);
 
   return (
@@ -321,7 +318,7 @@ export default function GtmEngineering() {
         </div>
         <div className="gtm-hero-wrapper">
           <div
-            className={`gtm-hero-header animate-fade-up ${isLoaded ? "animate-in" : ""}`}
+            className="gtm-hero-header animate-fade-up animate-in"
           >
             <span className="gtm-hero-label">GTM Engineering</span>
             <h1 className="gtm-hero-heading">

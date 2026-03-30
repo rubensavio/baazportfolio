@@ -64,24 +64,39 @@
   letter-spacing: 0.02em;
 }
 
-.hero-heading {
-  font-size: clamp(1.5rem, 4vw, 4rem);
+// Single page h1: lead line (ex–primary) + tagline block (ex–brand tagline)
+.hero-heading-unified {
+  margin: 0;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.005em;
+  max-width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+.hero-heading__lead {
+  font-size: clamp(1.35rem, 3.2vw, 2.65rem);
+  line-height: 1.22;
+  max-width: 22ch;
+  font-weight: 700;
+}
+
+.hero-heading__tagline {
+  font-size: clamp(1.25rem, 3.2vw, 3.25rem);
   font-weight: 700;
   line-height: 1.2;
   color: #1a1a1a;
-  margin: 0;
   letter-spacing: 0.005em;
   max-width: 100%;
   text-align: left;
 
-  &.hero-heading-primary {
-    font-size: clamp(1.35rem, 3.2vw, 2.65rem);
-    line-height: 1.22;
-    max-width: 22ch;
-  }
-
   .hero-heading-strikes-container {
     position: relative;
+
     .hero-heading-highlight {
       display: inline;
       white-space: normal;
@@ -100,35 +115,15 @@
   }
 }
 
-.hero-brand-tagline {
-  font-size: clamp(1.25rem, 3.2vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.2;
+.hero-direct-answer {
+  font-size: clamp(0.875rem, 1.2vw, 1.145rem);
+  line-height: 1.7;
   color: #1a1a1a;
   margin: 0;
-  letter-spacing: 0.005em;
-  max-width: 100%;
+  max-width: 75%;
+  letter-spacing: 0.01em;
   text-align: left;
-
-  .hero-heading-strikes-container {
-    position: relative;
-
-    .hero-heading-highlight {
-      display: inline;
-      white-space: normal;
-    }
-
-    .highlight-strike {
-      position: absolute;
-      right: clamp(-0.5rem, -9.5vw, -9.5%);
-      bottom: -10%;
-      width: clamp(8rem, 80vw, 80%);
-      height: auto;
-      z-index: 1;
-      object-fit: contain;
-      aspect-ratio: auto;
-    }
-  }
+  font-weight: 600;
 }
 
 .hero-description {
@@ -149,7 +144,7 @@
   width: 192px;
   height: 58px;
   border-radius: 30px;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: 20px;
   font-weight: 700;
   font-style: normal;
@@ -198,15 +193,12 @@
     aspect-ratio: 738 / 580;
     object-fit: cover;
     object-position: center;
-    opacity: 0;
-    transform: translateY(25px) scale(0.95);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    will-change: transform, opacity;
+    transform: translateY(0) scale(1);
+    transition: transform 0.8s ease;
+    will-change: transform;
   }
 
   .hero-icon.animate-icon-in {
-    opacity: 1;
-    transform: translateY(0) scale(1);
     animation: heroIconFloat 5.5s ease-in-out 1s infinite alternate;
   }
 }
@@ -246,11 +238,29 @@
     }
   }
 
-  .hero-heading {
+  .hero-heading-unified {
+    align-items: center;
     text-align: center;
+  }
+
+  .hero-heading__lead {
     font-size: 45px;
     line-height: 60px;
     font-weight: 700;
+    letter-spacing: 0%;
+    max-width: 100%;
+  }
+
+  .hero-heading__tagline {
+    text-align: center;
+  }
+
+  .hero-direct-answer {
+    text-align: center;
+    max-width: 70%;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
     letter-spacing: 0%;
   }
 
@@ -319,12 +329,33 @@
     }
   }
 
-  .hero-heading {
+  .hero-heading-unified {
+    align-items: center;
     text-align: center;
+    width: 100%;
+  }
+
+  .hero-heading__lead {
     font-size: 24px;
     line-height: 25.6px;
     font-weight: 700;
     letter-spacing: -0.96px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-heading__tagline {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-direct-answer {
+    text-align: center;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 600;
+    letter-spacing: 0%;
     width: 100%;
   }
 
@@ -391,11 +422,29 @@
     text-align: center;
   }
 
-  .hero-heading {
+  .hero-heading-unified {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-heading__lead {
     font-size: 24px;
     line-height: 25.6px;
     font-weight: 700;
     letter-spacing: -0.96px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-heading__tagline {
+    text-align: center;
+  }
+
+  .hero-direct-answer {
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: 600;
+    letter-spacing: 0%;
     text-align: center;
   }
 
@@ -425,27 +474,6 @@
     .highlight-strike {
       display: none;
     }
-  }
-}
-
-// Hero animation initial states
-.hero {
-  .hero-heading,
-  .hero-description,
-  .hero-cta,
-  .hero-illustration,
-  .highlight-strike,
-  .hero-icon {
-    opacity: 0;
-  }
-
-  .hero-heading.animate-in,
-  .hero-description.animate-in,
-  .hero-cta.animate-in,
-  .hero-illustration.animate-in,
-  .highlight-strike.animate-in,
-  .hero-icon.animate-icon-in {
-    opacity: 1;
   }
 }
 
