@@ -26,9 +26,16 @@ export default function BlogIndexPage() {
       <section className="blog-index-hero">
         <div className="blog-index-hero-wrapper">
           <h1 className="blog-index-heading">Blog</h1>
+          <p className="blog-index-direct-answer">
+            The Baaz blog publishes practical guides on product engineering,
+            custom software, AI, architecture, and project rescue—written to
+            answer buyer questions directly, with checklists and definitions
+            you can quote or verify.
+          </p>
           <p className="blog-index-intro">
             Guides and insights on product engineering, software development,
-            and building digital products. From the Baaz team.
+            and building digital products. From the Baaz team in Bangalore,
+            serving readers worldwide.
           </p>
         </div>
       </section>

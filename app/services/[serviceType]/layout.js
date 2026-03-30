@@ -37,7 +37,8 @@ function buildServiceSchema(serviceType, data) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: data.label,
-    description: data.metaDescription || data.description,
+    description:
+      data.directAnswer || data.metaDescription || data.description,
     url: `${baseUrl}/services/${serviceType}`,
     provider: {
       "@type": "Organization",
@@ -48,11 +49,25 @@ function buildServiceSchema(serviceType, data) {
   };
 }
 
+function buildServiceFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
 export default async function ServiceLayout({ children, params }) {
   const resolved = await params;
   const serviceType = resolved?.serviceType;
   const data = servicesData[serviceType] || servicesData["product-strategy"];
   const serviceSchema = buildServiceSchema(serviceType, data);
+  const faqSchema = buildServiceFaqSchema(data);
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -74,6 +89,12 @@ export default async function ServiceLayout({ children, params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

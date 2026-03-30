@@ -16,7 +16,12 @@ function buildBreadcrumbSchema(industrySlug, data) {
         name: "Industries",
         item: `${baseUrl}/industry/fintech`,
       },
-      { "@type": "ListItem", position: 3, name: data?.title || "Industries" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: data?.title || "Industries",
+        item: `${baseUrl}/industry/${industrySlug}`,
+      },
     ],
   };
 }
@@ -53,21 +58,45 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function buildIndustryFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
 export default async function IndustryLayout({ children, params }) {
   const resolved = await params;
   const industrySlug = resolved?.industrySlug;
   const data = industryData[industrySlug];
   const breadcrumbSchema = buildBreadcrumbSchema(industrySlug, data);
+  const faqSchema = data ? buildIndustryFaqSchema(data) : null;
 
   return (
     <>
       {data && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema),
-          }}
-        />
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(breadcrumbSchema),
+            }}
+          />
+          {faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(faqSchema),
+              }}
+            />
+          )}
+        </>
       )}
       {children}
     </>

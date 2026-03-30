@@ -55,33 +55,11 @@ export default function IndustryPage() {
     );
   }
 
-  const faqSchema = data.faqs
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: data.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
-      }
-    : null;
-
   return (
     <div className="industry-page">
       <Headroom>
         <Navbar />
       </Headroom>
-
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
 
       <section className="industry-hero">
         <div className="industry-hero-background">
@@ -96,6 +74,9 @@ export default function IndustryPage() {
         </div>
         <div className="industry-hero-wrapper">
           <h1 className="industry-heading">{data.title}</h1>
+          {data.directAnswer && (
+            <p className="industry-direct-answer">{data.directAnswer}</p>
+          )}
           {data.definition && (
             <p className="industry-definition">{data.definition}</p>
           )}

@@ -44,6 +44,7 @@ function buildArticleSchema(data, slug) {
     headline: data.title,
     description: data.metaDescription,
     url: `${baseUrl}/blog/${slug}`,
+    articleSection: data.contentType,
     author: {
       "@type": "Organization",
       name: "Baaz",
@@ -55,6 +56,23 @@ function buildArticleSchema(data, slug) {
       url: baseUrl,
       logo: { "@type": "ImageObject", url: `${baseUrl}/assets/Logo.svg` },
     },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/blog/${slug}`,
+    },
+  };
+}
+
+function buildBlogFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
   };
 }
 
@@ -63,6 +81,7 @@ export default async function BlogPostLayout({ children, params }) {
   const slug = resolved?.slug;
   const data = blogData[slug];
   const articleSchema = data ? buildArticleSchema(data, slug) : null;
+  const faqSchema = data ? buildBlogFaqSchema(data) : null;
 
   return (
     <>
@@ -80,6 +99,14 @@ export default async function BlogPostLayout({ children, params }) {
               type="application/ld+json"
               dangerouslySetInnerHTML={{
                 __html: JSON.stringify(articleSchema),
+              }}
+            />
+          )}
+          {faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(faqSchema),
               }}
             />
           )}

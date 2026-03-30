@@ -108,6 +108,17 @@
   text-align: center;
 }
 
+.services-direct-answer {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.65;
+  color: #1a1a1a;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
 .services-description {
   font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.25rem);

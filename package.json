@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "page-speed": "node scripts/page-speed-audit.js"
+    "page-speed": "node scripts/page-speed-audit.js",
+    "meta-audit": "node scripts/meta-length-audit.mjs"
   },
   "dependencies": {
     "next": "16.0.10",

@@ -63,39 +63,20 @@ export default function BlogPostPage() {
     );
   }
 
-  const faqSchema = data.faqs
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: data.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
-      }
-    : null;
-
   return (
     <div className="blog-page">
       <Headroom>
         <Navbar />
       </Headroom>
 
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
-
       <article className="blog-article">
         <header className="blog-hero">
           <div className="blog-hero-wrapper">
             <span className="blog-label">{data.contentType}</span>
             <h1 className="blog-heading">{data.title}</h1>
+            {data.directAnswer && (
+              <p className="blog-direct-answer">{data.directAnswer}</p>
+            )}
             <p className="blog-intro">{data.intro}</p>
           </div>
         </header>

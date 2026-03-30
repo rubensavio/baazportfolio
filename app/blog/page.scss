@@ -33,6 +33,15 @@
   margin: 0 0 0.75rem;
 }
 
+.blog-index-direct-answer {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.9rem, 1.55vw, 1.05rem);
+  font-weight: 600;
+  line-height: 1.65;
+  color: #1a1a1a;
+  margin: 0 0 0.65rem;
+}
+
 .blog-index-intro {
   font-family: var(--font-outfit), sans-serif;
   font-size: clamp(0.9rem, 1.55vw, 1.05rem);
