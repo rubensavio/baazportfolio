@@ -63,12 +63,12 @@ const Hero = () => {
               src="/assets/HomeHeroSectionIcon.webp"
               alt="Developer illustration"
               className="hero-icon animate-icon-in"
-              width={1200}
-              height={890}
+              width={2000}
+              height={1484}
               sizes="(max-width: 64rem) 100vw, 50vw"
-              quality={85}
               priority
               fetchPriority="high"
+              unoptimized
             />
           </div>
           <Link

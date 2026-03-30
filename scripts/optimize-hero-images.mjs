@@ -1,5 +1,6 @@
 /**
- * Rasterize large hero/section SVGs to WebP for faster download + next/image optimization.
+ * Rasterize large hero/section SVGs to WebP for faster download.
+ * Hero illustration is served with next/image `unoptimized` so this file is not re-encoded.
  * Run: node scripts/optimize-hero-images.mjs
  */
 import sharp from "sharp";
@@ -21,8 +22,15 @@ const jobs = [
   {
     inFile: "HomeHeroSectionIcon.svg",
     outFile: "HomeHeroSectionIcon.webp",
-    width: 1200,
-    quality: 85,
+    /** ~2× typical half-viewport column; enough for retina without 2880px bloat */
+    width: 2000,
+    sharpInputOptions: { density: 150 },
+    quality: 90,
+    effort: 6,
+    webpExtra: {
+      smartSubsample: false,
+      alphaQuality: 100,
+    },
   },
   {
     inFile: "readyToBuildBg.svg",
@@ -40,12 +48,21 @@ async function main() {
       console.warn("Skip (missing):", job.inFile);
       continue;
     }
-    await sharp(input)
-      .resize(job.width, null, {
-        fit: "inside",
-      })
-      .webp({ quality: job.quality, effort: 4 })
-      .toFile(output);
+    const pipeline = sharp(input, job.sharpInputOptions || {}).resize(
+      job.width,
+      null,
+      { fit: "inside" }
+    );
+
+    const webpOpts = job.losslessWebp
+      ? { lossless: true, effort: job.effort ?? 6 }
+      : {
+          quality: job.quality,
+          effort: job.effort ?? 4,
+          ...(job.webpExtra || {}),
+        };
+
+    await pipeline.webp(webpOpts).toFile(output);
     const inStat = fs.statSync(input);
     const outStat = fs.statSync(output);
     console.log(
