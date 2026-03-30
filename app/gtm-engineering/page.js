@@ -308,7 +308,7 @@ export default function GtmEngineering() {
       <section className="gtm-hero">
         <div className="gtm-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt="GTM engineering background"
             className="gtm-hero-bg-image"
             width={1200}
@@ -565,7 +565,7 @@ export default function GtmEngineering() {
           <div className="gtm-cta-container">
             <div className="gtm-cta-background">
               <img
-                src="/assets/readyToBuildBg.svg"
+                src="/assets/readyToBuildBg.webp"
                 alt="Start your GTM audit background"
                 className="gtm-cta-bg-image"
               />

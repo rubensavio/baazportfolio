@@ -70,7 +70,14 @@ const OurExpertise = () => {
                 {item.number}
               </span>
               <div className="card-icon">
-                <img src={item.icon} alt="" />
+                <img
+                  src={item.icon}
+                  alt=""
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h3 className="card-title">{item.title}</h3>
               <p className="card-description">{item.description}</p>

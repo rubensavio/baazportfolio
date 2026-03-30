@@ -99,11 +99,6 @@ export default function RootLayout({ children }) {
       className={`${urbanist.variable} ${outfit.variable}`}
     >
       <head>
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/HomeHeroSectionIcon.svg"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

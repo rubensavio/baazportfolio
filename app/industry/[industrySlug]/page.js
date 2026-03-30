@@ -64,7 +64,7 @@ export default function IndustryPage() {
       <section className="industry-hero">
         <div className="industry-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt=""
             className="industry-hero-bg-image"
             width={1200}

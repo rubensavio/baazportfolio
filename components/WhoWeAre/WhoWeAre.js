@@ -217,7 +217,14 @@ const WhoWeAre = () => {
               }}
             >
               <div className="service-icon">
-                <img src={service.icon} alt="" />
+                <img
+                  src={service.icon}
+                  alt=""
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.scope}</p>

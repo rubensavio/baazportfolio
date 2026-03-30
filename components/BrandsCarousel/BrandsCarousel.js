@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import "./BrandsCarousel.scss";
 
 const BrandsCarousel = () => {
@@ -139,25 +140,35 @@ const BrandsCarousel = () => {
               ["--duration"]: `${animationDurationSec}s`,
             }}
           >
-            {duplicatedBrands.map((brand, index) => (
-              <div
-                key={`${brand.id}-${index}`}
-                className="brand-logo"
-                style={{
-                  width: brand.width,
-                  height: brand.height,
-                }}
-              >
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
+            {duplicatedBrands.map((brand, index) => {
+              const w = parseInt(String(brand.width), 10);
+              const h = parseInt(String(brand.height), 10);
+              const isSvg = brand.logo.endsWith(".svg");
+              return (
+                <div
+                  key={`${brand.id}-${index}`}
+                  className="brand-logo"
                   style={{
-                    opacity:
-                      typeof brand.opacity === "number" ? brand.opacity : 0.6,
+                    width: brand.width,
+                    height: brand.height,
                   }}
-                />
-              </div>
-            ))}
+                >
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    fill
+                    className="brand-logo-img"
+                    sizes={`${w}px`}
+                    loading="lazy"
+                    unoptimized={isSvg}
+                    style={{
+                      opacity:
+                        typeof brand.opacity === "number" ? brand.opacity : 0.6,
+                    }}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

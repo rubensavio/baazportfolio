@@ -40,7 +40,7 @@ export default function Services() {
       <section className="services-hero">
         <div className="services-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt="Services background"
             className="services-hero-bg-image"
             width={1200}

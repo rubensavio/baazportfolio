@@ -238,7 +238,7 @@ export default function ProjectRescue() {
       <section className="rescue-hero">
         <div className="rescue-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt="Project rescue and software recovery services background"
             className="rescue-hero-bg-image"
             width={1200}
@@ -514,7 +514,7 @@ export default function ProjectRescue() {
           <div className="rescue-cta-container">
             <div className="rescue-cta-background">
               <img
-                src="/assets/readyToBuildBg.svg"
+                src="/assets/readyToBuildBg.webp"
                 alt="Start your project rescue background"
                 className="rescue-cta-bg-image"
               />

@@ -307,7 +307,7 @@ export default function Ecommerce() {
       <section className="ecom-hero">
         <div className="ecom-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt="E-commerce marketplace management background"
             className="ecom-hero-bg-image"
             width={1200}
@@ -564,7 +564,7 @@ export default function Ecommerce() {
           <div className="ecom-cta-container">
             <div className="ecom-cta-background">
               <img
-                src="/assets/readyToBuildBg.svg"
+                src="/assets/readyToBuildBg.webp"
                 alt="Start your marketplace audit background"
                 className="ecom-cta-bg-image"
               />

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { getRegionLabel } from "../../lib/regions";
 import "./Hero.scss";
@@ -34,6 +35,7 @@ const Hero = () => {
                     className="highlight-strike animate-in"
                     width={320}
                     height={48}
+                    decoding="async"
                   />
                 </span>
                 <br />
@@ -57,12 +59,15 @@ const Hero = () => {
             </Link>
           </div>
           <div className="hero-illustration animate-fade-right animate-delay-300 animate-in">
-            <img
-              src="/assets/HomeHeroSectionIcon.svg"
+            <Image
+              src="/assets/HomeHeroSectionIcon.webp"
               alt="Developer illustration"
               className="hero-icon animate-icon-in"
-              width={480}
-              height={400}
+              width={1200}
+              height={890}
+              sizes="(max-width: 64rem) 100vw, 50vw"
+              quality={85}
+              priority
               fetchPriority="high"
             />
           </div>
@@ -75,13 +80,13 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-background">
-        <img
-          src="/assets/HomeHeroSectionBg.svg"
+        <Image
+          src="/assets/HomeHeroSectionBg.webp"
           alt=""
+          fill
           className="hero-bg-image"
-          width={1200}
-          height={600}
-          decoding="async"
+          sizes="100vw"
+          quality={82}
         />
       </div>
     </section>
