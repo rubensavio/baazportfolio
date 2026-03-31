@@ -23,6 +23,8 @@ const FAQ = ({ faqs, heading }) => {
               className={`faq-item ${openIndex === index ? "faq-item--open" : ""}`}
             >
               <button
+                type="button"
+                id={`faq-question-${index}`}
                 className="faq-question"
                 onClick={() => toggle(index)}
                 aria-expanded={openIndex === index}

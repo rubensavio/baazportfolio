@@ -1,7 +1,8 @@
 import { industryData } from "../../../lib/industryData";
 import { getAlternates } from "../../../lib/regions";
+import { getSiteUrl } from "../../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 function buildBreadcrumbSchema(industrySlug, data) {
   return {
@@ -15,7 +16,12 @@ function buildBreadcrumbSchema(industrySlug, data) {
         name: "Industries",
         item: `${baseUrl}/industry/fintech`,
       },
-      { "@type": "ListItem", position: 3, name: data?.title || "Industries" },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: data?.title || "Industries",
+        item: `${baseUrl}/industry/${industrySlug}`,
+      },
     ],
   };
 }
@@ -27,9 +33,9 @@ export async function generateMetadata({ params }) {
 
   if (!data) {
     return {
-      title: "Industries | Baaz — Enterprise Product Engineering",
+      title: "Industries We Serve | Baaz",
       description:
-        "We build software for FinTech, construction tech, retail, and healthcare. Custom product engineering since 2018.",
+        "Custom software for FinTech, construction, retail, and healthcare—product engineering from Baaz, Bangalore, since 2018. Explore industry pages or get in touch.",
       alternates: getAlternates(`/industry/${industrySlug}`),
     };
   }
@@ -52,21 +58,45 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function buildIndustryFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
 export default async function IndustryLayout({ children, params }) {
   const resolved = await params;
   const industrySlug = resolved?.industrySlug;
   const data = industryData[industrySlug];
   const breadcrumbSchema = buildBreadcrumbSchema(industrySlug, data);
+  const faqSchema = data ? buildIndustryFaqSchema(data) : null;
 
   return (
     <>
       {data && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema),
-          }}
-        />
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(breadcrumbSchema),
+            }}
+          />
+          {faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(faqSchema),
+              }}
+            />
+          )}
+        </>
       )}
       {children}
     </>

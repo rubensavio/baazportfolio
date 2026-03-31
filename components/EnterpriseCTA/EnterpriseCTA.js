@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import "./EnterpriseCTA.scss";
 
@@ -10,10 +11,14 @@ const EnterpriseCTA = () => {
       <div className="enterprise-cta-wrapper">
         <div className="enterprise-cta-container">
           <div className="enterprise-cta-background">
-            <img
-              src="/assets/readyToBuildBg.svg"
-              alt="Ready to transform background"
+            <Image
+              src="/assets/readyToBuildBg.webp"
+              alt=""
+              fill
               className="enterprise-cta-bg-image"
+              sizes="(max-width: 1280px) 100vw, 1200px"
+              quality={82}
+              loading="lazy"
             />
           </div>
           <div className="enterprise-cta-content">

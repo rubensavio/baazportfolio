@@ -1,34 +1,45 @@
-'use client';
+import HomePageClient from "../components/HomePageClient/HomePageClient";
+import HomeFaqJsonLd from "../components/HomeFaqJsonLd";
+import { getAlternates } from "../lib/regions";
+import { getSiteUrl } from "../lib/siteUrl";
 
-import React from "react";
-import dynamic from 'next/dynamic';
-import Hero from '../components/Hero/Hero';
+const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
-const Headroom = dynamic(() => import('react-headroom'), { ssr: false });
-const Navbar = dynamic(() => import('../components/Navbar/Navbar'), { ssr: false });
-const WhoWeAre = dynamic(() => import('../components/WhoWeAre/WhoWeAre'), { ssr: false });
-const BrandsCarousel = dynamic(() => import('../components/BrandsCarousel/BrandsCarousel'), { ssr: false });
-const OurExpertise = dynamic(() => import('../components/OurExpertise/OurExpertise'), { ssr: false });
-const HowWeWork = dynamic(() => import('../components/HowWeWork/HowWeWork'), { ssr: false });
-const Testimonials = dynamic(() => import('../components/Testimonials/Testimonials'), { ssr: false });
-const CTA = dynamic(() => import('../components/CTA/CTA'), { ssr: false });
-const Footer = dynamic(() => import('../components/Footer/Footer'), { ssr: false });
+export const metadata = {
+  alternates: getAlternates("/"),
+  title: "Custom Software Development Agency | Baaz — India",
+  description:
+    "Baaz is a Bangalore-based custom software agency shipping production-grade web and mobile products worldwide since 2018. Enterprise product engineering: strategy, UI/UX, full-stack build, and post-launch scaling for startups and enterprises.",
+  openGraph: {
+    title: "Custom Software Development Agency | Baaz — India",
+    description:
+      "Bangalore-based Baaz ships production-grade custom web and mobile software worldwide since 2018. Enterprise product engineering: strategy, design, full-stack build, and scaling.",
+    url: baseUrl,
+    siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Baaz — Custom Software Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Software Development Agency | Baaz — India",
+    description:
+      "Baaz: custom software from Bangalore since 2018—strategy, design, web, mobile, and AI for startups and enterprises worldwide.",
+    images: [ogImage],
+  },
+};
 
 export default function Home() {
   return (
-    <div className="home">
-      <Headroom>
-        <Navbar />
-      </Headroom>
-      <Hero />
-      <WhoWeAre />
-      <BrandsCarousel />
-      <OurExpertise />
-      <HowWeWork />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </div>
+    <>
+      <HomeFaqJsonLd />
+      <HomePageClient />
+    </>
   );
 }
-

@@ -1,12 +1,24 @@
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+import { getSiteUrl } from "../lib/siteUrl";
+
+const shared = {
+  allow: "/",
+};
+
+const userAgents = [
+  "*",
+  "GPTBot",
+  "ChatGPT-User",
+  "Google-Extended",
+  "ClaudeBot",
+  "anthropic-ai",
+  "PerplexityBot",
+  "CCBot",
+];
 
 export default function robots() {
+  const baseUrl = getSiteUrl();
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/_next/"],
-    },
+    rules: userAgents.map((userAgent) => ({ userAgent, ...shared })),
     sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

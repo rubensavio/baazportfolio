@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "./CTA.scss";
@@ -13,10 +14,14 @@ const CTA = () => {
       <div className="cta-wrapper">
         <div className="cta-container">
           <div className="cta-background">
-            <img
-              src="/assets/readyToBuildBg.svg"
-              alt="CTA background"
+            <Image
+              src="/assets/readyToBuildBg.webp"
+              alt=""
+              fill
               className="cta-bg-image"
+              sizes="(max-width: 1280px) 100vw, 1200px"
+              quality={82}
+              loading="lazy"
             />
           </div>
 

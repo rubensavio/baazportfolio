@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from 'next/dynamic';
+import { ABOUT_FAQ_ITEMS } from '../../lib/aboutFaq';
 import "./page.scss";
 
 const Headroom = dynamic(() => import('react-headroom'), { ssr: false });
@@ -10,6 +11,7 @@ const WhoWeAreSection = dynamic(() => import('../../components/WhoWeAreSection/W
 const OurValues = dynamic(() => import('../../components/OurValues/OurValues'), { ssr: false });
 const CTA = dynamic(() => import('../../components/CTA/CTA'), { ssr: false });
 const Footer = dynamic(() => import('../../components/Footer/Footer'), { ssr: false });
+const FAQ = dynamic(() => import('../../components/FAQ/FAQ'), { ssr: false });
 
 export default function AboutUs() {
   return (
@@ -22,6 +24,10 @@ export default function AboutUs() {
       </header>
       <WhoWeAreSection />
       <OurValues />
+      <FAQ
+        faqs={ABOUT_FAQ_ITEMS}
+        heading="About Baaz — common questions"
+      />
       <CTA />
       <Footer />
     </div>

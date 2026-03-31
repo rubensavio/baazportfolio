@@ -1,25 +1,26 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/get-in-touch"),
-  title: "Get in Touch | Baaz — Enterprise Product Engineering",
+  title: "Contact Baaz | Product Strategy, Design & Engineering",
   description:
-    "Contact Baaz for product strategy, UI/UX design, custom software development, mobile apps, or AI solutions. We build digital products that scale.",
+    "Contact Baaz for product strategy, UI/UX, custom web and mobile software, AI, or project rescue. Tell us your goals—we respond fast and scope honestly.",
   openGraph: {
-    title: "Get in Touch | Baaz — Enterprise Product Engineering",
+    title: "Contact Baaz | Product Strategy, Design & Engineering",
     description:
-      "Contact Baaz for product strategy, UI/UX design, custom software development, mobile apps, or AI solutions.",
+      "Reach Baaz for strategy, design, engineering, mobile, AI, or rescue—fast replies from Bangalore.",
     url: `${baseUrl}/get-in-touch`,
     siteName: "Baaz",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get in Touch | Baaz — Enterprise Product Engineering",
+    title: "Contact Baaz | Product Strategy, Design & Engineering",
     description:
-      "Contact Baaz for product strategy, UI/UX design, custom software development, mobile apps, or AI solutions.",
+      "Product strategy, UI/UX, custom software, mobile, and AI—message Baaz today.",
   },
 };
 

@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 50%;
+  max-width: min(48rem, 92%);
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
@@ -28,14 +28,15 @@
   background-color: #ffffff;
   border-radius: 16px;
   padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 3vw, 2rem);
-  height: 380px;
+  min-height: 0;
+  height: auto;
   position: relative;
   margin-top: 4rem;
 }
 
 .our-expertise-label {
   display: block;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.75rem, 1.1vw, 1.02rem);
   font-weight: 700;
   color: #932efa;
@@ -44,14 +45,33 @@
 }
 
 .our-expertise-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.75rem, 3.67vw, 2.67rem);
   font-weight: 700;
   line-height: 1;
   color: #1a1a1a;
   margin: 0;
-  // letter-spacing: 0.01em;
   max-width: 100%;
+}
+
+.our-expertise-lede {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.9rem, 1.55vw, 1.02rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #4d525f;
+  margin: clamp(1rem, 2vw, 1.35rem) 0 0;
+  max-width: none;
+
+  a {
+    color: #5b71f6;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .our-expertise-cards {
@@ -90,7 +110,7 @@
   position: absolute;
   top: -10%;
   left: 7%;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(4rem, 6.2vw, 5.2rem);
   font-weight: 700;
   color: #ecf0fb;
@@ -114,7 +134,7 @@
 }
 
 .card-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: clamp(1.25rem, 2.8vw, 1.4rem);
@@ -127,10 +147,10 @@
 }
 
 .card-description {
-  font-family: "Urbanist", sans-serif;
-  font-weight: 600;
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 400;
   font-style: normal;
-  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  font-size: clamp(0.8125rem, 1.5vw, 0.95rem);
   line-height: 1.6;
   letter-spacing: 0%;
   color: #4d525f;
@@ -147,7 +167,7 @@
 }
 
 .our-expertise-industries-text {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.25vw, 1.125rem);
   font-weight: 500;
   line-height: 1.6;

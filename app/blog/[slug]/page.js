@@ -63,39 +63,20 @@ export default function BlogPostPage() {
     );
   }
 
-  const faqSchema = data.faqs
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: data.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
-      }
-    : null;
-
   return (
     <div className="blog-page">
       <Headroom>
         <Navbar />
       </Headroom>
 
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
-
       <article className="blog-article">
         <header className="blog-hero">
           <div className="blog-hero-wrapper">
             <span className="blog-label">{data.contentType}</span>
             <h1 className="blog-heading">{data.title}</h1>
+            {data.directAnswer && (
+              <p className="blog-direct-answer">{data.directAnswer}</p>
+            )}
             <p className="blog-intro">{data.intro}</p>
           </div>
         </header>
@@ -115,11 +96,40 @@ export default function BlogPostPage() {
                   {section.heading}
                 </h2>
                 <div className="blog-section-body">
-                  {section.body.map((paragraph, pIndex) => (
+                  {section.body?.map((paragraph, pIndex) => (
                     <p key={pIndex} className="blog-section-paragraph">
                       {paragraph}
                     </p>
                   ))}
+                  {section.table && (
+                    <div className="blog-table-wrapper">
+                      <table className="blog-comparison-table">
+                        {section.table.caption && (
+                          <caption className="blog-table-caption">
+                            {section.table.caption}
+                          </caption>
+                        )}
+                        <thead>
+                          <tr>
+                            {section.table.headers.map((header, hi) => (
+                              <th key={hi} scope="col">
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.table.rows.map((row, ri) => (
+                            <tr key={ri}>
+                              {row.map((cell, ci) => (
+                                <td key={ci}>{cell}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </div>
               </div>
             </section>

@@ -31,38 +31,16 @@ export default function Services() {
     window.scrollTo(0, 0);
   }, [serviceType]);
 
-  const faqSchema = serviceData.faqs
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: serviceData.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
-      }
-    : null;
-
   return (
     <div className="services-page">
       <Headroom>
         <Navbar />
       </Headroom>
 
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
-
       <section className="services-hero">
         <div className="services-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt="Services background"
             className="services-hero-bg-image"
             width={1200}
@@ -74,6 +52,9 @@ export default function Services() {
           <div className="services-header">
             <span className="services-label">{serviceData.label}</span>
             <h1 className="services-heading">{serviceData.heading}</h1>
+            {serviceData.directAnswer && (
+              <p className="services-direct-answer">{serviceData.directAnswer}</p>
+            )}
             <p className="services-description">{serviceData.description}</p>
           </div>
 

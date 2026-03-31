@@ -1,15 +1,16 @@
 import { servicesData } from "../../../lib/servicesData";
 import { getAlternates } from "../../../lib/regions";
+import { getSiteUrl } from "../../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
   const serviceType = resolved?.serviceType;
   const data = servicesData[serviceType] || servicesData["product-strategy"];
-  const title =
-    data.metaTitle || `${data.label} | Baaz — Enterprise Product Engineering`;
+  const title = data.metaTitle || `${data.label} | Baaz`;
   const description =
+    data.metaDescription ||
     data.description ||
     "Building world-class digital products since 2018. Expert team delivering Product Strategy, UI/UX Design, Web Development, Mobile Apps, and AI Solutions.";
 
@@ -36,12 +37,28 @@ function buildServiceSchema(serviceType, data) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: data.label,
-    description: data.description,
+    description:
+      data.directAnswer || data.metaDescription || data.description,
+    url: `${baseUrl}/services/${serviceType}`,
     provider: {
       "@type": "Organization",
       name: "Baaz",
       url: baseUrl,
     },
+    areaServed: { "@type": "Place", name: "Worldwide" },
+  };
+}
+
+function buildServiceFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
   };
 }
 
@@ -50,6 +67,7 @@ export default async function ServiceLayout({ children, params }) {
   const serviceType = resolved?.serviceType;
   const data = servicesData[serviceType] || servicesData["product-strategy"];
   const serviceSchema = buildServiceSchema(serviceType, data);
+  const faqSchema = buildServiceFaqSchema(data);
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -71,6 +89,12 @@ export default async function ServiceLayout({ children, params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

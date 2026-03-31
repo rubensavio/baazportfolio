@@ -1,42 +1,33 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./WhoWeAreSection.scss";
 
 const WhoWeAreSection = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
 
   return (
     <section className="who-we-are-section">
       <div className="who-we-are-section-wrapper">
-        <div
-          className={`who-we-are-section-header animate-fade-up ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <div className="who-we-are-section-header animate-fade-up animate-in">
           <span className="who-we-are-section-label">Who We Are</span>
           <h2 className="who-we-are-section-heading">
             Building World Class Softwares Since 2018
           </h2>
         </div>
 
-        <div
-          className={`who-we-are-section-content animate-fade-up animate-delay-200 ${
-            isLoaded ? "animate-in" : ""
-          }`}
-        >
+        <div className="who-we-are-section-content animate-fade-up animate-delay-200 animate-in">
+          <p className="who-we-are-section-direct-answer">
+            <strong>Baaz</strong> is a custom software and product engineering
+            company based in Bangalore, India, operating since 2018. We partner
+            with startups, scale-ups, and enterprises worldwide to ship
+            purposeful digital products—not slide decks or throwaway demos.
+          </p>
           <p className="who-we-are-section-paragraph">
-            Baaz is a Bangalore-based software product development studio driven
-            by a passion for building purposeful digital products. Since 2018,
-            we've partnered with startups, scale-ups, and enterprises to design,
-            develop, and launch over 100 web and mobile applications across
-            diverse sectors including eCommerce, fintech, AI/ML, AR/VR, real
-            estate, retail, and ERP systems.
+            Since 2018 we have designed, developed, and launched over 100 web
+            and mobile applications across eCommerce, FinTech, AI/ML, AR/VR,
+            real estate, retail, and ERP-adjacent workflows; the portfolio
+            total reflects Baaz&apos;s internal delivery records.
           </p>
 
           <p
@@ -67,8 +58,11 @@ const WhoWeAreSection = () => {
       <div className="who-we-are-section-background">
         <img
           src="/assets/AboutHeroSection.svg"
-          alt="About Us background"
+          alt=""
           className="who-we-are-bg-image"
+          width={1200}
+          height={600}
+          decoding="async"
         />
       </div>
     </section>

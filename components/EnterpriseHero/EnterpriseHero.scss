@@ -50,7 +50,7 @@
 }
 
 .enterprise-hero-label {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   font-weight: 600;
   color: #932efa;
@@ -59,7 +59,7 @@
 }
 
 .enterprise-hero-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
@@ -68,8 +68,18 @@
   width: 80%;
 }
 
+.enterprise-hero-direct-answer {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin: 0;
+  text-align: center;
+}
+
 .enterprise-hero-description {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 500;
   line-height: 1.7;
@@ -79,7 +89,7 @@
 }
 
 .enterprise-hero-definition {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.9375rem, 1.25vw, 1.0625rem);
   font-weight: 400;
   line-height: 1.7;

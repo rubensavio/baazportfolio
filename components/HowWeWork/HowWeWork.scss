@@ -48,7 +48,7 @@
 
 .how-we-work-label {
   display: block;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 1.15rem);
   font-weight: 700;
   color: #932efa;
@@ -57,7 +57,7 @@
 }
 
 .how-we-work-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.75rem, 3.7vw, 2.7rem);
   font-weight: 700;
   line-height: 1.2;
@@ -164,7 +164,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
@@ -172,7 +172,7 @@
 }
 
 .step-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: clamp(1.15rem, 2.2vw, 1.5rem);
@@ -183,7 +183,7 @@
 }
 
 .step-description {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: clamp(0.875rem, 1.5vw, 1rem);

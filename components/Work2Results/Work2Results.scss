@@ -14,7 +14,7 @@
 
 .results-main-title,
 .results-unexpected-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   line-height: 1.3;
@@ -45,7 +45,7 @@
 }
 
 .result-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   font-weight: 700;
   line-height: 1.3;
@@ -62,7 +62,7 @@
   gap: clamp(0.75rem, 1.5vw, 1rem);
 
   li {
-    font-family: "Urbanist", sans-serif;
+    font-family: var(--font-urbanist), sans-serif;
     font-size: clamp(0.9375rem, 1.25vw, 1.1rem);
     font-weight: 500;
     line-height: 1.6;
@@ -103,7 +103,7 @@
 }
 
 .unexpected-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   font-weight: 700;
   line-height: 1.3;
@@ -118,7 +118,7 @@
   gap: clamp(0.5rem, 1vw, 0.75rem);
 
   p {
-    font-family: "Urbanist", sans-serif;
+    font-family: var(--font-urbanist), sans-serif;
     font-size: clamp(0.9375rem, 1.25vw, 1.1rem);
     font-weight: 500;
     line-height: 1.6;

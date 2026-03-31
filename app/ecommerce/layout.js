@@ -1,17 +1,16 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/ecommerce"),
-  title:
-    "E-commerce Marketplace Management for Amazon & Flipkart | Baaz",
+  title: "Amazon & Flipkart Marketplace Management | Baaz",
   description:
-    "Full-service Amazon & Flipkart marketplace management agency. PPC advertising, listing optimization, operations, and analytics powered by proprietary tools and operator experience.",
+    "Full-service Amazon and Flipkart marketplace management: PPC, listing optimization, ops, and analytics. Operator-led execution and proprietary tools—scale revenue and protect margin.",
   openGraph: {
-    title:
-      "E-commerce Marketplace Management for Amazon & Flipkart | Baaz",
+    title: "Amazon & Flipkart Marketplace Management | Baaz",
     description:
       "Full-service Amazon marketplace management and Flipkart advertising optimization. Scale revenue, improve ACOS, and increase profitability with operator-led execution.",
     url: `${baseUrl}/ecommerce`,
@@ -19,8 +18,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "E-commerce Marketplace Management for Amazon & Flipkart | Baaz",
+    title: "Amazon & Flipkart Marketplace Management | Baaz",
     description:
       "Full-service Amazon marketplace management and Flipkart advertising optimization. Scale revenue, improve ACOS, and increase profitability.",
   },

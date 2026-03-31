@@ -1,15 +1,16 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/gtm-engineering"),
-  title: "GTM Engineering — Go-to-Market Systems That Scale Pipeline | Baaz",
+  title: "GTM Engineering: Pipeline Systems That Scale | Baaz",
   description:
-    "Full-stack GTM engineering agency. We build automated go-to-market systems across content, outbound, ads, SEO, lead capture, nurture, and conversion — engineered for predictable pipeline.",
+    "Full-stack GTM engineering: automated content, outbound, ads, SEO, capture, nurture, and conversion—one system for predictable pipeline. Built by Baaz for revenue teams.",
   openGraph: {
-    title: "GTM Engineering — Go-to-Market Systems That Scale Pipeline | Baaz",
+    title: "GTM Engineering: Pipeline Systems That Scale | Baaz",
     description:
       "End-to-end GTM engineering: demand generation, outbound automation, ABM campaigns, and revenue operations built as one interconnected system.",
     url: `${baseUrl}/gtm-engineering`,
@@ -17,7 +18,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GTM Engineering — Go-to-Market Systems That Scale Pipeline | Baaz",
+    title: "GTM Engineering: Pipeline Systems That Scale | Baaz",
     description:
       "Full-stack GTM engineering: automated pipeline generation, demand creation, and revenue operations that compound.",
   },

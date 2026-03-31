@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import "./page.scss";
@@ -284,11 +284,8 @@ const serviceSchema = {
 };
 
 export default function Ecommerce() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-    setIsLoaded(true);
   }, []);
 
   return (
@@ -310,7 +307,7 @@ export default function Ecommerce() {
       <section className="ecom-hero">
         <div className="ecom-hero-background">
           <img
-            src="/assets/HomeHeroSectionBg.svg"
+            src="/assets/HomeHeroSectionBg.webp"
             alt="E-commerce marketplace management background"
             className="ecom-hero-bg-image"
             width={1200}
@@ -320,7 +317,7 @@ export default function Ecommerce() {
         </div>
         <div className="ecom-hero-wrapper">
           <div
-            className={`ecom-hero-header animate-fade-up ${isLoaded ? "animate-in" : ""}`}
+            className="ecom-hero-header animate-fade-up animate-in"
           >
             <span className="ecom-hero-label">
               E-commerce Marketplace Management
@@ -567,7 +564,7 @@ export default function Ecommerce() {
           <div className="ecom-cta-container">
             <div className="ecom-cta-background">
               <img
-                src="/assets/readyToBuildBg.svg"
+                src="/assets/readyToBuildBg.webp"
                 alt="Start your marketplace audit background"
                 className="ecom-cta-bg-image"
               />

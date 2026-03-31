@@ -1,28 +1,26 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
+import { getSiteUrl } from "../../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
 
 export const metadata = {
   alternates: getAlternates("/work2"),
-  title:
-    "Tech Hiring Automation | Baaz — Enterprise Product Engineering",
+  title: "Tech Hiring Automation Platform Case Study | Baaz",
   description:
-    "Case study: How Baaz built a tech hiring automation platform. Streamlined screening, assessments, and candidate pipeline for engineering teams.",
+    "Case study: a tech hiring automation platform—screening, assessments, and pipeline for engineering teams. How Baaz reduced time-to-hire without sacrificing signal.",
   openGraph: {
-    title:
-      "Tech Hiring Automation | Baaz — Enterprise Product Engineering",
+    title: "Tech Hiring Automation Platform Case Study | Baaz",
     description:
-      "Case study: How Baaz built a tech hiring automation platform for engineering teams.",
+      "Hiring automation for engineering: screening, assessments, and pipeline—how Baaz built it.",
     url: `${baseUrl}/work2`,
     siteName: "Baaz",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Tech Hiring Automation | Baaz — Enterprise Product Engineering",
+    title: "Tech Hiring Automation Platform Case Study | Baaz",
     description:
-      "Case study: How Baaz built a tech hiring automation platform for engineering teams.",
+      "Hiring automation for engineering teams: screening, assessments, and pipeline—Baaz case study.",
   },
 };
 

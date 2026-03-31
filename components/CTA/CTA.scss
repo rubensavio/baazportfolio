@@ -60,7 +60,7 @@
 }
 
 .cta-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   line-height: 1.2;
@@ -70,7 +70,7 @@
 }
 
 .cta-description {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 400;
   line-height: 1.6;
@@ -87,7 +87,7 @@
 }
 
 .cta-button {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.25vw, 1.125rem);
   font-weight: 600;
   padding: clamp(0.875rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2rem);

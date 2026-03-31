@@ -729,6 +729,156 @@ All 11 posts (3 company, 4 Chitresh, 4 Ruben) are written in full above in Step 
 
 ---
 
+### LinkedIn — Week 2 Posts (Chitresh & Ruben)
+
+**Theme alignment:** Month 1 — AI in production + enterprise software decisions (new angles vs Week 1).
+
+**Posting schedule:**
+
+| Day | Chitresh (CEO) | Ruben (CTO) |
+|---|---|---|
+| **Monday** | AI production — business definition (workflow, metric, rollback) | Data contracts, lineage, drift — pipelines before models |
+| **Tuesday** | Legacy modernization — continuity vs big bang freeze | PoC vs production — SLOs, fallback, monitoring |
+| **Wednesday** | Trust & failure modes — buyer/builder lens | Anti-corruption layers & safe strangler integration |
+| **Thursday** | — | — |
+| **Friday** | 5-question vendor / build sanity check | AI roadmap readable by on-call — runbooks & shadow mode |
+
+#### Chitresh Parihar (CEO): Week 2
+
+---
+
+**CHITRESH — MONDAY (Founder / Business — AI That Ships)**
+
+Gartner-style stats are everywhere: most enterprise AI never reaches production.
+
+After years of builds, the pattern I see on the **business** side is simpler: **production fails when success is defined as "we trained a model."**
+
+It succeeds when success is **a workflow with an owner, a number that moves, and a rollback plan.**
+
+If your AI initiative doesn't have those three, you don't have a product bet — you have a science fair.
+
+We've seen the gap close when teams stop asking "what's the best model?" and start asking "what happens on Tuesday when this is wrong?"
+
+That's not pessimism. It's how software that actually runs gets funded the second year.
+
+#AI #EnterpriseSoftware #ProductStrategy #Leadership #DigitalTransformation
+
+---
+
+**CHITRESH — TUESDAY (Industry Take — Legacy vs Big Bang)**
+
+The most expensive legacy mistake isn't old code. **It's pausing the business while you "finish" the replacement.**
+
+Every month without shipping is a month of competing products, angry users, and hidden integration debt.
+
+I'm not romantic about legacy systems. But I am ruthless about **cash flow and continuity**.
+
+The teams that win modernize **in slices**: one bounded workflow, one measurable win, then the next.
+
+If your roadmap says "freeze features for nine months," ask what happens to revenue in month four. That answer usually changes the plan.
+
+#LegacyModernization #EnterpriseTech #SoftwareDevelopment #ProductEngineering
+
+---
+
+**CHITRESH — WEDNESDAY (Story / Client Angle — Trust + AI)**
+
+The AI projects that made it to production for our clients had one thing in common: **someone senior could explain what "wrong" looks like** — and what the business does when the system is uncertain.
+
+We didn't win on model novelty. We won on **clarity**: who decides, what's automated vs assisted, and how we measure quality after launch.
+
+If you're a buyer: ask your vendor for **the failure modes**, not just the demo.
+
+If you're a builder: document them before you pitch accuracy.
+
+Trust is the real deployment bottleneck.
+
+#AI #ResponsibleAI #EnterpriseSoftware #ProductThinking #TechLeadership
+
+---
+
+**CHITRESH — FRIDAY (Framework — Vendor / Build Decisions)**
+
+Before we take on (or recommend) a major build, I use a **5-question sanity check**:
+
+1. What **metric** moves in 90 days if this works?
+2. Who **owns** the problem if adoption is weak?
+3. What **must** integrate on day one — not "later"?
+4. What's the **smallest** release that proves value?
+5. What do we **stop** doing if this succeeds?
+
+If questions 1 and 2 are fuzzy, no proposal should be greenlit yet — agency or in-house.
+
+Cheap discovery beats expensive regret.
+
+#Procurement #SoftwareDevelopment #ProductStrategy #Leadership #B2B
+
+---
+
+#### Ruben (CTO): Week 2
+
+---
+
+**RUBEN — MONDAY (Architecture / Production AI)**
+
+The best ML teams I've worked with spend most of their early cycles on **data contracts**, not architecture diagrams.
+
+**Schema stability** (what a "record" means), **lineage** (where labels came from), **freshness SLAs**, and **drift signals** matter more than the third round of hyperparameter tuning.
+
+Rule of thumb: if you can't answer "what changed in the data since last deploy?" you don't have MLOps — you have a notebook and hope.
+
+Production AI is **pipeline engineering** with a model in the middle.
+
+#MLOps #DataEngineering #MachineLearning #SoftwareArchitecture #AI
+
+---
+
+**RUBEN — TUESDAY (Technical Opinion — PoC → Prod)**
+
+**A PoC that ignores latency, cost per inference, and failure modes isn't a step toward production — it's a fork.**
+
+I've seen "successful" demos die because nobody priced **p95 latency** under load or defined **fallback** when confidence is low.
+
+Before you call a PoC "done," define:
+
+- **SLOs** (latency, error budget, availability)
+- **Human-in-the-loop** vs full automation boundaries
+- **Monitoring** for data + model + business KPIs
+
+If those aren't written down, the next phase isn't "scale" — it's **rewrite**.
+
+#AI #SystemDesign #Engineering #TechLeadership #SoftwareDevelopment
+
+---
+
+**RUBEN — WEDNESDAY (Behind-the-Build — Integration / Legacy)**
+
+**Anti-corruption layers** sound academic until you're the one debugging why a 2005 batch job and a new service disagree on "customer."
+
+We treat legacy integration like **translation**, not replication: explicit DTOs, bounded contexts, and tests that lock **semantic** behavior — not just field names.
+
+The goal isn't purity. It's **safe strangulation**: new path live, old path still true until you cut over with evidence.
+
+That's how you modernize without betting the company on a single cutover weekend.
+
+#LegacyModernization #SoftwareArchitecture #EnterpriseSoftware #Integration #DDD
+
+---
+
+**RUBEN — FRIDAY (Engineering Culture / Practical)**
+
+Hot take: **your "AI roadmap" should be readable by your on-call rotation.**
+
+If only the data science team understands how a decision gets made in prod, you don't have a platform — you have a **key-person risk**.
+
+Practices that actually help: **runbooks** for model rollback, **shadow mode** before auto-actions, **feature ownership** across ML + backend + SRE.
+
+Good AI systems are boring to operate. That's the compliment.
+
+#Engineering #MLOps #DevOps #CTO #TechLeadership
+
+---
+
 ## Key Metrics to Track
 
 | Platform | Metric | Target (90 days) |

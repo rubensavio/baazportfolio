@@ -25,7 +25,7 @@
 
 .who-we-are-label {
   display: block;
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(0.75rem, 1.5vw, 1.15rem);
   font-weight: 700;
   color: #932efa;
@@ -34,13 +34,128 @@
 }
 
 .who-we-are-heading {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1.75rem, 3.7vw, 2.7rem);
   font-weight: 700;
   line-height: 1;
   color: #1a1a1a;
   margin: 0;
   letter-spacing: 0.01em;
+}
+
+.who-we-are-lede {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.9rem, 1.65vw, 1.05rem);
+  line-height: 1.65;
+  color: #4d525f;
+  max-width: 48rem;
+  margin: clamp(1rem, 2vw, 1.35rem) auto 0;
+  text-align: left;
+}
+
+.who-we-are-takeaways {
+  max-width: 48rem;
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) auto 0;
+  padding: clamp(1rem, 2vw, 1.25rem) clamp(1.1rem, 2vw, 1.35rem);
+  background: #f8f9fc;
+  border-radius: 14px;
+  border: 1px solid #e8eaef;
+  text-align: left;
+}
+
+.who-we-are-takeaways-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+  color: #932efa;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.who-we-are-takeaways ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.85rem, 1.45vw, 0.98rem);
+  line-height: 1.55;
+  color: #4d525f;
+}
+
+.who-we-are-takeaways li {
+  margin-bottom: 0.4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.who-we-are-table-wrap {
+  width: 100%;
+  max-width: 52rem;
+  margin: clamp(0.5rem, 2vw, 1rem) auto 0;
+}
+
+.who-we-are-table-wrap--comparison {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.who-we-are-table-caption {
+  font-family: var(--font-urbanist), sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1.3vw, 0.92rem);
+  color: #4d525f;
+  margin: 0 0 0.65rem;
+  text-align: left;
+}
+
+.who-we-are-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid #e8eaef;
+}
+
+.who-we-are-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.8rem, 1.35vw, 0.95rem);
+  line-height: 1.45;
+  background: #fff;
+
+  th,
+  td {
+    padding: clamp(0.65rem, 1.2vw, 0.85rem) clamp(0.75rem, 1.5vw, 1rem);
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #e8eaef;
+  }
+
+  th {
+    font-family: var(--font-urbanist), sans-serif;
+    font-weight: 700;
+    background: #f3f4f8;
+    color: #1a1a1a;
+  }
+
+  td {
+    color: #4d525f;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.who-we-are-trust {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.85rem, 1.45vw, 0.98rem);
+  line-height: 1.6;
+  color: #4d525f;
+  max-width: 48rem;
+  margin: clamp(1.25rem, 2.5vw, 1.75rem) auto 0;
+  text-align: left;
 }
 
 .who-we-are-cards {
@@ -54,7 +169,8 @@
 .service-card {
   width: 100%;
   max-width: 290px;
-  height: 250px;
+  min-height: 250px;
+  height: auto;
   border-radius: 20px;
   padding: clamp(1.5rem, 3.2vw, 2.2rem) clamp(1rem, 2vw, 1.4rem);
   display: flex;
@@ -91,7 +207,7 @@
 }
 
 .service-title {
-  font-family: "Urbanist", sans-serif;
+  font-family: var(--font-urbanist), sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: clamp(1rem, 2vw, 1.3rem);
@@ -103,15 +219,26 @@
 }
 
 .service-description {
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(0.875rem, 1.5vw, 16px);
-  line-height: clamp(1.25rem, 2.5vw, 24px);
+  font-size: clamp(0.8125rem, 1.45vw, 15px);
+  line-height: 1.5;
   letter-spacing: 0%;
   text-align: center;
   color: #4d525f;
+  margin: 0 0 clamp(0.5rem, 1vw, 0.65rem);
+}
+
+.service-boundary {
+  font-family: var(--font-outfit), sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 1.25vw, 13px);
+  line-height: 1.5;
+  text-align: center;
+  color: #6b7280;
   margin: 0;
+  font-style: italic;
 }
 
 // Tablet Styles
@@ -132,6 +259,12 @@
     margin-bottom: clamp(2rem, 4vw, 3rem);
   }
 
+  .who-we-are-lede,
+  .who-we-are-takeaways,
+  .who-we-are-trust {
+    max-width: 100%;
+  }
+
   .who-we-are-cards {
     grid-template-columns: repeat(2, 1fr);
     // gap: clamp(01rem, 1.5vw, 2rem);
@@ -144,7 +277,8 @@
     justify-content: center;
     max-width: 100%;
     padding: clamp(1.5rem, 3.2vw, 2.2rem) clamp(1rem, 4vw, 4rem);
-    height: clamp(280px, 30vw, 244px);
+    min-height: clamp(260px, 30vw, 280px);
+    height: auto;
   }
 
   .service-title {
@@ -177,8 +311,8 @@
 
   .service-card {
     max-width: 100%;
-    // height: auto;
-    height: clamp(250px, 50vw, 500px);
+    min-height: 0;
+    height: auto;
     font-size: clamp(1rem, 1.5vw, 1.5rem);
   }
 }

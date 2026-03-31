@@ -56,8 +56,10 @@ const HowWeWork = () => {
       <div className="how-we-work-background">
         <img
           src="/assets/HowWeWorkBg.svg"
-          alt="How We Work background"
+          alt=""
           className="how-we-work-bg-image"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="how-we-work-wrapper">

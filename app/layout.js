@@ -1,60 +1,108 @@
+import { Urbanist, Outfit } from "next/font/google";
 import "./globals.css";
 import { getAlternates } from "../lib/regions";
+import { getSiteUrl } from "../lib/siteUrl";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.baaz.pro";
+const baseUrl = getSiteUrl();
+
+const urbanist = Urbanist({
+  subsets: ["latin"],
+  variable: "--font-urbanist",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
-  title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
+  title: "Custom Software Development Agency | Baaz — India",
   description:
-    "Baaz is a product engineering agency. We build world-class digital products since 2018: product strategy, UI/UX design, custom software development, mobile apps, and AI software development.",
+    "Custom software for startups and enterprises: product strategy, UI/UX, web, mobile, and AI. Bangalore-based Baaz—shipping since 2018. Book a call to scope your build.",
   openGraph: {
-    title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
+    title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Baaz is a product engineering agency. We build world-class digital products since 2018.",
+      "Product strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Startups to enterprises. Book a call to discuss your roadmap.",
     url: baseUrl,
     siteName: "Baaz",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "Baaz — Enterprise Product Engineering" }],
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Baaz — Custom Software Development Agency",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Engineering Agency | Baaz — Enterprise Product Engineering",
+    title: "Custom Software Development Agency | Baaz — India",
     description:
-      "Baaz is a product engineering agency. We build world-class digital products since 2018.",
-    images: ["/assets/ogdefault.png"],
+      "Product strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Book a call to scope your build.",
+    images: [ogImage],
   },
 };
 
-const organizationSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Baaz",
-  url: baseUrl,
-  logo: `${baseUrl}/assets/Logo.svg`,
-  description:
-    "Baaz is a Bangalore-based software product development studio. We build scalable digital products with Product Strategy, UI/UX Design, Web Development, Mobile Apps, and AI Solutions.",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+      name: "Baaz",
+      url: baseUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/assets/Logo.svg`,
+      },
+      description:
+        "Baaz is a Bangalore-based custom software and product engineering company, operating since 2018. It delivers enterprise product engineering—strategy, UI/UX, full-stack web and mobile development, and post-launch scaling—for startups and enterprises worldwide, with 100+ shipped applications per Baaz's internal portfolio records.",
+      slogan: "Enterprise-grade products, without the enterprise wait.",
+      foundingDate: "2018-01-01",
+      knowsAbout: [
+        "Custom Software Development",
+        "Enterprise Product Engineering",
+        "MVP Development",
+        "Digital Transformation",
+      ],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${baseUrl}/#professional-service`,
+      name: "Baaz — Product Engineering, MVP & Digital Transformation",
+      url: baseUrl,
+      image: `${baseUrl}/assets/Logo.svg`,
+      description:
+        "Baaz provides custom software development, product engineering, MVP development, and digital transformation—strategy through design, build, and launch.",
+      serviceType: [
+        "Custom Software Development",
+        "Enterprise Product Engineering",
+        "MVP Development",
+        "Digital Transformation",
+      ],
+      provider: { "@id": `${baseUrl}/#organization` },
+      areaServed: "Worldwide",
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${urbanist.variable} ${outfit.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="image"
-          href="/assets/HomeHeroSectionIcon.svg"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>
