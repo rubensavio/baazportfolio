@@ -152,7 +152,7 @@ const CaseStudyHero = () => {
     <section className="case-study-hero">
       <div className="case-study-hero-background">
         <img
-          src="/assets/workHeroSectionBg.svg"
+          src="/assets/workHeroSectionBg.webp"
           alt="Case Study background"
           className="case-study-hero-bg-image"
           width={1200}

@@ -1,19 +1,24 @@
 /**
- * Runs performance audits for every page and writes page-speed-report.md.
+ * Runs performance audits for every URL in the sitemap (static + blog + industry + services)
+ * and writes page-speed-report.md.
  *
  * PageSpeed Insights API (public URLs; no Chrome):
- *   node scripts/page-speed-audit.js https://yoursite.com
+ *   node scripts/page-speed-audit.mjs https://yoursite.com
  *
  * Lighthouse CLI (localhost; requires Chrome):
- *   node scripts/page-speed-audit.js http://localhost:3000
+ *   node scripts/page-speed-audit.mjs http://localhost:3000
  *
  * Options: --limit=N  --lighthouse (use Lighthouse CLI for any URL; avoids API quota)
  */
 
-const { execSync } = require("child_process");
-const fs = require("fs");
-const path = require("path");
-const https = require("https");
+import { execSync } from "child_process";
+import fs from "fs";
+import path from "path";
+import https from "https";
+import { SITEMAP_STATIC_PATHS } from "../lib/sitemapStaticPaths.js";
+import { blogData } from "../lib/blogData.js";
+import { servicesData } from "../lib/servicesData.js";
+import { industryData } from "../lib/industryData.js";
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 const limitArg = process.argv.find((a) => a.startsWith("--limit="));
@@ -27,41 +32,11 @@ const USE_PSI =
   !BASE_URL.includes("localhost") &&
   !BASE_URL.includes("127.0.0.1");
 
-const STATIC_ROUTES = [
-  "/",
-  "/about",
-  "/book-call",
-  "/enterprise",
-  "/get-in-touch",
-  "/work1",
-  "/work2",
-  "/blog",
-];
-
-const BLOG_SLUGS = [
-  "thoughtworks-alternatives",
-  "best-software-development-agencies-for-startups",
-  "how-to-choose-software-development-partner",
-  "how-to-build-ai-powered-product",
-  "software-development-outsourcing-vs-in-house",
-  "product-engineering-process-for-enterprises",
-];
-
-const INDUSTRY_SLUGS = ["fintech", "construction", "retail", "healthcare"];
-
-const SERVICE_SLUGS = [
-  "product-strategy",
-  "ui-ux-design",
-  "web-development",
-  "mobile-app",
-  "ai-solution",
-];
-
 function allUrls() {
-  const urls = [...STATIC_ROUTES];
-  BLOG_SLUGS.forEach((s) => urls.push(`/blog/${s}`));
-  INDUSTRY_SLUGS.forEach((s) => urls.push(`/industry/${s}`));
-  SERVICE_SLUGS.forEach((s) => urls.push(`/services/${s}`));
+  const urls = [...SITEMAP_STATIC_PATHS];
+  Object.keys(blogData).forEach((s) => urls.push(`/blog/${s}`));
+  Object.keys(industryData).forEach((s) => urls.push(`/industry/${s}`));
+  Object.keys(servicesData).forEach((s) => urls.push(`/services/${s}`));
   return urls;
 }
 
@@ -104,7 +79,7 @@ function extractJsonFromStdout(out) {
 function runLighthouse(url) {
   const fullUrl = url === "/" ? BASE_URL : `${BASE_URL}${url}`;
   try {
-    const cmd = `npx --yes lighthouse "${fullUrl}" --output=json --output-path=stdout --only-categories=performance --form-factor=desktop --chrome-flags="--headless --no-sandbox --disable-gpu --disable-dev-shm-usage" --quiet --no-enable-error-reporting`;
+    const cmd = `npx --yes lighthouse "${fullUrl}" --output=json --output-path=stdout --only-categories=performance --form-factor=desktop --screenEmulation.disabled --chrome-flags="--headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage" --quiet --no-enable-error-reporting`;
     const out = execSync(cmd, {
       encoding: "utf8",
       maxBuffer: 10 * 1024 * 1024,
@@ -196,10 +171,9 @@ async function main() {
   for (let i = 0; i < urls.length; i++) {
     const url = urls[i];
     const label = url === "/" ? "Home" : url.slice(1);
-    const fullUrl = url === "/" ? BASE_URL : `${BASE_URL}${url}`;
     process.stderr.write(`  [${i + 1}/${urls.length}] ${label}\n`);
     const report = USE_PSI
-      ? await runPageSpeedInsights(fullUrl)
+      ? await runPageSpeedInsights(url === "/" ? BASE_URL : `${BASE_URL}${url}`)
       : runLighthouse(url);
     const metrics = extractMetrics(report);
     results.push({ url: url === "/" ? "/" : url, label, ...metrics });

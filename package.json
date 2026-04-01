@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "page-speed": "node scripts/page-speed-audit.js",
+    "page-speed": "node scripts/page-speed-audit.mjs",
     "optimize-images": "node scripts/optimize-hero-images.mjs",
     "meta-audit": "node scripts/meta-length-audit.mjs"
   },

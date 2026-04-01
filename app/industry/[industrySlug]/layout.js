@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { industryData } from "../../../lib/industryData";
 import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
@@ -29,15 +30,9 @@ function buildBreadcrumbSchema(industrySlug, data) {
 export async function generateMetadata({ params }) {
   const resolved = await params;
   const industrySlug = resolved?.industrySlug;
-  const data = industryData[industrySlug];
-
+  const data = industrySlug ? industryData[industrySlug] : null;
   if (!data) {
-    return {
-      title: "Industries We Serve | Baaz",
-      description:
-        "Custom software for FinTech, construction, retail, and healthcare—product engineering from Baaz, Bangalore, since 2018. Explore industry pages or get in touch.",
-      alternates: getAlternates(`/industry/${industrySlug}`),
-    };
+    notFound();
   }
 
   return {
@@ -74,29 +69,28 @@ function buildIndustryFaqSchema(data) {
 export default async function IndustryLayout({ children, params }) {
   const resolved = await params;
   const industrySlug = resolved?.industrySlug;
-  const data = industryData[industrySlug];
+  const data = industrySlug ? industryData[industrySlug] : null;
+  if (!data) {
+    notFound();
+  }
   const breadcrumbSchema = buildBreadcrumbSchema(industrySlug, data);
-  const faqSchema = data ? buildIndustryFaqSchema(data) : null;
+  const faqSchema = buildIndustryFaqSchema(data);
 
   return (
     <>
-      {data && (
-        <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(breadcrumbSchema),
-            }}
-          />
-          {faqSchema && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(faqSchema),
-              }}
-            />
-          )}
-        </>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
       )}
       {children}
     </>

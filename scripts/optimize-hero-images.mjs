@@ -1,7 +1,7 @@
 /**
  * Rasterize large hero/section SVGs to WebP for faster download.
- * Hero illustration is served with next/image `unoptimized` so this file is not re-encoded.
- * Run: node scripts/optimize-hero-images.mjs
+ * Covers home, enterprise, work1/work2 case-study heroes, and get-in-touch / book-call backgrounds.
+ * Run: npm run optimize-images
  */
 import sharp from "sharp";
 import { fileURLToPath } from "url";
@@ -36,6 +36,24 @@ const jobs = [
     inFile: "readyToBuildBg.svg",
     outFile: "readyToBuildBg.webp",
     width: 1400,
+    quality: 82,
+  },
+  {
+    inFile: "EnterpriseHeroSectionBg.svg",
+    outFile: "EnterpriseHeroSectionBg.webp",
+    width: 1920,
+    quality: 82,
+  },
+  {
+    inFile: "workHeroSectionBg.svg",
+    outFile: "workHeroSectionBg.webp",
+    width: 1920,
+    quality: 82,
+  },
+  {
+    inFile: "GetInTouchBG.svg",
+    outFile: "GetInTouchBG.webp",
+    width: 1920,
     quality: 82,
   },
 ];

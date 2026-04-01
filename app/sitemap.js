@@ -1,6 +1,7 @@
 import { servicesData } from "../lib/servicesData";
 import { industryData } from "../lib/industryData";
 import { blogData } from "../lib/blogData";
+import { SITEMAP_STATIC_PATHS } from "../lib/sitemapStaticPaths";
 import { getAlternates } from "../lib/regions";
 import { getSiteUrl } from "../lib/siteUrl";
 import {
@@ -17,25 +18,30 @@ function withAlternates(path, entry) {
 }
 
 export default function sitemap() {
-  const staticRoutes = [
-    withAlternates("/", { url: baseUrl, lastModified: lastModStatic("/"), changeFrequency: "weekly", priority: 1 }),
-    withAlternates("/about", { url: `${baseUrl}/about`, lastModified: lastModStatic("/about"), changeFrequency: "monthly", priority: 0.9 }),
-    withAlternates("/enterprise", { url: `${baseUrl}/enterprise`, lastModified: lastModStatic("/enterprise"), changeFrequency: "monthly", priority: 0.9 }),
-    withAlternates("/work1", { url: `${baseUrl}/work1`, lastModified: lastModStatic("/work1"), changeFrequency: "monthly", priority: 0.8 }),
-    withAlternates("/work2", { url: `${baseUrl}/work2`, lastModified: lastModStatic("/work2"), changeFrequency: "monthly", priority: 0.8 }),
-    withAlternates("/get-in-touch", { url: `${baseUrl}/get-in-touch`, lastModified: lastModStatic("/get-in-touch"), changeFrequency: "monthly", priority: 0.8 }),
-    withAlternates("/book-call", { url: `${baseUrl}/book-call`, lastModified: lastModStatic("/book-call"), changeFrequency: "monthly", priority: 0.8 }),
-    withAlternates("/blog", { url: `${baseUrl}/blog`, lastModified: lastModStatic("/blog"), changeFrequency: "weekly", priority: 0.9 }),
-    withAlternates("/case-studies", {
-      url: `${baseUrl}/case-studies`,
-      lastModified: lastModStatic("/case-studies"),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    }),
-    withAlternates("/ecommerce", { url: `${baseUrl}/ecommerce`, lastModified: lastModStatic("/ecommerce"), changeFrequency: "monthly", priority: 0.9 }),
-    withAlternates("/gtm-engineering", { url: `${baseUrl}/gtm-engineering`, lastModified: lastModStatic("/gtm-engineering"), changeFrequency: "monthly", priority: 0.9 }),
-    withAlternates("/project-rescue", { url: `${baseUrl}/project-rescue`, lastModified: lastModStatic("/project-rescue"), changeFrequency: "monthly", priority: 0.9 }),
-  ];
+  const staticRoutes = SITEMAP_STATIC_PATHS.map((path) => {
+    const pathNorm = path === "/" ? "/" : path;
+    const url = path === "/" ? baseUrl : `${baseUrl}${pathNorm}`;
+    const priority =
+      path === "/"
+        ? 1
+        : path === "/about" || path === "/enterprise" || path === "/blog"
+          ? 0.9
+          : path === "/case-studies"
+            ? 0.85
+            : path === "/ecommerce" ||
+                path === "/gtm-engineering" ||
+                path === "/project-rescue"
+              ? 0.9
+              : 0.8;
+    const changeFrequency =
+      path === "/" || path === "/blog" ? "weekly" : "monthly";
+    return withAlternates(pathNorm, {
+      url,
+      lastModified: lastModStatic(pathNorm),
+      changeFrequency,
+      priority,
+    });
+  });
 
   const serviceRoutes = Object.keys(servicesData).map((slug) =>
     withAlternates(`/services/${slug}`, {

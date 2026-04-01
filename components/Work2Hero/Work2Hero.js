@@ -141,7 +141,7 @@ const Work2Hero = () => {
     <section className="work2-hero">
       <div className="work2-hero-background">
         <img
-          src="/assets/workHeroSectionBg.svg"
+          src="/assets/workHeroSectionBg.webp"
           alt="Case Study background"
           className="work2-hero-bg-image"
           width={1200}

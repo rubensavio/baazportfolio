@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { blogData } from "../../../lib/blogData";
 import { BreadcrumbScript } from "../../../lib/breadcrumbSchema";
 import { getAlternates } from "../../../lib/regions";
@@ -8,15 +9,9 @@ const baseUrl = getSiteUrl();
 export async function generateMetadata({ params }) {
   const resolved = await params;
   const slug = resolved?.slug;
-  const data = blogData[slug];
-
+  const data = slug ? blogData[slug] : null;
   if (!data) {
-    return {
-      title: "Product Engineering & Software Blog | Baaz",
-      description:
-        "Guides on product engineering, custom software, and AI—from Baaz. Browse the blog for partner selection, rescue, and shipping advice.",
-      alternates: getAlternates(`/blog/${slug}`),
-    };
+    notFound();
   }
 
   return {
@@ -79,38 +74,35 @@ function buildBlogFaqSchema(data) {
 export default async function BlogPostLayout({ children, params }) {
   const resolved = await params;
   const slug = resolved?.slug;
-  const data = blogData[slug];
-  const articleSchema = data ? buildArticleSchema(data, slug) : null;
-  const faqSchema = data ? buildBlogFaqSchema(data) : null;
+  const data = slug ? blogData[slug] : null;
+  if (!data) {
+    notFound();
+  }
+  const articleSchema = buildArticleSchema(data, slug);
+  const faqSchema = buildBlogFaqSchema(data);
 
   return (
     <>
-      {data && (
-        <>
-          <BreadcrumbScript
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Blog", url: "/blog" },
-              { name: data.title },
-            ]}
-          />
-          {articleSchema && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(articleSchema),
-              }}
-            />
-          )}
-          {faqSchema && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(faqSchema),
-              }}
-            />
-          )}
-        </>
+      <BreadcrumbScript
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+          { name: data.title },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
       )}
       {children}
     </>

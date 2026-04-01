@@ -254,7 +254,7 @@ Rows prefixed with `!` flag a title over **62** characters or a description outs
 1. Add `app/…/layout.js` with `generateMetadata` or `metadata` and `alternates: getAlternates('/your-path')`.  
 2. Append URL to `app/sitemap.js` (and `withAlternates` if locales matter).  
 3. Add JSON-LD appropriate to the content (`WebPage`, `FAQPage`, `Article`, etc.) — follow existing layouts.  
-4. Extend performance audit scripts if you track CWV per template (e.g. `scripts/page-speed-audit.js`).  
+4. Extend performance audit scripts if you track CWV per template (e.g. `scripts/page-speed-audit.mjs`).  
 5. Add a short note under this section when the pattern stabilizes.
 
 ---

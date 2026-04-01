@@ -31,7 +31,7 @@ const EnterpriseHero = () => {
 
       <div className="enterprise-hero-background">
         <img
-          src="/assets/EnterpriseHeroSectionBg.svg"
+          src="/assets/EnterpriseHeroSectionBg.webp"
           alt=""
           className="enterprise-hero-bg-image"
           width={1200}

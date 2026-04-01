@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { servicesData } from "../../../lib/servicesData";
 import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
@@ -7,7 +8,10 @@ const baseUrl = getSiteUrl();
 export async function generateMetadata({ params }) {
   const resolved = await params;
   const serviceType = resolved?.serviceType;
-  const data = servicesData[serviceType] || servicesData["product-strategy"];
+  if (!serviceType || !servicesData[serviceType]) {
+    notFound();
+  }
+  const data = servicesData[serviceType];
   const title = data.metaTitle || `${data.label} | Baaz`;
   const description =
     data.metaDescription ||
@@ -65,7 +69,10 @@ function buildServiceFaqSchema(data) {
 export default async function ServiceLayout({ children, params }) {
   const resolved = await params;
   const serviceType = resolved?.serviceType;
-  const data = servicesData[serviceType] || servicesData["product-strategy"];
+  if (!serviceType || !servicesData[serviceType]) {
+    notFound();
+  }
+  const data = servicesData[serviceType];
   const serviceSchema = buildServiceSchema(serviceType, data);
   const faqSchema = buildServiceFaqSchema(data);
   const breadcrumbSchema = {
