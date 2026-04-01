@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
@@ -63,18 +63,28 @@ const HowWeWork = () => {
         />
       </div>
       <div className="how-we-work-wrapper">
-        <div className="how-we-work-header animate-on-scroll animate-fade-up" ref={headerRef}>
+        <div
+          className="how-we-work-header animate-on-scroll animate-fade-up"
+          ref={headerRef}
+        >
           <span className="how-we-work-label">How We Work</span>
           <h2 className="how-we-work-heading">
             Our proven process from discovery to delivery
           </h2>
+          <p className="how-we-work-lede">
+            Regular demos and clear handoffs between phases—so you always have
+            something concrete to review before we advance.
+          </p>
         </div>
 
         <div className="how-we-work-container">
-          <div className="process-steps animate-on-scroll animate-fade-up animate-delay-200" ref={stepsRef}>
+          <div
+            className="process-steps animate-on-scroll animate-fade-up animate-delay-200"
+            ref={stepsRef}
+          >
             {processSteps.map((step, index) => (
-              <div 
-                key={step.id} 
+              <div
+                key={step.id}
                 className={`process-step step-${step.id}`}
                 style={{ animationDelay: `${0.1 * (index + 2)}s` }}
               >

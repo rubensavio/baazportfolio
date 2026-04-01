@@ -16,7 +16,7 @@ const OurExpertise = () => {
       number: "01",
       title: "Enterprise Product Engineering",
       description:
-        "Deliver: greenfield products, major releases, and platform modules with production-grade architecture. Engage: phased discovery-to-launch programs or embedded pods aligned to your roadmap. Choose when: you need end-to-end ownership from problem framing through shipped software—not one-off tickets. Outcome-led milestones and written acceptance criteria keep delivery reviewable for engineering and business stakeholders.",
+        "Greenfield products, major releases, and platform modules with production-grade architecture—from discovery through shipped software, as phased programs or embedded pods.",
       icon: "/assets/Product-Engineering.svg",
     },
     {
@@ -24,7 +24,7 @@ const OurExpertise = () => {
       number: "02",
       title: "Emerging Technologies",
       description:
-        "Deliver: pragmatic adoption of AI/ML, AR/VR, and generative-AI features where they improve measurable product outcomes. Trust: evaluation protocols, data-boundary agreements, human-in-the-loop patterns, and benchmarks defined before model claims are marketed internally. Limitation: we do not promise model accuracy or compliance coverage without an agreed evaluation set and governance plan.",
+        "AI/ML, AR/VR, and generative features when they improve measurable outcomes—with evaluation, data boundaries, and governance agreed before anything ships.",
       icon: "/assets/Engineering-Technologies.svg",
     },
     {
@@ -32,7 +32,7 @@ const OurExpertise = () => {
       number: "03",
       title: "Enterprise Solutions",
       description:
-        "Deliver: custom enterprise applications, workflow tools, customer portals, and ERP-adjacent integrations your teams use daily. Engage: modernization programs, internal platforms, and vendor coordination when multiple systems must stay coherent. Choose when: off-the-shelf SaaS stops fitting process reality and you need software shaped to policy, operations, and regional rules.",
+        "Custom apps, workflows, portals, and integrations your teams use every day—when SaaS no longer matches policy, operations, or how work actually happens.",
       icon: "/assets/Enterprise-Solutions.svg",
     },
   ];
@@ -45,21 +45,27 @@ const OurExpertise = () => {
           Enterprise product engineering for teams that cannot afford toy demos.
         </h2>
         <p className="our-expertise-lede">
-          <strong>Enterprise product engineering</strong>, as Baaz practices it, means
-          shipping and evolving software products inside organizational
-          constraints: uptime expectations, security review cycles, regulated
-          data handling, legacy integrations, and multi-team coordination. We
-          bring the same craft to{" "}
+          We ship and evolve products under real enterprise constraints—uptime,
+          security reviews, regulated data, legacy systems, and cross-team
+          coordination. Same approach across{" "}
           <Link href="/industry/fintech">FinTech</Link>,{" "}
           <Link href="/industry/construction">Construction Tech</Link>,{" "}
           <Link href="/industry/retail">Retail</Link>, and{" "}
-          <Link href="/industry/healthcare">Healthcare</Link>—verticals where
-          compliance and operational software surface area are non-negotiable.
+          <Link href="/industry/healthcare">Healthcare</Link>.
         </p>
       </div>
 
-      <div className="our-expertise-container">
-        <div className="our-expertise-cards animate-on-scroll animate-fade-up animate-delay-200" ref={cardsRef}>
+      <div className="our-expertise-container animate-on-scroll animate-fade-up animate-delay-100">
+        <h3 className="our-expertise-subtitle">
+          Where we focus
+          <span className="our-expertise-subtitle-note">
+            From strategy to shipped software
+          </span>
+        </h3>
+        <div
+          className="our-expertise-cards animate-on-scroll animate-fade-up animate-delay-200"
+          ref={cardsRef}
+        >
           {expertise.map((item, index) => (
             <div
               key={item.id}
@@ -79,7 +85,7 @@ const OurExpertise = () => {
                   decoding="async"
                 />
               </div>
-              <h3 className="card-title">{item.title}</h3>
+              <h4 className="card-title">{item.title}</h4>
               <p className="card-description">{item.description}</p>
             </div>
           ))}
@@ -88,25 +94,20 @@ const OurExpertise = () => {
 
       <div className="our-expertise-industries animate-on-scroll animate-fade-up" ref={industriesRef}>
         <p className="our-expertise-industries-text">
-          Deep-dive guides:{" "}
           <Link href="/blog/how-to-choose-software-development-partner">
-            How to choose a software development partner
+            Choosing a development partner
           </Link>
           ,{" "}
           <Link href="/blog/how-to-build-ai-powered-product">
-            How to build an AI-powered product
+            building AI-powered products
           </Link>
-          , and the full archive on our <Link href="/blog">Blog</Link>.
-        </p>
-        <p className="our-expertise-industries-text">
-          <Link href="/project-rescue">Software project rescue</Link> is a core
-          competency. In Baaz&apos;s active portfolio, roughly half of engagements
-          began as mid-project takeovers—cases where Baaz replaced or augmented a
-          prior vendor after missed milestones or quality gaps.{" "}
-          <em>
-            This figure reflects Baaz&apos;s internal project classification, not an
-            independent third-party study.
-          </em>
+          , and more on the <Link href="/blog">Blog</Link>. Roughly half of our
+          engagements started as{" "}
+          <Link href="/project-rescue">project rescues</Link>
+          <span className="our-expertise-footnote">
+            {" "}
+            (Baaz internal classification, not third-party research).
+          </span>
         </p>
       </div>
     </section>

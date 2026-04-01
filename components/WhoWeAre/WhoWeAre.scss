@@ -1,20 +1,23 @@
 .who-we-are {
   width: 100%;
-  background-color: #fbf6ef;
+  background-color: #ffffff;
   padding: clamp(3rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2rem);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 0 auto;
 }
 
 .who-we-are-header {
-  text-align: left;
+  text-align: center;
   margin-bottom: clamp(2rem, 4vw, 3rem);
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: min(48rem, 92%);
+  align-items: center;
+  /* ~1312px — slightly wider than 75rem so the title can breathe */
+  max-width: min(75rem, 80%);
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
 
@@ -30,12 +33,14 @@
 
 .who-we-are-heading {
   font-family: var(--font-urbanist), sans-serif;
-  font-size: clamp(1.75rem, 3.67vw, 2.67rem);
+  font-size: clamp(1.55rem, 3.15vw, 2.35rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.1;
   color: #1a1a1a;
   margin: 0;
+  /* Full width of .who-we-are-header */
   max-width: 100%;
+  text-wrap: balance;
 }
 
 .who-we-are-lede {
@@ -44,18 +49,20 @@
   font-weight: 400;
   line-height: 1.65;
   color: #4d525f;
-  margin: clamp(1rem, 2vw, 1.35rem) 0 0;
-  max-width: none;
+  margin: clamp(1rem, 2vw, 1.35rem) auto 0;
+  /* Wider measure than before; still inside header */
+  max-width: min(68rem, 100%);
+  text-align: center;
 }
 
-/* White panel — matches .our-expertise-container */
+/* White panel — wider than header so the capability grid can breathe */
 .who-we-are-panel {
-  max-width: 93%;
+  max-width: min(80rem, 90%);
   width: 100%;
   margin: 0 auto;
   background-color: #ffffff;
   border-radius: 16px;
-  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 3vw, 2.5rem);
+  // padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem);
   position: relative;
 }
 
@@ -63,7 +70,11 @@
   margin: 0 0 clamp(2rem, 4vw, 2.5rem);
   padding: clamp(1.25rem, 2.5vw, 1.5rem) clamp(1.25rem, 2vw, 1.75rem);
   border-left: 4px solid #0066ff;
-  background: linear-gradient(90deg, rgba(0, 102, 255, 0.06) 0%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 102, 255, 0.06) 0%,
+    transparent 100%
+  );
   border-radius: 0 12px 12px 0;
 }
 
@@ -98,7 +109,7 @@
   font-weight: 700;
   font-size: clamp(1.15rem, 2.2vw, 1.35rem);
   color: #1a1a1a;
-  margin: clamp(2rem, 4vw, 2.5rem) 0 clamp(1.25rem, 2.5vw, 1.5rem);
+  margin: 0 0 clamp(1.25rem, 2.5vw, 1.5rem);
   line-height: 1.25;
   display: flex;
   flex-direction: column;
@@ -111,163 +122,6 @@
   font-weight: 400;
   font-size: clamp(0.8rem, 1.25vw, 0.9rem);
   color: #6b7280;
-}
-
-/* Phase cards — three columns like expertise rhythm */
-.who-we-are-phases {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 3vw, 2rem);
-  width: 100%;
-  position: relative;
-}
-
-.who-we-are-phase-card {
-  position: relative;
-  padding: clamp(0.5rem, 2vw, 1rem) clamp(0.5rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.5rem);
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-  }
-
-  &:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 8%;
-    right: calc(-0.5 * clamp(1.5rem, 3vw, 2rem));
-    width: 1px;
-    height: 84%;
-    background: linear-gradient(
-      180deg,
-      #fbf6ef 0%,
-      #cbcbcb 45%,
-      #fbf6ef 100%
-    );
-    pointer-events: none;
-  }
-}
-
-.who-we-are-phase-num {
-  position: absolute;
-  top: -4%;
-  left: 4%;
-  font-family: var(--font-urbanist), sans-serif;
-  font-size: clamp(3rem, 5vw, 4.25rem);
-  font-weight: 700;
-  color: #ecf0fb;
-  line-height: 1;
-  z-index: 0;
-}
-
-.who-we-are-phase-title {
-  font-family: var(--font-urbanist), sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.05rem, 1.9vw, 1.2rem);
-  color: #1a1a1a;
-  margin: clamp(1.75rem, 3vw, 2.25rem) 0 0.75rem;
-  position: relative;
-  z-index: 1;
-}
-
-.who-we-are-phase-label {
-  font-family: var(--font-urbanist), sans-serif;
-  font-weight: 600;
-  font-size: clamp(0.7rem, 1.1vw, 0.8rem);
-  color: #932efa;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin: 0 0 0.35rem;
-  position: relative;
-  z-index: 1;
-}
-
-.who-we-are-phase-body {
-  font-family: var(--font-outfit), sans-serif;
-  font-size: clamp(0.8rem, 1.35vw, 0.92rem);
-  line-height: 1.55;
-  color: #4d525f;
-  margin: 0 0 0.85rem;
-  position: relative;
-  z-index: 1;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-/* Comparison grid */
-.who-we-are-comparison {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #e8eaef;
-}
-
-.who-we-are-comparison-head {
-  display: grid;
-  grid-template-columns: minmax(5.5rem, 0.9fr) 1fr 1fr;
-  gap: 0;
-  font-family: var(--font-urbanist), sans-serif;
-  font-weight: 700;
-  font-size: clamp(0.72rem, 1.15vw, 0.85rem);
-  color: #1a1a1a;
-  background: #f3f4f8;
-  padding: clamp(0.65rem, 1.2vw, 0.85rem) clamp(0.75rem, 1.5vw, 1rem);
-
-  span:not(.who-we-are-comparison-head-spacer) {
-    padding-left: 0.5rem;
-  }
-}
-
-.who-we-are-comparison-head-spacer {
-  display: block;
-}
-
-.who-we-are-comparison-row {
-  display: grid;
-  grid-template-columns: minmax(5.5rem, 0.9fr) 1fr 1fr;
-  gap: 0;
-  border-top: 1px solid #e8eaef;
-  font-family: var(--font-outfit), sans-serif;
-  font-size: clamp(0.78rem, 1.3vw, 0.92rem);
-  line-height: 1.5;
-}
-
-.who-we-are-comparison-aspect {
-  font-family: var(--font-urbanist), sans-serif;
-  font-weight: 700;
-  color: #1a1a1a;
-  padding: clamp(0.65rem, 1.2vw, 0.9rem) clamp(0.75rem, 1.5vw, 1rem);
-  background: #fafafa;
-  border-right: 1px solid #e8eaef;
-}
-
-.who-we-are-comparison-cell {
-  padding: clamp(0.65rem, 1.2vw, 0.9rem) clamp(0.75rem, 1.5vw, 1rem);
-  color: #4d525f;
-  border-right: 1px solid #e8eaef;
-
-  &:last-child {
-    border-right: none;
-  }
-}
-
-.who-we-are-comparison-cell--baaz {
-  background: rgba(0, 102, 255, 0.04);
-  border-left: 3px solid #0066ff;
-  margin-left: -1px;
-}
-
-.who-we-are-trust {
-  font-family: var(--font-outfit), sans-serif;
-  font-size: clamp(0.88rem, 1.45vw, 0.98rem);
-  line-height: 1.65;
-  color: #4d525f;
-  margin: clamp(1.75rem, 3vw, 2.25rem) 0 0;
-  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
-  border-top: 1px solid #e8eaef;
 }
 
 /* Capabilities — original centered pastel cards */
@@ -369,72 +223,6 @@
     padding: clamp(1.5rem, 3vw, 2rem) clamp(1.25rem, 2vw, 1.5rem);
   }
 
-  .who-we-are-phases {
-    grid-template-columns: 1fr;
-    gap: clamp(1.25rem, 3vw, 1.75rem);
-  }
-
-  .who-we-are-phase-card:not(:last-child)::after {
-    display: none;
-  }
-
-  .who-we-are-comparison-head {
-    display: none;
-  }
-
-  .who-we-are-comparison-row {
-    grid-template-columns: 1fr;
-    border-top: none;
-    margin-bottom: clamp(1rem, 2vw, 1.25rem);
-    border: 1px solid #e8eaef;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .who-we-are-comparison-aspect {
-    border-right: none;
-    border-bottom: 1px solid #e8eaef;
-  }
-
-  .who-we-are-comparison-cell {
-    border-right: none;
-    border-bottom: 1px solid #e8eaef;
-
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-
-  .who-we-are-comparison-cell--baaz {
-    margin-left: 0;
-    border-left: none;
-    border-top: 3px solid #0066ff;
-  }
-
-  .who-we-are-comparison-cell--staff::before {
-    content: "Typical staff augmentation";
-    display: block;
-    font-family: var(--font-urbanist), sans-serif;
-    font-weight: 700;
-    font-size: 0.72rem;
-    color: #1a1a1a;
-    margin-bottom: 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-
-  .who-we-are-comparison-cell--baaz::before {
-    content: "Baaz enterprise product engineering";
-    display: block;
-    font-family: var(--font-urbanist), sans-serif;
-    font-weight: 700;
-    font-size: 0.72rem;
-    color: #0066ff;
-    margin-bottom: 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-  }
-
   .who-we-are-cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -485,10 +273,6 @@
 }
 
 @media (max-width: 30rem) {
-  .who-we-are-callout {
-    padding: 1rem 1rem 1rem 1.1rem;
-  }
-
   .who-we-are-cards {
     gap: clamp(1.3rem, 2vw, 1.5rem);
   }

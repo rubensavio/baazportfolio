@@ -26,8 +26,8 @@ const WhoWeAreSection = () => {
           <p className="who-we-are-section-paragraph">
             Since 2018 we have designed, developed, and launched over 100 web
             and mobile applications across eCommerce, FinTech, AI/ML, AR/VR,
-            real estate, retail, and ERP-adjacent workflows; the portfolio
-            total reflects Baaz&apos;s internal delivery records.
+            real estate, retail, and ERP-adjacent workflows; the portfolio total
+            reflects Baaz&apos;s internal delivery records.
           </p>
 
           <p
