@@ -58,6 +58,10 @@ export default function ServicesPageClient({ serviceType }) {
             <p className="services-definition">{serviceData.definition}</p>
           )}
 
+          {serviceData.nicheWedge && (
+            <p className="services-niche-wedge">{serviceData.nicheWedge}</p>
+          )}
+
           <h2 className="services-section-heading">
             {serviceData.sectionHeading || "What we deliver"}
           </h2>

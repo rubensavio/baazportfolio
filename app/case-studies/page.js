@@ -1,11 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { caseStudiesData, architectureBlogSlugs } from "../../lib/caseStudiesData";
-import { blogData } from "../../lib/blogData";
+import {
+  caseStudyHubItems,
+  caseStudyHubFilters,
+  FILTER_ALL,
+} from "../../lib/caseStudiesData";
 import "../blog/page.scss";
+import "./case-studies-hub.scss";
 
 const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
@@ -16,12 +20,15 @@ const Footer = dynamic(() => import("../../components/Footer/Footer"), {
 });
 
 export default function CaseStudiesIndexPage() {
-  const architecturePosts = architectureBlogSlugs
-    .map((slug) => blogData[slug])
-    .filter(Boolean);
+  const [activeFilter, setActiveFilter] = useState(FILTER_ALL);
+
+  const visibleItems = useMemo(() => {
+    if (activeFilter === FILTER_ALL) return caseStudyHubItems;
+    return caseStudyHubItems.filter((item) => item.filterKey === activeFilter);
+  }, [activeFilter]);
 
   return (
-    <div className="blog-index-page">
+    <div className="blog-index-page case-studies-hub-page">
       <Headroom>
         <Navbar />
       </Headroom>
@@ -30,43 +37,64 @@ export default function CaseStudiesIndexPage() {
         <div className="blog-index-hero-wrapper">
           <h1 className="blog-index-heading">Case studies</h1>
           <p className="blog-index-intro">
-            Product outcomes and system design notes from Baaz: full case studies
-            on shipped platforms, plus architecture guides you can cite for
-            boundaries, reliability, and data integration.
+            Product outcomes and system design notes from Baaz: shipped platforms,
+            measurable marketplace and engineering outcomes, plus architecture
+            guides for technical evaluation. Exploring{" "}
+            <Link href="/ecommerce">Amazon &amp; Flipkart growth</Link>,{" "}
+            <Link href="/enterprise">enterprise delivery</Link>, or{" "}
+            <Link href="/project-rescue">project rescue</Link>? Start here, then
+            get in touch.
           </p>
         </div>
       </section>
 
-      <div className="blog-index-list">
-        <section className="case-studies-group" aria-labelledby="case-studies-shipped">
-          <h2 id="case-studies-shipped" className="case-studies-subheading">
-            Shipped work
-          </h2>
-          {caseStudiesData.map((item) => (
-            <article key={item.href} className="blog-index-card">
+      <div className="case-studies-hub-toolbar">
+        <p className="case-studies-hub-toolbar-label" id="case-studies-filter-label">
+          Filter by type
+        </p>
+        <div
+          className="case-studies-hub-filters"
+          role="group"
+          aria-labelledby="case-studies-filter-label"
+        >
+          {caseStudyHubFilters.map((f) => (
+            <button
+              key={f.key}
+              type="button"
+              className={`case-studies-hub-filter${activeFilter === f.key ? " is-active" : ""}`}
+              onClick={() => setActiveFilter(f.key)}
+              aria-pressed={activeFilter === f.key}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="blog-index-list case-studies-hub-list">
+        {visibleItems.length === 0 ? (
+          <p className="case-studies-hub-empty">No entries in this filter.</p>
+        ) : (
+          visibleItems.map((item) => (
+            <article key={item.href} className="blog-index-card case-studies-hub-card">
               <Link href={item.href} className="blog-index-card-link">
                 <span className="blog-index-card-type">{item.contentType}</span>
-                <h3 className="blog-index-card-title">{item.title}</h3>
+                {item.industryTags?.length ? (
+                  <span className="case-studies-hub-tags">
+                    {item.industryTags.join(" · ")}
+                  </span>
+                ) : null}
+                <h2 className="blog-index-card-title">{item.title}</h2>
                 <p className="blog-index-card-excerpt">{item.intro}</p>
+                {item.metricSummary ? (
+                  <p className="case-studies-hub-metric">
+                    <strong>Outcomes focus:</strong> {item.metricSummary}
+                  </p>
+                ) : null}
               </Link>
             </article>
-          ))}
-        </section>
-
-        <section className="case-studies-group" aria-labelledby="case-studies-arch">
-          <h2 id="case-studies-arch" className="case-studies-subheading">
-            Architecture deep-dives
-          </h2>
-          {architecturePosts.map((post) => (
-            <article key={post.slug} className="blog-index-card">
-              <Link href={`/blog/${post.slug}`} className="blog-index-card-link">
-                <span className="blog-index-card-type">{post.contentType}</span>
-                <h3 className="blog-index-card-title">{post.title}</h3>
-                <p className="blog-index-card-excerpt">{post.intro}</p>
-              </Link>
-            </article>
-          ))}
-        </section>
+          ))
+        )}
       </div>
 
       <Footer />

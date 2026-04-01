@@ -223,6 +223,42 @@ const auditBenefits = [
   "A clear rescue roadmap — no obligation attached",
 ];
 
+const rescueTimeline = [
+  {
+    phase: "Week 1",
+    title: "Audit & access",
+    body:
+      "Secure repos, cloud, and CI/CD; automated scans and architecture mapping; critical blocker list within the first few days — you see facts, not opinions.",
+  },
+  {
+    phase: "Week 2",
+    title: "Stabilize",
+    body:
+      "Fix production defects, restore deployments, patch urgent security issues, and get a repeatable release path — stop the bleeding before new scope.",
+  },
+  {
+    phase: "Week 3+",
+    title: "Ship & scale velocity",
+    body:
+      "Sprint cadence, demos, debt paydown in priority order, and predictable delivery on the stabilized foundation — most teams resume meaningful feature flow within this window.",
+  },
+];
+
+const handoffSymptoms = [
+  {
+    q: "What are common signs my project is failing?",
+    a: "Slipped deadlines with new excuses each time, rotating developers, vague updates instead of working demos, rising cost without proportional output, and features that break existing behavior. See also our guide on signs your project is failing.",
+  },
+  {
+    q: "What do you need from us to start a takeover?",
+    a: "Access to source control, cloud and hosting, CI/CD if any, database and third-party credentials where safe, design assets, and a product owner who can answer workflow questions. We recover context from code when docs are missing.",
+  },
+  {
+    q: "How does handoff work if the old vendor is hostile or gone?",
+    a: "We reverse-engineer from the repository and environments you control. Legal and access steps vary — we’ve onboarded with zero cooperation from the prior vendor when the client owned the assets.",
+  },
+];
+
 export default function ProjectRescue() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -271,10 +307,74 @@ export default function ProjectRescue() {
               don&apos;t ask you to start over. We stabilize what&apos;s
               there and deliver what was promised.
             </p>
-            <Link href="/get-in-touch" className="rescue-hero-cta">
-              Get Free Codebase Audit
-            </Link>
+            <div className="rescue-hero-actions">
+              <Link href="/get-in-touch" className="rescue-hero-cta">
+                Get Free Codebase Audit
+              </Link>
+              <Link href="/case-studies" className="rescue-hero-secondary-cta">
+                View case studies
+              </Link>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* TIMELINE */}
+      <section className="rescue-timeline" aria-labelledby="rescue-timeline-heading">
+        <div className="rescue-timeline-wrapper">
+          <span className="rescue-section-label">Typical cadence</span>
+          <h2 id="rescue-timeline-heading" className="rescue-timeline-heading">
+            Rescue timeline: audit, stabilize, then scale delivery
+          </h2>
+          <p className="rescue-timeline-subtext">
+            Exact dates depend on codebase state; this is the shape most mid-project
+            takeovers follow after our free audit.
+          </p>
+          <ol className="rescue-timeline-list">
+            {rescueTimeline.map((step) => (
+              <li key={step.phase} className="rescue-timeline-step">
+                <span className="rescue-timeline-phase">{step.phase}</span>
+                <h3 className="rescue-timeline-title">{step.title}</h3>
+                <p className="rescue-timeline-body">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* SYMPTOMS & HANDOFF */}
+      <section className="rescue-handoff-faq" aria-labelledby="rescue-handoff-heading">
+        <div className="rescue-handoff-wrapper">
+          <h2 id="rescue-handoff-heading" className="rescue-handoff-heading">
+            Symptoms &amp; handoff — quick answers
+          </h2>
+          <p className="rescue-handoff-lead">
+            Expand a question for a concise answer. For deeper reading, use the links
+            under each answer.
+          </p>
+          <div className="rescue-handoff-details">
+            {handoffSymptoms.map((item) => (
+              <details key={item.q} className="rescue-handoff-item">
+                <summary className="rescue-handoff-summary">{item.q}</summary>
+                <p className="rescue-handoff-answer">{item.a}</p>
+              </details>
+            ))}
+          </div>
+          <p className="rescue-handoff-more">
+            More:{" "}
+            <Link href="/blog/signs-your-software-project-is-failing">
+              signs your project is failing
+            </Link>
+            ,{" "}
+            <Link href="/blog/software-project-rescue-checklist">
+              rescue checklist
+            </Link>
+            ,{" "}
+            <Link href="/blog/how-to-switch-software-development-vendors">
+              switching vendors
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -425,6 +525,15 @@ export default function ProjectRescue() {
           <p className="rescue-casestudy-tagline">
             You don&apos;t need a new vendor. You need the right one.
           </p>
+          <p className="rescue-casestudy-links">
+            Read shipped outcomes:{" "}
+            <Link href="/case-studies">Case studies hub</Link> ·{" "}
+            <Link href="/work1">Manufacturing AI</Link> ·{" "}
+            <Link href="/work2">Hiring platform build</Link>
+            . Ready to talk?{" "}
+            <Link href="/get-in-touch">Contact</Link> or{" "}
+            <Link href="/book-call">book a call</Link>.
+          </p>
         </div>
       </section>
 
@@ -508,6 +617,11 @@ export default function ProjectRescue() {
         </div>
       </section>
 
+      <FAQ
+        faqs={rescueFaqs}
+        heading="Software Project Rescue & Recovery FAQs"
+      />
+
       {/* CTA */}
       <section className="rescue-cta">
         <div className="rescue-cta-wrapper">
@@ -540,10 +654,6 @@ export default function ProjectRescue() {
         </div>
       </section>
 
-      <FAQ
-        faqs={rescueFaqs}
-        heading="Software Project Rescue & Recovery FAQs"
-      />
       <Footer />
     </div>
   );
