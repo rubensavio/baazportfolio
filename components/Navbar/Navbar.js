@@ -59,9 +59,7 @@ const Navbar = () => {
             <a
               href="#"
               className={`navbar-link ${
-                pathname?.startsWith("/work") || pathname?.startsWith("/case-studies")
-                  ? "active"
-                  : ""
+                pathname?.startsWith("/work") ? "active" : ""
               }`}
               onClick={(e) => {
                 e.preventDefault();
@@ -71,9 +69,6 @@ const Navbar = () => {
               <span className="dropdown-icon">▼</span>
             </a>
             <ul className="dropdown-menu">
-              <li>
-                <Link href="/case-studies">Case studies</Link>
-              </li>
               <li>
                 <Link href="/work1">Defect Detection in Manufacturing</Link>
               </li>
@@ -194,11 +189,6 @@ const Navbar = () => {
                 </a>
                 {isWorkDropdownOpen && (
                   <ul className="mobile-dropdown-menu">
-                    <li>
-                      <Link href="/case-studies" onClick={toggleMenu}>
-                        Case studies
-                      </Link>
-                    </li>
                     <li>
                       <Link href="/work1" onClick={toggleMenu}>
                         Defect Detection in Manufacturing
