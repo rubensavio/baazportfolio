@@ -3,24 +3,34 @@ import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/work1"),
-  title: "Manufacturing AI Defect Detection Case Study | Baaz",
+  title: "AI Defect Detection Case Study | Baaz",
   description:
-    "Case study: AI-powered defect detection for manufacturing—computer vision, QA workflows, and production deployment. How Baaz shipped measurable quality gains on the factory floor.",
+    "Manufacturing AI: computer vision, QA, production deployment. How Baaz improved factory-floor quality—case study with approach, stack, measurable outcomes.",
   openGraph: {
-    title: "Manufacturing AI Defect Detection Case Study | Baaz",
+    title: "AI Defect Detection Case Study | Baaz",
     description:
-      "AI defect detection for manufacturing: computer vision, QA, and production rollout—Baaz case study.",
+      "Computer vision, QA workflows, and production rollout for defect detection—measurable gains on the factory floor. Baaz manufacturing AI case study.",
     url: `${baseUrl}/work1`,
     siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Manufacturing AI defect detection case study — Baaz",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manufacturing AI Defect Detection Case Study | Baaz",
+    title: "AI Defect Detection Case Study | Baaz",
     description:
-      "AI defect detection for manufacturing: computer vision, QA, and production rollout from Baaz.",
+      "AI defect detection: computer vision, QA, and production rollout—how Baaz improved manufacturing quality. Case study with outcomes and approach.",
+    images: [ogImage],
   },
 };
 

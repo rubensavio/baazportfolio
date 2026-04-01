@@ -22,13 +22,13 @@ const ogImage = "/assets/ogdefault.png";
 export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
-  title: "Custom Software Development Agency | Baaz — India",
+  title: "Custom Software & Product Engineering | Baaz",
   description:
-    "Custom software for startups and enterprises: product strategy, UI/UX, web, mobile, and AI. Bangalore-based Baaz—shipping since 2018. Book a call to scope your build.",
+    "Custom software for startups and enterprises—strategy, UI/UX, web, mobile, AI. Bangalore-based Baaz since 2018. Book a call to scope your build and roadmap.",
   openGraph: {
-    title: "Custom Software Development Agency | Baaz — India",
+    title: "Custom Software & Product Engineering | Baaz",
     description:
-      "Product strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Startups to enterprises. Book a call to discuss your roadmap.",
+      "Strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Startups to enterprises. Book a call to discuss scope, stack, and timelines.",
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -42,9 +42,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Software Development Agency | Baaz — India",
+    title: "Custom Software & Product Engineering | Baaz",
     description:
-      "Product strategy, UI/UX, web, mobile, and AI—custom software from Bangalore since 2018. Book a call to scope your build.",
+      "Custom software from Bangalore since 2018—strategy, UI/UX, web, mobile, and AI for startups and enterprises worldwide. Book a call to scope your next build.",
     images: [ogImage],
   },
 };

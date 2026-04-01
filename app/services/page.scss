@@ -1,0 +1,65 @@
+.services-hub-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+
+  .navbar {
+    z-index: 9999;
+  }
+}
+
+.services-hub-main {
+  width: calc(100% - 3rem);
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+}
+
+.services-hub-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.services-hub-heading {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+}
+
+.services-hub-intro {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.9rem, 1.55vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #4d525f;
+  margin: 0;
+}
+
+.services-hub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.services-hub-link {
+  font-family: var(--font-outfit), sans-serif;
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1px solid #e8e9ec;
+  border-radius: 8px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    border-color: #1a1a1a;
+    background: #fafafa;
+  }
+}

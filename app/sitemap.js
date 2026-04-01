@@ -24,7 +24,11 @@ export default function sitemap() {
     const priority =
       path === "/"
         ? 1
-        : path === "/about" || path === "/enterprise" || path === "/blog"
+        : path === "/about" ||
+            path === "/enterprise" ||
+            path === "/blog" ||
+            path === "/services" ||
+            path === "/industry"
           ? 0.9
           : path === "/case-studies"
             ? 0.85

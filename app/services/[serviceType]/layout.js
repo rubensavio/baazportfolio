@@ -4,6 +4,7 @@ import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
@@ -27,11 +28,20 @@ export async function generateMetadata({ params }) {
       description,
       url: `${baseUrl}/services/${serviceType}`,
       siteName: "Baaz",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${data.label} — Baaz`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImage],
     },
   };
 }
@@ -84,7 +94,7 @@ export default async function ServiceLayout({ children, params }) {
         "@type": "ListItem",
         position: 2,
         name: "Services",
-        item: `${baseUrl}/services/product-strategy`,
+        item: `${baseUrl}/services`,
       },
       { "@type": "ListItem", position: 3, name: data.label, item: `${baseUrl}/services/${serviceType}` },
     ],

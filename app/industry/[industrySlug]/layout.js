@@ -4,6 +4,7 @@ import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 function buildBreadcrumbSchema(industrySlug, data) {
   return {
@@ -15,7 +16,7 @@ function buildBreadcrumbSchema(industrySlug, data) {
         "@type": "ListItem",
         position: 2,
         name: "Industries",
-        item: `${baseUrl}/industry/fintech`,
+        item: `${baseUrl}/industry`,
       },
       {
         "@type": "ListItem",
@@ -44,11 +45,20 @@ export async function generateMetadata({ params }) {
       description: data.metaDescription,
       url: `${baseUrl}/industry/${industrySlug}`,
       siteName: "Baaz",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${data.title} — Baaz`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: data.metaTitle,
       description: data.metaDescription,
+      images: [ogImage],
     },
   };
 }

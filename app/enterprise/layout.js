@@ -3,24 +3,34 @@ import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/enterprise"),
-  title: "Enterprise Custom Software Development | Baaz",
+  title: "Enterprise Software & Integrations | Baaz",
   description:
-    "Baaz delivers enterprise custom software from Bangalore since 2018—internal platforms, integrations, security-aware architecture, and product engineering at scale for global organizations.",
+    "Enterprise custom software from Bangalore since 2018—platforms, integrations, security-aware architecture, product engineering at scale. Book a discovery call.",
   openGraph: {
-    title: "Enterprise Custom Software Development | Baaz",
+    title: "Enterprise Software & Integrations | Baaz",
     description:
-      "Scalable custom software for enterprises—internal platforms, integrations, and transformation. Product engineering from Baaz, Bangalore.",
+      "Scalable custom software for enterprises: internal platforms, integrations, and digital transformation. Product engineering from Baaz, Bangalore—since 2018.",
     url: `${baseUrl}/enterprise`,
     siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Enterprise custom software development — Baaz",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enterprise Custom Software Development | Baaz",
+    title: "Enterprise Software & Integrations | Baaz",
     description:
-      "Scalable custom software for enterprises—platforms, integrations, digital transformation. Engineering from Baaz since 2018.",
+      "Platforms, integrations, and transformation at scale—enterprise product engineering from Baaz, Bangalore since 2018. Book a call to scope your program.",
+    images: [ogImage],
   },
 };
 

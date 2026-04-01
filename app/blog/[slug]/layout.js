@@ -5,6 +5,7 @@ import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
@@ -23,11 +24,20 @@ export async function generateMetadata({ params }) {
       description: data.metaDescription,
       url: `${baseUrl}/blog/${slug}`,
       siteName: "Baaz",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: data.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: data.metaTitle,
       description: data.metaDescription,
+      images: [ogImage],
     },
   };
 }

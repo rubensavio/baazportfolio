@@ -4,9 +4,10 @@ import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 const pageDescription =
-  "Stalled software project? Bad vendor experience? We take over mid-project, stabilize your codebase, and deliver what was promised. 50% of our projects are successful mid-project rescues.";
+  "Stalled project or bad vendor? Baaz takes over mid-project, stabilizes codebase, and delivers outcomes—50%+ of our work is rescues. Book a free codebase audit.";
 
 const serviceDescription =
   "We rescue stalled, mismanaged, and abandoned software projects. Mid-project takeover, codebase stabilization, technical debt resolution, and ongoing delivery — without starting from scratch.";
@@ -81,15 +82,24 @@ export const metadata = {
   openGraph: {
     title: "Software Project Rescue & Recovery | Baaz",
     description:
-      "We rescue stalled, mismanaged, and abandoned software projects. No restart required. Pick up right where things were left.",
+      "Rescue stalled or abandoned software—no full restart. Audit, stabilize, and ship again with Baaz. Mid-project takeovers are over half our engagements.",
     url: `${baseUrl}/project-rescue`,
     siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Software project rescue and recovery — Baaz",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Software Project Rescue & Recovery | Baaz",
     description:
-      "We rescue stalled, mismanaged, and abandoned software projects. No restart required. Pick up right where things were left.",
+      "Stalled vendor or failing build? Baaz rescues mid-project—stabilize the codebase and resume delivery. Free codebase health audit available.",
+    images: [ogImage],
   },
 };
 

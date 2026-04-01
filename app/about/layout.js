@@ -5,24 +5,34 @@ import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: "About Baaz | Product Engineering Studio, Bangalore",
+  title: "About Baaz — Product Engineering Studio",
   description:
-    "Baaz is a Bangalore product engineering studio since 2018—custom web and mobile software, values, and how we work with startups and enterprises from strategy through launch.",
+    "Meet Baaz: Bangalore product engineering since 2018—team, values, and custom web and mobile for startups and enterprises from strategy through launch.",
   openGraph: {
-    title: "About Baaz | Product Engineering Studio, Bangalore",
+    title: "About Baaz — Product Engineering Studio",
     description:
-      "Bangalore studio, global clients—team, values, and how we ship product engineering since 2018.",
+      "Bangalore studio, global clients—team, values, and how we ship product engineering since 2018. Custom software with clear communication and honest scoping.",
     url: `${baseUrl}/about`,
     siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "About Baaz — product engineering studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Baaz | Product Engineering Studio, Bangalore",
+    title: "About Baaz — Product Engineering Studio",
     description:
-      "Who we are: Bangalore product engineers for startups and enterprises—team, craft, and culture.",
+      "Bangalore product engineers for startups and enterprises—team, craft, culture, and how we work from discovery to launch. Get in touch.",
+    images: [ogImage],
   },
 };
 

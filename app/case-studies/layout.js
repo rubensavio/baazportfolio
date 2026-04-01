@@ -1,3 +1,4 @@
+import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
@@ -5,14 +6,14 @@ const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
-  title: "Case Studies | Baaz — Product Engineering",
+  title: "Case Studies — How Baaz Ships Real Systems",
   description:
-    "Production case studies and deep-dives: manufacturing AI, hiring automation, SaaS architecture, reliability, and integrations—how Baaz ships real systems.",
+    "Case studies: manufacturing AI, hiring automation, SaaS architecture, reliability, integrations—how Baaz designs and ships production systems since 2018.",
   alternates: getAlternates("/case-studies"),
   openGraph: {
-    title: "Case Studies | Baaz — Product Engineering",
+    title: "Case Studies — How Baaz Ships Real Systems",
     description:
-      "Architecture notes and case studies from Baaz—manufacturing AI, hiring tech, and enterprise delivery.",
+      "Deep-dives on manufacturing AI, hiring platforms, enterprise delivery, and architecture—real outcomes from Baaz product engineering. Explore before you engage.",
     url: `${baseUrl}/case-studies`,
     siteName: "Baaz",
     images: [
@@ -26,13 +27,23 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Case Studies | Baaz — Product Engineering",
+    title: "Case Studies — How Baaz Ships Real Systems",
     description:
-      "How we architect and ship: manufacturing AI, hiring automation, SaaS, and more.",
+      "Manufacturing AI, hiring automation, SaaS, reliability—see how Baaz architects and ships. Case studies and technical notes from Bangalore since 2018.",
     images: [ogImage],
   },
 };
 
 export default function CaseStudiesLayout({ children }) {
-  return children;
+  return (
+    <>
+      <BreadcrumbScript
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Case studies", url: "/case-studies" },
+        ]}
+      />
+      {children}
+    </>
+  );
 }

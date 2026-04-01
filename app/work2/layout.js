@@ -3,24 +3,34 @@ import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/work2"),
-  title: "Tech Hiring Automation Platform Case Study | Baaz",
+  title: "Tech Hiring Automation Case Study | Baaz",
   description:
-    "Case study: a tech hiring automation platform—screening, assessments, and pipeline for engineering teams. How Baaz reduced time-to-hire without sacrificing signal.",
+    "Tech hiring automation: screening, assessments, pipeline for engineering teams. How Baaz cut time-to-hire without losing signal—metrics, stack, outcomes inside.",
   openGraph: {
-    title: "Tech Hiring Automation Platform Case Study | Baaz",
+    title: "Tech Hiring Automation Case Study | Baaz",
     description:
-      "Hiring automation for engineering: screening, assessments, and pipeline—how Baaz built it.",
+      "Screening, assessments, and pipeline automation for engineering hiring—how Baaz built it and what changed for recruiters and candidates.",
     url: `${baseUrl}/work2`,
     siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Tech hiring automation case study — Baaz",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tech Hiring Automation Platform Case Study | Baaz",
+    title: "Tech Hiring Automation Case Study | Baaz",
     description:
-      "Hiring automation for engineering teams: screening, assessments, and pipeline—Baaz case study.",
+      "Hiring automation for engineering: screening, assessments, pipeline—time-to-hire and quality outcomes from Baaz. Read the case study.",
+    images: [ogImage],
   },
 };
 

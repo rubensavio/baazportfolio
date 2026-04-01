@@ -3,24 +3,34 @@ import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
+const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/gtm-engineering"),
-  title: "GTM Engineering: Pipeline Systems That Scale | Baaz",
+  title: "GTM Engineering — B2B Pipeline Systems | Baaz",
   description:
-    "Full-stack GTM engineering: automated content, outbound, ads, SEO, capture, nurture, and conversion—one system for predictable pipeline. Built by Baaz for revenue teams.",
+    "Full-stack GTM engineering: content, outbound, ads, SEO, capture, nurture, conversion—one system for predictable B2B pipeline. Built by Baaz since 2018.",
   openGraph: {
-    title: "GTM Engineering: Pipeline Systems That Scale | Baaz",
+    title: "GTM Engineering — B2B Pipeline Systems | Baaz",
     description:
-      "End-to-end GTM engineering: demand generation, outbound automation, ABM campaigns, and revenue operations built as one interconnected system.",
+      "Demand gen, outbound automation, ABM, and RevOps as one interconnected system—compound pipeline instead of random acts of marketing. Talk to Baaz.",
     url: `${baseUrl}/gtm-engineering`,
     siteName: "Baaz",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "GTM engineering — Baaz",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "GTM Engineering: Pipeline Systems That Scale | Baaz",
+    title: "GTM Engineering — B2B Pipeline Systems | Baaz",
     description:
-      "Full-stack GTM engineering: automated pipeline generation, demand creation, and revenue operations that compound.",
+      "Automated pipeline: demand creation, outbound, nurture, and RevOps in one system. GTM engineering from Baaz for teams that need repeatable revenue.",
+    images: [ogImage],
   },
 };
 
