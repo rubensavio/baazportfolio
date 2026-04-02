@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -39,7 +39,10 @@ const OurExpertise = () => {
 
   return (
     <section className="our-expertise" aria-labelledby="our-expertise-heading">
-      <div className="our-expertise-header animate-on-scroll animate-fade-up" ref={headerRef}>
+      <div
+        className="our-expertise-header animate-on-scroll animate-fade-up"
+        ref={headerRef}
+      >
         <span className="our-expertise-label">Our Expertise</span>
         <h2 id="our-expertise-heading" className="our-expertise-heading">
           Enterprise product engineering for teams that cannot afford toy demos.
@@ -92,7 +95,10 @@ const OurExpertise = () => {
         </div>
       </div>
 
-      <div className="our-expertise-industries animate-on-scroll animate-fade-up" ref={industriesRef}>
+      <div
+        className="our-expertise-industries animate-on-scroll animate-fade-up"
+        ref={industriesRef}
+      >
         <p className="our-expertise-industries-text">
           <Link href="/blog/how-to-choose-software-development-partner">
             Choosing a development partner
@@ -104,10 +110,7 @@ const OurExpertise = () => {
           , and more on the <Link href="/blog">Blog</Link>. Roughly half of our
           engagements started as{" "}
           <Link href="/project-rescue">project rescues</Link>
-          <span className="our-expertise-footnote">
-            {" "}
-            (Baaz internal classification, not third-party research).
-          </span>
+          <span className="our-expertise-footnote"> .</span>
         </p>
       </div>
     </section>

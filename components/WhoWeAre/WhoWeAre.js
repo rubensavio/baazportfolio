@@ -68,8 +68,7 @@ const WhoWeAre = () => {
           stay coherent instead of bouncing between separate vendors. Each phase
           ships with clear milestones and acceptance criteria before the next
           begins. We have delivered 100+ web and mobile applications across
-          FinTech, retail, eCommerce, and healthcare-adjacent work (per Baaz
-          internal delivery records).
+          FinTech, retail, eCommerce, and healthcare-adjacent work.
         </p>
       </div>
 
