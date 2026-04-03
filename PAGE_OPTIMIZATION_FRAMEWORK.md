@@ -14,7 +14,7 @@ Targets align with the **meta-tags-optimizer** and **on-page SEO auditor** rubri
 
 1. **Direct answer early** — In the first screen of body copy, a standalone sentence or short paragraph answers the main question without requiring the prior paragraph.  
 2. **Quotable facts** — Prefer specific claims with **sources** (reports, regulators, vendors) or explicit **first-party labels** (“per Baaz’s internal project classification”) when citing your own metrics.  
-3. **Structure** — Short sections (roughly 3–5 sentences per idea), **lists** where steps matter, **tables** for comparisons (A vs B, pattern vs pattern).  
+3. **Structure** — Short sections (roughly 3–5 sentences per idea), **lists** where steps matter, **tables** for comparisons (A vs B, pattern vs pattern). For **blog** posts, also meet the **minimum depth** targets in **§6** (intro length, H2 count, paragraphs per section, body word-count band)—FAQs alone are not sufficient “vast” content.  
 4. **Q&A** — An FAQ block that mirrors real follow-up questions; **visible answers must match JSON-LD** where FAQ schema is used.  
 5. **Schema** — `Article` (blog), `Service` + `FAQPage` (services), `BreadcrumbList` + `FAQPage` (industries), etc., emitted from **server layouts** when possible so crawlers always see them.  
 6. **Meta honesty** — Title and description match what the page delivers (no bait-and-switch); length in sensible bands for SERP and social previews.
@@ -115,6 +115,7 @@ Rows prefixed with `!` flag a title over **62** characters or a description outs
 - [ ] **Definition** (if technical) — Formal 1–3 sentence definition on pillar/service/industry pages where applicable.  
 - [ ] **H2s / H3s** — Descriptive; no skipped levels (H1 → H2 → H3).  
 - [ ] **FAQ** — ≥4 questions for strong pillar content when you use FAQ; answers **40–120 words** unless a list is clearer; **same strings** as JSON-LD.  
+- [ ] **Blog article body** — For `/blog/[slug]`, meet **§6 long-form targets** (sections + intro word band); do not ship pillar posts where the FAQ block is the only long copy.  
 - [ ] **Internal links** — Services, industries, `/project-rescue`, `/get-in-touch`, related posts where natural.  
 - [ ] **Limitations** — For architecture/opinion posts, a short “what this is not / assumptions” section builds trust (GEO).  
 - [ ] **Images** — Meaningful `alt` for content images; decorative backgrounds may use `alt=""`; hero/LCP: dimensions + `fetchPriority` where appropriate (see service pattern).  
@@ -155,6 +156,39 @@ Rows prefixed with `!` flag a title over **62** characters or a description outs
 - `faqs[]` — optional; **recommended** for pillars; must match FAQ JSON-LD  
 - `relatedLinks[]` — optional  
 
+### Long-form body targets (“vast” pillar content)
+
+Use these **minimums for new or fully refreshed posts** so article body depth matches strong SEO/GEO competitors—not just FAQ depth.
+
+| Layer | Target | Notes |
+|--------|--------|--------|
+| **`intro`** | **120–220 words** (one `<p>` in data = one string; use **2–4 sentences minimum**, often 5–8) | States audience, promise, scope, and what the reader leaves with; must not contradict `directAnswer`. |
+| **H2 sections** | **≥ 8** for pillar guides, comparisons, and deep technical posts; **≥ 6** for focused guides/listicles | Each H2 = one major intent (problem, criteria, process, risks, examples, limitations). |
+| **Paragraphs per H2** | **≥ 4 `body[]` strings** per section on average; avoid habitual **1–2 paragraph** sections unless they are deliberate summaries | Each paragraph: **roughly 3–6 sentences** (~80–180 words). Prefer several focused paragraphs over one wall of text. |
+| **Total article body** (intro + all `sections[].body`, **excluding** FAQ) | **≥ 2,000 words** for pillars/comparisons/architecture (**stretch 2,400+** for flagship URLs); **≥ 1,400** for narrower guides (**stretch 1,800+**) | Count in an editor before shipping; thin bodies hurt crawl quality and AI extraction. Iteratively raise older posts toward the stretch band. |
+| **Structural variety** | At least **one** of: `table` (comparison), step-like sequences in prose, or **3+** sections that answer distinct sub-questions | Tables: `caption` + clear headers; cite that numbers are ballparks when applicable. |
+| **Evidence** | **≥ 2** explicit references (named report/vendor/book/regulator) **or** **≥ 2** first-party labels (“per Baaz’s project mix…”) where stats appear | Avoid unsourced percentages in body/FAQ; framework §1. |
+| **Limitations / scope** | **Dedicated H2** on technical or buyer guides (“What this is not”, “Assumptions”, “When to get specialist help”) | Short trust win for GEO; already standard on architecture posts—apply to buyer guides too. |
+| **Internal links** | **≥ 2** `relatedLinks` or inline `Link` targets where the template supports it | Cross-link services, `/project-rescue`, `/get-in-touch`, related `/blog/[slug]`. |
+
+**Authoring order (repeatable)**
+
+1. **`directAnswer`** — extraction-first, ≤ ~50 words.  
+2. **`intro`** — expand to word target; set reader and boundaries.  
+3. **Outline H2s** — aim for section count target before writing.  
+4. **Draft each section** — minimum paragraph count per H2; add examples, anti-patterns, and transitions.  
+5. **Add table or comparison block** where it reduces ambiguity (options, phases, risks).  
+6. **Limitations H2** + **relatedLinks**.  
+7. **`faqs`** — ≥ **5** items for pillars; align wording with JSON-LD.  
+8. **Meta** (`metaTitle`, `metaDescription`) + **`npm run meta-audit`**.  
+9. **Word-count pass** — body only; if under target, **deepen** existing H2s before adding thin H2s.
+
+**Anti-patterns**
+
+- **FAQ as the only long copy** — FAQs support the article; they do not replace sections.  
+- **Many H2s with 1–2 short paragraphs** — merge or deepen until averages meet the table.  
+- **Duplicate stacks** — `directAnswer`, `intro`, and first H2 should not repeat the same sentence thrice; vary depth and angle.
+
 ### Technical notes
 
 - **Article** + **FAQPage** JSON-LD: `app/blog/[slug]/layout.js` (do not duplicate FAQ script in the client page).  
@@ -165,13 +199,15 @@ Rows prefixed with `!` flag a title over **62** characters or a description outs
 
 1. Add the post to `lib/blogData.js` or `lib/blogPosts/` and import in `blogData.js`.  
 2. Register slug for sitemap if your setup requires it (`app/sitemap.js`, exports in `blogData.js`).  
-3. Fill **`directAnswer`**, then **`intro`**, then sections; add **FAQ** with the same strings as schema.  
+3. Fill **`directAnswer`**, then **`intro`** (see long-form targets), then **sections** to depth targets; add **FAQ** with the same strings as schema.  
 4. **Meta:** `metaTitle` / `metaDescription` per §3; align with H1 and intro.  
-5. Preview `/blog/your-slug` — order: label → H1 → direct answer → intro → sections → FAQ.
+5. Preview `/blog/your-slug` — order: label → H1 → direct answer → intro → sections → FAQ.  
+6. Run a **body word-count check** against §6 long-form table before merge.
 
 ### Blog-specific checklist
 
 - [ ] `contentType` label is accurate (Guide, Listicle, Comparison, etc.).  
+- [ ] **Long-form targets** (§6 table): intro length, section count, paragraphs per H2, body word minimum, limitations H2.  
 - [ ] Tables use `table.caption` when context is needed.  
 - [ ] Link **out** to authoritative sources for stats or vendors (GEO + E-E-A-T).  
 - [ ] Optional: `datePublished` / `dateModified` / `image` in Article schema when stable (`buildArticleSchema` in blog layout).  

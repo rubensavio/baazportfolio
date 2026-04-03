@@ -4,12 +4,12 @@
 
 ## Current State Assessment
 
-| Platform | Baaz Status | Competitor Benchmark |
-|---|---|---|
-| **Wikipedia** | No article exists | Thoughtworks, Freshworks, Postman all have detailed Wikipedia pages with revenue, founding story, key personnel, acquisitions, products |
-| **Wikidata** | No entity exists | All major software companies have structured Wikidata entities that feed into Google Knowledge Panels and AI Overviews |
-| **Google Business Profile** | Basic JustDial listing exists; no verified GBP found | Simform, Thoughtworks have complete GBP profiles with services, photos, reviews, and posts |
-| **LinkedIn Company Page** | Unclear/minimal presence | ValueCoders gained 40% more social traffic; A3Logics gained 13,000+ organic followers in one year through value-led content |
+| Platform                    | Baaz Status                                          | Competitor Benchmark                                                                                                                    |
+| --------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| **Wikipedia**               | No article exists                                    | Thoughtworks, Freshworks, Postman all have detailed Wikipedia pages with revenue, founding story, key personnel, acquisitions, products |
+| **Wikidata**                | No entity exists                                     | All major software companies have structured Wikidata entities that feed into Google Knowledge Panels and AI Overviews                  |
+| **Google Business Profile** | Basic JustDial listing exists; no verified GBP found | Simform, Thoughtworks have complete GBP profiles with services, photos, reviews, and posts                                              |
+| **LinkedIn Company Page**   | Unclear/minimal presence                             | ValueCoders gained 40% more social traffic; A3Logics gained 13,000+ organic followers in one year through value-led content             |
 
 ---
 
@@ -28,20 +28,20 @@ Wikipedia requires strict notability criteria (multiple independent reliable sou
 
 ### Properties to Add
 
-| Property | Value | Notes |
-|---|---|---|
-| **Instance of (P31)** | business (Q4830453) | Core type |
-| **Inception (P571)** | 2018 | Founding year |
-| **Country (P17)** | India (Q668) | |
-| **Headquarters location (P159)** | Bangalore (Q1355) | Use qualifier: Binnamangala |
-| **Industry (P452)** | software industry (Q638608) | |
-| **Industry (P452)** | information technology consulting (Q1378185) | Add second value |
-| **Official website (P856)** | https://www.baaz.pro | |
-| **Legal name** | atiiad Technologies Private Limited | From IndiaMART listing |
-| **Number of employees (P1128)** | <50 | Use "less than 50" qualifier |
-| **Product or material produced (P1056)** | software (Q7397), mobile app (Q620615) | |
-| **Founder (P112)** | Chitresh Parihar | Create a separate Wikidata item for the founder if none exists |
-| **Described by source** | link to Clutch profile, GoodFirms listing, IndiaMART listing | These serve as independent references |
+| Property                                 | Value                                                        | Notes                                                          |
+| ---------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
+| **Instance of (P31)**                    | business (Q4830453)                                          | Core type                                                      |
+| **Inception (P571)**                     | 2018                                                         | Founding year                                                  |
+| **Country (P17)**                        | India (Q668)                                                 |                                                                |
+| **Headquarters location (P159)**         | Bangalore (Q1355)                                            | Use qualifier: Binnamangala                                    |
+| **Industry (P452)**                      | software industry (Q638608)                                  |                                                                |
+| **Industry (P452)**                      | information technology consulting (Q1378185)                 | Add second value                                               |
+| **Official website (P856)**              | https://www.baaz.pro                                         |                                                                |
+| **Legal name**                           | atiiad Technologies Private Limited                          | From IndiaMART listing                                         |
+| **Number of employees (P1128)**          | <50                                                          | Use "less than 50" qualifier                                   |
+| **Product or material produced (P1056)** | software (Q7397), mobile app (Q620615)                       |                                                                |
+| **Founder (P112)**                       | Chitresh Parihar                                             | Create a separate Wikidata item for the founder if none exists |
+| **Described by source**                  | link to Clutch profile, GoodFirms listing, IndiaMART listing | These serve as independent references                          |
 
 ### Sources to Cite (Critical — Every Claim Needs a Reference)
 
@@ -63,6 +63,7 @@ You need **independent, verifiable sources**. Use these:
 ### Building Toward Wikipedia (Long-Term, Month 6+)
 
 To eventually qualify for a Wikipedia article, Baaz needs:
+
 - **3+ independent press articles** covering the company (not paid/sponsored)
 - Coverage in outlets like YourStory, Inc42, Economic Times Tech, TechCrunch India
 - **Strategy:** Publish the guest articles you're already writing (legacy modernization, AI PoC to production), pitch to outlets, get covered
@@ -83,17 +84,18 @@ To eventually qualify for a Wikipedia article, Baaz needs:
 ### Step 2: Complete Every Field
 
 #### Basic Info
-| Field | Value |
-|---|---|
-| Business name | Baaz |
-| Primary category | Software Company |
+
+| Field                          | Value                                                                                                                                                                                                     |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Business name                  | Baaz                                                                                                                                                                                                      |
+| Primary category               | Software Company                                                                                                                                                                                          |
 | Secondary categories (up to 9) | Custom Software Development Company, Mobile App Developer, Web Designer, AI Consulting Firm, UX Design Agency, IT Consulting Firm, Business Management Consultant, Technology Company, Software Developer |
-| Address | Binnamangala, Indiranagar, Bangalore 560038 |
-| Service area | Bangalore, India / United States / United Kingdom / UAE |
-| Phone | Your business phone |
-| Website | https://www.baaz.pro |
-| Hours | Mon-Fri 9:00 AM - 6:00 PM IST |
-| Founded | 2018 |
+| Address                        | Binnamangala, Indiranagar, Bangalore 560038                                                                                                                                                               |
+| Service area                   | Bangalore, India / United States / United Kingdom / UAE                                                                                                                                                   |
+| Phone                          | Your business phone                                                                                                                                                                                       |
+| Website                        | https://www.baaz.pro                                                                                                                                                                                      |
+| Hours                          | Mon-Fri 9:00 AM - 6:00 PM IST                                                                                                                                                                             |
+| Founded                        | 2018                                                                                                                                                                                                      |
 
 #### Business Description (750 chars max)
 
@@ -104,23 +106,27 @@ To eventually qualify for a Wikipedia article, Baaz needs:
 Google lets you add structured services under each category. Add these:
 
 **Under "Software Company":**
+
 - Custom Software Development — End-to-end software development for web and cloud platforms, from architecture to deployment.
 - SaaS Product Development — Design and build multi-tenant SaaS platforms with subscription billing, analytics, and scalable infrastructure.
 - Legacy System Modernization — Migrate, re-platform, or rebuild legacy applications using modern cloud-native architectures.
 - Enterprise Software Development — Large-scale applications with compliance, role-based access, audit logging, and legacy integration.
 
 **Under "Mobile App Developer":**
+
 - iOS App Development — Native and cross-platform apps for iPhone and iPad.
 - Android App Development — Native and cross-platform Android applications.
 - Flutter App Development — Cross-platform mobile apps with a single codebase using Flutter.
 - React Native App Development — Cross-platform mobile apps using React Native.
 
 **Under "AI Consulting Firm":**
+
 - AI/ML Development — Computer vision, NLP, predictive analytics, and AI-powered automation.
 - AI Strategy Consulting — Assess AI readiness, define use cases, and build AI roadmaps for enterprises.
 - AI Proof of Concept to Production — Move AI experiments into production-grade, scalable systems.
 
 **Under "UX Design Agency":**
+
 - Product Strategy & Discovery — User research, competitive analysis, and product roadmapping.
 - UI/UX Design — Interface design, design systems, prototyping, and usability testing.
 - Design Sprints — Rapid prototyping and validation in 1-2 week cycles.
@@ -129,29 +135,29 @@ Google lets you add structured services under each category. Add these:
 
 Businesses with photos get **45% more direction requests and 31% more website clicks**. Google's Vision AI now reads images to categorize your services.
 
-| Photo Type | What to Upload | Qty |
-|---|---|---|
-| **Logo** | Baaz logo (from `public/assets/Logo.svg`, export as PNG) | 1 |
-| **Cover** | Office exterior or a branded banner showing "Baaz — Product Engineering Agency" | 1 |
-| **Interior** | Office workspace, meeting rooms, whiteboards with product designs | 3-4 |
-| **Team** | Team photos, working sessions, sprint demos, standups | 3-4 |
-| **At work** | Screens showing products you've built (blur sensitive data), design reviews, code reviews | 3-4 |
-| **Product screenshots** | Screenshots from case studies (work1, work2), dashboards, mobile apps | 4-5 |
-| **Events** | Team at tech meetups, conferences, hackathons | 2-3 |
-| **Client logos** | A collage or individual images of client brands (Uber, Decathlon, etc.) — check usage permissions | 1-2 |
+| Photo Type              | What to Upload                                                                                    | Qty |
+| ----------------------- | ------------------------------------------------------------------------------------------------- | --- |
+| **Logo**                | Baaz logo (from `public/assets/Logo.svg`, export as PNG)                                          | 1   |
+| **Cover**               | Office exterior or a branded banner showing "Baaz — Product Engineering Agency"                   | 1   |
+| **Interior**            | Office workspace, meeting rooms, whiteboards with product designs                                 | 3-4 |
+| **Team**                | Team photos, working sessions, sprint demos, standups                                             | 3-4 |
+| **At work**             | Screens showing products you've built (blur sensitive data), design reviews, code reviews         | 3-4 |
+| **Product screenshots** | Screenshots from case studies (work1, work2), dashboards, mobile apps                             | 4-5 |
+| **Events**              | Team at tech meetups, conferences, hackathons                                                     | 2-3 |
+| **Client logos**        | A collage or individual images of client brands (Uber, Decathlon, etc.) — check usage permissions | 1-2 |
 
 ### Step 5: Posts (Weekly — Ongoing)
 
 Post types to rotate weekly:
 
-| Week | Post Type | Example |
-|---|---|---|
-| 1 | **Update** | "We just shipped a real-time visual inspection platform powered by computer vision for a manufacturing client. [Link to case study]" |
-| 2 | **Update** | "How we reduced time-to-hire by 60% by automating tech assessments with AI. Read the case study →" |
-| 3 | **Update** | Blog post share: "Legacy Modernization: When to Rebuild vs. Re-Platform [link to blog]" |
-| 4 | **Offer** | "Book a free product strategy session — we'll map your MVP in 60 minutes. [Link to /get-in-touch]" |
-| 5 | **Update** | "AI in production: Why 85% of AI PoCs never make it — and how to beat the odds [link to blog]" |
-| 6 | **Event** | "Join us at [local tech event] — Chitresh Parihar on building products that scale" |
+| Week | Post Type  | Example                                                                                                                              |
+| ---- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| 1    | **Update** | "We just shipped a real-time visual inspection platform powered by computer vision for a manufacturing client. [Link to case study]" |
+| 2    | **Update** | "How we reduced time-to-hire by 60% by automating tech assessments with AI. Read the case study →"                                   |
+| 3    | **Update** | Blog post share: "Legacy Modernization: When to Rebuild vs. Re-Platform [link to blog]"                                              |
+| 4    | **Offer**  | "Book a free product strategy session — we'll map your MVP in 60 minutes. [Link to /get-in-touch]"                                   |
+| 5    | **Update** | "AI in production: Why 85% of AI PoCs never make it — and how to beat the odds [link to blog]"                                       |
+| 6    | **Event**  | "Join us at [local tech event] — Chitresh Parihar on building products that scale"                                                   |
 
 ### Step 6: Q&A Section (Pre-Seed Questions)
 
@@ -171,20 +177,20 @@ Google retired the public Q&A feature in late 2025 and is replacing it with AI-p
 
 ### Step 1: Audit & Complete the Company Page
 
-| Field | What to Set |
-|---|---|
-| **Name** | Baaz |
-| **Tagline** | Enterprise Product Engineering Agency |
-| **Industry** | Software Development |
-| **Company size** | 11-50 employees |
-| **Headquarters** | Bangalore, Karnataka, India |
-| **Founded** | 2018 |
-| **Website** | https://www.baaz.pro |
-| **Specialties** | Product Engineering, Custom Software Development, Mobile App Development, AI/ML Development, UI/UX Design, SaaS Development, Enterprise Software, Legacy Modernization, Flutter, React Native |
-| **About section** | Use the long description from the reusable profile content (see `technical-seo-steps.md` section 6) |
-| **Logo** | High-res Baaz logo |
-| **Cover image** | Branded banner — "We build unfair advantage" or similar tagline with visual |
-| **CTA button** | "Visit website" → https://www.baaz.pro/get-in-touch |
+| Field             | What to Set                                                                                                                                                                                   |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Name**          | Baaz                                                                                                                                                                                          |
+| **Tagline**       | Enterprise Product Engineering Agency                                                                                                                                                         |
+| **Industry**      | Software Development                                                                                                                                                                          |
+| **Company size**  | 11-50 employees                                                                                                                                                                               |
+| **Headquarters**  | Bangalore, Karnataka, India                                                                                                                                                                   |
+| **Founded**       | 2018                                                                                                                                                                                          |
+| **Website**       | https://www.baaz.pro                                                                                                                                                                          |
+| **Specialties**   | Product Engineering, Custom Software Development, Mobile App Development, AI/ML Development, UI/UX Design, SaaS Development, Enterprise Software, Legacy Modernization, Flutter, React Native |
+| **About section** | Use the long description from the reusable profile content (see `technical-seo-steps.md` section 6)                                                                                           |
+| **Logo**          | High-res Baaz logo                                                                                                                                                                            |
+| **Cover image**   | Branded banner — "We build unfair advantage" or similar tagline with visual                                                                                                                   |
+| **CTA button**    | "Visit website" → https://www.baaz.pro/get-in-touch                                                                                                                                           |
 
 ### Step 2: Content Strategy (Value-Led, Not Self-Promotional)
 
@@ -346,6 +352,7 @@ We didn't build them "an AI tool." We built them a hiring product.
 Suprflow automates resume screening, runs blind technical assessments, and gives every candidate automated feedback within 24 hours.
 
 Results after 6 months:
+
 - Cost per hire: $47K → $18.5K
 - Time to hire: 89 days → 31 days
 - Candidate satisfaction: 61% → 92%
@@ -441,6 +448,7 @@ What we do instead: the Strangler Fig pattern.
 One manufacturing client saved $15M annually by phasing their supply chain modernization this way — replacing legacy batch processing with predictive analytics, one module at a time. No big bang. No parallel systems burning budget.
 
 If someone on your team is pitching a rewrite, ask them:
+
 - Is the system < 10K lines of code? → Rewrite might work.
 - Can the business freeze features for 6 months? → If no, don't rewrite.
 - Does complete documentation exist? → If no, you'll rediscover every edge case the hard way.
@@ -482,11 +490,13 @@ The question I get asked most by technical founders: "Should we build in-house o
 After being on both sides — running engineering teams and now running the CTO side of an agency that's shipped 100+ products — here's my honest framework:
 
 **Build in-house when:**
+
 - You have product-market fit and a 12+ month roadmap
 - Your core IP is the software itself
 - You can hire and retain senior engineers (this takes 3-6 months minimum)
 
 **Use an agency when:**
+
 - You need to ship an MVP in 8-12 weeks
 - You need burst capacity for a specific initiative
 - You lack specific skills (AI/ML, mobile, cloud architecture) and can't wait 6 months to hire
@@ -505,14 +515,14 @@ If your agency builds something only they can maintain, they're not a partner. T
 
 #### Content Pillars (Rotate Monthly)
 
-| Month | Primary Theme | Secondary Theme |
-|---|---|---|
-| 1 | AI in Production (ties to guest article) | Enterprise Software Decisions |
-| 2 | Legacy Modernization (ties to guest article) | Mobile Development Choices |
-| 3 | Product Strategy for Non-Technical Founders | Design-Led Development |
-| 4 | Scaling from MVP to Enterprise | Healthcare/FinTech Domain Stories |
-| 5 | Build vs Buy Decisions | Team Augmentation vs Product Agency |
-| 6 | AI Agents & Automation (trending) | Real Cost of Bad Software |
+| Month | Primary Theme                                | Secondary Theme                     |
+| ----- | -------------------------------------------- | ----------------------------------- |
+| 1     | AI in Production (ties to guest article)     | Enterprise Software Decisions       |
+| 2     | Legacy Modernization (ties to guest article) | Mobile Development Choices          |
+| 3     | Product Strategy for Non-Technical Founders  | Design-Led Development              |
+| 4     | Scaling from MVP to Enterprise               | Healthcare/FinTech Domain Stories   |
+| 5     | Build vs Buy Decisions                       | Team Augmentation vs Product Agency |
+| 6     | AI Agents & Automation (trending)            | Real Cost of Bad Software           |
 
 ### Step 3: Engagement Tactics
 
@@ -528,30 +538,30 @@ If your agency builds something only they can maintain, they're not a partner. T
 
 ### Wikipedia/Wikidata Presence
 
-| Company | Wikipedia | Wikidata | Knowledge Panel |
-|---|---|---|---|
-| **Thoughtworks** | Full article (revenue, history, key people, acquisitions, 49 offices) | Complete entity | Yes — rich panel |
-| **Freshworks** | Full article (Nasdaq-listed, $596M revenue, founding story) | Complete entity | Yes — rich panel |
-| **Postman** | Full article (30M users, funding rounds, products) | Complete entity | Yes — rich panel |
-| **Simform** | No Wikipedia article | Likely has Wikidata entity | Partial panel from Clutch/GoodFirms |
-| **Baaz** | No article | No entity | No panel — **this is the gap** |
+| Company          | Wikipedia                                                             | Wikidata                   | Knowledge Panel                     |
+| ---------------- | --------------------------------------------------------------------- | -------------------------- | ----------------------------------- |
+| **Thoughtworks** | Full article (revenue, history, key people, acquisitions, 49 offices) | Complete entity            | Yes — rich panel                    |
+| **Freshworks**   | Full article (Nasdaq-listed, $596M revenue, founding story)           | Complete entity            | Yes — rich panel                    |
+| **Postman**      | Full article (30M users, funding rounds, products)                    | Complete entity            | Yes — rich panel                    |
+| **Simform**      | No Wikipedia article                                                  | Likely has Wikidata entity | Partial panel from Clutch/GoodFirms |
+| **Baaz**         | No article                                                            | No entity                  | No panel — **this is the gap**      |
 
 ### Google Business Profile
 
-| Company | GBP Status | Reviews | Photos | Posts |
-|---|---|---|---|---|
-| **Thoughtworks Bangalore** | Verified, complete | 100+ reviews | 50+ photos | Regular updates |
-| **Simform** | Verified | 50+ reviews | 30+ photos | Monthly posts |
-| **Baaz** | Unverified / missing | 0 reviews | 0 photos | No posts — **critical gap** |
+| Company                    | GBP Status           | Reviews      | Photos     | Posts                       |
+| -------------------------- | -------------------- | ------------ | ---------- | --------------------------- |
+| **Thoughtworks Bangalore** | Verified, complete   | 100+ reviews | 50+ photos | Regular updates             |
+| **Simform**                | Verified             | 50+ reviews  | 30+ photos | Monthly posts               |
+| **Baaz**                   | Unverified / missing | 0 reviews    | 0 photos   | No posts — **critical gap** |
 
 ### LinkedIn
 
-| Company | Followers | Post Frequency | Content Quality |
-|---|---|---|---|
-| **Thoughtworks India** | 500K+ | Daily | Mix of thought leadership, culture, tech insights |
-| **Simform** | 50K+ | 3-4x/week | Technical blogs, case studies, hiring |
-| **ValueCoders** | 20K+ | 3x/week | Tech content, case studies |
-| **Baaz** | <1K (estimated) | Minimal | **Needs complete overhaul** |
+| Company                | Followers       | Post Frequency | Content Quality                                   |
+| ---------------------- | --------------- | -------------- | ------------------------------------------------- |
+| **Thoughtworks India** | 500K+           | Daily          | Mix of thought leadership, culture, tech insights |
+| **Simform**            | 50K+            | 3-4x/week      | Technical blogs, case studies, hiring             |
+| **ValueCoders**        | 20K+            | 3x/week        | Tech content, case studies                        |
+| **Baaz**               | <1K (estimated) | Minimal        | **Needs complete overhaul**                       |
 
 ---
 
@@ -559,41 +569,41 @@ If your agency builds something only they can maintain, they're not a partner. T
 
 ### Month 1 (Immediate)
 
-| Week | Task | Owner |
-|---|---|---|
-| 1 | Create Wikidata entity with all properties and sources | You/Dev |
-| 1 | Claim/create Google Business Profile, complete all basic fields | You |
-| 1 | Complete LinkedIn company page (all fields, logo, cover, about) | You |
-| 2 | Add all GBP services (see full list above) | You |
-| 2 | Upload 20+ photos to GBP | You/Team |
-| 2 | First GBP post (case study update) | You |
-| 2 | First LinkedIn company post + first Chitresh personal post | Chitresh |
-| 3 | Send review requests to 5 past clients | You |
-| 3 | Publish first LinkedIn carousel (from existing blog content) | You |
-| 3 | Seed GBP with 2 more posts | You |
-| 4 | Add FAQ schema to all service pages (feeds Google AI) | Dev |
-| 4 | Launch LinkedIn newsletter "The Build Log" | Chitresh |
+| Week | Task                                                            | Owner    |
+| ---- | --------------------------------------------------------------- | -------- |
+| 1    | Create Wikidata entity with all properties and sources          | You/Dev  |
+| 1    | Claim/create Google Business Profile, complete all basic fields | You      |
+| 1    | Complete LinkedIn company page (all fields, logo, cover, about) | You      |
+| 2    | Add all GBP services (see full list above)                      | You      |
+| 2    | Upload 20+ photos to GBP                                        | You/Team |
+| 2    | First GBP post (case study update)                              | You      |
+| 2    | First LinkedIn company post + first Chitresh personal post      | Chitresh |
+| 3    | Send review requests to 5 past clients                          | You      |
+| 3    | Publish first LinkedIn carousel (from existing blog content)    | You      |
+| 3    | Seed GBP with 2 more posts                                      | You      |
+| 4    | Add FAQ schema to all service pages (feeds Google AI)           | Dev      |
+| 4    | Launch LinkedIn newsletter "The Build Log"                      | Chitresh |
 
 ### Month 2
 
-| Task | Owner |
-|---|---|
-| Continue 3x/week LinkedIn company posts + 4-5x/week founder posts | Chitresh + Team |
-| Continue weekly GBP posts | You |
-| Reach 10+ GBP reviews | You |
-| Pitch guest articles to YourStory / Inc42 (builds Wikipedia notability) | You |
-| Look into MCA records to add legal incorporation details to Wikidata | You |
-| Upload new project photos to GBP as they complete | Team |
+| Task                                                                    | Owner           |
+| ----------------------------------------------------------------------- | --------------- |
+| Continue 3x/week LinkedIn company posts + 4-5x/week founder posts       | Chitresh + Team |
+| Continue weekly GBP posts                                               | You             |
+| Reach 10+ GBP reviews                                                   | You             |
+| Pitch guest articles to YourStory / Inc42 (builds Wikipedia notability) | You             |
+| Look into MCA records to add legal incorporation details to Wikidata    | You             |
+| Upload new project photos to GBP as they complete                       | Team            |
 
 ### Month 3-6
 
-| Task | Owner |
-|---|---|
-| LinkedIn goal: 2,000+ followers | Team |
-| GBP goal: 20+ reviews, 4.5+ star average | You |
-| Wikidata: add any new verifiable claims (awards, press mentions) | You |
-| If 3+ independent press articles exist, draft Wikipedia article | You + editor |
-| Employee advocacy program: 5+ team members actively posting | Team leads |
+| Task                                                             | Owner        |
+| ---------------------------------------------------------------- | ------------ |
+| LinkedIn goal: 2,000+ followers                                  | Team         |
+| GBP goal: 20+ reviews, 4.5+ star average                         | You          |
+| Wikidata: add any new verifiable claims (awards, press mentions) | You          |
+| If 3+ independent press articles exist, draft Wikipedia article  | You + editor |
+| Employee advocacy program: 5+ team members actively posting      | Team leads   |
 
 ---
 
@@ -621,26 +631,31 @@ P1056 (product or material produced) → Q620615 (mobile application)
 ### GBP — 5 Posts (done)
 
 **Post 1 — Case Study (Visual inspection / AI):**
+
 > We built an AI-powered visual inspection platform that automates quality control using computer vision. Manufacturers using it reduced manual QA time by 80%. From model training to production deployment in 14 weeks.
 > See the full case study → https://www.baaz.pro/work1
 > [Attach: screenshot of the product]
 
 **Post 2 — Service Highlight:**
+
 > Looking for a product engineering partner? Baaz builds custom software, mobile apps, and AI solutions for startups and enterprises. From strategy to deployment — we've shipped 100+ products since 2018.
 > Book a free consultation → https://www.baaz.pro/get-in-touch
 > [Attach: team photo or product collage]
 
 **Post 3 — Thought Leadership:**
+
 > 85% of enterprise AI projects never make it to production. The gap isn't the model — it's the engineering. Infrastructure, data pipelines, monitoring, and team readiness matter more than algorithm choice.
 > Read our take → [link to blog/guest article when live]
 > [Attach: optional blog thumbnail]
 
 **Post 4 — Offer:**
+
 > Free Product Strategy Session: Book a 60-minute call with our engineering leads. We'll map your MVP scope, tech stack, and timeline — no strings attached.
 > Book now → https://www.baaz.pro/get-in-touch
 > [Attach: branded graphic]
 
 **Post 5 — Case Study (Hiring / HR tech):**
+
 > We built an AI-powered hiring platform that cut cost-per-hire by 61% and time-to-hire from 89 days to 31. Better candidates, faster decisions, less bias — product engineering applied to recruitment.
 > Full case study → https://www.baaz.pro/work2
 > [Attach: screenshot or team graphic]
@@ -649,63 +664,82 @@ P1056 (product or material produced) → Q620615 (mobile application)
 
 ### GBP — 20 Review Templates (Share with Customers)
 
-*Send these to clients so they can pick one, copy-paste, or tweak. Each is written to sound human and includes relevant keywords (product engineering, custom software, mobile app, AI, Bangalore, etc.) for SEO/local (GEO). Customers can leave as-is or personalize.*
+_Send these to clients so they can pick one, copy-paste, or tweak. Each is written to sound human and includes relevant keywords (product engineering, custom software, mobile app, AI, Bangalore, etc.) for SEO/local (GEO). Customers can leave as-is or personalize._
 
 1. **Short, general**
+
    > Hired Baaz for our mobile app. Clear communication, on-time delivery. Solid product engineering team in Bangalore. Would work with them again.
 
 2. **Software / product engineering**
+
    > We needed a custom software solution for our operations. Baaz understood the requirements quickly and delivered something we could actually scale. Professional and responsive. One of the better software development agencies we’ve worked with in Bangalore.
 
 3. **Mobile app**
+
    > Baaz built our cross-platform mobile app from scratch. They handled everything from UI/UX to deployment. The app is live and our users love it. Recommend for anyone looking for serious mobile app development in India.
 
 4. **AI / discovery**
+
    > We came with a vague “we want AI” brief. Baaz ran a short discovery, narrowed the scope, and built something that actually went to production. No fluff — real product engineering. Happy with the outcome.
 
 5. **Enterprise / timeline**
+
    > Engaged Baaz for an enterprise dashboard and integration work. They met deadlines and the code quality was good. Communication was clear throughout. Good choice for custom software development in Bangalore.
 
 6. **Design + build**
+
    > We needed both design and development. Baaz did the UI/UX first, then built it. No handoff drama — same team from strategy to launch. That’s rare. Would recommend for product strategy and development.
 
 7. **Startup / MVP**
+
    > As a startup we needed to move fast. Baaz helped us scope our MVP and shipped the first version in a few months. They get startups. Good partner for product engineering if you’re based in India or working with Indian teams.
 
 8. **Ongoing relationship**
+
    > We’ve done two projects with Baaz — first a web app, then a mobile app. Consistent quality and they remember our context. Feels like a long-term partner, not a one-off vendor. Recommended for custom software and mobile.
 
 9. **Technical / architecture**
+
    > Our project had legacy systems and new requirements. Baaz proposed a phased approach instead of a big-bang rewrite. We’re live on the first phase and it’s stable. Sensible software development and architecture.
 
 10. **Communication / remote**
+
     > We’re in the US, Baaz is in Bangalore. Time zones could have been an issue but they were flexible with calls and updates. Delivered our SaaS product on time. Good experience with a remote product engineering team.
 
 11. **Design focus**
+
     > The UI/UX work stood out. They didn’t just make it look good — they improved flows and reduced clicks. Our conversion improved after the redesign. Strong design and development combo in Bangalore.
 
 12. **AI / production**
+
     > We had an AI PoC that never made it to production. Baaz took it over — data pipelines, deployment, monitoring. Now it runs in production and we’re scaling it. If you need AI that actually ships, talk to them.
 
 13. **Scope and budget**
+
     > We had a fixed budget. Baaz helped us prioritise features and delivered a working product within it. No surprise scope creep. Transparent and professional. Good for startups and mid-size product builds.
 
 14. **Post-launch support**
+
     > The app launched on time. What we didn’t expect was how helpful they were after launch — bug fixes, small tweaks, and solid documentation. We still reach out when we need product engineering support.
 
 15. **Bangalore / local**
+
     > We were looking for a product engineering agency in Bangalore. Found Baaz through a referral. They delivered our custom software project on schedule. Would recommend to anyone looking for software development in Bangalore.
 
 16. **Enterprise / compliance**
+
     > We needed enterprise-grade software with proper access control and audit trails. Baaz got the requirements and built it. Code quality and documentation were up to standard. Good for enterprise software development.
 
 17. **Speed and quality**
+
     > Needed to get to market quickly without cutting corners. Baaz balanced speed and quality — we had a usable MVP in weeks and then iterated. Good fit if you need custom software development that can move fast.
 
 18. **Discovery first**
+
     > We almost built the wrong thing. Baaz insisted on a short discovery phase. They were right — we changed scope and saved time and money. Their product strategy and discovery process are worth it.
 
 19. **Flutter / cross-platform**
+
     > We chose Flutter and wanted a team that knew it. Baaz built our app in Flutter for iOS and Android. Single codebase, consistent experience. Recommend for mobile app development, especially cross-platform.
 
 20. **End-to-end**
@@ -719,13 +753,13 @@ All 11 posts (3 company, 4 Chitresh, 4 Ruben) are written in full above in Step 
 
 **Posting schedule for this week:**
 
-| Day | Company Page | Chitresh (CEO) | Ruben (CTO) |
-|---|---|---|---|
-| **Monday** | Viz Pro case study (AI defect detection, $4.2M savings) | 3-Owner Test framework for project success | Edge inference architecture for computer vision |
-| **Tuesday** | Suprflow case study (hiring automation, 340% ROI) | "Most companies don't need AI" contrarian take | "Let's just rewrite it" — Strangler Fig pattern |
-| **Wednesday** | — | Suprflow client win story ($47K → $18.5K per hire) | Suprflow technical architecture deep dive |
-| **Thursday** | AI in production — why 85% fail (technical deep dive) | — | — |
-| **Friday** | — | Discovery framework for enterprise clients | Build in-house vs agency — honest framework |
+| Day           | Company Page                                            | Chitresh (CEO)                                     | Ruben (CTO)                                     |
+| ------------- | ------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- |
+| **Monday**    | Viz Pro case study (AI defect detection, $4.2M savings) | 3-Owner Test framework for project success         | Edge inference architecture for computer vision |
+| **Tuesday**   | Suprflow case study (hiring automation, 340% ROI)       | "Most companies don't need AI" contrarian take     | "Let's just rewrite it" — Strangler Fig pattern |
+| **Wednesday** | —                                                       | Suprflow client win story ($47K → $18.5K per hire) | Suprflow technical architecture deep dive       |
+| **Thursday**  | AI in production — why 85% fail (technical deep dive)   | —                                                  | —                                               |
+| **Friday**    | —                                                       | Discovery framework for enterprise clients         | Build in-house vs agency — honest framework     |
 
 ---
 
@@ -735,13 +769,13 @@ All 11 posts (3 company, 4 Chitresh, 4 Ruben) are written in full above in Step 
 
 **Posting schedule:**
 
-| Day | Chitresh (CEO) | Ruben (CTO) |
-|---|---|---|
-| **Monday** | AI production — business definition (workflow, metric, rollback) | Data contracts, lineage, drift — pipelines before models |
-| **Tuesday** | Legacy modernization — continuity vs big bang freeze | PoC vs production — SLOs, fallback, monitoring |
-| **Wednesday** | Trust & failure modes — buyer/builder lens | Anti-corruption layers & safe strangler integration |
-| **Thursday** | — | — |
-| **Friday** | 5-question vendor / build sanity check | AI roadmap readable by on-call — runbooks & shadow mode |
+| Day           | Chitresh (CEO)                                                   | Ruben (CTO)                                              |
+| ------------- | ---------------------------------------------------------------- | -------------------------------------------------------- |
+| **Monday**    | AI production — business definition (workflow, metric, rollback) | Data contracts, lineage, drift — pipelines before models |
+| **Tuesday**   | Legacy modernization — continuity vs big bang freeze             | PoC vs production — SLOs, fallback, monitoring           |
+| **Wednesday** | Trust & failure modes — buyer/builder lens                       | Anti-corruption layers & safe strangler integration      |
+| **Thursday**  | —                                                                | —                                                        |
+| **Friday**    | 5-question vendor / build sanity check                           | AI roadmap readable by on-call — runbooks & shadow mode  |
 
 #### Chitresh Parihar (CEO): Week 2
 
@@ -881,15 +915,141 @@ Good AI systems are boring to operate. That's the compliment.
 
 ## Key Metrics to Track
 
-| Platform | Metric | Target (90 days) |
-|---|---|---|
-| **Wikidata** | Entity live and indexed by Google | Entity created, appears in Knowledge Graph queries |
-| **GBP** | Profile views | 500+ monthly views |
-| **GBP** | Reviews | 10+ reviews, 4.5+ stars |
-| **GBP** | Direction requests / website clicks | Baseline + 30% |
-| **LinkedIn (Company)** | Followers | 2,000+ |
-| **LinkedIn (Company)** | Post impressions | 10,000+ monthly |
-| **LinkedIn (Chitresh)** | Connections | 2,000+ relevant connections |
-| **LinkedIn (Chitresh)** | Post engagement rate | 3-5% |
-| **LinkedIn (Ruben)** | Connections | 2,000+ relevant connections (engineering leaders, CTOs) |
-| **LinkedIn (Ruben)** | Post engagement rate | 3-5% |
+| Platform                | Metric                              | Target (90 days)                                        |
+| ----------------------- | ----------------------------------- | ------------------------------------------------------- |
+| **Wikidata**            | Entity live and indexed by Google   | Entity created, appears in Knowledge Graph queries      |
+| **GBP**                 | Profile views                       | 500+ monthly views                                      |
+| **GBP**                 | Reviews                             | 10+ reviews, 4.5+ stars                                 |
+| **GBP**                 | Direction requests / website clicks | Baseline + 30%                                          |
+| **LinkedIn (Company)**  | Followers                           | 2,000+                                                  |
+| **LinkedIn (Company)**  | Post impressions                    | 10,000+ monthly                                         |
+| **LinkedIn (Chitresh)** | Connections                         | 2,000+ relevant connections                             |
+| **LinkedIn (Chitresh)** | Post engagement rate                | 3-5%                                                    |
+| **LinkedIn (Ruben)**    | Connections                         | 2,000+ relevant connections (engineering leaders, CTOs) |
+| **LinkedIn (Ruben)**    | Post engagement rate                | 3-5%                                                    |
+
+---
+
+## Part 7: Blog runway — this week + next four weeks (checklist)
+
+**Legend**
+
+- `[x]` = **Already generated / live** (treat as correct; link to these from new posts instead of repeating the same angle).
+- `[ ]` = **Not yet** — empty square bracket until the onsite blog is written, published in `blogData`, and you’ve run through `PAGE_OPTIMIZATION_FRAMEWORK.md`.
+
+**Strategic fit:** Part 3 **Content Pillars** — _AI in production_, _enterprise software decisions_, _legacy modernization_, _mobile_ — so GBP and LinkedIn always have a **baaz.pro** URL to point at.
+
+---
+
+### A. Onsite posts already live (`lib/blogData.js`) — all `[x]`
+
+| ✓   | Slug                                              | Why it stays useful                                                                       |
+| --- | ------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [x] | `thoughtworks-alternatives`                       | Commercial / comparison intent; supports “how we differ” narratives.                      |
+| [x] | `best-software-development-agencies-for-startups` | Top-of-funnel listicle; good for startup ICP + internal links.                            |
+| [x] | `how-to-choose-software-development-partner`      | Core pillar; don’t publish another generic “how to pick a partner” piece.                 |
+| [x] | `how-to-build-ai-powered-product`                 | AI pillar overview; next AI posts should go **narrower** (PoC→prod, ops, buyer criteria). |
+| [x] | `software-development-outsourcing-vs-in-house`    | Matches build-vs-buy and procurement searches Ruben/Chitresh posts reference.             |
+| [x] | `product-engineering-process-for-enterprises`     | Process + enterprise trust; link from modernization and AI articles.                      |
+| [x] | `signs-your-software-project-is-failing`          | Problem-aware SEO; pairs with rescue and vendor-switch story.                             |
+| [x] | `how-to-switch-software-development-vendors`      | Mid-funnel for takeover/rescue positioning.                                               |
+| [x] | `software-project-rescue-checklist`               | Direct conversion path for rescue service.                                                |
+| [x] | `reference-architecture-b2b-saas`                 | Technical depth for SaaS/scale-up ICP; supports modernization content.                    |
+| [x] | `slos-error-budgets-reliability`                  | Credibility for “production AI” and reliability messaging.                                |
+| [x] | `reliable-data-integration-events-cdc-outbox`     | Backs MLOps / data-pipeline angles without a duplicate “integration 101” post.            |
+
+---
+
+### B. Long-form drafts already written (not necessarily on baaz.pro yet) — `[x]`
+
+| ✓   | Asset                                     | Notes                                                                                                  |
+| --- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [x] | `guest-article-1-legacy-modernization.md` | Can pitch off-site **or** adapt into an onsite flagship; aligns with Ruben strangler / legacy threads. |
+| [x] | `guest-article-2-ai-poc-to-production.md` | Same; aligns with Month 1 “AI in production” pillar and Gartner-style stats in social copy.            |
+
+**Outlet / onsite:** [ ] Published on external site [ ] Published as baaz.pro blog (add slug to section A when live)
+
+---
+
+### C. This week (already planned — social + ops)
+
+Use **Part 3** (company + Chitresh + Ruben Week 1 schedules) and **Part 6** GBP templates. Link to existing **`[x]`** blogs where a thread needs a URL.
+
+| ✓   | Item                                                                                     |
+| --- | ---------------------------------------------------------------------------------------- |
+| [ ] | Flagship **new** onsite article shipped _this_ week (only check when live in `blogData`) |
+
+_If this week’s plan is social-only, leave the row above `[ ]` and pull links from section A._
+
+---
+
+### D. Next four weeks — new onsite flagship topics (each starts as `[ ]`)
+
+Roll calendar by **Monday start date** (write it in the header when you reuse this block).
+
+#### Week +1
+
+| ✓   | Topic                                                             |
+| --- | ----------------------------------------------------------------- |
+| [ ] | **Legacy modernization: rebuild vs re-platform vs strangler fig** |
+
+**Why next:** Ruben’s LinkedIn already teaches this pattern; a dedicated article captures **legacy modernization** and **rewrite** intent in search and AI answers, and gives GBP Week 3–style posts a perfect link. You have adjacent coverage (`software-project-rescue-checklist`, `reference-architecture-b2b-saas`) but **no** single decision-framework URL — this fills that gap without cannibalizing the pillar partner post.
+
+---
+
+#### Week +2
+
+| ✓   | Topic                                                            |
+| --- | ---------------------------------------------------------------- |
+| [ ] | **From AI PoC to production: a practical engineering checklist** |
+
+**Why next:** Matches your **guest article 2** thesis and Part 3 “85% never ship” narrative. `how-to-build-ai-powered-product` is broad; this piece owns **PoC → prod**, **SLOs**, **pipelines**, and **monitoring** — exactly what CTOs search when a demo already exists. Pairs with `slos-error-budgets-reliability` via internal links instead of repeating it.
+
+---
+
+#### Week +3
+
+| ✓   | Topic                                                                   |
+| --- | ----------------------------------------------------------------------- |
+| [ ] | **AI in production: workflow owner, success metric, and rollback plan** |
+
+**Why next:** Chitresh’s Week 2 angles (“workflow + metric + rollback”, trust / failure modes) are not a single onsite page yet. This targets **buyer / sponsor** intent and **GEO** (clear definitions, quotable framework), and converts better than another model-hype article because it matches how enterprises actually buy.
+
+---
+
+#### Week +4
+
+| ✓   | Topic                                                        |
+| --- | ------------------------------------------------------------ |
+| [ ] | **Flutter vs React Native for B2B and consumer apps (2026)** |
+
+**Why next:** Month 2 pillar includes **mobile**; your **mobile-app** service page needs a long-form SEO companion for the endless “which cross-platform stack?” queries. Positions Baaz for teams comparing stacks before they RFP.
+
+---
+
+### E. Optional week +5 (if you want a fifth publish)
+
+| ✓   | Topic                                                                                    |
+| --- | ---------------------------------------------------------------------------------------- |
+| [ ] | **Product engineering for hiring tech: architecture patterns** (tie to work2 / Suprflow) |
+
+**Why:** Supports **HR tech** ICP and case-study keywords without a generic “AI recruiting” fluff piece; use when work2 is a core sales narrative.
+
+---
+
+### F. Guest / PR (off-site)
+
+| ✓   | Milestone                                              |
+| --- | ------------------------------------------------------ |
+| [ ] | Guest 1 pitched                                        |
+| [ ] | Guest 1 placed + URL captured for Wikidata / backlinks |
+| [ ] | Guest 2 pitched                                        |
+| [ ] | Guest 2 placed + URL captured                          |
+
+---
+
+### G. How to roll this block forward
+
+1. When a Week +N article goes live, set its box to `[x]`, add a row under **section A** with the new slug, and start a **new** Week +4 line at the bottom.
+2. Refresh **section C** “this week” to match your calendar Monday.
+3. Keep new titles distinct from section A slugs to avoid keyword cannibalization.
