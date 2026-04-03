@@ -21,7 +21,7 @@ const WhoWeAreSection = () => {
             <strong>Baaz</strong> is a custom software and product engineering
             company based in Bangalore, India, operating since 2018. We partner
             with startups, scale-ups, and enterprises worldwide to ship
-            purposeful digital products—not slide decks or throwaway demos.
+            purposeful digital products.
           </p>
           <p className="who-we-are-section-paragraph">
             Since 2018 we have designed, developed, and launched over 100 web

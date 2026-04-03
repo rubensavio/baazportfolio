@@ -101,11 +101,14 @@ export default function BlogPostPageClient({ slug, data }) {
 
         <div className="blog-explore">
           <p className="blog-explore-text">
-            Explore our{" "}
+            Explore{" "}
             <Link href="/services/product-strategy">Product Strategy</Link>,{" "}
             <Link href="/services/web-development">Custom Software</Link>, and{" "}
-            <Link href="/services/ai-solution">AI Development</Link> services, or{" "}
-            <Link href="/get-in-touch">get in touch</Link> to discuss your project.
+            <Link href="/services/ai-solution">AI Development</Link>. If a build has
+            stalled, see{" "}
+            <Link href="/project-rescue">software project rescue</Link>. When you are
+            ready to talk,{" "}
+            <Link href="/get-in-touch">get in touch</Link>.
           </p>
         </div>
       </article>

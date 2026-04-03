@@ -189,6 +189,12 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 - **Many H2s with 1–2 short paragraphs** — merge or deepen until averages meet the table.  
 - **Duplicate stacks** — `directAnswer`, `intro`, and first H2 should not repeat the same sentence thrice; vary depth and angle.
 
+**Editorial trust (blogs & long guides)**
+
+1. **No mid-article sales CTAs** — Do not drop “contact us”, “book a call”, “free audit”, or “our [service] is built for this” paragraphs inside unrelated H2 bodies. The `/blog/[slug]` template already ends with the `blog-explore` block (services + `/project-rescue` + `/get-in-touch`) and the site CTA. Keep the article body educational; **one** optional Baaz-positioning section is acceptable **only** at the **end** of `sections[]` (immediately before FAQs), or omit and rely on the template footer.  
+2. **Third-party statistics** — Any figure from an external report must include **source + publication year** in the same paragraph or FAQ answer, or soften to directional language (“surveys often find…”, “analyst estimates vary by year…”) so informed buyers are not handed stale numbers without context. Refresh or remove undated **2023-or-older** market stats when you cannot cite a current edition.  
+3. **First-party ranges (e.g. codebase preservation 60–80%)** — Treat as **audit-dependent**, not a universal guarantee. Required pattern: tie the band to **methodology** (e.g. “per Baaz’s internal classification across N takeovers, post-audit”), state that **share varies by codebase**, and note that **salvage vs. replace** is documented in the audit. For buyer diligence, it must be defensible: offer **anonymized patterns and reference conversations under NDA**—do not imply public case studies exist where they do not. Prefer **one** detailed formulation in the canonical rescue content; elsewhere use a **shorter cross-reference** rather than repeating the identical claim in many posts.
+
 ### Technical notes
 
 - **Article** + **FAQPage** JSON-LD: `app/blog/[slug]/layout.js` (do not duplicate FAQ script in the client page).  
@@ -210,6 +216,8 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 - [ ] **Long-form targets** (§6 table): intro length, section count, paragraphs per H2, body word minimum, limitations H2.  
 - [ ] Tables use `table.caption` when context is needed.  
 - [ ] Link **out** to authoritative sources for stats or vendors (GEO + E-E-A-T).  
+- [ ] **No mid-article CTAs**; any Baaz-specific close lives in the **last** section only, or rely on the template `blog-explore` + site CTA (see **Editorial trust** above).  
+- [ ] **Stats**: third-party numbers dated or softened; first-party bands (e.g. preservation %) methodology-labelled and not copy-pasted across every post.  
 - [ ] Optional: `datePublished` / `dateModified` / `image` in Article schema when stable (`buildArticleSchema` in blog layout).  
 - [ ] Optional: default or per-post `openGraph.images` for blog layout (improves shares vs homepage-only default).
 
