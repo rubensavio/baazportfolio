@@ -6,6 +6,18 @@ import { getSiteUrl } from "../../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
+/** Fallback when a post has no explicit dates (evergreen library content). */
+const DEFAULT_ARTICLE_DATE = "2018-01-01";
+
+function postOgImagePath(data) {
+  return data.ogImage || ogImage;
+}
+
+function absoluteImageUrl(pathOrUrl) {
+  if (!pathOrUrl) return `${baseUrl}${ogImage}`;
+  if (pathOrUrl.startsWith("http")) return pathOrUrl;
+  return `${baseUrl}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;
+}
 
 export async function generateMetadata({ params }) {
   const resolved = await params;
@@ -14,6 +26,8 @@ export async function generateMetadata({ params }) {
   if (!data) {
     notFound();
   }
+
+  const shareImage = postOgImagePath(data);
 
   return {
     title: data.metaTitle,
@@ -26,7 +40,7 @@ export async function generateMetadata({ params }) {
       siteName: "Baaz",
       images: [
         {
-          url: ogImage,
+          url: shareImage,
           width: 1200,
           height: 630,
           alt: data.title,
@@ -37,18 +51,25 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: data.metaTitle,
       description: data.metaDescription,
-      images: [ogImage],
+      images: [shareImage],
     },
   };
 }
 
 function buildArticleSchema(data, slug) {
+  const published = data.datePublished || DEFAULT_ARTICLE_DATE;
+  const modified = data.dateModified || published;
+  const imageUrl = absoluteImageUrl(postOgImagePath(data));
+
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: data.title,
     description: data.metaDescription,
     url: `${baseUrl}/blog/${slug}`,
+    datePublished: published,
+    dateModified: modified,
+    image: [imageUrl],
     articleSection: data.contentType,
     author: {
       "@type": "Organization",
