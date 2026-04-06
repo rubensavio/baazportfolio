@@ -8,6 +8,8 @@ Use this as the **single checklist** when you add or substantially refresh **blo
 
 Targets align with the **meta-tags-optimizer** and **on-page SEO auditor** rubrics where applicable.
 
+For **site-wide technical SEO, SERP analysis, and on-page audit automation** (agent prompts + checklists), see **`SEO_SERP_AUTOMATION_PLAYBOOK.md`**.
+
 ---
 
 ## 1. Goals (what “good” looks like)
@@ -54,6 +56,7 @@ Targets align with the **meta-tags-optimizer** and **on-page SEO auditor** rubri
 | **Each industry** | `lib/industryData.js` — `metaTitle`, `metaDescription` |
 | **Industry route** | `app/industry/[industrySlug]/layout.js` |
 | **Other marketing pages** | `app/<route>/layout.js` |
+| **Legal** (`/privacy`, `/terms`) | `app/<route>/layout.js` for metadata + `BreadcrumbScript`; `page.js` uses `app/legal/legal-page.scss` — **legal-document sheet** (Urbanist), `max-width` **42rem** below **64rem** viewport, **`calc(54.6rem * 1.4)`** (~76.44rem) from **64rem** up, then **`CTA`** + **`Footer`**. |
 
 Keep **one set of strings** in the data object (or layout export); `generateMetadata` maps them into `openGraph` and `twitter`.
 

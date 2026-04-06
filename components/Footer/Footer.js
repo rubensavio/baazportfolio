@@ -105,10 +105,10 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
-          <p className="footer-copyright">© 2025 Baaz. All rights reserved</p>
+          <p className="footer-copyright">© 2026 Baaz. All rights reserved</p>
           <div className="footer-legal">
-            <a href="#privacy-policy">Privacy Policy</a>
-            <a href="#terms-of-service">Terms of service</a>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of service</Link>
           </div>
         </div>
       </div>

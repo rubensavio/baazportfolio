@@ -15,7 +15,9 @@ const Footer = dynamic(() => import("../../components/Footer/Footer"), {
 });
 
 export default function BlogIndexPage() {
-  const posts = Object.values(blogData);
+  const posts = Object.values(blogData).sort((a, b) =>
+    (b.datePublished || "").localeCompare(a.datePublished || "")
+  );
 
   return (
     <div className="blog-index-page">

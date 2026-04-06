@@ -1,0 +1,160 @@
+/* Legal pages — compact document layout (policy / terms), not marketing hero */
+
+.marketing-legal-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f4f5;
+
+  .headroom {
+    z-index: 9999 !important;
+  }
+
+  .navbar {
+    z-index: 9999;
+  }
+}
+
+/* Single column: tight under navbar; desktop = prior desktop (54.6rem) × 1.4 */
+.legal-doc-main {
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0.5rem clamp(1rem, 4vw, 1.5rem) clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 48rem) {
+  .legal-doc-main {
+    padding-top: 0.75rem;
+  }
+}
+
+/* Desktop (~lg+): 54.6rem × 1.4 = 76.44rem */
+@media (min-width: 64rem) {
+  .legal-doc-main {
+    max-width: calc(54.6rem * 1.4);
+  }
+}
+
+/* “Sheet of paper” — same font stack as rest of site (Urbanist) */
+.legal-doc-sheet {
+  font-family:
+    var(--font-urbanist),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 4px 24px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.legal-doc-header {
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 4vw, 2rem) 0;
+  text-align: left;
+  border-bottom: 1px solid #e4e4e7;
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+.legal-doc-kicker {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #932efa;
+  margin: 0 0 0.35rem;
+}
+
+.legal-doc-entity {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #52525b;
+  margin: 0 0 0.75rem;
+  line-height: 1.4;
+}
+
+.legal-doc-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.375rem, 3.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.legal-doc-meta {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #64748b;
+  margin: 0 0 1rem;
+}
+
+.legal-doc-divider {
+  margin: 0;
+  border: none;
+  border-top: 1px solid #e4e4e7;
+}
+
+.legal-doc-body {
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.25rem, 4vw, 2rem)
+    clamp(1.5rem, 3vw, 2rem);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #1e293b;
+
+  & > p:first-of-type {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-family: var(--font-urbanist), sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #0f172a;
+    margin: 1.35rem 0 0.5rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid #f1f5f9;
+
+    &:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  p {
+    margin: 0 0 0.85rem;
+  }
+
+  ul {
+    margin: 0 0 0.85rem;
+    padding-left: 1.35rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+
+  strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  a {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #932efa;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #7a25d1;
+    }
+  }
+}
