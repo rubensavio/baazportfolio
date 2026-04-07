@@ -22,6 +22,7 @@ const ogImage = "/assets/ogdefault.png";
 export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
+  applicationName: "Baaz",
   title: "Custom Software & Product Engineering | Baaz",
   description:
     "Custom software for startups and enterprises—strategy, UI/UX, web, mobile, AI. Bangalore-based Baaz since 2018. Book a call to scope your build and roadmap.",
@@ -57,6 +58,7 @@ const structuredData = {
       "@id": `${baseUrl}/#organization`,
       name: "Baaz",
       url: baseUrl,
+      email: "support@baaz.live",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/assets/Logo.svg`,
@@ -70,6 +72,16 @@ const structuredData = {
         "Enterprise Product Engineering",
         "MVP Development",
         "Digital Transformation",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "support@baaz.live",
+          areaServed: "Worldwide",
+          availableLanguage: ["en"],
+          url: `${baseUrl}/get-in-touch`,
+        },
       ],
     },
     {
@@ -95,10 +107,18 @@ const structuredData = {
       url: baseUrl,
       name: "Baaz",
       publisher: { "@id": `${baseUrl}/#organization` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${baseUrl}/?s={search_term_string}`,
-        "query-input": "required name=search_term_string",
+      inLanguage: "en",
+    },
+    {
+      "@type": "ContactPage",
+      "@id": `${baseUrl}/get-in-touch/#webpage`,
+      url: `${baseUrl}/get-in-touch`,
+      name: "Contact Baaz",
+      isPartOf: { "@id": `${baseUrl}/#website` },
+      about: { "@id": `${baseUrl}/#organization` },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/assets/ogdefault.png`,
       },
     },
     {
