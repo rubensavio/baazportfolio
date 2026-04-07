@@ -89,6 +89,43 @@ const structuredData = {
       provider: { "@id": `${baseUrl}/#organization` },
       areaServed: "Worldwide",
     },
+    {
+      "@type": "WebSite",
+      "@id": `${baseUrl}/#website`,
+      url: baseUrl,
+      name: "Baaz",
+      publisher: { "@id": `${baseUrl}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${baseUrl}/?s={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": `${baseUrl}/#site-navigation`,
+      name: "Main Navigation",
+      hasPart: [
+        { "@type": "WebPage", name: "About", url: `${baseUrl}/about` },
+        { "@type": "WebPage", name: "Services", url: `${baseUrl}/services` },
+        {
+          "@type": "WebPage",
+          name: "Case Studies",
+          url: `${baseUrl}/case-studies`,
+        },
+        { "@type": "WebPage", name: "Blog", url: `${baseUrl}/blog` },
+        {
+          "@type": "WebPage",
+          name: "Enterprise",
+          url: `${baseUrl}/enterprise`,
+        },
+        {
+          "@type": "WebPage",
+          name: "Get in Touch",
+          url: `${baseUrl}/get-in-touch`,
+        },
+      ],
+    },
   ],
 };
 
