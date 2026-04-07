@@ -1,6 +1,14 @@
+---
+page_title: "Why Most Enterprise Legacy Rewrites Fail — And What Phased Modernization Looks Like"
+meta_description: "Full rewrites vs lift-and-shift — and why a Strangler Fig, bounded-context approach cuts risk. Phases, data migration reality, and when a rewrite is actually justified."
+primary_keyword: "legacy modernization"
+secondary_keywords: "enterprise rewrite, strangler fig pattern, phased migration, technical debt"
+last_optimized: "2026-04-07"
+---
+
 # Why Most Enterprise Legacy Rewrites Fail — And What a Phased Modernization Approach Looks Like
 
-*~1,900 words | Target: Built In, InfoQ, DZone*
+*~2,000 words · Applicable to: dev.to, InfoQ, sdtimes.com, community.nasscom.in, clutch.co*
 
 ---
 
@@ -14,7 +22,9 @@ And that's where the trouble starts.
 
 The instinct to rewrite from scratch is understandable. Legacy code is painful. The technology is outdated. The user experience is embarrassing. A greenfield build feels clean and fast.
 
-But the data tells a different story. Research from Standish Group consistently shows that large IT projects — particularly rewrites — have a failure rate north of 60%. McKinsey found that large software projects run 66% over budget and 33% over time, with 17% going so badly they threaten the company's existence.
+But the data tells a different story. The Standish Group's 2020 CHAOS Report found that only 31% of software projects are considered successful, with large-scale rewrites faring significantly worse. McKinsey's 2019 analysis of large IT projects reported that 66% ran over budget and 33% over schedule — with 17% going so badly they threatened the company's existence.
+
+The pattern is clear: big-bang rewrites are not weekend refactors. They are full business migrations.
 
 Why? Because a full rewrite is not a technical project. It's a business migration. You're not just replacing code — you're replacing institutional knowledge, edge cases that took years to discover, integrations that nobody fully documented, and workflows that hundreds (sometimes thousands) of people depend on daily.
 
@@ -51,7 +61,7 @@ Pick your first bounded context and build it as a standalone service with a mode
 
 The critical point: during this phase, the legacy system is still the system of record. The new service runs in parallel, and you validate it with real data. This is not a sandbox exercise — it's production validation with a safety net.
 
-In one manufacturing engagement, a phased modernization of the supply chain system — replacing legacy batch processing with predictive analytics — reduced operational costs by $15M annually. The key wasn't the technology; it was the sequencing: starting with the highest-cost manual workflows first.
+In one manufacturing engagement, a phased modernization of a supply chain system — replacing legacy batch processing with event-driven architecture — reduced operational costs by over 40% within the first year. The key wasn't the technology; it was the sequencing: starting with the highest-cost manual workflows first.
 
 ### Phase 2: Cut Over and Validate (2–4 weeks)
 
@@ -108,14 +118,6 @@ Start small. Prove the pattern. Build organizational confidence. Repeat.
 The companies that get this right don't end up with a flashy rewrite story. They end up with a system that quietly, incrementally got better — without ever putting the business at risk.
 
 ---
-
-## Submission Targets
-
-| Platform | How to Submit | Notes |
-|---|---|---|
-| **Built In** (primary) | Pitch a paragraph to expert@builtin.com | Frame as "professional challenge" — engineering leaders facing the rewrite decision |
-| **InfoQ** | Submit via Google Form at infoq.com/contribute | Frame as architecture decision content for senior engineers |
-| **DZone** | Submit at dzone.com or pitch editors@dzone.com | Frame as practical modernization guide for developers |
 
 ## Author Bio
 

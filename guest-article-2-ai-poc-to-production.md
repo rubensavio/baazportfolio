@@ -1,12 +1,20 @@
+---
+page_title: "From Proof-of-Concept to Production: A Framework for Shipping AI Products"
+meta_description: "Why PoCs ship and products don't — four stages from problem scope to monitoring, plus org failure modes. Practical constraints for latency, data, and human-in-the-loop."
+primary_keyword: "AI production deployment"
+secondary_keywords: "ML operations, proof of concept, data pipeline, model monitoring"
+last_optimized: "2026-04-07"
+---
+
 # From Proof-of-Concept to Production: A Practical Framework for Shipping AI Products
 
-*~2,100 words | Target: Towards Data Science, DZone, InfoQ*
+*~2,100 words · Applicable to: dev.to, InfoQ, sdtimes.com, community.nasscom.in, clutch.co*
 
 ---
 
-There's a statistic that gets repeated so often in AI circles it's almost lost its impact: according to Gartner, 85% of AI projects fail to deliver. VentureBeat reported that 87% of data science projects never make it to production. The numbers vary by source, but the direction is consistent. Most AI work dies in the proof-of-concept phase.
+The headlines are consistent: Gartner's 2022 survey found that only 54% of AI projects make it from pilot to production. VentureBeat reported a similar figure — 87% of data science projects never reach deployment. The precise percentages shift by survey and definition, but the direction is clear. Most AI initiatives stall after the proof-of-concept.
 
-Having built AI products that process 50M+ transactions daily for fraud detection, run computer vision on factory floors, and support clinical decision-making across 200+ hospitals — I've seen what separates the projects that ship from the ones that don't. It's rarely the model. It's almost always the engineering around it.
+Having built AI products across fraud detection (processing tens of millions of transactions daily), computer vision for manufacturing quality inspection, and clinical decision support for hospital networks — I've seen what separates the projects that ship from the ones that don't. It's rarely the model. It's almost always the engineering around it.
 
 ## Why PoCs Succeed and Products Fail
 
@@ -37,7 +45,7 @@ This means:
 
 If you can't fill in those three blanks, you're not ready to build. You're ready to research.
 
-A financial services fraud detection project I worked on scoped the first release to exactly that: one metric (reduce false positive rate below 15% while maintaining recall above 90%), one user (the fraud ops team), one workflow (real-time transaction flagging). That tight scoping meant the ML team, the operations team, and the business sponsor all agreed on what "done" looked like before a single model was trained. The result: 85% improvement in fraud detection accuracy, processing 50M+ transactions daily with sub-second response times. None of that would have happened if the scope had been "improve our fraud system."
+In a financial services engagement, we scoped the first release to exactly that: one metric (reduce false positive rate below 15% while maintaining recall above 90%), one user (the fraud ops team), one workflow (real-time transaction flagging). That tight scoping meant the ML team, the operations team, and the business sponsor all agreed on what "done" looked like before a single model was trained. The result: false positive rates dropped by over 80%, with sub-second inference at scale. None of that would have happened if the scope had been "improve our fraud system."
 
 ### Stage 2: Data Engineering (60–80% of the Work)
 
@@ -56,7 +64,7 @@ This is the part that gets the most attention in blog posts and papers, so I'll 
 
 **Start with the simplest model that could work.** A gradient-boosted tree or logistic regression that you can deploy in a week beats a transformer that takes three months to train and serve. You can always upgrade the model later. You can't always recover from a project that never shipped.
 
-**Optimize for latency and cost, not just accuracy.** A model that's 2% more accurate but 10x more expensive to serve is not a better model for production. Know your latency budget (how fast does the prediction need to be?) and your cost budget (how much can you spend per inference?) before you start tuning. In the fraud detection system I mentioned, the sub-second latency requirement eliminated entire classes of models — we couldn't run a large ensemble on every transaction. Constraints like that are features, not obstacles. They force you to build something deployable.
+**Optimize for latency and cost, not just accuracy.** A model that's 2% more accurate but 10x more expensive to serve is not a better model for production. Know your latency budget (how fast does the prediction need to be?) and your cost budget (how much can you spend per inference?) before you start tuning. In the fraud detection system mentioned above, the sub-second latency requirement eliminated entire classes of models — we couldn't run a large ensemble on every transaction. Constraints like that are features, not obstacles. They force you to build something deployable.
 
 **Build model evaluation into the pipeline.** Don't evaluate on a static test set. Build an evaluation pipeline that runs on every new data batch, tracks metrics over time, and alerts when performance degrades. This is the difference between a model that works on launch day and a model that works six months later.
 
@@ -90,7 +98,7 @@ In many companies, the data science team builds the PoC, then "hands off" to the
 
 The teams that ship AI products are cross-functional: data engineers, ML engineers, backend engineers, and a product person — all working on the same squad, with a shared definition of done that includes "running in production and improving the target metric."
 
-If your org structure requires a handoff between "the AI team" and "the product team," restructure the team before you start the project.
+If your org structure requires a handoff between "the AI team" and "the product team," consider restructuring the team — or at minimum, embedding an ML engineer directly in the product squad for the duration of the build.
 
 ## What "Done" Looks Like
 
@@ -115,14 +123,6 @@ The model is the easy part. The product is the hard part.
 
 ---
 
-## Submission Targets
-
-| Platform | How to Submit | Notes |
-|---|---|---|
-| **Towards Data Science** (primary) | Submit via Contributor Portal at towardsdatascience.com | 1000–2500 words, educational, no promotional language. Disclose affiliation in bio. |
-| **DZone** | Submit at dzone.com/content/article/post.html or pitch editors@dzone.com | Developer audience, technical depth appreciated |
-| **InfoQ** | Submit via Google Form at infoq.com/contribute | Senior engineer audience, architecture and emerging tech focus |
-
 ## Author Bio
 
-> [Name] leads AI product engineering at Baaz (baaz.pro), where the team builds and ships AI products — from computer vision and NLP to predictive analytics — serving 20M+ consumers across India, the Middle East, and the US. The team includes published AI/ML researchers with 15+ years average experience.
+> [Name] leads AI product engineering at Baaz (baaz.pro), where the team builds and ships AI products — from computer vision and NLP to predictive analytics — serving millions of consumers across India, the Middle East, and the US. The team includes published AI/ML researchers with 15+ years average experience.
