@@ -158,8 +158,8 @@ The pattern breaks with one boring, disciplined habit: a **weekly 45-minute tria
 
 Agenda we use in practice:
 
-1. **Risks** (only the top three that could kill the month).  
-2. **Decisions** (pre-read; meeting is for choices, not discovery).  
+1. **Risks** (only the top three that could kill the month).
+2. **Decisions** (pre-read; meeting is for choices, not discovery).
 3. **One explicit “no”** to scope creep — something that sounded reasonable in email but doesn’t survive daylight.
 
 No committee theater. No “surprise, legal needs to review this” in week nine because legal was never in the loop.
@@ -222,8 +222,8 @@ But a lot of “AI features” are really **pipelines**: enrich, score, notify, 
 
 **Event-driven** flow we reach for:
 
-1. Accept the request, validate, enqueue work, return **202 + job id** (or update UI optimistically).  
-2. Workers process with **explicit concurrency** and **dead-letter** handling.  
+1. Accept the request, validate, enqueue work, return **202 + job id** (or update UI optimistically).
+2. Workers process with **explicit concurrency** and **dead-letter** handling.
 3. Results land in a store the UI subscribes to — websocket, poll, or email — **without** blocking the hot path.
 
 The anti-pattern I still see in 2026: seven internal HTTP hops because “microservices,” with no visibility into **where** time went.
@@ -525,8 +525,8 @@ If you’re the sponsor picking up the pieces, the first week isn’t about “m
 
 Questions we ask on day one — before we touch architecture:
 
-1. **What actually shipped** vs what’s documented in decks? (Commits, envs, user-facing URLs — not intentions.)  
-2. **Where is truth for requirements** — tickets, contracts, Slack, or a PM’s head? Pick **one** system of record going forward.  
+1. **What actually shipped** vs what’s documented in decks? (Commits, envs, user-facing URLs — not intentions.)
+2. **Where is truth for requirements** — tickets, contracts, Slack, or a PM’s head? Pick **one** system of record going forward.
 3. **What must not break** for the next 90 days — revenue, compliance, a retail season, payroll — name it explicitly.
 
 Speed without that snapshot is just **faster thrash** with a new letterhead.
