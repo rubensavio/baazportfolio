@@ -16,7 +16,7 @@ const Work2Results = () => {
       bgColor: "#EDE2FF",
       items: [
         "Previous Process: 156 hours per month on manual screening",
-        "With Suprflow: 23 hours per month on review and decision-making",
+        "With the platform: 23 hours per month on review and decision-making",
         "Time Saved: 133 hours per month (85% reduction)",
         "Equivalent to: 3.3 full-time employees worth of work",
       ],

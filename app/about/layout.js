@@ -11,7 +11,7 @@ export const metadata = {
   alternates: getAlternates("/about"),
   title: "About Baaz — Product Engineering Studio",
   description:
-    "Meet Baaz: Bangalore product engineering since 2018—team, values, and custom web and mobile for startups and enterprises from strategy through launch.",
+    "Meet Baaz: Bangalore software development and artificial intelligence company since 2018—team, values, research & product development for startups and enterprises.",
   openGraph: {
     title: "About Baaz — Product Engineering Studio",
     description:

@@ -15,7 +15,7 @@ const Work2Implementation = () => {
       days: "Days 1-30",
       title: "The Setup",
       description:
-        'The Suprflow team integrated with CloudScale\'s existing ATS and configured the system for their tech stack. Initial skepticism from the recruitment team was palpable - "Another tool that promises to solve everything," muttered Tom, a senior recruiter who\'d seen more recruitment software than a SaaS trade show.',
+        'The implementation team integrated with CloudScale\'s existing ATS and configured the system for their tech stack. Initial skepticism from the recruitment team was palpable - "Another tool that promises to solve everything," muttered Tom, a senior recruiter who\'d seen more recruitment software than a SaaS trade show.',
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ const Work2Implementation = () => {
       days: "Days 61-90",
       title: "Full Development",
       description:
-        "With confidence building, CloudScale rolled out Suprflow across all technical hiring.",
+        "With confidence building, CloudScale rolled out the platform across all technical hiring.",
     },
   ];
 

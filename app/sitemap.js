@@ -1,5 +1,6 @@
 import { servicesData } from "../lib/servicesData";
 import { industryData } from "../lib/industryData";
+import { erpData } from "../lib/erpData";
 import { blogData } from "../lib/blogData";
 import { SITEMAP_STATIC_PATHS } from "../lib/sitemapStaticPaths";
 import { getAlternates } from "../lib/regions";
@@ -28,7 +29,8 @@ export default function sitemap() {
             path === "/enterprise" ||
             path === "/blog" ||
             path === "/services" ||
-            path === "/industry"
+            path === "/industry" ||
+            path === "/erp"
           ? 0.9
           : path === "/case-studies"
             ? 0.85
@@ -74,10 +76,20 @@ export default function sitemap() {
     })
   );
 
+  const erpRoutes = Object.keys(erpData).map((slug) =>
+    withAlternates(`/erp/${slug}`, {
+      url: `${baseUrl}/erp/${slug}`,
+      lastModified: lastModIndustry(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    })
+  );
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
     ...industryRoutes,
+    ...erpRoutes,
     ...blogPostRoutes,
   ];
 }

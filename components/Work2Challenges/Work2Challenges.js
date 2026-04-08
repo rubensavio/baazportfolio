@@ -26,7 +26,7 @@ const Work2Challenges = () => {
               <li>
                 <strong>Initial Over-Reliance:</strong> Early adopters tried to
                 completely automate decisions, forgetting the human element.
-                Suprflow works best as an intelligent assistant, not a
+                The platform works best as an intelligent assistant, not a
                 replacement for human judgment.
               </li>
               <li>

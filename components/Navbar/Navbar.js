@@ -12,10 +12,26 @@ const INDUSTRIES = [
   { slug: "healthcare", label: "Healthcare" },
 ];
 
+const ERP_SOLUTIONS = [
+  { slug: "insurance-companies", label: "ERP for Insurance Companies" },
+  { slug: "manufacturing-companies", label: "ERP for Manufacturing Companies" },
+  { slug: "banking-companies", label: "ERP for Banking Companies" },
+  { slug: "healthcare-companies", label: "ERP for Healthcare Companies" },
+  { slug: "hospitals", label: "ERP for Hospitals" },
+  { slug: "real-estate-companies", label: "ERP for Real Estate Companies" },
+  { slug: "construction-companies", label: "ERP for Construction Companies" },
+  { slug: "automobile-companies", label: "ERP for Automobile Companies" },
+  {
+    slug: "transportation-supply-chain-companies",
+    label: "ERP for Transportation & Supply Chain Companies",
+  },
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false);
   const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
+  const [isErpDropdownOpen, setIsErpDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
@@ -33,6 +49,10 @@ const Navbar = () => {
 
   const toggleServicesDropdown = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
+  };
+
+  const toggleErpDropdown = () => {
+    setIsErpDropdownOpen(!isErpDropdownOpen);
   };
 
   return (
@@ -126,6 +146,30 @@ const Navbar = () => {
               ))}
             </ul>
           </li>
+          <li className="navbar-item dropdown">
+            <a
+              href="#"
+              className={`navbar-link ${
+                pathname?.startsWith("/erp") ? "active" : ""
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <span className="link-text">ERP Solutions</span>
+              <span className="dropdown-icon">▼</span>
+            </a>
+            <ul className="dropdown-menu">
+              <li>
+                <Link href="/erp">All ERP Solutions</Link>
+              </li>
+              {ERP_SOLUTIONS.map(({ slug, label }) => (
+                <li key={slug}>
+                  <Link href={`/erp/${slug}`}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </li>
           <li className="navbar-item">
             <Link
               href="/blog"
@@ -199,6 +243,40 @@ const Navbar = () => {
                         Tech Hiring Automation
                       </Link>
                     </li>
+                  </ul>
+                )}
+              </li>
+              <li className="mobile-menu-item mobile-dropdown">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleErpDropdown();
+                  }}
+                >
+                  ERP Solutions
+                  <span
+                    className={`dropdown-icon ${
+                      isErpDropdownOpen ? "open" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </a>
+                {isErpDropdownOpen && (
+                  <ul className="mobile-dropdown-menu">
+                    <li>
+                      <Link href="/erp" onClick={toggleMenu}>
+                        All ERP Solutions
+                      </Link>
+                    </li>
+                    {ERP_SOLUTIONS.map(({ slug, label }) => (
+                      <li key={slug}>
+                        <Link href={`/erp/${slug}`} onClick={toggleMenu}>
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 )}
               </li>

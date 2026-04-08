@@ -9,7 +9,7 @@ export const metadata = {
   alternates: getAlternates("/gtm-engineering"),
   title: "GTM Engineering — B2B Pipeline Systems | Baaz",
   description:
-    "Full-stack GTM engineering: content, outbound, ads, SEO, capture, nurture, conversion—one system for predictable B2B pipeline. Built by Baaz since 2018.",
+    "Internet marketing service and GTM engineering: content, outbound, ads, SEO, nurture, and business development—one system for predictable B2B pipeline. Baaz since 2018.",
   openGraph: {
     title: "GTM Engineering — B2B Pipeline Systems | Baaz",
     description:

@@ -25,7 +25,7 @@ export const metadata = {
   applicationName: "Baaz",
   title: "Custom Software & Product Engineering | Baaz",
   description:
-    "Custom software for startups and enterprises—strategy, UI/UX, web, mobile, AI. Bangalore-based Baaz since 2018. Book a call to scope your build and roadmap.",
+    "Software development service for startups and enterprises—strategy, UI/UX, web, mobile, AI, and IT consulting. Bangalore-based Baaz since 2018. Book a call to scope your build.",
   openGraph: {
     title: "Custom Software & Product Engineering | Baaz",
     description:
@@ -72,6 +72,15 @@ const structuredData = {
         "Enterprise Product Engineering",
         "MVP Development",
         "Digital Transformation",
+        "Software Development Service",
+        "Artificial Intelligence",
+        "Information Technology Consulting",
+        "Business Management Consulting",
+        "Internet Marketing",
+        "Research & Product Development",
+        "Engineering Consulting",
+        "Business Development",
+        "Marketing Consulting",
       ],
       contactPoint: [
         {
@@ -97,6 +106,15 @@ const structuredData = {
         "Enterprise Product Engineering",
         "MVP Development",
         "Digital Transformation",
+        "Software Development Service",
+        "Artificial Intelligence Company",
+        "Information Technology Consultant",
+        "Business Management Consultant",
+        "Internet Marketing Service",
+        "Research & Product Development",
+        "Engineering Consultant",
+        "Business Development Service",
+        "Marketing Consultant",
       ],
       provider: { "@id": `${baseUrl}/#organization` },
       areaServed: "Worldwide",
@@ -138,6 +156,11 @@ const structuredData = {
           "@type": "WebPage",
           name: "Enterprise",
           url: `${baseUrl}/enterprise`,
+        },
+        {
+          "@type": "WebPage",
+          name: "ERP Solutions",
+          url: `${baseUrl}/erp`,
         },
         {
           "@type": "WebPage",
