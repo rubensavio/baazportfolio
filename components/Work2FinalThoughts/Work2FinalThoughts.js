@@ -23,7 +23,7 @@ const Work2FinalThoughts = () => {
           ref={contentRef}
         >
           <p>
-            "Suprflow didn't replace our recruitment team," Sarah reflects. "It
+            "This platform didn't replace our recruitment team," Sarah reflects. "It
             made us superhuman. We now spend our time on what humans do best -
             building relationships, understanding nuanced needs, and making
             strategic decisions. The AI handles the heavy lifting, and we focus
@@ -38,7 +38,7 @@ const Work2FinalThoughts = () => {
             amplifies it.
           </p>
           <p className="closing-cta">
-            Ready to transform your recruitment process? Suprflow is helping
+            Ready to transform your recruitment process? This approach is helping
             companies worldwide hire smarter, faster, and fairer. Because in the
             war for talent, you need every advantage you can get.
           </p>

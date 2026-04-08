@@ -9,7 +9,7 @@ export const metadata = {
   alternates: getAlternates("/enterprise"),
   title: "Enterprise Software & Integrations | Baaz",
   description:
-    "Enterprise custom software from Bangalore since 2018—platforms, integrations, security-aware architecture, product engineering at scale. Book a discovery call.",
+    "Enterprise software development and IT consulting from Bangalore since 2018—platforms, integrations, engineering consulting, and business management. Book a discovery call.",
   openGraph: {
     title: "Enterprise Software & Integrations | Baaz",
     description:

@@ -281,7 +281,12 @@ const serviceSchema = {
     name: "Baaz",
     url: "https://www.baaz.pro",
   },
-  serviceType: "GTM Engineering",
+  serviceType: [
+    "GTM Engineering",
+    "Internet Marketing Service",
+    "Marketing Consultant",
+    "Business Development Service",
+  ],
 };
 
 export default function GtmEngineering() {

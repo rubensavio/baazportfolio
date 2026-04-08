@@ -64,10 +64,10 @@ const Work2Solution = () => {
             The breaking point came when Sarah's team accidentally rejected a candidate who had previously built the payment system for a unicorn startup - his resume was buried under a pile of bootcamp graduates with flashier LinkedIn profiles but questionable semicolon usage.
           </p>
           <p>
-            Enter Suprflow: The Recruitment Superhero Nobody Asked For (But Everyone Needed)
+            Enter an intelligent hiring platform: The Recruitment Superhero Nobody Asked For (But Everyone Needed)
           </p>
           <p>
-            CloudScale Technologies decided to pilot Suprflow, an intelligent recruitment automation platform that promised to transform their hiring chaos into a well-oiled machine.
+            CloudScale Technologies decided to pilot an intelligent recruitment automation platform that promised to transform their hiring chaos into a well-oiled machine.
           </p>
         </div>
 

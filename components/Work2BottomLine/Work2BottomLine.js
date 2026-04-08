@@ -45,7 +45,7 @@ const Work2BottomLine = () => {
     <section className="work2-bottomline-section">
       <div className="work2-bottomline-wrapper animate-on-scroll animate-fade-up" ref={headerRef}>
         <h2 className="bottomline-title">
-          The Bottom Line: Why Suprflow is a Game-Changer
+          The Bottom Line: Why This Approach is a Game-Changer
         </h2>
 
         <div className="benefits-grid">

@@ -154,7 +154,7 @@ const Work2Hero = () => {
           Case Study
         </span>
         <h1 className="work2-heading animate-fade-up animate-delay-100 animate-in">
-          Suprflow - From Resume Chaos to Recruitment Zen
+          From Resume Chaos to Recruitment Zen
         </h1>
 
         <div className="problem-content animate-fade-up animate-delay-200 animate-in">

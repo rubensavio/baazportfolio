@@ -8,7 +8,7 @@ export const metadata = {
   alternates: getAlternates("/services"),
   title: "Product Engineering Services | Baaz",
   description:
-    "Product strategy, UI/UX, web, mobile, and AI—how Baaz delivers custom software from Bangalore since 2018. Explore each service and book a call.",
+    "Software development services: product strategy, UI/UX, web, mobile, AI, and engineering consulting—delivered from Bangalore since 2018. Explore each service.",
   openGraph: {
     title: "Product Engineering Services | Baaz",
     description:
