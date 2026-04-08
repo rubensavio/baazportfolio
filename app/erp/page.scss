@@ -10,7 +10,7 @@
 
 .erp-hub-main {
   width: calc(100% - 3rem);
-  max-width: 980px;
+  max-width: 900px;
   margin: 0 auto 3rem;
   padding: clamp(2rem, 4vw, 3rem) 0;
 }
@@ -43,8 +43,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
 }
 
@@ -68,9 +68,5 @@
 @media (max-width: 768px) {
   .erp-hub-main {
     width: calc(100% - 2rem);
-  }
-
-  .erp-hub-list {
-    grid-template-columns: 1fr;
   }
 }

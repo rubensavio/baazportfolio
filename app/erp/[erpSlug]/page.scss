@@ -19,7 +19,7 @@
 /* ── Shared section container ── */
 .erp-section-container {
   width: calc(100% - 3rem);
-  max-width: 1080px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -37,9 +37,9 @@
   font-size: clamp(0.95rem, 1.3vw, 1.08rem);
   font-weight: 400;
   line-height: 1.65;
-  color: #6b7280;
+  color: #4d525f;
   margin: 0 0 2rem;
-  max-width: 42rem;
+  max-width: 56rem;
 }
 
 /* ═══════════════════════════════════════════
@@ -136,35 +136,37 @@
    ═══════════════════════════════════════════ */
 .erp-challenges {
   padding: clamp(3rem, 5vw, 4.5rem) 0;
+  background: #fbf6ef;
 }
 
 .erp-challenges-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .erp-challenge-card {
-  padding: 1.75rem;
-  background: #fafafa;
-  border: 1px solid #f0f0f0;
+  padding: 1.1rem 1.2rem;
+  background: #ffffff;
+  border: 1px solid #ece7dd;
   border-radius: 12px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    border-color: #e0e0e0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+    border-color: #ddd5c8;
+    box-shadow: 0 8px 20px rgba(26, 26, 26, 0.06);
   }
 }
 
 .erp-challenge-number {
   font-family: var(--font-urbanist), sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #c4c4c4;
-  letter-spacing: 0.05em;
-  display: block;
-  margin-bottom: 0.75rem;
+  color: #5b71f6;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  margin-bottom: 0.55rem;
 }
 
 .erp-challenge-title {
@@ -194,34 +196,22 @@
 }
 
 .erp-features-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .erp-feature-card {
-  padding: 1.75rem;
-  background: #ffffff;
-  border: 1px solid #ebedf2;
-  border-radius: 12px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    border-color: #d0d5e0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  }
+  padding: 1.15rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #dde3ee;
+  border-radius: 0;
+  border-left: 0;
 }
 
 .erp-feature-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #eef0ff;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  color: #5b71f6;
+  display: none;
 }
 
 .erp-feature-title {
@@ -229,7 +219,7 @@
   font-size: clamp(1.05rem, 1.4vw, 1.15rem);
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
   line-height: 1.3;
 }
 
@@ -250,22 +240,22 @@
 }
 
 .erp-modules-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .erp-module-card {
-  padding: 1.5rem;
-  background: #ffffff;
-  border: 1px solid #ebedf2;
-  border-radius: 10px;
-  border-left: 3px solid #5b71f6;
-  transition: box-shadow 0.2s ease;
-
-  &:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  }
+  padding: 1.15rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #e2e5eb;
+  border-radius: 0;
+  border-left: 0;
+  display: grid;
+  grid-template-columns: minmax(12rem, 18rem) 1fr;
+  gap: 1.25rem;
+  align-items: start;
 }
 
 .erp-module-name {
@@ -273,7 +263,7 @@
   font-size: clamp(0.98rem, 1.2vw, 1.08rem);
   font-weight: 700;
   color: #1a1a1a;
-  margin: 0 0 0.35rem;
+  margin: 0;
   line-height: 1.3;
 }
 
@@ -291,52 +281,34 @@
    ═══════════════════════════════════════════ */
 .erp-benefits {
   padding: clamp(3rem, 5vw, 4.5rem) 0;
-  background: #f8f9fb;
+  background: #fbf6ef;
 }
 
 .erp-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .erp-benefit-card {
-  padding: 1.75rem;
-  background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #ebedf2;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #5b71f6 0%, #818cf8 100%);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-
-  &:hover {
-    border-color: #d0d5e0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-
-    &::before {
-      opacity: 1;
-    }
-  }
+  padding: 1.15rem 0;
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid #e2e5eb;
+  border-left: 0;
+  display: grid;
+  grid-template-columns: minmax(14rem, 20rem) 1fr;
+  gap: 1.25rem;
+  align-items: start;
 }
 
 .erp-benefit-title {
   font-family: var(--font-urbanist), sans-serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
   font-weight: 800;
   color: #1a1a1a;
-  margin: 0 0 0.5rem;
+  margin: 0;
   line-height: 1.3;
 }
 
@@ -363,35 +335,32 @@
 }
 
 .erp-usecase-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: flex-start;
-  gap: 1.25rem;
-  padding: 1.75rem;
-  background: #ffffff;
-  border: 1px solid #ebedf2;
-  border-radius: 12px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    border-color: #d0d5e0;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-  }
+  gap: 0.75rem;
+  padding: 1.15rem 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-left: 0;
+  border-bottom: 1px solid #e2e5eb;
 }
 
 .erp-usecase-index {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #1a1a1a;
-  color: #ffffff;
+  background: #eef0ff;
+  color: #5b71f6;
   font-family: var(--font-urbanist), sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  border-radius: 10px;
-  margin-top: 2px;
+  border-radius: 999px;
+  margin-top: 0.1rem;
 }
 
 .erp-usecase-content {
@@ -422,7 +391,7 @@
    ═══════════════════════════════════════════ */
 .erp-related {
   width: calc(100% - 3rem);
-  max-width: 1080px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -449,12 +418,6 @@
 /* ═══════════════════════════════════════════
    Responsive
    ═══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .erp-modules-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .erp-section-container {
     width: calc(100% - 2rem);
@@ -467,18 +430,18 @@
     border-radius: 1rem;
   }
 
-  .erp-challenges-grid,
-  .erp-features-grid,
-  .erp-benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .erp-modules-grid {
-    grid-template-columns: 1fr;
-  }
-
   .erp-related {
     width: calc(100% - 2rem);
+  }
+
+  .erp-challenges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .erp-module-card,
+  .erp-benefit-card {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
   }
 }
 
