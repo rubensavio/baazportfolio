@@ -56,8 +56,8 @@ const OurExpertise = () => {
           <Link href="/industry/retail">Retail</Link>, and{" "}
           <Link href="/industry/healthcare">Healthcare</Link>. Need ERP
           solutioning? Explore our <Link href="/erp">ERP Solutions</Link> for
-          insurance, manufacturing, banking, healthcare, hospitals, real
-          estate, construction, automobile, and transportation.
+          insurance, manufacturing, banking, healthcare, hospitals, real estate,
+          construction, automobile, and transportation.
         </p>
       </div>
 

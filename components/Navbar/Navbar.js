@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { technologyCapabilitiesData } from "../../lib/technologyCapabilitiesData";
 import "./Navbar.scss";
 
 const INDUSTRIES = [
@@ -34,7 +35,15 @@ const SERVICES_PATHS = [
   "/project-rescue",
   "/work1",
   "/work2",
+  "/technologies",
 ];
+
+const TECH_STACK_GROUPS = Object.entries(technologyCapabilitiesData).map(
+  ([slug, data]) => ({
+    slug,
+    category: data.label,
+  })
+);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -100,14 +109,19 @@ const Navbar = () => {
               <span className="link-text">Our Services</span>
               <span className="dropdown-icon">▼</span>
             </a>
-            <ul className="dropdown-menu">
-              <li>
+            <div className="dropdown-menu services-mega-menu">
+              <div className="mega-column mega-services">
+                <p className="dropdown-menu-label" role="presentation">
+                  Core services
+                </p>
                 <Link href="/enterprise">Enterprise</Link>
-              </li>
-              <li className="dropdown-menu-label" role="presentation">
-                Case studies — AI on ERP
-              </li>
-              <li>
+                <Link href="/ecommerce">E-commerce</Link>
+                <Link href="/gtm-engineering">GTM Engineering</Link>
+                <Link href="/project-rescue">Project Rescue</Link>
+
+                <p className="dropdown-menu-label" role="presentation">
+                  Case studies - AI on ERP
+                </p>
                 <Link href="/work1" className="dropdown-menu-stacked-link">
                   <span className="dropdown-link-title">
                     Manufacturing quality automation
@@ -116,8 +130,6 @@ const Navbar = () => {
                     AI vision on manufacturing ERP
                   </span>
                 </Link>
-              </li>
-              <li>
                 <Link href="/work2" className="dropdown-menu-stacked-link">
                   <span className="dropdown-link-title">
                     Hiring &amp; HRMS automation
@@ -126,17 +138,23 @@ const Navbar = () => {
                     AI layer on hiring management systems
                   </span>
                 </Link>
-              </li>
-              <li>
-                <Link href="/ecommerce">E-commerce</Link>
-              </li>
-              <li>
-                <Link href="/gtm-engineering">GTM Engineering</Link>
-              </li>
-              <li>
-                <Link href="/project-rescue">Project Rescue</Link>
-              </li>
-            </ul>
+              </div>
+
+              <div className="mega-column mega-tech">
+                <p className="dropdown-menu-label" role="presentation">
+                  Technology capabilities
+                </p>
+                {TECH_STACK_GROUPS.map((group) => (
+                  <Link
+                    className="dropdown-menu-tech-row dropdown-tech-link"
+                    key={group.slug}
+                    href={`/technologies/${group.slug}`}
+                  >
+                    {group.category}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </li>
           <li className="navbar-item dropdown">
             <a
@@ -313,6 +331,19 @@ const Navbar = () => {
                         Project Rescue
                       </Link>
                     </li>
+                    <li className="mobile-dropdown-menu-label" aria-hidden>
+                      Technology capabilities
+                    </li>
+                    {TECH_STACK_GROUPS.map((group) => (
+                      <li className="mobile-dropdown-tech-row" key={group.slug}>
+                        <Link
+                          href={`/technologies/${group.slug}`}
+                          onClick={toggleMenu}
+                        >
+                          {group.category}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 )}
               </li>

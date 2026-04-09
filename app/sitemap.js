@@ -2,6 +2,7 @@ import { servicesData } from "../lib/servicesData";
 import { industryData } from "../lib/industryData";
 import { erpData } from "../lib/erpData";
 import { blogData } from "../lib/blogData";
+import { technologyCapabilitiesData } from "../lib/technologyCapabilitiesData";
 import { SITEMAP_STATIC_PATHS } from "../lib/sitemapStaticPaths";
 import { getAlternates } from "../lib/regions";
 import { getSiteUrl } from "../lib/siteUrl";
@@ -85,11 +86,21 @@ export default function sitemap() {
     })
   );
 
+  const technologyRoutes = Object.keys(technologyCapabilitiesData).map((slug) =>
+    withAlternates(`/technologies/${slug}`, {
+      url: `${baseUrl}/technologies/${slug}`,
+      lastModified: lastModService(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    })
+  );
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
     ...industryRoutes,
     ...erpRoutes,
+    ...technologyRoutes,
     ...blogPostRoutes,
   ];
 }
