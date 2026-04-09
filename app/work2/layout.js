@@ -7,13 +7,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/work2"),
-  title: "Tech Hiring Automation Case Study | Baaz",
+  title: "AI Hiring Automation on HRMS | Case Study | Baaz",
   description:
-    "Tech hiring automation: screening, assessments, pipeline for engineering teams. How Baaz cut time-to-hire without losing signal—metrics, stack, outcomes inside.",
+    "HRMS-native hiring automation: screening, ranking, and assessments for engineering teams. How Baaz extended an existing hiring-management stack—metrics, stack, outcomes.",
   openGraph: {
-    title: "Tech Hiring Automation Case Study | Baaz",
+    title: "AI Hiring Automation on HRMS | Baaz",
     description:
-      "Screening, assessments, and pipeline automation for engineering hiring—how Baaz built it and what changed for recruiters and candidates.",
+      "Recruiting automation on top of HRMS: screening, assessments, and pipeline flow—what changed for recruiters and candidates in this Baaz case study.",
     url: `${baseUrl}/work2`,
     siteName: "Baaz",
     images: [
@@ -40,7 +40,7 @@ export default function Work2Layout({ children }) {
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },
-          { name: "Tech Hiring Automation", url: "/work2" },
+          { name: "HRMS & Hiring Automation", url: "/work2" },
         ]}
       />
       {children}

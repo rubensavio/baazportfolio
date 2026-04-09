@@ -125,7 +125,7 @@ const Work2Hero = () => {
               }
             });
           },
-          { threshold: 0.25 }
+          { threshold: 0.25 },
         );
         observer.observe(elRef.current);
         return () => observer.disconnect();
@@ -151,20 +151,27 @@ const Work2Hero = () => {
       </div>
       <div className="work2-hero-wrapper">
         <span className="work2-label animate-fade-up animate-in">
-          Case Study
+          Enterprise case study
         </span>
         <h1 className="work2-heading animate-fade-up animate-delay-100 animate-in">
           From Resume Chaos to Recruitment Zen
         </h1>
+        <p className="work2-context animate-fade-up animate-delay-200 animate-in">
+          Intelligent hiring automation on HRMS—screening, routing, and
+          evaluations plugged into the hiring-management system the company
+          already used.
+        </p>
 
-        <div className="problem-content animate-fade-up animate-delay-200 animate-in">
+        <div className="problem-content animate-fade-up animate-delay-300 animate-in">
           <p className="problem-description">
             <span className="problem-title-label">The Problem:</span> When HR
             Feels Like Playing Whack-a-Mole with Resumes Meet Sarah Chen, VP of
             Talent Acquisition at CloudScale Technologies, a rapidly growing
-            SaaS company in San Francisco. Every Monday morning, Sarah would
-            stare at her inbox with the same expression people reserve for
-            finding pineapple on pizza - a mix of horror and resignation.
+            SaaS company in San Francisco. Candidates and requisitions lived in
+            HRMS, but the recruiting team was drowning outside it. Every Monday
+            morning, Sarah would stare at her inbox with the same expression
+            people reserve for finding pineapple on pizza - a mix of horror and
+            resignation.
           </p>
 
           <div className="nightmare-numbers">

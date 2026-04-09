@@ -1,0 +1,112 @@
+.enterprise-case-studies {
+  width: 100%;
+  background-color: #f8f9fb;
+  padding: clamp(3.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.enterprise-case-studies-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enterprise-case-studies-header {
+  text-align: center;
+  max-width: 820px;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.enterprise-case-studies-heading {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.enterprise-case-studies-description {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.0625rem);
+  font-weight: 500;
+  line-height: 1.65;
+  color: #4d525f;
+  margin: 0;
+}
+
+.enterprise-case-studies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+  width: 100%;
+}
+
+.enterprise-case-study-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #0066ff;
+    outline-offset: 3px;
+  }
+}
+
+.enterprise-case-study-eyebrow {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #0066ff;
+  margin-bottom: 0.5rem;
+}
+
+.enterprise-case-study-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+}
+
+.enterprise-case-study-description {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4d525f;
+  margin: 0 0 1.25rem;
+  flex: 1;
+}
+
+.enterprise-case-study-cta {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0066ff;
+}
+
+@media (max-width: 768px) {
+  .enterprise-case-studies-grid {
+    grid-template-columns: 1fr;
+  }
+}

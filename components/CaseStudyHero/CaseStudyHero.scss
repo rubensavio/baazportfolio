@@ -65,6 +65,17 @@
   text-align: center;
 }
 
+.case-study-context {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: #4d525f;
+  margin: 0;
+  max-width: min(42rem, 92%);
+  text-align: center;
+}
+
 .problem-content {
   width: 100%;
   display: flex;

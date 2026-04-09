@@ -7,13 +7,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/work1"),
-  title: "AI Defect Detection Case Study | Baaz",
+  title: "AI Quality Automation on Manufacturing ERP | Case Study | Baaz",
   description:
-    "Manufacturing AI: computer vision, QA, production deployment. How Baaz improved factory-floor quality—case study with approach, stack, measurable outcomes.",
+    "Manufacturing ERP plus an AI vision layer on the line: defect detection, QA workflows, and production rollout—how Baaz extended an existing stack with measurable quality outcomes.",
   openGraph: {
-    title: "AI Defect Detection Case Study | Baaz",
+    title: "AI Quality Automation on Manufacturing ERP | Baaz",
     description:
-      "Computer vision, QA workflows, and production rollout for defect detection—measurable gains on the factory floor. Baaz manufacturing AI case study.",
+      "Computer vision and QA automation integrated with manufacturing ERP—not a rip-and-replace. Approach, stack, and factory-floor outcomes in this Baaz case study.",
     url: `${baseUrl}/work1`,
     siteName: "Baaz",
     images: [
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Defect Detection Case Study | Baaz",
+    title: "AI Quality Automation on Manufacturing ERP | Baaz",
     description:
-      "AI defect detection: computer vision, QA, and production rollout—how Baaz improved manufacturing quality. Case study with outcomes and approach.",
+      "AI defect detection layered on manufacturing ERP: computer vision, QA, and production rollout—outcomes and approach from Baaz’s enterprise case study.",
     images: [ogImage],
   },
 };
@@ -40,7 +40,7 @@ export default function Work1Layout({ children }) {
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },
-          { name: "Defect Detection in Manufacturing", url: "/work1" },
+          { name: "Manufacturing AI on ERP", url: "/work1" },
         ]}
       />
       {children}

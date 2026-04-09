@@ -27,20 +27,25 @@ const ERP_SOLUTIONS = [
   },
 ];
 
+const SERVICES_PATHS = [
+  "/enterprise",
+  "/ecommerce",
+  "/gtm-engineering",
+  "/project-rescue",
+  "/work1",
+  "/work2",
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false);
-  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] = useState(false);
+  const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] =
+    useState(false);
   const [isErpDropdownOpen, setIsErpDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleWorkDropdown = () => {
-    setIsWorkDropdownOpen(!isWorkDropdownOpen);
   };
 
   const toggleIndustriesDropdown = () => {
@@ -61,7 +66,12 @@ const Navbar = () => {
         {/* Logo */}
         <div className="navbar-logo">
           <Link href="/">
-            <img src="/assets/Logo.svg" alt="baaz logo" width={120} height={32} />
+            <img
+              src="/assets/Logo.svg"
+              alt="baaz logo"
+              width={120}
+              height={32}
+            />
           </Link>
         </div>
 
@@ -79,29 +89,9 @@ const Navbar = () => {
             <a
               href="#"
               className={`navbar-link ${
-                pathname?.startsWith("/work") ? "active" : ""
-              }`}
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <span className="link-text">Our Products</span>
-              <span className="dropdown-icon">▼</span>
-            </a>
-            <ul className="dropdown-menu">
-              <li>
-                <Link href="/work1">Defect Detection in Manufacturing</Link>
-              </li>
-              <li>
-                <Link href="/work2">Tech Hiring Automation</Link>
-              </li>
-            </ul>
-          </li>
-          <li className="navbar-item dropdown">
-            <a
-              href="#"
-              className={`navbar-link ${
-                ["/enterprise", "/ecommerce", "/gtm-engineering", "/project-rescue"].includes(pathname) ? "active" : ""
+                pathname && SERVICES_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+                  ? "active"
+                  : ""
               }`}
               onClick={(e) => {
                 e.preventDefault();
@@ -113,6 +103,29 @@ const Navbar = () => {
             <ul className="dropdown-menu">
               <li>
                 <Link href="/enterprise">Enterprise</Link>
+              </li>
+              <li className="dropdown-menu-label" role="presentation">
+                Case studies — AI on ERP
+              </li>
+              <li>
+                <Link href="/work1" className="dropdown-menu-stacked-link">
+                  <span className="dropdown-link-title">
+                    Manufacturing quality automation
+                  </span>
+                  <span className="dropdown-link-sub">
+                    AI vision on manufacturing ERP
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/work2" className="dropdown-menu-stacked-link">
+                  <span className="dropdown-link-title">
+                    Hiring &amp; HRMS automation
+                  </span>
+                  <span className="dropdown-link-sub">
+                    AI layer on hiring management systems
+                  </span>
+                </Link>
               </li>
               <li>
                 <Link href="/ecommerce">E-commerce</Link>
@@ -219,38 +232,6 @@ const Navbar = () => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    toggleWorkDropdown();
-                  }}
-                >
-                  Our Products
-                  <span
-                    className={`dropdown-icon ${
-                      isWorkDropdownOpen ? "open" : ""
-                    }`}
-                  >
-                    ▼
-                  </span>
-                </a>
-                {isWorkDropdownOpen && (
-                  <ul className="mobile-dropdown-menu">
-                    <li>
-                      <Link href="/work1" onClick={toggleMenu}>
-                        Defect Detection in Manufacturing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/work2" onClick={toggleMenu}>
-                        Tech Hiring Automation
-                      </Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-              <li className="mobile-menu-item mobile-dropdown">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
                     toggleErpDropdown();
                   }}
                 >
@@ -304,6 +285,19 @@ const Navbar = () => {
                         Enterprise
                       </Link>
                     </li>
+                    <li className="mobile-dropdown-menu-label" aria-hidden>
+                      Case studies — AI on ERP
+                    </li>
+                    <li>
+                      <Link href="/work1" onClick={toggleMenu}>
+                        Manufacturing: AI on ERP (quality)
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/work2" onClick={toggleMenu}>
+                        HRMS: hiring automation
+                      </Link>
+                    </li>
                     <li>
                       <Link href="/ecommerce" onClick={toggleMenu}>
                         E-commerce
@@ -343,10 +337,7 @@ const Navbar = () => {
                   <ul className="mobile-dropdown-menu">
                     {INDUSTRIES.map(({ slug, label }) => (
                       <li key={slug}>
-                        <Link
-                          href={`/industry/${slug}`}
-                          onClick={toggleMenu}
-                        >
+                        <Link href={`/industry/${slug}`} onClick={toggleMenu}>
                           {label}
                         </Link>
                       </li>

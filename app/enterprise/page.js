@@ -1,16 +1,24 @@
-'use client';
+"use client";
 
 import React from "react";
-import dynamic from 'next/dynamic';
-import EnterpriseHero from '../../components/EnterpriseHero/EnterpriseHero';
-import EnterpriseSolutions from '../../components/EnterpriseSolutions/EnterpriseSolutions';
-import EnterpriseBenefits from '../../components/EnterpriseBenefits/EnterpriseBenefits';
+import dynamic from "next/dynamic";
+import EnterpriseHero from "../../components/EnterpriseHero/EnterpriseHero";
+import EnterpriseSolutions from "../../components/EnterpriseSolutions/EnterpriseSolutions";
+import EnterpriseCaseStudies from "../../components/EnterpriseCaseStudies/EnterpriseCaseStudies";
+import EnterpriseBenefits from "../../components/EnterpriseBenefits/EnterpriseBenefits";
 
-const Headroom = dynamic(() => import('react-headroom'), { ssr: false });
-const Navbar = dynamic(() => import('../../components/Navbar/Navbar'), { ssr: false });
-const FAQ = dynamic(() => import('../../components/FAQ/FAQ'), { ssr: false });
-const EnterpriseCTA = dynamic(() => import('../../components/EnterpriseCTA/EnterpriseCTA'), { ssr: false });
-const Footer = dynamic(() => import('../../components/Footer/Footer'), { ssr: false });
+const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
+const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
+  ssr: false,
+});
+const FAQ = dynamic(() => import("../../components/FAQ/FAQ"), { ssr: false });
+const EnterpriseCTA = dynamic(
+  () => import("../../components/EnterpriseCTA/EnterpriseCTA"),
+  { ssr: false },
+);
+const Footer = dynamic(() => import("../../components/Footer/Footer"), {
+  ssr: false,
+});
 
 const enterpriseFaqs = [
   {
@@ -29,7 +37,8 @@ const enterpriseFaqs = [
       "Enterprise custom software typically costs $150,000–$1M+, depending on scope and complexity. A focused internal tool or portal runs $150,000–$400,000. A full enterprise platform with multiple user types, integrations, compliance, and scalability requirements can cost $400,000–$1M+. At Baaz, we phase delivery so you invest in the highest-value features first.",
   },
   {
-    question: "What is the difference between a consulting firm and a product engineering agency?",
+    question:
+      "What is the difference between a consulting firm and a product engineering agency?",
     answer:
       "A consulting firm (like McKinsey Digital or Deloitte) typically advises on strategy and may outsource implementation. A product engineering agency (like Baaz) owns the full lifecycle — strategy, design, development, and deployment. Product engineering agencies are better suited when you need a partner to ship production software, not just produce recommendations.",
   },
@@ -44,7 +53,8 @@ const enterpriseFaqs = [
       "Baaz builds enterprise software across FinTech (payments, banking, compliance), healthcare (patient portals, clinical tools, EHR integration), retail (e-commerce, omnichannel, inventory), and construction (project management, field apps, procurement). We've shipped over 100 products since 2018.",
   },
   {
-    question: "How does Baaz handle security and compliance for enterprise projects?",
+    question:
+      "How does Baaz handle security and compliance for enterprise projects?",
     answer:
       "We build security and compliance into the architecture from day one — not as an afterthought. This includes encryption at rest and in transit, role-based access controls, audit logging, SOC 2 compliance practices, and industry-specific standards (HIPAA for healthcare, PCI DSS for payments). We document security decisions and support audit processes.",
   },
@@ -80,6 +90,7 @@ export default function Enterprise() {
       />
       <EnterpriseHero />
       <EnterpriseSolutions />
+      <EnterpriseCaseStudies />
       <EnterpriseBenefits />
       <FAQ faqs={enterpriseFaqs} />
       <EnterpriseCTA />

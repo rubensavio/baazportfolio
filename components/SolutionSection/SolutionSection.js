@@ -86,8 +86,10 @@ const SolutionSection = () => {
           </h2>
           <p className="casestudy-solution-description">
             Our company decided to pilot Viz Pro, an AI-powered computer vision
-            system that promised to catch defects smaller than a human hair and
-            faster than a caffeinated cheetah. The system boasted:
+            layer that sits alongside manufacturing ERP and line quality data:
+            it catches defects smaller than a human hair and faster than a
+            caffeinated cheetah, feeding results back into the workflows teams
+            already trust. The system boasted:
           </p>
         </div>
 

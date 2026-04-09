@@ -67,7 +67,10 @@ const Work2Solution = () => {
             Enter an intelligent hiring platform: The Recruitment Superhero Nobody Asked For (But Everyone Needed)
           </p>
           <p>
-            CloudScale Technologies decided to pilot an intelligent recruitment automation platform that promised to transform their hiring chaos into a well-oiled machine.
+            CloudScale Technologies decided to pilot an intelligent recruitment
+            automation layer on HRMS—promising to transform hiring chaos into a
+            well-oiled machine while keeping requisitions, candidates, and
+            approvals inside the systems they already owned.
           </p>
         </div>
 

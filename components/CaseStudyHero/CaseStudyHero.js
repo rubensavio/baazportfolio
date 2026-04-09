@@ -135,7 +135,7 @@ const CaseStudyHero = () => {
               }
             });
           },
-          { threshold: 0.25 }
+          { threshold: 0.25 },
         );
         observer.observe(elRef.current);
         return () => observer.disconnect();
@@ -162,18 +162,25 @@ const CaseStudyHero = () => {
       </div>
       <div className="case-study-hero-wrapper">
         <span className="case-study-label animate-fade-up animate-in">
-          Case Study
+          Enterprise case study
         </span>
         <h1 className="case-study-heading animate-fade-up animate-delay-100 animate-in">
           Viz Pro - When AI Becomes Your Factory's Eagle-Eyed Quality Inspector
         </h1>
+        <p className="case-study-context animate-fade-up animate-delay-200 animate-in">
+          AI-powered quality automation layered on manufacturing ERP and shop-floor
+          operations—we extended the system the plant already ran instead of
+          replacing it.
+        </p>
 
-        <div className="problem-content animate-fade-up animate-delay-200 animate-in">
+        <div className="problem-content animate-fade-up animate-delay-300 animate-in">
           <p className="problem-description">
             <span className="problem-title-label">The Problem:</span> The
             Million-Dollar Microscopic Mayhem Meet Dr. Rajesh Sharma, Quality
             Control Director at a leading electronics component manufacturing
-            factory in Chennai, India. Every day, his factory produces 847,000
+            factory in Chennai, India. Production orders, batches, and inventory
+            already flowed through manufacturing ERP; the gap was human limits on
+            the line. Every day, his factory produces 847,000
             capacitors, and resistors that end up in everything from consumer
             electronics to commercial grade electronics. The catch? A single
             defective component could turn a $2,000 order into an expensive
