@@ -36,13 +36,28 @@ const SERVICES_PATHS = [
   "/work1",
   "/work2",
   "/technologies",
+  "/services",
 ];
 
-const TECH_STACK_GROUPS = Object.entries(technologyCapabilitiesData).map(
-  ([slug, data]) => ({
-    slug,
-    category: data.label,
-  })
+const TECH_STACK_GROUPS = Object.entries(technologyCapabilitiesData).flatMap(
+  ([slug, data]) => {
+    const row = {
+      slug,
+      category: data.label,
+      href: `/technologies/${slug}`,
+    };
+    if (slug !== "web-development") {
+      return [row];
+    }
+    return [
+      row,
+      {
+        slug: "mobile-development",
+        category: "Mobile Development",
+        href: "/services/mobile-app",
+      },
+    ];
+  }
 );
 
 const Navbar = () => {
@@ -118,6 +133,7 @@ const Navbar = () => {
                 <Link href="/ecommerce">E-commerce</Link>
                 <Link href="/gtm-engineering">GTM Engineering</Link>
                 <Link href="/project-rescue">Project Rescue</Link>
+                <Link href="/services/mobile-app">Mobile App Development</Link>
 
                 <p className="dropdown-menu-label" role="presentation">
                   Case studies - AI on ERP
@@ -148,7 +164,7 @@ const Navbar = () => {
                   <Link
                     className="dropdown-menu-tech-row dropdown-tech-link"
                     key={group.slug}
-                    href={`/technologies/${group.slug}`}
+                    href={group.href}
                   >
                     {group.category}
                   </Link>
@@ -331,15 +347,17 @@ const Navbar = () => {
                         Project Rescue
                       </Link>
                     </li>
+                    <li>
+                      <Link href="/services/mobile-app" onClick={toggleMenu}>
+                        Mobile App Development
+                      </Link>
+                    </li>
                     <li className="mobile-dropdown-menu-label" aria-hidden>
                       Technology capabilities
                     </li>
                     {TECH_STACK_GROUPS.map((group) => (
                       <li className="mobile-dropdown-tech-row" key={group.slug}>
-                        <Link
-                          href={`/technologies/${group.slug}`}
-                          onClick={toggleMenu}
-                        >
+                        <Link href={group.href} onClick={toggleMenu}>
                           {group.category}
                         </Link>
                       </li>

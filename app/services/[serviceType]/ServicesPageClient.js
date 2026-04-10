@@ -55,7 +55,9 @@ export default function ServicesPageClient({ serviceType }) {
   }, [serviceType]);
 
   return (
-    <div className="services-page">
+    <div
+      className={`services-page${serviceType === "mobile-app" ? " services-page--mobile-app" : ""}`}
+    >
       <Headroom>
         <Navbar />
       </Headroom>
@@ -91,19 +93,63 @@ export default function ServicesPageClient({ serviceType }) {
             <p className="services-niche-wedge">{serviceData.nicheWedge}</p>
           )}
 
-          <h2 className="services-section-heading">
-            {serviceData.sectionHeading || "What we deliver"}
-          </h2>
-          <div className="service-cards-grid">
-            {serviceData.services.map((service, index) => (
-              <div key={index} className="service-info-card">
-                <h3 className="service-info-title">{service.title}</h3>
-                <p className="service-info-description">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+        </div>
+        {serviceData.industryLinks && serviceData.industryLinks.length > 0 && (
+          <div className="services-related">
+            <p className="services-related-text">
+              We build for{" "}
+              {serviceData.industryLinks.map((ind, i) => (
+                <span key={ind.slug}>
+                  {i > 0 && ", "}
+                  <Link href={`/industry/${ind.slug}`}>{ind.label}</Link>
+                </span>
+              ))}
+              .
+            </p>
           </div>
+        )}
+      </section>
+
+      <div className="services-content-wrapper">
+        {serviceData.technologyStackGroups &&
+        serviceData.technologyStackGroups.length > 0 ? (
+            <div className="service-services-and-stack">
+              <h2 className="services-section-heading">
+                {serviceData.sectionHeading || "What we deliver"}
+              </h2>
+              <div className="service-tech-grid">
+                {serviceData.technologyStackGroups.map((group) => (
+                  <article className="service-tech-card" key={group.title}>
+                    <h3 className="service-tech-title">{group.title}</h3>
+                    <p className="service-tech-description">
+                      {group.description}
+                    </p>
+                    <ul className="service-tech-tools">
+                      {group.tools.map((tool) => (
+                        <li key={tool}>{tool}</li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <>
+              <h2 className="services-section-heading">
+                {serviceData.sectionHeading || "What we deliver"}
+              </h2>
+              <div className="service-cards-grid">
+                {serviceData.services.map((service, index) => (
+                  <div key={index} className="service-info-card">
+                    <h3 className="service-info-title">{service.title}</h3>
+                    <p className="service-info-description">
+                      {service.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
 
           {serviceData.mobileHighlights &&
             serviceData.mobileHighlights.length > 0 && (
@@ -211,67 +257,7 @@ export default function ServicesPageClient({ serviceType }) {
               </div>
             </div>
           )}
-
-          {serviceData.technologyStackGroups &&
-            serviceData.technologyStackGroups.length > 0 && (
-              <div className="service-tech-stack">
-                <h2 className="services-section-heading">
-                  Technology stack we use for mobile app solutions
-                </h2>
-                <p className="service-tech-intro">
-                  We choose tools based on product scope, release velocity, and
-                  long-term maintainability. Each stack below is used in
-                  production delivery, not just prototypes.
-                </p>
-                <div className="service-tech-grid">
-                  {serviceData.technologyStackGroups.map((group) => (
-                    <article className="service-tech-card" key={group.title}>
-                      <h3 className="service-tech-title">{group.title}</h3>
-                      <p className="service-tech-description">
-                        {group.description}
-                      </p>
-                      <ul className="service-tech-tools">
-                        {group.tools.map((tool) => (
-                          <li key={tool}>{tool}</li>
-                        ))}
-                      </ul>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            )}
-
-          {serviceData.deploymentStack && (
-            <div className="service-deployment-stack">
-              <h2 className="services-section-heading">
-                {serviceData.deploymentStack.title}
-              </h2>
-              <p className="service-tech-intro">
-                {serviceData.deploymentStack.description}
-              </p>
-              <ul className="service-deployment-tools">
-                {serviceData.deploymentStack.tools.map((tool) => (
-                  <li key={tool}>{tool}</li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
-        {serviceData.industryLinks && serviceData.industryLinks.length > 0 && (
-          <div className="services-related">
-            <p className="services-related-text">
-              We build for{" "}
-              {serviceData.industryLinks.map((ind, i) => (
-                <span key={ind.slug}>
-                  {i > 0 && ", "}
-                  <Link href={`/industry/${ind.slug}`}>{ind.label}</Link>
-                </span>
-              ))}
-              .
-            </p>
-          </div>
-        )}
-      </section>
 
       {serviceData.faqs && <FAQ faqs={serviceData.faqs} />}
 

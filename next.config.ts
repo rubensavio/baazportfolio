@@ -34,6 +34,15 @@ const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: ["./"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/technologies/mobile-development",
+        destination: "/services/mobile-app",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
