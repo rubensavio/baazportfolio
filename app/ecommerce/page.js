@@ -274,7 +274,7 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "Baaz",
-    url: "https://baaz.pro",
+    url: "https://www.baaz.pro",
   },
   serviceType: "E-commerce Marketplace Management",
   areaServed: {
