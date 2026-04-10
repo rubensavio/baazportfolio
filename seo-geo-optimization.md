@@ -8,6 +8,7 @@
 - Redirects when URLs change (e.g. old path → new path) — **Done** (where configured)
 - HTTPS + strong security headers (HSTS, etc.) — **Done**
 - Fast fonts (e.g. `next/font`, swap) — **Done**
+- Automatic JS/CSS optimization (minification, code-splitting via Next.js) — **Done**
 - Core Web Vitals (speed, layout shift, responsiveness) — **Partial** (measure in PageSpeed / Search Console; fix per page)
 - Home page image optimisation (`next/image` on hero, brands, testimonials, CTA; other sections may still use plain `<img>`) — **Partial**
 - Crawl errors / 404s / broken links — **Partial** (from audit report semrush)
