@@ -10,7 +10,7 @@
 - Fast fonts (e.g. `next/font`, swap) — **Done**
 - Core Web Vitals (speed, layout shift, responsiveness) — **Partial** (measure in PageSpeed / Search Console; fix per page)
 - Home page image optimisation (`next/image` on hero, brands, testimonials, CTA; other sections may still use plain `<img>`) — **Partial**
-- Crawl errors / 404s / broken links — **Todo** (check in Search Console + occasional audit)
+- Crawl errors / 404s / broken links — **Partial** (from audit report semrush)
 
 ---
 
@@ -23,7 +23,11 @@
 - One clear **H1** and sensible **H2/H3** order on every page — **Done** (Manual audit completed)
 - **Alt text** on all meaningful images — **Done**
 - **Internal links** from nav, services, technologies, blog to important pages — **Partial** (can always add more)
-- Thin or duplicate copy across regions — **Todo** (content / strategy; keep regions useful, not empty)
+- **Keyword research & integration** (mapping primary and secondary terms to services, blog posts, and core pages) — **Done**
+- **SERP Analysis & Content Fixes** (analyzing search engine results to identify and resolve gaps or intent mismatches) — **Done**
+- **Service page deep-dives** (UI restructuring and tech stack enrichment to highlight specialized engineering expertise) — **Ongoing**
+- **ERP solutions emphasis** (expanded industry-specific pages and structured data to capture long-tail enterprise traffic) — **Done**
+- **Footer Navigation Update** (align footer services list to match the navbar Core Services and remove duplicate links) — **Todo**
 
 ---
 
@@ -32,8 +36,10 @@
 _(Mostly not something the repo “finishes”—you track it in tools and outreach.)_
 
 - **Backlinks** (quality sites linking to you) — **Todo** / ongoing
-- **Google Business Profile** and other listings (if you want local visibility) — **Todo** / optional
+- **Google Business Profile** and other listings (if you want local visibility) — **Done**
 - **Brand mentions** (social, press, directories) — **Todo** / ongoing
+- **Guest Article Optimization** (positioned copy for high-authority tech platforms) — **Done**
+- **LinkedIn Strategy** (1-month content posting plan implemented) — **Done**
 - **Reviews / reputation** on third-party sites — **Todo** / optional
 
 ---
@@ -49,12 +55,3 @@ _(Mostly not something the repo “finishes”—you track it in tools and outre
 - **Named authors** on blog posts + person-style trust signals — **Done**
 
 ---
-
-## Quick read
-
-| Area      | Strongest in repo now                                    | Weakest / next focus                      |
-| --------- | -------------------------------------------------------- | ----------------------------------------- |
-| Technical | Sitemap, canonicals, hreflang, redirects, security       | CWV tuning, full image + performance pass |
-| On-page   | Meta, OG/Twitter, JSON-LD, clean URLs, H1s, Alt text     | Extra internal links                      |
-| Off-page  | —                                                        | Backlinks, listings, brand (outside code) |
-| GEO       | FAQs, direct answers, org schema, llms.txt, author trust | Sourced stats                             |

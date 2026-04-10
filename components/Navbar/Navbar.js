@@ -53,7 +53,7 @@ const TECH_STACK_GROUPS = Object.entries(technologyCapabilitiesData).flatMap(
       row,
       {
         slug: "mobile-development",
-        category: "Mobile Development",
+        category: "Mobile App Development",
         href: "/services/mobile-app",
       },
     ];
@@ -133,7 +133,6 @@ const Navbar = () => {
                 <Link href="/ecommerce">E-commerce</Link>
                 <Link href="/gtm-engineering">GTM Engineering</Link>
                 <Link href="/project-rescue">Project Rescue</Link>
-                <Link href="/services/mobile-app">Mobile App Development</Link>
 
                 <p className="dropdown-menu-label" role="presentation">
                   Case studies - AI on ERP
@@ -345,11 +344,6 @@ const Navbar = () => {
                     <li>
                       <Link href="/project-rescue" onClick={toggleMenu}>
                         Project Rescue
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/services/mobile-app" onClick={toggleMenu}>
-                        Mobile App Development
                       </Link>
                     </li>
                     <li className="mobile-dropdown-menu-label" aria-hidden>

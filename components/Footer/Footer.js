@@ -32,9 +32,7 @@ const Footer = () => {
             <p className="footer-tagline">
               Enterprise-grade products, without the enterprise wait.
             </p>
-            {regionLabel && (
-              <p className="footer-region-line">{regionLabel}</p>
-            )}
+            {regionLabel && <p className="footer-region-line">{regionLabel}</p>}
           </div>
 
           {/* Footer Links */}
