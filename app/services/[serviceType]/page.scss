@@ -22,6 +22,14 @@
   .service-card-icon--plain-red {
     font-size: calc(1.08rem * 1.3);
   }
+
+  .service-services-and-stack,
+  .service-highlights,
+  .service-workflow,
+  .service-offerings,
+  .service-why-choose {
+    max-width: 1180px;
+  }
 }
 
 // Animation keyframes
@@ -92,6 +100,7 @@
   width: 100%;
   max-width: 1200px;
   margin: clamp(2rem, 4vw, 3.5rem) auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
   display: flex;
   flex-direction: column;
   align-items: center;
