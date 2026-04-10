@@ -279,7 +279,7 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "Baaz",
-    url: "https://www.baaz.pro",
+    url: "https://baaz.pro",
   },
   serviceType: [
     "GTM Engineering",
