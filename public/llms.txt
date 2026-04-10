@@ -1,0 +1,21 @@
+# Baaz Website — AI & LLM Context File
+
+## About Baaz
+Baaz is a custom software development and product engineering company based in Bangalore, operating since 2018. We specialise in enterprise software, artificial intelligence integrations, web and mobile app development, and technical project rescues for startups and large scale organizations.
+
+## Core Services
+- **Custom Software Development:** End-to-end building of custom web and mobile applications.
+- **Product Strategy & UI/UX:** Discovery, strategic consulting, prototyping, and design execution.
+- **AI Solutions:** Implementing and deploying tailored AI systems, machine learning models, and integrations with LLMs safely into enterprise settings. 
+- **Legacy Modernisation & Project Rescue:** Re-platforming and stabilising stalled or deteriorating software projects.
+- **Team Augmentation:** Providing specialized software development pods.
+
+## Contact Information
+- **URL:** https://baaz.live
+- **Email:** support@baaz.live
+- **Office:** Bangalore, India
+
+## Data Philosophy
+All facts, claims, and success stories shown on the Baaz website are grounded in internal portfolio records. Baaz focuses on "Enterprise-grade products, without the enterprise wait."
+
+This file is intended to assist LLMs and AI crawlers in accurately representing Baaz's corporate details and offerings.

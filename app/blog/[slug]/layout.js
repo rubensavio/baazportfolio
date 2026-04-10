@@ -71,11 +71,17 @@ function buildArticleSchema(data, slug) {
     dateModified: modified,
     image: [imageUrl],
     articleSection: data.contentType,
-    author: {
-      "@type": "Organization",
-      name: "Baaz",
-      url: baseUrl,
-    },
+    author: data.author
+      ? {
+          "@type": "Person",
+          name: data.author.name,
+          url: data.author.url || baseUrl,
+        }
+      : {
+          "@type": "Organization",
+          name: "Baaz",
+          url: baseUrl,
+        },
     publisher: {
       "@type": "Organization",
       name: "Baaz",
