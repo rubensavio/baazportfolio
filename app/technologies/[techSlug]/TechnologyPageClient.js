@@ -210,7 +210,7 @@ export default function TechnologyPageClient({ techSlug }) {
           <div
             className={`technology-stack-wrapper${hasCustomStackGroups ? " technology-stack-wrapper--featured" : ""}`}
           >
-            <h2 className="technology-stack-heading">
+            <h2 className="technology-stack-heading technology-stack-heading--primary">
               {data.stackHeading || "Stack we work with"}
             </h2>
             {data.stackIntro && (
@@ -233,13 +233,12 @@ export default function TechnologyPageClient({ techSlug }) {
                   ))
                 : data.stack.map((item, index) => (
                     <article key={item} className="technology-stack-card">
-                      <span
-                        className="technology-stack-index"
-                        aria-hidden="true"
-                      >
-                        {(index + 1).toString().padStart(2, "0")}
-                      </span>
-                      <h3>{item}</h3>
+                      <h3>
+                        <span className="technology-stack-index" aria-hidden="true">
+                          {index + 1}.
+                        </span>{" "}
+                        {item}
+                      </h3>
                       <p className="technology-stack-description">
                         {STACK_BRIEFS[item] ||
                           "Production-ready implementation aligned to your delivery goals."}
@@ -253,15 +252,21 @@ export default function TechnologyPageClient({ techSlug }) {
 
       {data.highlights && data.highlights.length > 0 && (
         <section className="technology-extra-section">
-          <div className="technology-extra-wrapper">
+          <div className="technology-extra-wrapper technology-highlights-wrapper--services-ui">
             <h2 className="technology-stack-heading">
               {data.highlightsHeading || `Why choose us for ${labelLower}?`}
             </h2>
-            <div className="technology-highlights-grid">
+            <div className="technology-highlights-grid technology-highlights-grid--services-ui">
               {data.highlights.map((item) => (
-                <article key={item.title} className="technology-simple-card">
+                <article
+                  key={item.title}
+                  className="technology-simple-card technology-simple-card--services-ui"
+                >
                   {item.icon && CARD_ICON_MAP[item.icon] && (
-                    <span className="technology-card-icon" aria-hidden="true">
+                    <span
+                      className="technology-card-icon technology-card-icon--warm technology-card-icon--services-ui"
+                      aria-hidden="true"
+                    >
                       {React.createElement(CARD_ICON_MAP[item.icon])}
                     </span>
                   )}
@@ -275,23 +280,28 @@ export default function TechnologyPageClient({ techSlug }) {
       )}
 
       {data.workflow && data.workflow.length > 0 && (
-        <section className="technology-extra-section">
-          <div className="technology-extra-wrapper">
-            <h2 className="technology-stack-heading">
-              {data.workflowHeading || `Our ${labelLower} workflow`}
-            </h2>
-            <div className="technology-workflow-grid">
-              {data.workflow.map((step) => (
-                <article key={step.title} className="technology-simple-card">
-                  {step.icon && CARD_ICON_MAP[step.icon] && (
-                    <span className="technology-card-icon" aria-hidden="true">
-                      {React.createElement(CARD_ICON_MAP[step.icon])}
-                    </span>
-                  )}
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </article>
-              ))}
+        <section className="technology-stack-section">
+          <div className="technology-stack-band technology-stack-band--featured">
+            <div className="technology-stack-wrapper technology-stack-wrapper--featured">
+              <h2 className="technology-stack-heading">
+                {data.workflowHeading || `Our ${labelLower} workflow`}
+              </h2>
+              <div className="technology-workflow-grid technology-workflow-grid--featured">
+                {data.workflow.map((step) => (
+                  <article
+                    key={step.title}
+                    className="technology-simple-card technology-simple-card--workflow-featured"
+                  >
+                    {step.icon && CARD_ICON_MAP[step.icon] && (
+                      <span className="technology-card-icon" aria-hidden="true">
+                        {React.createElement(CARD_ICON_MAP[step.icon])}
+                      </span>
+                    )}
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
