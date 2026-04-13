@@ -216,7 +216,8 @@ const auditBenefits = [
 
 const gtmFaqs = [
   {
-    question: "What is GTM engineering and how is it different from traditional marketing?",
+    question:
+      "What is GTM engineering and how is it different from traditional marketing?",
     answer:
       "GTM engineering treats your go-to-market motion as a system — not a collection of disconnected campaigns. Instead of running content, outbound, and ads separately, we engineer them as interconnected workflows where each channel feeds the next. The result is compounding pipeline growth instead of linear, one-off results.",
   },
@@ -231,12 +232,14 @@ const gtmFaqs = [
       "Signal-based outbound and content-to-pipeline motions typically show measurable impact within 30–60 days. Full-system compounding — where content, outbound, ads, SEO, and nurture are all reinforcing each other — takes 90–120 days. We design for both quick wins and long-term compounding.",
   },
   {
-    question: "Do you work with early-stage startups or only established companies?",
+    question:
+      "Do you work with early-stage startups or only established companies?",
     answer:
       "We work with both. For early-stage companies, we build foundational GTM systems that scale. For established companies, we audit and re-engineer existing go-to-market motions to eliminate waste, connect silos, and improve pipeline velocity. The approach adapts to your stage.",
   },
   {
-    question: "How is Baaz different from a demand gen agency or outbound agency?",
+    question:
+      "How is Baaz different from a demand gen agency or outbound agency?",
     answer:
       "Most agencies specialize in one channel — outbound, content, or ads. We engineer the entire go-to-market system. Every channel is connected: content generates engagement data that feeds outbound, outbound engagement triggers ad retargeting, and all signals route through scoring and nurture. You get one unified pipeline engine, not fragmented vendor outputs.",
   },
@@ -279,7 +282,7 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "Baaz",
-    url: "https://www.baaz.pro",
+    url: "https://baaz.pro",
   },
   serviceType: [
     "GTM Engineering",
@@ -322,9 +325,7 @@ export default function GtmEngineering() {
           />
         </div>
         <div className="gtm-hero-wrapper">
-          <div
-            className="gtm-hero-header animate-fade-up animate-in"
-          >
+          <div className="gtm-hero-header animate-fade-up animate-in">
             <span className="gtm-hero-label">GTM Engineering</span>
             <h1 className="gtm-hero-heading">
               We Don&apos;t Run Campaigns.
@@ -352,8 +353,8 @@ export default function GtmEngineering() {
               Why Most Go-to-Market Motions Fail
             </h2>
             <p className="gtm-pain-subtext">
-              Pipeline doesn&apos;t come from working harder on individual channels.
-              It comes from connecting them into one system.
+              Pipeline doesn&apos;t come from working harder on individual
+              channels. It comes from connecting them into one system.
             </p>
           </div>
           <div className="gtm-pain-container">
@@ -376,8 +377,8 @@ export default function GtmEngineering() {
             </div>
           </div>
           <p className="gtm-pain-conclusion">
-            GTM engineering replaces disconnected tactics with a unified
-            revenue system.
+            GTM engineering replaces disconnected tactics with a unified revenue
+            system.
           </p>
         </div>
       </section>
@@ -391,8 +392,8 @@ export default function GtmEngineering() {
               The Baaz GTM Engineering System
             </h2>
             <p className="gtm-approach-subtext">
-              We build go-to-market systems where every channel reinforces
-              every other channel — creating compounding pipeline growth.
+              We build go-to-market systems where every channel reinforces every
+              other channel — creating compounding pipeline growth.
             </p>
           </div>
           <div className="gtm-approach-grid">
@@ -400,9 +401,7 @@ export default function GtmEngineering() {
               <div key={index} className="gtm-approach-card">
                 <h3 className="gtm-approach-title">{item.title}</h3>
                 {item.description && (
-                  <p className="gtm-approach-description">
-                    {item.description}
-                  </p>
+                  <p className="gtm-approach-description">{item.description}</p>
                 )}
                 {item.features && (
                   <ul className="gtm-approach-features">
@@ -513,9 +512,7 @@ export default function GtmEngineering() {
       <section className="gtm-tech">
         <div className="gtm-tech-wrapper">
           <div className="gtm-tech-header">
-            <span className="gtm-section-label">
-              Engineered Infrastructure
-            </span>
+            <span className="gtm-section-label">Engineered Infrastructure</span>
             <h2 className="gtm-tech-heading">
               Custom Automation. Full Visibility.
             </h2>
@@ -576,9 +573,7 @@ export default function GtmEngineering() {
               />
             </div>
             <div className="gtm-cta-content">
-              <h2 className="gtm-cta-heading">
-                Start With a Free GTM Audit
-              </h2>
+              <h2 className="gtm-cta-heading">Start With a Free GTM Audit</h2>
               <p className="gtm-cta-description">We&apos;ll show you:</p>
               <ul className="gtm-cta-benefits">
                 {auditBenefits.map((b, i) => (
