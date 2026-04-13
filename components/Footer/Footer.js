@@ -37,14 +37,12 @@ const Footer = () => {
 
           {/* Footer Links */}
           <div className="footer-links">
-            {/* Services Column */}
+            {/* Our Services Column */}
             <div className="footer-column">
-              <h3 className="footer-column-title">Services</h3>
+              <h3 className="footer-column-title">Our Services</h3>
               <ul className="footer-list">
                 <li>
-                  <Link href="/services/product-strategy">
-                    Product Strategy
-                  </Link>
+                  <Link href="/services/product-strategy">Product Strategy</Link>
                 </li>
                 <li>
                   <Link href="/services/ui-ux-design">UI/UX Design</Link>
@@ -57,6 +55,60 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/services/ai-solution">AI Development</Link>
+                </li>
+                <li>
+                  <Link href="/enterprise">Enterprise</Link>
+                </li>
+                <li>
+                  <Link href="/ecommerce">E-commerce</Link>
+                </li>
+                <li>
+                  <Link href="/gtm-engineering">GTM Engineering</Link>
+                </li>
+                <li>
+                  <Link href="/project-rescue">Project Rescue</Link>
+                </li>
+                <li>
+                  <Link href="/work1">Manufacturing quality automation</Link>
+                </li>
+                <li>
+                  <Link href="/work2">Hiring and HRMS automation</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* ERP Solutions Column */}
+            <div className="footer-column">
+              <h3 className="footer-column-title">ERP Solutions</h3>
+              <ul className="footer-list">
+                <li>
+                  <Link href="/erp/insurance-companies">Insurance</Link>
+                </li>
+                <li>
+                  <Link href="/erp/manufacturing-companies">Manufacturing</Link>
+                </li>
+                <li>
+                  <Link href="/erp/banking-companies">Banking</Link>
+                </li>
+                <li>
+                  <Link href="/erp/healthcare-companies">Healthcare</Link>
+                </li>
+                <li>
+                  <Link href="/erp/hospitals">Hospitals</Link>
+                </li>
+                <li>
+                  <Link href="/erp/real-estate-companies">Real Estate</Link>
+                </li>
+                <li>
+                  <Link href="/erp/construction-companies">Construction</Link>
+                </li>
+                <li>
+                  <Link href="/erp/automobile-companies">Automobile</Link>
+                </li>
+                <li>
+                  <Link href="/erp/transportation-supply-chain-companies">
+                    Transportation and Supply Chain
+                  </Link>
                 </li>
               </ul>
             </div>

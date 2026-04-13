@@ -26,9 +26,9 @@
 - **Internal links** from nav, services, technologies, blog to important pages — **Partial** (can always add more)
 - **Keyword research & integration** (mapping primary and secondary terms to services, blog posts, and core pages) — **Done**
 - **SERP Analysis & Content Fixes** (analyzing search engine results to identify and resolve gaps or intent mismatches) — **Done**
-- **Service page deep-dives** (UI restructuring and tech stack enrichment to highlight specialized engineering expertise) — **Ongoing**
+- **Service page deep-dives** (UI restructuring and tech stack enrichment to highlight specialized engineering expertise) — **Done**
 - **ERP solutions emphasis** (expanded industry-specific pages and structured data to capture long-tail enterprise traffic) — **Done**
-- **Footer Navigation Update** (align footer services list to match the navbar Core Services and remove duplicate links) — **Todo**
+- **Footer Navigation Update** (align footer services list to match the navbar Core Services and remove duplicate links) — **Done**
 
 ---
 
