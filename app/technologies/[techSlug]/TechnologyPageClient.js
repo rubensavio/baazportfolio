@@ -14,6 +14,10 @@ import {
   FiLayers,
   FiWatch,
   FiGlobe,
+  FiCreditCard,
+  FiShoppingCart,
+  FiHeart,
+  FiTool,
 } from "react-icons/fi";
 import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesData";
 import "./page.scss";
@@ -22,7 +26,9 @@ const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
   ssr: false,
 });
-const CTA = dynamic(() => import("../../../components/CTA/CTA"), { ssr: false });
+const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
+  ssr: false,
+});
 const Footer = dynamic(() => import("../../../components/Footer/Footer"), {
   ssr: false,
 });
@@ -39,23 +45,29 @@ const CARD_ICON_MAP = {
   enterprise: FiLayers,
   wearable: FiWatch,
   web: FiGlobe,
+  fintech: FiCreditCard,
+  retail: FiShoppingCart,
+  healthcare: FiHeart,
+  construction: FiTool,
 };
 
 const STACK_BRIEFS = {
-  "HTML5": "Semantic structure for accessible, SEO-friendly web interfaces.",
-  "CSS3": "Responsive styling foundation for modern, consistent UI systems.",
+  HTML5: "Semantic structure for accessible, SEO-friendly web interfaces.",
+  CSS3: "Responsive styling foundation for modern, consistent UI systems.",
   "JavaScript (ES6+)":
     "Core client-side logic for interactive web experiences.",
-  TypeScript: "Typed JavaScript for safer code and easier long-term maintenance.",
+  TypeScript:
+    "Typed JavaScript for safer code and easier long-term maintenance.",
   React: "Component-based frontend framework for scalable product UIs.",
   "Next.js":
     "Server rendering and routing framework for high-performance web apps.",
   "Node.js": "Backend runtime for APIs and real-time service layers.",
-  "Express.js": "Lightweight API framework for service and integration workflows.",
+  "Express.js":
+    "Lightweight API framework for service and integration workflows.",
   GraphQL: "Flexible API query layer that reduces over-fetching.",
-  "Tailwind CSS": "Utility-first styling for fast and consistent UI development.",
-  "React Native":
-    "Single codebase approach for iOS and Android app delivery.",
+  "Tailwind CSS":
+    "Utility-first styling for fast and consistent UI development.",
+  "React Native": "Single codebase approach for iOS and Android app delivery.",
   Flutter: "Cross-platform toolkit for performant, pixel-precise mobile apps.",
   Swift: "Native iOS development for platform-optimized experiences.",
   Kotlin: "Native Android development with robust language safety features.",
@@ -69,16 +81,17 @@ const STACK_BRIEFS = {
   Webflow: "Visual website delivery with structured CMS capabilities.",
   Shopify: "Commerce platform for scalable online storefront operations.",
   Strapi: "Headless CMS for custom content modeling and API-driven delivery.",
-  Contentful: "Enterprise-grade headless content platform for multi-channel teams.",
+  Contentful:
+    "Enterprise-grade headless content platform for multi-channel teams.",
   Sanity: "Structured content platform with real-time collaboration workflows.",
   "Headless CMS Architecture":
     "Decoupled frontend and content systems for speed and flexibility.",
   "SEO and Performance Optimization":
     "Technical optimization for discoverability and faster page loads.",
-  TensorFlow: "Deep learning framework for production model training pipelines.",
+  TensorFlow:
+    "Deep learning framework for production model training pipelines.",
   PyTorch: "Flexible ML framework for experimentation and model development.",
-  "Scikit-learn":
-    "Reliable ML library for classical algorithms and baselines.",
+  "Scikit-learn": "Reliable ML library for classical algorithms and baselines.",
   "OpenAI API":
     "LLM capabilities for assistants, automation, and language workflows.",
   "Anthropic API": "Enterprise-oriented LLM integrations with safety controls.",
@@ -102,7 +115,8 @@ const STACK_BRIEFS = {
     "Quality checks and controls to reduce unsafe model outputs.",
   "Memory and Context Strategies":
     "Session-aware context handling for better multi-step interactions.",
-  PostgreSQL: "Relational database for transactional, high-integrity workloads.",
+  PostgreSQL:
+    "Relational database for transactional, high-integrity workloads.",
   MySQL: "Widely adopted relational system for stable application data layers.",
   MongoDB: "Document database for flexible schema and rapid iteration.",
   "Firebase Firestore":
@@ -117,7 +131,8 @@ const STACK_BRIEFS = {
   Azure: "Enterprise cloud platform with strong integration capabilities.",
   "Google Cloud":
     "Cloud-native services for modern data and application workloads.",
-  Docker: "Containerization standard for consistent development and deployment.",
+  Docker:
+    "Containerization standard for consistent development and deployment.",
   Kubernetes: "Container orchestration for scalable production workloads.",
   "GitHub Actions": "CI/CD pipelines for automated build, test, and release.",
   Terraform: "Infrastructure as code for repeatable cloud provisioning.",
@@ -128,6 +143,7 @@ const STACK_BRIEFS = {
 export default function TechnologyPageClient({ techSlug }) {
   const data = technologyCapabilitiesData[techSlug];
   const labelLower = data.label.toLowerCase();
+  const hasCustomStackGroups = data.stackGroups && data.stackGroups.length > 0;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -158,22 +174,79 @@ export default function TechnologyPageClient({ techSlug }) {
         </div>
       </section>
 
+      {data.webServices && data.webServices.length > 0 && (
+        <section className="technology-web-services-section">
+          <div className="technology-web-services-wrapper">
+            <h2 className="technology-stack-heading">
+              {data.webServicesHeading}
+            </h2>
+            {data.webServicesIntro && (
+              <p className="technology-stack-intro">{data.webServicesIntro}</p>
+            )}
+            <div className="technology-web-services-grid">
+              {data.webServices.map((service) => (
+                <article key={service.title} className="technology-simple-card">
+                  {service.icon && CARD_ICON_MAP[service.icon] && (
+                    <span
+                      className="technology-card-icon technology-card-icon--warm"
+                      aria-hidden="true"
+                    >
+                      {React.createElement(CARD_ICON_MAP[service.icon])}
+                    </span>
+                  )}
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="technology-stack-section">
-        <div className="technology-stack-wrapper">
-          <h2 className="technology-stack-heading">Stack we work with</h2>
-          <div className="technology-stack-grid">
-            {data.stack.map((item, index) => (
-              <article key={item} className="technology-stack-card">
-                <span className="technology-stack-index" aria-hidden="true">
-                  {(index + 1).toString().padStart(2, "0")}
-                </span>
-                <h3>{item}</h3>
-                <p className="technology-stack-description">
-                  {STACK_BRIEFS[item] ||
-                    "Production-ready implementation aligned to your delivery goals."}
-                </p>
-              </article>
-            ))}
+        <div
+          className={`technology-stack-band${hasCustomStackGroups ? " technology-stack-band--featured" : ""}`}
+        >
+          <div
+            className={`technology-stack-wrapper${hasCustomStackGroups ? " technology-stack-wrapper--featured" : ""}`}
+          >
+            <h2 className="technology-stack-heading">
+              {data.stackHeading || "Stack we work with"}
+            </h2>
+            {data.stackIntro && (
+              <p className="technology-stack-intro">{data.stackIntro}</p>
+            )}
+            <div
+              className={`technology-stack-grid${hasCustomStackGroups ? " technology-stack-grid--featured" : ""}`}
+            >
+              {hasCustomStackGroups
+                ? data.stackGroups.map((group) => (
+                    <article
+                      key={group.title}
+                      className="technology-stack-card technology-stack-card--featured"
+                    >
+                      <h3>{group.title}</h3>
+                      <p className="technology-stack-description">
+                        {group.description}
+                      </p>
+                    </article>
+                  ))
+                : data.stack.map((item, index) => (
+                    <article key={item} className="technology-stack-card">
+                      <span
+                        className="technology-stack-index"
+                        aria-hidden="true"
+                      >
+                        {(index + 1).toString().padStart(2, "0")}
+                      </span>
+                      <h3>{item}</h3>
+                      <p className="technology-stack-description">
+                        {STACK_BRIEFS[item] ||
+                          "Production-ready implementation aligned to your delivery goals."}
+                      </p>
+                    </article>
+                  ))}
+            </div>
           </div>
         </div>
       </section>
@@ -226,15 +299,25 @@ export default function TechnologyPageClient({ techSlug }) {
 
       {data.offerings && data.offerings.length > 0 && (
         <section className="technology-extra-section">
-          <div className="technology-extra-wrapper">
+          <div className="technology-extra-wrapper technology-industries-wrapper">
             <h2 className="technology-stack-heading">
-              {data.offeringsHeading || `Our offerings in ${labelLower} services`}
+              {data.offeringsHeading ||
+                `Our offerings in ${labelLower} services`}
             </h2>
-            <div className="technology-offerings-grid">
+            {data.offeringsIntro && (
+              <p className="technology-stack-intro">{data.offeringsIntro}</p>
+            )}
+            <div className="technology-offerings-grid technology-offerings-grid--industries">
               {data.offerings.map((item) => (
-                <article key={item.title} className="technology-simple-card">
+                <article
+                  key={item.title}
+                  className="technology-simple-card technology-simple-card--industry"
+                >
                   {item.icon && CARD_ICON_MAP[item.icon] && (
-                    <span className="technology-card-icon" aria-hidden="true">
+                    <span
+                      className="technology-card-icon technology-card-icon--industry"
+                      aria-hidden="true"
+                    >
                       {React.createElement(CARD_ICON_MAP[item.icon])}
                     </span>
                   )}
@@ -250,8 +333,12 @@ export default function TechnologyPageClient({ techSlug }) {
       {data.deployment && (
         <section className="technology-extra-section">
           <div className="technology-extra-wrapper deployment-wrapper">
-            <h2 className="technology-stack-heading">{data.deployment.title}</h2>
-            <p className="technology-deployment-intro">{data.deployment.description}</p>
+            <h2 className="technology-stack-heading">
+              {data.deployment.title}
+            </h2>
+            <p className="technology-deployment-intro">
+              {data.deployment.description}
+            </p>
             <ul className="technology-deployment-tools">
               {data.deployment.tools.map((tool) => (
                 <li key={tool}>{tool}</li>

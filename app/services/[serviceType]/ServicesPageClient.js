@@ -257,6 +257,7 @@ export default function ServicesPageClient({ serviceType }) {
               </div>
             </div>
           )}
+
         </div>
 
       {serviceData.faqs && <FAQ faqs={serviceData.faqs} />}
