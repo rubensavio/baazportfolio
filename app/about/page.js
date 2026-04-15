@@ -7,11 +7,11 @@ import "./page.scss";
 
 const Headroom = dynamic(() => import('react-headroom'), { ssr: false });
 const Navbar = dynamic(() => import('../../components/Navbar/Navbar'), { ssr: false });
-const WhoWeAreSection = dynamic(() => import('../../components/WhoWeAreSection/WhoWeAreSection'), { ssr: false });
-const OurValues = dynamic(() => import('../../components/OurValues/OurValues'), { ssr: false });
+const WhoWeAreSection = dynamic(() => import('../../components/WhoWeAreSection/WhoWeAreSection'));
+const OurValues = dynamic(() => import('../../components/OurValues/OurValues'));
 const CTA = dynamic(() => import('../../components/CTA/CTA'), { ssr: false });
 const Footer = dynamic(() => import('../../components/Footer/Footer'), { ssr: false });
-const FAQ = dynamic(() => import('../../components/FAQ/FAQ'), { ssr: false });
+const FAQ = dynamic(() => import('../../components/FAQ/FAQ'));
 
 export default function AboutUs() {
   return (

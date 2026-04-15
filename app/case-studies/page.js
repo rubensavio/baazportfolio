@@ -37,9 +37,9 @@ export default function CaseStudiesIndexPage() {
         <div className="blog-index-hero-wrapper">
           <h1 className="blog-index-heading">Case studies</h1>
           <p className="blog-index-intro">
-            Product outcomes and system design notes from Baaz: shipped platforms,
-            measurable marketplace and engineering outcomes, plus architecture
-            guides for technical evaluation. Exploring{" "}
+            Product outcomes and system design notes from Baaz: shipped
+            platforms, measurable marketplace and engineering outcomes, plus
+            architecture guides for technical evaluation. Exploring{" "}
             <Link href="/ecommerce">Amazon &amp; Flipkart growth</Link>,{" "}
             <Link href="/enterprise">enterprise delivery</Link>, or{" "}
             <Link href="/project-rescue">project rescue</Link>? Start here, then
@@ -49,7 +49,10 @@ export default function CaseStudiesIndexPage() {
       </section>
 
       <div className="case-studies-hub-toolbar">
-        <p className="case-studies-hub-toolbar-label" id="case-studies-filter-label">
+        <p
+          className="case-studies-hub-toolbar-label"
+          id="case-studies-filter-label"
+        >
           Filter by type
         </p>
         <div
@@ -76,7 +79,10 @@ export default function CaseStudiesIndexPage() {
           <p className="case-studies-hub-empty">No entries in this filter.</p>
         ) : (
           visibleItems.map((item) => (
-            <article key={item.href} className="blog-index-card case-studies-hub-card">
+            <article
+              key={item.href}
+              className="blog-index-card case-studies-hub-card"
+            >
               <Link href={item.href} className="blog-index-card-link">
                 <span className="blog-index-card-type">{item.contentType}</span>
                 {item.industryTags?.length ? (

@@ -1,0 +1,126 @@
+# Baaz — Extended AI Context File
+
+> Baaz is a custom software and product engineering company based in Bangalore, India, operating since 2018 — delivering web, mobile, AI, and enterprise software for startups and enterprises worldwide. Approximately 50% of engagements begin as mid-project rescues; standard first milestone delivery runs 4–6 weeks for web applications and 8–12 weeks for enterprise integrations.
+
+This file is the extended version of `/llms.txt`. It lists all indexed pages with detailed descriptions to help AI systems understand the full scope and depth of Baaz's content, services, and expertise.
+
+---
+
+## Core Pages
+
+- [Homepage](https://baaz.pro): Overview of Baaz as a Bangalore-based custom software and product engineering company. Covers service positioning, client outcomes, SSR'd WhoWeAre section with 100+ application delivery stats, and homepage FAQ with direct answers on enterprise product engineering.
+- [About Baaz](https://baaz.pro/about): Full company background — founding in 2018, Bangalore HQ, team philosophy, delivery track record, and "Custom Software Development from Bangalore Since 2018" positioning. Includes FAQ and OurValues section with SSR content.
+- [Services Overview](https://baaz.pro/services): Landing page for all Baaz service lines: product strategy, UI/UX, web and mobile development, AI solutions, and engineering consulting — delivered from Bangalore for global clients.
+- [Contact / Get in Touch](https://baaz.pro/get-in-touch): Primary contact and enquiry page with form submission for project briefs, technical questions, and partnership requests.
+- [Book a Discovery Call](https://baaz.pro/book-call): Calendar booking page to schedule a 30-minute discovery call with the Baaz team.
+
+---
+
+## Services
+
+- [Custom Software Development](https://baaz.pro/services/web-development): End-to-end web application development using React, Next.js, Node.js, and Python. Includes proof data: 100+ apps delivered since 2018, first milestone in 4–6 weeks (standard), 8–12 weeks (enterprise integrations with SAP/Salesforce), scope creep 30–40% lower with milestone-based delivery, India-based delivery at 40–60% of US/UK rates.
+- [Product Strategy Consulting](https://baaz.pro/services/product-strategy): Discovery workshops, product roadmaps, MVP scoping, and GTM alignment. Best fit for B2B SaaS and enterprise roadmaps. Covers phased bets, honest MVP scope definition, and stakeholder alignment before build starts.
+- [UI/UX Design](https://baaz.pro/services/ui-ux-design): User research, wireframes, prototypes, design systems, and usability testing for web and mobile products. Enterprise-quality design execution for startups through large teams.
+- [Mobile App Development](https://baaz.pro/services/mobile-app): Native iOS and Android development plus Flutter and React Native cross-platform builds. Full lifecycle from UX through App Store and Play Store launch, including ASO and post-launch support.
+- [AI Solutions](https://baaz.pro/services/ai-solution): Practical AI implementation — computer vision, NLP, predictive models, production APIs, RAG pipelines, and LLM integrations. Covers model selection, deployment, monitoring, and data pipeline engineering. Positioned as production-ready over slideware.
+- [Software Project Rescue](https://baaz.pro/project-rescue): Mid-project takeover service for stalled, failing, or vendor-abandoned software builds. Covers codebase audit, stabilization sprint, rewritten acceptance criteria, and delivery without full restarts. Approximately half of Baaz engagements start this way.
+- [Enterprise Software Development](https://baaz.pro/enterprise): Custom platforms, legacy modernisation, systems integration (SAP, Salesforce, custom cores), and cloud-native delivery for enterprise organizations. India cost structure with Western programme hygiene.
+- [eCommerce Development](https://baaz.pro/ecommerce): Amazon and Flipkart marketplace management, eCommerce platform development, PPC, listing optimization, operations, analytics, and proprietary growth engineering.
+- [GTM Engineering](https://baaz.pro/gtm-engineering): Go-to-market systems engineering — content, outbound, paid ads, SEO, and nurture workflow design. Covers internet marketing services and business development automation.
+
+---
+
+## Technologies
+
+- [Web Development Stack](https://baaz.pro/technologies/web-development): Baaz's web technology stack — React, Next.js, TypeScript, Node.js, APIs, testing tools, and performance engineering practices. Full-stack overview with service offerings across the development lifecycle.
+- [Website & CMS Stack](https://baaz.pro/technologies/website-cms): CMS and website capabilities across WordPress, Webflow, Shopify, Strapi, Contentful, and headless CMS architectures. Covers marketing-site and content-heavy platform delivery.
+- [AI & ML Stack](https://baaz.pro/technologies/ai-ml-models): AI and ML technologies — TensorFlow, PyTorch, Scikit-learn, OpenAI, Anthropic Claude, and Google Gemini integrations. Covers model training, fine-tuning, inference APIs, and production deployment.
+- [Agentic AI Stack](https://baaz.pro/technologies/agentic-ai): Agentic AI capabilities — LangChain, LlamaIndex, RAG pipelines, vector databases, and tool-calling orchestration. Covers multi-agent systems and autonomous workflow design.
+- [Database Management Stack](https://baaz.pro/technologies/database-management): Database capabilities across PostgreSQL, MySQL, MongoDB, Redis, Firestore, and Elasticsearch. Covers schema design, query optimization, migration, and multi-database architectures.
+- [DevOps & Cloud Stack](https://baaz.pro/technologies/devops-cloud): DevOps and cloud infrastructure across AWS, Azure, GCP, Docker, Kubernetes, CI/CD pipelines, Infrastructure as Code, and production monitoring practices.
+
+---
+
+## Industries
+
+- [Industries Overview](https://baaz.pro/industry): Summary of Baaz's industry focus areas — FinTech, Retail, Healthcare, and Construction — with custom software built for each vertical's regulatory and workflow requirements.
+- [FinTech Software Development](https://baaz.pro/industry/fintech): Software for payments, lending, and internal financial tools — compliant, scalable builds with financial-grade security from Bangalore.
+- [Retail Digital Transformation](https://baaz.pro/industry/retail): eCommerce, omnichannel, inventory management, POS, and in-store technology — custom retail software with integration experience.
+- [Healthcare Software Development](https://baaz.pro/industry/healthcare): Secure, compliant healthcare portals, clinical tools, and EHR-friendly integrations for providers, insurers, and healthtech startups.
+- [Construction Tech Development](https://baaz.pro/industry/construction): Construction project management software, field team apps, procurement tools, offline mobile, and ERP integrations for the built environment.
+
+---
+
+## ERP Solutions
+
+- [ERP Solutions Overview](https://baaz.pro/erp): Industry-focused ERP solutioning overview covering insurance, manufacturing, banking, healthcare, hospitals, real estate, construction, automobile, and transportation/supply chain verticals.
+- [ERP for Manufacturing](https://baaz.pro/erp/manufacturing-companies): ERP for manufacturing companies — finance, operations, compliance, and integrations designed for production environments and real business workflows.
+- [ERP for Banking](https://baaz.pro/erp/banking-companies): ERP for banking companies — finance, operations, compliance, and integration layer for banking-specific regulatory and operational requirements.
+- [ERP for Healthcare Companies](https://baaz.pro/erp/healthcare-companies): ERP for healthcare organizations — finance, operations, compliance, and integration with clinical systems and healthcare regulatory workflows.
+- [ERP for Hospitals](https://baaz.pro/erp/hospitals): Hospital-specific ERP covering finance, operations, patient workflow compliance, and integrations with clinical and billing systems.
+- [ERP for Real Estate](https://baaz.pro/erp/real-estate-companies): ERP for real estate companies — finance, operations, property management, compliance, and developer-side project workflow integrations.
+- [ERP for Construction](https://baaz.pro/erp/construction-companies): ERP for construction companies — finance, project operations, compliance, subcontractor management, and field-to-office integrations.
+- [ERP for Automobile](https://baaz.pro/erp/automobile-companies): ERP for automobile companies — finance, production operations, compliance, dealer management, and supply chain integrations.
+- [ERP for Transportation & Supply Chain](https://baaz.pro/erp/transportation-supply-chain-companies): ERP for transportation and supply chain companies — finance, logistics operations, compliance, fleet management, and tracking integrations.
+- [ERP for Insurance](https://baaz.pro/erp/insurance-companies): ERP and workflow software for insurance companies — policy administration, claims, compliance, and integration with underwriting and CRM systems.
+
+---
+
+## Case Studies & Work
+
+- [Case Studies Hub](https://baaz.pro/case-studies): Portfolio of delivered projects filtered by type — shipped platforms, marketplace and engineering outcomes, and architecture guides across FinTech, Retail, Healthcare, and ERP-adjacent workflows.
+- [Viz Pro — AI Quality Inspection](https://baaz.pro/work1): Case study: manufacturing ERP with AI computer vision quality inspection layer — defect detection, QA workflows, and production rollout. FinTech and manufacturing crossover build.
+- [Work Case Study 2](https://baaz.pro/work2): Second detailed case study from Baaz's shipped product portfolio.
+
+---
+
+## Blog — Decision-Stage Content
+
+- [How to Scope an MVP That Actually Ships](https://baaz.pro/blog/how-to-scope-mvp-that-ships): MVP scoping framework with original Baaz retrospective data — 60% of missed launches caused by multi-assumption scope, 8-week median delivery for single-persona briefs vs. 22 weeks for 3+ personas (175% calendar penalty), 35% lower post-launch rework when scope is brief-locked.
+- [ThoughtWorks Alternatives for 2026](https://baaz.pro/blog/thoughtworks-alternatives): Practical comparison of ThoughtWorks alternatives — SIs, boutique studios, talent networks, and India delivery studios — covering fit, engagement model, cost, and switching risk.
+- [Technical Due Diligence for Custom Software](https://baaz.pro/blog/technical-due-diligence-custom-software): How to evaluate a codebase, vendor, or acquisition target for technical risk, architecture quality, test coverage, and delivery capability. Decision-stage content for buyers and investors.
+- [Software Project Rescue Checklist](https://baaz.pro/blog/software-project-rescue-checklist): Step-by-step checklist for diagnosing a stalled software project — signals of failure, triage approach, and the rescue vs. rebuild vs. replace decision framework.
+- [Product Engineering Process for Enterprises](https://baaz.pro/blog/product-engineering-process-for-enterprises): How enterprise teams structure discovery, design, build, and scale phases for large software products — process, governance, and delivery rhythm.
+- [Best Software Development Agencies for Startups](https://baaz.pro/blog/best-software-development-agencies-for-startups): What to look for when choosing a startup software agency — speed, product thinking, transparency, fit signals, and red flags in the evaluation process.
+- [How to Choose a Software Development Partner](https://baaz.pro/blog/how-to-choose-software-development-partner): How to scope, evaluate, and select a software development partner — questions to ask, culture fit indicators, contract models, and common selection mistakes.
+- [How to Build an AI-Powered Product](https://baaz.pro/blog/how-to-build-ai-powered-product): Framework for building AI products — problem-first approach, tight pilot scoping, data validation, deployment engineering, and avoiding AI-first failure modes.
+- [Software Development Outsourcing vs In-House](https://baaz.pro/blog/software-development-outsourcing-vs-in-house): When to outsource vs. build in-house — decision criteria, hybrid models, cost/speed/control tradeoffs, and how to choose a partner for each scenario.
+- [Signs Your Software Project Is Failing](https://baaz.pro/blog/signs-your-software-project-is-failing): Early warning signals of a failing software project — slipped milestones, vague demos, team churn, scope expansion, and the escalation and rescue decision points.
+- [How to Switch Software Development Vendors](https://baaz.pro/blog/how-to-switch-software-development-vendors): How to switch dev vendors mid-project without losing progress — securing repos and keys, auditing the codebase, handover documentation, and selecting a takeover-ready partner.
+- [Reference Architecture for B2B SaaS](https://baaz.pro/blog/reference-architecture-b2b-saas): Reference architecture for B2B SaaS platforms covering service boundaries, APIs, sync vs async data flow, multi-tenancy, identity, and failure handling patterns.
+- [SLOs, Error Budgets, and Reliability](https://baaz.pro/blog/slos-error-budgets-reliability): Practical guide to SLIs, SLOs, and error budgets — latency vs. availability trade-offs, burn-based alerting, and production reliability for product and platform engineering teams.
+- [Reliable Data Integration Patterns](https://baaz.pro/blog/reliable-data-integration-events-cdc-outbox): Reliable data integration approaches — event-driven patterns, outbox pattern, CDC (change data capture), dual-write risks, idempotency, and ordering guarantees.
+
+---
+
+## Key Facts
+
+- Founded in 2018, headquartered in Bangalore, India
+- Delivered 100+ web and mobile applications across FinTech, Retail, Healthcare, eCommerce, AI/ML, AR/VR, and ERP-adjacent workflows (per internal portfolio records)
+- Standard web application first milestone: 4–6 weeks; enterprise API integrations (SAP, Salesforce): 8–12 weeks
+- Milestone-based delivery reduces scope creep 30–40% vs. fixed-scope waterfall contracts (per Baaz engagement retrospectives)
+- India-based delivery at 40–60% of equivalent US/UK rates with Western programme hygiene: sprint reviews, documented handoffs, SLA-backed support
+- Approximately 50% of engagements begin as mid-project rescues or vendor takeovers
+- MVPs scoped to a single persona and one job-to-be-done ship to a demoable state in a median of 8 weeks; 3+ persona scope averages 22 weeks (175% calendar penalty)
+- Post-launch rework in first 90 days runs 35% lower when scope is locked to one persona before build starts
+- Core services: Custom Software Development, Product Strategy, UI/UX Design, Mobile App Development, AI Solutions, Project Rescue, Enterprise Platforms, GTM Engineering, eCommerce
+- Industry classification: Software Development / Product Engineering Agency
+- Tagline: "Enterprise-grade products, without the enterprise wait"
+
+---
+
+## Legal
+
+- [Privacy Policy](https://baaz.pro/privacy): Baaz data handling, privacy practices, and user rights documentation.
+- [Terms of Service](https://baaz.pro/terms): Terms governing use of the Baaz website and engagement with Baaz services.
+
+---
+
+## Contact
+
+- Website: https://baaz.pro
+- Email: support@baaz.live
+- Office: Bangalore, India
+- Contact form: https://baaz.pro/get-in-touch
+- Book a discovery call: https://baaz.pro/book-call
+- llms.txt (concise): https://baaz.pro/llms.txt

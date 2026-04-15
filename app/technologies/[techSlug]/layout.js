@@ -54,8 +54,8 @@ function buildTechBreadcrumbSchema(techSlug, data) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Technology capabilities",
-        item: `${baseUrl}/technologies/${techSlug}`,
+        name: "Technology Capabilities",
+        item: `${baseUrl}/technologies`,
       },
       {
         "@type": "ListItem",
@@ -64,6 +64,19 @@ function buildTechBreadcrumbSchema(techSlug, data) {
         item: `${baseUrl}/technologies/${techSlug}`,
       },
     ],
+  };
+}
+
+function buildTechFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
   };
 }
 
@@ -92,6 +105,7 @@ export default async function TechnologyLayout({ children, params }) {
   const data = technologyCapabilitiesData[techSlug];
   const breadcrumbSchema = buildTechBreadcrumbSchema(techSlug, data);
   const collectionSchema = buildTechCollectionSchema(techSlug, data);
+  const faqSchema = buildTechFaqSchema(data);
 
   return (
     <>
@@ -99,6 +113,12 @@ export default async function TechnologyLayout({ children, params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

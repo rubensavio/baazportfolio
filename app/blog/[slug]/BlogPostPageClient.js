@@ -9,9 +9,7 @@ const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
   ssr: false,
 });
-const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"), {
-  ssr: false,
-});
+const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"));
 const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
   ssr: false,
 });

@@ -51,7 +51,13 @@ const OurValues = () => {
               style={{ animationDelay: `${0.1 * (index + 2)}s` }}
             >
               <div className="value-icon">
-                <img src={value.icon} alt={value.title} />
+                <img
+                  src={value.icon}
+                  alt={value.title}
+                  width={48}
+                  height={48}
+                  decoding="async"
+                />
               </div>
               <h3 className="value-title">{value.title}</h3>
               <p className="value-description">{value.description}</p>

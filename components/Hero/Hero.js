@@ -20,11 +20,12 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
-            {regionLabel && (
-              <p className="hero-region-line animate-fade-up animate-in">
-                {regionLabel}
-              </p>
-            )}
+            <p
+              className="hero-region-line animate-fade-up animate-in"
+              aria-hidden={!regionLabel || undefined}
+            >
+              {regionLabel || "\u00A0"}
+            </p>
             <h1 className="hero-heading-unified animate-fade-up animate-in">
               <span className="hero-heading__tagline">
                 <span className="hero-heading-strikes-container">
@@ -65,10 +66,9 @@ const Hero = () => {
               className="hero-icon animate-icon-in"
               width={2000}
               height={1484}
-              sizes="(max-width: 64rem) 100vw, 50vw"
+              sizes="(max-width: 48rem) 100vw, (max-width: 64rem) 100vw, 50vw"
               priority
               fetchPriority="high"
-              unoptimized
             />
           </div>
           <Link
@@ -87,6 +87,8 @@ const Hero = () => {
           className="hero-bg-image"
           sizes="100vw"
           quality={82}
+          priority
+          fetchPriority="high"
         />
       </div>
     </section>

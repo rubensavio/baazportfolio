@@ -1,4 +1,4 @@
-"use client";
+import BookCallClient from "./BookCallClient";
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
@@ -72,13 +72,13 @@ export default function BookCall() {
 
   const previousMonth = () => {
     setCurrentMonth(
-      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1)
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1),
     );
   };
 
   const nextMonth = () => {
     setCurrentMonth(
-      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1)
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1),
     );
   };
 
@@ -132,7 +132,7 @@ export default function BookCall() {
     })
       .then(() => {
         alert(
-          `Booking confirmed for ${bookingData.date} at ${bookingData.time}!`
+          `Booking confirmed for ${bookingData.date} at ${bookingData.time}!`,
         );
         setIsModalOpen(false);
         setSelectedDate(null);
@@ -152,7 +152,7 @@ export default function BookCall() {
     const date = new Date(
       currentMonth.getFullYear(),
       currentMonth.getMonth(),
-      selectedDate
+      selectedDate,
     );
     const days = [
       "Sunday",

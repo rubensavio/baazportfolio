@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./FAQ.scss";
 
 const FAQ = ({ faqs, heading }) => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState(0);
 
   if (!faqs || faqs.length === 0) return null;
 

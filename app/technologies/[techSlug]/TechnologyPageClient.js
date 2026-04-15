@@ -29,6 +29,7 @@ const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
 const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
   ssr: false,
 });
+const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"));
 const Footer = dynamic(() => import("../../../components/Footer/Footer"), {
   ssr: false,
 });
@@ -234,7 +235,10 @@ export default function TechnologyPageClient({ techSlug }) {
                 : data.stack.map((item, index) => (
                     <article key={item} className="technology-stack-card">
                       <h3>
-                        <span className="technology-stack-index" aria-hidden="true">
+                        <span
+                          className="technology-stack-index"
+                          aria-hidden="true"
+                        >
                           {index + 1}.
                         </span>{" "}
                         {item}
@@ -356,6 +360,10 @@ export default function TechnologyPageClient({ techSlug }) {
             </ul>
           </div>
         </section>
+      )}
+
+      {data.faqs && data.faqs.length > 0 && (
+        <FAQ faqs={data.faqs} heading={data.faqsHeading} />
       )}
 
       <CTA />

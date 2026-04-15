@@ -9,12 +9,18 @@ const urbanist = Urbanist({
   subsets: ["latin"],
   variable: "--font-urbanist",
   display: "swap",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   display: "swap",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 const ogImage = "/assets/ogdefault.png";

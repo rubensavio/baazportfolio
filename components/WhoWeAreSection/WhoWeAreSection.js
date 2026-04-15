@@ -12,7 +12,7 @@ const WhoWeAreSection = () => {
         <div className="who-we-are-section-header animate-fade-up animate-in">
           <span className="who-we-are-section-label">Who We Are</span>
           <h2 className="who-we-are-section-heading">
-            Building World Class Softwares Since 2018
+            Custom Software Development from Bangalore Since 2018
           </h2>
         </div>
 
