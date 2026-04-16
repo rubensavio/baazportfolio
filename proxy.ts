@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Redirect www domain to apex in production so canonical URLs use baaz.pro.
+ * Redirect www domain to apex in production so canonical URLs match hreflang / metadata.
  */
 export function proxy(request: NextRequest) {
   if (process.env.NODE_ENV !== "production") {

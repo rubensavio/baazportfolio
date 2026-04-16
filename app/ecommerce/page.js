@@ -203,14 +203,12 @@ const auditBenefits = [
 
 const ecommerceFaqs = [
   {
-    question:
-      "What does your Amazon marketplace management service include?",
+    question: "What does your Amazon marketplace management service include?",
     answer:
       "Our Amazon seller management services cover the full spectrum — PPC advertising (Sponsored Products, Brands, Display), listing optimization, backend search term structuring, A+ content, inventory planning, pricing strategy, and real-time performance dashboards. We manage your Amazon account like it's our own business.",
   },
   {
-    question:
-      "Do you also manage Flipkart accounts?",
+    question: "Do you also manage Flipkart accounts?",
     answer:
       "Yes. We offer full-service Flipkart account management including Smart and Manual campaigns, Flipkart advertising optimization, listing content, promotional planning, and marketplace intelligence. Our cross-platform approach lets brands scale on both Amazon and Flipkart simultaneously.",
   },
@@ -263,7 +261,7 @@ const serviceSchema = {
   provider: {
     "@type": "Organization",
     name: "Baaz",
-    url: "https://www.baaz.pro",
+    url: "https://baaz.pro",
   },
   serviceType: "E-commerce Marketplace Management",
   areaServed: {
@@ -299,9 +297,7 @@ export default function Ecommerce() {
           />
         </div>
         <div className="ecom-hero-wrapper">
-          <div
-            className="ecom-hero-header animate-fade-up animate-in"
-          >
+          <div className="ecom-hero-header animate-fade-up animate-in">
             <span className="ecom-hero-label">
               E-commerce Marketplace Management
             </span>
@@ -417,9 +413,7 @@ export default function Ecommerce() {
                   className="ecom-service-card-header"
                   style={{ backgroundColor: cat.bgColor }}
                 >
-                  <span className="ecom-service-number">
-                    0{cat.id}
-                  </span>
+                  <span className="ecom-service-number">0{cat.id}</span>
                   <h3 className="ecom-service-title">{cat.title}</h3>
                 </div>
                 <div className="ecom-service-card-body">
@@ -573,10 +567,7 @@ export default function Ecommerce() {
         </div>
       </section>
 
-      <FAQ
-        faqs={ecommerceFaqs}
-        heading="Marketplace Management FAQs"
-      />
+      <FAQ faqs={ecommerceFaqs} heading="Marketplace Management FAQs" />
       <Footer />
     </div>
   );
