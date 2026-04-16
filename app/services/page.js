@@ -177,7 +177,11 @@ export default function ServicesHubPage() {
     label: data.label,
     description: data.directAnswer,
     definition: data.overview,
-    tags: (data.stack ?? []).slice(0, 5),
+    tags: (() => {
+      const fromGroups = data.stackGroups?.flatMap((g) => g.tools ?? []) ?? [];
+      if (fromGroups.length) return fromGroups.slice(0, 5);
+      return (data.stack ?? []).slice(0, 5);
+    })(),
     wedge: null,
   }));
 
