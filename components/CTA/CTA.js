@@ -16,7 +16,7 @@ const CTA = () => {
           <div className="cta-background">
             <Image
               src="/assets/readyToBuildBg.webp"
-              alt=""
+              alt="Purple gradient background for the call-to-action section"
               fill
               className="cta-bg-image"
               sizes="(max-width: 1280px) 100vw, 1200px"

@@ -58,7 +58,7 @@ const WhoWeAreSection = () => {
       <div className="who-we-are-section-background">
         <img
           src="/assets/AboutHeroSection.svg"
-          alt=""
+          alt="Decorative illustration banner on the about page"
           className="who-we-are-bg-image"
           width={1200}
           height={600}

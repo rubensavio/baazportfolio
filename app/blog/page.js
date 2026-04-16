@@ -40,6 +40,17 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
+      <section className="blog-index-section" aria-labelledby="blog-index-section-heading">
+        <h2 id="blog-index-section-heading" className="blog-index-section-heading">
+          Which guides match your situation?
+        </h2>
+        <p className="blog-index-section-lede">
+          Browse by topic—product scoping, partner selection, rescue, and
+          enterprise delivery. Each post opens with a direct answer you can
+          quote or verify.
+        </p>
+      </section>
+
       <div className="blog-index-list">
         {posts.map((post) => (
           <article key={post.slug} className="blog-index-card">

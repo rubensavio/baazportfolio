@@ -41,7 +41,7 @@ const EnterpriseBenefits = () => {
         <div className="enterprise-benefits-header animate-on-scroll animate-fade-up" ref={headerRef}>
           <span className="enterprise-benefits-label">Benefits</span>
           <h2 className="enterprise-benefits-heading">
-            Why choose Baaz for Enterprise
+            Why should enterprises choose Baaz for custom software?
           </h2>
         </div>
 

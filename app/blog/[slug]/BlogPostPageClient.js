@@ -99,6 +99,29 @@ export default function BlogPostPageClient({ slug, data }) {
                       {paragraph}
                     </p>
                   ))}
+                  {section.items && (
+                    <ul className="blog-section-list">
+                      {section.items.map((item, iIndex) => (
+                        <li key={iIndex} className="blog-section-list-item">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {section.steps && (
+                    <ol className="blog-section-steps">
+                      {section.steps.map((step, sIndex) => (
+                        <li key={sIndex} className="blog-section-step-item">
+                          {step}
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                  {section.body2?.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="blog-section-paragraph">
+                      {paragraph}
+                    </p>
+                  ))}
                   {section.table && (
                     <div className="blog-table-wrapper">
                       <table className="blog-comparison-table">
@@ -126,6 +149,26 @@ export default function BlogPostPageClient({ slug, data }) {
                           ))}
                         </tbody>
                       </table>
+                    </div>
+                  )}
+                  {section.references?.length > 0 && (
+                    <div className="blog-section-references-wrap">
+                      <p className="blog-section-references-label">
+                        Sources &amp; further reading
+                      </p>
+                      <ul className="blog-section-references">
+                        {section.references.map((ref, ri) => (
+                          <li key={ri} className="blog-section-reference-item">
+                            <a
+                              href={ref.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {ref.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
                 </div>

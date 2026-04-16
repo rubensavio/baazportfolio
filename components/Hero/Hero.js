@@ -16,7 +16,7 @@ const Hero = () => {
                   Custom Software{" "}
                   <img
                     src="/assets/HomeScreenStrikBlue.svg"
-                    alt=""
+                    alt="Decorative underline accent on the hero headline"
                     className="highlight-strike animate-in"
                     width={320}
                     height={48}
@@ -66,7 +66,7 @@ const Hero = () => {
       <div className="hero-background">
         <Image
           src="/assets/HomeHeroSectionBg.webp"
-          alt=""
+          alt="Soft purple gradient background behind the hero"
           fill
           className="hero-bg-image"
           sizes="100vw"

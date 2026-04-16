@@ -72,7 +72,7 @@ const EnterpriseSolutions = () => {
       <div className="enterprise-solutions-wrapper">
         <div className="enterprise-solutions-header animate-on-scroll animate-fade-up" ref={headerRef}>
           <h2 className="enterprise-solutions-heading">
-            Enterprise-Grade Solutions
+            What enterprise-grade solutions does Baaz build?
           </h2>
           <p className="enterprise-solutions-description">
             Our enterprise solutions are designed for scalability, security, and

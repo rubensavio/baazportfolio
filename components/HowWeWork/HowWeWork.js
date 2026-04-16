@@ -51,7 +51,7 @@ const HowWeWork = () => {
       <div className="how-we-work-background">
         <img
           src="/assets/HowWeWorkBg.svg"
-          alt=""
+          alt="Decorative background pattern for the How we work section"
           className="how-we-work-bg-image"
           loading="lazy"
           decoding="async"
@@ -61,7 +61,7 @@ const HowWeWork = () => {
         <div className="how-we-work-header animate-fade-up animate-in">
           <span className="how-we-work-label">How We Work</span>
           <h2 className="how-we-work-heading">
-            Our proven process from discovery to delivery
+            What is Baaz&apos;s process from discovery to delivery?
           </h2>
           <p className="how-we-work-lede">
             Regular demos and clear handoffs between phases—so you always have

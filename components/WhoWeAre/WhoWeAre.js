@@ -85,7 +85,7 @@ const WhoWeAre = () => {
               <div className="service-icon">
                 <img
                   src={service.icon}
-                  alt=""
+                  alt={`${service.title} icon`}
                   width={64}
                   height={64}
                   loading="lazy"

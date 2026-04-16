@@ -195,7 +195,9 @@ export default function ServicesHubPage() {
         </section>
 
         <section className="services-hub-group">
-          <h2 className="services-hub-group-heading">Product engineering</h2>
+          <h2 className="services-hub-group-heading">
+            What product engineering services does Baaz offer?
+          </h2>
           <ul className="services-hub-cards">
             {coreEntries.map((entry) => (
               <li key={entry.slug}><ServiceCard {...entry} /></li>
@@ -204,7 +206,9 @@ export default function ServicesHubPage() {
         </section>
 
         <section className="services-hub-group">
-          <h2 className="services-hub-group-heading">Specialized practices</h2>
+          <h2 className="services-hub-group-heading">
+            Which specialized practices and programmes does Baaz run?
+          </h2>
           <ul className="services-hub-cards">
             {SPECIALIZED.map((entry) => (
               <li key={entry.slug}><ServiceCard {...entry} /></li>
@@ -213,7 +217,9 @@ export default function ServicesHubPage() {
         </section>
 
         <section className="services-hub-group">
-          <h2 className="services-hub-group-heading">Technology capabilities</h2>
+          <h2 className="services-hub-group-heading">
+            What technology capabilities can Baaz staff and deliver?
+          </h2>
           <ul className="services-hub-cards">
             {techEntries.map((entry) => (
               <li key={entry.slug}><ServiceCard {...entry} /></li>

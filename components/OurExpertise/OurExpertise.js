@@ -74,7 +74,7 @@ const OurExpertise = () => {
               <div className="card-icon">
                 <img
                   src={item.icon}
-                  alt=""
+                  alt={`${item.title} icon`}
                   width={64}
                   height={64}
                   loading="lazy"

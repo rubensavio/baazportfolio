@@ -32,7 +32,7 @@ const EnterpriseHero = () => {
       <div className="enterprise-hero-background">
         <img
           src="/assets/EnterpriseHeroSectionBg.webp"
-          alt=""
+          alt="Abstract gradient background for the enterprise services hero"
           className="enterprise-hero-bg-image"
           width={1200}
           height={600}

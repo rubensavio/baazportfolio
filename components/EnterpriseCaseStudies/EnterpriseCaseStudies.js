@@ -34,7 +34,7 @@ const EnterpriseCaseStudies = () => {
           ref={headerRef}
         >
           <h2 id="enterprise-case-studies-heading" className="enterprise-case-studies-heading">
-            AI automations on your existing ERP stack
+            Where has Baaz shipped AI on top of existing ERP systems?
           </h2>
           <p className="enterprise-case-studies-description">
             Two enterprise deployments where we extended what customers already ran—manufacturing

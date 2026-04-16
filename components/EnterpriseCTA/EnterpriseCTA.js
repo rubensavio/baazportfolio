@@ -13,7 +13,7 @@ const EnterpriseCTA = () => {
           <div className="enterprise-cta-background">
             <Image
               src="/assets/readyToBuildBg.webp"
-              alt=""
+              alt="Purple gradient background for the enterprise call-to-action"
               fill
               className="enterprise-cta-bg-image"
               sizes="(max-width: 1280px) 100vw, 1200px"
