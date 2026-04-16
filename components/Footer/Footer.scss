@@ -132,8 +132,14 @@
   }
 }
 
-// Footer Links Section
+// Footer Links Section — primary columns, then case studies on its own row
 .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.footer-links-primary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(2rem, 4vw, 4rem);
@@ -175,6 +181,49 @@
       &:hover {
         color: #1a1a1a;
       }
+    }
+  }
+}
+
+.footer-case-studies-row {
+  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-case-studies-heading {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(0.9375rem, 1.35vw, 1.0625rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.footer-case-studies-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.25rem;
+  row-gap: 0.5rem;
+
+  li a,
+  li a:visited {
+    font-family: var(--font-urbanist), sans-serif;
+    font-size: clamp(0.8125rem, 1.15vw, 0.9375rem);
+    font-weight: 600;
+    color: #4d525f;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #1a1a1a;
     }
   }
 }
@@ -226,7 +275,7 @@
     margin-bottom: clamp(2.5rem, 4vw, 3rem);
   }
 
-  .footer-links {
+  .footer-links-primary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(1.75rem, 3.5vw, 3rem);
   }
@@ -259,8 +308,8 @@
     height: 40px;
   }
 
-  .footer-links {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-links-primary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(1.5rem, 3vw, 2rem);
   }
 
@@ -293,7 +342,7 @@
     height: 36px;
   }
 
-  .footer-links {
+  .footer-links-primary {
     gap: clamp(1.25rem, 2.5vw, 1.5rem);
   }
 

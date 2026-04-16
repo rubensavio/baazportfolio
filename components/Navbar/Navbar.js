@@ -57,7 +57,7 @@ const TECH_STACK_GROUPS = Object.entries(technologyCapabilitiesData).flatMap(
         href: "/services/mobile-app",
       },
     ];
-  }
+  },
 );
 
 const Navbar = () => {
@@ -113,7 +113,10 @@ const Navbar = () => {
             <Link
               href="/services"
               className={`navbar-link ${
-                pathname && SERVICES_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+                pathname &&
+                SERVICES_PATHS.some(
+                  (p) => pathname === p || pathname.startsWith(`${p}/`),
+                )
                   ? "active"
                   : ""
               }`}
@@ -293,7 +296,11 @@ const Navbar = () => {
               </li>
               <li className="mobile-menu-item mobile-dropdown">
                 <div className="mobile-dropdown-row">
-                  <Link href="/services" onClick={toggleMenu} className="mobile-dropdown-label-link">
+                  <Link
+                    href="/services"
+                    onClick={toggleMenu}
+                    className="mobile-dropdown-label-link"
+                  >
                     Our Services
                   </Link>
                   <button

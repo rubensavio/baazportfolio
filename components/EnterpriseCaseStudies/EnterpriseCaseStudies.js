@@ -27,19 +27,26 @@ const EnterpriseCaseStudies = () => {
   const gridRef = useScrollAnimation({ threshold: 0.15 });
 
   return (
-    <section className="enterprise-case-studies" aria-labelledby="enterprise-case-studies-heading">
+    <section
+      className="enterprise-case-studies"
+      aria-labelledby="enterprise-case-studies-heading"
+    >
       <div className="enterprise-case-studies-wrapper">
         <div
           className="enterprise-case-studies-header animate-on-scroll animate-fade-up"
           ref={headerRef}
         >
-          <h2 id="enterprise-case-studies-heading" className="enterprise-case-studies-heading">
+          <h2
+            id="enterprise-case-studies-heading"
+            className="enterprise-case-studies-heading"
+          >
             Where has Baaz shipped AI on top of existing ERP systems?
           </h2>
           <p className="enterprise-case-studies-description">
-            Two enterprise deployments where we extended what customers already ran—manufacturing
-            ERP for quality, and HRMS for hiring—with AI that plugs into real processes instead of
-            forcing a greenfield replacement.
+            Two enterprise deployments where we extended what customers already
+            ran—manufacturing ERP for quality, and HRMS for hiring—with AI that
+            plugs into real processes instead of forcing a greenfield
+            replacement.
           </p>
         </div>
 
@@ -48,10 +55,18 @@ const EnterpriseCaseStudies = () => {
           ref={gridRef}
         >
           {caseStudies.map((item) => (
-            <Link key={item.href} href={item.href} className="enterprise-case-study-card">
-              <span className="enterprise-case-study-eyebrow">{item.eyebrow}</span>
+            <Link
+              key={item.href}
+              href={item.href}
+              className="enterprise-case-study-card"
+            >
+              <span className="enterprise-case-study-eyebrow">
+                {item.eyebrow}
+              </span>
               <h3 className="enterprise-case-study-title">{item.title}</h3>
-              <p className="enterprise-case-study-description">{item.description}</p>
+              <p className="enterprise-case-study-description">
+                {item.description}
+              </p>
               <span className="enterprise-case-study-cta">Read case study</span>
             </Link>
           ))}

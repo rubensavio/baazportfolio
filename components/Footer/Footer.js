@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { getRegionLabel } from "../../lib/regions";
+import { caseStudiesData } from "../../lib/caseStudiesData";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -62,121 +63,133 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links */}
+          {/* Footer Links: primary columns, then case studies row */}
           <div className="footer-links">
-            {/* Our Services Column */}
-            <div className="footer-column">
-              <h3 className="footer-column-title">Our Services</h3>
-              <ul className="footer-list">
-                <li>
-                  <Link href="/services/product-strategy">
-                    Product Strategy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/ui-ux-design">UI/UX Design</Link>
-                </li>
-                <li>
-                  <Link href="/services/web-development">Custom Software</Link>
-                </li>
-                <li>
-                  <Link href="/services/mobile-app">Mobile App</Link>
-                </li>
-                <li>
-                  <Link href="/services/ai-solution">AI Development</Link>
-                </li>
-                <li>
-                  <Link href="/enterprise">Enterprise</Link>
-                </li>
-                <li>
-                  <Link href="/ecommerce">E-commerce</Link>
-                </li>
-                <li>
-                  <Link href="/gtm-engineering">GTM Engineering</Link>
-                </li>
-                <li>
-                  <Link href="/project-rescue">Project Rescue</Link>
-                </li>
-                <li>
-                  <Link href="/work1">Manufacturing quality automation</Link>
-                </li>
-                <li>
-                  <Link href="/work2">Hiring and HRMS automation</Link>
-                </li>
-              </ul>
+            <div className="footer-links-primary">
+              {/* Our Services Column */}
+              <div className="footer-column">
+                <h3 className="footer-column-title">Our Services</h3>
+                <ul className="footer-list">
+                  <li>
+                    <Link href="/services/product-strategy">
+                      Product Strategy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services/ui-ux-design">UI/UX Design</Link>
+                  </li>
+                  <li>
+                    <Link href="/services/web-development">Custom Software</Link>
+                  </li>
+                  <li>
+                    <Link href="/services/mobile-app">Mobile App</Link>
+                  </li>
+                  <li>
+                    <Link href="/services/ai-solution">AI Development</Link>
+                  </li>
+                  <li>
+                    <Link href="/enterprise">Enterprise</Link>
+                  </li>
+                  <li>
+                    <Link href="/ecommerce">E-commerce</Link>
+                  </li>
+                  <li>
+                    <Link href="/gtm-engineering">GTM Engineering</Link>
+                  </li>
+                  <li>
+                    <Link href="/project-rescue">Project Rescue</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* ERP Solutions Column */}
+              <div className="footer-column">
+                <h3 className="footer-column-title">ERP Solutions</h3>
+                <ul className="footer-list">
+                  <li>
+                    <Link href="/erp/insurance-companies">Insurance</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/manufacturing-companies">Manufacturing</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/banking-companies">Banking</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/healthcare-companies">Healthcare</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/hospitals">Hospitals</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/real-estate-companies">Real Estate</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/construction-companies">Construction</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/automobile-companies">Automobile</Link>
+                  </li>
+                  <li>
+                    <Link href="/erp/transportation-supply-chain-companies">
+                      Transportation and Supply Chain
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Industries Column */}
+              <div className="footer-column">
+                <h3 className="footer-column-title">Industries</h3>
+                <ul className="footer-list">
+                  <li>
+                    <Link href="/industry/fintech">FinTech</Link>
+                  </li>
+                  <li>
+                    <Link href="/industry/construction">Construction Tech</Link>
+                  </li>
+                  <li>
+                    <Link href="/industry/retail">Retail</Link>
+                  </li>
+                  <li>
+                    <Link href="/industry/healthcare">Healthcare</Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Company Column */}
+              <div className="footer-column">
+                <h3 className="footer-column-title">Company</h3>
+                <ul className="footer-list">
+                  <li>
+                    <Link href="/about">About Us</Link>
+                  </li>
+                  <li>
+                    <Link href="/blog">Blog</Link>
+                  </li>
+                  <li>
+                    <Link href="/enterprise">Enterprise</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            {/* ERP Solutions Column */}
-            <div className="footer-column">
-              <h3 className="footer-column-title">ERP Solutions</h3>
-              <ul className="footer-list">
+            {/* Case studies — full-width row below primary columns */}
+            <div className="footer-case-studies-row" aria-labelledby="footer-case-studies-heading">
+              <h3 id="footer-case-studies-heading" className="footer-case-studies-heading">
+                Case studies
+              </h3>
+              <ul className="footer-case-studies-links">
                 <li>
-                  <Link href="/erp/insurance-companies">Insurance</Link>
+                  <Link href="/case-studies">All case studies</Link>
                 </li>
-                <li>
-                  <Link href="/erp/manufacturing-companies">Manufacturing</Link>
-                </li>
-                <li>
-                  <Link href="/erp/banking-companies">Banking</Link>
-                </li>
-                <li>
-                  <Link href="/erp/healthcare-companies">Healthcare</Link>
-                </li>
-                <li>
-                  <Link href="/erp/hospitals">Hospitals</Link>
-                </li>
-                <li>
-                  <Link href="/erp/real-estate-companies">Real Estate</Link>
-                </li>
-                <li>
-                  <Link href="/erp/construction-companies">Construction</Link>
-                </li>
-                <li>
-                  <Link href="/erp/automobile-companies">Automobile</Link>
-                </li>
-                <li>
-                  <Link href="/erp/transportation-supply-chain-companies">
-                    Transportation and Supply Chain
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Industries Column */}
-            <div className="footer-column">
-              <h3 className="footer-column-title">Industries</h3>
-              <ul className="footer-list">
-                <li>
-                  <Link href="/industry/fintech">FinTech</Link>
-                </li>
-                <li>
-                  <Link href="/industry/construction">Construction Tech</Link>
-                </li>
-                <li>
-                  <Link href="/industry/retail">Retail</Link>
-                </li>
-                <li>
-                  <Link href="/industry/healthcare">Healthcare</Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company Column */}
-            <div className="footer-column">
-              <h3 className="footer-column-title">Company</h3>
-              <ul className="footer-list">
-                <li>
-                  <Link href="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link href="/case-studies">Case studies</Link>
-                </li>
-                <li>
-                  <Link href="/blog">Blog</Link>
-                </li>
-                <li>
-                  <Link href="/enterprise">Enterprise</Link>
-                </li>
+                {caseStudiesData.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} title={item.title}>
+                      {item.footerLabel ?? item.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

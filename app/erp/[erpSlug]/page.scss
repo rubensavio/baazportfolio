@@ -122,7 +122,9 @@
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
   margin-top: 0.5rem;
 
   &:hover {
@@ -150,7 +152,10 @@
   background: #ffffff;
   border: 1px solid #ece7dd;
   border-radius: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -387,6 +392,58 @@
 }
 
 /* ═══════════════════════════════════════════
+   Related case study
+   ═══════════════════════════════════════════ */
+.erp-case-study {
+  padding: clamp(2rem, 3.5vw, 2.75rem) 0 0;
+  background: linear-gradient(180deg, #fafbfc 0%, #ffffff 100%);
+  border-top: 1px solid #e8eaef;
+}
+
+.erp-case-study .erp-section-title {
+  margin-bottom: 0.4rem;
+}
+
+.erp-case-study .erp-section-lead {
+  margin-bottom: 0.75rem;
+}
+
+.erp-case-study-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  font-weight: 700;
+  color: #5b71f6;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    color: #4338ca;
+    border-bottom-color: #c7d2fe;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #5b71f6;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+}
+
+.erp-case-study-cta-arrow {
+  transition: transform 0.2s ease;
+}
+
+.erp-case-study-cta:hover .erp-case-study-cta-arrow {
+  transform: translateX(3px);
+}
+
+/* ═══════════════════════════════════════════
    Related Services
    ═══════════════════════════════════════════ */
 .erp-related {
@@ -394,6 +451,12 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 0;
+}
+
+/* Case study + related services: avoid double vertical padding */
+.erp-case-study + .erp-related {
+  padding-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 .erp-related-text {
@@ -412,6 +475,18 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+/* Tight stack: Related services → FAQ; move breathing room below FAQ (before CTA) */
+.erp-page {
+  .erp-related {
+    padding-bottom: 0.35rem;
+  }
+
+  .faq-section {
+    margin: 0 auto clamp(3rem, 6vw, 4.75rem);
+    padding-top: 0.2rem;
   }
 }
 
