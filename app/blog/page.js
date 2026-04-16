@@ -3,6 +3,7 @@ import Link from "next/link";
 import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import Footer from "../../components/Footer/Footer";
 import { blogData } from "../../lib/blogData";
+import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import "./page.scss";
 
 export default function BlogIndexPage() {
@@ -12,6 +13,12 @@ export default function BlogIndexPage() {
 
   return (
     <div className="blog-index-page">
+      <BreadcrumbScript
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Blog", url: "/blog" },
+        ]}
+      />
       <ClientNavbar />
 
       <section className="blog-index-hero">
@@ -39,6 +46,27 @@ export default function BlogIndexPage() {
             <Link href={`/blog/${post.slug}`} className="blog-index-card-link">
               <span className="blog-index-card-type">{post.contentType}</span>
               <h2 className="blog-index-card-title">{post.title}</h2>
+              {(post.author || post.datePublished) && (
+                <div className="blog-index-card-meta">
+                  {post.author && (
+                    <span className="blog-index-card-author">
+                      {post.author.name}
+                      {post.author.jobTitle && ` · ${post.author.jobTitle}`}
+                    </span>
+                  )}
+                  {post.datePublished && (
+                    <time
+                      dateTime={post.datePublished}
+                      className="blog-index-card-date"
+                    >
+                      {new Date(post.datePublished).toLocaleDateString("en-GB", {
+                        year: "numeric",
+                        month: "short",
+                      })}
+                    </time>
+                  )}
+                </div>
+              )}
               <p className="blog-index-card-excerpt">{post.intro}</p>
             </Link>
           </article>

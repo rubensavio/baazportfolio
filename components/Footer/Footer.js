@@ -32,6 +32,14 @@ const Footer = () => {
             <p className="footer-tagline">
               Enterprise-grade products, without the enterprise wait.
             </p>
+            <address className="footer-contact">
+              <a href="support@baaz.live" className="footer-email">
+                support@baaz.live
+              </a>
+              <span className="footer-address">
+                WeWork, RMZ Latitude, Hebbal, Bengaluru, Karnataka 560024
+              </span>
+            </address>
             {regionLabel && <p className="footer-region-line">{regionLabel}</p>}
           </div>
 
@@ -42,7 +50,9 @@ const Footer = () => {
               <h3 className="footer-column-title">Our Services</h3>
               <ul className="footer-list">
                 <li>
-                  <Link href="/services/product-strategy">Product Strategy</Link>
+                  <Link href="/services/product-strategy">
+                    Product Strategy
+                  </Link>
                 </li>
                 <li>
                   <Link href="/services/ui-ux-design">UI/UX Design</Link>

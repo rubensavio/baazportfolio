@@ -68,11 +68,28 @@ const structuredData = {
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/assets/Logo.svg`,
+        width: 600,
+        height: 60,
       },
       description:
         "Baaz is a Bangalore-based custom software and product engineering company, operating since 2018. It delivers enterprise product engineering—strategy, UI/UX, full-stack web and mobile development, and post-launch scaling—for startups and enterprises worldwide, with 100+ shipped applications per Baaz's internal portfolio records.",
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
+      founder: {
+        "@type": "Person",
+        "@id": `${baseUrl}/#founder`,
+        name: "Chitresh",
+        url: `${baseUrl}/about`,
+        jobTitle: "Co-founder",
+        sameAs: ["https://in.linkedin.com/company/baazpro"],
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
+      areaServed: "Worldwide",
       knowsAbout: [
         "Custom Software Development",
         "Enterprise Product Engineering",
@@ -97,6 +114,9 @@ const structuredData = {
           availableLanguage: ["en"],
           url: `${baseUrl}/get-in-touch`,
         },
+      ],
+      sameAs: [
+        "https://in.linkedin.com/company/baazpro",
       ],
     },
     {
@@ -124,6 +144,12 @@ const structuredData = {
       ],
       provider: { "@id": `${baseUrl}/#organization` },
       areaServed: "Worldwide",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bengaluru",
+        addressRegion: "Karnataka",
+        addressCountry: "IN",
+      },
     },
     {
       "@type": "WebSite",
@@ -132,6 +158,14 @@ const structuredData = {
       name: "Baaz",
       publisher: { "@id": `${baseUrl}/#organization` },
       inLanguage: "en",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${baseUrl}/blog?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "ContactPage",

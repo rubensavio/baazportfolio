@@ -110,20 +110,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navbar-item dropdown">
-            <a
-              href="#"
+            <Link
+              href="/services"
               className={`navbar-link ${
                 pathname && SERVICES_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
                   ? "active"
                   : ""
               }`}
-              onClick={(e) => {
-                e.preventDefault();
-              }}
             >
               <span className="link-text">Our Services</span>
               <span className="dropdown-icon">▼</span>
-            </a>
+            </Link>
             <div className="dropdown-menu services-mega-menu">
               <div className="mega-column mega-services">
                 <p className="dropdown-menu-label" role="presentation">
@@ -237,7 +234,7 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop CTA Button */}
-        <Link href="/get-in-touch" className="cta-button desktop-cta">
+        <Link href="/get-in-touch" className="navbar-cta-btn">
           Get in touch
         </Link>
 
@@ -295,22 +292,25 @@ const Navbar = () => {
                 )}
               </li>
               <li className="mobile-menu-item mobile-dropdown">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleServicesDropdown();
-                  }}
-                >
-                  Our Services
-                  <span
-                    className={`dropdown-icon ${
-                      isServicesDropdownOpen ? "open" : ""
-                    }`}
+                <div className="mobile-dropdown-row">
+                  <Link href="/services" onClick={toggleMenu} className="mobile-dropdown-label-link">
+                    Our Services
+                  </Link>
+                  <button
+                    className="mobile-dropdown-toggle"
+                    onClick={toggleServicesDropdown}
+                    aria-expanded={isServicesDropdownOpen}
+                    aria-label="Toggle services menu"
                   >
-                    ▼
-                  </span>
-                </a>
+                    <span
+                      className={`dropdown-icon ${
+                        isServicesDropdownOpen ? "open" : ""
+                      }`}
+                    >
+                      ▼
+                    </span>
+                  </button>
+                </div>
                 {isServicesDropdownOpen && (
                   <ul className="mobile-dropdown-menu">
                     <li>

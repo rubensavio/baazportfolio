@@ -289,12 +289,7 @@
 }
 
 // CTA Button
-.navbar-cta {
-  display: flex;
-  align-items: center;
-}
-
-.cta-button {
+.navbar-cta-btn {
   background-color: #0066ff;
   color: #ffffff;
   border: none;
@@ -423,6 +418,40 @@
     }
   }
 
+  .mobile-dropdown-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+  }
+
+  .mobile-dropdown-label-link {
+    font-size: 18px;
+    color: #333333;
+    text-decoration: none;
+    font-family: var(--font-urbanist), sans-serif;
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .mobile-dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: #333333;
+
+    .dropdown-icon {
+      font-size: 10px;
+      display: inline-block;
+      transition: transform 0.3s ease;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
   .mobile-dropdown-menu {
     list-style: none;
     margin: 8px 0 0 0;
@@ -485,7 +514,7 @@
     display: none;
   }
 
-  .desktop-cta {
+  .navbar-cta-btn {
     display: none;
   }
 
@@ -524,7 +553,7 @@
     display: none;
   }
 
-  .desktop-cta {
+  .navbar-cta-btn {
     display: none;
   }
 

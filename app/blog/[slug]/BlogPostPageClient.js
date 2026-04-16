@@ -7,7 +7,6 @@ import Footer from "../../../components/Footer/Footer";
 import "./page.scss";
 
 export default function BlogPostPageClient({ slug, data }) {
-
   return (
     <div className="blog-page">
       <ClientNavbar />
@@ -17,6 +16,62 @@ export default function BlogPostPageClient({ slug, data }) {
           <div className="blog-hero-wrapper">
             <span className="blog-label">{data.contentType}</span>
             <h1 className="blog-heading">{data.title}</h1>
+
+            {(data.author || data.datePublished) && (
+              <div className="blog-meta">
+                {data.author && (
+                  <span className="blog-meta-author">
+                    By{" "}
+                    <a
+                      href={data.author.url || data.author.personalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="blog-meta-author-link"
+                    >
+                      {data.author.name}
+                    </a>
+                    {data.author.jobTitle && (
+                      <span className="blog-meta-author-role">
+                        {" "}
+                        · {data.author.jobTitle}
+                      </span>
+                    )}
+                  </span>
+                )}
+                {data.datePublished && (
+                  <span className="blog-meta-dates">
+                    <time dateTime={data.datePublished}>
+                      Published{" "}
+                      {new Date(data.datePublished).toLocaleDateString(
+                        "en-GB",
+                        {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        },
+                      )}
+                    </time>
+                    {data.dateModified &&
+                      data.dateModified !== data.datePublished && (
+                        <>
+                          {" · Updated "}
+                          <time dateTime={data.dateModified}>
+                            {new Date(data.dateModified).toLocaleDateString(
+                              "en-GB",
+                              {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                              },
+                            )}
+                          </time>
+                        </>
+                      )}
+                  </span>
+                )}
+              </div>
+            )}
+
             {data.directAnswer && (
               <p className="blog-direct-answer">{data.directAnswer}</p>
             )}
@@ -86,10 +141,10 @@ export default function BlogPostPageClient({ slug, data }) {
             Explore{" "}
             <Link href="/services/product-strategy">Product Strategy</Link>,{" "}
             <Link href="/services/web-development">Custom Software</Link>, and{" "}
-            <Link href="/services/ai-solution">AI Development</Link>. If a build has
-            stalled, see{" "}
-            <Link href="/project-rescue">software project rescue</Link>. When you are
-            ready to talk,{" "}
+            <Link href="/services/ai-solution">AI Development</Link>. If a build
+            has stalled, see{" "}
+            <Link href="/project-rescue">software project rescue</Link>. When
+            you are ready to talk,{" "}
             <Link href="/get-in-touch">get in touch</Link>.
           </p>
         </div>

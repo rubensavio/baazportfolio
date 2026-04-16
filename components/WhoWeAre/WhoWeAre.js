@@ -92,7 +92,7 @@ const WhoWeAre = () => {
                   decoding="async"
                 />
               </div>
-              <h4 className="service-title">{service.title}</h4>
+              <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.scope}</p>
               {/* <p className="service-boundary">{service.boundary}</p> */}
             </div>

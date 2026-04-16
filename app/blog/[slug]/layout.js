@@ -60,38 +60,66 @@ function buildArticleSchema(data, slug) {
   const published = data.datePublished || DEFAULT_ARTICLE_DATE;
   const modified = data.dateModified || published;
   const imageUrl = absoluteImageUrl(postOgImagePath(data));
+  const articleUrl = `${baseUrl}/blog/${slug}`;
+  const authorSlug = (data.author?.name || "baaz")
+    .toLowerCase()
+    .replace(/\s+/g, "-");
 
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${articleUrl}/#article`,
     headline: data.title,
     description: data.metaDescription,
-    url: `${baseUrl}/blog/${slug}`,
+    url: articleUrl,
     datePublished: published,
     dateModified: modified,
     image: [imageUrl],
     articleSection: data.contentType,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".article-direct-answer", ".article-intro", "h2"],
+    },
     author: data.author
       ? {
           "@type": "Person",
+          "@id": `${baseUrl}/#author-${authorSlug}`,
           name: data.author.name,
-          url: data.author.url || baseUrl,
+          url: data.author.personalUrl || `${baseUrl}/about`,
+          jobTitle: data.author.jobTitle || "Co-founder & Engineering Lead",
+          worksFor: { "@id": `${baseUrl}/#organization` },
+          sameAs: data.author.sameAs ||
+            (data.author.url ? [data.author.url] : []),
+          knowsAbout: data.author.knowsAbout || [
+            "Custom Software Development",
+            "Enterprise Product Engineering",
+            "MVP Development",
+            "Digital Transformation",
+          ],
         }
       : {
           "@type": "Organization",
+          "@id": `${baseUrl}/#organization`,
           name: "Baaz",
           url: baseUrl,
         },
     publisher: {
       "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
       name: "Baaz",
       url: baseUrl,
-      logo: { "@type": "ImageObject", url: `${baseUrl}/assets/Logo.svg` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/assets/Logo.svg`,
+        width: 600,
+        height: 60,
+      },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${baseUrl}/blog/${slug}`,
+      "@id": articleUrl,
     },
+    isPartOf: { "@id": `${baseUrl}/#website` },
   };
 }
 

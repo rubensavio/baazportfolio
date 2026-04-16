@@ -122,6 +122,26 @@
   margin: 0.5rem 0 0.75rem;
 }
 
+.blog-index-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.blog-index-card-author {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.blog-index-card-date {
+  color: #9ca3af;
+}
+
 .blog-index-card-excerpt {
   font-family: var(--font-outfit), sans-serif;
   font-size: clamp(0.8125rem, 1.5vw, 0.95rem);

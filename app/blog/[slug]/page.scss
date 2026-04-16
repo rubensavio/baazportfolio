@@ -58,6 +58,45 @@
   margin: 0;
 }
 
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+  color: #6b7280;
+  margin: 0;
+  justify-content: center;
+}
+
+.blog-meta-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blog-meta-author-link {
+  color: #5b71f6;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.blog-meta-author-role {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.blog-meta-dates {
+  color: #9ca3af;
+}
+
 .blog-direct-answer {
   font-family: var(--font-urbanist), sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.125rem);

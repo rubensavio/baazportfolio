@@ -70,6 +70,34 @@
   margin: 0;
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-style: normal;
+  margin: 0;
+}
+
+.footer-email {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(0.8rem, 1.1vw, 0.9rem);
+  font-weight: 600;
+  color: #5b71f6;
+  text-decoration: none;
+  padding-bottom: 0.5rem;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-address {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  font-weight: 400;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
 .footer-region-line {
   font-size: clamp(0.8rem, 1.1vw, 0.9rem);
   font-weight: 500;

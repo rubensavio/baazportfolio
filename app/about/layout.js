@@ -1,11 +1,31 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { ABOUT_FAQ_ITEMS } from "../../lib/aboutFaq";
 import { getAlternates } from "../../lib/regions";
-
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
+
+function buildFounderSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${baseUrl}/#founder`,
+    name: "Chitresh",
+    url: `${baseUrl}/about`,
+    jobTitle: "Co-founder",
+    worksFor: { "@id": `${baseUrl}/#organization` },
+    description:
+      "Co-founder of Baaz, a Bangalore-based software engineering company delivering enterprise product engineering since 2018.",
+    sameAs: ["https://in.linkedin.com/company/baazpro"],
+    knowsAbout: [
+      "Custom Software Development",
+      "Enterprise Product Engineering",
+      "Startup Product Strategy",
+      "Digital Transformation",
+    ],
+  };
+}
 
 export const metadata = {
   alternates: getAlternates("/about"),
@@ -58,6 +78,12 @@ export default function AboutLayout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(aboutFaqJsonLd()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildFounderSchema()),
         }}
       />
       <BreadcrumbScript

@@ -43,8 +43,8 @@ function Form() {
         setCountries(
           data
             .map((c) => ({ name: c.name.common, code: c.cca2 }))
-            .sort((a, b) => a.name.localeCompare(b.name))
-        )
+            .sort((a, b) => a.name.localeCompare(b.name)),
+        ),
       )
       .catch(() => setCountries(COUNTRY_FALLBACK))
       .finally(() => setLoadingCountries(false));
@@ -66,8 +66,12 @@ function Form() {
               Let&apos;s help you solve your complex problem
             </h1>
             <p className="form-subtitle">
-              Tell us about your project and we&apos;ll get back to you with a
-              detailed proposal and next steps.
+              Baaz works with founders, engineering leaders, and enterprise
+              product teams who need to ship production-grade software—whether
+              that is a greenfield product, a platform rescue, or AI features
+              built on top of existing infrastructure. Tell us what you are
+              building and we will respond with a direct assessment and proposed
+              next step, typically within one business day.
             </p>
             {isMounted && sent && (
               <p className="form-success" role="status">
@@ -89,49 +93,101 @@ function Form() {
           >
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="name" className="form-label">Full Name</label>
-                <input type="text" id="name" name="name" className="form-input"
-                  placeholder="Enter your name" value={formData.name}
-                  onChange={handleChange} required />
+                <label htmlFor="name" className="form-label">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="form-input"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="form-group">
-                <label htmlFor="email" className="form-label">Email Address</label>
-                <input type="email" id="email" name="email" className="form-input"
-                  placeholder="Enter your email" value={formData.email}
-                  onChange={handleChange} required />
+                <label htmlFor="email" className="form-label">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="form-input"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="company" className="form-label">Company Name</label>
-                <input type="text" id="company" name="company" className="form-input"
-                  placeholder="Enter your company name" value={formData.company}
-                  onChange={handleChange} required />
+                <label htmlFor="company" className="form-label">
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  className="form-input"
+                  placeholder="Enter your company name"
+                  value={formData.company}
+                  onChange={handleChange}
+                  required
+                />
               </div>
               <div className="form-group">
-                <label htmlFor="country" className="form-label">Country</label>
-                <select id="country" name="country" className="form-select"
-                  value={formData.country} onChange={handleChange}
-                  required disabled={loadingCountries}>
+                <label htmlFor="country" className="form-label">
+                  Country
+                </label>
+                <select
+                  id="country"
+                  name="country"
+                  className="form-select"
+                  value={formData.country}
+                  onChange={handleChange}
+                  required
+                  disabled={loadingCountries}
+                >
                   <option value="">
-                    {loadingCountries ? "Loading countries..." : "Select Country"}
+                    {loadingCountries
+                      ? "Loading countries..."
+                      : "Select Country"}
                   </option>
                   {countries.map((c) => (
-                    <option key={c.code} value={c.name}>{c.name}</option>
+                    <option key={c.code} value={c.name}>
+                      {c.name}
+                    </option>
                   ))}
                 </select>
               </div>
             </div>
 
             <div className="form-group full-width">
-              <label htmlFor="description" className="form-label">Description</label>
-              <textarea id="description" name="description" className="form-textarea"
-                placeholder="Tell us about your project..." value={formData.description}
-                onChange={handleChange} rows="6" required />
+              <label htmlFor="description" className="form-label">
+                Description
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                className="form-textarea"
+                placeholder="Tell us about your project..."
+                value={formData.description}
+                onChange={handleChange}
+                rows="6"
+                required
+              />
             </div>
 
-            <button type="submit" className="form-submit-button" disabled={submitting}>
+            <button
+              type="submit"
+              className="form-submit-button"
+              disabled={submitting}
+            >
               {submitting ? "Sending..." : "Send Message"}
             </button>
           </form>
@@ -145,7 +201,9 @@ function Form() {
             Join hundreds of satisfied clients who have transformed their ideas
             into successful digital products with our help.
           </p>
-          <Link href="/work1" className="view-work-button">View Our Work</Link>
+          <Link href="/work1" className="view-work-button">
+            View Our Work
+          </Link>
         </div>
       </section>
 
@@ -167,11 +225,13 @@ export default function GetInTouchForm() {
                   Let&apos;s help you solve your complex problem
                 </h1>
                 <p className="form-subtitle">
-                  Tell us about your project and we&apos;ll get back to you
-                  with a detailed proposal and next steps.
+                  Tell us about your project and we&apos;ll get back to you with
+                  a detailed proposal and next steps.
                 </p>
               </div>
-              <div style={{ padding: "2rem", textAlign: "center" }}>Loading...</div>
+              <div style={{ padding: "2rem", textAlign: "center" }}>
+                Loading...
+              </div>
             </div>
           </section>
           <Footer />

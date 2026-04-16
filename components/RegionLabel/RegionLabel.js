@@ -12,7 +12,7 @@ export default function RegionLabel() {
     }
   }, []);
 
-  if (!label) return <p className="hero-region-line" aria-hidden="true">&nbsp;</p>;
+  if (!label) return null;
 
   return <p className="hero-region-line">{label}</p>;
 }

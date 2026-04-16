@@ -1,4 +1,3 @@
-import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
@@ -35,15 +34,5 @@ export const metadata = {
 };
 
 export default function BlogLayout({ children }) {
-  return (
-    <>
-      <BreadcrumbScript
-        items={[
-          { name: "Home", url: "/" },
-          { name: "Blog", url: "/blog" },
-        ]}
-      />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

@@ -188,7 +188,7 @@ const CaseStudyHero = () => {
           </p>
 
           <div className="nightmare-numbers">
-            <h3 className="nightmare-title">The nightmare numbers:</h3>
+            <h2 className="nightmare-title">The nightmare numbers:</h2>
             <div className="statistics-grid">
               {statistics.map((stat) => (
                 <div

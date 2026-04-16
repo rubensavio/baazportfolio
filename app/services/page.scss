@@ -35,31 +35,143 @@
   font-weight: 400;
   line-height: 1.65;
   color: #4d525f;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 640px;
 }
 
-.services-hub-list {
+.services-hub-group {
+  margin-bottom: 2.5rem;
+}
+
+.services-hub-group-heading {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(0.8rem, 1.1vw, 0.875rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #8b93a7;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f0f1f4;
+}
+
+.services-hub-cards {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.services-hub-link {
-  font-family: var(--font-outfit), sans-serif;
-  display: block;
-  padding: 1rem 1.25rem;
+.services-hub-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
   border: 1px solid #e8e9ec;
-  border-radius: 8px;
-  color: #1a1a1a;
+  border-radius: 14px;
+  color: inherit;
   text-decoration: none;
-  font-weight: 600;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
   &:hover {
-    border-color: #1a1a1a;
-    background: #fafafa;
+    border-color: #c8cad0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  }
+}
+
+.services-hub-card-icon {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-hub-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.services-hub-card-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.services-hub-card-desc {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.875rem, 1.3vw, 0.9375rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.services-hub-card-definition {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.8125rem, 1.2vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0.1rem 0 0;
+}
+
+.services-hub-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+
+.services-hub-card-tag {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4d525f;
+  background: #f3f4f7;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+  white-space: nowrap;
+}
+
+.services-hub-card-wedge {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.8rem, 1.1vw, 0.8125rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8b93a7;
+  margin: 0.4rem 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid #f0f1f4;
+}
+
+.services-hub-card-wedge-label {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+@media (max-width: 540px) {
+  .services-hub-card {
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .services-hub-card-icon {
+    width: 46px;
+    height: 46px;
   }
 }
