@@ -1,60 +1,22 @@
-"use client";
-
 import React from "react";
-import dynamic from "next/dynamic";
+import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import CaseStudyHero from "../../components/CaseStudyHero/CaseStudyHero";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const SolutionSection = dynamic(
-  () => import("../../components/SolutionSection/SolutionSection"),
-  { ssr: false }
-);
-const ImplementationJourney = dynamic(
-  () => import("../../components/ImplementationJourney/ImplementationJourney"),
-  { ssr: false }
-);
-const ResultsSection = dynamic(
-  () => import("../../components/ResultsSection/ResultsSection"),
-  { ssr: false }
-);
-const UnexpectedWins = dynamic(
-  () => import("../../components/UnexpectedWins/UnexpectedWins"),
-  { ssr: false }
-);
-const RealWorldImpact = dynamic(
-  () => import("../../components/RealWorldImpact/RealWorldImpact"),
-  { ssr: false }
-);
-const ChallengesLessons = dynamic(
-  () => import("../../components/ChallengesLessons/ChallengesLessons"),
-  { ssr: false }
-);
-const IndustryComparison = dynamic(
-  () => import("../../components/IndustryComparison/IndustryComparison"),
-  { ssr: false }
-);
-const BottomLine = dynamic(
-  () => import("../../components/BottomLine/BottomLine"),
-  { ssr: false }
-);
-const FinalThoughts = dynamic(
-  () => import("../../components/FinalThoughts/FinalThoughts"),
-  { ssr: false }
-);
-const CTA = dynamic(() => import("../../components/CTA/CTA"), { ssr: false });
-const Footer = dynamic(() => import("../../components/Footer/Footer"), {
-  ssr: false,
-});
+import SolutionSection from "../../components/SolutionSection/SolutionSection";
+import ImplementationJourney from "../../components/ImplementationJourney/ImplementationJourney";
+import ResultsSection from "../../components/ResultsSection/ResultsSection";
+import UnexpectedWins from "../../components/UnexpectedWins/UnexpectedWins";
+import RealWorldImpact from "../../components/RealWorldImpact/RealWorldImpact";
+import ChallengesLessons from "../../components/ChallengesLessons/ChallengesLessons";
+import IndustryComparison from "../../components/IndustryComparison/IndustryComparison";
+import BottomLine from "../../components/BottomLine/BottomLine";
+import FinalThoughts from "../../components/FinalThoughts/FinalThoughts";
+import CTA from "../../components/CTA/CTA";
+import Footer from "../../components/Footer/Footer";
 
 export default function Work1() {
   return (
     <div className="work1">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
       <CaseStudyHero />
       <SolutionSection />
       <ImplementationJourney />

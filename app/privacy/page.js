@@ -1,24 +1,13 @@
-"use client";
-
 import React from "react";
-import dynamic from "next/dynamic";
+import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import CTA from "../../components/CTA/CTA";
+import Footer from "../../components/Footer/Footer";
 import "../legal/legal-page.scss";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const Footer = dynamic(() => import("../../components/Footer/Footer"), {
-  ssr: false,
-});
 
 export default function PrivacyPage() {
   return (
     <div className="marketing-legal-page" id="privacy-policy">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
       <main className="legal-doc-main">
         <article className="legal-doc-sheet">
           <header className="legal-doc-header">

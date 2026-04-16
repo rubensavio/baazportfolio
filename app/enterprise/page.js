@@ -1,24 +1,12 @@
-"use client";
-
 import React from "react";
-import dynamic from "next/dynamic";
+import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import EnterpriseHero from "../../components/EnterpriseHero/EnterpriseHero";
 import EnterpriseSolutions from "../../components/EnterpriseSolutions/EnterpriseSolutions";
 import EnterpriseCaseStudies from "../../components/EnterpriseCaseStudies/EnterpriseCaseStudies";
 import EnterpriseBenefits from "../../components/EnterpriseBenefits/EnterpriseBenefits";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const FAQ = dynamic(() => import("../../components/FAQ/FAQ"), { ssr: false });
-const EnterpriseCTA = dynamic(
-  () => import("../../components/EnterpriseCTA/EnterpriseCTA"),
-  { ssr: false },
-);
-const Footer = dynamic(() => import("../../components/Footer/Footer"), {
-  ssr: false,
-});
+import FAQ from "../../components/FAQ/FAQ";
+import EnterpriseCTA from "../../components/EnterpriseCTA/EnterpriseCTA";
+import Footer from "../../components/Footer/Footer";
 
 const enterpriseFaqs = [
   {
@@ -81,9 +69,7 @@ const faqSchema = {
 export default function Enterprise() {
   return (
     <div className="enterprise">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

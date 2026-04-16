@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import FAQ from "../FAQ/FAQ";
 import { HOME_FAQ_ITEMS } from "../../lib/homeFaq";

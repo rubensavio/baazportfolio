@@ -1,18 +1,9 @@
-"use client";
-
 import React from "react";
-import dynamic from "next/dynamic";
 import Link from "next/link";
+import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
+import Footer from "../../components/Footer/Footer";
 import { blogData } from "../../lib/blogData";
 import "./page.scss";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const Footer = dynamic(() => import("../../components/Footer/Footer"), {
-  ssr: false,
-});
 
 export default function BlogIndexPage() {
   const posts = Object.values(blogData).sort((a, b) =>
@@ -21,9 +12,7 @@ export default function BlogIndexPage() {
 
   return (
     <div className="blog-index-page">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
 
       <section className="blog-index-hero">
         <div className="blog-index-hero-wrapper">

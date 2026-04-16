@@ -1,7 +1,8 @@
-"use client";
-
-import React, { useEffect } from "react";
-import dynamic from "next/dynamic";
+import React from "react";
+import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
+import CTA from "../../../components/CTA/CTA";
+import FAQ from "../../../components/FAQ/FAQ";
+import Footer from "../../../components/Footer/Footer";
 import {
   FiUsers,
   FiZap,
@@ -21,18 +22,6 @@ import {
 } from "react-icons/fi";
 import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesData";
 import "./page.scss";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
-  ssr: false,
-});
-const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"));
-const Footer = dynamic(() => import("../../../components/Footer/Footer"), {
-  ssr: false,
-});
 
 const CARD_ICON_MAP = {
   users: FiUsers,
@@ -146,15 +135,9 @@ export default function TechnologyPageClient({ techSlug }) {
   const labelLower = data.label.toLowerCase();
   const hasCustomStackGroups = data.stackGroups && data.stackGroups.length > 0;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [techSlug]);
-
   return (
     <div className="technology-page">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
 
       <section className="technology-hero">
         <div className="technology-hero-background">

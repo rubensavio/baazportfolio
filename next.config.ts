@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
-/** Report-only first: watch browser console / CSP reports before enforcing. */
 const cspReportOnly = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
@@ -23,7 +23,7 @@ const securityHeaders =
           value: "max-age=63072000; includeSubDomains; preload",
         },
         {
-          key: "Content-Security-Policy-Report-Only",
+          key: "Content-Security-Policy",
           value: cspReportOnly,
         },
       ]
@@ -33,6 +33,9 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   turbopack: {
     root: __dirname,
+  },
+  images: {
+    qualities: [75, 82],
   },
   sassOptions: {
     includePaths: ["./"],
@@ -69,4 +72,8 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
+
+export default bundleAnalyzer(nextConfig);

@@ -1,31 +1,15 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getRegionLabel } from "../../lib/regions";
+import RegionLabel from "../RegionLabel/RegionLabel";
 import "./Hero.scss";
 
 const Hero = () => {
-  const [regionLabel, setRegionLabel] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setRegionLabel(getRegionLabel(window.location.hostname));
-    }
-  }, []);
-
   return (
     <section className="hero">
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
-            <p
-              className="hero-region-line animate-fade-up animate-in"
-              aria-hidden={!regionLabel || undefined}
-            >
-              {regionLabel || "\u00A0"}
-            </p>
+            <RegionLabel />
             <h1 className="hero-heading-unified animate-fade-up animate-in">
               <span className="hero-heading__tagline">
                 <span className="hero-heading-strikes-container">

@@ -21,7 +21,8 @@ function withAlternates(path, entry) {
 
 export default function sitemap() {
   const staticRoutes = SITEMAP_STATIC_PATHS.map((path) => {
-    const pathNorm = path === "/" ? "/" : path;
+    // Use "" for the homepage so hreflang alternates match the <loc> (no trailing slash)
+    const pathNorm = path === "/" ? "" : path;
     const url = path === "/" ? baseUrl : `${baseUrl}${pathNorm}`;
     const priority =
       path === "/"
@@ -42,7 +43,7 @@ export default function sitemap() {
               : 0.8;
     const changeFrequency =
       path === "/" || path === "/blog" ? "weekly" : "monthly";
-    return withAlternates(pathNorm, {
+    return withAlternates(path === "/" ? "" : pathNorm, {
       url,
       lastModified: lastModStatic(pathNorm),
       changeFrequency,

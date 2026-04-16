@@ -1,20 +1,9 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
+import FAQ from "../../components/FAQ/FAQ";
+import Footer from "../../components/Footer/Footer";
 import "./page.scss";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const FAQ = dynamic(() => import("../../components/FAQ/FAQ"), {
-  ssr: false,
-});
-const Footer = dynamic(() => import("../../components/Footer/Footer"), {
-  ssr: false,
-});
 
 const painPoints = [
   {
@@ -290,15 +279,9 @@ const serviceSchema = {
 };
 
 export default function GtmEngineering() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="gtm-page">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
 
       <script
         type="application/ld+json"

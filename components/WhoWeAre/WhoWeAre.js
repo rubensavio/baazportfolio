@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "./WhoWeAre.scss";
 
 const services = [
@@ -48,16 +45,9 @@ const services = [
 ];
 
 const WhoWeAre = () => {
-  const headerRef = useScrollAnimation();
-  const panelRef = useScrollAnimation({ threshold: 0.08 });
-  const cardsRef = useScrollAnimation({ threshold: 0.2 });
-
   return (
     <section className="who-we-are" aria-labelledby="who-we-are-heading">
-      <div
-        className="who-we-are-header animate-on-scroll animate-fade-up"
-        ref={headerRef}
-      >
+      <div className="who-we-are-header animate-fade-up animate-in">
         <span className="who-we-are-label">Who We Are</span>
         <h2 id="who-we-are-heading" className="who-we-are-heading">
           Enterprise product engineering from discovery through launch and
@@ -72,10 +62,7 @@ const WhoWeAre = () => {
         </p>
       </div>
 
-      <div
-        className="who-we-are-panel animate-on-scroll animate-fade-up animate-delay-100"
-        ref={panelRef}
-      >
+      <div className="who-we-are-panel animate-fade-up animate-in animate-delay-100">
         {/* <h3 className="who-we-are-subtitle">
           Core capabilities
           <span className="who-we-are-subtitle-note">
@@ -84,8 +71,7 @@ const WhoWeAre = () => {
         </h3> */}
 
         <div
-          className="who-we-are-cards animate-on-scroll animate-fade-up animate-delay-200"
-          ref={cardsRef}
+          className="who-we-are-cards animate-fade-up animate-in animate-delay-200"
         >
           {services.map((service, index) => (
             <div

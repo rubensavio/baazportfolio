@@ -1,56 +1,21 @@
-"use client";
-
 import React from "react";
-import dynamic from "next/dynamic";
+import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import Work2Hero from "../../components/Work2Hero/Work2Hero";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const Work2Solution = dynamic(
-  () => import("../../components/Work2Solution/Work2Solution"),
-  { ssr: false }
-);
-const Work2Implementation = dynamic(
-  () => import("../../components/Work2Implementation/Work2Implementation"),
-  { ssr: false }
-);
-const Work2Results = dynamic(
-  () => import("../../components/Work2Results/Work2Results"),
-  { ssr: false }
-);
-const Work2Impact = dynamic(
-  () => import("../../components/Work2Impact/Work2Impact"),
-  { ssr: false }
-);
-const Work2Challenges = dynamic(
-  () => import("../../components/Work2Challenges/Work2Challenges"),
-  { ssr: false }
-);
-const Work2Comparison = dynamic(
-  () => import("../../components/Work2Comparison/Work2Comparison"),
-  { ssr: false }
-);
-const Work2BottomLine = dynamic(
-  () => import("../../components/Work2BottomLine/Work2BottomLine"),
-  { ssr: false }
-);
-const Work2FinalThoughts = dynamic(
-  () => import("../../components/Work2FinalThoughts/Work2FinalThoughts"),
-  { ssr: false }
-);
-const CTA = dynamic(() => import("../../components/CTA/CTA"), { ssr: false });
-const Footer = dynamic(() => import("../../components/Footer/Footer"), {
-  ssr: false,
-});
+import Work2Solution from "../../components/Work2Solution/Work2Solution";
+import Work2Implementation from "../../components/Work2Implementation/Work2Implementation";
+import Work2Results from "../../components/Work2Results/Work2Results";
+import Work2Impact from "../../components/Work2Impact/Work2Impact";
+import Work2Challenges from "../../components/Work2Challenges/Work2Challenges";
+import Work2Comparison from "../../components/Work2Comparison/Work2Comparison";
+import Work2BottomLine from "../../components/Work2BottomLine/Work2BottomLine";
+import Work2FinalThoughts from "../../components/Work2FinalThoughts/Work2FinalThoughts";
+import CTA from "../../components/CTA/CTA";
+import Footer from "../../components/Footer/Footer";
 
 export default function Work2() {
   return (
     <div className="work2">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
       <Work2Hero />
       <Work2Solution />
       <Work2Implementation />

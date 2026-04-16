@@ -1,31 +1,18 @@
-"use client";
-
-import React from "react";
-import dynamic from "next/dynamic";
+import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import Hero from "../Hero/Hero";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../Navbar/Navbar"), { ssr: false });
-const WhoWeAre = dynamic(() => import("../WhoWeAre/WhoWeAre"));
-const BrandsCarousel = dynamic(
-  () => import("../BrandsCarousel/BrandsCarousel"),
-  { ssr: false }
-);
-const OurExpertise = dynamic(() => import("../OurExpertise/OurExpertise"));
-const HowWeWork = dynamic(() => import("../HowWeWork/HowWeWork"));
-const Testimonials = dynamic(() => import("../Testimonials/Testimonials"), {
-  ssr: false,
-});
-const CTA = dynamic(() => import("../CTA/CTA"), { ssr: false });
-const HomeFaq = dynamic(() => import("../HomeFaq/HomeFaq"));
-const Footer = dynamic(() => import("../Footer/Footer"), { ssr: false });
+import WhoWeAre from "../WhoWeAre/WhoWeAre";
+import BrandsCarousel from "../BrandsCarousel/BrandsCarousel";
+import OurExpertise from "../OurExpertise/OurExpertise";
+import HowWeWork from "../HowWeWork/HowWeWork";
+import Testimonials from "../Testimonials/Testimonials";
+import CTA from "../CTA/CTA";
+import HomeFaq from "../HomeFaq/HomeFaq";
+import Footer from "../Footer/Footer";
 
 export default function HomePageClient() {
   return (
     <div className="home">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
       <Hero />
       <WhoWeAre />
       <BrandsCarousel />

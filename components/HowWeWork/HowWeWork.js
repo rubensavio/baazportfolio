@@ -1,12 +1,7 @@
-"use client";
-
 import React from "react";
-import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import "./HowWeWork.scss";
 
 const HowWeWork = () => {
-  const headerRef = useScrollAnimation();
-  const stepsRef = useScrollAnimation({ threshold: 0.15 });
 
   const processSteps = [
     {
@@ -63,10 +58,7 @@ const HowWeWork = () => {
         />
       </div>
       <div className="how-we-work-wrapper">
-        <div
-          className="how-we-work-header animate-on-scroll animate-fade-up"
-          ref={headerRef}
-        >
+        <div className="how-we-work-header animate-fade-up animate-in">
           <span className="how-we-work-label">How We Work</span>
           <h2 className="how-we-work-heading">
             Our proven process from discovery to delivery
@@ -79,8 +71,7 @@ const HowWeWork = () => {
 
         <div className="how-we-work-container">
           <div
-            className="process-steps animate-on-scroll animate-fade-up animate-delay-200"
-            ref={stepsRef}
+            className="process-steps animate-fade-up animate-in animate-delay-200"
           >
             {processSteps.map((step, index) => (
               <div
