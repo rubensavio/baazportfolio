@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { technologyCapabilitiesData } from "../../lib/technologyCapabilitiesData";
+import { caseStudiesData } from "../../lib/caseStudiesData";
 import "./Navbar.scss";
 
 const INDUSTRIES = [
@@ -17,6 +18,7 @@ const ERP_SOLUTIONS = [
   { slug: "insurance-companies", label: "ERP for Insurance Companies" },
   { slug: "manufacturing-companies", label: "ERP for Manufacturing Companies" },
   { slug: "banking-companies", label: "ERP for Banking Companies" },
+  { slug: "education-training-companies", label: "ERP for Education & Training Companies" },
   { slug: "healthcare-companies", label: "ERP for Healthcare Companies" },
   { slug: "hospitals", label: "ERP for Hospitals" },
   { slug: "real-estate-companies", label: "ERP for Real Estate Companies" },
@@ -33,8 +35,6 @@ const SERVICES_PATHS = [
   "/ecommerce",
   "/gtm-engineering",
   "/project-rescue",
-  "/work1",
-  "/work2",
   "/technologies",
   "/services",
 ];
@@ -66,10 +66,23 @@ const Navbar = () => {
     useState(false);
   const [isErpDropdownOpen, setIsErpDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isCaseStudiesDropdownOpen, setIsCaseStudiesDropdownOpen] =
+    useState(false);
   const pathname = usePathname();
+
+  const isCaseStudiesActive =
+    pathname &&
+    (pathname === "/case-studies" ||
+      pathname.startsWith("/case-studies/") ||
+      caseStudiesData.some(
+        (item) =>
+          pathname === item.href ||
+          pathname.startsWith(`${item.href}/`),
+      ));
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIsCaseStudiesDropdownOpen(false);
   };
 
   const toggleIndustriesDropdown = () => {
@@ -82,6 +95,10 @@ const Navbar = () => {
 
   const toggleErpDropdown = () => {
     setIsErpDropdownOpen(!isErpDropdownOpen);
+  };
+
+  const toggleCaseStudiesDropdown = () => {
+    setIsCaseStudiesDropdownOpen(!isCaseStudiesDropdownOpen);
   };
 
   return (
@@ -99,16 +116,8 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation — logo links home; no separate Home item */}
         <ul className="navbar-menu desktop-menu">
-          <li className="navbar-item">
-            <Link
-              href="/"
-              className={`navbar-link ${pathname === "/" ? "active" : ""}`}
-            >
-              Home
-            </Link>
-          </li>
           <li className="navbar-item dropdown">
             <Link
               href="/services"
@@ -135,7 +144,7 @@ const Navbar = () => {
                 <Link href="/project-rescue">Project Rescue</Link>
 
                 <p className="dropdown-menu-label" role="presentation">
-                  Case studies - AI on ERP
+                  Featured — AI on ERP
                 </p>
                 <Link href="/work1" className="dropdown-menu-stacked-link">
                   <span className="dropdown-link-title">
@@ -212,6 +221,30 @@ const Navbar = () => {
               {ERP_SOLUTIONS.map(({ slug, label }) => (
                 <li key={slug}>
                   <Link href={`/erp/${slug}`}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="navbar-item dropdown">
+            <a
+              href="#"
+              className={`navbar-link ${isCaseStudiesActive ? "active" : ""}`}
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              <span className="link-text">Case studies</span>
+              <span className="dropdown-icon">▼</span>
+            </a>
+            <ul className="dropdown-menu">
+              <li>
+                <Link href="/case-studies">All case studies</Link>
+              </li>
+              {caseStudiesData.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href}>
+                    {item.footerLabel ?? item.title}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -326,7 +359,7 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li className="mobile-dropdown-menu-label" aria-hidden>
-                      Case studies — AI on ERP
+                      Featured — AI on ERP
                     </li>
                     <li>
                       <Link href="/work1" onClick={toggleMenu}>
@@ -360,6 +393,40 @@ const Navbar = () => {
                       <li className="mobile-dropdown-tech-row" key={group.slug}>
                         <Link href={group.href} onClick={toggleMenu}>
                           {group.category}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li className="mobile-menu-item mobile-dropdown">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleCaseStudiesDropdown();
+                  }}
+                >
+                  Case studies
+                  <span
+                    className={`dropdown-icon ${
+                      isCaseStudiesDropdownOpen ? "open" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </a>
+                {isCaseStudiesDropdownOpen && (
+                  <ul className="mobile-dropdown-menu">
+                    <li>
+                      <Link href="/case-studies" onClick={toggleMenu}>
+                        All case studies
+                      </Link>
+                    </li>
+                    {caseStudiesData.map((item) => (
+                      <li key={item.href}>
+                        <Link href={item.href} onClick={toggleMenu}>
+                          {item.footerLabel ?? item.title}
                         </Link>
                       </li>
                     ))}

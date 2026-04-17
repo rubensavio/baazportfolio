@@ -34,7 +34,10 @@ export default function sitemap() {
             path === "/industry" ||
             path === "/erp"
           ? 0.9
-          : path === "/case-studies"
+          : path === "/case-studies" ||
+              path === "/real-estate-erp-case-study" ||
+              path === "/healthcare-patient-app-case-study" ||
+              path === "/education-training-portal-case-study"
             ? 0.85
             : path === "/ecommerce" ||
                 path === "/gtm-engineering" ||

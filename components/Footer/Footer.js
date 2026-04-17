@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { getRegionLabel } from "../../lib/regions";
-import { caseStudiesData } from "../../lib/caseStudiesData";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -63,7 +62,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links: primary columns, then case studies row */}
           <div className="footer-links">
             <div className="footer-links-primary">
               {/* Our Services Column */}
@@ -116,6 +114,9 @@ const Footer = () => {
                     <Link href="/erp/banking-companies">Banking</Link>
                   </li>
                   <li>
+                    <Link href="/erp/education-training-companies">Education &amp; Training</Link>
+                  </li>
+                  <li>
                     <Link href="/erp/healthcare-companies">Healthcare</Link>
                   </li>
                   <li>
@@ -165,6 +166,9 @@ const Footer = () => {
                     <Link href="/about">About Us</Link>
                   </li>
                   <li>
+                    <Link href="/case-studies">Case studies</Link>
+                  </li>
+                  <li>
                     <Link href="/blog">Blog</Link>
                   </li>
                   <li>
@@ -172,25 +176,6 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-
-            {/* Case studies — full-width row below primary columns */}
-            <div className="footer-case-studies-row" aria-labelledby="footer-case-studies-heading">
-              <h3 id="footer-case-studies-heading" className="footer-case-studies-heading">
-                Case studies
-              </h3>
-              <ul className="footer-case-studies-links">
-                <li>
-                  <Link href="/case-studies">All case studies</Link>
-                </li>
-                {caseStudiesData.map((item) => (
-                  <li key={item.href}>
-                    <Link href={item.href} title={item.title}>
-                      {item.footerLabel ?? item.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
