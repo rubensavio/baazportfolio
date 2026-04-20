@@ -118,4 +118,15 @@
     font-size: clamp(0.95rem, 1.65vw, 1.125rem);
     line-height: 1.35;
   }
+
+  /* Hero “nightmare numbers” heading (CaseStudyHero pattern; Work2 bundle omits it) */
+  .nightmare-title {
+    font-family: var(--font-urbanist), sans-serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #0f172a;
+    margin: 0 0 clamp(1rem, 2vw, 1.25rem);
+    text-align: center;
+  }
 }

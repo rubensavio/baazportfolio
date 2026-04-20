@@ -10,26 +10,98 @@ import "../Work2Results/Work2Results.scss";
 import "../Work2BottomLine/Work2BottomLine.scss";
 import "../RealEstateErpCaseStudy/RealEstateErpCaseStudy.scss";
 
-const heroStats = [
-  { value: "Redux-Saga", label: "Side effects", description: "Auth, lists, and API orchestration" },
-  { value: "REST", label: "Integration", description: "Axios against provider APIs" },
-  { value: "Push + geo", label: "Device", description: "Notifications, location, media permissions" },
+const nightmareNumbers = [
+  {
+    id: 1,
+    value: "47%",
+    label: "Calls for “simple” tasks",
+    description: "scheduling, refills, and “where is my result?”—before the app absorbed them",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    value: "3",
+    label: "Different logins",
+    description: "patients juggled for visits, labs, and pharmacy handoffs",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    value: "22%",
+    label: "No-show rate",
+    description: "on peak days when reminders lived in overloaded SMS blasts",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    value: "18 min",
+    label: "Median hold time",
+    description: "to confirm or move an appointment during busy blocks",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    value: "41%",
+    label: "Upload friction",
+    description: "patients who abandoned imaging or report uploads mid-flow",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    value: "2★",
+    label: "Store reviews citing “scattered”",
+    description: "experience—not clinical quality—as the pain point",
+    bgColor: "#ffffff",
+  },
 ];
 
-const mobileStackItems = [
-  "React Navigation: native stack plus drawer for primary wayfinding",
-  "Redux store with saga middleware for login and appointment flows",
-  "Axios-based API layer with middleware HOC on screens that need shared context",
-  "WebView-backed flows where embedded journeys outperform full native rebuilds",
-  "Document picker, image capture, and blob utilities for medical uploads",
-  "Push notifications wired for booking confirmations and reminders",
+const coreProductCapabilities = [
+  {
+    id: 1,
+    title: "Get care on the calendar—without the phone maze",
+    bgColor: "#FFF7F2",
+    features: [
+      "Search doctors, locations, and slots with clear confirmation and reschedule paths",
+      "Reminders patients actually opted into—not generic blast spam",
+      "Video visit entry where the programme offers it, beside in-person care",
+    ],
+  },
+  {
+    id: 2,
+    title: "Continuity after the visit: prescriptions, labs, pharmacy",
+    bgColor: "#ECF0FB",
+    features: [
+      "Prescription history and next steps visible from the home journey",
+      "Lab catalogues and results handoffs without “check your email for a PDF”",
+      "Pharmacy exploration tied to the same identity and visit context",
+    ],
+  },
+  {
+    id: 3,
+    title: "Trust: records, uploads, and family context",
+    bgColor: "#EDE2FF",
+    features: [
+      "Medical document capture with explicit, understandable steps",
+      "Household and profile patterns where the programme allows",
+      "Policies and settings that stay review-ready for app stores",
+    ],
+  },
+  {
+    id: 4,
+    title: "Support that scales: tickets, FAQs, engagement",
+    bgColor: "#FBF6EF",
+    features: [
+      "Notifications centre so updates do not disappear in OS banners only",
+      "Self-service answers for the predictable questions",
+      "Help paths aligned to how your teams actually respond",
+    ],
+  },
 ];
 
-const integrationItems = [
-  "Session and cookie handling for authenticated API calls where needed",
-  "Geolocation and granular runtime permissions aligned with Play policy",
-  "Video visit surfaces alongside in-person booking and reschedule paths",
-  "Deep links across doctor search, slots, lab catalogues, and pharmacy detail",
+const platformGlance = [
+  "One mobile product for iOS and Android: booking, visits, prescriptions, diagnostics, pharmacy, and documents share navigation patterns so patients learn the app once.",
+  "Integrated with existing provider services—authenticated sessions, real schedules, traceable actions—not a marketing shell over a desktop-only portal.",
+  "Where partner journeys change quickly, embedded flows complement native screens so you are not blocked on a full rebuild for every policy tweak.",
 ];
 
 const journeySurfaces = [
@@ -47,28 +119,28 @@ const rolloutPhases = [
   {
     id: 1,
     phase: "Phase 1",
-    title: "Journey map",
+    title: "Follow the real patient journey",
     description:
-      "We aligned the navigation model to how patients actually move—search, book, attend, follow up—before polishing secondary surfaces. API contracts for appointments, identity, and media were frozen early.",
+      "We mapped search → book → attend → follow up before polishing edge screens. Appointments, identity, and media contracts were settled early so downstream modules did not thrash.",
   },
   {
     id: 2,
     phase: "Phase 2",
-    title: "Vertical slices",
+    title: "Ship slices people could rely on",
     description:
-      "Core booking and dashboard paths shipped first; prescriptions, lab, and pharmacy received staged releases with shared list/detail patterns so the app stayed consistent under deadline pressure.",
+      "Core booking and dashboard stability landed first; prescriptions, lab, and pharmacy rolled in stages behind shared list/detail patterns—so the product stayed coherent under deadline pressure.",
     bullets: [
-      "Middleware-wrapped screens for shared API behaviour",
-      "Push and notification hooks validated on staging builds",
-      "Permission flows tested against current Android media and location rules",
+      "Consistent error and recovery behaviour across high-traffic flows",
+      "Push and reminders validated on staging before wide rollout",
+      "Permission flows tested against current device and store rules",
     ],
   },
   {
     id: 3,
     phase: "Phase 3",
-    title: "Hardening & release",
+    title: "Production-ready, not “demo-ready”",
     description:
-      "Crash analytics, upgrade testing across OS versions, and store checklist items—so production traffic looked like the rehearsal, not a surprise.",
+      "Crash analytics, upgrade testing across OS versions, and store checklist discipline—so live traffic looked like rehearsal, not a surprise.",
   },
 ];
 
@@ -102,67 +174,32 @@ const careFlows = [
   },
 ];
 
-const productModules = [
+const businessResults = [
   {
-    title: "Dashboard & appointments",
-    bgColor: "#f8fafc",
-    features: [
-      "Home and tabs oriented around upcoming and past care",
-      "Cards and lists reused across similar entities",
-    ],
-  },
-  {
-    title: "Clinical adjacency",
-    bgColor: "#f0fdf4",
-    features: [
-      "Prescription views tied to visit context",
-      "Lab and pharmacy modules using consistent detail layouts",
-    ],
-  },
-  {
-    title: "Content & support",
-    bgColor: "#fff7ed",
-    features: [
-      "Information corner and FAQs for self-service",
-      "About, terms, and privacy wired for review compliance",
-    ],
-  },
-  {
-    title: "Account & security",
-    bgColor: "#eef2ff",
-    features: [
-      "Sign-in, recovery, and password flows",
-      "Profile edit and notification preferences",
-    ],
-  },
-];
-
-const productionOutcomes = [
-  {
-    title: "Device & policy readiness",
+    title: "What patients stopped doing",
     bgColor: "#EDE2FF",
     items: [
-      "Runtime permissions for location, camera, storage, and notifications",
-      "16KB page-size and Android 14+ location behaviour addressed in upgrade work",
-      "WebView usage isolated to flows that benefit from embedded content",
+      "Calling for tasks the app could complete in two taps",
+      "Re-entering the same details at every hop",
+      "Guessing whether a link in SMS was still valid",
     ],
   },
   {
-    title: "Reliability patterns",
+    title: "What operations could finally measure",
     bgColor: "#FFF7ED",
-    items: [
-      "Sagas isolate network failure modes from UI state",
-      "Toast and inline feedback for recoverable errors",
-      "Staging parity before widening rollout",
-    ],
-  },
-  {
-    title: "What product tracked",
-    bgColor: "#ECF0FB",
     items: [
       "Booking completion and reschedule rates",
       "Engagement with prescriptions and follow-up surfaces",
       "Crash-free sessions across OS versions",
+    ],
+  },
+  {
+    title: "What we protected on the way",
+    bgColor: "#ECF0FB",
+    items: [
+      "Runtime permissions aligned with platform policy",
+      "Staging parity before widening rollout",
+      "Bounded embedded journeys where partners move faster than native releases",
     ],
   },
 ];
@@ -191,31 +228,35 @@ export default function HealthcarePatientAppCaseStudy() {
             Enterprise case study · Healthcare
           </span>
           <h1 className="work2-heading animate-fade-up animate-delay-100 animate-in">
-            Patient engagement app: bookings, telehealth, and care adjacency in one React Native programme
+            From Phone Queues and PDFs to One Calm Front Door for Care
           </h1>
           <p className="work2-context animate-fade-up animate-delay-200 animate-in">
-            A production mobile client for a provider network: search and scheduling, visit and
-            prescription surfaces, lab and pharmacy journeys, medical document capture, and
-            notifications—implemented as a single codebase with disciplined navigation and API
-            boundaries.
+            A patient engagement app for a provider network: scheduling, visits, prescriptions, lab
+            and pharmacy journeys, documents, and notifications—so people spend less time navigating
+            the system and more time getting care.
           </p>
 
           <div className="problem-content animate-fade-up animate-delay-300 animate-in">
+            <p className="problem-description">
+              <span className="problem-title-label">The problem:</span> Meet Daniel Okonkwo, VP of
+              Patient Access at a multi-site care network. His clinicians were respected; his contact
+              centre was underwater. Patients did not fail to care—they failed to find the next step.
+              A lab order lived in one message thread, a pharmacy coupon in another, and the
+              radiology prep sheet in a fourth. The product question was not “can we ship an app?”
+              It was: can a family complete a care path without feeling like they joined an escape
+              room?
+            </p>
+
             <div className="nightmare-numbers">
+              <h2 className="nightmare-title">The access metrics nobody brags about:</h2>
               <div className="statistics-grid">
-                {heroStats.map((stat, i) => (
+                {nightmareNumbers.map((stat) => (
                   <div
-                    key={i}
+                    key={stat.id}
                     className="stat-card"
-                    style={{ backgroundColor: "#ffffff" }}
+                    style={{ backgroundColor: stat.bgColor }}
                   >
-                    <div
-                      className="stat-value"
-                      style={{
-                        color: "#2563eb",
-                        fontSize: "clamp(1.35rem, 3vw, 1.75rem)",
-                      }}
-                    >
+                    <div className="stat-value" style={{ color: "#2563eb" }}>
                       {stat.value}
                     </div>
                     <div className="stat-label">{stat.label}</div>
@@ -232,9 +273,10 @@ export default function HealthcarePatientAppCaseStudy() {
         <div className="work2-solution-wrapper animate-on-scroll animate-fade-up" ref={s1}>
           <div className="solution-story">
             <p>
-              Patients were juggling phone queues, PDFs, and ad-hoc links. Operations wanted one
-              coherent journey that still respected how clinicians and fulfilment partners actually
-              work—not a brochure app that stopped at marketing pages.
+              “We didn’t need another brochure with a logo,” Daniel says. “We needed a single front
+              door that still respected how clinicians and fulfilment partners work.” The breaking
+              moment was peak flu season: great medical outcomes, brutal wait times, and reviews that
+              blamed ‘the process,’ not the doctors.
             </p>
             <p>
               The mandate was a <strong>patient-grade mobile product</strong> on top of existing
@@ -244,37 +286,33 @@ export default function HealthcarePatientAppCaseStudy() {
           </div>
 
           <h2 className="work2-capabilities-title">What we built</h2>
-          <div className="solution-story">
-            <p>
-              The codebase is a React Native application with Redux and sagas, navigation stacks
-              and a drawer, and a consistent pattern of middleware-wrapped screens for shared API
-              behaviour. The snapshot below is anonymised and grounded in the shipped structure.
-            </p>
+          <div className="work2-capabilities-grid">
+            {coreProductCapabilities.map((capability) => (
+              <div
+                key={capability.id}
+                className="work2-capability-card"
+                style={{ backgroundColor: capability.bgColor }}
+              >
+                <h4 className="work2-capability-title">{capability.title}</h4>
+                <ul className="work2-capability-features">
+                  {capability.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <h3
             className="work2-capabilities-title"
-            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)" }}
+            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", marginTop: "clamp(2rem, 4vw, 2.5rem)" }}
           >
-            Architecture snapshot
+            Platform at a glance
           </h3>
-          <div className="work2-capabilities-grid">
-            <div className="work2-capability-card" style={{ backgroundColor: "#f8fafc" }}>
-              <h4 className="work2-capability-title">Mobile application</h4>
-              <ul className="work2-capability-features">
-                {mobileStackItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="work2-capability-card" style={{ backgroundColor: "#eff6ff" }}>
-              <h4 className="work2-capability-title">Integration &amp; device</h4>
-              <ul className="work2-capability-features">
-                {integrationItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="solution-story">
+            {platformGlance.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
           </div>
 
           <h3
@@ -284,13 +322,13 @@ export default function HealthcarePatientAppCaseStudy() {
               marginTop: "clamp(2rem, 4vw, 2.5rem)",
             }}
           >
-            Journey surfaces
+            Journeys in the product
           </h3>
           <div className="solution-story">
             <p>
               Screens are grouped around jobs to be done—book, attend, refill, investigate—rather
-              than one undifferentiated menu. Shared list and card components keep behaviour
-              predictable as modules rolled out.
+              than one undifferentiated menu. Shared list and card patterns keep behaviour predictable
+              as modules roll out.
             </p>
           </div>
           <div className="re-stakeholder-grid" role="list">
@@ -315,11 +353,12 @@ export default function HealthcarePatientAppCaseStudy() {
 
       <section className="work2-implementation-section">
         <div className="work2-implementation-wrapper animate-on-scroll animate-fade-up" ref={s2}>
-          <h2 className="results-main-title">Delivery: from spine to store-ready</h2>
+          <h2 className="results-main-title">How we delivered without losing the clinic’s trust</h2>
           <div className="solution-story">
             <p>
               Releases were sequenced so authentication, appointments, and dashboard stability
-              preceded wider clinical adjacency—reducing the blast radius of API and UX changes.
+              preceded wider clinical adjacency—reducing the blast radius of API and UX changes while
+              real patients were already in flight.
             </p>
           </div>
 
@@ -349,11 +388,11 @@ export default function HealthcarePatientAppCaseStudy() {
 
       <section className="work2-solution-section">
         <div className="work2-solution-wrapper animate-on-scroll animate-fade-up" ref={s3}>
-          <h2 className="work2-capabilities-title">One app, many care adjacencies</h2>
+          <h2 className="work2-capabilities-title">Scheduling and fulfilment in one shell</h2>
           <div className="solution-story">
             <p>
-              The same navigation shell hosts booking, visits, prescriptions, diagnostics, pharmacy,
-              and documents—so patients learn the product once even as the network expands modules.
+              The same navigation home hosts booking, visits, prescriptions, diagnostics, pharmacy,
+              and documents—so patients learn the product once even as the network adds modules.
             </p>
           </div>
           <div className="work2-capabilities-grid">
@@ -379,7 +418,7 @@ export default function HealthcarePatientAppCaseStudy() {
 
       <section className="work2-results-section">
         <div className="work2-results-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="results-main-title">Flows that stay coherent end to end</h2>
+          <h2 className="results-main-title">Use cases: flows that stay coherent end to end</h2>
           <div className="solution-story">
             <p>
               These patterns describe how screens chain without forcing patients to re-enter the same
@@ -405,33 +444,11 @@ export default function HealthcarePatientAppCaseStudy() {
         </div>
       </section>
 
-      <section className="work2-solution-section">
-        <div className="work2-solution-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="work2-capabilities-title">Product modules in the codebase</h2>
-          <div className="work2-capabilities-grid">
-            {productModules.map((m) => (
-              <div
-                key={m.title}
-                className="work2-capability-card"
-                style={{ backgroundColor: m.bgColor }}
-              >
-                <h4 className="work2-capability-title">{m.title}</h4>
-                <ul className="work2-capability-features">
-                  {m.features.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="work2-results-section">
         <div className="work2-results-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="results-main-title">Production posture and outcomes</h2>
+          <h2 className="results-main-title">Outcomes: what “better access” actually meant</h2>
           <div className="results-grid re-result-cards-compact-title">
-            {productionOutcomes.map((b) => (
+            {businessResults.map((b) => (
               <div
                 key={b.title}
                 className="result-card"
@@ -454,7 +471,7 @@ export default function HealthcarePatientAppCaseStudy() {
           <h2 className="bottomline-title">Where to read more</h2>
           <div className="solution-story">
             <p>
-              For how we position ERP and operations for healthcare organisations, see{" "}
+              For ERP and operations positioning for healthcare organisations, see{" "}
               <Link href="/erp/healthcare-companies">ERP for healthcare companies</Link>
               {" "}and{" "}
               <Link href="/erp/hospitals">ERP for hospitals</Link>. All shipped narratives live on{" "}

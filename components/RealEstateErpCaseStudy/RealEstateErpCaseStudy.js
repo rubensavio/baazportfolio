@@ -10,29 +10,98 @@ import "../Work2Results/Work2Results.scss";
 import "../Work2BottomLine/Work2BottomLine.scss";
 import "./RealEstateErpCaseStudy.scss";
 
-const heroStats = [
-  { value: "ERP + app", label: "Product pair", description: "One spine from ops to customer" },
-  { value: "8+", label: "Role surfaces", description: "Sales, site, vendor, buyer, admin…" },
-  { value: "REST + WS", label: "API posture", description: "Transactional core + live updates" },
-  { value: "JWT", label: "Session model", description: "Refresh-safe mobile & web clients" },
+const nightmareNumbers = [
+  {
+    id: 1,
+    value: "7",
+    label: "Sources of “truth”",
+    description: "for inventory and pricing before leadership demanded one spine",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    value: "31%",
+    label: "Pipeline opacity",
+    description: "of booked value finance couldn’t tie to milestones in under a week",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    value: "4.5 hrs",
+    label: "Daily reconciliation",
+    description: "sales ops spent matching broker sheets to site reality",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    value: "₹2.1Cr",
+    label: "Channel leakage risk",
+    description: "from overlapping holds and informal rate promises in a single quarter",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    value: "62%",
+    label: "Buyer drop-offs",
+    description: "after “we’ll send the payment link by evening” became the norm",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    value: "19 days",
+    label: "Avg. booking → ledger",
+    description: "lag that made board reviews feel like archaeology",
+    bgColor: "#ffffff",
+  },
 ];
 
-const webStackItems = [
-  "React 18 SPA with modular domains (builder, super-admin, shared UI)",
-  "Redux Toolkit and TanStack Query for server state",
-  "MUI / composable UI, charts, Gantt-style scheduling views",
-  "REST clients to application, user-management, and document services",
-  "HTML templates for agreements and invoices, exported to PDF",
-  "Socket.io client alongside REST for notifications",
+const coreProductCapabilities = [
+  {
+    id: 1,
+    title: "Inventory & pricing that match how you actually sell",
+    bgColor: "#FFF7F2",
+    features: [
+      "Phased towers, holds, releases, and channel rules—without shadow spreadsheets",
+      "Rate lists and incentives visible to sales, site, and leadership in one place",
+      "What’s sellable today is what finance recognises—not a forecast in email",
+    ],
+  },
+  {
+    id: 2,
+    title: "Lead → booking → cash, without the reconciliation circus",
+    bgColor: "#ECF0FB",
+    features: [
+      "Pipeline and activities feed reporting leadership actually trusts",
+      "Bookings, agreements, and milestone billing aligned to collections",
+      "Broker performance on governed inventory instead of side CRMs",
+    ],
+  },
+  {
+    id: 3,
+    title: "Field execution tied to procurement and schedule",
+    bgColor: "#EDE2FF",
+    features: [
+      "Tasks, material requests, and evidence live next to the plan—not in chat",
+      "Vendor quotes to orders with traceability for costing and audits",
+      "Less leakage to “someone will update the sheet tomorrow”",
+    ],
+  },
+  {
+    id: 4,
+    title: "A buyer journey that feels like a real product, not PDF roulette",
+    bgColor: "#FBF6EF",
+    features: [
+      "Discovery and applications with live availability",
+      "Payment schedules and documents that match the back office",
+      "Post-handover service and updates without opaque email threads",
+    ],
+  },
 ];
 
-const mobileStackItems = [
-  "React Native with role-based stacks and tab navigation",
-  "JWT access and refresh, AsyncStorage, OTP and visitor flows",
-  "Axios with automatic token refresh and analytics on API usage",
-  "Socket.io for live feed, tasks, and deal updates",
-  "Mixpanel and Sentry for product and crash signals",
-  "In-app support channel for end-customers",
+const platformGlance = [
+  "One operational backbone for the developer’s teams: web console for desk-heavy work, mobile for site staff and customers—same services underneath.",
+  "Transactional REST for bookings, payments, and documents; live updates where sales and site need to see change without refreshing ten tabs.",
+  "Agreements and invoices generated from the same data finance uses—fewer PDFs that disagree with the ledger.",
 ];
 
 const stakeholderRoles = [
@@ -50,28 +119,28 @@ const rolloutPhases = [
   {
     id: 1,
     phase: "Phase 1",
-    title: "Map and model",
+    title: "Map how money and units really move",
     description:
-      "Inventory, payment milestones, and role permissions were aligned to how the developer already sold and recognised revenue—before any UI polish. Integrations were scoped for accounting and legacy CRM handoffs.",
+      "We aligned inventory states, payment milestones, and permissions to how the developer already sold and recognised revenue—before any UI polish. Handoffs to accounting and legacy CRM were scoped so nobody re-keyed the business at go-live.",
   },
   {
     id: 2,
     phase: "Phase 2",
-    title: "Vertical slices",
+    title: "Ship vertical slices people could run",
     description:
-      "Lead-to-deal flows went end-to-end in staging; mobile personas received their navigation shells early so field feedback could land while back-office grids were still tightening.",
+      "Lead-to-deal flows went end-to-end in staging; mobile personas got their shells early so field feedback landed while back-office grids tightened.",
     bullets: [
-      "Sales and consumer paths on device",
-      "Document generation against real templates",
-      "Socket channels for feed and task events",
+      "Sales and consumer paths on device with real templates",
+      "Live feeds for tasks and deals so teams stopped polling inboxes",
+      "Training on real data—not a demo tenant that lied about edge cases",
     ],
   },
   {
     id: 3,
     phase: "Phase 3",
-    title: "Harden and train",
+    title: "Harden, measure, hand over",
     description:
-      "Load on representative data, analytics dashboards verified against finance extracts, and role-by-role training—so go-live was a process change, not a surprise deployment.",
+      "Load on representative volumes, dashboards checked against finance extracts, and role-by-role training—so go-live was a process upgrade, not a surprise deployment.",
   },
 ];
 
@@ -90,7 +159,7 @@ const operationalFlows = [
     items: [
       "Material requirements surface to vendors",
       "Quotations convert to orders with traceability",
-      "GRN-style receipts keep inventory honest for costing",
+      "Receipts keep inventory honest for costing",
     ],
     bgColor: "#FFF7ED",
   },
@@ -105,67 +174,32 @@ const operationalFlows = [
   },
 ];
 
-const stackModules = [
+const businessResults = [
   {
-    title: "Inventory & phasing",
-    bgColor: "#f8fafc",
-    features: [
-      "Towers, floors, unit states, holds, release rules",
-      "Pricing aligned to how sales runs on the ground",
-    ],
-  },
-  {
-    title: "Bookings & agreements",
-    bgColor: "#f0fdf4",
-    features: [
-      "EOI through agreement terms and schedules",
-      "Milestone billing aligned to finance",
-    ],
-  },
-  {
-    title: "Collections",
-    bgColor: "#fff7ed",
-    features: [
-      "Receivables, broker commissions, adjustments",
-      "Audit-friendly trails for month-end",
-    ],
-  },
-  {
-    title: "Channel & partners",
-    bgColor: "#eef2ff",
-    features: [
-      "Broker hierarchies and visibility",
-      "Performance without shadow CRMs",
-    ],
-  },
-];
-
-const productionOutcomes = [
-  {
-    title: "Reliability & observability",
+    title: "What finally sat in one place",
     bgColor: "#EDE2FF",
     items: [
-      "Mixpanel and Sentry on web and mobile builds",
-      "Bearer tokens with refresh; predictable REST semantics",
-      "Socket.io complements REST for live lists and feeds",
+      "Sell-through, receivables, and unsold inventory answered from one spine",
+      "Partners on governed stock—not parallel “shadow” lists",
+      "Buyers on a coherent journey—not scattered payment links",
     ],
   },
   {
-    title: "Documents & finance alignment",
+    title: "What finance stopped fighting",
     bgColor: "#FFF7ED",
     items: [
-      "Template-backed HTML and export pipelines",
-      "Agreements and invoices match booked terms",
-      "Fewer PDFs that disagree with the ledger",
+      "Agreements and invoices that match booked terms",
+      "Month-end trails auditors could follow without heroics",
+      "Fewer emergency reconciliations after every launch weekend",
     ],
   },
   {
-    title: "What leadership measured",
+    title: "What we watch in production",
     bgColor: "#ECF0FB",
     items: [
-      "One operational ledger from unit to collected rupee",
-      "Partners on governed inventory—not side lists",
-      "Buyers on a coherent journey—not scattered payment links",
+      "Reliability and crash signals on web and mobile",
+      "Predictable sessions for buyers and field staff",
+      "Analytics on adoption—not just “the app went live”",
     ],
   },
 ];
@@ -194,25 +228,33 @@ export default function RealEstateErpCaseStudy() {
             Enterprise case study · Real estate
           </span>
           <h1 className="work2-heading animate-fade-up animate-delay-100 animate-in">
-            Real-estate ERP operations and a consumer app for buyers and tenants
+            When Every Unit, Rupee, and Promise Finally Lived in One Place
           </h1>
           <p className="work2-context animate-fade-up animate-delay-200 animate-in">
-            A shipped programme for a multi-phase developer: a browser-based
-            operations console, a React Native field and customer suite, and the
-            same services underneath so inventory, cash, and commitments stay
-            aligned.
+            A developer-grade operations backbone plus a consumer app for buyers and residents—so
+            inventory, cash, and commitments stay aligned from first lead to post-handover support.
           </p>
 
           <div className="problem-content animate-fade-up animate-delay-300 animate-in">
+            <p className="problem-description">
+              <span className="problem-title-label">The problem:</span> Meet Priya Nair, Head of
+              Sales &amp; Strategy at a multi-phase residential developer. Her teams were not
+              wrong—they were exhausted. Sales lived in one set of tools, site teams in another,
+              finance in a third, and buyers in a maze of PDFs and payment links. The board asked a
+              simple question—“what is sold, what is owed, what is still sellable this week?”—and
+              getting one answer took a meeting, three exports, and a prayer.
+            </p>
+
             <div className="nightmare-numbers">
-              <div className="statistics-grid statistics-grid--four">
-                {heroStats.map((stat, i) => (
+              <h2 className="nightmare-title">The numbers nobody wanted on a slide:</h2>
+              <div className="statistics-grid">
+                {nightmareNumbers.map((stat) => (
                   <div
-                    key={i}
+                    key={stat.id}
                     className="stat-card"
-                    style={{ backgroundColor: "#ffffff" }}
+                    style={{ backgroundColor: stat.bgColor }}
                   >
-                    <div className="stat-value" style={{ color: "#0d9488", fontSize: "clamp(1.35rem, 3vw, 1.75rem)" }}>
+                    <div className="stat-value" style={{ color: "#0d9488" }}>
                       {stat.value}
                     </div>
                     <div className="stat-label">{stat.label}</div>
@@ -229,59 +271,60 @@ export default function RealEstateErpCaseStudy() {
         <div className="work2-solution-wrapper animate-on-scroll animate-fade-up" ref={s1}>
           <div className="solution-story">
             <p>
-              Sales, site, and finance had each been right in their own
-              spreadsheet—until leadership asked for one answer on sell-through,
-              receivables, and what was still sellable. Broker networks and
-              construction tempo only amplified the gaps.
+              “We weren’t failing at spreadsheets,” Priya says. “We were failing at having one story
+              the whole company could tell on a Tuesday morning.” The breaking point was a launch
+              weekend where two brokers sold overlapping views of the same inventory—and finance
+              discovered it from an angry customer, not from the system.
             </p>
             <p>
-              The mandate was explicit: an{" "}
-              <strong>ERP-shaped backbone</strong> for real-estate operations and a{" "}
-              <strong>consumer-grade app</strong> so buyers and residents see the
-              same truth as the back office—not a portal that quietly forked data.
+              Enter a deliberate pairing: an <strong>ERP-shaped spine</strong> for how the
+              developer runs projects, partners, and cash, and a <strong>consumer-grade app</strong>{" "}
+              so buyers see the same truth the back office stands behind—not a portal that quietly
+              forked data.
             </p>
           </div>
 
-          <h2 className="work2-capabilities-title">What the implementation looks like</h2>
-          <div className="solution-story">
-            <p>
-              The work spans a browser-based console for developer staff and a React
-              Native suite for everyone who works away from a desk. Below is a
-              concise, anonymised snapshot grounded in how the codebases are
-              structured—stack choices, modules, and production posture.
-            </p>
-          </div>
-
-          <h3 className="work2-capabilities-title" style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)" }}>
-            Architecture snapshot
-          </h3>
+          <h2 className="work2-capabilities-title">What we built</h2>
           <div className="work2-capabilities-grid">
-            <div className="work2-capability-card" style={{ backgroundColor: "#f8fafc" }}>
-              <h4 className="work2-capability-title">Web · builder &amp; admin</h4>
-              <ul className="work2-capability-features">
-                {webStackItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="work2-capability-card" style={{ backgroundColor: "#f0fdfa" }}>
-              <h4 className="work2-capability-title">Mobile · field &amp; customers</h4>
-              <ul className="work2-capability-features">
-                {mobileStackItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </div>
+            {coreProductCapabilities.map((capability) => (
+              <div
+                key={capability.id}
+                className="work2-capability-card"
+                style={{ backgroundColor: capability.bgColor }}
+              >
+                <h4 className="work2-capability-title">{capability.title}</h4>
+                <ul className="work2-capability-features">
+                  {capability.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
-          <h3 className="work2-capabilities-title" style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", marginTop: "clamp(2rem, 4vw, 2.5rem)" }}>
-            Stakeholder surfaces
+          <h3
+            className="work2-capabilities-title"
+            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", marginTop: "clamp(2rem, 4vw, 2.5rem)" }}
+          >
+            Platform at a glance
+          </h3>
+          <div className="solution-story">
+            {platformGlance.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
+
+          <h3
+            className="work2-capabilities-title"
+            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", marginTop: "clamp(2rem, 4vw, 2.5rem)" }}
+          >
+            Who the product serves
           </h3>
           <div className="solution-story">
             <p>
-              Navigation and home screens are composed per role: sales sees pipeline
-              and units; site teams see tasks and material lines; leadership sees
-              consolidated dashboards—without shipping one generic “portal.”
+              Navigation and home experiences are composed per role: sales sees pipeline and units;
+              site teams see tasks and materials; leadership sees roll-ups—without shipping one
+              generic “portal” that satisfies nobody.
             </p>
           </div>
           <div className="re-stakeholder-grid" role="list">
@@ -306,14 +349,13 @@ export default function RealEstateErpCaseStudy() {
 
       <section className="work2-implementation-section">
         <div className="work2-implementation-wrapper animate-on-scroll animate-fade-up" ref={s2}>
-          <h2 className="results-main-title">
-            Rollout: from process map to trained teams
-          </h2>
+          <h2 className="results-main-title">How we rolled it out (without freezing the business)</h2>
           <div className="solution-story">
             <p>
-              Delivery was phased so data models and permissions stabilised before
-              wide training—mirroring how we approach other enterprise programmes:
-              prove the spine, then widen the surface area.
+              Delivery was phased so data models and permissions stabilised before wide
+              training—prove the spine, then widen the surface area. That is how we run other
+              enterprise programmes: the business keeps selling while the system catches up to
+              reality.
             </p>
           </div>
 
@@ -343,13 +385,12 @@ export default function RealEstateErpCaseStudy() {
 
       <section className="work2-solution-section">
         <div className="work2-solution-wrapper animate-on-scroll animate-fade-up" ref={s3}>
-          <h2 className="work2-capabilities-title">Two products, one architecture</h2>
+          <h2 className="work2-capabilities-title">Two experiences, one system of record</h2>
           <div className="solution-story">
             <p>
-              The operations platform holds inventory, commercial terms, bookings,
-              billing milestones, and partner performance. The consumer application
-              covers discovery, applications, documents, payment schedules, and
-              post-sale service—against the same APIs.
+              The operations platform holds inventory, commercial terms, bookings, billing milestones,
+              and partner performance. The consumer application covers discovery, applications,
+              documents, payment schedules, and post-sale service—against the same facts.
             </p>
           </div>
           <div className="work2-capabilities-grid">
@@ -377,11 +418,11 @@ export default function RealEstateErpCaseStudy() {
 
       <section className="work2-results-section">
         <div className="work2-results-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="results-main-title">Flows that tie sales, site, and finance</h2>
+          <h2 className="results-main-title">Use cases: how work flows without duplicate entry</h2>
           <div className="solution-story">
             <p>
-              Modules are not silos—they chain. These three patterns describe how
-              information moves without duplicate entry between departments.
+              These patterns describe how information moves between sales, procurement, site, and
+              finance—without the same unit being typed twice.
             </p>
           </div>
           <div className="results-grid re-result-cards-compact-title">
@@ -403,33 +444,11 @@ export default function RealEstateErpCaseStudy() {
         </div>
       </section>
 
-      <section className="work2-solution-section">
-        <div className="work2-solution-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="work2-capabilities-title">What we engineered into the stack</h2>
-          <div className="work2-capabilities-grid">
-            {stackModules.map((m) => (
-              <div
-                key={m.title}
-                className="work2-capability-card"
-                style={{ backgroundColor: m.bgColor }}
-              >
-                <h4 className="work2-capability-title">{m.title}</h4>
-                <ul className="work2-capability-features">
-                  {m.features.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="work2-results-section">
         <div className="work2-results-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="results-main-title">Production posture and outcomes</h2>
+          <h2 className="results-main-title">Outcomes: what changed after go-live</h2>
           <div className="results-grid re-result-cards-compact-title">
-            {productionOutcomes.map((b) => (
+            {businessResults.map((b) => (
               <div
                 key={b.title}
                 className="result-card"

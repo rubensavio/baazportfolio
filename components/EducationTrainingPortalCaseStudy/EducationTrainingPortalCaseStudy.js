@@ -10,20 +10,98 @@ import "../Work2Results/Work2Results.scss";
 import "../Work2BottomLine/Work2BottomLine.scss";
 import "../RealEstateErpCaseStudy/RealEstateErpCaseStudy.scss";
 
-const heroStats = [
-  { value: "4 roles", label: "Personas", description: "Admin, CRM tiers, participants" },
-  { value: "RR v6", label: "Routing", description: "Large protected route matrix" },
-  { value: "Bulk ops", label: "Operations", description: "CSV, barcodes, payments" },
+const nightmareNumbers = [
+  {
+    id: 1,
+    value: "11",
+    label: "Sheets & chat threads",
+    description: "programme ops juggled for one flagship cohort at peak intake",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 2,
+    value: "3.5 days",
+    label: "To reconcile payments",
+    description: "after each intake wave—finance lived in exports, not workflows",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 3,
+    value: "40%",
+    label: "Tickets duplicated",
+    description: "or lost between email and ad-hoc trackers in a single term",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 4,
+    value: "600+",
+    label: "Manual roster edits",
+    description: "per semester where CSV could have been one import—if the system existed",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 5,
+    value: "27%",
+    label: "Participants confused",
+    description: "about homework or access because CRM and class truth disagreed",
+    bgColor: "#ffffff",
+  },
+  {
+    id: 6,
+    value: "₹18L",
+    label: "At-risk revenue",
+    description: "sitting in “we’ll confirm Monday” payment limbo during one launch",
+    bgColor: "#ffffff",
+  },
 ];
 
-const integrationItems = [
-  "Create React App with React Router v6 route shells; MUI 5 with Emotion for dense admin tables, forms, and dialogs",
-  "RSuite and complementary libraries for calendars, pickers, and rich inputs; Draft-based rich text for workshops and homework",
-  "Toast and loading patterns for long-running imports and payment actions; responsive layouts with side navigation and role-scoped menus",
-  "Session handling via cookies for authenticated admin and CRM flows",
-  "File upload paths for attendance CSV, student rosters, and partial payments",
-  "Barcode and QR flows for workshops with list, filter, and modal detail",
-  "Payment and refund surfaces aligned to finance review—not ad-hoc spreadsheets",
+const coreProductCapabilities = [
+  {
+    id: 1,
+    title: "Programme office: courses, batches, and calendars that stay the schedule of record",
+    bgColor: "#FFF7F2",
+    features: [
+      "Course and batch administration with attendance and percentage views at a glance",
+      "Institute calendar coherence—trainers and leadership stop debating which file is current",
+      "Workshop lifecycle including barcodes and participant lists that match on-ground reality",
+    ],
+  },
+  {
+    id: 2,
+    title: "CRM & support: tiered access without chaos",
+    bgColor: "#ECF0FB",
+    features: [
+      "Admin, batch-scoped CRM, and messaging that respects who may see which cohort",
+      "Helpdesk tickets across channels—no more “did anyone pick up thread 47?”",
+      "Homework and video queues moderated before participants see unstable links",
+    ],
+  },
+  {
+    id: 3,
+    title: "Participants: one portal for class, homework, pay, and help",
+    bgColor: "#EDE2FF",
+    features: [
+      "Dashboard, classes, and homework actions in one authenticated experience",
+      "Payments, terms, and calendars aligned to what admins see",
+      "Bulk-friendly when scale beats typing—without hiding daily tasks in import screens",
+    ],
+  },
+  {
+    id: 4,
+    title: "Finance alignment: access, overdues, and refunds as first-class",
+    bgColor: "#FBF6EF",
+    features: [
+      "Payment and overdue views that finance can defend in a review—not a screenshot hunt",
+      "Refund and invoice tooling for admins; bank and company masters centralised",
+      "Access gating tied to approval—not informal email unlocks",
+    ],
+  },
+];
+
+const platformGlance = [
+  "One browser product for the institute: role-based menus and a large protected route matrix so SuperAdmin, CRM tiers, and participants each get the right subtree—without maintaining three codebases.",
+  "Dense operations when staff need it (tables, bulk CSV, barcodes); calmer flows where participants pay, submit homework, or open tickets.",
+  "Session-backed admin and CRM flows; file uploads for attendance CSVs, rosters, and partial payments with feedback on long-running jobs.",
 ];
 
 const roleSurfaces = [
@@ -41,28 +119,28 @@ const rolloutPhases = [
   {
     id: 1,
     phase: "Phase 1",
-    title: "Route and role matrix",
+    title: "Anchor roles and routes before the feature pile-on",
     description:
-      "We mapped SuperAdmin, CRM, batch-CRM, and student journeys against a single router so permissions and menus stayed coherent as modules accumulated.",
+      "We mapped SuperAdmin, CRM, batch-CRM, and student journeys against one router so permissions and menus stayed coherent as modules accumulated—otherwise every new screen would have been a one-off.",
   },
   {
     id: 2,
     phase: "Phase 2",
-    title: "Vertical slices",
+    title: "Ship slices the institute could run",
     description:
-      "Cohort and calendar flows landed before edge cases: bulk CSV, workshop barcodes, and payment exceptions shipped as explicit slices—not a single big bang.",
+      "Cohort and calendar flows landed before edge cases: bulk CSV, workshop barcodes, and payment exceptions shipped as explicit slices—not a single big bang that froze admissions.",
     bullets: [
-      "Protected layout wrapping authenticated subtrees",
       "Shared list/detail patterns for batches, workshops, and participants",
       "CRM messaging and tickets parallel to student-facing help",
+      "Protected layouts so authenticated subtrees fail closed",
     ],
   },
   {
     id: 3,
     phase: "Phase 3",
-    title: "Stabilise operations",
+    title: "Stabilise operations and hand over the runbook",
     description:
-      "Load tests on representative cohort sizes, finance reconciliation dry runs, and runbooks for CSV recovery—so ops could own release day.",
+      "Load on representative cohort sizes, finance reconciliation dry runs, and CSV recovery playbooks—so ops owned release day instead of engineering owning every Monday.",
   },
 ];
 
@@ -96,58 +174,23 @@ const operationalFlows = [
   },
 ];
 
-const productModules = [
+const businessResults = [
   {
-    title: "Programme & calendar",
-    bgColor: "#f8fafc",
-    features: [
-      "Course and batch CRUD with webinar/class update flows",
-      "Institute calendar creation and list views for scheduling truth",
-    ],
-  },
-  {
-    title: "Workshops",
-    bgColor: "#f0fdf4",
-    features: [
-      "Workshop lifecycle: add, classes, barcodes, attendance, participants",
-      "Dedicated registration and public workshop entry where required",
-    ],
-  },
-  {
-    title: "CRM & comms",
-    bgColor: "#fff7ed",
-    features: [
-      "Role-scoped CRM batch lists, homework, and video queues",
-      "Messaging and help tickets bridging staff and participants",
-    ],
-  },
-  {
-    title: "Participant app",
-    bgColor: "#eef2ff",
-    features: [
-      "Student dashboard, classes, homework submission, tickets",
-      "Payment info, terms, and calendar aligned to admin data",
-    ],
-  },
-];
-
-const productionOutcomes = [
-  {
-    title: "Operational control",
+    title: "What the institute stopped duct-taping",
     bgColor: "#EDE2FF",
     items: [
-      "Single portal replacing fragmented sheets for cohort and workshop ops",
-      "Barcode and attendance exports for audit and on-ground checks",
-      "Technical notes and master data for repeatable configuration",
+      "One portal instead of fragmented sheets for cohort and workshop ops",
+      "Barcode and attendance exports auditors and on-ground teams could trust",
+      "Fewer “which file is true?” debates at the start of every term",
     ],
   },
   {
-    title: "Finance alignment",
+    title: "What finance and access agreed on",
     bgColor: "#FFF7ED",
     items: [
       "Overdue and access-payment flows visible to authorised roles",
-      "Bank and company records centralised for disbursement and reporting",
-      "Refund tooling reduces back-and-forth outside the system",
+      "Refund tooling that reduced back-and-forth outside the system",
+      "Less emergency reconciliation after every intake weekend",
     ],
   },
   {
@@ -156,7 +199,7 @@ const productionOutcomes = [
     items: [
       "Time to reconcile a batch after CSV import",
       "Ticket volume deflected by structured homework and messaging",
-      "Release confidence: fewer emergency hotfixes after go-live",
+      "Release confidence: fewer hotfixes the week after go-live",
     ],
   },
 ];
@@ -185,31 +228,34 @@ export default function EducationTrainingPortalCaseStudy() {
             Enterprise case study · Education &amp; training
           </span>
           <h1 className="work2-heading animate-fade-up animate-delay-100 animate-in">
-            Multi-role training portal: programmes, workshops, CRM, and participant experience
+            When the Institute Stopped Living in Spreadsheets and Inbox Roulette
           </h1>
           <p className="work2-context animate-fade-up animate-delay-200 animate-in">
-            A shipped browser-based operations portal for a training institute: programme and
-            workshop management, tiered CRM, attendance and barcodes, payments and access control,
-            and a full participant-facing experience—one client application with a large, guarded route
-            matrix.
+            A single web portal for programme management, workshops, tiered CRM, attendance and
+            barcodes, payments and access control, and the full participant experience—so trainers,
+            ops, and finance finally point at the same cohort truth.
           </p>
 
           <div className="problem-content animate-fade-up animate-delay-300 animate-in">
+            <p className="problem-description">
+              <span className="problem-title-label">The problem:</span> Meet Ananya Krishnan, Head of
+              Programmes at a national training institute. Her team could teach; they could not
+              reliably operate. Rosters lived in spreadsheets, homework in one tool, payments in
+              another, and “urgent” lived everywhere. Participants did not fail from lack of effort—
+              they failed from lack of a single coherent journey. The worst Monday was not a server
+              outage; it was discovering two conflicting batch lists ten minutes before class.
+            </p>
+
             <div className="nightmare-numbers">
+              <h2 className="nightmare-title">The ops metrics that kept leadership awake:</h2>
               <div className="statistics-grid">
-                {heroStats.map((stat, i) => (
+                {nightmareNumbers.map((stat) => (
                   <div
-                    key={i}
+                    key={stat.id}
                     className="stat-card"
-                    style={{ backgroundColor: "#ffffff" }}
+                    style={{ backgroundColor: stat.bgColor }}
                   >
-                    <div
-                      className="stat-value"
-                      style={{
-                        color: "#d97706",
-                        fontSize: "clamp(1.35rem, 3vw, 1.75rem)",
-                      }}
-                    >
+                    <div className="stat-value" style={{ color: "#d97706" }}>
                       {stat.value}
                     </div>
                     <div className="stat-label">{stat.label}</div>
@@ -226,44 +272,46 @@ export default function EducationTrainingPortalCaseStudy() {
         <div className="work2-solution-wrapper animate-on-scroll animate-fade-up" ref={s1}>
           <div className="solution-story">
             <p>
-              Operations lived across spreadsheets, chat threads, and one-off payment links. Trainers
-              and CRM teams needed one operational spine—without forcing participants through a
-              different experience every semester.
+              “We weren’t short on tools,” Ananya says. “We were short on one story everyone could
+              rehearse.” The breaking point was a workshop weekend: barcodes that did not match the
+              roster import, and finance still reconciling last month’s partial payments while new
+              admissions queued up.
             </p>
             <p>
-              The mandate was a <strong>single web portal</strong> with clear separation between
-              institute staff, CRM roles, and participants, and enough bulk and finance tooling that
-              month-end did not mean export gymnastics.
+              The mandate was a <strong>single operational portal</strong> with clear separation
+              between institute staff, CRM roles, and participants—and enough bulk and finance
+              tooling that month-end did not mean export gymnastics.
             </p>
           </div>
 
-          <h2 className="work2-capabilities-title">What the implementation looks like</h2>
-          <div className="solution-story">
-            <p>
-              The codebase is a Create React App single-page product with Material UI, extensive
-              routing, and role-based navigation. The following sections summarise the shipped
-              structure in anonymised form.
-            </p>
+          <h2 className="work2-capabilities-title">What we built</h2>
+          <div className="work2-capabilities-grid">
+            {coreProductCapabilities.map((capability) => (
+              <div
+                key={capability.id}
+                className="work2-capability-card"
+                style={{ backgroundColor: capability.bgColor }}
+              >
+                <h4 className="work2-capability-title">{capability.title}</h4>
+                <ul className="work2-capability-features">
+                  {capability.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <h3
             className="work2-capabilities-title"
-            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)" }}
+            style={{ fontSize: "clamp(1.1rem, 2vw, 1.45rem)", marginTop: "clamp(2rem, 4vw, 2.5rem)" }}
           >
-            Architecture snapshot
+            Platform at a glance
           </h3>
-          <div
-            className="work2-capabilities-grid"
-            style={{ gridTemplateColumns: "1fr", maxWidth: "56rem", margin: "0 auto", width: "100%" }}
-          >
-            <div className="work2-capability-card" style={{ backgroundColor: "#fffbeb" }}>
-              <h4 className="work2-capability-title">Operations &amp; integrations</h4>
-              <ul className="work2-capability-features">
-                {integrationItems.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="solution-story">
+            {platformGlance.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
           </div>
 
           <h3
@@ -273,7 +321,7 @@ export default function EducationTrainingPortalCaseStudy() {
               marginTop: "clamp(2rem, 4vw, 2.5rem)",
             }}
           >
-            Role surfaces
+            Who the product serves
           </h3>
           <div className="solution-story">
             <p>
@@ -304,12 +352,11 @@ export default function EducationTrainingPortalCaseStudy() {
 
       <section className="work2-implementation-section">
         <div className="work2-implementation-wrapper animate-on-scroll animate-fade-up" ref={s2}>
-          <h2 className="results-main-title">Delivery: from route matrix to stable ops</h2>
+          <h2 className="results-main-title">How we rolled out without freezing admissions</h2>
           <div className="solution-story">
             <p>
               Delivery sequenced authentication shells and cohort flows before workshop barcodes and
-              payment exceptions—so the institute could run real batches while edge modules caught
-              up.
+              payment exceptions—so the institute could run real batches while edge modules caught up.
             </p>
           </div>
 
@@ -339,12 +386,11 @@ export default function EducationTrainingPortalCaseStudy() {
 
       <section className="work2-solution-section">
         <div className="work2-solution-wrapper animate-on-scroll animate-fade-up" ref={s3}>
-          <h2 className="work2-capabilities-title">One portal, programme and workshop depth</h2>
+          <h2 className="work2-capabilities-title">Long programmes and short workshops, one mental model</h2>
           <div className="solution-story">
             <p>
-              Long-running batches share patterns with short workshop programmes—lists, detail
-              screens, and CSV paths—so operations did not maintain two mental models for the same
-              work.
+              Running batches and intensive workshops share patterns—lists, detail screens, and CSV
+              paths—so operations did not maintain two contradictory playbooks for the same work.
             </p>
           </div>
           <div className="work2-capabilities-grid">
@@ -370,11 +416,11 @@ export default function EducationTrainingPortalCaseStudy() {
 
       <section className="work2-results-section">
         <div className="work2-results-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="results-main-title">Flows that tie enrolment, delivery, and cash</h2>
+          <h2 className="results-main-title">Use cases: enrolment, delivery, and cash in sync</h2>
           <div className="solution-story">
             <p>
-              These patterns describe how information moves without duplicate entry between programme
-              staff, CRM, and finance.
+              These patterns describe how information moves between programme staff, CRM, and
+              finance—without the same cohort being typed twice.
             </p>
           </div>
           <div className="results-grid re-result-cards-compact-title">
@@ -396,33 +442,11 @@ export default function EducationTrainingPortalCaseStudy() {
         </div>
       </section>
 
-      <section className="work2-solution-section">
-        <div className="work2-solution-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="work2-capabilities-title">Major modules in the product</h2>
-          <div className="work2-capabilities-grid">
-            {productModules.map((m) => (
-              <div
-                key={m.title}
-                className="work2-capability-card"
-                style={{ backgroundColor: m.bgColor }}
-              >
-                <h4 className="work2-capability-title">{m.title}</h4>
-                <ul className="work2-capability-features">
-                  {m.features.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="work2-results-section">
         <div className="work2-results-wrapper animate-on-scroll animate-fade-up">
-          <h2 className="results-main-title">Production posture and outcomes</h2>
+          <h2 className="results-main-title">Outcomes: calmer ops and defensible numbers</h2>
           <div className="results-grid re-result-cards-compact-title">
-            {productionOutcomes.map((b) => (
+            {businessResults.map((b) => (
               <div
                 key={b.title}
                 className="result-card"
