@@ -11,11 +11,11 @@ export const metadata = {
   alternates: getAlternates(path),
   title: "Real-Estate ERP & Consumer App | Case Study | Baaz",
   description:
-    "Anonymous case study: real-estate operations console plus React Native field app—inventory-to-cash, multi-role workflows, procurement, and production-grade analytics for a multi-phase developer.",
+    "Case study with Karan Sehgal: real-estate operations console plus consumer app—marketing-to-sales alignment, site and procurement, inventory-to-cash, and channel governance for a multi-project developer.",
   openGraph: {
     title: "Real-Estate ERP & Consumer App | Baaz",
     description:
-      "Case study: real-estate ERP backbone plus consumer app—inventory, bookings, collections, and field alignment for developers and channel partners.",
+      "Founder-led developer: one ERP spine from campaigns and leads to site tasks, vendors, and collections—plus a buyer app aligned to the same data.",
     url: `${baseUrl}${path}`,
     siteName: "Baaz",
     images: [

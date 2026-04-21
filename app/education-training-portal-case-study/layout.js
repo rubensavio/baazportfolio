@@ -11,11 +11,11 @@ export const metadata = {
   alternates: getAlternates(path),
   title: "Education & Training Operations Portal | Case Study | Baaz",
   description:
-    "Anonymous case study: React SPA for cohort and workshop operations—multi-role CRM, attendance, barcodes, payments, homework, and participant experience on one MUI-based portal.",
+    "Case study with Rahul Jain: national training institute portal—multi-city workshops, long cohorts, tiered CRM, GST-aware payments, barcodes, homework, and participant UX in one product.",
   openGraph: {
     title: "Education & Training Operations Portal | Case Study | Baaz",
     description:
-      "Multi-role training portal: programmes, workshops, CRM, and participant journeys—Create React App, MUI, and a large guarded route matrix.",
+      "Founder-led institute at scale: one browser portal for metro workshops, cohorts, coaches, finance, and alumni-style volume—without duplicate rosters.",
     url: `${baseUrl}${path}`,
     siteName: "Baaz",
     images: [

@@ -1,4 +1,4 @@
-/** FAQ copy and JSON-LD for the anonymous real-estate ERP case study route. */
+/** FAQ copy and JSON-LD for the real-estate ERP case study route. */
 
 export const REAL_ESTATE_ERP_CASE_STUDY_FAQ_HEADING =
   "Real-estate ERP — questions this case study answers";
@@ -22,7 +22,8 @@ export const REAL_ESTATE_ERP_CASE_STUDY_FAQ_ITEMS = [
       "It means a unit’s status, pricing history, hold rules, booking, agreement, and collection schedule stay connected from first expression of interest through handover. Finance sees receivables ageing tied to real inventory state; sales sees what is actually sellable—not a shadow forecast in email.",
   },
   {
-    question: "How do integrations typically work with existing finance or CRM tools?",
+    question:
+      "How do integrations typically work with existing finance or CRM tools?",
     answer:
       "Core workflows stay in the operations platform for operational truth, while summaries and journals sync to accounting stacks and optional CRM or marketing tools via APIs and scheduled exports. The goal is one operational spine with controlled handoffs—not duplicate manual entry at every boundary.",
   },
