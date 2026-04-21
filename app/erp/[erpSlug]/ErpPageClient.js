@@ -134,6 +134,85 @@ export default function ErpPageClient({ data }) {
         </section>
       )}
 
+      {/* ── 3b. AI-native EHR / revenue cycle (healthcare only, when configured) ── */}
+      {data.aiEhrSection && (
+        <section
+          className="erp-ai-ehr"
+          aria-labelledby="erp-ai-ehr-heading"
+        >
+          <div className="erp-section-container">
+            <p className="erp-ai-ehr-eyebrow">Differentiation</p>
+            <h2 id="erp-ai-ehr-heading" className="erp-section-title">
+              {data.aiEhrSection.title}
+            </h2>
+            {data.aiEhrSection.lead && (
+              <p className="erp-section-lead">{data.aiEhrSection.lead}</p>
+            )}
+
+            {data.aiEhrSection.workflowSubtitle && (
+              <h3 className="erp-ai-ehr-subheading">
+                {data.aiEhrSection.workflowSubtitle}
+              </h3>
+            )}
+            <div className="erp-ai-ehr-grid">
+              {data.aiEhrSection.workflowFeatures?.map((item, i) => (
+                <div key={i} className="erp-ai-ehr-card">
+                  <h4 className="erp-ai-ehr-card-title">{item.title}</h4>
+                  <p className="erp-ai-ehr-card-desc">{item.description}</p>
+                </div>
+              ))}
+            </div>
+
+            {data.aiEhrSection.strategicTitle && (
+              <h3 className="erp-ai-ehr-subheading erp-ai-ehr-subheading--spaced">
+                {data.aiEhrSection.strategicTitle}
+              </h3>
+            )}
+            {data.aiEhrSection.strategicLead && (
+              <p className="erp-ai-ehr-strategic-lead">{data.aiEhrSection.strategicLead}</p>
+            )}
+            <div className="erp-ai-ehr-grid">
+              {data.aiEhrSection.strategicFeatures?.map((item, i) => (
+                <div key={i} className="erp-ai-ehr-card">
+                  <h4 className="erp-ai-ehr-card-title">{item.title}</h4>
+                  <p className="erp-ai-ehr-card-desc">{item.description}</p>
+                </div>
+              ))}
+            </div>
+
+            {data.aiEhrSection.architectureTitle && (
+              <h3 className="erp-ai-ehr-subheading erp-ai-ehr-subheading--spaced">
+                {data.aiEhrSection.architectureTitle}
+              </h3>
+            )}
+            {data.aiEhrSection.architectureIntro && (
+              <p className="erp-ai-ehr-arch-intro">{data.aiEhrSection.architectureIntro}</p>
+            )}
+            <div className="erp-ai-ehr-layers">
+              {data.aiEhrSection.architectureLayers?.map((layer, i) => (
+                <div key={i} className="erp-ai-ehr-layer">
+                  <h4 className="erp-ai-ehr-layer-name">{layer.name}</h4>
+                  <ul className="erp-ai-ehr-layer-list">
+                    {layer.items.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {data.aiEhrSection.flywheelTitle && (
+              <h3 className="erp-ai-ehr-subheading erp-ai-ehr-subheading--spaced">
+                {data.aiEhrSection.flywheelTitle}
+              </h3>
+            )}
+            {data.aiEhrSection.flywheel && (
+              <p className="erp-ai-ehr-flywheel">{data.aiEhrSection.flywheel}</p>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* ── 4. Key Modules ── */}
       {data.keyModules && data.keyModules.length > 0 && (
         <section className="erp-modules" aria-labelledby="erp-modules-heading">
