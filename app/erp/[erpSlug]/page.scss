@@ -626,6 +626,17 @@
   }
 }
 
+/* Case study only: bridge line above the shared ERP lead (does not replace /erp layout) */
+.healthcare-patient-case-study-ai .healthcare-patient-case-study-ai-bridge {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.92rem, 1.25vw, 1.02rem);
+  font-weight: 500;
+  line-height: 1.65;
+  color: #4d525f;
+  margin: 0 0 1rem;
+  max-width: 56rem;
+}
+
 /* ═══════════════════════════════════════════
    Related case study
    ═══════════════════════════════════════════ */

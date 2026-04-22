@@ -6,6 +6,12 @@ export const HEALTHCARE_PATIENT_APP_CASE_STUDY_FAQ_HEADING =
 export const HEALTHCARE_PATIENT_APP_CASE_STUDY_FAQ_ITEMS = [
   {
     question:
+      "Why does the case study include AI-native EHR and revenue-cycle content on a patient app page?",
+    answer:
+      "The mobile product was one surface of a broader programme: the provider network also invested in AI-assisted intake, coding, denial prevention, and cost transparency on the revenue-cycle side. That stack feeds APIs the patient app consumes—for example cleaner insurance fields, eligibility-driven cost messaging, and fewer duplicate data-entry steps—so we document both halves in one narrative. See also our healthcare ERP page for the same AI feature set in context.",
+  },
+  {
+    question:
       "Why React Native with Redux and sagas for a patient-facing healthcare app?",
     answer:
       "The team needed one codebase for iOS and Android with predictable async behaviour: sagas isolate login, appointment lists, and other API flows from UI components, so screens stay testable and errors recover gracefully. That pattern scales as modules—lab, pharmacy, documents—ship on staggered timelines.",

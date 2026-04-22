@@ -3,12 +3,16 @@
 import React from "react";
 import Link from "next/link";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { HEALTHCARE_AI_EHR_SECTION } from "../../lib/healthcareAiEhrSection";
 import "../Work2Hero/Work2Hero.scss";
 import "../Work2Solution/Work2Solution.scss";
 import "../Work2Implementation/Work2Implementation.scss";
 import "../Work2Results/Work2Results.scss";
 import "../Work2BottomLine/Work2BottomLine.scss";
 import "../RealEstateErpCaseStudy/RealEstateErpCaseStudy.scss";
+import "../../app/erp/[erpSlug]/page.scss";
+
+const aiEhr = HEALTHCARE_AI_EHR_SECTION;
 
 const nightmareNumbers = [
   {
@@ -207,6 +211,7 @@ const businessResults = [
 export default function HealthcarePatientAppCaseStudy() {
   const heroRef = useScrollAnimation();
   const s1 = useScrollAnimation({ threshold: 0.15 });
+  const sAi = useScrollAnimation({ threshold: 0.12 });
   const s2 = useScrollAnimation({ threshold: 0.12 });
   const s3 = useScrollAnimation({ threshold: 0.12 });
 
@@ -348,6 +353,83 @@ export default function HealthcarePatientAppCaseStudy() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* AI-native EHR & revenue cycle — copy/order matches ErpPageClient; also remains on /erp/healthcare-companies via erpData.aiEhrSection (do not remove there). */}
+      <section
+        className="erp-ai-ehr healthcare-patient-case-study-ai"
+        aria-labelledby="healthcare-case-study-ai-heading"
+      >
+        <div className="erp-section-container animate-on-scroll animate-fade-up" ref={sAi}>
+          <p className="erp-ai-ehr-eyebrow">Differentiation</p>
+          <h2 id="healthcare-case-study-ai-heading" className="erp-section-title">
+            {aiEhr.title}
+          </h2>
+          <p className="healthcare-patient-case-study-ai-bridge">
+            <strong>On this engagement,</strong> the patient app was the member-facing surface; the
+            same programme shipped an AI-heavy EHR and revenue cycle behind it so eligibility,
+            coding, denials, and cost clarity could feed APIs the mobile product consumed.
+          </p>
+          {/* Same block order as /erp/healthcare-companies: lead under title, then Daily workflow */}
+          {aiEhr.lead && <p className="erp-section-lead">{aiEhr.lead}</p>}
+
+          {aiEhr.workflowSubtitle && (
+            <h3 className="erp-ai-ehr-subheading">{aiEhr.workflowSubtitle}</h3>
+          )}
+          <div className="erp-ai-ehr-grid">
+            {aiEhr.workflowFeatures?.map((item) => (
+              <div key={item.title} className="erp-ai-ehr-card">
+                <h4 className="erp-ai-ehr-card-title">{item.title}</h4>
+                <p className="erp-ai-ehr-card-desc">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {aiEhr.strategicTitle && (
+            <h3 className="erp-ai-ehr-subheading erp-ai-ehr-subheading--spaced">
+              {aiEhr.strategicTitle}
+            </h3>
+          )}
+          {aiEhr.strategicLead && (
+            <p className="erp-ai-ehr-strategic-lead">{aiEhr.strategicLead}</p>
+          )}
+          <div className="erp-ai-ehr-grid">
+            {aiEhr.strategicFeatures?.map((item) => (
+              <div key={item.title} className="erp-ai-ehr-card">
+                <h4 className="erp-ai-ehr-card-title">{item.title}</h4>
+                <p className="erp-ai-ehr-card-desc">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {aiEhr.architectureTitle && (
+            <h3 className="erp-ai-ehr-subheading erp-ai-ehr-subheading--spaced">
+              {aiEhr.architectureTitle}
+            </h3>
+          )}
+          {aiEhr.architectureIntro && (
+            <p className="erp-ai-ehr-arch-intro">{aiEhr.architectureIntro}</p>
+          )}
+          <div className="erp-ai-ehr-layers">
+            {aiEhr.architectureLayers?.map((layer) => (
+              <div key={layer.name} className="erp-ai-ehr-layer">
+                <h4 className="erp-ai-ehr-layer-name">{layer.name}</h4>
+                <ul className="erp-ai-ehr-layer-list">
+                  {layer.items.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {aiEhr.flywheelTitle && (
+            <h3 className="erp-ai-ehr-subheading erp-ai-ehr-subheading--spaced">
+              {aiEhr.flywheelTitle}
+            </h3>
+          )}
+          {aiEhr.flywheel && <p className="erp-ai-ehr-flywheel">{aiEhr.flywheel}</p>}
         </div>
       </section>
 
