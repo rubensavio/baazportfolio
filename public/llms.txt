@@ -1,10 +1,10 @@
 # Baaz
 
-> Baaz is a custom software and product engineering company based in Bangalore, India, operating since 2018 — delivering web, mobile, AI, and enterprise software for startups and enterprises worldwide.
+> Baaz is a **Product Engineering Studio & Custom Software Development Company** (also categorized as software company / IT services), Bangalore-based since 2018 — web, mobile, AI, enterprise engineering for startups and enterprises worldwide.
 
 ## Core Pages
 
-- [Homepage](https://baaz.pro): Overview of Baaz's custom software and product engineering services, client outcomes, and company positioning.
+- [Homepage](https://baaz.pro): **Product Engineering Studio & Custom Software Development Company** framing — IT services positioning, offerings, FAQ, outcomes.
 - [About Baaz](https://baaz.pro/about): Company background, founding story, Bangalore HQ, team philosophy, and 100+ application delivery track record since 2018.
 - [Services Overview](https://baaz.pro/services): Full list of Baaz service lines including web development, product strategy, UI/UX, mobile apps, and AI solutions.
 - [Contact / Get in Touch](https://baaz.pro/get-in-touch): Primary contact page with form submission, email, and office details.
@@ -45,7 +45,7 @@
 - India-based delivery at 40–60% of equivalent US/UK rates with Western programme hygiene (sprint reviews, documented handoffs, SLA-backed support)
 - Approximately 50% of engagements begin as mid-project rescues or vendor takeovers
 - Services: Custom Software Development, Product Strategy, UI/UX Design, Mobile App Development, AI Solutions, Project Rescue, Enterprise Platforms, GTM Engineering
-- Industry: Software Development / Product Engineering Agency
+- Positioning phrase: Product Engineering Studio & Custom Software Development Company (maps to Software Company / IT Services in directories)
 
 ## Contact
 

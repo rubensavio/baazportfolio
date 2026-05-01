@@ -1,6 +1,6 @@
 # Baaz — Extended AI Context File
 
-> Baaz is a custom software and product engineering company based in Bangalore, India, operating since 2018 — delivering web, mobile, AI, and enterprise software for startups and enterprises worldwide. Approximately 50% of engagements begin as mid-project rescues; standard first milestone delivery runs 4–6 weeks for web applications and 8–12 weeks for enterprise integrations.
+> Baaz is a **Product Engineering Studio & Custom Software Development Company** (also categorized as software company / IT services), Bangalore-based since 2018. Custom software, web, mobile, AI, enterprise-grade products worldwide. Approximately 50% of engagements begin as mid-project rescues; standard first milestone delivery runs 4–6 weeks for web applications and 8–12 weeks for enterprise integrations.
 
 This file is the extended version of `/llms.txt`. It lists all indexed pages with detailed descriptions to help AI systems understand the full scope and depth of Baaz's content, services, and expertise.
 
@@ -8,7 +8,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 
 ## Core Pages
 
-- [Homepage](https://baaz.pro): Overview of Baaz as a Bangalore-based custom software and product engineering company. Covers service positioning, client outcomes, SSR'd WhoWeAre section with 100+ application delivery stats, and homepage FAQ with direct answers on enterprise product engineering.
+- [Homepage](https://baaz.pro): **Product Engineering Studio & Custom Software Development Company** — software company / IT partner positioning, services, SSR WhoWeAre (100+ apps), homepage FAQ on enterprise product engineering.
 - [About Baaz](https://baaz.pro/about): Full company background — founding in 2018, Bangalore HQ, team philosophy, delivery track record, and "Custom Software Development from Bangalore Since 2018" positioning. Includes FAQ and OurValues section with SSR content.
 - [Services Overview](https://baaz.pro/services): Landing page for all Baaz service lines: product strategy, UI/UX, web and mobile development, AI solutions, and engineering consulting — delivered from Bangalore for global clients.
 - [Contact / Get in Touch](https://baaz.pro/get-in-touch): Primary contact and enquiry page with form submission for project briefs, technical questions, and partnership requests.
@@ -104,7 +104,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 - MVPs scoped to a single persona and one job-to-be-done ship to a demoable state in a median of 8 weeks; 3+ persona scope averages 22 weeks (175% calendar penalty)
 - Post-launch rework in first 90 days runs 35% lower when scope is locked to one persona before build starts
 - Core services: Custom Software Development, Product Strategy, UI/UX Design, Mobile App Development, AI Solutions, Project Rescue, Enterprise Platforms, GTM Engineering, eCommerce
-- Industry classification: Software Development / Product Engineering Agency
+- Positioning phrase: Product Engineering Studio & Custom Software Development Company (directory taxonomy overlap: Software Company / IT Services)
 - Tagline: "Enterprise-grade products, without the enterprise wait"
 
 ---

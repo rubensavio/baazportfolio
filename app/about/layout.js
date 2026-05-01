@@ -2,6 +2,7 @@ import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { ABOUT_FAQ_ITEMS } from "../../lib/aboutFaq";
 import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
+import { BRAND_POSITIONING_COMBINED } from "../../lib/brandPositioning";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -16,7 +17,7 @@ function buildFounderSchema() {
     jobTitle: "Co-founder",
     worksFor: { "@id": `${baseUrl}/#organization` },
     description:
-      "Co-founder of Baaz, a Bangalore-based software engineering company delivering enterprise product engineering since 2018.",
+      `Co-founder at Baaz, a ${BRAND_POSITIONING_COMBINED} headquartered in Bangalore, delivering enterprise product engineering since 2018.`,
     sameAs: ["https://in.linkedin.com/company/baazpro"],
     knowsAbout: [
       "Custom Software Development",
@@ -29,13 +30,13 @@ function buildFounderSchema() {
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: "About Baaz — Product Engineering Studio",
+  title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
   description:
-    "Meet Baaz: Bangalore software development and artificial intelligence company since 2018—team, values, research & product development for startups and enterprises.",
+    `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} based in Bangalore since 2018—team, values, AI-enabled delivery, research and product development.`,
   openGraph: {
-    title: "About Baaz — Product Engineering Studio",
+    title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
     description:
-      "Bangalore studio, global clients—team, values, and how we ship product engineering since 2018. Custom software with clear communication and honest scoping.",
+      `${BRAND_POSITIONING_COMBINED} based in Bangalore—team, values, global clients since 2018; software company framing with outcome-led builds.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
     images: [
@@ -43,15 +44,15 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "About Baaz — product engineering studio",
+        alt: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Baaz — Product Engineering Studio",
+    title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
     description:
-      "Bangalore product engineers for startups and enterprises—team, craft, culture, and how we work from discovery to launch. Get in touch.",
+      `Baaz—${BRAND_POSITIONING_COMBINED} based in Bangalore—team, craft, discovery to launch. Get in touch.`,
     images: [ogImage],
   },
 };

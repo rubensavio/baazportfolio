@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { BRAND_POSITIONING_COMBINED } from "../../lib/brandPositioning";
 import "./WhoWeAreSection.scss";
 
 const WhoWeAreSection = () => {
@@ -18,10 +19,9 @@ const WhoWeAreSection = () => {
 
         <div className="who-we-are-section-content animate-fade-up animate-delay-200 animate-in">
           <p className="who-we-are-section-direct-answer">
-            <strong>Baaz</strong> is a custom software and product engineering
-            company based in Bangalore, India, operating since 2018. We partner
-            with startups, scale-ups, and enterprises worldwide to ship
-            purposeful digital products.
+            <strong>Baaz</strong> is a {BRAND_POSITIONING_COMBINED}, based in
+            Bangalore, India, operating since 2018—shipping purposeful custom
+            software for startups, scale-ups, and enterprises worldwide.
           </p>
           <p className="who-we-are-section-paragraph">
             Since 2018 we have designed, developed, and launched over 100 web
