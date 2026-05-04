@@ -28,6 +28,6 @@ export default function robots() {
       ...allowedUserAgents.map((userAgent) => ({ userAgent, allow: "/" })),
       ...blockedUserAgents.map((userAgent) => ({ userAgent, disallow: "/" })),
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: [`${baseUrl}/sitemap.xml`, `${baseUrl}/image-sitemap`],
   };
 }

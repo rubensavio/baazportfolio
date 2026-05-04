@@ -4,9 +4,12 @@ import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../../components/FAQ/FAQ";
 import CTA from "../../../components/CTA/CTA";
 import Footer from "../../../components/Footer/Footer";
+import { getBlogRelatedInternalLinks } from "../../../lib/blogRelatedInternalLinks";
 import "./page.scss";
 
 export default function BlogPostPageClient({ slug, data }) {
+  const relatedInternalLinks = getBlogRelatedInternalLinks(slug);
+
   return (
     <div className="blog-page">
       <ClientNavbar />
@@ -177,18 +180,37 @@ export default function BlogPostPageClient({ slug, data }) {
           ))}
         </div>
 
+        <section
+          className="blog-contextual-internal"
+          aria-labelledby="blog-contextual-internal-heading"
+        >
+          <h2
+            id="blog-contextual-internal-heading"
+            className="blog-contextual-internal-title"
+          >
+            Related guides, services &amp; programmes
+          </h2>
+          <ul className="blog-contextual-internal-list">
+            {relatedInternalLinks.map((lnk) => (
+              <li key={lnk.href} className="blog-contextual-internal-item">
+                <Link href={lnk.href} className="blog-contextual-internal-link">
+                  {lnk.label}
+                  <span className="blog-contextual-internal-chevron" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {data.faqs && <FAQ faqs={data.faqs} />}
 
         <div className="blog-explore">
           <p className="blog-explore-text">
-            Explore{" "}
-            <Link href="/services/product-strategy">Product Strategy</Link>,{" "}
-            <Link href="/services/web-development">Custom Software</Link>, and{" "}
-            <Link href="/services/ai-solution">AI Development</Link>. If a build
-            has stalled, see{" "}
-            <Link href="/project-rescue">software project rescue</Link>. When
-            you are ready to talk,{" "}
-            <Link href="/get-in-touch">get in touch</Link>.
+            Want this distilled for your roadmap?{" "}
+            <Link href="/get-in-touch">Brief the Baaz squad</Link> or scan{" "}
+            <Link href="/case-studies">ship evidence in case studies</Link>.
           </p>
         </div>
       </article>

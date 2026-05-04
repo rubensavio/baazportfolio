@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import "./page.scss";
 
@@ -19,14 +20,17 @@ const Footer = dynamic(() => import("../../../components/Footer/Footer"), {
   ssr: false,
 });
 
-export default function ErpPageClient({ data }) {
+export default function ErpPageClient({
+  data,
+  relatedErpSolutions = [],
+}) {
   const erpSlug = data.slug;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [erpSlug]);
 
-  const heroAlt = `ERP background for ${data.title}`;
+  const heroAlt = `${data.title} — industry ERP landing page backdrop for implementation, modules, and integration planning by Baaz`;
 
   return (
     <div className="erp-page">
@@ -37,13 +41,15 @@ export default function ErpPageClient({ data }) {
       {/* ── 1. Hero ── */}
       <section className="erp-hero">
         <div className="erp-hero-background">
-          <img
+          <Image
             src="/assets/HomeHeroSectionBg.webp"
             alt={heroAlt}
+            fill
             className="erp-hero-bg-image"
-            width={1200}
-            height={600}
-            loading="lazy"
+            sizes="100vw"
+            quality={82}
+            priority
+            fetchPriority="high"
           />
         </div>
         <div className="erp-hero-wrapper">
@@ -341,6 +347,42 @@ export default function ErpPageClient({ data }) {
                 →
               </span>
             </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ── Related ERP solutions (cross-link pillar pages) ── */}
+      {relatedErpSolutions && relatedErpSolutions.length > 0 && (
+        <section
+          className="erp-related-solutions"
+          aria-labelledby="erp-related-solutions-heading"
+        >
+          <div className="erp-section-container">
+            <h2
+              id="erp-related-solutions-heading"
+              className="erp-section-title"
+            >
+              Related ERP solutions by industry
+            </h2>
+            <p className="erp-section-lead erp-related-solutions__lead">
+              Explore adjacent sector playbooks for modules, rollout patterns,
+              and integrations—whether you benchmark peers or stitch a hybrid
+              operating model across lines of business.
+            </p>
+            <ul className="erp-related-solutions__grid">
+              {relatedErpSolutions.map((entry) => (
+                <li key={entry.slug} className="erp-related-solutions__cell">
+                  <Link
+                    href={`/erp/${entry.slug}`}
+                    className="erp-related-solutions__link"
+                  >
+                    <span className="erp-related-solutions__title">
+                      {entry.title}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}

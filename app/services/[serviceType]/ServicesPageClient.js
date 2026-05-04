@@ -17,6 +17,7 @@ import {
   FiGlobe,
 } from "react-icons/fi";
 import { servicesData } from "../../../lib/servicesData";
+import { getTechnologyDeepDiveLinks } from "../../../lib/serviceTechnologyRoutes";
 import "./page.scss";
 
 const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
@@ -47,6 +48,7 @@ const CARD_ICON_MAP = {
 
 export default function ServicesPageClient({ serviceType }) {
   const serviceData = servicesData[serviceType];
+  const techDeepDives = getTechnologyDeepDiveLinks(serviceType);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -248,6 +250,40 @@ export default function ServicesPageClient({ serviceType }) {
               ))}
             </div>
           </div>
+        )}
+
+        {techDeepDives.length > 0 && (
+          <section
+            className="services-deep-dives"
+            aria-labelledby="services-deep-dives-heading"
+          >
+            <h2
+              id="services-deep-dives-heading"
+              className="services-section-heading"
+            >
+              Technology stacks we ship here
+            </h2>
+            <p className="services-deep-dives-lead">
+              Step into focused capability pages aligned to teams, toolchain
+              choices, and common integration patterns—from web runtimes through
+              data, AI workloads, and cloud delivery.
+            </p>
+            <ul className="services-deep-dives-list">
+              {techDeepDives.map((tech) => (
+                <li key={tech.slug} className="services-deep-dives-item">
+                  <Link
+                    href={tech.href}
+                    className="services-deep-dives-link"
+                  >
+                    {tech.label}
+                    <span className="services-deep-dives-chevron" aria-hidden="true">
+                      →
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
       </div>
 

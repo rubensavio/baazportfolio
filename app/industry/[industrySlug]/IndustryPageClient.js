@@ -19,7 +19,10 @@ const Footer = dynamic(() => import("../../../components/Footer/Footer"), {
   ssr: false,
 });
 
-export default function IndustryPageClient({ data }) {
+export default function IndustryPageClient({
+  data,
+  erpIndustryDeepLink = null,
+}) {
   const industrySlug = data.slug;
 
   useEffect(() => {
@@ -70,6 +73,23 @@ export default function IndustryPageClient({ data }) {
           </p>
         </div>
       )}
+
+      <div className="industry-erp-cross">
+        <p className="industry-erp-cross-text">
+          <strong>ERP & operations:</strong>{" "}
+          <Link href="/erp">Industry-specific ERP implementations</Link>
+          {erpIndustryDeepLink ? (
+            <>
+              {" "}
+              — including{" "}
+              <Link href={erpIndustryDeepLink.href}>
+                {erpIndustryDeepLink.label}
+              </Link>
+            </>
+          ) : null}
+          .
+        </p>
+      </div>
 
       <div className="industry-sections">
         {data.sections.map((section, index) => (

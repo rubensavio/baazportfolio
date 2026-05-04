@@ -12,6 +12,41 @@
   }
 }
 
+.industry-erp-cross {
+  width: calc(100% - 3rem);
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+
+  &-text {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: clamp(0.9rem, 1.35vw, 1.0625rem);
+    line-height: 1.6;
+    font-weight: 500;
+    color: #454a58;
+    margin: 0;
+    padding: 0.95rem clamp(1.1rem, 2.5vw, 1.5rem);
+    border-radius: 0.85rem;
+    border: 1px solid rgba(26, 26, 26, 0.08);
+    background: rgba(247, 248, 255, 0.88);
+
+    strong {
+      font-weight: 700;
+      color: #283040;
+      margin-right: 0.2rem;
+    }
+
+    a {
+      color: #5b71f6;
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .industry-hero {
   position: relative;
   width: calc(100% - 3rem);

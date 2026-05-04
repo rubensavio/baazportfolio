@@ -54,8 +54,8 @@ function buildTechBreadcrumbSchema(techSlug, data) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "Technology Capabilities",
-        item: `${baseUrl}/technologies`,
+        name: "Services",
+        item: `${baseUrl}/services`,
       },
       {
         "@type": "ListItem",

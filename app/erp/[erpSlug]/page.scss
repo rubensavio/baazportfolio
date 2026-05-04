@@ -713,6 +713,76 @@
   max-width: 56rem;
 }
 
+/* Related ERP pillar cross-links */
+.erp-related-solutions {
+  padding: clamp(2rem, 3.75vw, 2.85rem) 0 clamp(1.75rem, 3vw, 2.35rem);
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 52%, #ffffff 100%);
+  border-top: 1px solid #ebedf2;
+
+  &__lead {
+    max-width: 52rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: clamp(0.875rem, 2vw, 1.125rem);
+    list-style: none;
+    padding: 0;
+    margin: clamp(1.15rem, 2.5vw, 1.5rem) 0 0;
+  }
+
+  &__cell {
+    margin: 0;
+    display: flex;
+    min-height: 100%;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: clamp(1.05rem, 2vw, 1.35rem)
+      clamp(1.15rem, 2.35vw, 1.35rem);
+    border-radius: 12px;
+    border: 1px solid #ece7dd;
+    background: #ffffff;
+    box-shadow: 0 1px 0 rgba(26, 26, 26, 0.04);
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: #ddd5c8;
+      box-shadow: 0 8px 22px rgba(26, 26, 26, 0.07);
+      background: #fffefb;
+    }
+
+    &:hover .erp-related-solutions__title {
+      color: #3948b9;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #5b71f6;
+      outline-offset: 3px;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-urbanist), sans-serif;
+    font-size: clamp(0.98rem, 1.35vw, 1.0875rem);
+    font-weight: 700;
+    line-height: 1.42;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.18s ease;
+  }
+}
+
 /* ═══════════════════════════════════════════
    Related case study
    ═══════════════════════════════════════════ */

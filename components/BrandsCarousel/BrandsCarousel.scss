@@ -23,6 +23,7 @@
   display: flex;
   gap: var(--gap-size);
   align-items: center;
+  min-height: 120px;
   width: fit-content;
   animation: scrollContinuous var(--duration) linear infinite;
   will-change: transform;

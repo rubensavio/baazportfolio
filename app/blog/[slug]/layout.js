@@ -152,7 +152,7 @@ export default async function BlogPostLayout({ children, params }) {
         items={[
           { name: "Home", url: "/" },
           { name: "Blog", url: "/blog" },
-          { name: data.title },
+          { name: data.title, url: `/blog/${slug}` },
         ]}
       />
       <script

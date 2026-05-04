@@ -46,7 +46,7 @@ const Hero = () => {
           <div className="hero-illustration animate-fade-right animate-delay-300 animate-in">
             <Image
               src="/assets/HomeHeroSectionIcon.webp"
-              alt="Developer illustration"
+              alt="Custom software development illustration showing developers collaborating on laptops for startups and enterprise product builds"
               className="hero-icon animate-icon-in"
               width={2000}
               height={1484}
@@ -66,13 +66,11 @@ const Hero = () => {
       <div className="hero-background">
         <Image
           src="/assets/HomeHeroSectionBg.webp"
-          alt="Soft purple gradient background behind the hero"
+          alt="Baaz homepage hero backdrop — purple gradient framing the custom software headline"
           fill
           className="hero-bg-image"
           sizes="100vw"
           quality={82}
-          priority
-          fetchPriority="high"
         />
       </div>
     </section>

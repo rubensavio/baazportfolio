@@ -33,12 +33,10 @@ export const metadata = {
   alternates: getAlternates("/"),
   applicationName: "Baaz",
   title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
-  description:
-    `Baaz is a ${BRAND_POSITIONING_COMBINED} and Bangalore-based IT services partner for startups and enterprises—strategy, UI/UX, custom software, web, mobile, AI, and product engineering since 2018. Book a call to scope your build.`,
+  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} and Bangalore-based IT services partner for startups and enterprises—strategy, UI/UX, custom software, web, mobile, AI, and product engineering since 2018. Book a call to scope your build.`,
   openGraph: {
     title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
-    description:
-      `${BRAND_POSITIONING_COMBINED} based in Bangalore—strategy, UI/UX, web, mobile, and AI since 2018 for startups and enterprises. Book a call to discuss scope.`,
+    description: `${BRAND_POSITIONING_COMBINED} based in Bangalore—strategy, UI/UX, web, mobile, and AI since 2018 for startups and enterprises. Book a call to discuss scope.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -74,8 +72,7 @@ const structuredData = {
         width: 600,
         height: 60,
       },
-      description:
-        `Baaz is a ${BRAND_POSITIONING_COMBINED}—also categorized as a software company and IT services provider—based in Bangalore, operating since 2018. Enterprise product engineering covers strategy, UI/UX, full-stack web and mobile development, and post-launch scaling for startups and enterprises worldwide, with 100+ shipped applications per Baaz's internal portfolio records.`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}—also categorized as a software company and IT services provider—based in Bangalore, operating since 2018. Enterprise product engineering covers strategy, UI/UX, full-stack web and mobile development, and post-launch scaling for startups and enterprises worldwide, with 100+ shipped applications per Baaz's internal portfolio records.`,
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       founder: {
@@ -131,8 +128,7 @@ const structuredData = {
       name: `Baaz — ${BRAND_POSITIONING_COMBINED}`,
       url: baseUrl,
       image: `${baseUrl}/assets/Logo.svg`,
-      description:
-        `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation—strategy through design, build, and launch—for startups and enterprises worldwide.`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation—strategy through design, build, and launch—for startups and enterprises worldwide.`,
       serviceType: [
         BRAND_POSITIONING_COMBINED,
         "Software Company",
@@ -235,6 +231,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${urbanist.variable} ${outfit.variable}`}>
       <head>
+        <link
+          rel="preload"
+          href="/assets/HomeHeroSectionIcon.webp"
+          as="image"
+          type="image/webp"
+        />
         <Script id="google-tag-manager" strategy="beforeInteractive">
           {gtmScript}
         </Script>

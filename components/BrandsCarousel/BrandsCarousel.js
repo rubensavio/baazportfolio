@@ -149,7 +149,6 @@ const BrandsCarousel = () => {
                   key={`${brand.id}-${index}`}
                   className="brand-logo"
                   style={{
-                    width: brand.width,
                     height: brand.height,
                   }}
                 >

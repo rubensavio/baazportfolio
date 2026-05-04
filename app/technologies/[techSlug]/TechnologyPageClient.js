@@ -22,7 +22,9 @@ import {
   FiHeart,
   FiTool,
 } from "react-icons/fi";
+import Link from "next/link";
 import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesData";
+import { getRelatedServiceOfferingLinks } from "../../../lib/technologyServiceRoutes";
 import "../../services/[serviceType]/page.scss";
 import "./page.scss";
 
@@ -48,6 +50,7 @@ export default function TechnologyPageClient({ techSlug }) {
   const data = technologyCapabilitiesData[techSlug];
   const labelLower = data.label.toLowerCase();
   const stackGroups = data.stackGroups ?? [];
+  const relatedServiceOfferings = getRelatedServiceOfferingLinks(techSlug);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -218,6 +221,37 @@ export default function TechnologyPageClient({ techSlug }) {
               ))}
             </ul>
           </div>
+        )}
+
+        {relatedServiceOfferings.length > 0 && (
+          <section
+            className="tech-related-services-panel"
+            aria-labelledby="tech-related-services-heading"
+          >
+            <h2
+              id="tech-related-services-heading"
+              className="services-section-heading tech-related-services-panel__heading"
+            >
+              Where Baaz applies this stack
+            </h2>
+            <p className="tech-related-services-intro">
+              These engagement lines routinely pair with the toolchain above—from
+              first release through optimisation and runway.
+            </p>
+            <ul className="tech-related-services-list">
+              {relatedServiceOfferings.map((svc) => (
+                <li key={svc.slug} className="tech-related-services-item">
+                  <Link
+                    href={`/services/${svc.slug}`}
+                    className="tech-related-services-link"
+                  >
+                    {svc.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
       </div>
 

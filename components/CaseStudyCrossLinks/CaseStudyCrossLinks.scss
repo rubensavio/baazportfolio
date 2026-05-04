@@ -1,0 +1,63 @@
+.case-study-cross-links {
+  padding: clamp(2rem, 4vw, 2.75rem) clamp(1.25rem, 3vw, 2rem);
+
+  &__inner {
+    width: calc(100% - 3rem);
+    max-width: 720px;
+    margin: 0 auto;
+    border: 1px solid rgba(26, 26, 26, 0.09);
+    border-radius: 0.75rem;
+    padding: clamp(1.35rem, 2.8vw, 1.85rem)
+      clamp(1.35rem, 3vw, 1.85rem);
+    background: rgba(249, 250, 252, 0.65);
+    box-sizing: border-box;
+  }
+
+  &__eyebrow {
+    margin: 0 0 0.45rem;
+    font-family: var(--font-outfit), system-ui, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #697080;
+  }
+
+  &__title {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-urbanist), sans-serif;
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111827;
+    line-height: 1.2;
+  }
+
+  &__lead {
+    margin: 0 0 1.1rem;
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.62;
+    color: #5a5f6b;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  &__anchor {
+    font-family: var(--font-outfit), sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3948b9;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: #2c38a8;
+    }
+  }
+}
