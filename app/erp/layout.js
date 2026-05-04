@@ -6,7 +6,8 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/erp"),
-  title: "Custom ERP Development India | ERP Software Services | Baaz Bangalore",
+  title:
+    "Custom ERP Development India | ERP Software Services | Baaz Bangalore",
   description:
     "Custom ERP development & ERP software development services from Bangalore, India—manufacturing, healthcare, banking, insurance, logistics, construction, real estate & more. Phased ERP implementation with Baaz.",
   openGraph: {
@@ -26,7 +27,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom ERP Development India | Baaz Bangalore",
+    title: "Custom ERP Development | Baaz Bangalore",
     description:
       "Custom ERP & implementation services—manufacturing, healthcare, logistics, banking. Talk to Baaz engineers.",
     images: [ogImage],
