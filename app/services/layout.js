@@ -6,13 +6,14 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/services"),
-  title: "Product Engineering Services | Baaz",
+  title:
+    "Product Engineering & Enterprise Software Development | Baaz Bangalore",
   description:
-    "Software development services: product strategy, UI/UX, web, mobile, AI, and engineering consulting—delivered from Bangalore since 2018. Explore each service.",
+    "Product engineering services and enterprise software development from Bangalore since 2018—strategy, UI/UX, web, mobile, AI, integrations. Explore Baaz engagements.",
   openGraph: {
-    title: "Product Engineering Services | Baaz",
+    title: "Product Engineering & Enterprise Software Development | Baaz",
     description:
-      "Strategy through build: product consulting, design, web, mobile, and AI. Pick a service to see scope, FAQs, and fit.",
+      "Partner for product engineering programmes and scalable enterprise software—from discovery and UX to sustained delivery teams in India.",
     url: `${baseUrl}/services`,
     siteName: "Baaz",
     images: [
@@ -26,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Engineering Services | Baaz",
+    title: "Product Engineering & Enterprise Development | Baaz",
     description:
-      "Explore Baaz services—strategy, UX, web, mobile, AI—and find the right engagement for your roadmap.",
+      "Bangalore-led product engineering: strategy through build for teams that need disciplined enterprise software shipping.",
     images: [ogImage],
   },
 };

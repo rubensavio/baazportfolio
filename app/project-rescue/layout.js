@@ -7,7 +7,7 @@ const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
 
 const pageDescription =
-  "Stalled project or bad vendor? Baaz takes over mid-project, stabilizes codebase, and delivers outcomes—50%+ of our work is rescues. Book a free codebase audit.";
+  "Software project rescue in India—mid-project takeover, codebase stabilization, and delivery without restarting from zero. Bangalore-based Baaz; 50%+ of work is rescues. Book a free audit.";
 
 const serviceDescription =
   "We rescue stalled, mismanaged, and abandoned software projects. Mid-project takeover, codebase stabilization, technical debt resolution, and ongoing delivery — without starting from scratch.";
@@ -77,12 +77,12 @@ function projectRescueJsonLd() {
 
 export const metadata = {
   alternates: getAlternates("/project-rescue"),
-  title: "Software Project Rescue & Recovery | Baaz",
+  title: "Software Project Rescue India | Mid-Project Recovery | Baaz",
   description: pageDescription,
   openGraph: {
-    title: "Software Project Rescue & Recovery | Baaz",
+    title: "Software Project Rescue India | Baaz Bangalore",
     description:
-      "Rescue stalled or abandoned software—no full restart. Audit, stabilize, and ship again with Baaz. Mid-project takeovers are over half our engagements.",
+      "Software project rescue in India—audit, stabilize, ship again with Baaz Bangalore. Mid-project takeover is central to most engagements.",
     url: `${baseUrl}/project-rescue`,
     siteName: "Baaz",
     images: [
@@ -96,9 +96,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Software Project Rescue & Recovery | Baaz",
+    title: "Software Project Rescue India | Baaz",
     description:
-      "Stalled vendor or failing build? Baaz rescues mid-project—stabilize the codebase and resume delivery. Free codebase health audit available.",
+      "Stalled build or mismatched vendor—Baaz takes over mid-project and stabilizes delivery. Bangalore engineering team.",
     images: [ogImage],
   },
 };

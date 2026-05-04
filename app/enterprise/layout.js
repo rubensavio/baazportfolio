@@ -9,7 +9,7 @@ export const metadata = {
   alternates: getAlternates("/enterprise"),
   title: "Enterprise Software Development & Integrations | Baaz Bangalore",
   description:
-    "Enterprise custom software and integrations from Bangalore (since 2018): internal platforms, legacy ERP/CRM connectivity, phased delivery, security-minded architecture. Book a discovery call with Baaz.",
+    "Bangalore enterprise software development company for internal platforms, legacy ERP and CRM integrations, phased delivery, and outsourcing-ready engineering teams collaborating with India-facing and global product groups. Since 2018—talk to Baaz.",
   openGraph: {
     title: "Enterprise Software Development & Integrations | Baaz Bangalore",
     description:

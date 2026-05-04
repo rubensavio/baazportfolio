@@ -6,13 +6,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/erp"),
-  title: "ERP Implementation by Industry — Insurance to Logistics | Baaz",
+  title: "Custom ERP Development India | ERP Software Services | Baaz Bangalore",
   description:
-    "Industry ERP implementation guides for insurance, banking, manufacturing, healthcare, hospitals, real estate, construction, automotive, logistics, and training—approach, modules, FAQs, and how Baaz phases rollout.",
+    "Custom ERP development & ERP software development services from Bangalore, India—manufacturing, healthcare, banking, insurance, logistics, construction, real estate & more. Phased ERP implementation with Baaz.",
   openGraph: {
-    title: "ERP Implementation by Industry — Insurance to Logistics | Baaz",
+    title: "Custom ERP Development India | ERP Software Services | Baaz",
     description:
-      "Industry ERP guides: challenges, modules, phased rollout, and FAQs—with implementation support from Baaz.",
+      "ERP development company in Bangalore delivering custom ERP, integrations, and industry playbooks—from manufacturing ERP to healthcare and real estate.",
     url: `${baseUrl}/erp`,
     siteName: "Baaz",
     images: [
@@ -26,9 +26,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ERP Implementation by Industry | Baaz",
+    title: "Custom ERP Development India | Baaz Bangalore",
     description:
-      "Sector-specific ERP: insurance, banking, manufacturing, healthcare, logistics, and more—approach, modules, and rollout.",
+      "Custom ERP & implementation services—manufacturing, healthcare, logistics, banking. Talk to Baaz engineers.",
     images: [ogImage],
   },
 };
