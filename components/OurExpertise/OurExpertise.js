@@ -45,10 +45,14 @@ const OurExpertise = () => {
           <Link href="/industry/fintech">FinTech</Link>,{" "}
           <Link href="/industry/construction">Construction Tech</Link>,{" "}
           <Link href="/industry/retail">Retail</Link>, and{" "}
-          <Link href="/industry/healthcare">Healthcare</Link>. Need ERP
-          solutioning? Explore our <Link href="/erp">ERP Solutions</Link> for
-          insurance, manufacturing, banking, healthcare, hospitals, real estate,
-          construction, automobile, and transportation.
+          <Link href="/industry/healthcare">Healthcare</Link>. For full-scope{" "}
+          <Link href="/enterprise">enterprise software, platforms, and integrations</Link>, see how
+          we run discovery-to-ship programmes; for{" "}
+          <Link href="/erp">industry ERP implementation</Link> (finance,
+          operations, compliance, rollouts), see guides for insurance,
+          manufacturing, banking, healthcare, hospitals, real estate,
+          construction, automobile, transportation, and education and
+          training.
         </p>
       </div>
 

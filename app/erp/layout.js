@@ -6,13 +6,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/erp"),
-  title: "ERP Solutions by Industry | Baaz",
+  title: "ERP Implementation by Industry — Insurance to Logistics | Baaz",
   description:
-    "Industry-focused ERP solutioning for insurance, manufacturing, banking, healthcare, hospitals, real estate, construction, automobile, and supply chain operations.",
+    "Industry ERP implementation guides for insurance, banking, manufacturing, healthcare, hospitals, real estate, construction, automotive, logistics, and training—approach, modules, FAQs, and how Baaz phases rollout.",
   openGraph: {
-    title: "ERP Solutions by Industry | Baaz",
+    title: "ERP Implementation by Industry — Insurance to Logistics | Baaz",
     description:
-      "ERP strategy and implementation by industry with rollout plans, module priorities, and integration guidance.",
+      "Industry ERP guides: challenges, modules, phased rollout, and FAQs—with implementation support from Baaz.",
     url: `${baseUrl}/erp`,
     siteName: "Baaz",
     images: [
@@ -26,9 +26,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ERP Solutions by Industry | Baaz",
+    title: "ERP Implementation by Industry | Baaz",
     description:
-      "Explore ERP implementation approaches for insurance, manufacturing, banking, healthcare, and operations-heavy industries.",
+      "Sector-specific ERP: insurance, banking, manufacturing, healthcare, logistics, and more—approach, modules, and rollout.",
     images: [ogImage],
   },
 };

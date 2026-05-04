@@ -2,13 +2,10 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /**
- * Redirect www domain to apex in production so canonical URLs match hreflang / metadata.
+ * 301 www → apex so crawlers see a single host (SEO audit).
+ * Keep NEXT_PUBLIC_SITE_URL=https://baaz.pro (no www).
  */
 export function proxy(request: NextRequest) {
-  if (process.env.NODE_ENV !== "production") {
-    return NextResponse.next();
-  }
-
   const host = request.headers.get("host")?.split(":")[0] ?? "";
   if (host !== "www.baaz.pro") {
     return NextResponse.next();
@@ -17,9 +14,13 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.hostname = "baaz.pro";
   url.protocol = "https:";
-  return NextResponse.redirect(url, 308);
+  url.port = "";
+  return NextResponse.redirect(url, 301);
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+    "/",
+  ],
 };

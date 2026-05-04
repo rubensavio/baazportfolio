@@ -62,6 +62,40 @@ export default function ErpPageClient({ data }) {
         </div>
       </section>
 
+      {/* ── 1b. Editorial / pillar depth (optional per industry) ── */}
+      {data.editorialSections && data.editorialSections.length > 0 && (
+        <section className="erp-editorial" aria-labelledby="erp-editorial-heading">
+          <div className="erp-section-container">
+            <h2 id="erp-editorial-heading" className="erp-editorial-intro-title">
+              {data.editorialIntro?.heading ?? "Operational depth beyond the module list"}
+            </h2>
+            <p className="erp-editorial-intro-lead">
+              {data.editorialIntro?.lead ??
+                "How planning, execution, costing, integrations, and adoption stay aligned—and what that means before features are configured."}
+            </p>
+            <div className="erp-editorial-blocks">
+              {data.editorialSections.map((block, bi) => (
+                <article key={bi} className="erp-editorial-block">
+                  <h3 className="erp-editorial-block-title">{block.title}</h3>
+                  {block.paragraphs.map((para, pi) => (
+                    <p key={pi} className="erp-editorial-p">
+                      {para}
+                    </p>
+                  ))}
+                  {block.bullets && block.bullets.length > 0 && (
+                    <ul className="erp-editorial-list">
+                      {block.bullets.map((item, li) => (
+                        <li key={li}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── 2. Industry Challenges ── */}
       {data.challenges && data.challenges.length > 0 && (
         <section

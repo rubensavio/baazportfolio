@@ -24,9 +24,12 @@ export default function ErpHubPage() {
         <section className="erp-hub-hero">
           <h1 className="erp-hub-heading">ERP Solutions by Industry</h1>
           <p className="erp-hub-intro">
-            Industry-ready ERP implementation for operations, finance,
-            compliance, and integrations. Choose your industry to see approach,
-            modules, and FAQs.
+            Baaz helps teams plan and ship{" "}
+            <strong>industry-specific ERP implementations</strong>—from
+            discovery and data migration to integrations, training, and phased
+            go-live. Each guide below covers typical challenges, core modules,
+            and FAQs for insurers, banks, manufacturers, hospitals, logistics,
+            and more. Start with your sector, then book a call to map scope.
           </p>
         </section>
         <ul className="erp-hub-list">

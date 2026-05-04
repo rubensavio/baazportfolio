@@ -42,6 +42,82 @@
   max-width: 56rem;
 }
 
+/* ── Editorial / pillar prose (ERP industry pages) ── */
+.erp-editorial {
+  padding: clamp(2.25rem, 4vw, 3.5rem) clamp(1.25rem, 3vw, 1.5rem);
+  background: linear-gradient(
+    180deg,
+    rgba(248, 249, 251, 0.95) 0%,
+    #ffffff 100%
+  );
+  border-bottom: 1px solid rgba(26, 26, 26, 0.06);
+}
+
+.erp-editorial-intro-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.erp-editorial-intro-lead {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.95rem, 1.35vw, 1.06rem);
+  font-weight: 400;
+  line-height: 1.62;
+  color: #5a5f6b;
+  margin: 0 0 2.25rem;
+  max-width: 52rem;
+}
+
+.erp-editorial-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.85rem, 3vw, 2.65rem);
+}
+
+.erp-editorial-block-title {
+  font-family: var(--font-urbanist), sans-serif;
+  font-size: clamp(1.05rem, 1.85vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #242830;
+  margin: 0 0 1rem;
+}
+
+.erp-editorial-p {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.92rem, 1.22vw, 1.03rem);
+  font-weight: 400;
+  line-height: 1.72;
+  color: #4d525f;
+  margin: 0 0 1rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.erp-editorial-list {
+  font-family: var(--font-outfit), sans-serif;
+  font-size: clamp(0.92rem, 1.22vw, 1.03rem);
+  line-height: 1.65;
+  color: #4d525f;
+  margin: 1rem 0 0;
+  padding-left: 1.35rem;
+
+  li {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 /* ═══════════════════════════════════════════
    1. Hero
    ═══════════════════════════════════════════ */
