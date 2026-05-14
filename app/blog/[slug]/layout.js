@@ -78,7 +78,7 @@ function buildArticleSchema(data, slug) {
     articleSection: data.contentType,
     speakable: {
       "@type": "SpeakableSpecification",
-      cssSelector: [".article-direct-answer", ".article-intro", "h2"],
+      cssSelector: [".blog-direct-answer", ".blog-intro", "h2"],
     },
     author: data.author
       ? {
