@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import Footer from "../Footer/Footer";
+import FAQ from "../FAQ/FAQ";
 
 const COUNTRY_FALLBACK = [
   { name: "United States", code: "US" },
@@ -13,6 +14,136 @@ const COUNTRY_FALLBACK = [
   { name: "India", code: "IN" },
   { name: "Australia", code: "AU" },
 ];
+
+const CONTACT_CAPABILITY_LINKS = [
+  { href: "/services/product-strategy", label: "Product strategy" },
+  { href: "/services/ui-ux-design", label: "UI/UX design" },
+  { href: "/services/web-development", label: "Custom software" },
+  { href: "/services/mobile-app", label: "Mobile apps" },
+  { href: "/services/ai-solution", label: "AI solutions" },
+  { href: "/project-rescue", label: "Project rescue" },
+  { href: "/enterprise", label: "Enterprise" },
+  { href: "/gtm-engineering", label: "GTM engineering" },
+  { href: "/ecommerce", label: "E-commerce" },
+];
+
+const CONTACT_EXPLORE_LINKS = [
+  { href: "/case-studies", label: "Case studies" },
+  { href: "/work1", label: "Selected work" },
+  { href: "/work2", label: "More projects" },
+  { href: "/about", label: "About Baaz" },
+  { href: "/blog", label: "Blog" },
+  { href: "/services", label: "All services" },
+];
+
+const CONTACT_FAQ_ITEMS = [
+  {
+    question: "Do you work with startups and enterprises?",
+    answer:
+      "Yes. We partner with early-stage teams who need velocity and with enterprise product groups that need dependable delivery, clear communication, and maintainable systems.",
+  },
+  {
+    question: "What engagement models do you offer?",
+    answer:
+      "Depending on the problem, we scope fixed deliverables, time-bound squads, or phased roadmaps. We will recommend the leanest option that still de-risks the build.",
+  },
+  {
+    question: "Will you sign an NDA?",
+    answer:
+      "Yes. If you need mutual confidentiality before sharing details, mention it in your message and we will follow up with the right paperwork.",
+  },
+  {
+    question: "Where are you based, and how do time zones work?",
+    answer:
+      "We operate from Bangalore and collaborate asynchronously with clients across the United States, United Kingdom, European Union, and Asia-Pacific, with overlapping hours for key reviews and decisions.",
+  },
+];
+
+function ContactSupplemental() {
+  return (
+    <section
+      className="contact-more-section"
+      aria-labelledby="contact-more-heading"
+    >
+      <div className="contact-more-inner">
+        <header className="contact-more-header">
+          <p className="contact-more-eyebrow">Learn more</p>
+          <h2 id="contact-more-heading" className="contact-more-title">
+            Capabilities, proof, and other ways to reach us
+          </h2>
+          <p className="contact-more-lede">
+            Same product engineering focus as the rest of the site—organized so
+            you can skim, click through, or book time without hunting through
+            long paragraphs.
+          </p>
+        </header>
+
+        <div className="contact-more-grid">
+          <article className="contact-info-card">
+            <h3 className="contact-info-card-title">Services &amp; programs</h3>
+            <p className="contact-info-card-text">
+              End-to-end delivery from discovery through launch: strategy, UX,
+              engineering, mobile, and AI where it earns its place—plus rescue,
+              enterprise, and go-to-market support when scope demands it.
+            </p>
+            <ul className="contact-pill-row">
+              {CONTACT_CAPABILITY_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href} className="contact-pill">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="contact-info-card">
+            <h3 className="contact-info-card-title">Proof &amp; perspectives</h3>
+            <p className="contact-info-card-text">
+              Outcomes and craft across industries, plus how we think about
+              building products. Start with case studies or work samples, then
+              dig into longer writing on the blog.
+            </p>
+            <ul className="contact-pill-row">
+              {CONTACT_EXPLORE_LINKS.map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href} className="contact-pill">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+
+        <div className="contact-reach-panel">
+          <div className="contact-reach-copy">
+            <h3 className="contact-reach-title">Prefer email or a live call?</h3>
+            <p className="contact-reach-text">
+              Use whichever channel fits your workflow—we monitor both and
+              respond on the same cadence as form submissions.
+            </p>
+          </div>
+          <div className="contact-reach-actions">
+            <a
+              href="mailto:support@baaz.live"
+              className="contact-reach-btn contact-reach-btn--ghost"
+            >
+              Email support@baaz.live
+            </a>
+            <Link href="/book-call" className="contact-reach-btn">
+              Schedule a call
+            </Link>
+          </div>
+        </div>
+
+        <div className="contact-faq-anchor">
+          <FAQ faqs={CONTACT_FAQ_ITEMS} heading="Common questions" />
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function Form() {
   const searchParams = useSearchParams();
@@ -194,6 +325,8 @@ function Form() {
         </div>
       </section>
 
+      <ContactSupplemental />
+
       <section className="ready-to-build-section">
         <div className="ready-to-build-wrapper">
           <h2 className="ready-title">Ready to build something amazing?</h2>
@@ -201,9 +334,17 @@ function Form() {
             Join hundreds of satisfied clients who have transformed their ideas
             into successful digital products with our help.
           </p>
-          <Link href="/work1" className="view-work-button">
-            View Our Work
-          </Link>
+          <div className="ready-actions">
+            <Link href="/work1" className="view-work-button">
+              View Our Work
+            </Link>
+            <Link
+              href="/case-studies"
+              className="view-work-button view-work-button--secondary"
+            >
+              Case Studies
+            </Link>
+          </div>
         </div>
       </section>
 
