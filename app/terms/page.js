@@ -79,8 +79,7 @@ export default function TermsPage() {
 
             <h2>10. Contact</h2>
             <p>
-              Email:{" "}
-              <a href="mailto:support@baaz.live">support@baaz.live</a>
+              Email: <a href="mailto:support@baaz.pro">support@baaz.pro</a>
               <br />
               Address: WeWork, RMZ Latitude, Hebbal, Bengaluru, Karnataka 560024
             </p>

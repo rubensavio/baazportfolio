@@ -26,9 +26,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2>1. Information We Collect</h2>
-            <p>
-              We collect name, email, phone, and usage data via cookies.
-            </p>
+            <p>We collect name, email, phone, and usage data via cookies.</p>
 
             <h2>2. Use of Information</h2>
             <p>
@@ -52,9 +50,7 @@ export default function PrivacyPage() {
             </p>
 
             <h2>6. International Transfers</h2>
-            <p>
-              Data may be processed globally, including EU and US regions.
-            </p>
+            <p>Data may be processed globally, including EU and US regions.</p>
 
             <h2>7. User Rights</h2>
             <p>
@@ -66,8 +62,7 @@ export default function PrivacyPage() {
 
             <h2>9. Contact</h2>
             <p>
-              Email:{" "}
-              <a href="mailto:support@baaz.live">support@baaz.live</a>
+              Email: <a href="mailto:support@baaz.pro">support@baaz.pro</a>
               <br />
               Address: WeWork, RMZ Latitude, Hebbal, Bengaluru, Karnataka 560024
             </p>

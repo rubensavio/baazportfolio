@@ -98,7 +98,9 @@ function ContactSupplemental() {
           </article>
 
           <article className="contact-info-card">
-            <h3 className="contact-info-card-title">Proof &amp; perspectives</h3>
+            <h3 className="contact-info-card-title">
+              Proof &amp; perspectives
+            </h3>
             <p className="contact-info-card-text">
               Outcomes and craft across industries, plus how we think about
               building products. Start with case studies or work samples, then
@@ -118,7 +120,9 @@ function ContactSupplemental() {
 
         <div className="contact-reach-panel">
           <div className="contact-reach-copy">
-            <h3 className="contact-reach-title">Prefer email or a live call?</h3>
+            <h3 className="contact-reach-title">
+              Prefer email or a live call?
+            </h3>
             <p className="contact-reach-text">
               Use whichever channel fits your workflow—we monitor both and
               respond on the same cadence as form submissions.
@@ -126,10 +130,10 @@ function ContactSupplemental() {
           </div>
           <div className="contact-reach-actions">
             <a
-              href="mailto:support@baaz.live"
+              href="mailto:support@baaz.pro"
               className="contact-reach-btn contact-reach-btn--ghost"
             >
-              Email support@baaz.live
+              Email support@baaz.pro
             </a>
             <Link href="/book-call" className="contact-reach-btn">
               Schedule a call

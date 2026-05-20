@@ -65,7 +65,7 @@ const structuredData = {
       "@id": `${baseUrl}/#organization`,
       name: "Baaz",
       url: baseUrl,
-      email: "support@baaz.live",
+      email: "support@baaz.pro",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/assets/Logo.svg`,
@@ -114,7 +114,7 @@ const structuredData = {
         {
           "@type": "ContactPoint",
           contactType: "customer support",
-          email: "support@baaz.live",
+          email: "support@baaz.pro",
           areaServed: "Worldwide",
           availableLanguage: ["en"],
           url: `${baseUrl}/get-in-touch`,

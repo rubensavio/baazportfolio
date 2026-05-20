@@ -33,8 +33,8 @@ const Footer = () => {
               Enterprise-grade products, without the enterprise wait.
             </p>
             <address className="footer-contact">
-              <a href="mailto:support@baaz.live" className="footer-email">
-                support@baaz.live
+              <a href="mailto:support@baaz.pro" className="footer-email">
+                support@baaz.pro
               </a>
               <span className="footer-address">
                 WeWork, RMZ Latitude, Hebbal, Bengaluru, Karnataka 560024
@@ -77,7 +77,9 @@ const Footer = () => {
                     <Link href="/services/ui-ux-design">UI/UX Design</Link>
                   </li>
                   <li>
-                    <Link href="/services/web-development">Custom Software</Link>
+                    <Link href="/services/web-development">
+                      Custom Software
+                    </Link>
                   </li>
                   <li>
                     <Link href="/services/mobile-app">Mobile App</Link>
@@ -108,13 +110,17 @@ const Footer = () => {
                     <Link href="/erp/insurance-companies">Insurance</Link>
                   </li>
                   <li>
-                    <Link href="/erp/manufacturing-companies">Manufacturing</Link>
+                    <Link href="/erp/manufacturing-companies">
+                      Manufacturing
+                    </Link>
                   </li>
                   <li>
                     <Link href="/erp/banking-companies">Banking</Link>
                   </li>
                   <li>
-                    <Link href="/erp/education-training-companies">Education &amp; Training</Link>
+                    <Link href="/erp/education-training-companies">
+                      Education &amp; Training
+                    </Link>
                   </li>
                   <li>
                     <Link href="/erp/healthcare-companies">Healthcare</Link>

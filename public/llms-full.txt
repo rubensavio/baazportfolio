@@ -119,7 +119,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 ## Contact
 
 - Website: https://baaz.pro
-- Email: support@baaz.live
+- Email: support@baaz.pro
 - Office: Bangalore, India
 - Contact form: https://baaz.pro/get-in-touch
 - Book a discovery call: https://baaz.pro/book-call
