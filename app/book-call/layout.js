@@ -9,7 +9,7 @@ export const metadata = {
   alternates: getAlternates("/book-call"),
   title: "Book a Call — Product Engineering with Baaz",
   description:
-    "Book a call on vision, risk, timelines, and scope—fast replies from Baaz, Bangalore since 2018. Product engineering for startups and enterprises. Book today.",
+    "Book a call on vision, risk, timelines, and scope—fast replies from Baaz since 2018. Product engineering for teams worldwide. Book today.",
   openGraph: {
     title: "Book a Call — Product Engineering with Baaz",
     description:
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Book a Call — Product Engineering with Baaz",
     description:
-      "Book a call for product vision, technical risk, rescue, or greenfield scope—fast response from Baaz, Bangalore. Secure your slot today.",
+      "Book a call for product vision, technical risk, rescue, or greenfield scope—fast response from Baaz. Secure your slot today.",
     images: [ogImage],
   },
 };

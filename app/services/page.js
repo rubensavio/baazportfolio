@@ -193,8 +193,8 @@ export default function ServicesHubPage() {
         <section className="services-hub-hero">
           <h1 className="services-hub-heading">All services</h1>
           <p className="services-hub-intro">
-            Product engineering, marketplace growth, and go-to-market from
-            Bangalore — for startups and enterprises worldwide since 2018.
+            Product engineering, marketplace growth, and go-to-market for teams
+            worldwide since 2018.
           </p>
         </section>
 

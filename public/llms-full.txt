@@ -1,6 +1,6 @@
 # Baaz — Extended AI Context File
 
-> Baaz is a **Product Engineering Studio & Custom Software Development Company** (also categorized as software company / IT services), Bangalore-based since 2018. Custom software, web, mobile, AI, enterprise-grade products worldwide. Approximately 50% of engagements begin as mid-project rescues; standard first milestone delivery runs 4–6 weeks for web applications and 8–12 weeks for enterprise integrations.
+> Baaz is a **Software Development Company** (product engineering studio / software development agency / IT services), serving product and engineering teams worldwide since 2018 — custom software, product engineering, web, mobile, and AI (HQ Bangalore, India; US office Sheridan, WY). Custom software, web, mobile, AI, enterprise-grade products worldwide. Approximately 50% of engagements begin as mid-project rescues; standard first milestone delivery runs 4–6 weeks for web applications and 8–12 weeks for enterprise integrations.
 
 This file is the extended version of `/llms.txt`. It lists all indexed pages with detailed descriptions to help AI systems understand the full scope and depth of Baaz's content, services, and expertise.
 
@@ -8,9 +8,9 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 
 ## Core Pages
 
-- [Homepage](https://baaz.pro): **Product Engineering Studio & Custom Software Development Company** — software company / IT partner positioning, services, SSR WhoWeAre (100+ apps), homepage FAQ on enterprise product engineering.
-- [About Baaz](https://baaz.pro/about): Full company background — founding in 2018, Bangalore HQ, team philosophy, delivery track record, and "Custom Software Development from Bangalore Since 2018" positioning. Includes FAQ and OurValues section with SSR content.
-- [Services Overview](https://baaz.pro/services): Landing page for all Baaz service lines: product strategy, UI/UX, web and mobile development, AI solutions, and engineering consulting — delivered from Bangalore for global clients.
+- [Homepage](https://baaz.pro): **Software Development Company** — custom software and product engineering worldwide; services, WhoWeAre (100+ apps), homepage FAQ.
+- [About Baaz](https://baaz.pro/about): Full company background — founding in 2018, team philosophy, delivery track record, worldwide product engineering (HQ Bangalore, India; US office Sheridan, WY). Includes FAQ and OurValues section with SSR content.
+- [Services Overview](https://baaz.pro/services): Landing page for all Baaz service lines: product strategy, UI/UX, web and mobile development, AI solutions, and engineering consulting — for clients worldwide.
 - [Contact / Get in Touch](https://baaz.pro/get-in-touch): Primary contact and enquiry page with form submission for project briefs, technical questions, and partnership requests.
 - [Book a Discovery Call](https://baaz.pro/book-call): Calendar booking page to schedule a 30-minute discovery call with the Baaz team.
 
@@ -24,7 +24,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 - [Mobile App Development](https://baaz.pro/services/mobile-app): Native iOS and Android development plus Flutter and React Native cross-platform builds. Full lifecycle from UX through App Store and Play Store launch, including ASO and post-launch support.
 - [AI Solutions](https://baaz.pro/services/ai-solution): Practical AI implementation — computer vision, NLP, predictive models, production APIs, RAG pipelines, and LLM integrations. Covers model selection, deployment, monitoring, and data pipeline engineering. Positioned as production-ready over slideware.
 - [Software Project Rescue](https://baaz.pro/project-rescue): Mid-project takeover service for stalled, failing, or vendor-abandoned software builds. Covers codebase audit, stabilization sprint, rewritten acceptance criteria, and delivery without full restarts. Approximately half of Baaz engagements start this way.
-- [Enterprise Software Development](https://baaz.pro/enterprise): Custom platforms, legacy modernisation, systems integration (SAP, Salesforce, custom cores), and cloud-native delivery for enterprise organizations. India cost structure with Western programme hygiene.
+- [Enterprise Software Development](https://baaz.pro/enterprise): Custom platforms, legacy modernisation, systems integration (SAP, Salesforce, custom cores), and cloud-native delivery for enterprise organizations worldwide. Competitive rates with Western programme hygiene.
 - [eCommerce Development](https://baaz.pro/ecommerce): Amazon and Flipkart marketplace management, eCommerce platform development, PPC, listing optimization, operations, analytics, and proprietary growth engineering.
 - [GTM Engineering](https://baaz.pro/gtm-engineering): Go-to-market systems engineering — content, outbound, paid ads, SEO, and nurture workflow design. Covers internet marketing services and business development automation.
 
@@ -44,7 +44,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 ## Industries
 
 - [Industries Overview](https://baaz.pro/industry): Summary of Baaz's industry focus areas — FinTech, Retail, Healthcare, and Construction — with custom software built for each vertical's regulatory and workflow requirements.
-- [FinTech Software Development](https://baaz.pro/industry/fintech): Software for payments, lending, and internal financial tools — compliant, scalable builds with financial-grade security from Bangalore.
+- [FinTech Software Development](https://baaz.pro/industry/fintech): Software for payments, lending, and internal financial tools — compliant, scalable builds with financial-grade security for global FinTech teams.
 - [Retail Digital Transformation](https://baaz.pro/industry/retail): eCommerce, omnichannel, inventory management, POS, and in-store technology — custom retail software with integration experience.
 - [Healthcare Software Development](https://baaz.pro/industry/healthcare): Secure, compliant healthcare portals, clinical tools, and EHR-friendly integrations for providers, insurers, and healthtech startups.
 - [Construction Tech Development](https://baaz.pro/industry/construction): Construction project management software, field team apps, procurement tools, offline mobile, and ERP integrations for the built environment.
@@ -95,7 +95,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 
 ## Key Facts
 
-- Founded in 2018, headquartered in Bangalore, India
+- Founded in 2018; serves teams worldwide; headquartered in Bangalore, India; US office in Sheridan, WY
 - Delivered 100+ web and mobile applications across FinTech, Retail, Healthcare, eCommerce, AI/ML, AR/VR, and ERP-adjacent workflows (per internal portfolio records)
 - Standard web application first milestone: 4–6 weeks; enterprise API integrations (SAP, Salesforce): 8–12 weeks
 - Milestone-based delivery reduces scope creep 30–40% vs. fixed-scope waterfall contracts (per Baaz engagement retrospectives)
@@ -104,7 +104,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 - MVPs scoped to a single persona and one job-to-be-done ship to a demoable state in a median of 8 weeks; 3+ persona scope averages 22 weeks (175% calendar penalty)
 - Post-launch rework in first 90 days runs 35% lower when scope is locked to one persona before build starts
 - Core services: Custom Software Development, Product Strategy, UI/UX Design, Mobile App Development, AI Solutions, Project Rescue, Enterprise Platforms, GTM Engineering, eCommerce
-- Positioning phrase: Product Engineering Studio & Custom Software Development Company (directory taxonomy overlap: Software Company / IT Services)
+- Positioning phrase: Software Development Company (directory taxonomy: product engineering studio, software development agency, IT services)
 - Tagline: "Enterprise-grade products, without the enterprise wait"
 
 ---
@@ -120,7 +120,7 @@ This file is the extended version of `/llms.txt`. It lists all indexed pages wit
 
 - Website: https://baaz.pro
 - Email: support@baaz.pro
-- Office: Bangalore, India
+- Offices: Bangalore, India (HQ); Sheridan, WY, United States (30 N Gould St Ste R, Sheridan, Sheridan County, WY 82801)
 - Contact form: https://baaz.pro/get-in-touch
 - Book a discovery call: https://baaz.pro/book-call
 - llms.txt (concise): https://baaz.pro/llms.txt

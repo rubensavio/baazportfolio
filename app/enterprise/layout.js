@@ -7,11 +7,11 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/enterprise"),
-  title: "Enterprise Software Development & Integrations | Baaz Bangalore",
+  title: "Enterprise Software Development & Integrations | Baaz",
   description:
-    "Bangalore enterprise software development company for internal platforms, legacy ERP and CRM integrations, phased delivery, and outsourcing-ready engineering teams collaborating with India-facing and global product groups. Since 2018—talk to Baaz.",
+    "Enterprise software development for organizations worldwide—internal platforms, legacy ERP and CRM integrations, phased delivery, and outsourcing-ready engineering teams. Since 2018—talk to Baaz.",
   openGraph: {
-    title: "Enterprise Software Development & Integrations | Baaz Bangalore",
+    title: "Enterprise Software Development & Integrations | Baaz",
     description:
       "Platforms, integrations, and transformation—enterprise product engineering from Baaz since 2018. Book a discovery call.",
     url: `${baseUrl}/enterprise`,
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Enterprise Software Development & Integrations | Baaz",
     description:
-      "Custom enterprise software, integrations, and phased delivery from Bangalore. Book a call to scope your programme.",
+      "Custom enterprise software, integrations, and phased delivery for global teams. Book a call to scope your programme.",
     images: [ogImage],
   },
 };

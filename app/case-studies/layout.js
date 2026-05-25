@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Case Studies — How Baaz Ships Real Systems",
     description:
-      "Manufacturing AI, hiring automation, SaaS, reliability—see how Baaz architects and ships. Case studies and technical notes from Bangalore since 2018.",
+      "Manufacturing AI, hiring automation, SaaS, reliability—see how Baaz architects and ships production systems worldwide since 2018.",
     images: [ogImage],
   },
 };

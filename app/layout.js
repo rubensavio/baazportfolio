@@ -1,8 +1,12 @@
 import { Urbanist, Outfit } from "next/font/google";
 import "./globals.css";
-import { getAlternates } from "../lib/regions";
+import { getAlternates, AREA_SERVED_COUNTRIES } from "../lib/regions";
 import { getSiteUrl } from "../lib/siteUrl";
-import { BRAND_POSITIONING_COMBINED } from "../lib/brandPositioning";
+import {
+  BRAND_POSITIONING_COMBINED,
+  BRAND_SCOPE_LINE,
+} from "../lib/brandPositioning";
+import { COMPANY_SCHEMA_ADDRESSES } from "../lib/companyAddresses";
 import Script from "next/script";
 
 const baseUrl = getSiteUrl();
@@ -33,10 +37,10 @@ export const metadata = {
   alternates: getAlternates("/"),
   applicationName: "Baaz",
   title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
-  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} and Bangalore-based IT services partner for startups and enterprises—strategy, UI/UX, custom software, web, mobile, AI, and product engineering since 2018. Book a call to scope your build.`,
+  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018. Book a call to scope your build.`,
   openGraph: {
     title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
-    description: `${BRAND_POSITIONING_COMBINED} based in Bangalore—strategy, UI/UX, web, mobile, and AI since 2018 for startups and enterprises. Book a call to discuss scope.`,
+    description: `${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -52,7 +56,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
     description:
-      "Software company and IT services from Bangalore since 2018—strategy, UI/UX, web, mobile, and AI for startups and enterprises. Book a call to scope your next build.",
+      "Software development company for custom software and product engineering worldwide since 2018. Book a call to scope your next build.",
     images: [ogImage],
   },
 };
@@ -72,7 +76,7 @@ const structuredData = {
         width: 600,
         height: 60,
       },
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}—also categorized as a software company and IT services provider—based in Bangalore, operating since 2018. Enterprise product engineering covers strategy, UI/UX, full-stack web and mobile development, and post-launch scaling for startups and enterprises worldwide, with 100+ shipped applications per Baaz's internal portfolio records.`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; 100+ shipped applications per Baaz's internal portfolio records. HQ in Bangalore, India; US office in Sheridan, WY.`,
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       founder: {
@@ -83,13 +87,8 @@ const structuredData = {
         jobTitle: "Co-founder",
         sameAs: ["https://in.linkedin.com/company/baazpro"],
       },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
-      },
-      areaServed: "Worldwide",
+      address: COMPANY_SCHEMA_ADDRESSES,
+      areaServed: AREA_SERVED_COUNTRIES,
       knowsAbout: [
         BRAND_POSITIONING_COMBINED,
         "Custom Software Development",
@@ -115,7 +114,7 @@ const structuredData = {
           "@type": "ContactPoint",
           contactType: "customer support",
           email: "support@baaz.pro",
-          areaServed: "Worldwide",
+          areaServed: AREA_SERVED_COUNTRIES,
           availableLanguage: ["en"],
           url: `${baseUrl}/get-in-touch`,
         },
@@ -132,6 +131,8 @@ const structuredData = {
       serviceType: [
         BRAND_POSITIONING_COMBINED,
         "Software Company",
+        "Software Development Agency",
+        "Software Development Company",
         "Information Technology Services",
         "Product Engineering Studio",
         "Custom Software Development",
@@ -149,13 +150,8 @@ const structuredData = {
         "Marketing Consultant",
       ],
       provider: { "@id": `${baseUrl}/#organization` },
-      areaServed: "Worldwide",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        addressCountry: "IN",
-      },
+      areaServed: AREA_SERVED_COUNTRIES,
+      address: COMPANY_SCHEMA_ADDRESSES,
     },
     {
       "@type": "WebSite",
@@ -163,7 +159,7 @@ const structuredData = {
       url: baseUrl,
       name: "Baaz",
       publisher: { "@id": `${baseUrl}/#organization` },
-      description: `Baaz (${new URL(baseUrl).hostname}) is a ${BRAND_POSITIONING_COMBINED} based in Bangalore, also described as a software company and IT services firm focused on enterprise product engineering.`,
+      description: `Baaz (${new URL(baseUrl).hostname}) is a ${BRAND_POSITIONING_COMBINED} for product teams worldwide, also described as a software company and IT services firm focused on enterprise product engineering.`,
       inLanguage: "en",
       potentialAction: {
         "@type": "SearchAction",

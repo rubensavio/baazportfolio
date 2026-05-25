@@ -9,11 +9,11 @@ export const metadata = {
   alternates: getAlternates("/get-in-touch"),
   title: "Contact Baaz — Strategy, Design & Engineering",
   description:
-    "Contact Baaz for strategy, UI/UX, web, mobile, AI, or rescue. Honest scoping, quick replies—Bangalore product engineering for global teams since 2018.",
+    "Contact Baaz for strategy, UI/UX, web, mobile, AI, or rescue. Honest scoping and quick replies for product teams worldwide since 2018.",
   openGraph: {
     title: "Contact Baaz — Strategy, Design & Engineering",
     description:
-      "Reach Baaz for strategy, design, engineering, mobile, AI, or rescue—fast replies from Bangalore. Startups and enterprises welcome.",
+      "Reach Baaz for strategy, design, engineering, mobile, AI, or rescue—fast replies for teams worldwide.",
     url: `${baseUrl}/get-in-touch`,
     siteName: "Baaz",
     images: [
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Contact Baaz — Strategy, Design & Engineering",
     description:
-      "Strategy, UI/UX, custom software, mobile, and AI—message Baaz for a fast reply. Project rescue and greenfield builds from Bangalore.",
+      "Strategy, UI/UX, custom software, mobile, and AI—message Baaz for a fast reply. Project rescue and greenfield builds worldwide.",
     images: [ogImage],
   },
 };

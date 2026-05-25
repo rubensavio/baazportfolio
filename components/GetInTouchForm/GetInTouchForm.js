@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import Footer from "../Footer/Footer";
 import FAQ from "../FAQ/FAQ";
+import { US_ADDRESS_LINE } from "../../lib/companyAddresses";
 
 const COUNTRY_FALLBACK = [
   { name: "United States", code: "US" },
@@ -54,8 +55,7 @@ const CONTACT_FAQ_ITEMS = [
   },
   {
     question: "Where are you based, and how do time zones work?",
-    answer:
-      "We operate from Bangalore and collaborate asynchronously with clients across the United States, United Kingdom, European Union, and Asia-Pacific, with overlapping hours for key reviews and decisions.",
+    answer: `We collaborate asynchronously with clients worldwide—with overlapping hours for key reviews and decisions across the Americas, Europe, and Asia-Pacific. HQ is in Bangalore, India, with a US office at ${US_ADDRESS_LINE}.`,
   },
 ];
 

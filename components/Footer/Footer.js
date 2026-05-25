@@ -1,19 +1,8 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { getRegionLabel } from "../../lib/regions";
+import { INDIA_ADDRESS_LINE, US_ADDRESS_LINE } from "../../lib/companyAddresses";
 import "./Footer.scss";
 
 const Footer = () => {
-  const [regionLabel, setRegionLabel] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setRegionLabel(getRegionLabel(window.location.hostname));
-    }
-  }, []);
-
   return (
     <footer className="footer">
       <div className="footer-wrapper">
@@ -37,10 +26,10 @@ const Footer = () => {
                 support@baaz.pro
               </a>
               <span className="footer-address">
-                WeWork, RMZ Latitude, Hebbal, Bengaluru, Karnataka 560024
+                India (HQ): {INDIA_ADDRESS_LINE}
               </span>
+              <span className="footer-address">US: {US_ADDRESS_LINE}</span>
             </address>
-            {regionLabel && <p className="footer-region-line">{regionLabel}</p>}
             <div className="footer-social">
               <a
                 href="https://in.linkedin.com/company/baazpro"

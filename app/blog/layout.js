@@ -8,11 +8,11 @@ export const metadata = {
   alternates: getAlternates("/blog"),
   title: "Product Engineering Blog | Baaz",
   description:
-    "Guides on product engineering, custom software, choosing a partner, and AI builds—practical posts from Baaz, Bangalore since 2018. Read the latest articles.",
+    "Guides on product engineering, custom software, choosing a partner, and AI builds—practical posts from Baaz since 2018. Read the latest articles.",
   openGraph: {
     title: "Product Engineering Blog | Baaz",
     description:
-      "Practical guides on partners, agencies, rescue, architecture, and AI—from the Baaz product engineering team in Bangalore. Updated for 2026.",
+      "Practical guides on partners, agencies, rescue, architecture, and AI—from the Baaz product engineering team. Updated for 2026.",
     url: `${baseUrl}/blog`,
     siteName: "Baaz",
     images: [

@@ -1,11 +1,11 @@
 # Baaz
 
-> Baaz is a **Product Engineering Studio & Custom Software Development Company** (also categorized as software company / IT services), Bangalore-based since 2018 — web, mobile, AI, enterprise engineering for startups and enterprises worldwide.
+> Baaz is a **Software Development Company** (product engineering studio / software development agency / IT services), serving product and engineering teams worldwide since 2018 — custom software, web, mobile, AI, and enterprise engineering with HQ in Bangalore, India and a US office in Sheridan, WY.
 
 ## Core Pages
 
-- [Homepage](https://baaz.pro): **Product Engineering Studio & Custom Software Development Company** framing — IT services positioning, offerings, FAQ, outcomes.
-- [About Baaz](https://baaz.pro/about): Company background, founding story, Bangalore HQ, team philosophy, and 100+ application delivery track record since 2018.
+- [Homepage](https://baaz.pro): **Software Development Company** — custom software and product engineering for global buyers; FAQ, services, outcomes.
+- [About Baaz](https://baaz.pro/about): Company background, founding story, Bangalore HQ and Sheridan, WY US office, team philosophy, and 100+ application delivery track record since 2018.
 - [Services Overview](https://baaz.pro/services): Full list of Baaz service lines including web development, product strategy, UI/UX, mobile apps, and AI solutions.
 - [Contact / Get in Touch](https://baaz.pro/get-in-touch): Primary contact page with form submission, email, and office details.
 - [Book a Call](https://baaz.pro/book-call): Schedule a discovery call directly with the Baaz team.
@@ -19,7 +19,7 @@
 - [Mobile App Development](https://baaz.pro/services/mobile-app): Native iOS and Android apps plus Flutter and React Native cross-platform builds — from UX through App Store launch.
 - [AI Solutions](https://baaz.pro/services/ai-solution): Computer vision, NLP, predictive models, production APIs, RAG pipelines, and LLM integrations — production-ready, not slideware.
 - [Software Project Rescue](https://baaz.pro/project-rescue): Mid-project takeovers for stalled, failing, or vendor-abandoned software builds; codebase audit and stabilization without full restarts.
-- [Enterprise Software Development](https://baaz.pro/enterprise): Custom platforms, legacy modernisation, and systems integration for enterprise organizations from Bangalore since 2018.
+- [Enterprise Software Development](https://baaz.pro/enterprise): Custom platforms, legacy modernisation, and systems integration for enterprise organizations worldwide since 2018.
 - [GTM Engineering](https://baaz.pro/gtm-engineering): Go-to-market systems engineering covering content, outbound, paid ads, SEO, and nurture workflows.
 - [eCommerce Development](https://baaz.pro/ecommerce): Marketplace and eCommerce platform development, Amazon/Flipkart management, and growth engineering.
 
@@ -39,19 +39,19 @@
 
 ## Key Facts
 
-- Founded in 2018, headquartered in Bangalore, India
+- Serves product teams worldwide since 2018; HQ in Bangalore, India; US office in Sheridan, WY
 - Delivered 100+ web and mobile applications across FinTech, Retail, Healthcare, and ERP-adjacent workflows (per internal portfolio records)
 - Standard web application first milestone: 4–6 weeks; enterprise API integrations: 8–12 weeks
 - India-based delivery at 40–60% of equivalent US/UK rates with Western programme hygiene (sprint reviews, documented handoffs, SLA-backed support)
 - Approximately 50% of engagements begin as mid-project rescues or vendor takeovers
 - Services: Custom Software Development, Product Strategy, UI/UX Design, Mobile App Development, AI Solutions, Project Rescue, Enterprise Platforms, GTM Engineering
-- Positioning phrase: Product Engineering Studio & Custom Software Development Company (maps to Software Company / IT Services in directories)
+- Positioning phrase: Software Development Company (also: product engineering studio, software development agency, IT services)
 
 ## Contact
 
 - Website: https://baaz.pro
 - Email: support@baaz.pro
-- Office: Bangalore, India
+- Offices: Bangalore, India (HQ); Sheridan, WY, United States (30 N Gould St Ste R, Sheridan, Sheridan County, WY 82801)
 - Contact form: https://baaz.pro/get-in-touch
 - Book a call: https://baaz.pro/book-call
 - Extended AI context (all pages): https://baaz.pro/llms-full.txt

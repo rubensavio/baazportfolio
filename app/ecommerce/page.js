@@ -3,6 +3,7 @@ import Link from "next/link";
 import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../components/FAQ/FAQ";
 import Footer from "../../components/Footer/Footer";
+import { AREA_SERVED_COUNTRIES } from "../../lib/regions";
 import "./page.scss";
 
 const painPoints = [
@@ -264,10 +265,7 @@ const serviceSchema = {
     url: "https://baaz.pro",
   },
   serviceType: "E-commerce Marketplace Management",
-  areaServed: {
-    "@type": "Country",
-    name: "India",
-  },
+  areaServed: AREA_SERVED_COUNTRIES,
 };
 
 export default function Ecommerce() {

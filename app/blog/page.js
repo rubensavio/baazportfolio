@@ -34,8 +34,8 @@ export default function BlogIndexPage() {
           </p>
           <p className="blog-index-intro">
             Guides and insights on product engineering, software development,
-            and building digital products. From the Baaz team in Bangalore,
-            serving readers worldwide.
+            and building digital products. From the Baaz team, serving readers
+            worldwide.
           </p>
         </div>
       </section>

@@ -8,7 +8,7 @@ export const metadata = {
   alternates: getAlternates("/industry"),
   title: "Industries We Serve | Baaz",
   description:
-    "Custom software for FinTech, retail, healthcare, and construction—product engineering from Baaz, Bangalore since 2018. Pick an industry to see fit and FAQs.",
+    "Custom software for FinTech, retail, healthcare, and construction—product engineering from Baaz since 2018. Pick an industry to see fit and FAQs.",
   openGraph: {
     title: "Industries We Serve | Baaz",
     description:

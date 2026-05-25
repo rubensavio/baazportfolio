@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import RegionLabel from "../RegionLabel/RegionLabel";
 import "./Hero.scss";
 
 const Hero = () => {
@@ -9,7 +8,6 @@ const Hero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
-            <RegionLabel />
             <h1 className="hero-heading-unified animate-fade-up animate-in">
               <span className="hero-heading__tagline">
                 <span className="hero-heading-strikes-container">
@@ -31,9 +29,8 @@ const Hero = () => {
             </h1>
             <p className="hero-direct-answer animate-fade-up animate-delay-200 animate-in">
               <strong>Baaz</strong> is a custom software and product engineering
-              company based in Bangalore, India, shipping production-grade web
-              and mobile products for startups and enterprises worldwide since
-              2018.
+              company, shipping production-grade web and mobile products for
+              startups and enterprises worldwide since 2018.
             </p>
 
             <Link

@@ -16,8 +16,7 @@ function buildFounderSchema() {
     url: `${baseUrl}/about`,
     jobTitle: "Co-founder",
     worksFor: { "@id": `${baseUrl}/#organization` },
-    description:
-      `Co-founder at Baaz, a ${BRAND_POSITIONING_COMBINED} headquartered in Bangalore, delivering enterprise product engineering since 2018.`,
+    description: `Co-founder at Baaz, a ${BRAND_POSITIONING_COMBINED} headquartered in Bangalore with a US office in Sheridan, WY, delivering enterprise product engineering since 2018.`,
     sameAs: ["https://in.linkedin.com/company/baazpro"],
     knowsAbout: [
       "Custom Software Development",
@@ -31,12 +30,10 @@ function buildFounderSchema() {
 export const metadata = {
   alternates: getAlternates("/about"),
   title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
-  description:
-    `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} based in Bangalore since 2018—team, values, AI-enabled delivery, research and product development.`,
+  description: `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} since 2018—team, values, AI-enabled delivery, and product engineering for clients worldwide.`,
   openGraph: {
     title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
-    description:
-      `${BRAND_POSITIONING_COMBINED} based in Bangalore—team, values, global clients since 2018; software company framing with outcome-led builds.`,
+    description: `${BRAND_POSITIONING_COMBINED}—team, values, and outcome-led builds for global clients since 2018.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
     images: [
@@ -51,8 +48,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
-    description:
-      `Baaz—${BRAND_POSITIONING_COMBINED} based in Bangalore—team, craft, discovery to launch. Get in touch.`,
+    description: `Baaz—${BRAND_POSITIONING_COMBINED} for teams worldwide—team, craft, discovery to launch. Get in touch.`,
     images: [ogImage],
   },
 };

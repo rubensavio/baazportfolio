@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { servicesData } from "../../../lib/servicesData";
-import { getAlternates } from "../../../lib/regions";
+import { getAlternates, AREA_SERVED_COUNTRIES } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
@@ -59,7 +59,7 @@ function buildServiceSchema(serviceType, data) {
       name: "Baaz",
       url: baseUrl,
     },
-    areaServed: { "@type": "Place", name: "Worldwide" },
+    areaServed: AREA_SERVED_COUNTRIES,
   };
 }
 

@@ -1,13 +1,13 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { rescueFaqs } from "../../lib/projectRescueFaqs";
-import { getAlternates } from "../../lib/regions";
+import { getAlternates, AREA_SERVED_COUNTRIES } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
 
 const pageDescription =
-  "Software project rescue in India—mid-project takeover, codebase stabilization, and delivery without restarting from zero. Bangalore-based Baaz; 50%+ of work is rescues. Book a free audit.";
+  "Software project rescue for teams worldwide—mid-project takeover, codebase stabilization, and delivery without restarting from zero. 50%+ of Baaz engagements are rescues. Book a free audit.";
 
 const serviceDescription =
   "We rescue stalled, mismanaged, and abandoned software projects. Mid-project takeover, codebase stabilization, technical debt resolution, and ongoing delivery — without starting from scratch.";
@@ -38,7 +38,7 @@ function projectRescueJsonLd() {
       url: baseUrl,
     },
     serviceType: "Software Project Rescue & Recovery",
-    areaServed: { "@type": "Place", name: "Worldwide" },
+    areaServed: AREA_SERVED_COUNTRIES,
   };
 
   const article = {
@@ -77,12 +77,12 @@ function projectRescueJsonLd() {
 
 export const metadata = {
   alternates: getAlternates("/project-rescue"),
-  title: "Software Project Rescue India | Mid-Project Recovery | Baaz",
+  title: "Software Project Rescue | Mid-Project Recovery | Baaz",
   description: pageDescription,
   openGraph: {
-    title: "Software Project Rescue India | Baaz Bangalore",
+    title: "Software Project Rescue | Baaz",
     description:
-      "Software project rescue in India—audit, stabilize, ship again with Baaz Bangalore. Mid-project takeover is central to most engagements.",
+      "Software project rescue—audit, stabilize, and ship again. Mid-project takeover is central to most Baaz engagements.",
     url: `${baseUrl}/project-rescue`,
     siteName: "Baaz",
     images: [
@@ -96,9 +96,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Software Project Rescue India | Baaz",
+    title: "Software Project Rescue | Baaz",
     description:
-      "Stalled build or mismatched vendor—Baaz takes over mid-project and stabilizes delivery. Bangalore engineering team.",
+      "Stalled build or mismatched vendor—Baaz takes over mid-project and stabilizes delivery for global teams.",
     images: [ogImage],
   },
 };
