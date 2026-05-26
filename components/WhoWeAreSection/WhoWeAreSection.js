@@ -1,13 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
 import { BRAND_POSITIONING_COMBINED } from "../../lib/brandPositioning";
 import { US_ADDRESS_LINE } from "../../lib/companyAddresses";
 import "./WhoWeAreSection.scss";
 
 const WhoWeAreSection = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   return (
     <section className="who-we-are-section">
       <div className="who-we-are-section-wrapper">
@@ -32,28 +27,20 @@ const WhoWeAreSection = () => {
             reflects Baaz&apos;s internal delivery records.
           </p>
 
-          <p
-            className={`who-we-are-section-paragraph secondary ${
-              isExpanded ? "expanded" : ""
-            }`}
-          >
-            Our team brings deep technical expertise, strategic thinking, and a
-            collaborative mindset to every project. We follow a founder-first,
-            product-led approach that helps businesses move from idea to
-            prototype, MVP to scale — quickly and efficiently. At Baaz, we don't
-            just write code — we craft scalable solutions that solve real
-            problems and create long-term value.
-          </p>
-
-          <button
-            className="read-more-btn"
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? "Read less" : "Read more"}
-            <span className={`arrow ${isExpanded ? "up" : "down"}`}>
-              {isExpanded ? "∧" : "∨"}
-            </span>
-          </button>
+          <details className="who-we-are-section-details" open>
+            <summary className="read-more-btn">
+              Read more
+              <span className="arrow">∨</span>
+            </summary>
+            <p className="who-we-are-section-paragraph secondary">
+              Our team brings deep technical expertise, strategic thinking, and a
+              collaborative mindset to every project. We follow a founder-first,
+              product-led approach that helps businesses move from idea to
+              prototype, MVP to scale — quickly and efficiently. At Baaz, we don't
+              just write code — we craft scalable solutions that solve real
+              problems and create long-term value.
+            </p>
+          </details>
         </div>
       </div>
 

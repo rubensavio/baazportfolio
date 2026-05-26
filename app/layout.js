@@ -233,7 +233,7 @@ export default function RootLayout({ children }) {
           as="image"
           type="image/webp"
         />
-        <Script id="google-tag-manager" strategy="beforeInteractive">
+        <Script id="google-tag-manager" strategy="afterInteractive">
           {gtmScript}
         </Script>
         <script

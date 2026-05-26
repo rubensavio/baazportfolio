@@ -1,16 +1,22 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "../Navbar/Navbar";
 
-// react-headroom reads window.pageYOffset — must stay client-only.
-// Navbar itself is a Client Component that renders fine on the server.
-const Headroom = dynamic(() => import("react-headroom"), {
-  ssr: false,
-  loading: () => <Navbar />,
-});
+const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
 
 export default function ClientNavbar() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <Navbar />;
+  }
+
   return (
     <Headroom>
       <Navbar />

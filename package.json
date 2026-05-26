@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/submit-indexnow.mjs",
     "start": "next start",
     "page-speed": "node scripts/page-speed-audit.mjs",
     "optimize-images": "node scripts/optimize-hero-images.mjs",

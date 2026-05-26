@@ -1,24 +1,13 @@
 "use client";
 
 import React, { useEffect } from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
+import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
+import FAQ from "../../../components/FAQ/FAQ";
+import CTA from "../../../components/CTA/CTA";
+import Footer from "../../../components/Footer/Footer";
 import "./page.scss";
-
-const Headroom = dynamic(() => import("react-headroom"), { ssr: false });
-const Navbar = dynamic(() => import("../../../components/Navbar/Navbar"), {
-  ssr: false,
-});
-const FAQ = dynamic(() => import("../../../components/FAQ/FAQ"), {
-  ssr: false,
-});
-const CTA = dynamic(() => import("../../../components/CTA/CTA"), {
-  ssr: false,
-});
-const Footer = dynamic(() => import("../../../components/Footer/Footer"), {
-  ssr: false,
-});
 
 export default function ErpPageClient({
   data,
@@ -34,9 +23,7 @@ export default function ErpPageClient({
 
   return (
     <div className="erp-page">
-      <Headroom>
-        <Navbar />
-      </Headroom>
+      <ClientNavbar />
 
       {/* ── 1. Hero ── */}
       <section className="erp-hero">
