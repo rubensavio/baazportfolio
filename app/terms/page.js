@@ -2,7 +2,10 @@ import React from "react";
 import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
-import { INDIA_ADDRESS_LINE, US_ADDRESS_LINE } from "../../lib/companyAddresses";
+import {
+  INDIA_ADDRESS_LINE,
+  US_ADDRESS_LINE,
+} from "../../lib/companyAddresses";
 import "../legal/legal-page.scss";
 
 export default function TermsPage() {
@@ -84,7 +87,7 @@ export default function TermsPage() {
               <br />
               Address (India): {INDIA_ADDRESS_LINE}
               <br />
-              Address (US): {US_ADDRESS_LINE}
+              Address (United States): {US_ADDRESS_LINE}
             </p>
           </div>
         </article>

@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { INDIA_ADDRESS_LINE, US_ADDRESS_LINE } from "../../lib/companyAddresses";
+import {
+  INDIA_ADDRESS_LINE,
+  US_ADDRESS_LINE,
+} from "../../lib/companyAddresses";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -28,7 +31,9 @@ const Footer = () => {
               <span className="footer-address">
                 India (HQ): {INDIA_ADDRESS_LINE}
               </span>
-              <span className="footer-address">US: {US_ADDRESS_LINE}</span>
+              <span className="footer-address footer-address-us">
+                United States: {US_ADDRESS_LINE}
+              </span>
             </address>
             <div className="footer-social">
               <a
