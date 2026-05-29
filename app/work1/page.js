@@ -1,5 +1,4 @@
-import React from "react";
-import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
+import CaseStudyPageClient from "../../components/CaseStudyPageClient/CaseStudyPageClient";
 import CaseStudyHero from "../../components/CaseStudyHero/CaseStudyHero";
 import SolutionSection from "../../components/SolutionSection/SolutionSection";
 import ImplementationJourney from "../../components/ImplementationJourney/ImplementationJourney";
@@ -10,8 +9,6 @@ import ChallengesLessons from "../../components/ChallengesLessons/ChallengesLess
 import IndustryComparison from "../../components/IndustryComparison/IndustryComparison";
 import BottomLine from "../../components/BottomLine/BottomLine";
 import FinalThoughts from "../../components/FinalThoughts/FinalThoughts";
-import FAQ from "../../components/FAQ/FAQ";
-import Footer from "../../components/Footer/Footer";
 import {
   WORK1_CASE_STUDY_FAQ_HEADING,
   WORK1_CASE_STUDY_FAQ_ITEMS,
@@ -32,12 +29,12 @@ const faqSchema = {
 
 export default function Work1() {
   return (
-    <div className="work1">
-      <ClientNavbar />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+    <CaseStudyPageClient
+      className="work1"
+      faqs={WORK1_CASE_STUDY_FAQ_ITEMS}
+      faqHeading={WORK1_CASE_STUDY_FAQ_HEADING}
+      faqSchema={faqSchema}
+    >
       <CaseStudyHero />
       <SolutionSection />
       <ImplementationJourney />
@@ -48,11 +45,6 @@ export default function Work1() {
       <IndustryComparison />
       <BottomLine />
       <FinalThoughts />
-      <FAQ
-        faqs={WORK1_CASE_STUDY_FAQ_ITEMS}
-        heading={WORK1_CASE_STUDY_FAQ_HEADING}
-      />
-      <Footer />
-    </div>
+    </CaseStudyPageClient>
   );
 }

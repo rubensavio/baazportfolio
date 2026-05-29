@@ -1,12 +1,16 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import {
+  ArrowBackIcon,
+  ArrowLinkIcon,
+} from "../../../components/icons/ArrowIcons";
 import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../../components/FAQ/FAQ";
-import CTA from "../../../components/CTA/CTA";
 import Footer from "../../../components/Footer/Footer";
+import { HOME_CTA } from "../../../lib/homePageData";
+import "../../../components/ErpPageClient/ErpPageClient.scss";
 import "./page.scss";
 
 export default function ErpPageClient({
@@ -19,38 +23,33 @@ export default function ErpPageClient({
     window.scrollTo(0, 0);
   }, [erpSlug]);
 
-  const heroAlt = `${data.title} — industry ERP landing page backdrop for implementation, modules, and integration planning by Baaz`;
-
   return (
-    <div className="erp-page">
+    <div className="baaz-v2 erp-v2">
       <ClientNavbar />
 
+      <div className="v2-wrap erp-back-wrap">
+        <Link href="/erp" className="erp-back v2-arrow-link">
+          <ArrowBackIcon className="erp-back-icon" />
+          All ERP solutions
+        </Link>
+      </div>
+
+      <main className="erp-main">
+        <div className="erp-page">
       {/* ── 1. Hero ── */}
       <section className="erp-hero">
-        <div className="erp-hero-background">
-          <Image
-            src="/assets/HomeHeroSectionBg.webp"
-            alt={heroAlt}
-            fill
-            className="erp-hero-bg-image"
-            sizes="100vw"
-            quality={82}
-            priority
-            fetchPriority="high"
-          />
-        </div>
         <div className="erp-hero-wrapper">
           <h1 className="erp-heading">{data.title}</h1>
           {data.heroSubtitle && (
             <p className="erp-hero-subtitle">{data.heroSubtitle}</p>
           )}
           <Link
-            href="https://calendar.app.google/BBo3UYaic9yomaSo7"
+            href={HOME_CTA.callHref}
             target="_blank"
             rel="noopener noreferrer"
             className="erp-hero-cta"
           >
-            Book a Demo
+            Book a demo
           </Link>
         </div>
       </section>
@@ -330,9 +329,7 @@ export default function ErpPageClient({
               className="erp-case-study-cta"
             >
               {data.caseStudyLink.label}
-              <span className="erp-case-study-cta-arrow" aria-hidden="true">
-                →
-              </span>
+              <ArrowLinkIcon className="erp-case-study-cta-arrow" />
             </Link>
           </div>
         </section>
@@ -390,10 +387,43 @@ export default function ErpPageClient({
       )}
 
       {/* ── FAQs ── */}
-      {data.faqs && <FAQ faqs={data.faqs} />}
+      {data.faqs && (
+        <div className="v2-faq">
+          <div className="erp-section-container">
+            <FAQ faqs={data.faqs} heading="Common questions" />
+          </div>
+        </div>
+      )}
 
-      {/* ── CTA (Book Demo) ── */}
-      <CTA />
+      <section className="erp-closing v2-wrap">
+        <p className="erp-closing-text">
+          Ready to map your rollout?{" "}
+          <Link href="/get-in-touch">Brief the Baaz squad</Link> or browse{" "}
+          <Link href="/erp">more industry ERP guides</Link>.
+        </p>
+        <div className="erp-closing-cta">
+          <p className="erp-closing-sub">{HOME_CTA.sub}</p>
+          <div className="v2-cta-actions">
+            <Link
+              href={HOME_CTA.briefHref}
+              className="v2-arrow-link v2-arrow-link--light v2-cta-brief-link"
+            >
+              Get in touch <ArrowLinkIcon />
+            </Link>
+            <Link
+              href={HOME_CTA.callHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="v2-arrow-link v2-arrow-link--light v2-cta-call-link"
+            >
+              Schedule a call <ArrowLinkIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+        </div>
+      </main>
+
       <Footer />
     </div>
   );

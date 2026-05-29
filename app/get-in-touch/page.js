@@ -1,6 +1,5 @@
-import GetInTouchForm from "../../components/GetInTouchForm/GetInTouchForm";
-import "./page.scss";
+import ContactPageClient from "../../components/ContactPageClient/ContactPageClient";
 
 export default function GetInTouch() {
-  return <GetInTouchForm />;
+  return <ContactPageClient />;
 }

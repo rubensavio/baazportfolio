@@ -7,13 +7,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/get-in-touch"),
-  title: "Contact Baaz — Strategy, Design & Engineering",
+  title: "Get in Touch — Start a Project with Baaz",
   description:
-    "Contact Baaz for strategy, UI/UX, web, mobile, AI, or rescue. Honest scoping and quick replies for product teams worldwide since 2018.",
+    "Tell us what you're building. Baaz is a product engineering studio in Bengaluru — working with startups and enterprises globally on custom software, design, and AI.",
   openGraph: {
-    title: "Contact Baaz — Strategy, Design & Engineering",
+    title: "Get in Touch — Baaz",
     description:
-      "Reach Baaz for strategy, design, engineering, mobile, AI, or rescue—fast replies for teams worldwide.",
+      "Tell us what you're building. We'll tell you how to make it better.",
     url: `${baseUrl}/get-in-touch`,
     siteName: "Baaz",
     images: [
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Baaz — Strategy, Design & Engineering",
+    title: "Get in Touch — Baaz",
     description:
-      "Strategy, UI/UX, custom software, mobile, and AI—message Baaz for a fast reply. Project rescue and greenfield builds worldwide.",
+      "Tell us what you're building. Baaz responds within one business day on strategy, design, engineering, mobile, and AI projects.",
     images: [ogImage],
   },
 };

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Custom Software Development, Design & AI | Baaz</title>
+  <meta name="description" content="Baaz offers product strategy, UI/UX design, custom software development, mobile apps, AI/ML systems, and project rescue — end to end, no handoffs." />
+  <meta name="keywords" content="custom software development, UI/UX design services, mobile app development, AI development, product strategy consulting, project rescue, Bangalore" />
+  <link rel="canonical" href="https://baaz.pro/services" />
+  <meta property="og:title" content="Services — Baaz Product Engineering Studio" />
+  <meta property="og:description" content="End-to-end product engineering: strategy, design, engineering, AI, and rescue — delivered with taste and velocity." />
+  <meta property="og:type" content="website" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Services — Baaz","description":"Custom software development, UI/UX design, mobile apps, AI/ML systems, and project rescue from Bengaluru.","url":"https://baaz.pro/services","provider":{"@type":"Organization","name":"Baaz"}}
+  </script>
+<style>
+/* ─────────────────────────────────────────────────────────
+   BAAZ — Design System v2
+   Editorial dark. Playfair Display + Inter.
+   One accent colour. Typography does the work.
+───────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0A0A0A;
+  --bg-1:      #111111;
+  --bg-2:      #181818;
+  --text:      #F0ECE6;
+  --text-2:    #5A5A5A;
+  --text-3:    #2C2C2C;
+  --accent:    #C8F135;
+  --border:    rgba(255,255,255,0.07);
+  --border-h:  rgba(255,255,255,0.14);
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'Inter', -apple-system, sans-serif;
+
+  --max-w: 1360px;
+  --pad:   80px;
+  --nav-h: 64px;
+}
+
+@media (max-width: 900px)  { :root { --pad: 40px; } }
+@media (max-width: 600px)  { :root { --pad: 24px; } }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg-2); border-radius: 2px; }
+
+/* ── Layout ── */
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ── Section spacing ── */
+.section      { padding: 120px 0; }
+.section-sm   { padding: 80px 0; }
+.section-xs   { padding: 56px 0; }
+
+/* ── Horizontal rule ── */
+hr, .rule { border: none; border-top: 1px solid var(--border); }
+
+/* Animated rule — expands from left on scroll */
+.rule-anim {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.rule-anim.visible { transform: scaleX(1); }
+
+/* ── Label ── */
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+/* ── Accent ── */
+.accent { color: var(--accent); }
+
+/* ── Links ── */
+.ul-link {
+  color: var(--text-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.ul-link:hover { color: var(--text); border-color: var(--text-2); }
+
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+}
+.arrow-link span { display: inline-block; transition: transform 0.2s; }
+.arrow-link:hover { color: var(--text); }
+.arrow-link:hover span { transform: translateX(4px); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-h);
+  display: flex; align-items: center;
+  background: rgba(10,10,10,0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  width: 100%; max-width: var(--max-w);
+  margin: 0 auto; padding: 0 var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--sans);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text); text-decoration: none;
+}
+.nav-logo .dot { color: var(--accent); }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 40px; }
+.nav-links a {
+  font-size: 13px; font-weight: 400;
+  color: var(--text-2); text-decoration: none;
+  transition: color 0.18s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-contact {
+  font-size: 13px; font-weight: 500;
+  color: var(--text) !important;
+  position: relative;
+}
+.nav-contact::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 1px;
+  background: var(--accent);
+  transform: scaleX(0); transition: transform 0.2s;
+}
+.nav-contact:hover::after { transform: scaleX(1); }
+.nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-ham span { display: block; width: 22px; height: 1px; background: var(--text-2); transition: all 0.2s; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-ham { display: flex; }
+}
+
+/* ── Marquee ── */
+.marquee-wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+.marquee-track {
+  display: flex; width: max-content;
+  animation: marquee 36s linear infinite;
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee-item {
+  display: flex; align-items: center; gap: 28px;
+  padding: 0 28px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-3); white-space: nowrap;
+}
+.marquee-item .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--text-3); }
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 0 40px;
+}
+.footer-grid {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad);
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 64px;
+  margin-bottom: 56px;
+}
+.footer-logo {
+  font-family: var(--sans);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--text); text-decoration: none; display: block; margin-bottom: 16px;
+}
+.footer-logo .dot { color: var(--accent); }
+.footer-tagline { font-size: 14px; color: var(--text-2); line-height: 1.7; max-width: 220px; }
+.footer-col h5 {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-3); margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { font-size: 14px; color: var(--text-2); text-decoration: none; transition: color 0.18s; }
+.footer-col ul li a:hover { color: var(--text); }
+.footer-bottom {
+  max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad);
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 32px; border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text-3);
+}
+.footer-bottom a { color: var(--text-3); text-decoration: none; transition: color 0.18s; }
+.footer-bottom a:hover { color: var(--text-2); }
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+</style>
+  <style>
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: calc(var(--nav-h) + 100px) 0 96px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ph-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+    .ph-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+    .ph-body {
+      padding-bottom: 8px;
+    }
+    .ph-desc {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .ph-note {
+      font-size: 13px;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 900px) {
+      .ph-inner { grid-template-columns: 1fr; gap: 36px; }
+    }
+
+    /* ── SERVICE ENTRIES ── */
+    .svc-entry {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 96px;
+      align-items: start;
+    }
+    .se-left {}
+    .se-num {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 20px;
+      display: block;
+    }
+    .se-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .se-pitch {
+      font-size: 15px;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 360px;
+    }
+    .se-right {}
+    .se-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.85;
+      margin-bottom: 40px;
+    }
+    .se-body em { color: var(--text); font-style: normal; font-weight: 400; }
+
+    .se-capabilities {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+    .se-cap {
+      padding: 20px 24px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .se-cap:hover { background: var(--bg-1); }
+    .se-cap:nth-child(2n) { border-right: none; }
+    .se-cap:nth-last-child(-n+2) { border-bottom: none; }
+    .se-cap h4 {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .se-cap p {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .svc-entry { grid-template-columns: 1fr; gap: 40px; padding: 64px 0; }
+      .se-pitch { max-width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .se-capabilities { grid-template-columns: 1fr; }
+      .se-cap { border-right: none; }
+      .se-cap:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .se-cap:last-child { border-bottom: none; }
+    }
+
+    /* ── INDUSTRIES ── */
+    .industries {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .ind-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-bottom: 64px;
+    }
+    .ind-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .ind-desc {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.75;
+      padding-top: 8px;
+    }
+    .ind-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .ind-item {
+      background: var(--bg);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+    .ind-item:hover { background: var(--bg-1); }
+    .ind-item-icon {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+    .ind-item-name {
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .ind-item-detail {
+      font-size: 12px;
+      color: var(--text-2);
+      margin-top: 4px;
+    }
+    @media (max-width: 900px) {
+      .ind-header { grid-template-columns: 1fr; gap: 24px; }
+      .ind-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .ind-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── CTA ── */
+    .cta-strip {
+      padding: 120px 0;
+    }
+    .cta-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .cta-strip h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(32px, 5vw, 60px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .cta-strip-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">BAAZ<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="about.html">Studio</a></li>
+      <li><a href="blog.html">Writing</a></li>
+      <li><a href="contact.html" class="nav-contact">Get in touch</a></li>
+    </ul>
+    <div class="nav-ham"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="ph-inner reveal">
+      <h1 class="ph-title">Every layer.<br>One team.<br>No gaps.</h1>
+      <div class="ph-body">
+        <p class="ph-desc">
+          We cover every stage from the first user insight to the infrastructure that handles your first million users. Strategy, design, engineering, and AI — without the handoffs that kill momentum.
+        </p>
+        <p class="ph-note label">Six capabilities → One studio → Your product</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE: 01 -->
+<div class="wrap">
+  <div class="svc-entry reveal">
+    <div class="se-left">
+      <span class="se-num">01 — Service</span>
+      <h2 class="se-title">Product<br>Strategy</h2>
+      <p class="se-pitch">Define what to build before you build it. The decisions made in week one determine whether your product ships in four months or four years.</p>
+      <a href="contact.html" class="arrow-link">Start with strategy <span>→</span></a>
+    </div>
+    <div class="se-right">
+      <p class="se-body">
+        Most failed products aren't engineering failures. They're <em>assumption failures</em> — nobody validated the problem before hiring a team to solve it. Our discovery process surfaces what users actually need, maps competitive gaps, and produces a sequenced roadmap tied to real outcomes — not a feature wishlist padded to justify a budget.
+      </p>
+      <div class="se-capabilities">
+        <div class="se-cap">
+          <h4>User Research</h4>
+          <p>Jobs-to-be-done interviews, persona mapping, and opportunity sizing from real data — not assumptions.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Market Positioning</h4>
+          <p>Where the gaps exist, who occupies them, and how to own a defensible corner of the market.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Roadmap Design</h4>
+          <p>Sequenced priorities with explicit trade-offs — what to build first, second, and what to cut entirely.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Technical Feasibility</h4>
+          <p>Sanity-checking ideas against real build time, cost, and architectural complexity before commitment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE: 02 -->
+  <div class="svc-entry reveal">
+    <div class="se-left">
+      <span class="se-num">02 — Service</span>
+      <h2 class="se-title">UI/UX<br>Design</h2>
+      <p class="se-pitch">Interfaces that earn attention and reduce churn. Design is the product — not decoration on top of it.</p>
+      <a href="contact.html" class="arrow-link">Start with design <span>→</span></a>
+    </div>
+    <div class="se-right">
+      <p class="se-body">
+        We design end-to-end experiences from user flows through to high-fidelity prototypes validated with real users. Our designers sit alongside engineers from day one — so the gap between the Figma file and the shipped product is as small as possible. <em>Nothing gets lost in translation.</em>
+      </p>
+      <div class="se-capabilities">
+        <div class="se-cap">
+          <h4>User Flows & IA</h4>
+          <p>Every path mapped before a single screen is designed. Reduces rework by an order of magnitude.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Wireframes & Prototypes</h4>
+          <p>Clickable, testable prototypes — validated with real users before engineering begins.</p>
+        </div>
+        <div class="se-cap">
+          <h4>High-Fidelity UI</h4>
+          <p>Pixel-precise design systems built in Figma, with tokens, component libraries, and handoff specs.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Motion Design</h4>
+          <p>Transitions, micro-animations, and interaction states that make software feel alive and considered.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE: 03 -->
+  <div class="svc-entry reveal">
+    <div class="se-left">
+      <span class="se-num">03 — Service</span>
+      <h2 class="se-title">Full-Stack<br>Engineering</h2>
+      <p class="se-pitch">Web platforms and APIs built for production — not retrofitted for scale after the fact.</p>
+      <a href="contact.html" class="arrow-link">Start building <span>→</span></a>
+    </div>
+    <div class="se-right">
+      <p class="se-body">
+        We build on battle-tested stacks chosen for longevity, not novelty: React and Next.js on the front, Node.js and PostgreSQL on the back, AWS or GCP for infrastructure — <em>properly secured, monitored, and deployed through CI/CD from day one</em>. No framework experiments on your critical path.
+      </p>
+      <div class="se-capabilities">
+        <div class="se-cap">
+          <h4>Web Applications</h4>
+          <p>SaaS platforms, dashboards, and marketplaces built for real-world traffic and real users.</p>
+        </div>
+        <div class="se-cap">
+          <h4>API & Backend</h4>
+          <p>REST and GraphQL APIs with documented specs, proper authentication, and tested edge cases.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Cloud & DevOps</h4>
+          <p>Docker, Kubernetes, and CI/CD pipelines — infrastructure that deploys itself reliably every time.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Enterprise Integrations</h4>
+          <p>Legacy systems, third-party APIs, data migrations — we've done the unglamorous work before.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE: 04 -->
+  <div class="svc-entry reveal">
+    <div class="se-left">
+      <span class="se-num">04 — Service</span>
+      <h2 class="se-title">Mobile<br>Apps</h2>
+      <p class="se-pitch">Native-quality iOS and Android apps. Especially for B2B teams operating in the field.</p>
+      <a href="contact.html" class="arrow-link">Start a mobile project <span>→</span></a>
+    </div>
+    <div class="se-right">
+      <p class="se-body">
+        We specialise in B2B apps that work in the real world — <em>offline-first, GPS-aware, push notification-driven</em>, and built for users who aren't sitting at a desk. Cross-platform with React Native where it makes sense; native where performance demands it.
+      </p>
+      <div class="se-capabilities">
+        <div class="se-cap">
+          <h4>React Native</h4>
+          <p>Single codebase, genuine native performance, faster iteration. Most B2B apps live here.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Offline-First</h4>
+          <p>Apps designed to keep working when the network doesn't. Critical for field and logistics teams.</p>
+        </div>
+        <div class="se-cap">
+          <h4>B2B Field Operations</h4>
+          <p>Purpose-built for construction, logistics, healthcare, and distributed field teams.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Store Submission</h4>
+          <p>We handle the full App Store and Play Store submission, review process, and release management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE: 05 -->
+  <div class="svc-entry reveal">
+    <div class="se-left">
+      <span class="se-num">05 — Service</span>
+      <h2 class="se-title">AI &<br>Agentic<br>Systems</h2>
+      <p class="se-pitch">LLMs and automation that ship to production — not just impress in a demo.</p>
+      <a href="contact.html" class="arrow-link">Start an AI project <span>→</span></a>
+    </div>
+    <div class="se-right">
+      <p class="se-body">
+        We cut through the noise and build AI systems that solve real, specific problems. <em>RAG pipelines for document intelligence, agentic workflows for automation, prediction models for detection and forecasting</em> — engineered for production reliability, not investor slides.
+      </p>
+      <div class="se-capabilities">
+        <div class="se-cap">
+          <h4>RAG Pipelines</h4>
+          <p>Document Q&A and knowledge retrieval using LangChain, vector databases, and LLM orchestration.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Agentic Workflows</h4>
+          <p>Multi-step automation agents that operate across tools and APIs with minimal supervision.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Custom ML Models</h4>
+          <p>Detection, classification, and prediction with TensorFlow and PyTorch — tuned for your data.</p>
+        </div>
+        <div class="se-cap">
+          <h4>AI Integration</h4>
+          <p>Embedding AI into existing products and workflows — without a ground-up rebuild.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE: 06 -->
+  <div class="svc-entry reveal">
+    <div class="se-left">
+      <span class="se-num">06 — Service</span>
+      <h2 class="se-title">Project<br>Rescue</h2>
+      <p class="se-pitch">Half our active work. We're very good at it — because we've done it so many times.</p>
+      <a href="contact.html" class="arrow-link">Tell us what happened <span>→</span></a>
+    </div>
+    <div class="se-right">
+      <p class="se-body">
+        When a vendor has gone dark, a codebase has become unmaintainable, or a project has quietly stalled — that's when we get called. We move surgically: <em>audit the damage first, stabilise second, then accelerate</em>. We don't rewrite what doesn't need rewriting. No drama. Just momentum.
+      </p>
+      <div class="se-capabilities">
+        <div class="se-cap">
+          <h4>Technical Audit</h4>
+          <p>Rapid, unsentimental assessment of debt, security gaps, and architectural risk.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Stabilisation</h4>
+          <p>Fixing what's broken without touching what isn't. Surgical, not wholesale.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Scope Recovery</h4>
+          <p>Picking up abandoned features and shipping them properly — with tests and documentation.</p>
+        </div>
+        <div class="se-cap">
+          <h4>Vendor Transition</h4>
+          <p>Clean handoff planning, knowledge transfer documentation, and continuity engineering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRIES -->
+<section class="industries">
+  <div class="wrap">
+    <div class="ind-header reveal">
+      <h2 class="ind-title">We know<br>the domain,<br>not just the stack.</h2>
+      <p class="ind-desc">Seven years across ten industries means we arrive with context. We understand the compliance constraints, the legacy baggage, and the user expectations before the first sprint begins.</p>
+    </div>
+    <div class="ind-list reveal">
+      <div class="ind-item">
+        <span class="ind-item-icon">🏦</span>
+        <div class="ind-item-name">FinTech & Banking</div>
+        <div class="ind-item-detail">Regulated data, audit trails, real-time processing</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🏗️</span>
+        <div class="ind-item-name">Construction Tech</div>
+        <div class="ind-item-detail">Field ops, site management, offline-first</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🏥</span>
+        <div class="ind-item-name">Healthcare & MedTech</div>
+        <div class="ind-item-detail">HIPAA-aware, EHR integrations, clinical workflows</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🛍️</span>
+        <div class="ind-item-name">Retail & E-commerce</div>
+        <div class="ind-item-detail">Marketplace platforms, Amazon/Flipkart GTM</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🏭</span>
+        <div class="ind-item-name">Manufacturing & ERP</div>
+        <div class="ind-item-detail">Supply chain, process automation, legacy integration</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🎓</span>
+        <div class="ind-item-name">EdTech</div>
+        <div class="ind-item-detail">LMS platforms, adaptive learning, content delivery</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🏠</span>
+        <div class="ind-item-name">Real Estate</div>
+        <div class="ind-item-detail">Property platforms, transaction workflows, CRM</div>
+      </div>
+      <div class="ind-item">
+        <span class="ind-item-icon">🚚</span>
+        <div class="ind-item-name">Logistics & Supply Chain</div>
+        <div class="ind-item-detail">Tracking, dispatch, fleet management systems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="wrap">
+    <div class="cta-strip-inner reveal">
+      <h2>Not sure which service<br>you actually need?</h2>
+      <div class="cta-strip-right">
+        <p style="font-size:16px; font-weight:300; color:var(--text-2); max-width:320px; line-height:1.65;">
+          Tell us what problem you're solving. We'll figure out the right approach together.
+        </p>
+        <a href="contact.html" class="arrow-link" style="color:var(--text); font-size:15px;">
+          Start a conversation <span>→</span>
+        </a>
+        <a href="mailto:support@baaz.live" class="arrow-link" style="font-size:14px;">
+          support@baaz.live <span>→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="footer-logo">BAAZ<span class="dot">.</span></a>
+      <p class="footer-tagline">Product engineering studio. Bengaluru, India. Building since 2018.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="services.html">Product Strategy</a></li>
+        <li><a href="services.html">UI/UX Design</a></li>
+        <li><a href="services.html">Custom Software</a></li>
+        <li><a href="services.html">Mobile Apps</a></li>
+        <li><a href="services.html">AI Development</a></li>
+        <li><a href="services.html">Project Rescue</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Studio</h5>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Writing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:support@baaz.live">support@baaz.live</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Twitter / X</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Baaz Technologies Pvt. Ltd.</span>
+    <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.07});
+  document.querySelectorAll('.reveal,.rule-anim').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

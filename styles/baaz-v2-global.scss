@@ -1,0 +1,39 @@
+@use "baaz-v2-shell";
+
+/* v2 scrollbar — matches contact.html design system */
+html:has(.baaz-v2) {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #181818 #0a0a0a;
+}
+
+html:has(.baaz-v2) body {
+  background: #0a0a0a;
+}
+
+html:has(.baaz-v2)::-webkit-scrollbar,
+html:has(.baaz-v2) *::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+html:has(.baaz-v2)::-webkit-scrollbar-track,
+html:has(.baaz-v2) *::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+html:has(.baaz-v2)::-webkit-scrollbar-thumb,
+html:has(.baaz-v2) *::-webkit-scrollbar-thumb {
+  background: #181818;
+  border-radius: 2px;
+}
+
+html:has(.baaz-v2)::-webkit-scrollbar-thumb:hover,
+html:has(.baaz-v2) *::-webkit-scrollbar-thumb:hover {
+  background: #242424;
+}
+
+html:has(.baaz-v2)::-webkit-scrollbar-corner,
+html:has(.baaz-v2) *::-webkit-scrollbar-corner {
+  background: #0a0a0a;
+}

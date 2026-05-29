@@ -1,5 +1,7 @@
-import { Urbanist, Outfit } from "next/font/google";
+import { Urbanist, Outfit, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import "../styles/arrow-icons.scss";
+import "../styles/baaz-v2-global.scss";
 import { getAlternates, AREA_SERVED_COUNTRIES } from "../lib/regions";
 import { getSiteUrl } from "../lib/siteUrl";
 import {
@@ -23,6 +25,27 @@ const urbanist = Urbanist({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  display: "swap",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  preload: true,
+  adjustFontFallback: true,
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  fallback: ["Georgia", "serif"],
+  preload: true,
+  adjustFontFallback: true,
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500"],
   display: "swap",
   fallback: ["system-ui", "Arial", "sans-serif"],
   preload: true,
@@ -225,7 +248,10 @@ export default function RootLayout({ children }) {
   `;
 
   return (
-    <html lang="en" className={`${urbanist.variable} ${outfit.variable}`}>
+    <html
+      lang="en"
+      className={`${urbanist.variable} ${outfit.variable} ${playfair.variable} ${inter.variable}`}
+    >
       <head>
         <link
           rel="preload"

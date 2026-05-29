@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
-import CTA from "../../../components/CTA/CTA";
-import FAQ from "../../../components/FAQ/FAQ";
-import Footer from "../../../components/Footer/Footer";
+import Link from "next/link";
 import {
   FiUsers,
   FiZap,
@@ -22,7 +19,14 @@ import {
   FiHeart,
   FiTool,
 } from "react-icons/fi";
-import Link from "next/link";
+import {
+  ArrowBackIcon,
+  ArrowLinkIcon,
+} from "../../../components/icons/ArrowIcons";
+import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
+import FAQ from "../../../components/FAQ/FAQ";
+import Footer from "../../../components/Footer/Footer";
+import { HOME_CTA } from "../../../lib/homePageData";
 import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesData";
 import { getRelatedServiceOfferingLinks } from "../../../lib/technologyServiceRoutes";
 import "../../services/[serviceType]/page.scss";
@@ -57,209 +61,240 @@ export default function TechnologyPageClient({ techSlug }) {
   }, [techSlug]);
 
   return (
-    <div className="services-page services-page--mobile-app services-page--tech-capabilities">
+    <div className="baaz-v2 services-v2 services-page services-page--mobile-app services-page--tech-capabilities">
       <ClientNavbar />
 
-      <section className="services-hero">
-        <div className="services-hero-background">
-          <img
-            src="/assets/HomeHeroSectionBg.webp"
-            alt="Technology capabilities background"
-            className="services-hero-bg-image"
-            width={1200}
-            height={600}
-            fetchPriority="high"
-          />
-        </div>
-        <div className="services-hero-wrapper">
-          <div className="services-header">
-            <span className="services-label">Technology capabilities</span>
-            <h1 className="services-heading">{data.heading}</h1>
-            <p className="services-direct-answer">{data.directAnswer}</p>
-            <p className="services-description">{data.overview}</p>
-          </div>
-        </div>
-      </section>
-
-      <div className="services-content-wrapper">
-        {stackGroups.length > 0 && (
-          <div className="service-services-and-stack">
-            <h2 className="services-section-heading">
-              {data.stackHeading || "Technology stack & delivery"}
-            </h2>
-            {data.stackIntro && (
-              <p className="service-tech-intro">{data.stackIntro}</p>
-            )}
-            <div className="service-tech-grid">
-              {stackGroups.map((group) => (
-                <article className="service-tech-card" key={group.title}>
-                  <h3 className="service-tech-title">{group.title}</h3>
-                  <p className="service-tech-description">{group.description}</p>
-                  {(group.tools ?? []).length > 0 && (
-                    <ul className="service-tech-tools">
-                      {(group.tools ?? []).map((tool) => (
-                        <li key={tool}>{tool}</li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {data.webServices && data.webServices.length > 0 && (
-          <div className="service-highlights">
-            <h2 className="services-section-heading">{data.webServicesHeading}</h2>
-            {data.webServicesIntro && (
-              <p className="service-tech-intro">{data.webServicesIntro}</p>
-            )}
-            <div className="service-highlights-grid service-highlights-grid--four">
-              {data.webServices.map((service) => (
-                <article className="service-highlight-card" key={service.title}>
-                  {service.icon && CARD_ICON_MAP[service.icon] && (
-                    <span className="service-card-icon" aria-hidden="true">
-                      {React.createElement(CARD_ICON_MAP[service.icon])}
-                    </span>
-                  )}
-                  <h3 className="service-highlight-title">{service.title}</h3>
-                  <p className="service-highlight-description">
-                    {service.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {data.workflow && data.workflow.length > 0 && (
-          <div className="service-workflow">
-            <h2 className="services-section-heading">
-              {data.workflowHeading || `Our ${labelLower} workflow`}
-            </h2>
-            <div className="service-workflow-grid">
-              {data.workflow.map((step) => (
-                <article className="service-workflow-card" key={step.title}>
-                  {step.icon && CARD_ICON_MAP[step.icon] && (
-                    <span className="service-card-icon" aria-hidden="true">
-                      {React.createElement(CARD_ICON_MAP[step.icon])}
-                    </span>
-                  )}
-                  <h3 className="service-workflow-title">{step.title}</h3>
-                  <p className="service-workflow-description">
-                    {step.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {data.whyChooseBaaz && data.whyChooseBaaz.points?.length > 0 && (
-          <div className="service-why-choose">
-            <h2 className="services-section-heading">
-              {data.whyChooseBaaz.heading ||
-                `Why choose Baaz for ${labelLower}?`}
-            </h2>
-            <span className="service-why-choose-accent" aria-hidden="true" />
-            {data.whyChooseBaaz.intro && (
-              <p className="service-tech-intro">{data.whyChooseBaaz.intro}</p>
-            )}
-            <div className="service-why-choose-grid">
-              {data.whyChooseBaaz.points.map((point) => (
-                <article className="service-why-card" key={point.title}>
-                  {point.icon && CARD_ICON_MAP[point.icon] && (
-                    <span
-                      className="service-card-icon service-card-icon--plain-red"
-                      aria-hidden="true"
-                    >
-                      {React.createElement(CARD_ICON_MAP[point.icon])}
-                    </span>
-                  )}
-                  <h3 className="service-why-card-title">{point.title}</h3>
-                  <p className="service-why-card-description">
-                    {point.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {data.offerings && data.offerings.length > 0 && (
-          <div className="service-offerings">
-            <h2 className="services-section-heading">
-              {data.offeringsHeading ||
-                `Our offerings in ${labelLower} services`}
-            </h2>
-            {data.offeringsIntro && (
-              <p className="service-tech-intro">{data.offeringsIntro}</p>
-            )}
-            <div className="service-offerings-grid">
-              {data.offerings.map((item) => (
-                <article className="service-offering-card" key={item.title}>
-                  {item.icon && CARD_ICON_MAP[item.icon] && (
-                    <span className="service-card-icon" aria-hidden="true">
-                      {React.createElement(CARD_ICON_MAP[item.icon])}
-                    </span>
-                  )}
-                  <h3 className="service-tech-title">{item.title}</h3>
-                  <p className="service-tech-description">{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {data.deployment && (
-          <div className="service-services-and-stack">
-            <h2 className="services-section-heading">{data.deployment.title}</h2>
-            <p className="service-tech-intro">{data.deployment.description}</p>
-            <ul className="service-tech-tools service-tech-tools--block">
-              {data.deployment.tools.map((tool) => (
-                <li key={tool}>{tool}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {relatedServiceOfferings.length > 0 && (
-          <section
-            className="tech-related-services-panel"
-            aria-labelledby="tech-related-services-heading"
-          >
-            <h2
-              id="tech-related-services-heading"
-              className="services-section-heading tech-related-services-panel__heading"
-            >
-              Where Baaz applies this stack
-            </h2>
-            <p className="tech-related-services-intro">
-              These engagement lines routinely pair with the toolchain above—from
-              first release through optimisation and runway.
-            </p>
-            <ul className="tech-related-services-list">
-              {relatedServiceOfferings.map((svc) => (
-                <li key={svc.slug} className="tech-related-services-item">
-                  <Link
-                    href={`/services/${svc.slug}`}
-                    className="tech-related-services-link"
-                  >
-                    {svc.label}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+      <div className="v2-wrap services-back-wrap">
+        <Link href="/services" className="services-back v2-arrow-link">
+          <ArrowBackIcon className="services-back-icon" />
+          All services
+        </Link>
       </div>
 
-      {data.faqs && data.faqs.length > 0 && (
-        <FAQ faqs={data.faqs} heading={data.faqsHeading} />
-      )}
+      <main className="services-main">
+        <section className="services-hero">
+          <div className="services-hero-background" aria-hidden="true">
+            <img
+              src="/assets/HomeHeroSectionBg.webp"
+              alt=""
+              className="services-hero-bg-image"
+              width={1200}
+              height={600}
+              fetchPriority="high"
+            />
+          </div>
+          <div className="services-hero-wrapper">
+            <div className="services-header">
+              <span className="services-label">Technology capabilities</span>
+              <h1 className="services-heading">{data.heading}</h1>
+              <p className="services-direct-answer">{data.directAnswer}</p>
+              <p className="services-description">{data.overview}</p>
+            </div>
+          </div>
+        </section>
 
-      <CTA />
+        <div className="services-content-wrapper">
+          {stackGroups.length > 0 && (
+            <div className="service-services-and-stack">
+              <h2 className="services-section-heading">
+                {data.stackHeading || "Technology stack & delivery"}
+              </h2>
+              {data.stackIntro && (
+                <p className="service-tech-intro">{data.stackIntro}</p>
+              )}
+              <div className="service-tech-grid">
+                {stackGroups.map((group) => (
+                  <article className="service-tech-card" key={group.title}>
+                    <h3 className="service-tech-title">{group.title}</h3>
+                    <p className="service-tech-description">{group.description}</p>
+                    {(group.tools ?? []).length > 0 && (
+                      <ul className="service-tech-tools">
+                        {(group.tools ?? []).map((tool) => (
+                          <li key={tool}>{tool}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {data.webServices && data.webServices.length > 0 && (
+            <div className="service-highlights">
+              <h2 className="services-section-heading">{data.webServicesHeading}</h2>
+              {data.webServicesIntro && (
+                <p className="service-tech-intro">{data.webServicesIntro}</p>
+              )}
+              <div className="service-highlights-grid service-highlights-grid--four">
+                {data.webServices.map((service) => (
+                  <article className="service-highlight-card" key={service.title}>
+                    {service.icon && CARD_ICON_MAP[service.icon] && (
+                      <span className="service-card-icon" aria-hidden="true">
+                        {React.createElement(CARD_ICON_MAP[service.icon])}
+                      </span>
+                    )}
+                    <h3 className="service-highlight-title">{service.title}</h3>
+                    <p className="service-highlight-description">
+                      {service.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {data.workflow && data.workflow.length > 0 && (
+            <div className="service-workflow">
+              <h2 className="services-section-heading">
+                {data.workflowHeading || `Our ${labelLower} workflow`}
+              </h2>
+              <div className="service-workflow-grid">
+                {data.workflow.map((step) => (
+                  <article className="service-workflow-card" key={step.title}>
+                    {step.icon && CARD_ICON_MAP[step.icon] && (
+                      <span className="service-card-icon" aria-hidden="true">
+                        {React.createElement(CARD_ICON_MAP[step.icon])}
+                      </span>
+                    )}
+                    <h3 className="service-workflow-title">{step.title}</h3>
+                    <p className="service-workflow-description">{step.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {data.whyChooseBaaz && data.whyChooseBaaz.points?.length > 0 && (
+            <div className="service-why-choose">
+              <h2 className="services-section-heading">
+                {data.whyChooseBaaz.heading || `Why choose Baaz for ${labelLower}?`}
+              </h2>
+              <span className="service-why-choose-accent" aria-hidden="true" />
+              {data.whyChooseBaaz.intro && (
+                <p className="service-tech-intro">{data.whyChooseBaaz.intro}</p>
+              )}
+              <div className="service-why-choose-grid">
+                {data.whyChooseBaaz.points.map((point) => (
+                  <article className="service-why-card" key={point.title}>
+                    {point.icon && CARD_ICON_MAP[point.icon] && (
+                      <span
+                        className="service-card-icon service-card-icon--plain-red"
+                        aria-hidden="true"
+                      >
+                        {React.createElement(CARD_ICON_MAP[point.icon])}
+                      </span>
+                    )}
+                    <h3 className="service-why-card-title">{point.title}</h3>
+                    <p className="service-why-card-description">{point.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {data.offerings && data.offerings.length > 0 && (
+            <div className="service-offerings">
+              <h2 className="services-section-heading">
+                {data.offeringsHeading || `Our offerings in ${labelLower} services`}
+              </h2>
+              {data.offeringsIntro && (
+                <p className="service-tech-intro">{data.offeringsIntro}</p>
+              )}
+              <div className="service-offerings-grid">
+                {data.offerings.map((item) => (
+                  <article className="service-offering-card" key={item.title}>
+                    {item.icon && CARD_ICON_MAP[item.icon] && (
+                      <span className="service-card-icon" aria-hidden="true">
+                        {React.createElement(CARD_ICON_MAP[item.icon])}
+                      </span>
+                    )}
+                    <h3 className="service-tech-title">{item.title}</h3>
+                    <p className="service-tech-description">{item.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {data.deployment && (
+            <div className="service-services-and-stack">
+              <h2 className="services-section-heading">{data.deployment.title}</h2>
+              <p className="service-tech-intro">{data.deployment.description}</p>
+              <ul className="service-tech-tools service-tech-tools--block">
+                {data.deployment.tools.map((tool) => (
+                  <li key={tool}>{tool}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {relatedServiceOfferings.length > 0 && (
+            <section
+              className="tech-related-services-panel"
+              aria-labelledby="tech-related-services-heading"
+            >
+              <h2
+                id="tech-related-services-heading"
+                className="services-section-heading tech-related-services-panel__heading"
+              >
+                Where Baaz applies this stack
+              </h2>
+              <p className="tech-related-services-intro">
+                These engagement lines routinely pair with the toolchain above—from first
+                release through optimisation and runway.
+              </p>
+              <ul className="tech-related-services-list">
+                {relatedServiceOfferings.map((svc) => (
+                  <li key={svc.slug} className="tech-related-services-item">
+                    <Link
+                      href={`/services/${svc.slug}`}
+                      className="tech-related-services-link"
+                    >
+                      {svc.label}
+                      <ArrowLinkIcon />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </div>
+
+        {data.faqs && data.faqs.length > 0 && (
+          <div className="v2-faq">
+            <FAQ faqs={data.faqs} heading={data.faqsHeading || "Common questions"} />
+          </div>
+        )}
+
+        <section className="services-closing v2-wrap">
+          <p className="services-closing-text">
+            Ready to scope this stack?{" "}
+            <Link href="/get-in-touch">Brief the Baaz squad</Link> or browse{" "}
+            <Link href="/services">more services</Link>.
+          </p>
+          <div className="services-closing-cta">
+            <p className="services-closing-sub">{HOME_CTA.sub}</p>
+            <div className="v2-cta-actions">
+              <Link
+                href={HOME_CTA.briefHref}
+                className="v2-arrow-link v2-arrow-link--light v2-cta-brief-link"
+              >
+                Get in touch <ArrowLinkIcon />
+              </Link>
+              <Link
+                href={HOME_CTA.callHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="v2-arrow-link v2-arrow-link--light v2-cta-call-link"
+              >
+                Schedule a call <ArrowLinkIcon />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
       <Footer />
     </div>
   );

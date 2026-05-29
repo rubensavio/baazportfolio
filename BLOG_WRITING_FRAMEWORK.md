@@ -15,15 +15,16 @@ The client template renders data in this **order** (`app/blog/[slug]/BlogPostPag
 
 | Order | UI | Data field | Notes |
 |------|-----|------------|--------|
-| 1 | Purple-style **label** | `contentType` | e.g. Guide, Comparison, Checklist |
+| 0 | **Theme shell** | `theme` (optional) | Omit or `"v2"` → editorial dark (`baaz-v2` + `styles/baaz-v2-shell.scss`). Set `"legacy"` only to opt out. See `lib/blogPostTheme.js`. |
+| 1 | Muted **label** | `contentType` | e.g. Guide, Comparison, Checklist — `v2-label` styling |
 | 2 | **H1** | `title` | One per page; can be slightly longer or more specific than `metaTitle` |
 | 3 | **Direct answer** (extraction-first) | `directAnswer` | Class: `blog-direct-answer` — first screen under H1 |
 | 4 | **Intro** | `intro` | Class: `blog-intro` — full-width promise and scope |
 | 5 | **Sections** | `sections[]` | Each: `heading` → H2 (`blog-section-heading`); `body[]` → one `<p>` per string (`blog-section-paragraph`) |
 | 6 | Optional **table** | `section.table` | `caption`, `headers`, `rows` — comparison / GEO-friendly structure |
 | 7 | **FAQ** (visible + JSON-LD) | `faqs[]` | Same strings as FAQ schema in layout — **single source of truth** |
-| 8 | **Fixed explore line** | *(hardcoded in template)* | Links to Product Strategy, Custom Software, AI, project rescue, get in touch |
-| 9 | **Site CTA + footer** | *(components)* | `CTA`, `Footer` |
+| 8 | **Fixed explore line** | *(hardcoded in template)* | Links to get in touch & case studies — v2 underline links |
+| 9 | **Closing CTA + footer** | *(template + `HOME_CTA`)* | v2 arrow link to `/get-in-touch`; shared `Footer` via `baaz-v2-shell` |
 
 **Metadata & schema** (not visible as body copy): `app/blog/[slug]/layout.js` — `generateMetadata` from `metaTitle` / `metaDescription`, Open Graph/Twitter images (`data.ogImage` or default), **Article** + **FAQPage** JSON-LD, breadcrumbs.
 
@@ -117,6 +118,7 @@ Full numeric targets, meta bands, and anti-patterns live in **[PAGE_OPTIMIZATION
 ```text
 slug                 // lowercase, hyphenated, stable
 contentType          // e.g. Guide, Comparison, Checklist, Architecture guide
+theme?               // omit or "v2" (default); "legacy" opts out of editorial dark shell
 metaTitle
 metaDescription
 title                // H1
@@ -170,7 +172,7 @@ Register: **`lib/blogData.js`** (or `lib/blogPosts/*.js` + import), **`lib/sitem
 | Topic | File |
 |--------|------|
 | Meta lengths, global checklist, FAQ discipline, §6 tables | [PAGE_OPTIMIZATION_FRAMEWORK.md](./PAGE_OPTIMIZATION_FRAMEWORK.md) |
-| Blog UI | `app/blog/[slug]/BlogPostPageClient.js`, `app/blog/[slug]/page.scss` |
+| Blog UI & theme | `app/blog/[slug]/BlogPostPageClient.js`, `app/blog/[slug]/page.scss`, `lib/blogPostTheme.js`, `styles/baaz-v2-shell.scss` |
 | Schema + metadata | `app/blog/[slug]/layout.js` |
 | Post data | `lib/blogData.js`, `lib/blogPosts/*.js` |
 | Index sort / listing | `app/blog/page.js` |

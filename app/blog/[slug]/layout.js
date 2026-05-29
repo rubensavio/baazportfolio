@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { blogData } from "../../../lib/blogData";
 import { BreadcrumbScript } from "../../../lib/breadcrumbSchema";
 import { getAlternates } from "../../../lib/regions";
+import { BLOG_POST_SPEAKABLE_SELECTORS } from "../../../lib/blogPostTheme";
 import { getSiteUrl } from "../../../lib/siteUrl";
 
 const baseUrl = getSiteUrl();
@@ -78,7 +79,7 @@ function buildArticleSchema(data, slug) {
     articleSection: data.contentType,
     speakable: {
       "@type": "SpeakableSpecification",
-      cssSelector: [".blog-direct-answer", ".blog-intro", "h2"],
+      cssSelector: BLOG_POST_SPEAKABLE_SELECTORS,
     },
     author: data.author
       ? {

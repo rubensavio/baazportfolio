@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Footer from "../../components/Footer/Footer";
 
 const monthNames = [
@@ -100,11 +101,15 @@ export default function BookCallClient() {
 
             <div className="calendar-container">
               <div className="calendar-header">
-                <button className="month-nav-button" onClick={previousMonth} aria-label="Previous month">←</button>
+                <button className="month-nav-button" onClick={previousMonth} aria-label="Previous month">
+                  <FiChevronLeft aria-hidden="true" />
+                </button>
                 <h3 className="current-month">
                   {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
                 </h3>
-                <button className="month-nav-button" onClick={nextMonth} aria-label="Next month">→</button>
+                <button className="month-nav-button" onClick={nextMonth} aria-label="Next month">
+                  <FiChevronRight aria-hidden="true" />
+                </button>
               </div>
 
               <div className="calendar-grid">

@@ -1,0 +1,26 @@
+.arrow-link-icon,
+.arrow-up-right-icon,
+.arrow-down-icon,
+.arrow-back-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.arrow-link-icon,
+.arrow-down-icon,
+.arrow-back-icon {
+  transition: transform 0.2s;
+}
+
+.arrow-up-right-icon {
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
