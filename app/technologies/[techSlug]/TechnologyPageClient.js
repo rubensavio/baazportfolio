@@ -106,7 +106,9 @@ export default function TechnologyPageClient({ techSlug }) {
                 {stackGroups.map((group) => (
                   <article className="service-tech-card" key={group.title}>
                     <h3 className="service-tech-title">{group.title}</h3>
-                    <p className="service-tech-description">{group.description}</p>
+                    <p className="service-tech-description">
+                      {group.description}
+                    </p>
                     {(group.tools ?? []).length > 0 && (
                       <ul className="service-tech-tools">
                         {(group.tools ?? []).map((tool) => (
@@ -122,13 +124,18 @@ export default function TechnologyPageClient({ techSlug }) {
 
           {data.webServices && data.webServices.length > 0 && (
             <div className="service-highlights">
-              <h2 className="services-section-heading">{data.webServicesHeading}</h2>
+              <h2 className="services-section-heading">
+                {data.webServicesHeading}
+              </h2>
               {data.webServicesIntro && (
                 <p className="service-tech-intro">{data.webServicesIntro}</p>
               )}
               <div className="service-highlights-grid service-highlights-grid--four">
                 {data.webServices.map((service) => (
-                  <article className="service-highlight-card" key={service.title}>
+                  <article
+                    className="service-highlight-card"
+                    key={service.title}
+                  >
                     {service.icon && CARD_ICON_MAP[service.icon] && (
                       <span className="service-card-icon" aria-hidden="true">
                         {React.createElement(CARD_ICON_MAP[service.icon])}
@@ -158,7 +165,9 @@ export default function TechnologyPageClient({ techSlug }) {
                       </span>
                     )}
                     <h3 className="service-workflow-title">{step.title}</h3>
-                    <p className="service-workflow-description">{step.description}</p>
+                    <p className="service-workflow-description">
+                      {step.description}
+                    </p>
                   </article>
                 ))}
               </div>
@@ -168,7 +177,8 @@ export default function TechnologyPageClient({ techSlug }) {
           {data.whyChooseBaaz && data.whyChooseBaaz.points?.length > 0 && (
             <div className="service-why-choose">
               <h2 className="services-section-heading">
-                {data.whyChooseBaaz.heading || `Why choose Baaz for ${labelLower}?`}
+                {data.whyChooseBaaz.heading ||
+                  `Why choose Baaz for ${labelLower}?`}
               </h2>
               <span className="service-why-choose-accent" aria-hidden="true" />
               {data.whyChooseBaaz.intro && (
@@ -186,7 +196,9 @@ export default function TechnologyPageClient({ techSlug }) {
                       </span>
                     )}
                     <h3 className="service-why-card-title">{point.title}</h3>
-                    <p className="service-why-card-description">{point.description}</p>
+                    <p className="service-why-card-description">
+                      {point.description}
+                    </p>
                   </article>
                 ))}
               </div>
@@ -196,7 +208,8 @@ export default function TechnologyPageClient({ techSlug }) {
           {data.offerings && data.offerings.length > 0 && (
             <div className="service-offerings">
               <h2 className="services-section-heading">
-                {data.offeringsHeading || `Our offerings in ${labelLower} services`}
+                {data.offeringsHeading ||
+                  `Our offerings in ${labelLower} services`}
               </h2>
               {data.offeringsIntro && (
                 <p className="service-tech-intro">{data.offeringsIntro}</p>
@@ -210,7 +223,9 @@ export default function TechnologyPageClient({ techSlug }) {
                       </span>
                     )}
                     <h3 className="service-tech-title">{item.title}</h3>
-                    <p className="service-tech-description">{item.description}</p>
+                    <p className="service-tech-description">
+                      {item.description}
+                    </p>
                   </article>
                 ))}
               </div>
@@ -219,8 +234,12 @@ export default function TechnologyPageClient({ techSlug }) {
 
           {data.deployment && (
             <div className="service-services-and-stack">
-              <h2 className="services-section-heading">{data.deployment.title}</h2>
-              <p className="service-tech-intro">{data.deployment.description}</p>
+              <h2 className="services-section-heading">
+                {data.deployment.title}
+              </h2>
+              <p className="service-tech-intro">
+                {data.deployment.description}
+              </p>
               <ul className="service-tech-tools service-tech-tools--block">
                 {data.deployment.tools.map((tool) => (
                   <li key={tool}>{tool}</li>
@@ -241,8 +260,8 @@ export default function TechnologyPageClient({ techSlug }) {
                 Where Baaz applies this stack
               </h2>
               <p className="tech-related-services-intro">
-                These engagement lines routinely pair with the toolchain above—from first
-                release through optimisation and runway.
+                These engagement lines routinely pair with the toolchain
+                above—from first release through optimisation and runway.
               </p>
               <ul className="tech-related-services-list">
                 {relatedServiceOfferings.map((svc) => (
@@ -263,7 +282,10 @@ export default function TechnologyPageClient({ techSlug }) {
 
         {data.faqs && data.faqs.length > 0 && (
           <div className="v2-faq">
-            <FAQ faqs={data.faqs} heading={data.faqsHeading || "Common questions"} />
+            <FAQ
+              faqs={data.faqs}
+              heading={data.faqsHeading || "Common questions"}
+            />
           </div>
         )}
 
