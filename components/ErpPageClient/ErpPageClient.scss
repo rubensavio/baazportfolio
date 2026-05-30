@@ -75,7 +75,7 @@
     padding: 24px 0 56px !important;
     background: transparent !important;
     border-radius: 0 !important;
-    border-bottom: 1px solid var(--v2-border) !important;
+    border: none !important;
   }
 
   .erp-hero-background {
@@ -138,8 +138,7 @@
   .erp-related-solutions {
     padding: 56px 0 !important;
     background: transparent !important;
-    border-top: none !important;
-    border-bottom: 1px solid var(--v2-border) !important;
+    border: none !important;
   }
 
   .erp-editorial-block-title,
@@ -174,10 +173,15 @@
   .erp-challenges-grid,
   .erp-modules-grid,
   .erp-benefits-grid,
-  .erp-ai-ehr-grid {
+  .erp-ai-ehr-grid,
+  .erp-ai-ehr-layers {
     display: grid !important;
-    gap: 1px !important;
-    background: var(--v2-bg-2) !important;
+    gap: clamp(20px, 3vw, 28px) !important;
+    background: transparent !important;
+  }
+
+  .erp-ai-ehr-layers {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .erp-challenges-grid {
@@ -195,18 +199,30 @@
   .erp-benefit-card,
   .erp-ai-ehr-card,
   .erp-ai-ehr-layer {
-    background: var(--v2-bg) !important;
+    background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    padding: 24px !important;
+    padding: 0 !important;
     transform: none !important;
+
+    &::before {
+      display: none !important;
+    }
 
     &:hover {
       transform: none !important;
       box-shadow: none !important;
       border-color: transparent !important;
     }
+  }
+
+  .erp-ai-ehr-flywheel {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
 
   .erp-challenge-number,
@@ -221,27 +237,27 @@
   }
 
   .erp-features-grid {
-    gap: 0 !important;
+    gap: clamp(24px, 4vw, 32px) !important;
     background: transparent !important;
   }
 
   .erp-feature-card {
-    padding: 24px 0 !important;
-    border-bottom: 1px solid var(--v2-border) !important;
+    padding: 0 !important;
+    border: none !important;
   }
 
   .erp-usecases-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 0 !important;
+    gap: clamp(24px, 4vw, 32px) !important;
   }
 
   .erp-usecase-card {
     display: grid !important;
     grid-template-columns: 52px 1fr !important;
     gap: 24px !important;
-    padding: 24px 0 !important;
-    border-bottom: 1px solid var(--v2-border) !important;
+    padding: 0 !important;
+    border: none !important;
     background: transparent !important;
     border-radius: 0 !important;
   }
@@ -258,20 +274,20 @@
   .erp-related-solutions__grid {
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 1px !important;
-    background: var(--v2-bg-2) !important;
+    gap: clamp(20px, 3vw, 28px) !important;
+    background: transparent !important;
   }
 
   .erp-related-solutions__link {
-    background: var(--v2-bg) !important;
+    background: transparent !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    padding: 24px !important;
+    padding: 0 !important;
     transform: none !important;
 
     &:hover {
-      background: var(--v2-bg-1) !important;
+      background: transparent !important;
       transform: none !important;
       box-shadow: none !important;
     }
@@ -306,7 +322,7 @@
     max-width: min(var(--v2-max-w), 100%) !important;
     padding: 32px var(--v2-pad) !important;
     box-sizing: border-box;
-    border-bottom: 1px solid var(--v2-border) !important;
+    border: none !important;
   }
 
   .erp-related-text {
@@ -330,7 +346,7 @@
     padding: 80px var(--v2-pad);
     max-width: min(var(--v2-max-w), 100%);
     margin: 0 auto;
-    border-top: 1px solid var(--v2-border);
+    border: none;
   }
 
   .erp-closing-text {
@@ -366,6 +382,7 @@
     .erp-modules-grid,
     .erp-benefits-grid,
     .erp-ai-ehr-grid,
+    .erp-ai-ehr-layers,
     .erp-related-solutions__grid {
       grid-template-columns: 1fr !important;
     }

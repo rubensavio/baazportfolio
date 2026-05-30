@@ -52,7 +52,8 @@
   .case-study-content .real-world-impact,
   .case-study-content .industry-comparison,
   .case-study-content .final-thoughts,
-  .case-study-content .challenges-lessons {
+  .case-study-content .challenges-lessons,
+  .case-study-content .erp-ai-ehr {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
@@ -83,7 +84,8 @@
   .real-world-impact-wrapper,
   .industry-comparison-wrapper,
   .final-thoughts-wrapper,
-  .challenges-lessons-wrapper {
+  .challenges-lessons-wrapper,
+  .bottom-line-wrapper {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
@@ -182,6 +184,8 @@
   .impact-title,
   .challenges-title,
   .bottomline-title,
+  .bottom-line-title,
+  .bottom-line-card-title,
   .finalthoughts-title,
   .final-thoughts-title,
   .real-world-impact-title,
@@ -264,6 +268,7 @@
   .story-card,
   .success-story-card,
   .benefit-card,
+  .bottom-line-card,
   .comparison-card,
   .comparison-column,
   .re-stakeholder-card,
@@ -299,6 +304,7 @@
   .casestudy-capability-features li,
   .result-list li,
   .benefit-list li,
+  .bottom-line-list li,
   .comparison-list li,
   .challenges-list li,
   .success-list li,
@@ -325,6 +331,7 @@
 
   .result-list li::before,
   .benefit-list li::before,
+  .bottom-line-list li::before,
   .unexpected-content p::before {
     color: var(--v2-text-3) !important;
   }
@@ -394,15 +401,17 @@
     }
   }
 
-  a:not(.v2-arrow-link):not(.case-study-cross-links__anchor):not(.case-study-back) {
-    color: var(--v2-text);
-    border-bottom: 1px solid var(--v2-border-h);
-    text-decoration: none;
-    transition: color 0.2s, border-color 0.2s;
+  .case-study-content {
+    a:not(.v2-arrow-link):not(.case-study-cross-links__anchor):not(.case-study-back) {
+      color: var(--v2-text);
+      border-bottom: 1px solid var(--v2-border-h);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
 
-    &:hover {
-      color: var(--v2-accent);
-      border-color: var(--v2-accent);
+      &:hover {
+        color: var(--v2-accent);
+        border-color: var(--v2-accent);
+      }
     }
   }
 
@@ -605,6 +614,142 @@
     border-top: 1px solid var(--v2-border);
   }
 
+  .case-study-content .bottom-line-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+
+  .case-study-content .bottom-line-card:not(:last-child) {
+    border-right: 1px solid var(--v2-border) !important;
+  }
+
+  /* Override inline pastel backgrounds from BottomLine.js */
+  .case-study-content .bottom-line-card[style] {
+    background: var(--v2-bg) !important;
+    background-color: var(--v2-bg) !important;
+  }
+
+  .case-study-content .bottom-line-title {
+    text-align: left !important;
+  }
+
+  @media (max-width: 768px) {
+    .case-study-content .bottom-line-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .case-study-content .bottom-line-card:not(:last-child) {
+      border-right: none !important;
+      border-bottom: 1px solid var(--v2-border) !important;
+    }
+  }
+
+  /* AI-native EHR / Differentiation — matches /erp/healthcare-companies (ErpPageClient.scss) */
+  .case-study-content .erp-section-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .case-study-content .erp-section-title {
+    font-family: var(--v2-serif) !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    font-size: clamp(28px, 3.5vw, 40px) !important;
+    letter-spacing: -0.02em !important;
+    color: var(--v2-text) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .case-study-content .erp-section-lead,
+  .case-study-content .erp-ai-ehr-strategic-lead,
+  .case-study-content .erp-ai-ehr-arch-intro,
+  .case-study-content .erp-ai-ehr-flywheel,
+  .case-study-content .healthcare-patient-case-study-ai-bridge {
+    font-family: var(--v2-sans) !important;
+    font-weight: 300 !important;
+    color: var(--v2-text-2) !important;
+    line-height: 1.75 !important;
+  }
+
+  .case-study-content .healthcare-patient-case-study-ai-bridge strong {
+    color: var(--v2-text) !important;
+  }
+
+  .case-study-content .erp-ai-ehr-card-title,
+  .case-study-content .erp-ai-ehr-layer-name,
+  .case-study-content .erp-ai-ehr-subheading {
+    font-family: var(--v2-sans) !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: var(--v2-text) !important;
+  }
+
+  .case-study-content .erp-ai-ehr-card-desc,
+  .case-study-content .erp-ai-ehr-layer-list li {
+    font-family: var(--v2-sans) !important;
+    font-weight: 300 !important;
+    color: var(--v2-text-2) !important;
+  }
+
+  .case-study-content .erp-ai-ehr-grid,
+  .case-study-content .erp-ai-ehr-layers {
+    display: grid !important;
+    gap: clamp(20px, 3vw, 28px) !important;
+    background: transparent !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .case-study-content .erp-ai-ehr-layers {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .case-study-content .erp-ai-ehr-card,
+  .case-study-content .erp-ai-ehr-layer {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transform: none !important;
+
+    &::before {
+      display: none !important;
+    }
+
+    &:hover {
+      transform: none !important;
+      box-shadow: none !important;
+      border-color: transparent !important;
+    }
+  }
+
+  .case-study-content .erp-ai-ehr-eyebrow {
+    font-family: var(--v2-sans) !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--v2-text-2) !important;
+  }
+
+  .case-study-content .erp-ai-ehr-flywheel {
+    background: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .case-study-content .erp-ai-ehr-layer-list li::before {
+    color: var(--v2-text-3) !important;
+  }
+
   /* Nested legacy selectors (higher specificity than flat li rules) */
   .case-study-content {
     .comparison-content p,
@@ -634,6 +779,16 @@
     }
   }
 
+  @media (max-width: 900px) {
+    .case-study-content .erp-ai-ehr-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .case-study-content .erp-ai-ehr-layers {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
   @media (max-width: 768px) {
     .case-study-content section,
     .case-study-content .implementation-journey,
@@ -642,7 +797,8 @@
     .case-study-content .real-world-impact,
     .case-study-content .industry-comparison,
     .case-study-content .final-thoughts,
-    .case-study-content .challenges-lessons {
+    .case-study-content .challenges-lessons,
+    .case-study-content .erp-ai-ehr {
       padding: 40px 0 !important;
     }
 
