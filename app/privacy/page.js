@@ -1,6 +1,5 @@
 import React from "react";
 import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
-import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
 import {
   INDIA_ADDRESS_LINE,
@@ -10,7 +9,7 @@ import "../legal/legal-page.scss";
 
 export default function PrivacyPage() {
   return (
-    <div className="marketing-legal-page" id="privacy-policy">
+    <div className="baaz-v2 legal-v2" id="privacy-policy">
       <ClientNavbar />
       <main className="legal-doc-main">
         <article className="legal-doc-sheet">
@@ -75,7 +74,6 @@ export default function PrivacyPage() {
           </div>
         </article>
       </main>
-      <CTA />
       <Footer />
     </div>
   );

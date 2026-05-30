@@ -421,3 +421,268 @@
   }
 }
 
+/* ── v2 editorial dark theme ── */
+
+.baaz-v2.book-call-v2 {
+  background: var(--v2-bg);
+  min-height: 100vh;
+
+  .book-call-hero {
+    padding: 24px var(--v2-pad) 40px;
+    border-bottom: 1px solid var(--v2-border);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .book-call-eyebrow {
+    margin: 0;
+  }
+
+  .booking-title {
+    font-family: var(--v2-serif);
+    font-style: italic;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--v2-text);
+    margin: 0;
+  }
+
+  .booking-subtitle {
+    font-family: var(--v2-sans);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--v2-text-2);
+    margin: 0;
+    max-width: 32rem;
+  }
+
+  .book-call-section {
+    width: 100%;
+    background: transparent;
+    background-image: none;
+    min-height: 0;
+    padding: 56px var(--v2-pad) 80px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  .book-call-wrapper {
+    max-width: 650px;
+  }
+
+  .booking-card {
+    background: var(--v2-bg-1);
+    border: 1px solid var(--v2-border);
+    border-radius: 0;
+    padding: 32px;
+    box-shadow: none;
+    gap: 28px;
+  }
+
+  .call-info {
+    text-align: left;
+  }
+
+  .call-title {
+    font-family: var(--v2-sans);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--v2-text);
+    margin: 0 0 8px;
+  }
+
+  .call-description {
+    font-family: var(--v2-sans);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    margin: 0;
+  }
+
+  .calendar-header {
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .month-nav-button {
+    font-size: 18px;
+    color: var(--v2-text-2);
+    border: 1px solid var(--v2-border);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    &:hover {
+      transform: none;
+      color: var(--v2-accent);
+      border-color: var(--v2-accent);
+    }
+  }
+
+  .current-month {
+    font-family: var(--v2-sans);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--v2-text);
+  }
+
+  .day-header {
+    font-family: var(--v2-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--v2-text-3);
+  }
+
+  .calendar-day {
+    font-family: var(--v2-sans);
+    border-radius: 0;
+
+    &.unavailable {
+      color: var(--v2-text-3);
+    }
+
+    &.available {
+      color: var(--v2-text);
+      background: var(--v2-bg-2);
+      border: 1px solid var(--v2-border);
+
+      &:hover {
+        background: var(--v2-bg);
+        border-color: var(--v2-border-h);
+        transform: none;
+      }
+    }
+
+    &.selected {
+      background: var(--v2-accent) !important;
+      color: var(--v2-bg) !important;
+      border-color: var(--v2-accent) !important;
+    }
+  }
+
+  .confirm-button {
+    font-family: var(--v2-sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--v2-bg);
+    background: var(--v2-accent);
+    border-radius: 0;
+    padding: 14px 28px;
+    align-self: flex-start;
+    min-width: 0;
+
+    &:hover {
+      opacity: 0.9;
+      transform: none;
+      background: var(--v2-accent);
+    }
+
+    &:disabled {
+      background: var(--v2-bg-2);
+      color: var(--v2-text-3);
+    }
+  }
+
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.72);
+  }
+
+  .modal-content {
+    background: var(--v2-bg-1);
+    border: 1px solid var(--v2-border);
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .modal-close {
+    color: var(--v2-text-2);
+
+    &:hover {
+      color: var(--v2-text);
+    }
+  }
+
+  .modal-title {
+    font-family: var(--v2-serif);
+    font-style: italic;
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 700;
+    color: var(--v2-text);
+    text-align: left;
+  }
+
+  .time-slot {
+    font-family: var(--v2-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--v2-text);
+    background: transparent;
+    border: 1px solid var(--v2-border);
+    border-radius: 0;
+
+    &:hover {
+      background: var(--v2-bg);
+      border-color: var(--v2-border-h);
+      transform: none;
+    }
+
+    &.selected {
+      background: var(--v2-accent);
+      color: var(--v2-bg);
+      border-color: var(--v2-accent);
+    }
+  }
+
+  .modal-submit-button {
+    font-family: var(--v2-sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--v2-bg);
+    background: var(--v2-accent);
+    border-radius: 0;
+
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+      transform: none;
+      background: var(--v2-accent);
+    }
+
+    &:disabled {
+      background: var(--v2-bg-2);
+      color: var(--v2-text-3);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .book-call-hero {
+      padding-top: 16px;
+      padding-bottom: 32px;
+    }
+
+    .book-call-section {
+      padding: 40px var(--v2-pad) 56px;
+    }
+
+    .booking-card {
+      padding: 24px;
+    }
+
+    .confirm-button {
+      width: 100%;
+    }
+  }
+}
+
