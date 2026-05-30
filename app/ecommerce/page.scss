@@ -1,3 +1,5 @@
+@use "../../styles/landing-page-v2" as lp;
+
 /* ── HERO ────────────────────────────────────────────────────────── */
 
 .ecom-hero {
@@ -1171,3 +1173,5 @@
     width: 90%;
   }
 }
+
+@include lp.landing-page-v2("ecom", "ecommerce-v2");

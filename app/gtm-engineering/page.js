@@ -283,7 +283,7 @@ const serviceSchema = {
 
 export default function GtmEngineering() {
   return (
-    <div className="gtm-page">
+    <div className="baaz-v2 gtm-v2">
       <ClientNavbar />
 
       <script
@@ -574,7 +574,9 @@ export default function GtmEngineering() {
         </div>
       </section>
 
-      <FAQ faqs={gtmFaqs} heading="GTM Engineering FAQs" />
+      <div className="v2-faq">
+        <FAQ faqs={gtmFaqs} heading="GTM Engineering FAQs" />
+      </div>
       <Footer />
     </div>
   );

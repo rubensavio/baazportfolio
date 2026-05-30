@@ -270,7 +270,7 @@ const serviceSchema = {
 
 export default function Ecommerce() {
   return (
-    <div className="ecommerce-page">
+    <div className="baaz-v2 ecommerce-v2">
       <ClientNavbar />
 
       <script
@@ -565,7 +565,9 @@ export default function Ecommerce() {
         </div>
       </section>
 
-      <FAQ faqs={ecommerceFaqs} heading="Marketplace Management FAQs" />
+      <div className="v2-faq">
+        <FAQ faqs={ecommerceFaqs} heading="Marketplace Management FAQs" />
+      </div>
       <Footer />
     </div>
   );

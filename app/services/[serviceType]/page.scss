@@ -1,3 +1,5 @@
+@use "../../../styles/v2-grid-fill" as grid-fill;
+
 .services-page:not(.services-v2) {
   width: 100%;
   min-height: 100vh;
@@ -964,6 +966,7 @@
 
   .service-tech-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    @include grid-fill.v2-grid-fill-empty-cells("> .service-tech-card", 2);
   }
 
   .service-highlights-grid,
@@ -971,12 +974,21 @@
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
-  .service-workflow-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  .service-highlights-grid:not(.service-highlights-grid--four) {
+    @include grid-fill.v2-grid-fill-empty-cells("> .service-highlight-card", 3);
+  }
+
+  .service-offerings-grid {
+    @include grid-fill.v2-grid-fill-empty-cells("> .service-offering-card", 3);
   }
 
   .service-why-choose-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    @include grid-fill.v2-grid-fill-empty-cells("> .service-why-card", 3);
+  }
+
+  .service-workflow-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 
   .service-tech-card,

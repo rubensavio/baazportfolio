@@ -250,7 +250,7 @@ const handoffSymptoms = [
 
 export default function ProjectRescue() {
   return (
-    <div className="rescue-page">
+    <div className="baaz-v2 rescue-v2">
       <ClientNavbar />
 
       {/* HERO */}
@@ -600,10 +600,12 @@ export default function ProjectRescue() {
         </div>
       </section>
 
-      <FAQ
-        faqs={rescueFaqs}
-        heading="Software Project Rescue & Recovery FAQs"
-      />
+      <div className="v2-faq">
+        <FAQ
+          faqs={rescueFaqs}
+          heading="Software Project Rescue & Recovery FAQs"
+        />
+      </div>
 
       {/* CTA */}
       <section className="rescue-cta">

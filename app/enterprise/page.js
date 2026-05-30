@@ -7,6 +7,7 @@ import EnterpriseBenefits from "../../components/EnterpriseBenefits/EnterpriseBe
 import FAQ from "../../components/FAQ/FAQ";
 import EnterpriseCTA from "../../components/EnterpriseCTA/EnterpriseCTA";
 import Footer from "../../components/Footer/Footer";
+import "./page.scss";
 
 const enterpriseFaqs = [
   {
@@ -68,7 +69,7 @@ const faqSchema = {
 
 export default function Enterprise() {
   return (
-    <div className="enterprise">
+    <div className="baaz-v2 enterprise-v2">
       <ClientNavbar />
       <script
         type="application/ld+json"
@@ -78,7 +79,9 @@ export default function Enterprise() {
       <EnterpriseSolutions />
       <EnterpriseCaseStudies />
       <EnterpriseBenefits />
-      <FAQ faqs={enterpriseFaqs} />
+      <div className="v2-faq">
+        <FAQ faqs={enterpriseFaqs} />
+      </div>
       <EnterpriseCTA />
       <Footer />
     </div>
