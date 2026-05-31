@@ -1,3 +1,5 @@
+@use "../../styles/theme-dark.scss" as theme;
+
 // Headroom wrapper - ensure it stays on top
 .headroom {
   z-index: 9999 !important;
@@ -6,7 +8,8 @@
 
 .navbar {
   width: 100%;
-  background-color: #ffffff;
+  /* theme import - moved to top */
+background-color: theme.$bg-white;
   //   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 9999;
@@ -126,7 +129,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
+  /* theme import - moved to top */
+background-color: theme.$bg-white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   min-width: 300px;
@@ -359,7 +363,8 @@
   width: 100%;
   max-height: calc(100vh - 64px);
   overflow-y: auto;
-  background-color: #ffffff;
+  /* theme import - moved to top */
+background-color: theme.$bg-white;
   border-top: 1px solid #e5e5e5;
   padding: 24px;
   animation: slideDown 0.3s ease;
