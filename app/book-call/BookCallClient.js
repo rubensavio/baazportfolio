@@ -1,19 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import React, { useCallback, useEffect, useState } from "react";
+import { FiChevronLeft, FiChevronRight, FiClock, FiGlobe, FiVideo } from "react-icons/fi";
 import Footer from "../../components/Footer/Footer";
+import { BOOK_CALL } from "../../lib/bookCallData";
 
 const monthNames = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
 ];
 
-const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
-const timeSlots = [
-  "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm",
-];
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const shortDayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 function getDaysInMonth(date) {
   const year = date.getFullYear();
@@ -21,68 +19,143 @@ function getDaysInMonth(date) {
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
   const daysInMonth = lastDay.getDate();
-  const startingDayOfWeek = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+  const startingDayOfWeek = firstDay.getDay();
   const days = [];
   for (let i = 0; i < startingDayOfWeek; i++) days.push(null);
   for (let day = 1; day <= daysInMonth; day++) days.push(day);
   return days;
 }
 
-function isAvailableDate(day) {
-  const availableDates = [6, 13, 16, 17, 18, 19, 20];
-  return availableDates.includes(day);
+function isPastDate(year, month, day) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(year, month, day) < today;
+}
+
+function isAvailableDate(year, month, day) {
+  const date = new Date(year, month, day);
+  if (isPastDate(year, month, day)) return false;
+  return date.getDay() !== 0;
+}
+
+function toDateParam(year, month, day) {
+  return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function getInitialSelectedDay(year, month) {
+  const today = new Date();
+  if (today.getFullYear() !== year || today.getMonth() !== month) return null;
+  const day = today.getDate();
+  return isAvailableDate(year, month, day) ? day : null;
 }
 
 export default function BookCallClient() {
-  const [currentMonth, setCurrentMonth] = useState(new Date(2025, 5, 1));
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(null);
+  const now = new Date();
+  const [currentMonth, setCurrentMonth] = useState(
+    () => new Date(now.getFullYear(), now.getMonth(), 1),
+  );
+  const [selectedDate, setSelectedDate] = useState(() =>
+    getInitialSelectedDay(now.getFullYear(), now.getMonth()),
+  );
+  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [use24h, setUse24h] = useState(false);
+  const [slots, setSlots] = useState([]);
+  const [loadingSlots, setLoadingSlots] = useState(false);
+  const [slotsError, setSlotsError] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [bookingResult, setBookingResult] = useState(null);
+  const [submitError, setSubmitError] = useState("");
 
-  const previousMonth = () =>
-    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1));
+  const year = currentMonth.getFullYear();
+  const month = currentMonth.getMonth();
 
-  const nextMonth = () =>
-    setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1));
+  const fetchSlots = useCallback(async (day, format24h) => {
+    if (!day) {
+      setSlots([]);
+      return;
+    }
+    setLoadingSlots(true);
+    setSlotsError("");
+    setSelectedSlot(null);
+    try {
+      const date = toDateParam(year, month, day);
+      const format = format24h ? "24h" : "12h";
+      const res = await fetch(`/api/book-call/availability?date=${date}&format=${format}`);
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Failed to load time slots");
+      setSlots(data.slots || []);
+    } catch (err) {
+      setSlots([]);
+      setSlotsError(err.message || "Failed to load time slots");
+    } finally {
+      setLoadingSlots(false);
+    }
+  }, [year, month]);
 
-  const handleDateClick = (day) => { if (day) setSelectedDate(day); };
+  useEffect(() => {
+    fetchSlots(selectedDate, use24h);
+  }, [selectedDate, use24h, fetchSlots]);
 
-  const handleConfirmBooking = () => {
-    if (selectedDate) setIsModalOpen(true);
-    else alert("Please select a date first");
+  const previousMonth = () => {
+    const next = new Date(year, month - 1, 1);
+    setCurrentMonth(next);
+    setSelectedDate(getInitialSelectedDay(next.getFullYear(), next.getMonth()));
+    setBookingResult(null);
+    setSubmitError("");
   };
 
-  const handleCloseModal = () => { setIsModalOpen(false); setSelectedTime(null); };
+  const nextMonth = () => {
+    const next = new Date(year, month + 1, 1);
+    setCurrentMonth(next);
+    setSelectedDate(getInitialSelectedDay(next.getFullYear(), next.getMonth()));
+    setBookingResult(null);
+    setSubmitError("");
+  };
 
-  const handleSubmitBooking = () => {
-    if (!selectedTime) { alert("Please select a time slot"); return; }
+  const handleDateClick = (day) => {
+    if (!day || !isAvailableDate(year, month, day)) return;
+    setSelectedDate(day);
+    setBookingResult(null);
+    setSubmitError("");
+  };
+
+  const handleConfirmBooking = async () => {
+    if (!selectedDate || !selectedSlot) return;
+    if (!name.trim() || !email.trim()) {
+      setSubmitError("Please enter your name and email.");
+      return;
+    }
+
     setIsSubmitting(true);
-    const bookingData = {
-      date: `${monthNames[currentMonth.getMonth()]} ${selectedDate}, ${currentMonth.getFullYear()}`,
-      time: selectedTime,
-      timestamp: new Date().toISOString(),
-    };
-    fetch("YOUR_GOOGLE_APPS_SCRIPT_URL_HERE", {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(bookingData),
-    })
-      .then(() => {
-        alert(`Booking confirmed for ${bookingData.date} at ${bookingData.time}!`);
-        setIsModalOpen(false);
-        setSelectedDate(null);
-        setSelectedTime(null);
-      })
-      .catch((err) => { alert("Error submitting booking. Please try again."); console.error(err); })
-      .finally(() => setIsSubmitting(false));
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/book-call/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          date: toDateParam(year, month, selectedDate),
+          startIso: selectedSlot.startIso,
+          name: name.trim(),
+          email: email.trim(),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Booking failed");
+      setBookingResult(data);
+      setSelectedSlot(null);
+    } catch (err) {
+      setSubmitError(err.message || "Booking failed. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const getDayName = () => {
+  const getSelectedDayLabel = () => {
     if (!selectedDate) return "";
-    const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), selectedDate);
-    return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][date.getDay()];
+    const date = new Date(year, month, selectedDate);
+    return `${shortDayNames[date.getDay()]} ${String(selectedDate).padStart(2, "0")}`;
   };
 
   const days = getDaysInMonth(currentMonth);
@@ -92,79 +165,199 @@ export default function BookCallClient() {
       <section className="book-call-section">
         <div className="book-call-wrapper">
           <div className="booking-card">
-            <div className="call-info">
-              <h2 className="call-title">30-Minute Discovery Call</h2>
-              <p className="call-description">
-                Let&apos;s discuss your needs and how we can help you succeed
-              </p>
-            </div>
+            <div className="booking-layout">
+              <aside className="event-panel">
+                <div className="event-host">
+                  <span className="event-host-avatar" aria-hidden="true">{BOOK_CALL.hostInitial}</span>
+                  <span className="event-host-name">{BOOK_CALL.hostName}</span>
+                </div>
+                <h2 className="call-title">{BOOK_CALL.title}</h2>
+                <p className="call-description">{BOOK_CALL.description}</p>
+                <ul className="event-meta">
+                  <li>
+                    <FiClock aria-hidden="true" />
+                    <span>{BOOK_CALL.duration}</span>
+                  </li>
+                  <li>
+                    <FiVideo aria-hidden="true" />
+                    <span>{BOOK_CALL.meetingType}</span>
+                  </li>
+                  <li>
+                    <FiGlobe aria-hidden="true" />
+                    <span>{BOOK_CALL.timezone}</span>
+                  </li>
+                </ul>
+              </aside>
 
-            <div className="calendar-container">
-              <div className="calendar-header">
-                <button className="month-nav-button" onClick={previousMonth} aria-label="Previous month">
-                  <FiChevronLeft aria-hidden="true" />
-                </button>
-                <h3 className="current-month">
-                  {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
-                </h3>
-                <button className="month-nav-button" onClick={nextMonth} aria-label="Next month">
-                  <FiChevronRight aria-hidden="true" />
-                </button>
-              </div>
-
-              <div className="calendar-grid">
-                {daysOfWeek.map((day) => (
-                  <div key={day} className="day-header">{day}</div>
-                ))}
-                {days.map((day, index) => (
-                  <div
-                    key={index}
-                    className={`calendar-day ${
-                      day ? (isAvailableDate(day) ? "available" : "unavailable") : "empty"
-                    } ${day === selectedDate ? "selected" : ""}`}
-                    onClick={() => handleDateClick(day)}
-                  >
-                    {day}
+              <div className="calendar-panel">
+                <div className="calendar-header">
+                  <h3 className="current-month">
+                    {monthNames[month]} {year}
+                  </h3>
+                  <div className="calendar-nav">
+                    <button type="button" className="month-nav-button" onClick={previousMonth} aria-label="Previous month">
+                      <FiChevronLeft aria-hidden="true" />
+                    </button>
+                    <button type="button" className="month-nav-button" onClick={nextMonth} aria-label="Next month">
+                      <FiChevronRight aria-hidden="true" />
+                    </button>
                   </div>
-                ))}
+                </div>
+
+                <div className="calendar-grid">
+                  {daysOfWeek.map((day) => (
+                    <div key={day} className="day-header">{day}</div>
+                  ))}
+                  {days.map((day, index) => {
+                    const available = day ? isAvailableDate(year, month, day) : false;
+                    const isToday =
+                      day &&
+                      day === now.getDate() &&
+                      month === now.getMonth() &&
+                      year === now.getFullYear();
+                    return (
+                      <button
+                        type="button"
+                        key={index}
+                        disabled={!day || !available}
+                        className={`calendar-day ${
+                          !day ? "empty" : available ? "available" : "unavailable"
+                        } ${day === selectedDate ? "selected" : ""} ${isToday ? "today" : ""}`}
+                        onClick={() => handleDateClick(day)}
+                      >
+                        {day}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className={`times-panel ${selectedDate ? "times-panel--active" : ""}`}>
+                {bookingResult ? (
+                  <div className="booking-success">
+                    <h3 className="times-date">You&apos;re booked</h3>
+                    <p className="booking-success-text">
+                      Your discovery call is confirmed.
+                      {bookingResult.inviteSent
+                        ? ` A calendar invite has been sent to ${email}.`
+                        : " Open the event in Google Calendar for meeting details."}
+                    </p>
+                    {bookingResult.meetLink && (
+                      <a
+                        href={bookingResult.meetLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="confirm-button booking-success-link"
+                      >
+                        Join Google Meet
+                      </a>
+                    )}
+                    {bookingResult.htmlLink && (
+                      <a
+                        href={bookingResult.htmlLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="booking-calendar-link"
+                      >
+                        View in Google Calendar
+                      </a>
+                    )}
+                    <button
+                      type="button"
+                      className="time-format-btn booking-reset-btn"
+                      onClick={() => {
+                        setBookingResult(null);
+                        fetchSlots(selectedDate, use24h);
+                      }}
+                    >
+                      Book another slot
+                    </button>
+                  </div>
+                ) : selectedDate ? (
+                  <>
+                    <div className="times-header">
+                      <h3 className="times-date">{getSelectedDayLabel()}</h3>
+                      <div className="time-format-toggle" role="group" aria-label="Time format">
+                        <button
+                          type="button"
+                          className={`time-format-btn ${!use24h ? "active" : ""}`}
+                          onClick={() => setUse24h(false)}
+                        >
+                          12h
+                        </button>
+                        <button
+                          type="button"
+                          className={`time-format-btn ${use24h ? "active" : ""}`}
+                          onClick={() => setUse24h(true)}
+                        >
+                          24h
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="times-slots-scroll">
+                      {loadingSlots ? (
+                        <p className="times-placeholder">Loading available times…</p>
+                      ) : slotsError ? (
+                        <p className="times-error" role="alert">{slotsError}</p>
+                      ) : slots.length === 0 ? (
+                        <p className="times-placeholder">No open slots on this date.</p>
+                      ) : (
+                        <div className="time-slots">
+                          {slots.map((slot) => (
+                            <button
+                              type="button"
+                              key={slot.startIso}
+                              className={`time-slot ${selectedSlot?.startIso === slot.startIso ? "selected" : ""}`}
+                              onClick={() => setSelectedSlot(slot)}
+                            >
+                              {slot.label}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {selectedSlot && (
+                      <div className="booking-form">
+                        <input
+                          type="text"
+                          className="booking-input"
+                          placeholder="Your name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          required
+                        />
+                        <input
+                          type="email"
+                          className="booking-input"
+                          placeholder="Your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                      </div>
+                    )}
+
+                    {submitError && <p className="times-error" role="alert">{submitError}</p>}
+
+                    <button
+                      type="button"
+                      className="confirm-button"
+                      onClick={handleConfirmBooking}
+                      disabled={isSubmitting || !selectedSlot || loadingSlots}
+                    >
+                      {isSubmitting ? "Booking…" : "Confirm Booking"}
+                    </button>
+                  </>
+                ) : (
+                  <p className="times-placeholder">Select a date to view available times</p>
+                )}
               </div>
             </div>
-
-            <button className="confirm-button" onClick={handleConfirmBooking}>
-              Confirm Booking
-            </button>
           </div>
         </div>
       </section>
-
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={handleCloseModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={handleCloseModal}>×</button>
-            <h3 className="modal-title">
-              {getDayName()}, {selectedDate} {monthNames[currentMonth.getMonth()]}
-            </h3>
-            <div className="time-slots">
-              {timeSlots.map((time) => (
-                <button
-                  key={time}
-                  className={`time-slot ${selectedTime === time ? "selected" : ""}`}
-                  onClick={() => setSelectedTime(time)}
-                >
-                  {time}
-                </button>
-              ))}
-            </div>
-            <button
-              className="modal-submit-button"
-              onClick={handleSubmitBooking}
-              disabled={isSubmitting || !selectedTime}
-            >
-              {isSubmitting ? "Submitting..." : "Confirm Time"}
-            </button>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </>
