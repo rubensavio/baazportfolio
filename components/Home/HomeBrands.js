@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { BRANDS } from "../../lib/brandsData";
 
-const durationPerLogoSec = 1.6;
+const durationPerLogoSec = 3;
 const animationDurationSec = BRANDS.length * durationPerLogoSec;
 
 export default function HomeBrands() {
