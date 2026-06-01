@@ -268,15 +268,33 @@ function ContactPageContent() {
                 );
 
                 if (method.href) {
-                  return method.href.startsWith("mailto:") ? (
-                    <a
-                      key={method.id}
-                      href={method.href}
-                      className="contact-method"
-                    >
-                      {content}
-                    </a>
-                  ) : (
+                  if (method.href.startsWith("mailto:")) {
+                    return (
+                      <a
+                        key={method.id}
+                        href={method.href}
+                        className="contact-method"
+                      >
+                        {content}
+                      </a>
+                    );
+                  }
+
+                  if (method.external || method.href.startsWith("http")) {
+                    return (
+                      <a
+                        key={method.id}
+                        href={method.href}
+                        className="contact-method"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {content}
+                      </a>
+                    );
+                  }
+
+                  return (
                     <Link key={method.id} href={method.href} className="contact-method">
                       {content}
                     </Link>

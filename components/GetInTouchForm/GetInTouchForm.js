@@ -7,6 +7,7 @@ import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import Footer from "../Footer/Footer";
 import FAQ from "../FAQ/FAQ";
 import { US_ADDRESS_LINE } from "../../lib/companyAddresses";
+import { HOME_CTA } from "../../lib/homePageData";
 
 const COUNTRY_FALLBACK = [
   { name: "United States", code: "US" },
@@ -135,7 +136,12 @@ function ContactSupplemental() {
             >
               Email support@baaz.pro
             </a>
-            <Link href="/book-call" className="contact-reach-btn">
+            <Link
+              href={HOME_CTA.callHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-reach-btn"
+            >
               Schedule a call
             </Link>
           </div>
