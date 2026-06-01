@@ -58,7 +58,10 @@ function ContactFormPanel() {
       .then((data) =>
         setCountries(
           data
-            .map((country) => ({ name: country.name.common, code: country.cca2 }))
+            .map((country) => ({
+              name: country.name.common,
+              code: country.cca2,
+            }))
             .sort((a, b) => a.name.localeCompare(b.name)),
         ),
       )
@@ -77,12 +80,18 @@ function ContactFormPanel() {
       <p className="contact-form-sub">{CONTACT_FORM.sub}</p>
 
       {isMounted && sent && (
-        <p className="contact-form-message contact-form-message--success" role="status">
+        <p
+          className="contact-form-message contact-form-message--success"
+          role="status"
+        >
           {CONTACT_FORM.success}
         </p>
       )}
       {isMounted && error && (
-        <p className="contact-form-message contact-form-message--error" role="alert">
+        <p
+          className="contact-form-message contact-form-message--error"
+          role="alert"
+        >
           {CONTACT_FORM.error}
         </p>
       )}
@@ -214,7 +223,10 @@ function ContactLearnMore() {
           <p className="v2-label contact-learn-more-eyebrow">
             {CONTACT_LEARN_MORE.eyebrow}
           </p>
-          <h2 id="contact-learn-more-heading" className="contact-learn-more-title">
+          <h2
+            id="contact-learn-more-heading"
+            className="contact-learn-more-title"
+          >
             {CONTACT_LEARN_MORE.heading}
           </h2>
           <p className="contact-learn-more-lede">{CONTACT_LEARN_MORE.lede}</p>
@@ -248,7 +260,9 @@ function ContactPageContent() {
       <div className="contact-page">
         <aside className="contact-left">
           <div className="contact-left-top">
-            <p className="contact-left-eyebrow v2-label">{CONTACT_HERO.eyebrow}</p>
+            <p className="contact-left-eyebrow v2-label">
+              {CONTACT_HERO.eyebrow}
+            </p>
             <h1 className="contact-left-title">{CONTACT_HERO.title}</h1>
             <p className="contact-left-sub">{CONTACT_HERO.sub}</p>
 
@@ -295,7 +309,11 @@ function ContactPageContent() {
                   }
 
                   return (
-                    <Link key={method.id} href={method.href} className="contact-method">
+                    <Link
+                      key={method.id}
+                      href={method.href}
+                      className="contact-method"
+                    >
                       {content}
                     </Link>
                   );
@@ -309,7 +327,6 @@ function ContactPageContent() {
               })}
             </div>
           </div>
-
           <div className="contact-left-bottom">
             <address className="contact-addresses">
               {CONTACT_OFFICES.map((office) => (
@@ -339,7 +356,9 @@ function ContactPageFallback() {
     <div className="contact-page">
       <aside className="contact-left">
         <div className="contact-left-top">
-          <p className="contact-left-eyebrow v2-label">{CONTACT_HERO.eyebrow}</p>
+          <p className="contact-left-eyebrow v2-label">
+            {CONTACT_HERO.eyebrow}
+          </p>
           <h1 className="contact-left-title">{CONTACT_HERO.title}</h1>
           <p className="contact-left-sub">{CONTACT_HERO.sub}</p>
         </div>
