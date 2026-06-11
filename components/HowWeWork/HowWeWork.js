@@ -2,7 +2,6 @@ import React from "react";
 import "./HowWeWork.scss";
 
 const HowWeWork = () => {
-
   const processSteps = [
     {
       id: 1,
@@ -70,9 +69,7 @@ const HowWeWork = () => {
         </div>
 
         <div className="how-we-work-container">
-          <div
-            className="process-steps animate-fade-up animate-in animate-delay-200"
-          >
+          <div className="process-steps animate-fade-up animate-in animate-delay-200">
             {processSteps.map((step, index) => (
               <div
                 key={step.id}
