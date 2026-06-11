@@ -395,9 +395,9 @@
   .home-trusted-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--home-border);
-    border: 1px solid var(--home-border);
+    gap: 0;
+    border-top: 1px solid var(--home-border);
+    border-left: 1px solid var(--home-border);
     border-radius: 8px;
     overflow: hidden;
     width: 100%;
@@ -416,6 +416,8 @@
     aspect-ratio: 2 / 1;
     padding: 15%;
     overflow: hidden;
+    border-right: 1px solid var(--home-border);
+    border-bottom: 1px solid var(--home-border);
   }
 
   .home-trusted-logo-img {

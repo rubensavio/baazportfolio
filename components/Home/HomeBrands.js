@@ -31,9 +31,6 @@ export default function HomeBrands() {
               </div>
             );
           })}
-          {Array.from({ length: (4 - (BRANDS.length % 4)) % 4 }).map((_, i) => (
-            <div key={`empty-${i}`} className="home-trusted-logo" />
-          ))}
         </div>
 
         <p className="home-trusted-footer">{footer}</p>
