@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { ArrowLinkIcon } from "../icons/ArrowIcons";
 import { HOME_HERO } from "../../lib/homePageData";
 
 export default function HomeHero() {
-  const { headline, sub, cta, stats } = HOME_HERO;
+  const { headline, sub, ctas, ctaNote, stats } = HOME_HERO;
 
   return (
     <section className="home-hero">
@@ -16,12 +15,30 @@ export default function HomeHero() {
         <div className="home-hero-foot">
           <p className="home-hero-sub">{sub}</p>
           <div className="home-hero-cta">
-            <Link
-              href={cta.href}
-              className="home-arrow-link home-arrow-link--light"
-            >
-              {cta.label} <ArrowLinkIcon />
-            </Link>
+            <div className="home-hero-cta-buttons">
+              {ctas.map((cta) =>
+                cta.external ? (
+                  <a
+                    key={cta.label}
+                    href={cta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`home-cta-btn home-cta-btn--${cta.style}`}
+                  >
+                    {cta.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={cta.label}
+                    href={cta.href}
+                    className={`home-cta-btn home-cta-btn--${cta.style}`}
+                  >
+                    {cta.label}
+                  </Link>
+                ),
+              )}
+            </div>
+            <p className="home-hero-cta-note">{ctaNote}</p>
           </div>
         </div>
       </div>

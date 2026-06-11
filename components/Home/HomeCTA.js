@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 import { HOME_CTA } from "../../lib/homePageData";
 
 export default function HomeCTA() {
-  const { heading, leftLines, contact, briefHref, callHref } = HOME_CTA;
+  const { heading, leftLines, contact, reassurance, briefHref, callHref } = HOME_CTA;
 
   return (
     <section className="home-cta-section" aria-labelledby="home-cta-heading">
@@ -24,10 +24,11 @@ export default function HomeCTA() {
               <Link href={briefHref} className="home-cta-btn home-cta-btn--primary">
                 Get in touch
               </Link>
-              <Link href={callHref} target="_blank" rel="noopener noreferrer" className="home-cta-btn home-cta-btn--outline">
+              <Link href={callHref} className="home-cta-btn home-cta-btn--outline">
                 Schedule a call
               </Link>
             </div>
+            <p className="home-cta-reassurance">{reassurance}</p>
           </div>
 
           <div className="home-cta-contact">

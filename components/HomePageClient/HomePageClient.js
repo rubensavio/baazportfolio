@@ -10,6 +10,7 @@ import HomeServices from "../Home/HomeServices";
 import HomeIndustriesBento from "../Home/HomeIndustriesBento";
 import HomeTechDepth from "../Home/HomeTechDepth";
 import HomeImpact from "../Home/HomeImpact";
+import HomeMidCTA from "../Home/HomeMidCTA";
 import HomeWhyBaaz from "../Home/HomeWhyBaaz";
 import HomeStats from "../Home/HomeStats";
 import HomeTestimonials from "../Home/HomeTestimonials";
@@ -33,6 +34,7 @@ export default function HomePageClient() {
         <HomeIndustriesBento />
         <HomeTechDepth />
         <HomeImpact />
+        <HomeMidCTA />
         <HomeWhyBaaz />
         <HomeStats />
         <HomeTestimonials />

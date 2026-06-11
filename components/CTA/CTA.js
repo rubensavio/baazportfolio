@@ -37,12 +37,7 @@ const CTA = () => {
             </p>
 
             <div className="cta-buttons">
-              <Link
-                href="https://calendar.app.google/BBo3UYaic9yomaSo7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-button secondary"
-              >
+              <Link href="/book-call" className="cta-button secondary">
                 Schedule a call
               </Link>
               <Link href="/get-in-touch" className="cta-button primary">
