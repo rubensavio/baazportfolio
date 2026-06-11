@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowLinkIcon, ArrowUpRightIcon } from "../icons/ArrowIcons";
 import Reveal from "./Reveal";
 import { HOME_SERVICES } from "../../lib/homePageData";
 
@@ -9,19 +7,18 @@ export default function HomeServices() {
       <div className="home-wrap">
         <Reveal className="home-services-header">
           <h2 id="home-services-heading">What we do</h2>
-          <Link href="/services" className="home-arrow-link">
-            All services <ArrowLinkIcon />
-          </Link>
+          <p className="home-services-sub">End-to-end capability. One accountable partner.</p>
         </Reveal>
 
-        {HOME_SERVICES.map((service) => (
-          <Link key={service.href} href={service.href} className="home-svc-row">
-            <span className="home-svc-num">{service.num}</span>
-            <span className="home-svc-name">{service.title}</span>
-            <span className="home-svc-desc">{service.description}</span>
-            <ArrowUpRightIcon className="home-svc-arrow" />
-          </Link>
-        ))}
+        <div className="home-svc-grid">
+          {HOME_SERVICES.map((service) => (
+            <div key={service.num} className="home-svc-card">
+              <span className="home-svc-num">{service.num}</span>
+              <h3 className="home-svc-name">{service.title}</h3>
+              <p className="home-svc-desc">{service.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

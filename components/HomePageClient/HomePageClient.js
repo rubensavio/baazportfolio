@@ -7,6 +7,10 @@ import HomePhilosophy from "../Home/HomePhilosophy";
 import HomeBrands from "../Home/HomeBrands";
 import HomeWork from "../Home/HomeWork";
 import HomeServices from "../Home/HomeServices";
+import HomeIndustriesBento from "../Home/HomeIndustriesBento";
+import HomeTechDepth from "../Home/HomeTechDepth";
+import HomeImpact from "../Home/HomeImpact";
+import HomeWhyBaaz from "../Home/HomeWhyBaaz";
 import HomeStats from "../Home/HomeStats";
 import HomeTestimonials from "../Home/HomeTestimonials";
 import HomeCTA from "../Home/HomeCTA";
@@ -27,6 +31,10 @@ export default function HomePageClient() {
         <HomeWork />
         <hr className="home-rule" />
         <HomeServices />
+        <HomeIndustriesBento />
+        <HomeTechDepth />
+        <HomeImpact />
+        <HomeWhyBaaz />
         <HomeStats />
         <HomeTestimonials />
         <HomeCTA />
