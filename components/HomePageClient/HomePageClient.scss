@@ -218,15 +218,14 @@
 
   .home-hero-stats {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     width: 100%;
     text-align: center;
 
     @media (max-width: 900px) {
-      grid-template-columns: repeat(2, 1fr);
       row-gap: 32px;
-      column-gap: 24px;
+      column-gap: 16px;
     }
   }
 
@@ -627,73 +626,97 @@
     line-height: 1.3;
   }
 
-  .home-svc-grid {
+  .home-svc-layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--home-border);
-    border: 1px solid var(--home-border);
-    border-radius: 8px;
-    overflow: hidden;
-
-    @media (max-width: 600px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .home-svc-card {
-    background: var(--home-bg);
-    padding: 32px;
+    grid-template-columns: 1fr 1.6fr;
+    gap: clamp(40px, 6vw, 96px);
+    align-items: start;
 
     @media (max-width: 768px) {
-      padding: 24px;
+      grid-template-columns: 1fr;
+      gap: 40px;
     }
   }
 
-  .home-svc-num {
+  .home-svc-aside {
+    position: sticky;
+    top: 38vh;
+
+    h2 {
+      font-family: var(--home-serif);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      position: static;
+    }
+  }
+
+  .home-svc-aside-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    color: var(--home-text-2);
+    margin-top: 12px;
+    line-height: 1.4;
+    max-width: 280px;
+
+    @media (max-width: 768px) {
+      max-width: none;
+    }
+  }
+
+  .home-svc-entry {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 24px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--home-border);
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &:hover .home-svc-entry-num {
+      color: var(--home-accent);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      padding: 24px 0;
+    }
+  }
+
+  .home-svc-entry-num {
     font-family: var(--home-serif);
     font-size: 13px;
-    color: var(--home-accent);
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--home-accent);
-    border-radius: 50%;
-    margin-bottom: 16px;
-  }
-
-  .home-svc-name {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-
-  .home-svc-desc {
-    font-size: 14px;
-    color: var(--home-text-2);
-    line-height: 1.65;
-  }
-
-  .home-svc-tags {
-    font-size: 13px;
     color: var(--home-text-3);
-    line-height: 1.5;
-    margin-top: 16px;
+    padding-top: 6px;
+    transition: color 0.2s;
   }
 
-  .home-svc-card--link {
-    text-decoration: none;
-    color: inherit;
-    transition: background 0.2s;
+  .home-svc-entry-title {
+    font-family: var(--home-serif);
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
 
-    &:hover {
-      background: var(--home-bg-1);
-    }
+  .home-svc-entry-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--home-text-2);
+    line-height: 1.7;
+    max-width: 560px;
   }
 
   /* ── Industries ── */

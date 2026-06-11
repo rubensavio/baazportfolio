@@ -26,7 +26,7 @@
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
 
   @media (max-width: 900px) {
     --v2-pad: 40px;

@@ -1,11 +1,11 @@
 import Reveal from "./Reveal";
-import { HOME_STATS } from "../../lib/homePageData";
+import { HOME_STATS_DEEP } from "../../lib/homePageData";
 
 export default function HomeStats() {
   return (
     <div className="home-stats-section">
       <div className="home-stats-grid">
-        {HOME_STATS.map((stat, index) => (
+        {HOME_STATS_DEEP.map((stat, index) => (
           <Reveal
             key={stat.label}
             className={`home-stat-item${index ? ` reveal-delay-${index}` : ""}`}
