@@ -27,7 +27,6 @@ export default function HomePageClient() {
         <HomeMarquee />
         <HomePhilosophy />
         <HomeBrands />
-        <hr className="home-rule" />
         <HomeWork />
         <hr className="home-rule" />
         <HomeServices />
