@@ -57,8 +57,8 @@ const WhoWeAre = () => {
           Most engagements combine the four areas below so roadmap, UX, and code
           stay coherent instead of bouncing between separate vendors. Each phase
           ships with clear milestones and acceptance criteria before the next
-          begins. We have delivered 100+ web and mobile applications across
-          FinTech, retail, eCommerce, and healthcare-adjacent work.
+          begins. We have generated $2B in business value for customers across
+          26+ countries spanning FinTech, retail, healthcare, and 10 industries.
         </p>
       </div>
 
