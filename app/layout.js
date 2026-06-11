@@ -99,7 +99,7 @@ const structuredData = {
         width: 600,
         height: 60,
       },
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; 100+ shipped applications per Baaz's internal portfolio records. HQ in Bangalore, India; US office in Sheridan, WY.`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018 across 26+ countries. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; $2B in business value generated for customers across 10 industries. HQ in Bangalore, India; US office in Sheridan, WY.`,
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       founder: {

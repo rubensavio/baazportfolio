@@ -1,38 +1,25 @@
 import Link from "next/link";
-import { ArrowDownIcon, ArrowLinkIcon } from "../icons/ArrowIcons";
+import { ArrowLinkIcon } from "../icons/ArrowIcons";
 import { HOME_HERO } from "../../lib/homePageData";
 
 export default function HomeHero() {
-  const { eyebrow, lines, sub, cta, stats } = HOME_HERO;
+  const { headline, sub, cta, stats } = HOME_HERO;
 
   return (
     <section className="home-hero">
       <div className="home-hero-body">
-        <p className="home-hero-eyebrow">
-          <span className="home-hero-live">
-            <span className="home-hero-live-dot" aria-hidden="true" />
-            {eyebrow.live}
-          </span>
-          &nbsp;·&nbsp; {eyebrow.rest}
-        </p>
-
-        <h1 className="home-hero-headline home-display">
-          {lines.map((line, i) => (
-            <span className="home-hero-line" key={line}>
-              <span className="home-hero-line-inner">
-                {line}
-                {i === lines.length - 1 && (
-                  <span className="home-accent">.</span>
-                )}
-              </span>
-            </span>
-          ))}
-        </h1>
+        <h1
+          className="home-hero-headline home-hero-headline--serif"
+          dangerouslySetInnerHTML={{ __html: headline }}
+        />
 
         <div className="home-hero-foot">
           <p className="home-hero-sub">{sub}</p>
           <div className="home-hero-cta">
-            <Link href={cta.href} className="home-arrow-link home-arrow-link--light">
+            <Link
+              href={cta.href}
+              className="home-arrow-link home-arrow-link--light"
+            >
               {cta.label} <ArrowLinkIcon />
             </Link>
           </div>
@@ -51,9 +38,6 @@ export default function HomeHero() {
             </div>
           ))}
         </div>
-        <a href="#work" className="home-arrow-link home-hero-work-link">
-          Selected work <ArrowDownIcon />
-        </a>
       </div>
     </section>
   );
