@@ -12,13 +12,27 @@ export default function HomeImpact() {
           <p className="home-impact-sub">{sub}</p>
         </Reveal>
 
-        <div className="home-impact-list">
+        <div className="home-impact-grid">
           {stories.map((story) => (
             <div key={story.industry} className="home-impact-card">
-              <h3 className="home-impact-industry">
-                {story.industry} <span className="home-impact-client">|&nbsp; {story.client}</span>
-              </h3>
-              <p className="home-impact-result">{story.result}</p>
+              <div className="home-impact-top">
+                <span className="home-impact-industry">{story.industry}</span>
+                <span className="home-impact-client">{story.client}</span>
+              </div>
+
+              <div className="home-impact-hero">
+                <span className="home-impact-hero-value">{story.headline.value}</span>
+                <span className="home-impact-hero-label">{story.headline.label}</span>
+              </div>
+
+              <ul className="home-impact-metrics">
+                {story.metrics.map((m) => (
+                  <li key={m.label} className="home-impact-metric">
+                    <span className="home-impact-metric-value">{m.value}</span>
+                    <span className="home-impact-metric-label">{m.label}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
