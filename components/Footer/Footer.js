@@ -60,7 +60,7 @@ const Footer = () => {
             <div className="footer-links-primary">
               {/* Our Services Column */}
               <div className="footer-column">
-                <h3 className="footer-column-title">Our Services</h3>
+                <h3 className="footer-column-title">What we do</h3>
                 <ul className="footer-list">
                   <li>
                     <Link href="/services/product-strategy">
@@ -141,7 +141,7 @@ const Footer = () => {
 
               {/* Industries Column */}
               <div className="footer-column">
-                <h3 className="footer-column-title">Industries</h3>
+                <h3 className="footer-column-title">Industries we serve</h3>
                 <ul className="footer-list">
                   <li>
                     <Link href="/industry/fintech">FinTech</Link>
@@ -172,7 +172,10 @@ const Footer = () => {
                     <Link href="/blog">Blog</Link>
                   </li>
                   <li>
-                    <Link href="/enterprise">Enterprise</Link>
+                    <Link href="/get-in-touch">Get in touch</Link>
+                  </li>
+                  <li>
+                    <Link href="/book-call">Book a call</Link>
                   </li>
                 </ul>
               </div>

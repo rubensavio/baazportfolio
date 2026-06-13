@@ -4,14 +4,16 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { technologyCapabilitiesData } from "../../lib/technologyCapabilitiesData";
-import { caseStudiesData } from "../../lib/caseStudiesData";
 import "./Navbar.scss";
 
-const INDUSTRIES = [
-  { slug: "fintech", label: "FinTech" },
-  { slug: "construction", label: "Construction" },
-  { slug: "retail", label: "Retail" },
-  { slug: "healthcare", label: "Healthcare" },
+// Mirrors the home-page "Industries we serve" list, each pointed at its dedicated page.
+const INDUSTRIES_WE_SERVE = [
+  { label: "Manufacturing", href: "/erp/manufacturing-companies" },
+  { label: "Banking & Finance", href: "/industry/fintech" },
+  { label: "Retail & eCommerce", href: "/industry/retail" },
+  { label: "Healthcare", href: "/industry/healthcare" },
+  { label: "Real estate", href: "/industry/construction" },
+  { label: "Enterprise AI Transformation", href: "/services/ai-solution" },
 ];
 
 const ERP_SOLUTIONS = [
@@ -64,25 +66,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] =
     useState(false);
-  const [isErpDropdownOpen, setIsErpDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isCaseStudiesDropdownOpen, setIsCaseStudiesDropdownOpen] =
-    useState(false);
   const pathname = usePathname();
-
-  const isCaseStudiesActive =
-    pathname &&
-    (pathname === "/case-studies" ||
-      pathname.startsWith("/case-studies/") ||
-      caseStudiesData.some(
-        (item) =>
-          pathname === item.href ||
-          pathname.startsWith(`${item.href}/`),
-      ));
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    setIsCaseStudiesDropdownOpen(false);
   };
 
   const toggleIndustriesDropdown = () => {
@@ -91,14 +79,6 @@ const Navbar = () => {
 
   const toggleServicesDropdown = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
-  };
-
-  const toggleErpDropdown = () => {
-    setIsErpDropdownOpen(!isErpDropdownOpen);
-  };
-
-  const toggleCaseStudiesDropdown = () => {
-    setIsCaseStudiesDropdownOpen(!isCaseStudiesDropdownOpen);
   };
 
   return (
@@ -135,6 +115,12 @@ const Navbar = () => {
             </Link>
             <div className="dropdown-menu services-mega-menu">
               <div className="mega-column mega-tech">
+                <Link
+                  className="dropdown-menu-tech-row dropdown-tech-link"
+                  href="/project-rescue"
+                >
+                  Project Rescue
+                </Link>
                 {TECH_STACK_GROUPS.map((group) => (
                   <Link
                     className="dropdown-menu-tech-row dropdown-tech-link"
@@ -151,70 +137,43 @@ const Navbar = () => {
             <a
               href="#"
               className={`navbar-link ${
-                pathname?.startsWith("/industry") ? "active" : ""
+                pathname?.startsWith("/industry") || pathname?.startsWith("/erp")
+                  ? "active"
+                  : ""
               }`}
               onClick={(e) => {
                 e.preventDefault();
               }}
             >
-              <span className="link-text">Industries</span>
+              <span className="link-text">Industries we serve</span>
               <span className="dropdown-icon">▼</span>
             </a>
-            <ul className="dropdown-menu">
-              {INDUSTRIES.map(({ slug, label }) => (
-                <li key={slug}>
-                  <Link href={`/industry/${slug}`}>{label}</Link>
-                </li>
-              ))}
-            </ul>
-          </li>
-          <li className="navbar-item dropdown">
-            <a
-              href="#"
-              className={`navbar-link ${
-                pathname?.startsWith("/erp") ? "active" : ""
-              }`}
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <span className="link-text">ERP Solutions</span>
-              <span className="dropdown-icon">▼</span>
-            </a>
-            <ul className="dropdown-menu">
-              <li>
-                <Link href="/erp">All ERP Solutions</Link>
-              </li>
-              {ERP_SOLUTIONS.map(({ slug, label }) => (
-                <li key={slug}>
-                  <Link href={`/erp/${slug}`}>{label}</Link>
-                </li>
-              ))}
-            </ul>
-          </li>
-          <li className="navbar-item dropdown">
-            <a
-              href="#"
-              className={`navbar-link ${isCaseStudiesActive ? "active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
-              }}
-            >
-              <span className="link-text">Case studies</span>
-              <span className="dropdown-icon">▼</span>
-            </a>
-            <ul className="dropdown-menu">
-              <li>
-                <Link href="/case-studies">All case studies</Link>
-              </li>
-              {caseStudiesData.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href}>
-                    {item.footerLabel ?? item.title}
+            <div className="dropdown-menu industries-mega-menu">
+              <div className="mega-column">
+                <p className="dropdown-menu-label" role="presentation">
+                  Industries
+                </p>
+                {INDUSTRIES_WE_SERVE.map(({ label, href }) => (
+                  <Link key={href} href={href}>
+                    {label}
                   </Link>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+
+              <div className="mega-column">
+                <p className="dropdown-menu-label" role="presentation">
+                  ERP solutions
+                </p>
+                {ERP_SOLUTIONS.map(({ slug, label }) => (
+                  <Link key={slug} href={`/erp/${slug}`}>
+                    {label}
+                  </Link>
+                ))}
+                <Link href="/erp" className="dropdown-menu-all-link">
+                  All ERP solutions →
+                </Link>
+              </div>
+            </div>
           </li>
           <li className="navbar-item">
             <Link
@@ -265,24 +224,32 @@ const Navbar = () => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    toggleErpDropdown();
+                    toggleIndustriesDropdown();
                   }}
                 >
-                  ERP Solutions
+                  Industries we serve
                   <span
                     className={`dropdown-icon ${
-                      isErpDropdownOpen ? "open" : ""
+                      isIndustriesDropdownOpen ? "open" : ""
                     }`}
                   >
                     ▼
                   </span>
                 </a>
-                {isErpDropdownOpen && (
+                {isIndustriesDropdownOpen && (
                   <ul className="mobile-dropdown-menu">
-                    <li>
-                      <Link href="/erp" onClick={toggleMenu}>
-                        All ERP Solutions
-                      </Link>
+                    <li className="mobile-dropdown-menu-label" aria-hidden>
+                      Industries
+                    </li>
+                    {INDUSTRIES_WE_SERVE.map(({ label, href }) => (
+                      <li key={href}>
+                        <Link href={href} onClick={toggleMenu}>
+                          {label}
+                        </Link>
+                      </li>
+                    ))}
+                    <li className="mobile-dropdown-menu-label" aria-hidden>
+                      ERP solutions
                     </li>
                     {ERP_SOLUTIONS.map(({ slug, label }) => (
                       <li key={slug}>
@@ -291,6 +258,11 @@ const Navbar = () => {
                         </Link>
                       </li>
                     ))}
+                    <li>
+                      <Link href="/erp" onClick={toggleMenu}>
+                        All ERP solutions →
+                      </Link>
+                    </li>
                   </ul>
                 )}
               </li>
@@ -360,69 +332,6 @@ const Navbar = () => {
                       <li className="mobile-dropdown-tech-row" key={group.slug}>
                         <Link href={group.href} onClick={toggleMenu}>
                           {group.category}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-              <li className="mobile-menu-item mobile-dropdown">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleCaseStudiesDropdown();
-                  }}
-                >
-                  Case studies
-                  <span
-                    className={`dropdown-icon ${
-                      isCaseStudiesDropdownOpen ? "open" : ""
-                    }`}
-                  >
-                    ▼
-                  </span>
-                </a>
-                {isCaseStudiesDropdownOpen && (
-                  <ul className="mobile-dropdown-menu">
-                    <li>
-                      <Link href="/case-studies" onClick={toggleMenu}>
-                        All case studies
-                      </Link>
-                    </li>
-                    {caseStudiesData.map((item) => (
-                      <li key={item.href}>
-                        <Link href={item.href} onClick={toggleMenu}>
-                          {item.footerLabel ?? item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-              <li className="mobile-menu-item mobile-dropdown">
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleIndustriesDropdown();
-                  }}
-                >
-                  Industries
-                  <span
-                    className={`dropdown-icon ${
-                      isIndustriesDropdownOpen ? "open" : ""
-                    }`}
-                  >
-                    ▼
-                  </span>
-                </a>
-                {isIndustriesDropdownOpen && (
-                  <ul className="mobile-dropdown-menu">
-                    {INDUSTRIES.map(({ slug, label }) => (
-                      <li key={slug}>
-                        <Link href={`/industry/${slug}`} onClick={toggleMenu}>
-                          {label}
                         </Link>
                       </li>
                     ))}
