@@ -130,44 +130,11 @@ const Navbar = () => {
                   : ""
               }`}
             >
-              <span className="link-text">Our Services</span>
+              <span className="link-text">What we do</span>
               <span className="dropdown-icon">▼</span>
             </Link>
             <div className="dropdown-menu services-mega-menu">
-              <div className="mega-column mega-services">
-                <p className="dropdown-menu-label" role="presentation">
-                  Core services
-                </p>
-                <Link href="/enterprise">Enterprise</Link>
-                <Link href="/ecommerce">E-commerce</Link>
-                <Link href="/gtm-engineering">GTM Engineering</Link>
-                <Link href="/project-rescue">Project Rescue</Link>
-
-                <p className="dropdown-menu-label" role="presentation">
-                  Featured — AI on ERP
-                </p>
-                <Link href="/work1" className="dropdown-menu-stacked-link">
-                  <span className="dropdown-link-title">
-                    Manufacturing quality automation
-                  </span>
-                  <span className="dropdown-link-sub">
-                    AI vision on manufacturing ERP
-                  </span>
-                </Link>
-                <Link href="/work2" className="dropdown-menu-stacked-link">
-                  <span className="dropdown-link-title">
-                    Hiring &amp; HRMS automation
-                  </span>
-                  <span className="dropdown-link-sub">
-                    AI layer on hiring management systems
-                  </span>
-                </Link>
-              </div>
-
               <div className="mega-column mega-tech">
-                <p className="dropdown-menu-label" role="presentation">
-                  Technology capabilities
-                </p>
                 {TECH_STACK_GROUPS.map((group) => (
                   <Link
                     className="dropdown-menu-tech-row dropdown-tech-link"
@@ -334,7 +301,7 @@ const Navbar = () => {
                     onClick={toggleMenu}
                     className="mobile-dropdown-label-link"
                   >
-                    Our Services
+                    What we do
                   </Link>
                   <button
                     className="mobile-dropdown-toggle"

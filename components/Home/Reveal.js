@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function Reveal({ children, className = "", delay = 0, as: Tag = "div" }) {
+export default function Reveal({ children, className = "", delay = 0, as: Tag = "div", ...rest }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ export default function Reveal({ children, className = "", delay = 0, as: Tag = 
       ref={ref}
       className={`reveal ${className}`.trim()}
       style={delay ? { transitionDelay: `${delay}s` } : undefined}
+      {...rest}
     >
       {children}
     </Tag>
