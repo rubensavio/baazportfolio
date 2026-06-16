@@ -9,11 +9,11 @@ export const metadata = {
   title:
     "Product Engineering & Enterprise Software Development | Baaz",
   description:
-    "Product engineering and enterprise software development for teams worldwide since 2018—strategy, UI/UX, web, mobile, AI, integrations. Explore Baaz engagements.",
+    "Product engineering and enterprise software development for teams worldwide since 2018-strategy, UI/UX, web, mobile, AI, integrations. Explore Baaz engagements.",
   openGraph: {
     title: "Product Engineering & Enterprise Software Development | Baaz",
     description:
-      "Partner for product engineering programmes and scalable enterprise software—from discovery and UX to sustained delivery for global teams.",
+      "Partner for product engineering programmes and scalable enterprise software-from discovery and UX to sustained delivery for global teams.",
     url: `${baseUrl}/services`,
     siteName: "Baaz",
     images: [

@@ -47,11 +47,11 @@ Before any outreach, define who you're targeting precisely.
 
 ## Channel 1: LinkedIn Social Listening (Highest-Signal, Lowest-Effort)
 
-### 1.1 Trigify.io — Keyword Monitoring
+### 1.1 Trigify.io - Keyword Monitoring
 
 Set up monitors for LinkedIn posts containing buying-intent keywords:
 
-**Tier 1 — Direct Intent (respond within 24 hours)**
+**Tier 1 - Direct Intent (respond within 24 hours)**
 - "looking for a software agency"
 - "looking for a development partner"
 - "need a development team"
@@ -61,7 +61,7 @@ Set up monitors for LinkedIn posts containing buying-intent keywords:
 - "need help building our MVP"
 - "hiring a software development company"
 
-**Tier 2 — Problem-Aware (engage, don't pitch)**
+**Tier 2 - Problem-Aware (engage, don't pitch)**
 - "AI integration challenges"
 - "need a development partner"
 - "scaling our engineering team"
@@ -73,7 +73,7 @@ Set up monitors for LinkedIn posts containing buying-intent keywords:
 - "build vs buy"
 - "outsourcing development"
 
-**Tier 3 — Topic Interest (add value, build relationship)**
+**Tier 3 - Topic Interest (add value, build relationship)**
 - "AI proof of concept"
 - "product engineering"
 - "Flutter vs React Native"
@@ -84,7 +84,7 @@ Set up monitors for LinkedIn posts containing buying-intent keywords:
 
 | Signal Tier | Action | Who | Example |
 |---|---|---|---|
-| **Tier 1** (direct ask) | Comment with value + DM within 24h | Chitresh or Ruben | *Comment:* "We've done 100+ builds since 2018 — happy to share what we've seen work for [their specific need]. Sent you a note." *DM:* Offer a free 30-min scoping call, no pitch. |
+| **Tier 1** (direct ask) | Comment with value + DM within 24h | Chitresh or Ruben | *Comment:* "We've done 100+ builds since 2018 - happy to share what we've seen work for [their specific need]. Sent you a note." *DM:* Offer a free 30-min scoping call, no pitch. |
 | **Tier 2** (problem) | Comment with a relevant insight, no pitch | Ruben (technical) or Chitresh (business) | *Comment:* Share a relevant framework, stat, or lesson. Link to a blog post or case study only if directly relevant. |
 | **Tier 3** (topic) | Like + thoughtful comment | Any team member | Build visibility over time; these people may convert in 3–6 months |
 
@@ -103,7 +103,7 @@ People engaging with competitor posts are showing active buying intent. Monitor 
 | **Toptal** | Freelancer marketplace (clients outgrowing freelancers need an agency) |
 
 **Action:** When someone from your ICP engages with a competitor's content:
-1. View their profile — confirm they match ICP
+1. View their profile - confirm they match ICP
 2. Connect with a personalized note referencing the topic (not the competitor)
 3. Engage with their content for 1–2 weeks
 4. Then DM with a value-first message
@@ -118,7 +118,7 @@ New tech leaders reassess vendor relationships within their first 90 days. Use L
 **Playbook for new hires:**
 1. Week 1: Connect with a congratulations note (no pitch)
 2. Week 2–3: Engage with their posts
-3. Week 4: Send a value message — "I put together a quick analysis of [common challenge in their industry]. Happy to share if useful."
+3. Week 4: Send a value message - "I put together a quick analysis of [common challenge in their industry]. Happy to share if useful."
 4. If they engage: Offer a 30-min call
 
 ---
@@ -133,7 +133,7 @@ New tech leaders reassess vendor relationships within their first 90 days. Use L
 
 | Search Name | Filters |
 |---|---|
-| **US CTOs — Series A/B** | Title: CTO OR "VP Engineering" OR "Head of Engineering"; Company headcount: 11–200; HQ: United States; Funding: Series A, Series B; Industry: Software, Financial Services, Healthcare |
+| **US CTOs - Series A/B** | Title: CTO OR "VP Engineering" OR "Head of Engineering"; Company headcount: 11–200; HQ: United States; Funding: Series A, Series B; Industry: Software, Financial Services, Healthcare |
 | **US Product Leaders** | Title: CPO OR "VP Product" OR "Head of Product"; same filters |
 | **UK Tech Leaders** | Same titles; HQ: United Kingdom |
 | **India Enterprise** | Title: CTO OR CIO OR "VP Engineering"; Company headcount: 201–5000; HQ: India |
@@ -146,29 +146,29 @@ New tech leaders reassess vendor relationships within their first 90 days. Use L
 **Connection note templates (max 300 characters):**
 
 **For CTOs at funded startups:**
-> Hi [Name] — saw [Company] raised [round]. Building engineering capacity post-raise is always a puzzle. We help startups like yours ship products 2–3x faster. Would love to connect.
+> Hi [Name] - saw [Company] raised [round]. Building engineering capacity post-raise is always a puzzle. We help startups like yours ship products 2–3x faster. Would love to connect.
 
 **For new-in-role CTOs:**
 > Congrats on the CTO role at [Company], [Name]. The first 90 days are always a sprint. If you ever need a sounding board on tech strategy or build capacity, happy to help.
 
 **For people engaging with relevant content:**
-> Hi [Name] — liked your comment on [topic]. We work on similar problems at Baaz (AI in production, legacy modernization). Would be great to connect.
+> Hi [Name] - liked your comment on [topic]. We work on similar problems at Baaz (AI in production, legacy modernization). Would be great to connect.
 
 **For target ICP (cold):**
-> Hi [Name] — we build products for [industry] companies. Shipped 100+ since 2018, including AI and mobile for brands like Uber and Decathlon. Thought it'd be good to connect.
+> Hi [Name] - we build products for [industry] companies. Shipped 100+ since 2018, including AI and mobile for brands like Uber and Decathlon. Thought it'd be good to connect.
 
 ### 2.3 DM Sequences (After Connection Accepted)
 
 **Day 1 (connection accepted):** No message. Let the connection breathe.
 
 **Day 3–5:** Value message (not a pitch):
-> Thanks for connecting, [Name]. I noticed [Company] is in [industry] — we recently published a case study on [relevant topic, e.g., "how AI cut manufacturing defects by 94%"]. Thought it might be relevant: [link]
+> Thanks for connecting, [Name]. I noticed [Company] is in [industry] - we recently published a case study on [relevant topic, e.g., "how AI cut manufacturing defects by 94%"]. Thought it might be relevant: [link]
 
 **Day 10–14 (if they engaged or viewed):** Soft CTA:
-> [Name] — quick question: are you currently evaluating external engineering partners, or is everything being built in-house? Just curious — we work with a lot of [industry] companies and always like to understand how teams are structured.
+> [Name] - quick question: are you currently evaluating external engineering partners, or is everything being built in-house? Just curious - we work with a lot of [industry] companies and always like to understand how teams are structured.
 
 **Day 21 (if no response):** Breakup message:
-> [Name] — don't want to be that person who keeps following up. If you ever need product engineering capacity (mobile, AI, custom software), we're at baaz.pro. Happy to help whenever the timing is right. All the best with [Company].
+> [Name] - don't want to be that person who keeps following up. If you ever need product engineering capacity (mobile, AI, custom software), we're at baaz.pro. Happy to help whenever the timing is right. All the best with [Company].
 
 ### 2.4 Weekly LinkedIn Outbound Workflow
 
@@ -193,12 +193,12 @@ New tech leaders reassess vendor relationships within their first 90 days. Use L
 
 | Component | Tool | Cost |
 |---|---|---|
-| **Domain** | Buy 2–3 secondary domains (e.g., `baazteam.com`, `baazengineering.com`) — never cold email from your primary domain | ~$12/year each |
+| **Domain** | Buy 2–3 secondary domains (e.g., `baazteam.com`, `baazengineering.com`) - never cold email from your primary domain | ~$12/year each |
 | **Email accounts** | Create 3 accounts per domain (e.g., `chitresh@baazteam.com`, `ruben@baazteam.com`, `team@baazteam.com`) using Google Workspace | ~$6/user/month |
-| **Warmup** | Instantly.ai or Smartlead — warm up each inbox for 2 weeks before sending | ~$30–97/month |
+| **Warmup** | Instantly.ai or Smartlead - warm up each inbox for 2 weeks before sending | ~$30–97/month |
 | **Sending tool** | Instantly.ai or Smartlead (also handles sequences) | Included above |
 | **Lead data** | Apollo.io (free tier: 10K credits/month) or LinkedIn Sales Navigator exports | Free–$49/month |
-| **Email verification** | ZeroBounce or NeverBounce — verify every list before sending | ~$0.008/email |
+| **Email verification** | ZeroBounce or NeverBounce - verify every list before sending | ~$0.008/email |
 
 **Setup timeline:** 2–3 weeks (domain purchase → DNS setup → warmup → first send).
 
@@ -217,38 +217,38 @@ Build lists matching the ICP:
 
 **Sequence 1: The Problem-Aware Approach (for CTOs at funded startups)**
 
-*Email 1 (Day 0) — Subject: "Quick question about [Company]'s engineering roadmap"*
+*Email 1 (Day 0) - Subject: "Quick question about [Company]'s engineering roadmap"*
 
 > Hi [First Name],
 >
 > Congrats on [Company]'s [Series X / recent milestone]. Exciting stage.
 >
-> Quick question — are you building your post-raise engineering capacity in-house, or are you open to a product engineering partner for specific initiatives?
+> Quick question - are you building your post-raise engineering capacity in-house, or are you open to a product engineering partner for specific initiatives?
 >
-> We've built 100+ products since 2018 — mobile apps, AI platforms, and enterprise SaaS — for companies like Uber and Decathlon. We typically work with startups that need to ship fast but can't wait 6 months to hire a full team.
+> We've built 100+ products since 2018 - mobile apps, AI platforms, and enterprise SaaS - for companies like Uber and Decathlon. We typically work with startups that need to ship fast but can't wait 6 months to hire a full team.
 >
 > Would a 15-minute call make sense to see if there's a fit?
 >
-> — Chitresh
+> - Chitresh
 > Founder, Baaz | baaz.pro
 
-*Email 2 (Day 3) — Subject: "Re: Quick question about [Company]'s engineering roadmap"*
+*Email 2 (Day 3) - Subject: "Re: Quick question about [Company]'s engineering roadmap"*
 
 > Hi [First Name],
 >
-> Wanted to share something relevant — we recently helped a [industry] company cut their time-to-hire for engineers by 65% by building them an AI-powered screening platform. Cost per hire dropped from $47K to $18.5K.
+> Wanted to share something relevant - we recently helped a [industry] company cut their time-to-hire for engineers by 65% by building them an AI-powered screening platform. Cost per hire dropped from $47K to $18.5K.
 >
 > Full case study here if you're curious: [link to /work2]
 >
 > Happy to chat if you're facing similar capacity challenges.
 >
-> — Chitresh
+> - Chitresh
 
-*Email 3 (Day 7) — Subject: "[First Name] — one more thought"*
+*Email 3 (Day 7) - Subject: "[First Name] - one more thought"*
 
 > Hi [First Name],
 >
-> Last note from me. I wrote a short framework on when to build in-house vs. use an agency — based on 100+ builds. Might be useful as you scale:
+> Last note from me. I wrote a short framework on when to build in-house vs. use an agency - based on 100+ builds. Might be useful as you scale:
 >
 > [link to blog post or LinkedIn post]
 >
@@ -256,37 +256,37 @@ Build lists matching the ICP:
 >
 > All the best with [Company].
 >
-> — Chitresh
+> - Chitresh
 
 ---
 
 **Sequence 2: The Trigger-Based Approach (for new CTO/VP Eng hires)**
 
-*Email 1 (Day 0) — Subject: "Congrats on the new role at [Company]"*
+*Email 1 (Day 0) - Subject: "Congrats on the new role at [Company]"*
 
 > Hi [First Name],
 >
-> Saw you recently joined [Company] as [Title]. Congrats — exciting move.
+> Saw you recently joined [Company] as [Title]. Congrats - exciting move.
 >
 > When tech leaders step into new roles, they usually inherit a backlog of "should have been built 6 months ago" projects. If that's the case, we help companies like [Company] get those off the plate fast.
 >
-> We're a product engineering agency (mobile, AI, enterprise SaaS) — 100+ builds since 2018. Happy to be a resource if you're evaluating partners.
+> We're a product engineering agency (mobile, AI, enterprise SaaS) - 100+ builds since 2018. Happy to be a resource if you're evaluating partners.
 >
-> — Chitresh
+> - Chitresh
 
-*Email 2 (Day 4) — Subject: "Resource for new CTOs"*
+*Email 2 (Day 4) - Subject: "Resource for new CTOs"*
 
 > Hi [First Name],
 >
-> I wrote a framework called the "3-Owner Test" — it's how I evaluate whether a software project will succeed or fail before a single line of code is written. Might be useful as you assess [Company]'s current roadmap.
+> I wrote a framework called the "3-Owner Test" - it's how I evaluate whether a software project will succeed or fail before a single line of code is written. Might be useful as you assess [Company]'s current roadmap.
 >
 > [link to LinkedIn post or blog]
 >
-> No pitch — genuinely think it's a helpful mental model.
+> No pitch - genuinely think it's a helpful mental model.
 >
-> — Chitresh
+> - Chitresh
 
-*Email 3 (Day 10) — Subject: "Re: Congrats on the new role at [Company]"*
+*Email 3 (Day 10) - Subject: "Re: Congrats on the new role at [Company]"*
 
 > Hi [First Name],
 >
@@ -294,7 +294,7 @@ Build lists matching the ICP:
 >
 > If the timing isn't right, happy to stay connected for whenever it makes sense.
 >
-> — Chitresh
+> - Chitresh
 
 ### 3.4 Cold Email Metrics to Track
 
@@ -318,9 +318,9 @@ Create 2–3 high-value downloadable assets that capture email addresses.
 
 | Lead Magnet | Format | Target ICP | Landing Page |
 |---|---|---|---|
-| **"Build vs. Buy Decision Framework"** — A scoring template CTOs can use to decide whether to build in-house, use an agency, or buy off-the-shelf | PDF (2–3 pages) + editable spreadsheet | CTOs, VP Engineering | `/resources/build-vs-buy` |
-| **"AI Readiness Assessment"** — A self-assessment checklist: data maturity, team readiness, use case clarity, infrastructure gaps | PDF (3–4 pages) | CTOs, Innovation Leads evaluating AI | `/resources/ai-readiness` |
-| **"MVP Scoping Template"** — The exact template Baaz uses to scope MVPs: user stories, priority matrix, tech stack decision tree, timeline estimator | Notion template or PDF | Startup founders, product managers | `/resources/mvp-template` |
+| **"Build vs. Buy Decision Framework"** - A scoring template CTOs can use to decide whether to build in-house, use an agency, or buy off-the-shelf | PDF (2–3 pages) + editable spreadsheet | CTOs, VP Engineering | `/resources/build-vs-buy` |
+| **"AI Readiness Assessment"** - A self-assessment checklist: data maturity, team readiness, use case clarity, infrastructure gaps | PDF (3–4 pages) | CTOs, Innovation Leads evaluating AI | `/resources/ai-readiness` |
+| **"MVP Scoping Template"** - The exact template Baaz uses to scope MVPs: user stories, priority matrix, tech stack decision tree, timeline estimator | Notion template or PDF | Startup founders, product managers | `/resources/mvp-template` |
 
 ### 4.2 Website CTAs (Upgrade from Single Form)
 
@@ -331,7 +331,7 @@ Current state: single `/get-in-touch` form. Add multiple entry points:
 | **"Book a Free Strategy Session"** | Homepage hero, services pages, blog sidebar | Calendly link → 30-min call with Chitresh or Ruben |
 | **"Get Your Free AI Readiness Score"** | AI services page, blog posts about AI | Short form (5 questions) → automated score + email follow-up |
 | **"Download the MVP Scoping Template"** | Homepage, startup-focused pages | Email gate → PDF delivery → email sequence |
-| **Exit-intent popup** | All pages (desktop only) | "Before you go — get our Build vs. Buy framework" → email capture |
+| **Exit-intent popup** | All pages (desktop only) | "Before you go - get our Build vs. Buy framework" → email capture |
 | **Sticky bottom bar** | Blog posts | "Need help building this? Talk to our engineering team → [CTA]" |
 
 ### 4.3 Nurture Sequence (After Lead Magnet Download)
@@ -340,9 +340,9 @@ Once someone downloads a lead magnet, they enter a 3-email nurture sequence:
 
 *Email 1 (immediate):* Deliver the resource + a brief intro to Baaz.
 
-*Email 2 (Day 3):* Share a relevant case study. "Since you downloaded [resource], you might find this useful — here's how we helped [client] solve [problem]."
+*Email 2 (Day 3):* Share a relevant case study. "Since you downloaded [resource], you might find this useful - here's how we helped [client] solve [problem]."
 
-*Email 3 (Day 7):* Soft CTA. "If you're evaluating options for [problem area], we'd love a quick 15-min call to see if we can help. No pitch — just an honest conversation about your needs."
+*Email 3 (Day 7):* Soft CTA. "If you're evaluating options for [problem area], we'd love a quick 15-min call to see if we can help. No pitch - just an honest conversation about your needs."
 
 ---
 
@@ -363,7 +363,7 @@ Past clients are the highest-conversion lead source. Formalize it.
 
 > Hi [Client Name],
 >
-> Hope [product we built] is running well. Quick ask — do you know anyone in your network who's looking for a product engineering partner? We're taking on 2–3 new projects this quarter.
+> Hope [product we built] is running well. Quick ask - do you know anyone in your network who's looking for a product engineering partner? We're taking on 2–3 new projects this quarter.
 >
 > Specifically, we're looking for:
 > - Startups that just raised and need to ship fast
@@ -374,7 +374,7 @@ Past clients are the highest-conversion lead source. Formalize it.
 >
 > Thanks for thinking of us.
 >
-> — Chitresh
+> - Chitresh
 
 ### 5.3 Strategic Partnerships
 
@@ -383,7 +383,7 @@ Identify complementary service providers who serve the same ICP but don't compet
 | Partner Type | Why | Examples |
 |---|---|---|
 | **VC firms** (portfolio support) | Their portfolio companies need engineering help post-raise | Accel India, Sequoia Surge, Blume Ventures, Y Combinator network |
-| **Design agencies** (no dev) | They deliver designs but can't build — need a dev partner | Studios that do only brand/UX |
+| **Design agencies** (no dev) | They deliver designs but can't build - need a dev partner | Studios that do only brand/UX |
 | **Management consultants** | They advise on digital transformation but don't build | Boutique consulting firms, Big 4 digital advisory teams |
 | **Fractional CTOs** | They advise startups but need a team to execute | Independent fractional CTO/VPE consultants |
 | **AWS/GCP/Azure partner programs** | Cloud providers have referral pipelines for ISV/build partners | Apply to AWS Partner Network, Google Cloud Partner |
@@ -431,7 +431,7 @@ Discovery call
 The guest articles already planned (`guest-article-1-legacy-modernization.md`, `guest-article-2-ai-poc-to-production.md`) should include:
 
 - **Author bio:** "Chitresh Parihar is the founder of Baaz, a product engineering agency that has shipped 100+ products since 2018. Book a free strategy session at baaz.pro/get-in-touch."
-- **In-article CTA:** Reference the lead magnet (e.g., "We've open-sourced our AI Readiness Assessment — download it at [link].")
+- **In-article CTA:** Reference the lead magnet (e.g., "We've open-sourced our AI Readiness Assessment - download it at [link].")
 
 ---
 
@@ -441,7 +441,7 @@ The guest articles already planned (`guest-article-1-legacy-modernization.md`, `
 
 Don't start with cold ads. Start with retargeting website visitors.
 
-**Phase 1 — Retargeting (Month 2):**
+**Phase 1 - Retargeting (Month 2):**
 - Install LinkedIn Insight Tag on baaz.pro
 - Create audience: website visitors in the last 90 days
 - Ad format: Single image or carousel
@@ -449,9 +449,9 @@ Don't start with cold ads. Start with retargeting website visitors.
 - Budget: $500–$1,000/month
 - Expected CPL: $50–$150
 
-**Phase 2 — Cold Audience (Month 3+, if retargeting works):**
+**Phase 2 - Cold Audience (Month 3+, if retargeting works):**
 - Audience: Job titles (CTO, VP Eng, CPO) + Company size (50–500) + Industries (Software, Financial Services, Healthcare)
-- Ad format: Thought leader ads (promote Chitresh/Ruben's posts to targeted audience) — these outperform brand ads by 2–3x
+- Ad format: Thought leader ads (promote Chitresh/Ruben's posts to targeted audience) - these outperform brand ads by 2–3x
 - Budget: $1,500–$3,000/month
 - Expected CPL: $100–$300
 
@@ -493,7 +493,7 @@ Only bid on keywords where someone is actively looking for a service provider:
 | **Local Bangalore meetups** | Host or speak at tech meetups (Bangalore JS, AI Bangalore, Flutter Bangalore) | Monthly |
 | **Virtual webinars** | Host a monthly webinar: "AI in Production: What Actually Works" or "From Idea to MVP in 12 Weeks" | Monthly (Month 2+) |
 | **Conferences** | Apply to speak at SaaSBOOMi, NASSCOM, TechSparks, or domain conferences in FinTech/HealthTech | Quarterly |
-| **Podcast guesting** | Chitresh/Ruben as guests on tech/startup podcasts — SaaS, engineering leadership, AI | 1–2/month |
+| **Podcast guesting** | Chitresh/Ruben as guests on tech/startup podcasts - SaaS, engineering leadership, AI | 1–2/month |
 
 ---
 
@@ -509,7 +509,7 @@ Companies hiring engineers are either (a) growing fast or (b) can't hire fast en
 
 | Signal | What It Means | Your Approach |
 |---|---|---|
-| Posting 5+ engineering roles | They need capacity now | "I noticed [Company] is hiring aggressively for engineers. We help companies bridge the gap while they build teams — shipped 100+ products since 2018." |
+| Posting 5+ engineering roles | They need capacity now | "I noticed [Company] is hiring aggressively for engineers. We help companies bridge the gap while they build teams - shipped 100+ products since 2018." |
 | Posting for niche skills (ML engineer, Flutter dev, DevOps) | They lack a specific skill in-house | "Finding [skill] talent is brutal right now. We have a team of [skill] engineers who've shipped [relevant project]. Happy to chat if you need immediate capacity." |
 | Posting has been open 60+ days | They can't fill the role | "I noticed this role has been open for a while. We've helped companies in similar situations by providing a senior [role] team while they continue recruiting." |
 
@@ -528,13 +528,13 @@ Companies hiring engineers are either (a) growing fast or (b) can't hire fast en
 
 **When a target company's site runs on outdated tech:**
 - This signals potential legacy modernization needs
-- Use in outreach: "I noticed [Company] is running on [old framework]. We've helped [X] companies modernize from [old] to [new] — typically 40–60% cost reduction."
+- Use in outreach: "I noticed [Company] is running on [old framework]. We've helped [X] companies modernize from [old] to [new] - typically 40–60% cost reduction."
 
 ---
 
 ## Implementation Timeline
 
-### Month 1 — Foundation
+### Month 1 - Foundation
 
 | Week | Task | Owner | Priority |
 |---|---|---|---|
@@ -554,7 +554,7 @@ Companies hiring engineers are either (a) growing fast or (b) can't hire fast en
 | 4 | Identify 5 fractional CTOs for partnership outreach | Chitresh | Medium |
 | 4 | Set up tracking spreadsheet (leads, source, status, meetings) | Chitresh | High |
 
-### Month 2 — Scale & Optimize
+### Month 2 - Scale & Optimize
 
 | Task | Owner |
 |---|---|
@@ -567,7 +567,7 @@ Companies hiring engineers are either (a) growing fast or (b) can't hire fast en
 | Host or attend first local Bangalore tech meetup | Chitresh/Ruben |
 | Review Month 1 metrics; optimize sequences based on reply rates | Chitresh |
 
-### Month 3 — Expand & Compound
+### Month 3 - Expand & Compound
 
 | Task | Owner |
 |---|---|
@@ -634,7 +634,7 @@ Track where every lead comes from:
 
 ## Key Principles
 
-1. **Value before pitch.** Every first touch should offer something useful — a framework, insight, case study, or genuine help. Never pitch on first contact.
+1. **Value before pitch.** Every first touch should offer something useful - a framework, insight, case study, or genuine help. Never pitch on first contact.
 
 2. **Speed on intent signals.** When Trigify flags a Tier 1 keyword match, respond within 24 hours. Timing is everything in intent-based selling.
 
@@ -642,4 +642,4 @@ Track where every lead comes from:
 
 4. **Track everything.** Every lead gets a source attribution. Every channel gets a cost-per-meeting and cost-per-deal. Cut what doesn't work by Month 3.
 
-5. **Founder-led.** At Baaz's stage, Chitresh and Ruben are the sales team. Prospects want to talk to the people who will oversee their project, not a sales rep. This is a competitive advantage — use it.
+5. **Founder-led.** At Baaz's stage, Chitresh and Ruben are the sales team. Prospects want to talk to the people who will oversee their project, not a sales rep. This is a competitive advantage - use it.

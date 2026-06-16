@@ -19,7 +19,7 @@ const nightmareNumbers = [
     id: 1,
     value: "47%",
     label: "Calls for “simple” tasks",
-    description: "scheduling, refills, and “where is my result?”—before the app absorbed them",
+    description: "scheduling, refills, and “where is my result?”-before the app absorbed them",
     bgColor: "#ffffff",
   },
   {
@@ -54,7 +54,7 @@ const nightmareNumbers = [
     id: 6,
     value: "2★",
     label: "Store reviews citing “scattered”",
-    description: "experience—not clinical quality—as the pain point",
+    description: "experience-not clinical quality-as the pain point",
     bgColor: "#ffffff",
   },
 ];
@@ -62,11 +62,11 @@ const nightmareNumbers = [
 const coreProductCapabilities = [
   {
     id: 1,
-    title: "Get care on the calendar—without the phone maze",
+    title: "Get care on the calendar-without the phone maze",
     bgColor: "#FFF7F2",
     features: [
       "Search doctors, locations, and slots with clear confirmation and reschedule paths",
-      "Reminders patients actually opted into—not generic blast spam",
+      "Reminders patients actually opted into-not generic blast spam",
       "Video visit entry where the programme offers it, beside in-person care",
     ],
   },
@@ -104,7 +104,7 @@ const coreProductCapabilities = [
 
 const platformGlance = [
   "One mobile product for iOS and Android: booking, visits, prescriptions, diagnostics, pharmacy, and documents share navigation patterns so patients learn the app once.",
-  "Integrated with existing provider services—authenticated sessions, real schedules, traceable actions—not a marketing shell over a desktop-only portal.",
+  "Integrated with existing provider services-authenticated sessions, real schedules, traceable actions-not a marketing shell over a desktop-only portal.",
   "Where partner journeys change quickly, embedded flows complement native screens so you are not blocked on a full rebuild for every policy tweak.",
 ];
 
@@ -132,7 +132,7 @@ const rolloutPhases = [
     phase: "Phase 2",
     title: "Ship slices people could rely on",
     description:
-      "Core booking and dashboard stability landed first; prescriptions, lab, and pharmacy rolled in stages behind shared list/detail patterns—so the product stayed coherent under deadline pressure.",
+      "Core booking and dashboard stability landed first; prescriptions, lab, and pharmacy rolled in stages behind shared list/detail patterns-so the product stayed coherent under deadline pressure.",
     bullets: [
       "Consistent error and recovery behaviour across high-traffic flows",
       "Push and reminders validated on staging before wide rollout",
@@ -144,7 +144,7 @@ const rolloutPhases = [
     phase: "Phase 3",
     title: "Production-ready, not “demo-ready”",
     description:
-      "Crash analytics, upgrade testing across OS versions, and store checklist discipline—so live traffic looked like rehearsal, not a surprise.",
+      "Crash analytics, upgrade testing across OS versions, and store checklist discipline-so live traffic looked like rehearsal, not a surprise.",
   },
 ];
 
@@ -237,7 +237,7 @@ export default function HealthcarePatientAppCaseStudy() {
           </h1>
           <p className="work2-context animate-fade-up animate-delay-200 animate-in">
             A patient engagement app for a provider network: scheduling, visits, prescriptions, lab
-            and pharmacy journeys, documents, and notifications—so people spend less time navigating
+            and pharmacy journeys, documents, and notifications-so people spend less time navigating
             the system and more time getting care.
           </p>
 
@@ -245,7 +245,7 @@ export default function HealthcarePatientAppCaseStudy() {
             <p className="problem-description">
               <span className="problem-title-label">The problem:</span> Meet Daniel Okonkwo, VP of
               Patient Access at a multi-site care network. His clinicians were respected; his contact
-              centre was underwater. Patients did not fail to care—they failed to find the next step.
+              centre was underwater. Patients did not fail to care-they failed to find the next step.
               A lab order lived in one message thread, a pharmacy coupon in another, and the
               radiology prep sheet in a fourth. The product question was not “can we ship an app?”
               It was: can a family complete a care path without feeling like they joined an escape
@@ -285,7 +285,7 @@ export default function HealthcarePatientAppCaseStudy() {
             </p>
             <p>
               The mandate was a <strong>patient-grade mobile product</strong> on top of existing
-              services: authenticated access, real schedules, and traceable actions—not a wrapper
+              services: authenticated access, real schedules, and traceable actions-not a wrapper
               around a desktop-only portal.
             </p>
           </div>
@@ -331,7 +331,7 @@ export default function HealthcarePatientAppCaseStudy() {
           </h3>
           <div className="solution-story">
             <p>
-              Screens are grouped around jobs to be done—book, attend, refill, investigate—rather
+              Screens are grouped around jobs to be done-book, attend, refill, investigate-rather
               than one undifferentiated menu. Shared list and card patterns keep behaviour predictable
               as modules roll out.
             </p>
@@ -356,7 +356,7 @@ export default function HealthcarePatientAppCaseStudy() {
         </div>
       </section>
 
-      {/* AI-native EHR & revenue cycle — copy/order matches ErpPageClient; also remains on /erp/healthcare-companies via erpData.aiEhrSection (do not remove there). */}
+      {/* AI-native EHR & revenue cycle - copy/order matches ErpPageClient; also remains on /erp/healthcare-companies via erpData.aiEhrSection (do not remove there). */}
       <section
         className="erp-ai-ehr healthcare-patient-case-study-ai"
         aria-labelledby="healthcare-case-study-ai-heading"
@@ -439,7 +439,7 @@ export default function HealthcarePatientAppCaseStudy() {
           <div className="solution-story">
             <p>
               Releases were sequenced so authentication, appointments, and dashboard stability
-              preceded wider clinical adjacency—reducing the blast radius of API and UX changes while
+              preceded wider clinical adjacency-reducing the blast radius of API and UX changes while
               real patients were already in flight.
             </p>
           </div>
@@ -474,7 +474,7 @@ export default function HealthcarePatientAppCaseStudy() {
           <div className="solution-story">
             <p>
               The same navigation home hosts booking, visits, prescriptions, diagnostics, pharmacy,
-              and documents—so patients learn the product once even as the network adds modules.
+              and documents-so patients learn the product once even as the network adds modules.
             </p>
           </div>
           <div className="work2-capabilities-grid">

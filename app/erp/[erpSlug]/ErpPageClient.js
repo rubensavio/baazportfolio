@@ -63,7 +63,7 @@ export default function ErpPageClient({
             </h2>
             <p className="erp-editorial-intro-lead">
               {data.editorialIntro?.lead ??
-                "How planning, execution, costing, integrations, and adoption stay aligned—and what that means before features are configured."}
+                "How planning, execution, costing, integrations, and adoption stay aligned-and what that means before features are configured."}
             </p>
             <div className="erp-editorial-blocks">
               {data.editorialSections.map((block, bi) => (
@@ -350,7 +350,7 @@ export default function ErpPageClient({
             </h2>
             <p className="erp-section-lead erp-related-solutions__lead">
               Explore adjacent sector playbooks for modules, rollout patterns,
-              and integrations—whether you benchmark peers or stitch a hybrid
+              and integrations-whether you benchmark peers or stitch a hybrid
               operating model across lines of business.
             </p>
             <ul className="erp-related-solutions__grid">

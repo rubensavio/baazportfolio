@@ -1,16 +1,16 @@
-# Technical SEO — External & Manual Steps
+# Technical SEO - External & Manual Steps
 
 Code changes for the Technical SEO checklist are done. The items below are for **you to do manually** (no integration or API in the codebase).
 
 ---
 
-## 1. XML sitemap submission — Done
+## 1. XML sitemap submission - Done
 
 ### Google Search Console
 
 1. Go to https://search.google.com/search-console
 2. Click **Add property** → choose **URL prefix** → enter `https://www.baaz.pro`
-3. Verify ownership (DNS TXT record, HTML file upload, or Google Analytics — pick whichever is easiest for your hosting)
+3. Verify ownership (DNS TXT record, HTML file upload, or Google Analytics - pick whichever is easiest for your hosting)
 4. Once verified, go to **Sitemaps** (left sidebar)
 5. Enter `https://www.baaz.pro/sitemap.xml` → click **Submit**
 6. Wait 24–48 hours; check back to confirm "Success" status
@@ -25,14 +25,14 @@ Code changes for the Technical SEO checklist are done. The items below are for *
 
 ---
 
-## 2. Broken links and redirect chains — Done
+## 2. Broken links and redirect chains - Done
 
 ### Using Screaming Frog (free up to 500 URLs)
 
 1. Download from https://www.screamingfrog.co.uk/seo-spider/
 2. Enter `https://www.baaz.pro` in the URL bar → click **Start**
-3. After the crawl, filter by **Response Codes → Client Error (4xx)** — fix any broken internal links
-4. Check **Response Codes → Redirection (3xx)** — look for redirect chains (A → B → C) and shorten them
+3. After the crawl, filter by **Response Codes → Client Error (4xx)** - fix any broken internal links
+4. Check **Response Codes → Redirection (3xx)** - look for redirect chains (A → B → C) and shorten them
 5. Export the results and fix links in your codebase or hosting config
 
 ### Alternative: Ahrefs Site Audit
@@ -42,17 +42,17 @@ Code changes for the Technical SEO checklist are done. The items below are for *
 
 ---
 
-## 3. Default social share image — Done
+## 3. Default social share image - Done
 
 The code points to `/assets/ogdefault.png` and the image is at `public/assets/ogdefault.png`. No further action needed in code.
 
 After deploy, you can verify the preview:
-- https://developers.facebook.com/tools/debug/ — enter `https://www.baaz.pro`
-- https://cards-dev.twitter.com/validator — enter `https://www.baaz.pro`
+- https://developers.facebook.com/tools/debug/ - enter `https://www.baaz.pro`
+- https://cards-dev.twitter.com/validator - enter `https://www.baaz.pro`
 
 ---
 
-## 4. Mobile-first check — Done (lighthouse test pending)
+## 4. Mobile-first check - Done (lighthouse test pending)
 
 Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Results:
 
@@ -64,16 +64,16 @@ Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Resu
 - `/get-in-touch`
 
 ### `display: none` audit
-- `ul.navbar-menu.desktop-menu` hidden on mobile — **expected** (hamburger menu replaces it)
-- `a.cta-button.desktop-cta` hidden on mobile — **expected** (hamburger provides access)
-- `a.hero-cta.desktop-cta-btn` hidden on mobile — **expected** (a separate mobile CTA is rendered)
-- Testimonial prev/next buttons hidden on mobile — **expected** (all 3 cards stack vertically; no carousel needed)
+- `ul.navbar-menu.desktop-menu` hidden on mobile - **expected** (hamburger menu replaces it)
+- `a.cta-button.desktop-cta` hidden on mobile - **expected** (hamburger provides access)
+- `a.hero-cta.desktop-cta-btn` hidden on mobile - **expected** (a separate mobile CTA is rendered)
+- Testimonial prev/next buttons hidden on mobile - **expected** (all 3 cards stack vertically; no carousel needed)
 
 **No content is improperly hidden on mobile.**
 
 ### `overflow: hidden` audit
-- `div.brands-carousel-wrapper` (scrollWidth ≫ clientWidth) — **expected** for the infinite-scroll marquee
-- `div.hero-illustration` at 768px (7px overflow) — **negligible**, not visible to users
+- `div.brands-carousel-wrapper` (scrollWidth ≫ clientWidth) - **expected** for the infinite-scroll marquee
+- `div.hero-illustration` at 768px (7px overflow) - **negligible**, not visible to users
 
 ### Other checks
 - No horizontal scroll on any page at either viewport
@@ -85,7 +85,7 @@ Run Lighthouse Mobile audit on the live site (`https://www.baaz.pro`) to check f
 
 ---
 
-## 5. Hreflang (US, UK, UAE) — Done
+## 5. Hreflang (US, UK, UAE) - Done
 
 No action needed now. The site is single-locale (`lang="en"`).
 
@@ -93,7 +93,7 @@ No action needed now. The site is single-locale (`lang="en"`).
 
 ---
 
-## 6. Backlink & Authority Building — Directory Listings
+## 6. Backlink & Authority Building - Directory Listings
 
 Below is the exact content to use when filling out each directory profile. Copy/paste and adjust as needed.
 
@@ -121,7 +121,7 @@ Use this across all directories:
 **Long Description (about section):**
 > Baaz is a Bangalore-based software product development studio driven by a passion for building purposeful digital products. Since 2018, we've partnered with startups, scale-ups, and enterprises to design, develop, and launch over 100 web and mobile applications across diverse sectors including eCommerce, fintech, AI/ML, AR/VR, real estate, retail, and ERP systems.
 >
-> Our team brings deep technical expertise, strategic thinking, and a collaborative mindset to every project. We follow a founder-first, product-led approach that helps businesses move from idea to prototype, MVP to scale — quickly and efficiently. We don't just write code — we craft scalable solutions that solve real problems and create long-term value.
+> Our team brings deep technical expertise, strategic thinking, and a collaborative mindset to every project. We follow a founder-first, product-led approach that helps businesses move from idea to prototype, MVP to scale - quickly and efficiently. We don't just write code - we craft scalable solutions that solve real problems and create long-term value.
 
 **Services (select/tag these):**
 - Product Strategy Consulting
@@ -140,8 +140,8 @@ Use this across all directories:
 Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 **Portfolio / Case Studies:**
-- `https://www.baaz.pro/work1` — AI-powered visual inspection platform
-- `https://www.baaz.pro/work2` — Tech hiring automation platform
+- `https://www.baaz.pro/work1` - AI-powered visual inspection platform
+- `https://www.baaz.pro/work2` - Tech hiring automation platform
 
 **Contact Page:** https://www.baaz.pro/get-in-touch
 
@@ -154,14 +154,14 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 1. Go to https://clutch.co/register
 2. Click **"Create Free Profile"** or **"Claim Your Company"** (search for Baaz first)
 3. Fill in:
-   - Company name, website, HQ location, founding year, size — use values above
+   - Company name, website, HQ location, founding year, size - use values above
    - **Focus areas:** Custom Software Development, Mobile App Development, UX/UI Design, AI Development
    - **Industry focus:** Financial Services, Healthcare, Retail, Construction
    - **Min. project size:** Set based on your actual minimum (e.g. $25,000)
    - **Hourly rate:** Set your range
    - **Description:** Paste the long description above
 4. Add portfolio items (link to `/work1` and `/work2`)
-5. **Request reviews:** Clutch ranks heavily on verified client reviews — send review invites to past clients from within the Clutch dashboard
+5. **Request reviews:** Clutch ranks heavily on verified client reviews - send review invites to past clients from within the Clutch dashboard
 
 ---
 
@@ -171,7 +171,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 2. Search for Baaz first; if not listed, click **"List Your Product"**
 3. Choose category: **Software Development Company** or **Product Design**
 4. Fill in:
-   - Product/Company name, website, description — use values above
+   - Product/Company name, website, description - use values above
    - Upload logo
    - Add screenshots of the site or case studies
 5. **Collect reviews:** G2 provides a review link you can share with clients; reviews drive visibility on G2
@@ -183,7 +183,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 1. Go to https://www.goodfirms.co/add-company
 2. Register with company email
 3. Fill in:
-   - Company name, website, founding year, HQ, size — use values above
+   - Company name, website, founding year, HQ, size - use values above
    - **Services:** Select Software Development, Mobile App Development, UI/UX Design, AI Development
    - **Description:** Paste the long description
    - Add portfolio links (`/work1`, `/work2`)
@@ -208,7 +208,7 @@ Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 1. Go to https://manifest.co (look for "Add Your Company" or "Get Listed")
 2. Fill in:
-   - Company name, website, HQ, services — use values above
+   - Company name, website, HQ, services - use values above
    - **Description:** Paste the short or long description
    - Add case study links
 3. Submit for listing

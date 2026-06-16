@@ -8,11 +8,11 @@ export const metadata = {
   alternates: getAlternates("/industry"),
   title: "Industries We Serve | Baaz",
   description:
-    "Custom software for FinTech, retail, healthcare, and construction—product engineering from Baaz since 2018. Pick an industry to see fit and FAQs.",
+    "Custom software for FinTech, retail, healthcare, and construction-product engineering from Baaz since 2018. Pick an industry to see fit and FAQs.",
   openGraph: {
     title: "Industries We Serve | Baaz",
     description:
-      "FinTech, construction, retail, healthcare—how Baaz ships compliant, scalable products for regulated and operations-heavy sectors.",
+      "FinTech, construction, retail, healthcare-how Baaz ships compliant, scalable products for regulated and operations-heavy sectors.",
     url: `${baseUrl}/industry`,
     siteName: "Baaz",
     images: [
@@ -28,7 +28,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Industries We Serve | Baaz",
     description:
-      "Explore industry-specific software development—security, workflows, and integrations—with Baaz.",
+      "Explore industry-specific software development-security, workflows, and integrations-with Baaz.",
     images: [ogImage],
   },
 };

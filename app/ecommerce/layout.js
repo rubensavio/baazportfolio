@@ -9,11 +9,11 @@ export const metadata = {
   alternates: getAlternates("/ecommerce"),
   title: "Amazon & Flipkart Marketplace Management | Baaz",
   description:
-    "Amazon and Flipkart management: PPC, listings, ops, analytics. Operator-led execution and proprietary tools—scale revenue, improve ACOS, protect margin.",
+    "Amazon and Flipkart management: PPC, listings, ops, analytics. Operator-led execution and proprietary tools-scale revenue, improve ACOS, protect margin.",
   openGraph: {
     title: "Amazon & Flipkart Marketplace Management | Baaz",
     description:
-      "Amazon and Flipkart: ads, listings, ops, and analytics with operator-led execution. Scale revenue and profitability—request a free audit to start.",
+      "Amazon and Flipkart: ads, listings, ops, and analytics with operator-led execution. Scale revenue and profitability-request a free audit to start.",
     url: `${baseUrl}/ecommerce`,
     siteName: "Baaz",
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Amazon and Flipkart marketplace management — Baaz",
+        alt: "Amazon and Flipkart marketplace management - Baaz",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Amazon & Flipkart Marketplace Management | Baaz",
     description:
-      "PPC, listings, ops, and analytics for Amazon and Flipkart—operator-led, tool-backed execution. Book a call to review your marketplace performance.",
+      "PPC, listings, ops, and analytics for Amazon and Flipkart-operator-led, tool-backed execution. Book a call to review your marketplace performance.",
     images: [ogImage],
   },
 };

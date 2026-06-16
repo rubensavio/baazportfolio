@@ -68,7 +68,7 @@ const Work2Solution = () => {
           </p>
           <p>
             CloudScale Technologies decided to pilot an intelligent recruitment
-            automation layer on HRMS—promising to transform hiring chaos into a
+            automation layer on HRMS-promising to transform hiring chaos into a
             well-oiled machine while keeping requisitions, candidates, and
             approvals inside the systems they already owned.
           </p>

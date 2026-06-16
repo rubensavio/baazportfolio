@@ -9,7 +9,7 @@ const painPoints = [
   {
     title: "Random Acts of Marketing",
     description:
-      "A blog post here, a cold email there — no system connecting content to pipeline.",
+      "A blog post here, a cold email there - no system connecting content to pipeline.",
     color: "#2E68FD",
   },
   {
@@ -42,7 +42,7 @@ const approachItems = [
   {
     title: "Systems Over Tactics",
     description:
-      "We don't run campaigns in isolation. Every channel feeds the next — content fuels outbound, outbound triggers ads, engagement feeds lead capture, and scoring drives conversion.",
+      "We don't run campaigns in isolation. Every channel feeds the next - content fuels outbound, outbound triggers ads, engagement feeds lead capture, and scoring drives conversion.",
   },
   {
     title: "Signal-Based Execution",
@@ -57,12 +57,12 @@ const approachItems = [
   {
     title: "Full-Funnel Ownership",
     description:
-      "From the first touchpoint to closed-won and beyond — we engineer every stage of your go-to-market motion, including retention and expansion.",
+      "From the first touchpoint to closed-won and beyond - we engineer every stage of your go-to-market motion, including retention and expansion.",
   },
   {
     title: "Multi-Channel Orchestration",
     description:
-      "LinkedIn, email, cold calling, ads, SEO, AI search — coordinated into a single revenue engine, not managed as disconnected tools.",
+      "LinkedIn, email, cold calling, ads, SEO, AI search - coordinated into a single revenue engine, not managed as disconnected tools.",
   },
   {
     title: "Compounding, Not Linear",
@@ -208,7 +208,7 @@ const gtmFaqs = [
     question:
       "What is GTM engineering and how is it different from traditional marketing?",
     answer:
-      "GTM engineering treats your go-to-market motion as a system — not a collection of disconnected campaigns. Instead of running content, outbound, and ads separately, we engineer them as interconnected workflows where each channel feeds the next. The result is compounding pipeline growth instead of linear, one-off results.",
+      "GTM engineering treats your go-to-market motion as a system - not a collection of disconnected campaigns. Instead of running content, outbound, and ads separately, we engineer them as interconnected workflows where each channel feeds the next. The result is compounding pipeline growth instead of linear, one-off results.",
   },
   {
     question: "What does your GTM engineering service include?",
@@ -218,7 +218,7 @@ const gtmFaqs = [
   {
     question: "How long does it take to see results from a GTM system?",
     answer:
-      "Signal-based outbound and content-to-pipeline motions typically show measurable impact within 30–60 days. Full-system compounding — where content, outbound, ads, SEO, and nurture are all reinforcing each other — takes 90–120 days. We design for both quick wins and long-term compounding.",
+      "Signal-based outbound and content-to-pipeline motions typically show measurable impact within 30–60 days. Full-system compounding - where content, outbound, ads, SEO, and nurture are all reinforcing each other - takes 90–120 days. We design for both quick wins and long-term compounding.",
   },
   {
     question:
@@ -230,7 +230,7 @@ const gtmFaqs = [
     question:
       "How is Baaz different from a demand gen agency or outbound agency?",
     answer:
-      "Most agencies specialize in one channel — outbound, content, or ads. We engineer the entire go-to-market system. Every channel is connected: content generates engagement data that feeds outbound, outbound engagement triggers ad retargeting, and all signals route through scoring and nurture. You get one unified pipeline engine, not fragmented vendor outputs.",
+      "Most agencies specialize in one channel - outbound, content, or ads. We engineer the entire go-to-market system. Every channel is connected: content generates engagement data that feeds outbound, outbound engagement triggers ad retargeting, and all signals route through scoring and nurture. You get one unified pipeline engine, not fragmented vendor outputs.",
   },
   {
     question: "What tools and platforms do you use?",
@@ -240,7 +240,7 @@ const gtmFaqs = [
   {
     question: "Do you handle SEO and AI search optimization as part of GTM?",
     answer:
-      "Yes. SEO and AI search optimization (AEO) are core pillars of our GTM system. We build topic clusters for organic traffic, optimize for AI search engines like ChatGPT and Perplexity, and connect organic discovery directly into your lead capture and nurture flows. It is not a separate effort — it is part of the pipeline engine.",
+      "Yes. SEO and AI search optimization (AEO) are core pillars of our GTM system. We build topic clusters for organic traffic, optimize for AI search engines like ChatGPT and Perplexity, and connect organic discovery directly into your lead capture and nurture flows. It is not a separate effort - it is part of the pipeline engine.",
   },
   {
     question: "How does the free GTM audit work?",
@@ -267,7 +267,7 @@ const serviceSchema = {
   "@type": "Service",
   name: "GTM Engineering",
   description:
-    "Full-stack go-to-market engineering — demand generation, outbound automation, ABM campaigns, SEO, AI search optimization, lead nurture, and revenue operations built as one interconnected pipeline system.",
+    "Full-stack go-to-market engineering - demand generation, outbound automation, ABM campaigns, SEO, AI search optimization, lead nurture, and revenue operations built as one interconnected pipeline system.",
   provider: {
     "@type": "Organization",
     name: "Baaz",
@@ -316,8 +316,8 @@ export default function GtmEngineering() {
               We Engineer Go-to-Market Systems.
             </h1>
             <p className="gtm-hero-description">
-              Full-stack GTM engineering — content, outbound, ads, SEO, lead
-              capture, nurture, and conversion — built as one interconnected
+              Full-stack GTM engineering - content, outbound, ads, SEO, lead
+              capture, nurture, and conversion - built as one interconnected
               system that compounds pipeline, not just activity.
             </p>
             <Link href="/get-in-touch" className="gtm-hero-cta">
@@ -376,7 +376,7 @@ export default function GtmEngineering() {
             </h2>
             <p className="gtm-approach-subtext">
               We build go-to-market systems where every channel reinforces every
-              other channel — creating compounding pipeline growth.
+              other channel - creating compounding pipeline growth.
             </p>
           </div>
           <div className="gtm-approach-grid">
@@ -405,11 +405,11 @@ export default function GtmEngineering() {
           <div className="gtm-services-header">
             <span className="gtm-section-label">What We Build</span>
             <h2 className="gtm-services-heading">
-              End-to-End GTM Engineering — From Demand to Revenue
+              End-to-End GTM Engineering - From Demand to Revenue
             </h2>
             <p className="gtm-services-subtext">
               Four interconnected systems that cover every stage of your
-              go-to-market motion — from creating demand to closing deals and
+              go-to-market motion - from creating demand to closing deals and
               expanding accounts.
             </p>
           </div>
@@ -486,7 +486,7 @@ export default function GtmEngineering() {
             ))}
           </div>
           <p className="gtm-proof-tagline">
-            Connected GTM systems outperform disconnected tactics — every time.
+            Connected GTM systems outperform disconnected tactics - every time.
           </p>
         </div>
       </section>
@@ -538,8 +538,8 @@ export default function GtmEngineering() {
             ))}
           </ul>
           <p className="gtm-audience-tagline">
-            If you want a go-to-market system that compounds — not a collection
-            of one-off campaigns — GTM engineering is for you.
+            If you want a go-to-market system that compounds - not a collection
+            of one-off campaigns - GTM engineering is for you.
           </p>
         </div>
       </section>

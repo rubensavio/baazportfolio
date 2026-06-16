@@ -394,6 +394,12 @@
   }
 }
 
+.booking-textarea {
+  resize: vertical;
+  min-height: 64px;
+  line-height: 1.4;
+}
+
 .booking-success {
   display: flex;
   flex-direction: column;
@@ -560,7 +566,8 @@
 
 /* ── v2 editorial dark theme ── */
 
-.baaz-v2.book-call-v2 {
+.baaz-v2.book-call-v2,
+.baaz-v2.home-v2 {
   background: var(--v2-bg);
   min-height: 100vh;
 

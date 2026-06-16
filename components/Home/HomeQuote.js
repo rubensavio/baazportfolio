@@ -10,7 +10,7 @@ export default function HomeQuote() {
             &ldquo;
           </span>
           <p className="home-quote-text">{HOME_QUOTE.text}</p>
-          <span className="home-label">— {HOME_QUOTE.attr}</span>
+          <span className="home-label">- {HOME_QUOTE.attr}</span>
         </Reveal>
       </div>
     </section>

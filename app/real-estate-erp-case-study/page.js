@@ -41,16 +41,16 @@ export default function RealEstateErpCaseStudyPage() {
           eyebrow: "More from Baaz",
           title: "Real estate operations & ERP playbooks",
           description:
-            "Portfolio finance, tenancy operations, construction handoffs—see how ERP roadmaps intersect with bespoke software and phased delivery.",
+            "Portfolio finance, tenancy operations, construction handoffs-see how ERP roadmaps intersect with bespoke software and phased delivery.",
           links: [
             {
               href: "/erp/real-estate-companies",
               label:
-                "ERP for Real Estate Companies — modules, FAQs & integrations",
+                "ERP for Real Estate Companies - modules, FAQs & integrations",
             },
             {
               href: "/erp/construction-companies",
-              label: "ERP for Construction Companies — field-to-finance linkage",
+              label: "ERP for Construction Companies - field-to-finance linkage",
             },
             {
               href: "/services/web-development",

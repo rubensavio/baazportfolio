@@ -26,7 +26,7 @@ import {
 import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../../components/FAQ/FAQ";
 import Footer from "../../../components/Footer/Footer";
-import { HOME_CTA } from "../../../lib/homePageData";
+import { HOME_CTA, HOME_SERVICES } from "../../../lib/homePageData";
 import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesData";
 import { getRelatedServiceOfferingLinks } from "../../../lib/technologyServiceRoutes";
 import "../../services/[serviceType]/page.scss";
@@ -55,6 +55,12 @@ export default function TechnologyPageClient({ techSlug }) {
   const labelLower = data.label.toLowerCase();
   const stackGroups = data.stackGroups ?? [];
   const relatedServiceOfferings = getRelatedServiceOfferingLinks(techSlug);
+  // "What we do" group this page heads, if any - its children are the
+  // specialist capability pages that sit under it.
+  const whatWeDoGroup = HOME_SERVICES.find(
+    (service) => service.href === `/technologies/${techSlug}`,
+  );
+  const relatedCapabilities = whatWeDoGroup?.children ?? [];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -248,6 +254,37 @@ export default function TechnologyPageClient({ techSlug }) {
             </div>
           )}
 
+          {relatedCapabilities.length > 0 && (
+            <section
+              className="tech-related-services-panel"
+              aria-labelledby="tech-related-capabilities-heading"
+            >
+              <h2
+                id="tech-related-capabilities-heading"
+                className="services-section-heading tech-related-services-panel__heading"
+              >
+                Capabilities under {data.label}
+              </h2>
+              <p className="tech-related-services-intro">
+                The specialist stacks we apply within {labelLower}-explore each
+                in depth.
+              </p>
+              <ul className="tech-related-services-list">
+                {relatedCapabilities.map((cap) => (
+                  <li key={cap.href} className="tech-related-services-item">
+                    <Link
+                      href={cap.href}
+                      className="tech-related-services-link"
+                    >
+                      {cap.label}
+                      <ArrowLinkIcon />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           {relatedServiceOfferings.length > 0 && (
             <section
               className="tech-related-services-panel"
@@ -261,7 +298,7 @@ export default function TechnologyPageClient({ techSlug }) {
               </h2>
               <p className="tech-related-services-intro">
                 These engagement lines routinely pair with the toolchain
-                above—from first release through optimisation and runway.
+                above-from first release through optimisation and runway.
               </p>
               <ul className="tech-related-services-list">
                 {relatedServiceOfferings.map((svc) => (

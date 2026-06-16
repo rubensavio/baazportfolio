@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────
-   BAAZ Home v2 — page sections (shared chrome in baaz-v2-shell.scss)
+   BAAZ Home v2 - page sections (shared chrome in baaz-v2-shell.scss)
 ───────────────────────────────────────────────────────── */
 
 .baaz-v2.home-v2 {
@@ -51,7 +51,7 @@
     color: var(--home-accent);
   }
 
-  /* Giant display — Playfair Display italic (Dashboard hero scale) */
+  /* Giant display - Playfair Display italic (Dashboard hero scale) */
   .home-display {
     font-family: var(--home-serif);
     font-style: italic;
@@ -149,7 +149,7 @@
 
   .home-hero-headline--serif {
     font-family: var(--home-serif);
-    font-style: italic;
+    font-style: normal;
     font-weight: 300;
     font-size: clamp(46px, 6.5vw, 80px);
     line-height: 1.2;
@@ -157,11 +157,10 @@
 
     strong {
       font-weight: inherit;
-      font-style: normal;
+      font-style: italic;
       color: var(--home-accent);
     }
   }
-
 
   .home-hero-foot {
     display: flex;
@@ -176,7 +175,7 @@
     font-weight: 300;
     color: var(--home-text-2);
     line-height: 1.6;
-    max-width: 650px;
+    max-width: 73ch;
     opacity: 0;
     animation: home-fade-in 0.8s ease 0.7s forwards;
 
@@ -211,7 +210,7 @@
   }
 
   .home-hero-scroll-hint {
-    padding: 28px var(--home-pad);
+    padding: 40px var(--home-pad);
     max-width: var(--home-max-w);
     margin: 0 auto;
     width: 100%;
@@ -221,6 +220,7 @@
     gap: 24px;
     flex-wrap: wrap;
     border-top: 1px solid var(--home-border);
+    border-bottom: 1px solid var(--home-border);
     opacity: 0;
     animation: home-fade-in 0.8s ease 1s forwards;
 
@@ -324,38 +324,44 @@
 
   .home-philosophy-inner {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 80px;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(48px, 7vw, 110px);
     align-items: start;
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 32px;
     }
   }
 
-  .home-philosophy-num {
-    font-family: var(--home-serif);
-    font-style: italic;
-    font-size: 96px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: var(--home-text-3);
+  .home-philosophy-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--home-accent);
+    margin-bottom: 24px;
+  }
 
-    @media (max-width: 768px) {
-      font-size: 64px;
-    }
+  .home-philosophy-label-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--home-accent);
+    flex-shrink: 0;
   }
 
   .home-philosophy-heading {
     font-family: var(--home-serif);
     font-style: italic;
-    font-size: clamp(28px, 4vw, 52px);
+    font-size: clamp(32px, 4.4vw, 56px);
     font-weight: 500;
     letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 28px;
+    line-height: 1.15;
+    margin-bottom: 0;
   }
 
   .home-philosophy-body {
@@ -363,7 +369,8 @@
     font-weight: 300;
     color: var(--home-text-2);
     line-height: 1.85;
-    padding-right: 10%;
+    padding-top: 10px;
+
     p {
       margin-bottom: 20px;
 
@@ -496,6 +503,9 @@
     font-size: 13px;
     color: var(--home-text-2);
     line-height: 1.6;
+    max-width: 16rem;
+    margin: 0 auto;
+    text-align: center;
 
     strong {
       font-weight: 700;
@@ -732,10 +742,19 @@
     max-width: 560px;
   }
 
-  /* Industries — reuses svc layout, adds link affordance + tags */
+  /* Industries - reuses svc layout, adds link affordance + tags */
   a.home-svc-entry {
     text-decoration: none;
     color: inherit;
+    transition: color 0.2s;
+
+    .home-svc-entry-title {
+      transition: color 0.2s;
+    }
+
+    &:hover .home-svc-entry-title {
+      color: var(--home-accent);
+    }
   }
 
   .home-svc-entry--link {
@@ -762,7 +781,9 @@
     width: 18px;
     height: 18px;
     color: var(--home-text-3);
-    transition: transform 0.25s, color 0.2s;
+    transition:
+      transform 0.25s,
+      color 0.2s;
     flex-shrink: 0;
   }
 
@@ -819,7 +840,9 @@
     padding: 36px 32px;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.3s, transform 0.3s;
+    transition:
+      border-color 0.3s,
+      transform 0.3s;
 
     &--large {
       grid-column: span 2;
@@ -923,7 +946,9 @@
     padding: 7px 16px;
     line-height: 1;
     white-space: nowrap;
-    transition: border-color 0.2s, color 0.2s;
+    transition:
+      border-color 0.2s,
+      color 0.2s;
 
     &:hover {
       border-color: var(--home-accent);
@@ -1014,91 +1039,6 @@
   }
 
   /* ── Why Baaz ── */
-  .home-why-header {
-    padding-bottom: 48px;
-
-    h2 {
-      font-family: var(--home-serif);
-      font-size: clamp(28px, 3.5vw, 44px);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      font-style: italic;
-    }
-  }
-
-  .home-why-sub {
-    font-size: clamp(16px, 2vw, 20px);
-    font-weight: 300;
-    color: var(--home-text-2);
-    margin-top: 12px;
-    line-height: 1.4;
-  }
-
-  .home-why-row {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 64px;
-    align-items: start;
-    padding: 56px 0;
-    border-top: 1px solid var(--home-border);
-
-    &:last-child {
-      border-bottom: 1px solid var(--home-border);
-    }
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 40px 0;
-    }
-  }
-
-  .home-why-word {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-  }
-
-  .home-why-num {
-    font-family: var(--home-serif);
-    font-size: 13px;
-    color: var(--home-text-3);
-  }
-
-  .home-why-title {
-    font-family: var(--home-serif);
-    font-style: italic;
-    font-size: clamp(40px, 5.5vw, 68px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1;
-  }
-
-  .home-why-body {
-    padding-top: 8px;
-  }
-
-  .home-why-lead {
-    font-size: clamp(18px, 2vw, 22px);
-    font-weight: 400;
-    color: var(--home-text);
-    line-height: 1.45;
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-
-  .home-why-para {
-    font-size: 15px;
-    font-weight: 300;
-    color: var(--home-text-2);
-    line-height: 1.75;
-    margin-bottom: 12px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   /* ── Mid-page CTA band ── */
   .home-mid-cta {
     border-top: 1px solid var(--home-border);
@@ -1366,116 +1306,6 @@
     font-size: 13px;
     color: var(--home-text-2);
     margin: 0;
-  }
-
-  /* ── CTA ── */
-  .home-cta-section {
-    padding: 140px 0 120px;
-    border-bottom: 1px solid var(--home-border);
-
-    @media (max-width: 768px) {
-      padding: 80px 0;
-    }
-  }
-
-  .home-cta-panel {
-    position: relative;
-    text-align: center;
-    border: 1px solid var(--home-border);
-    border-radius: 24px;
-    background:
-      radial-gradient(120% 140% at 50% 0%, var(--home-bg-1) 0%, transparent 70%),
-      var(--home-bg);
-    padding: clamp(48px, 7vw, 96px) clamp(24px, 6vw, 88px);
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 520px;
-      height: 520px;
-      background: radial-gradient(circle, var(--home-accent) 0%, transparent 60%);
-      opacity: 0.07;
-      pointer-events: none;
-    }
-  }
-
-  .home-cta-eyebrow {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--home-accent);
-    margin-bottom: 24px;
-  }
-
-  .home-cta-heading {
-    font-family: var(--home-serif);
-    font-style: italic;
-    font-size: clamp(40px, 6.5vw, 88px);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1;
-    margin-bottom: 24px;
-  }
-
-  .home-cta-pitch {
-    font-size: clamp(16px, 2vw, 20px);
-    font-weight: 300;
-    color: var(--home-text-2);
-    line-height: 1.55;
-    max-width: 540px;
-    margin: 0 auto 40px;
-  }
-
-  .home-cta-actions {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-
-    @media (max-width: 480px) {
-      flex-direction: column;
-    }
-  }
-
-  .home-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
-    cursor: pointer;
-
-    &--primary {
-      background: var(--home-accent);
-      color: var(--home-bg);
-      border: 1px solid var(--home-accent);
-
-      &:hover {
-        background: transparent;
-        color: var(--home-accent);
-      }
-    }
-
-    &--outline {
-      background: transparent;
-      color: var(--home-text);
-      border: 1px solid var(--home-border-h);
-
-      &:hover {
-        border-color: var(--home-accent);
-        color: var(--home-accent);
-      }
-    }
   }
 
   /* ── FAQ ── */

@@ -118,6 +118,43 @@ export default function ErpHubPageClient() {
             ))
           )}
         </div>
+
+        {ERP_HUB.crm && (
+          <section
+            className="erp-hub-crm"
+            aria-labelledby="erp-hub-crm-heading"
+          >
+            <Reveal>
+              <h2
+                id="erp-hub-crm-heading"
+                className="erp-hub-crm-heading v2-display"
+              >
+                {ERP_HUB.crm.heading}
+              </h2>
+              <p className="erp-hub-crm-lede">{ERP_HUB.crm.lede}</p>
+              <div className="erp-hub-crm-grid">
+                {ERP_HUB.crm.capabilities.map((cap) => (
+                  <article key={cap.title} className="erp-hub-crm-card">
+                    <h3 className="erp-hub-crm-card-title">{cap.title}</h3>
+                    <p className="erp-hub-crm-card-desc">{cap.description}</p>
+                  </article>
+                ))}
+              </div>
+              {ERP_HUB.crm.links?.length > 0 && (
+                <ul className="erp-hub-crm-links">
+                  {ERP_HUB.crm.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="erp-hub-crm-link">
+                        {link.label}
+                        <ArrowUpRightIcon className="erp-hub-crm-link-arrow" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Reveal>
+          </section>
+        )}
       </div>
 
       <Footer />

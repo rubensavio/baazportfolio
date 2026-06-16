@@ -129,7 +129,7 @@
   }
 }
 
-// Footer Links Section — primary columns, then case studies on its own row
+// Footer Links Section - primary columns, then case studies on its own row
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -138,7 +138,7 @@
 
 .footer-links-primary {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(2rem, 4vw, 4rem);
 }
 

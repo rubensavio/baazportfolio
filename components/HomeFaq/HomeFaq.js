@@ -7,7 +7,7 @@ const HomeFaq = () => (
   <div className="home-faq">
     <FAQ
       faqs={HOME_FAQ_ITEMS}
-      heading="Enterprise product engineering — direct answers"
+      heading="FAQ"
     />
   </div>
 );

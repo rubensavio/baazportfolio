@@ -50,7 +50,7 @@ function formatPostDate(datePublished) {
 
 function formatAuthor(post) {
   if (!post.author?.name) return "";
-  const role = post.author.jobTitle ? ` — ${post.author.jobTitle}` : "";
+  const role = post.author.jobTitle ? ` - ${post.author.jobTitle}` : "";
   return `${post.author.name}${role}`;
 }
 
@@ -91,7 +91,7 @@ export default function BlogPageClient() {
             <div className="blog-hero-right">
               <p className="blog-hero-direct">
                 The Baaz blog publishes practical guides on product engineering,
-                custom software, AI, architecture, and project rescue—written to
+                custom software, AI, architecture, and project rescue-written to
                 answer buyer questions directly, with checklists and definitions you
                 can quote or verify.
               </p>
@@ -118,7 +118,7 @@ export default function BlogPageClient() {
               Which guides match your situation?
             </h2>
             <p className="blog-topic-lede">
-              Browse by topic—product scoping, partner selection, rescue, and
+              Browse by topic-product scoping, partner selection, rescue, and
               enterprise delivery. Each post opens with a direct answer you can
               quote or verify.
             </p>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { FiAlertCircle, FiClock, FiMail } from "react-icons/fi";
+import { FiClock } from "react-icons/fi";
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
@@ -27,9 +27,7 @@ const COUNTRY_FALLBACK = [
 ];
 
 const METHOD_ICONS = {
-  email: FiMail,
   call: FiClock,
-  urgent: FiAlertCircle,
 };
 
 function ContactFormPanel() {
@@ -190,7 +188,7 @@ function ContactFormPanel() {
             placeholder="Tell us about your project..."
             value={formData.description}
             onChange={handleChange}
-            rows={6}
+            rows={3}
             required
             disabled={sent}
           />
@@ -260,9 +258,6 @@ function ContactPageContent() {
       <div className="contact-page">
         <aside className="contact-left">
           <div className="contact-left-top">
-            <p className="contact-left-eyebrow v2-label">
-              {CONTACT_HERO.eyebrow}
-            </p>
             <h1 className="contact-left-title">{CONTACT_HERO.title}</h1>
             <p className="contact-left-sub">{CONTACT_HERO.sub}</p>
 
@@ -356,9 +351,6 @@ function ContactPageFallback() {
     <div className="contact-page">
       <aside className="contact-left">
         <div className="contact-left-top">
-          <p className="contact-left-eyebrow v2-label">
-            {CONTACT_HERO.eyebrow}
-          </p>
           <h1 className="contact-left-title">{CONTACT_HERO.title}</h1>
           <p className="contact-left-sub">{CONTACT_HERO.sub}</p>
         </div>

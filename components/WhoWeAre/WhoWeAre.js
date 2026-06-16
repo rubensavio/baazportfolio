@@ -8,7 +8,7 @@ const services = [
     scope:
       "Research synthesis, personas, opportunity sizing, and sequenced roadmaps tied to measurable bets.",
     boundary:
-      "We partner with your leadership—we do not replace executive product ownership or P&L accountability.",
+      "We partner with your leadership-we do not replace executive product ownership or P&L accountability.",
     bgColor: "#FFF7F2",
     icon: "/assets/Strategy.svg",
   },
@@ -38,7 +38,7 @@ const services = [
     scope:
       "Performance work, analytics instrumentation, feature iteration, and operational support after go-live.",
     boundary:
-      "24/7 NOC-style operations are available only when explicitly contracted—default engagements center on product delivery ownership.",
+      "24/7 NOC-style operations are available only when explicitly contracted-default engagements center on product delivery ownership.",
     bgColor: "#EDE2FF",
     icon: "/assets/Scaling.svg",
   },
@@ -66,7 +66,7 @@ const WhoWeAre = () => {
         {/* <h3 className="who-we-are-subtitle">
           Core capabilities
           <span className="who-we-are-subtitle-note">
-            Typical breadth—exact scope is set per engagement
+            Typical breadth-exact scope is set per engagement
           </span>
         </h3> */}
 

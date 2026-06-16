@@ -9,9 +9,9 @@ const path = "/healthcare-patient-app-case-study";
 
 export const metadata = {
   alternates: getAlternates(path),
-  title: "Healthcare Patient App — React Native Case Study | Baaz",
+  title: "Healthcare Patient App - React Native Case Study | Baaz",
   description:
-    "Anonymous case study: React Native patient engagement app—bookings, telehealth adjacency, prescriptions, lab and pharmacy surfaces, documents, and push—Redux-Saga, REST, and store-ready delivery.",
+    "Anonymous case study: React Native patient engagement app-bookings, telehealth adjacency, prescriptions, lab and pharmacy surfaces, documents, and push-Redux-Saga, REST, and store-ready delivery.",
   openGraph: {
     title: "Healthcare Patient App | Case Study | Baaz",
     description:
@@ -23,7 +23,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Healthcare patient app case study — Baaz",
+        alt: "Healthcare patient app case study - Baaz",
       },
     ],
   },

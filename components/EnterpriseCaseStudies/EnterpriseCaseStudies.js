@@ -11,14 +11,14 @@ const caseStudies = [
     eyebrow: "Manufacturing · ERP + AI",
     title: "AI defect detection on the factory floor",
     description:
-      "Computer-vision automation layered on manufacturing ERP and quality workflows—catching microscopic defects without replacing your core system.",
+      "Computer-vision automation layered on manufacturing ERP and quality workflows-catching microscopic defects without replacing your core system.",
   },
   {
     href: "/work2",
     eyebrow: "HRMS · Hiring management",
     title: "AI recruiting automation on HRMS",
     description:
-      "Screening, ranking, and assessments wired into hiring operations—intelligent automation that sits on top of your existing HRMS, not beside it.",
+      "Screening, ranking, and assessments wired into hiring operations-intelligent automation that sits on top of your existing HRMS, not beside it.",
   },
 ];
 
@@ -44,7 +44,7 @@ const EnterpriseCaseStudies = () => {
           </h2>
           <p className="enterprise-case-studies-description">
             Two enterprise deployments where we extended what customers already
-            ran—manufacturing ERP for quality, and HRMS for hiring—with AI that
+            ran-manufacturing ERP for quality, and HRMS for hiring-with AI that
             plugs into real processes instead of forcing a greenfield
             replacement.
           </p>

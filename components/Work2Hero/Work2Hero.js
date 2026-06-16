@@ -157,7 +157,7 @@ const Work2Hero = () => {
           From Resume Chaos to Recruitment Zen
         </h1>
         <p className="work2-context animate-fade-up animate-delay-200 animate-in">
-          Intelligent hiring automation on HRMS—screening, routing, and
+          Intelligent hiring automation on HRMS-screening, routing, and
           evaluations plugged into the hiring-management system the company
           already used.
         </p>

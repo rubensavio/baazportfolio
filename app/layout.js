@@ -71,7 +71,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: `Baaz — ${BRAND_POSITIONING_COMBINED}`,
+        alt: `Baaz - ${BRAND_POSITIONING_COMBINED}`,
       },
     ],
   },
@@ -147,10 +147,10 @@ const structuredData = {
     {
       "@type": "ProfessionalService",
       "@id": `${baseUrl}/#professional-service`,
-      name: `Baaz — ${BRAND_POSITIONING_COMBINED}`,
+      name: `Baaz - ${BRAND_POSITIONING_COMBINED}`,
       url: baseUrl,
       image: `${baseUrl}/assets/Logo.svg`,
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation—strategy through design, build, and launch—for startups and enterprises worldwide.`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation-strategy through design, build, and launch-for startups and enterprises worldwide.`,
       serviceType: [
         BRAND_POSITIONING_COMBINED,
         "Software Company",

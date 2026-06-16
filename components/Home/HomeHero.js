@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HOME_HERO } from "../../lib/homePageData";
 
 export default function HomeHero() {
-  const { headline, sub, ctas, ctaNote, stats } = HOME_HERO;
+  const { headline, sub, ctas, stats } = HOME_HERO;
 
   return (
     <section className="home-hero">
@@ -38,7 +38,6 @@ export default function HomeHero() {
                 ),
               )}
             </div>
-            <p className="home-hero-cta-note">{ctaNote}</p>
           </div>
         </div>
       </div>

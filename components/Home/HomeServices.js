@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 import { HOME_SERVICES } from "../../lib/homePageData";
 
@@ -13,7 +14,12 @@ export default function HomeServices() {
 
           <div className="home-svc-list">
             {HOME_SERVICES.map((service) => (
-              <Reveal key={service.num} className="home-svc-entry">
+              <Reveal
+                key={service.num}
+                as={Link}
+                href={service.href}
+                className="home-svc-entry"
+              >
                 <span className="home-svc-entry-num">{service.num}</span>
                 <div>
                   <h3 className="home-svc-entry-title">{service.title}</h3>

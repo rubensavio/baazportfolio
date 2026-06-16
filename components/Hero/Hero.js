@@ -63,7 +63,7 @@ const Hero = () => {
       <div className="hero-background">
         <Image
           src="/assets/HomeHeroSectionBg.webp"
-          alt="Baaz homepage hero backdrop — purple gradient framing the custom software headline"
+          alt="Baaz homepage hero backdrop - purple gradient framing the custom software headline"
           fill
           className="hero-bg-image"
           sizes="100vw"

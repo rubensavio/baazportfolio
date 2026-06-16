@@ -9,11 +9,11 @@ export const metadata = {
   title:
     "Custom ERP Development for Global Enterprises | ERP Software | Baaz",
   description:
-    "Custom ERP development for enterprises worldwide—manufacturing, healthcare, banking, insurance, logistics, construction, real estate & more. Phased ERP implementation with Baaz.",
+    "Custom ERP development for enterprises worldwide-manufacturing, healthcare, banking, insurance, logistics, construction, real estate & more. Phased ERP implementation with Baaz.",
   openGraph: {
     title: "Custom ERP Development for Global Enterprises | Baaz",
     description:
-      "ERP development for global enterprises—custom ERP, integrations, and industry playbooks from manufacturing to healthcare and real estate.",
+      "ERP development for global enterprises-custom ERP, integrations, and industry playbooks from manufacturing to healthcare and real estate.",
     url: `${baseUrl}/erp`,
     siteName: "Baaz",
     images: [
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Custom ERP Development | Baaz",
     description:
-      "Custom ERP & implementation for global teams—manufacturing, healthcare, logistics, banking. Talk to Baaz engineers.",
+      "Custom ERP & implementation for global teams-manufacturing, healthcare, logistics, banking. Talk to Baaz engineers.",
     images: [ogImage],
   },
 };

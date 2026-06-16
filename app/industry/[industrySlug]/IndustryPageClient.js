@@ -70,7 +70,7 @@ export default function IndustryPageClient({
               {erpIndustryDeepLink ? (
                 <>
                   {" "}
-                  — including{" "}
+                  - including{" "}
                   <Link href={erpIndustryDeepLink.href}>
                     {erpIndustryDeepLink.label}
                   </Link>

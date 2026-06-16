@@ -18,7 +18,7 @@ const enterpriseFaqs = [
   {
     question: "What is enterprise software development?",
     answer:
-      "Enterprise software development is the process of designing, building, and maintaining large-scale software applications for organisations with complex requirements — including multi-department workflows, role-based access, regulatory compliance, legacy system integration, and high-availability infrastructure. It differs from standard software development in its emphasis on security, scalability, and governance.",
+      "Enterprise software development is the process of designing, building, and maintaining large-scale software applications for organisations with complex requirements - including multi-department workflows, role-based access, regulatory compliance, legacy system integration, and high-availability infrastructure. It differs from standard software development in its emphasis on security, scalability, and governance.",
   },
   {
     question: "How much does enterprise custom software development cost?",
@@ -29,7 +29,7 @@ const enterpriseFaqs = [
     question:
       "What is the difference between a consulting firm and a product engineering agency?",
     answer:
-      "A consulting firm (like McKinsey Digital or Deloitte) typically advises on strategy and may outsource implementation. A product engineering agency (like Baaz) owns the full lifecycle — strategy, design, development, and deployment. Product engineering agencies are better suited when you need a partner to ship production software, not just produce recommendations.",
+      "A consulting firm (like McKinsey Digital or Deloitte) typically advises on strategy and may outsource implementation. A product engineering agency (like Baaz) owns the full lifecycle - strategy, design, development, and deployment. Product engineering agencies are better suited when you need a partner to ship production software, not just produce recommendations.",
   },
   {
     question: "How long does enterprise software development take?",
@@ -45,12 +45,12 @@ const enterpriseFaqs = [
     question:
       "How does Baaz handle security and compliance for enterprise projects?",
     answer:
-      "We build security and compliance into the architecture from day one — not as an afterthought. This includes encryption at rest and in transit, role-based access controls, audit logging, SOC 2 compliance practices, and industry-specific standards (HIPAA for healthcare, PCI DSS for payments). We document security decisions and support audit processes.",
+      "We build security and compliance into the architecture from day one - not as an afterthought. This includes encryption at rest and in transit, role-based access controls, audit logging, SOC 2 compliance practices, and industry-specific standards (HIPAA for healthcare, PCI DSS for payments). We document security decisions and support audit processes.",
   },
   {
     question: "Can Baaz integrate with legacy enterprise systems?",
     answer:
-      "Yes. We regularly integrate with legacy ERP systems (SAP, Oracle), CRM platforms (Salesforce), databases, and custom APIs. We use middleware, API gateways, and event-driven architecture to connect new applications with existing systems without disrupting operations. Legacy modernisation — either wrapping or gradually replacing old systems — is a core part of our enterprise practice.",
+      "Yes. We regularly integrate with legacy ERP systems (SAP, Oracle), CRM platforms (Salesforce), databases, and custom APIs. We use middleware, API gateways, and event-driven architecture to connect new applications with existing systems without disrupting operations. Legacy modernisation - either wrapping or gradually replacing old systems - is a core part of our enterprise practice.",
   },
 ];
 

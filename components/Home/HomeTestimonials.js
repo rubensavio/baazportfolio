@@ -33,7 +33,7 @@ export default function HomeTestimonials() {
               Our customer&apos;s word
             </h2>
             <p className="home-testimonials-desc">
-              Genuine feedback from teams we&apos;ve shipped with — product
+              Genuine feedback from teams we&apos;ve shipped with - product
               development, communication, and delivery that held up under
               pressure.
             </p>

@@ -45,7 +45,7 @@ export default function HealthcarePatientAppCaseStudyPage() {
           links: [
             {
               href: "/erp/healthcare-companies",
-              label: "ERP for Healthcare Companies — rollout modules & FAQs",
+              label: "ERP for Healthcare Companies - rollout modules & FAQs",
             },
             {
               href: "/industry/healthcare",

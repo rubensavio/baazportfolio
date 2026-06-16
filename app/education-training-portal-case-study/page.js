@@ -41,12 +41,12 @@ export default function EducationTrainingPortalCaseStudyPage() {
           eyebrow: "More from Baaz",
           title: "Connect this LMS story to ERP & programmes",
           description:
-            "Many education teams pair learner-facing portals with back-office ERP, finance integrations, and long-lifecycle roadmap planning—browse the adjacent pillars below.",
+            "Many education teams pair learner-facing portals with back-office ERP, finance integrations, and long-lifecycle roadmap planning-browse the adjacent pillars below.",
           links: [
             {
               href: "/erp/education-training-companies",
               label:
-                "ERP for Education & Training Companies — rollout patterns & FAQs",
+                "ERP for Education & Training Companies - rollout patterns & FAQs",
             },
             {
               href: "/services/web-development",

@@ -25,8 +25,8 @@ export default function HomeImpact() {
                 {story.headline.label}.{" "}
                 {story.metrics.map((m, i) => (
                   <span key={m.label}>
-                    <span className="home-impact-val">{m.value}</span> {m.label}
-                    {i < story.metrics.length - 1 ? "; " : "."}
+                    <span className="home-impact-val">{m.value}</span> {m.label}.
+                    {i < story.metrics.length - 1 ? " " : ""}
                   </span>
                 ))}
               </p>

@@ -16,7 +16,7 @@ const nightmareNumbers = [
     value: "6+",
     label: "Parallel “systems”",
     description:
-      "Excel, WhatsApp threads, PDFs, and legacy screens—nothing updated together",
+      "Excel, WhatsApp threads, PDFs, and legacy screens-nothing updated together",
     bgColor: "#ffffff",
   },
   {
@@ -67,9 +67,9 @@ const coreProductCapabilities = [
     title: "One command centre: company, projects, and partner KRIs",
     bgColor: "#FFF7F2",
     features: [
-      "Role-based dashboards so leadership sees projects, teams, and units—not a slide deck",
+      "Role-based dashboards so leadership sees projects, teams, and units-not a slide deck",
       "Leads and channel partners on governed inventory: holds, releases, and incentives in one place",
-      "What’s sellable today is what finance recognises—no parallel “shadow” forecast",
+      "What’s sellable today is what finance recognises-no parallel “shadow” forecast",
     ],
   },
   {
@@ -78,7 +78,7 @@ const coreProductCapabilities = [
     bgColor: "#ECF0FB",
     features: [
       "Pipeline from inquiry to booking with targets and incentive math teams can defend",
-      "Campaigns, landing forms, and source attribution feeding CRM—no orphan leads",
+      "Campaigns, landing forms, and source attribution feeding CRM-no orphan leads",
       "Bookings, agreements, and milestone billing aligned to collections",
     ],
   },
@@ -87,9 +87,9 @@ const coreProductCapabilities = [
     title: "Site ops & procurement that match the plan on the ground",
     bgColor: "#EDE2FF",
     features: [
-      "Tasks, contractors, and change requests with approvals—timelines stay accountable",
+      "Tasks, contractors, and change requests with approvals-timelines stay accountable",
       "Material planning, stock, and POs from requirement to GRN with traceability for costing",
-      "Service providers and vendors scored on delivery—not remembered only in WhatsApp",
+      "Service providers and vendors scored on delivery-not remembered only in WhatsApp",
     ],
   },
   {
@@ -97,7 +97,7 @@ const coreProductCapabilities = [
     title: "Accounts, documents, and buyers on one spine",
     bgColor: "#FBF6EF",
     features: [
-      "Invoices, payables, and payment history tied to project and partner—not spreadsheet islands",
+      "Invoices, payables, and payment history tied to project and partner-not spreadsheet islands",
       "Agreements and customer comms aligned to inventory state buyers can also see in-app",
       "Post-handover service without losing context between legal, CRM, and support",
     ],
@@ -105,9 +105,9 @@ const coreProductCapabilities = [
 ];
 
 const platformGlance = [
-  "Karan’s teams needed the same pattern modern Indian developers expect: a web console for pricing grids, documents, and finance; native-feel mobile for site staff and buyers—one API layer underneath so KPIs stay honest.",
-  "Real-time lists and notifications where sales and site can’t afford to refresh ten tabs: bookings, tasks, and feed items update when the record changes—not when someone forwards an email.",
-  "Agreements and invoices generated from the same inventory and milestone data finance closes on—so PDFs, the app, and the ledger stop disagreeing at month-end.",
+  "Karan’s teams needed the same pattern modern Indian developers expect: a web console for pricing grids, documents, and finance; native-feel mobile for site staff and buyers-one API layer underneath so KPIs stay honest.",
+  "Real-time lists and notifications where sales and site can’t afford to refresh ten tabs: bookings, tasks, and feed items update when the record changes-not when someone forwards an email.",
+  "Agreements and invoices generated from the same inventory and milestone data finance closes on-so PDFs, the app, and the ledger stop disagreeing at month-end.",
 ];
 
 const stakeholderRoles = [
@@ -145,7 +145,7 @@ const rolloutPhases = [
     phase: "Phase 1",
     title: "Map how money and units really move",
     description:
-      "We aligned inventory states, payment milestones, and permissions to how the developer already sold and recognised revenue—before any UI polish. Handoffs to accounting and legacy CRM were scoped so nobody re-keyed the business at go-live.",
+      "We aligned inventory states, payment milestones, and permissions to how the developer already sold and recognised revenue-before any UI polish. Handoffs to accounting and legacy CRM were scoped so nobody re-keyed the business at go-live.",
   },
   {
     id: 2,
@@ -156,7 +156,7 @@ const rolloutPhases = [
     bullets: [
       "Sales and consumer paths on device with real templates",
       "Live feeds for tasks and deals so teams stopped polling inboxes",
-      "Training on real data—not a demo tenant that lied about edge cases",
+      "Training on real data-not a demo tenant that lied about edge cases",
     ],
   },
   {
@@ -164,7 +164,7 @@ const rolloutPhases = [
     phase: "Phase 3",
     title: "Harden, measure, hand over",
     description:
-      "Load on representative volumes, dashboards checked against finance extracts, and role-by-role training—so go-live was a process upgrade, not a surprise deployment.",
+      "Load on representative volumes, dashboards checked against finance extracts, and role-by-role training-so go-live was a process upgrade, not a surprise deployment.",
   },
 ];
 
@@ -204,8 +204,8 @@ const businessResults = [
     bgColor: "#EDE2FF",
     items: [
       "Sell-through, receivables, and unsold inventory answered from one spine",
-      "Partners on governed stock—not parallel “shadow” lists",
-      "Buyers on a coherent journey—not scattered payment links",
+      "Partners on governed stock-not parallel “shadow” lists",
+      "Buyers on a coherent journey-not scattered payment links",
     ],
   },
   {
@@ -223,7 +223,7 @@ const businessResults = [
     items: [
       "Reliability and crash signals on web and mobile",
       "Predictable sessions for buyers and field staff",
-      "Analytics on adoption—not just “the app went live”",
+      "Analytics on adoption-not just “the app went live”",
     ],
   },
 ];
@@ -256,7 +256,7 @@ export default function RealEstateErpCaseStudy() {
           </h1>
           <p className="work2-context animate-fade-up animate-delay-200 animate-in">
             How we helped a multi-project developer run sales, site,
-            procurement, marketing, and accounts on one spine—with a consumer
+            procurement, marketing, and accounts on one spine-with a consumer
             app so buyers and partners see the same truth the back office stands
             behind.
           </p>
@@ -266,12 +266,12 @@ export default function RealEstateErpCaseStudy() {
               <span className="problem-title-label">The problem:</span> Meet{" "}
               <strong>Karan Sehgal</strong>, founder leading a residential
               developer with active towers across the NCR. His teams were not
-              lazy—work was scattered across Excel, WhatsApp, PDFs, and a
+              lazy-work was scattered across Excel, WhatsApp, PDFs, and a
               patchwork of screens. Marketing ran campaigns; sales chased leads;
-              site and procurement ran on their own clocks—so “real-time KPIs”
+              site and procurement ran on their own clocks-so “real-time KPIs”
               meant someone typing fast. The board asked what every Indian
               developer eventually asks: what is sold, what is owed, what is
-              still sellable this week—and the answer lived in six places at
+              still sellable this week-and the answer lived in six places at
               once.
             </p>
 
@@ -318,7 +318,7 @@ export default function RealEstateErpCaseStudy() {
               Enter a deliberate pairing: an <strong>ERP-shaped spine</strong>{" "}
               for how the developer runs projects, partners, and cash, and a{" "}
               <strong>consumer-grade app</strong> so buyers see the same truth
-              the back office stands behind—not a portal that quietly forked
+              the back office stands behind-not a portal that quietly forked
               data.
             </p>
           </div>
@@ -370,7 +370,7 @@ export default function RealEstateErpCaseStudy() {
               For Karan’s organisation we composed navigation per role: sales
               sees funnel and inventory; marketing sees campaigns and sources;
               site sees tasks and change requests; finance sees payables and
-              milestones—without shipping one generic “portal” that satisfies
+              milestones-without shipping one generic “portal” that satisfies
               nobody.
             </p>
           </div>
@@ -409,7 +409,7 @@ export default function RealEstateErpCaseStudy() {
           <div className="solution-story">
             <p>
               Delivery was phased so data models and permissions stabilised
-              before wide training—prove the spine, then widen the surface area.
+              before wide training-prove the spine, then widen the surface area.
               That is how we run other enterprise programmes: the business keeps
               selling while the system catches up to reality.
             </p>
@@ -452,7 +452,7 @@ export default function RealEstateErpCaseStudy() {
               The operations platform holds inventory, commercial terms,
               bookings, billing milestones, and partner performance. The
               consumer application covers discovery, applications, documents,
-              payment schedules, and post-sale service—against the same facts.
+              payment schedules, and post-sale service-against the same facts.
             </p>
           </div>
           <div className="work2-capabilities-grid">
@@ -492,7 +492,7 @@ export default function RealEstateErpCaseStudy() {
           <div className="solution-story">
             <p>
               These patterns describe how information moves between sales,
-              procurement, site, and finance—without the same unit being typed
+              procurement, site, and finance-without the same unit being typed
               twice.
             </p>
           </div>

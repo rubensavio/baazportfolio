@@ -1,6 +1,6 @@
 @use "baaz-v2-shell";
 
-/* v2 scrollbar — matches contact.html design system */
+/* v2 scrollbar - matches contact.html design system */
 html:has(.baaz-v2) {
   scroll-behavior: smooth;
   scrollbar-width: thin;

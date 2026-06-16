@@ -1,12 +1,13 @@
 import Reveal from "./Reveal";
 import { HOME_WHY_BAAZ } from "../../lib/homePageData";
+import "./HomeWhyBaaz.scss";
 
 export default function HomeWhyBaaz() {
   const { heading, sub, reasons } = HOME_WHY_BAAZ;
 
   return (
-    <section className="home-section" aria-labelledby="home-why-heading">
-      <div className="home-wrap">
+    <section className="home-why-section" aria-labelledby="home-why-heading">
+      <div className="home-why-wrap">
         <Reveal className="home-why-header">
           <h2 id="home-why-heading">{heading}</h2>
           <p className="home-why-sub">{sub}</p>
@@ -18,7 +19,7 @@ export default function HomeWhyBaaz() {
               <span className="home-why-num">{num}</span>
               <h3 className="home-why-title">
                 {title}
-                <span className="home-accent">.</span>
+                <span className="home-why-accent">.</span>
               </h3>
             </div>
             <div className="home-why-body">

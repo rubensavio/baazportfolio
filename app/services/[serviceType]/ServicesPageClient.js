@@ -273,7 +273,7 @@ export default function ServicesPageClient({ serviceType }) {
               </h2>
               <p className="services-deep-dives-lead">
                 Step into focused capability pages aligned to teams, toolchain
-                choices, and common integration patterns—from web runtimes
+                choices, and common integration patterns-from web runtimes
                 through data, AI workloads, and cloud delivery.
               </p>
               <ul className="services-deep-dives-list">

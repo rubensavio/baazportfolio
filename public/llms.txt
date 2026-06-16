@@ -1,10 +1,10 @@
 # Baaz
 
-> Baaz is a **Software Development Company** (product engineering studio / software development agency / IT services), serving product and engineering teams worldwide since 2018 — custom software, web, mobile, AI, and enterprise engineering with HQ in Bangalore, India and a US office in Sheridan, WY.
+> Baaz is a **Software Development Company** (product engineering studio / software development agency / IT services), serving product and engineering teams worldwide since 2018 - custom software, web, mobile, AI, and enterprise engineering with HQ in Bangalore, India and a US office in Sheridan, WY.
 
 ## Core Pages
 
-- [Homepage](https://baaz.pro): **Software Development Company** — custom software and product engineering for global buyers; FAQ, services, outcomes.
+- [Homepage](https://baaz.pro): **Software Development Company** - custom software and product engineering for global buyers; FAQ, services, outcomes.
 - [About Baaz](https://baaz.pro/about): Company background, founding story, Bangalore HQ and Sheridan, WY US office, team philosophy, and 100+ application delivery track record since 2018.
 - [Services Overview](https://baaz.pro/services): Full list of Baaz service lines including web development, product strategy, UI/UX, mobile apps, and AI solutions.
 - [Contact / Get in Touch](https://baaz.pro/get-in-touch): Primary contact page with form submission, email, and office details.
@@ -13,26 +13,25 @@
 
 ## Services
 
-- [Custom Software Development](https://baaz.pro/services/web-development): End-to-end web application development using React, Next.js, Node.js, and Python — first milestone in 4–6 weeks; SAP/Salesforce integrations in 8–12 weeks.
+- [Custom Software Development](https://baaz.pro/services/web-development): End-to-end web application development using React, Next.js, Node.js, and Python - first milestone in 4–6 weeks; SAP/Salesforce integrations in 8–12 weeks.
 - [Product Strategy Consulting](https://baaz.pro/services/product-strategy): Discovery workshops, product roadmaps, MVP scoping, and GTM alignment for B2B SaaS and enterprise products.
 - [UI/UX Design](https://baaz.pro/services/ui-ux-design): Research, wireframes, prototypes, design systems, and usability testing for web and mobile products.
-- [Mobile App Development](https://baaz.pro/services/mobile-app): Native iOS and Android apps plus Flutter and React Native cross-platform builds — from UX through App Store launch.
-- [AI Solutions](https://baaz.pro/services/ai-solution): Computer vision, NLP, predictive models, production APIs, RAG pipelines, and LLM integrations — production-ready, not slideware.
-- [Software Project Rescue](https://baaz.pro/project-rescue): Mid-project takeovers for stalled, failing, or vendor-abandoned software builds; codebase audit and stabilization without full restarts.
+- [Mobile App Development](https://baaz.pro/services/mobile-app): Native iOS and Android apps plus Flutter and React Native cross-platform builds - from UX through App Store launch.
+- [AI Solutions](https://baaz.pro/services/ai-solution): Computer vision, NLP, predictive models, production APIs, RAG pipelines, and LLM integrations - production-ready, not slideware.
 - [Enterprise Software Development](https://baaz.pro/enterprise): Custom platforms, legacy modernisation, and systems integration for enterprise organizations worldwide since 2018.
 - [GTM Engineering](https://baaz.pro/gtm-engineering): Go-to-market systems engineering covering content, outbound, paid ads, SEO, and nurture workflows.
 - [eCommerce Development](https://baaz.pro/ecommerce): Marketplace and eCommerce platform development, Amazon/Flipkart management, and growth engineering.
 
 ## Technologies
 
-- [Web Development Stack](https://baaz.pro/technologies/web-development): Baaz's web technology choices — React, Next.js, TypeScript, Node.js, APIs, testing tools, and performance practices.
+- [Web Development Stack](https://baaz.pro/technologies/web-development): Baaz's web technology choices - React, Next.js, TypeScript, Node.js, APIs, testing tools, and performance practices.
 - [AI & ML Stack](https://baaz.pro/technologies/ai-ml-models): AI/ML technologies used including TensorFlow, PyTorch, Scikit-learn, OpenAI, Anthropic, and Google Gemini integrations.
-- [Agentic AI Stack](https://baaz.pro/technologies/agentic-ai): Agentic AI capabilities — LangChain, LlamaIndex, RAG pipelines, vector systems, and tool-calling orchestration.
+- [Agentic AI Stack](https://baaz.pro/technologies/agentic-ai): Agentic AI capabilities - LangChain, LlamaIndex, RAG pipelines, vector systems, and tool-calling orchestration.
 
 ## Blog
 
-- [How to Scope an MVP That Actually Ships](https://baaz.pro/blog/how-to-scope-mvp-that-ships): Practical framework for MVP scoping with original Baaz data — 8-week median delivery, 175% calendar penalty for multi-persona scope, 35% lower rework when scope is brief-locked.
-- [ThoughtWorks Alternatives for 2026](https://baaz.pro/blog/thoughtworks-alternatives): Comparison of ThoughtWorks alternatives including boutique studios, SIs, talent networks, and India-based delivery — fit, cost, and engagement model analysis.
+- [How to Scope an MVP That Actually Ships](https://baaz.pro/blog/how-to-scope-mvp-that-ships): Practical framework for MVP scoping with original Baaz data - 8-week median delivery, 175% calendar penalty for multi-persona scope, 35% lower rework when scope is brief-locked.
+- [ThoughtWorks Alternatives for 2026](https://baaz.pro/blog/thoughtworks-alternatives): Comparison of ThoughtWorks alternatives including boutique studios, SIs, talent networks, and India-based delivery - fit, cost, and engagement model analysis.
 - [Technical Due Diligence for Custom Software](https://baaz.pro/blog/technical-due-diligence-custom-software): How to evaluate a software codebase, vendor, or acquisition target for technical risk, architecture quality, and delivery capability.
 - [Software Project Rescue Checklist](https://baaz.pro/blog/software-project-rescue-checklist): Step-by-step checklist for diagnosing a stalled software project and deciding whether to rescue, rebuild, or replace.
 - [Product Engineering Process for Enterprises](https://baaz.pro/blog/product-engineering-process-for-enterprises): How enterprise teams structure discovery, design, build, and scale phases for large-scale software products.

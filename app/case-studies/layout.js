@@ -6,14 +6,14 @@ const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
-  title: "Case Studies — How Baaz Ships Real Systems",
+  title: "Case Studies - How Baaz Ships Real Systems",
   description:
-    "Case studies: manufacturing AI, hiring automation, SaaS architecture, reliability, integrations—how Baaz designs and ships production systems since 2018.",
+    "Case studies: manufacturing AI, hiring automation, SaaS architecture, reliability, integrations-how Baaz designs and ships production systems since 2018.",
   alternates: getAlternates("/case-studies"),
   openGraph: {
-    title: "Case Studies — How Baaz Ships Real Systems",
+    title: "Case Studies - How Baaz Ships Real Systems",
     description:
-      "Deep-dives on manufacturing AI, hiring platforms, enterprise delivery, and architecture—real outcomes from Baaz product engineering. Explore before you engage.",
+      "Deep-dives on manufacturing AI, hiring platforms, enterprise delivery, and architecture-real outcomes from Baaz product engineering. Explore before you engage.",
     url: `${baseUrl}/case-studies`,
     siteName: "Baaz",
     images: [
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Case Studies — How Baaz Ships Real Systems",
+    title: "Case Studies - How Baaz Ships Real Systems",
     description:
-      "Manufacturing AI, hiring automation, SaaS, reliability—see how Baaz architects and ships production systems worldwide since 2018.",
+      "Manufacturing AI, hiring automation, SaaS, reliability-see how Baaz architects and ships production systems worldwide since 2018.",
     images: [ogImage],
   },
 };

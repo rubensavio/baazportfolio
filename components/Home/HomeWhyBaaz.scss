@@ -1,0 +1,106 @@
+/* Reusable "Why Baaz" manifesto section (home + about). Scoped to .baaz-v2
+   with shared --v2-* tokens so it works on any v2 page. */
+.baaz-v2 {
+  .home-why-section {
+    padding: 120px 0;
+
+    @media (max-width: 768px) {
+      padding: 80px 0;
+    }
+  }
+
+  .home-why-wrap {
+    max-width: var(--v2-max-w);
+    margin: 0 auto;
+    padding: 0 var(--v2-pad);
+  }
+
+  .home-why-header {
+    padding-bottom: 48px;
+
+    h2 {
+      font-family: var(--v2-serif);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      font-style: italic;
+    }
+  }
+
+  .home-why-sub {
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    color: var(--v2-text-2);
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+
+  .home-why-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    align-items: start;
+    padding: 56px 0;
+    border-top: 1px solid var(--v2-border);
+
+    &:last-child {
+      border-bottom: 1px solid var(--v2-border);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 40px 0;
+    }
+  }
+
+  .home-why-word {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  .home-why-num {
+    font-family: var(--v2-serif);
+    font-size: 13px;
+    color: var(--v2-text-3);
+  }
+
+  .home-why-title {
+    font-family: var(--v2-serif);
+    font-style: italic;
+    font-size: clamp(40px, 5.5vw, 68px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .home-why-accent {
+    color: var(--v2-accent);
+  }
+
+  .home-why-body {
+    padding-top: 8px;
+  }
+
+  .home-why-lead {
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 400;
+    color: var(--v2-text);
+    line-height: 1.45;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .home-why-para {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.75;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

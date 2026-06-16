@@ -32,11 +32,11 @@ For **this repo’s** page metadata, data shapes, and legal/blog patterns, alway
 
 ### 1.1 Audit priority order (fix in this sequence)
 
-1. **Crawlability & indexation** — Can search engines find and index the URL?
-2. **Technical foundations** — Speed, HTTPS, mobile, redirects, canonicals.
-3. **On-page optimization** — Title, meta, headings, content, internal links, images.
-4. **Content quality** — Depth, intent match, E-E-A-T signals.
-5. **Authority & links** — Off-page (out of scope for most page-level automations unless data provided).
+1. **Crawlability & indexation** - Can search engines find and index the URL?
+2. **Technical foundations** - Speed, HTTPS, mobile, redirects, canonicals.
+3. **On-page optimization** - Title, meta, headings, content, internal links, images.
+4. **Content quality** - Depth, intent match, E-E-A-T signals.
+5. **Authority & links** - Off-page (out of scope for most page-level automations unless data provided).
 
 ### 1.2 Pre-flight context (ask or read once)
 
@@ -50,11 +50,11 @@ For **this repo’s** page metadata, data shapes, and legal/blog patterns, alway
 
 Each issue in automated or agent output **must** include:
 
-- **Issue** — What is wrong.
-- **Impact** — High / Medium / Low (SEO).
-- **Evidence** — URL, header name, tool output, line of code, or metric with units.
-- **Fix** — Concrete action.
-- **Priority** — P1–P5 or High/Medium/Low.
+- **Issue** - What is wrong.
+- **Impact** - High / Medium / Low (SEO).
+- **Evidence** - URL, header name, tool output, line of code, or metric with units.
+- **Fix** - Concrete action.
+- **Priority** - P1–P5 or High/Medium/Low.
 
 Generic advice with no evidence is **invalid** output for this playbook.
 
@@ -113,7 +113,7 @@ Tools: PageSpeed Insights, CrUX, GSC CWV report, WebPageTest, Lighthouse (local/
 **Data source**: [crawl | PSI | manual | GSC export | repo file]
 
 ### Critical (P1)
-- [Issue] — Evidence: … — Fix: …
+- [Issue] - Evidence: … - Fix: …
 
 ### High (P2)
 - …
@@ -208,12 +208,12 @@ Use **before** writing or refactoring pages targeting a query. From **serp-analy
 
 ### 4.2 Steps (automate or manual)
 
-1. **Map SERP composition** — AI Overview, ads, featured snippet, organic 1–10, PAA, knowledge panel, images, video, local pack, news, sitelinks, related searches.
-2. **Top 10 URL profile** — Content type, title/H1 patterns, freshness signals, schema, format (list vs longform), estimated depth.
-3. **Patterns** — What formats dominate top 5? What SERP features can you win (snippet, PAA) vs blue-link #1?
-4. **Intent** — Informational / commercial / transactional / mixed; cite SERP evidence.
-5. **Difficulty** — Domain strength, content bar, SERP stability; suggest alternative keywords if unrealistic.
-6. **Recommendations** — Outline, format, snippet/PAA strategy, differentiation.
+1. **Map SERP composition** - AI Overview, ads, featured snippet, organic 1–10, PAA, knowledge panel, images, video, local pack, news, sitelinks, related searches.
+2. **Top 10 URL profile** - Content type, title/H1 patterns, freshness signals, schema, format (list vs longform), estimated depth.
+3. **Patterns** - What formats dominate top 5? What SERP features can you win (snippet, PAA) vs blue-link #1?
+4. **Intent** - Informational / commercial / transactional / mixed; cite SERP evidence.
+5. **Difficulty** - Domain strength, content bar, SERP stability; suggest alternative keywords if unrealistic.
+6. **Recommendations** - Outline, format, snippet/PAA strategy, differentiation.
 
 ### 4.3 Output validation (SERP)
 
@@ -315,6 +315,6 @@ Full: Run §1 priority order for [URL or SITE]; output executive summary + P1–
 
 ## 12. Related internal docs
 
-- `PAGE_OPTIMIZATION_FRAMEWORK.md` — Baaz URL/metadata/content checklist.
-- `BLOG_WRITING_FRAMEWORK.md` — Long-form blog rules (if present).
+- `PAGE_OPTIMIZATION_FRAMEWORK.md` - Baaz URL/metadata/content checklist.
+- `BLOG_WRITING_FRAMEWORK.md` - Long-form blog rules (if present).
 - Seomachine skill references: `seo-audit/references/` (AEO/GEO patterns, AI writing detection) when expanding this playbook.

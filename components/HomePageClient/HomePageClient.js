@@ -2,14 +2,12 @@
 
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import HomeHero from "../Home/HomeHero";
-import HomeMarquee from "../Home/HomeMarquee";
 import HomePhilosophy from "../Home/HomePhilosophy";
 import HomeBrands from "../Home/HomeBrands";
 import HomeWork from "../Home/HomeWork";
 import HomeServices from "../Home/HomeServices";
 import HomeIndustriesBento from "../Home/HomeIndustriesBento";
 import HomeImpact from "../Home/HomeImpact";
-import HomeMidCTA from "../Home/HomeMidCTA";
 import HomeWhyBaaz from "../Home/HomeWhyBaaz";
 import HomeStats from "../Home/HomeStats";
 import HomeTestimonials from "../Home/HomeTestimonials";
@@ -24,7 +22,6 @@ export default function HomePageClient() {
       <ClientNavbar />
       <main>
         <HomeHero />
-        <HomeMarquee />
         <HomePhilosophy />
         <HomeBrands />
         <HomeWork />
@@ -32,7 +29,6 @@ export default function HomePageClient() {
         <HomeServices />
         <HomeIndustriesBento />
         <HomeImpact />
-        <HomeMidCTA />
         <HomeWhyBaaz />
         <HomeStats />
         <HomeTestimonials />

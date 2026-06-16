@@ -9,11 +9,11 @@ export const metadata = {
   alternates: getAlternates("/enterprise"),
   title: "Enterprise Software Development & Integrations | Baaz",
   description:
-    "Enterprise software development for organizations worldwide—internal platforms, legacy ERP and CRM integrations, phased delivery, and outsourcing-ready engineering teams. Since 2018—talk to Baaz.",
+    "Enterprise software development for organizations worldwide-internal platforms, legacy ERP and CRM integrations, phased delivery, and outsourcing-ready engineering teams. Since 2018-talk to Baaz.",
   openGraph: {
     title: "Enterprise Software Development & Integrations | Baaz",
     description:
-      "Platforms, integrations, and transformation—enterprise product engineering from Baaz since 2018. Book a discovery call.",
+      "Platforms, integrations, and transformation-enterprise product engineering from Baaz since 2018. Book a discovery call.",
     url: `${baseUrl}/enterprise`,
     siteName: "Baaz",
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Enterprise custom software development — Baaz",
+        alt: "Enterprise custom software development - Baaz",
       },
     ],
   },

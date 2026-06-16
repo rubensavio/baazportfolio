@@ -1,4 +1,4 @@
-# Baaz — New Page Creation Framework
+# Baaz - New Page Creation Framework
 
 Use this document as a master reference when building any new service/offering page on the Baaz website. Provide the AI your page idea, key points, and attach this file. It will handle the rest.
 
@@ -8,9 +8,9 @@ Use this document as a master reference when building any new service/offering p
 
 When requesting a new page, supply:
 
-1. **Page title** — e.g. "E-commerce Marketplace Management"
-2. **URL slug** — e.g. `ecommerce` (short, lowercase, hyphens only)
-3. **Content sections** — a writeup with headings and bullet points covering:
+1. **Page title** - e.g. "E-commerce Marketplace Management"
+2. **URL slug** - e.g. `ecommerce` (short, lowercase, hyphens only)
+3. **Content sections** - a writeup with headings and bullet points covering:
    - Hero headline + subtext
    - Problem / pain points (3–6 items)
    - Approach / how Baaz solves it (3–6 items)
@@ -20,7 +20,7 @@ When requesting a new page, supply:
    - Target audience
    - CTA (what the user gets)
    - FAQs (5–8 questions with answers)
-4. **SEO keywords** — a list of 8–12 keywords to weave naturally into headings and copy
+4. **SEO keywords** - a list of 8–12 keywords to weave naturally into headings and copy
 
 ---
 
@@ -55,15 +55,15 @@ public/assets/          ← SVGs and images
 
 ### Background assets available
 
-- `/assets/HomeHeroSectionBg.svg` — Hero section background
-- `/assets/HowWeWorkBg.svg` — Used as subtle overlay in container sections (pain points, approach)
-- `/assets/readyToBuildBg.svg` — Dark CTA container background
+- `/assets/HomeHeroSectionBg.svg` - Hero section background
+- `/assets/HowWeWorkBg.svg` - Used as subtle overlay in container sections (pain points, approach)
+- `/assets/readyToBuildBg.svg` - Dark CTA container background
 
 ---
 
 ## File-by-File Blueprint
 
-### 1. `app/<slug>/layout.js` — Server Component (Metadata + Schema)
+### 1. `app/<slug>/layout.js` - Server Component (Metadata + Schema)
 
 This file handles all SEO metadata. It is a **server component** (no "use client").
 
@@ -111,7 +111,7 @@ export default function <Name>Layout({ children }) {
 - Always include `alternates: getAlternates("/<slug>")` for hreflang
 - BreadcrumbScript items: Home → Page Name
 
-### 2. `app/<slug>/page.js` — Client Component (All Sections)
+### 2. `app/<slug>/page.js` - Client Component (All Sections)
 
 This is the main page. It is a **client component** (`"use client"`).
 
@@ -207,8 +207,8 @@ Default export function:
 
 #### Structured Data
 Always include two JSON-LD scripts at the top of the return:
-1. **FAQPage schema** — from the faqs array
-2. **Service schema** — `@type: "Service"` with name, description, provider (Baaz), serviceType
+1. **FAQPage schema** - from the faqs array
+2. **Service schema** - `@type: "Service"` with name, description, provider (Baaz), serviceType
 
 **Data format for each section:**
 
@@ -261,7 +261,7 @@ const faqs = [
 ];
 ```
 
-### 3. `app/<slug>/page.scss` — Styles
+### 3. `app/<slug>/page.scss` - Styles
 
 Copy the SCSS structure from `app/ecommerce/page.scss` and do a **find-and-replace** of the class prefix (e.g. `ecom-` → `newprefix-`). Keep all values identical.
 
@@ -291,9 +291,9 @@ Copy the SCSS structure from `app/ecommerce/page.scss` and do a **find-and-repla
 
 | Breakpoint | Target |
 |------------|--------|
-| `max-width: 64rem` (1024px) | Tablet — reduce padding, adjust dividers |
-| `max-width: 48rem` (768px) | Mobile — single-column grids, center text, stack vertically |
-| `max-width: 30rem` (480px) | Small mobile — tighter padding |
+| `max-width: 64rem` (1024px) | Tablet - reduce padding, adjust dividers |
+| `max-width: 48rem` (768px) | Mobile - single-column grids, center text, stack vertically |
+| `max-width: 30rem` (480px) | Small mobile - tighter padding |
 
 **Section background alternation pattern:**
 ```
@@ -314,7 +314,7 @@ CTA:         white (dark container inside)
 
 After creating the three files above, update these existing files:
 
-### 4. Add to sitemap — `app/sitemap.js`
+### 4. Add to sitemap - `app/sitemap.js`
 
 Add a new entry to the `staticRoutes` array:
 
@@ -327,7 +327,7 @@ withAlternates("/<slug>", {
 }),
 ```
 
-### 5. Add to Navbar — `components/Navbar/Navbar.js`
+### 5. Add to Navbar - `components/Navbar/Navbar.js`
 
 Add a `<li>` item in **both** the desktop menu (`<ul className="navbar-menu desktop-menu">`) and the mobile menu (`<ul className="mobile-menu-list">`):
 
@@ -358,18 +358,18 @@ Place them after the last existing nav item (currently "E-commerce").
 
 ## SEO / GEO Content Rules
 
-1. **H1** — one per page, contains the primary keyword, placed in the hero heading
-2. **H2** — one per section, each should contain a secondary keyword naturally
-3. **H3** — subheadings within sections (service titles, card titles)
-4. **Keyword density** — weave the provided SEO keywords naturally into headings and body copy; never keyword-stuff
-5. **Meta title** — `<Primary Keyword> | Baaz` format, under 60 chars
-6. **Meta description** — 120–160 chars, contains primary keyword, compelling and actionable
-7. **FAQ answers** — naturally include long-tail keywords; these feed into FAQ rich snippets
-8. **Structured data** — every page gets BreadcrumbList + Service + FAQPage schemas
-9. **hreflang** — always use `getAlternates("/<slug>")` for all 14 regional subdomains
-10. **Internal linking** — CTA buttons link to `/get-in-touch`; consider linking to related service/industry pages where relevant
-11. **Alt text** — descriptive and keyword-aware for all images
-12. **Semantic HTML** — proper heading hierarchy (h1 > h2 > h3), `<section>` for each block, `<ul>` for lists
+1. **H1** - one per page, contains the primary keyword, placed in the hero heading
+2. **H2** - one per section, each should contain a secondary keyword naturally
+3. **H3** - subheadings within sections (service titles, card titles)
+4. **Keyword density** - weave the provided SEO keywords naturally into headings and body copy; never keyword-stuff
+5. **Meta title** - `<Primary Keyword> | Baaz` format, under 60 chars
+6. **Meta description** - 120–160 chars, contains primary keyword, compelling and actionable
+7. **FAQ answers** - naturally include long-tail keywords; these feed into FAQ rich snippets
+8. **Structured data** - every page gets BreadcrumbList + Service + FAQPage schemas
+9. **hreflang** - always use `getAlternates("/<slug>")` for all 14 regional subdomains
+10. **Internal linking** - CTA buttons link to `/get-in-touch`; consider linking to related service/industry pages where relevant
+11. **Alt text** - descriptive and keyword-aware for all images
+12. **Semantic HTML** - proper heading hierarchy (h1 > h2 > h3), `<section>` for each block, `<ul>` for lists
 
 ---
 
