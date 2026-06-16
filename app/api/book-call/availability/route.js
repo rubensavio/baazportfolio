@@ -1,16 +1,23 @@
 import { NextResponse } from "next/server";
 import { getGoogleCalendarConfig } from "../../../../lib/googleCalendarConfig.js";
 import { getAvailableSlots } from "../../../../lib/googleCalendar.js";
+import {
+  getCalendlyConfig,
+  getCalendlyAvailableSlots,
+} from "../../../../lib/calendly.js";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 export async function GET(request) {
   try {
-    const { isConfigured } = getGoogleCalendarConfig();
-    if (!isConfigured) {
+    // Prefer Calendly for slots when configured; otherwise fall back to Google free/busy.
+    const calendly = getCalendlyConfig();
+    const google = getGoogleCalendarConfig();
+
+    if (!calendly.isConfigured && !google.isConfigured) {
       return NextResponse.json(
-        { error: "Google Calendar is not configured on the server." },
+        { error: "Booking calendar is not configured on the server." },
         { status: 503 },
       );
     }
@@ -30,7 +37,9 @@ export async function GET(request) {
       return NextResponse.json({ error: "Past dates are not available." }, { status: 400 });
     }
 
-    const data = await getAvailableSlots(date, use24h);
+    const data = calendly.isConfigured
+      ? await getCalendlyAvailableSlots(date, use24h)
+      : await getAvailableSlots(date, use24h);
     return NextResponse.json(data);
   } catch (error) {
     console.error("[book-call/availability]", error);

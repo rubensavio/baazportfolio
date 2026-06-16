@@ -89,8 +89,8 @@ function buildArticleSchema(data, slug) {
           url: data.author.personalUrl || `${baseUrl}/about`,
           jobTitle: data.author.jobTitle || "Co-founder & Engineering Lead",
           worksFor: { "@id": `${baseUrl}/#organization` },
-          sameAs: data.author.sameAs ||
-            (data.author.url ? [data.author.url] : []),
+          sameAs:
+            data.author.sameAs || (data.author.url ? [data.author.url] : []),
           knowsAbout: data.author.knowsAbout || [
             "Custom Software Development",
             "Enterprise Product Engineering",
@@ -111,7 +111,7 @@ function buildArticleSchema(data, slug) {
       url: baseUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/assets/Logo.svg`,
+        url: `${baseUrl}/assets/Logo.png`,
         width: 600,
         height: 60,
       },

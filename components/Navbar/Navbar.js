@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="navbar-logo">
           <Link href="/">
             <img
-              src="/assets/Logo.svg"
+              src="/assets/Logo.png"
               alt="baaz logo"
               width={120}
               height={32}
@@ -87,7 +87,8 @@ const Navbar = () => {
             <a
               href="#"
               className={`navbar-link ${
-                pathname?.startsWith("/industry") || pathname?.startsWith("/erp")
+                pathname?.startsWith("/industry") ||
+                pathname?.startsWith("/erp")
                   ? "active"
                   : ""
               }`}

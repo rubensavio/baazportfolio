@@ -95,7 +95,7 @@ const structuredData = {
       email: "support@baaz.pro",
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/assets/Logo.svg`,
+        url: `${baseUrl}/assets/Logo.png`,
         width: 600,
         height: 60,
       },
@@ -149,7 +149,7 @@ const structuredData = {
       "@id": `${baseUrl}/#professional-service`,
       name: `Baaz - ${BRAND_POSITIONING_COMBINED}`,
       url: baseUrl,
-      image: `${baseUrl}/assets/Logo.svg`,
+      image: `${baseUrl}/assets/Logo.png`,
       description: `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation-strategy through design, build, and launch-for startups and enterprises worldwide.`,
       serviceType: [
         BRAND_POSITIONING_COMBINED,

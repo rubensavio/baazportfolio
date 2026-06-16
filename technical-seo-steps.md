@@ -47,6 +47,7 @@ Code changes for the Technical SEO checklist are done. The items below are for *
 The code points to `/assets/ogdefault.png` and the image is at `public/assets/ogdefault.png`. No further action needed in code.
 
 After deploy, you can verify the preview:
+
 - https://developers.facebook.com/tools/debug/ - enter `https://www.baaz.pro`
 - https://cards-dev.twitter.com/validator - enter `https://www.baaz.pro`
 
@@ -57,6 +58,7 @@ After deploy, you can verify the preview:
 Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Results:
 
 ### Pages tested
+
 - `/` (Home)
 - `/about`
 - `/services/web-development`
@@ -64,6 +66,7 @@ Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Resu
 - `/get-in-touch`
 
 ### `display: none` audit
+
 - `ul.navbar-menu.desktop-menu` hidden on mobile - **expected** (hamburger menu replaces it)
 - `a.cta-button.desktop-cta` hidden on mobile - **expected** (hamburger provides access)
 - `a.hero-cta.desktop-cta-btn` hidden on mobile - **expected** (a separate mobile CTA is rendered)
@@ -72,15 +75,18 @@ Tested all 5 pages at **375px** (iPhone SE) and **768px** (iPad) viewports. Resu
 **No content is improperly hidden on mobile.**
 
 ### `overflow: hidden` audit
+
 - `div.brands-carousel-wrapper` (scrollWidth ≫ clientWidth) - **expected** for the infinite-scroll marquee
 - `div.hero-illustration` at 768px (7px overflow) - **negligible**, not visible to users
 
 ### Other checks
+
 - No horizontal scroll on any page at either viewport
 - Typography readable, cards stack vertically, forms full-width and usable
 - Footer and CTA sections render correctly at both widths
 
 ### Remaining (manual, post-deploy)
+
 Run Lighthouse Mobile audit on the live site (`https://www.baaz.pro`) to check for "Content not sized correctly for viewport" warnings
 
 ---
@@ -116,14 +122,17 @@ Use this across all directories:
 **Company Size:** Small (< 50)
 
 **Short Description (1–2 lines):**
+
 > Baaz is a product engineering agency. We build world-class digital products: product strategy, UI/UX design, custom software development, mobile apps, and AI solutions. Since 2018.
 
 **Long Description (about section):**
+
 > Baaz is a Bangalore-based software product development studio driven by a passion for building purposeful digital products. Since 2018, we've partnered with startups, scale-ups, and enterprises to design, develop, and launch over 100 web and mobile applications across diverse sectors including eCommerce, fintech, AI/ML, AR/VR, real estate, retail, and ERP systems.
 >
 > Our team brings deep technical expertise, strategic thinking, and a collaborative mindset to every project. We follow a founder-first, product-led approach that helps businesses move from idea to prototype, MVP to scale - quickly and efficiently. We don't just write code - we craft scalable solutions that solve real problems and create long-term value.
 
 **Services (select/tag these):**
+
 - Product Strategy Consulting
 - UI/UX Design
 - Custom Software Development
@@ -131,6 +140,7 @@ Use this across all directories:
 - AI/ML Development (Computer Vision, NLP, Predictive Analytics)
 
 **Industries Served:**
+
 - FinTech
 - Healthcare
 - Retail / eCommerce
@@ -140,12 +150,13 @@ Use this across all directories:
 Uber, Decathlon, Livpure, Nalli, Damas, Pestle
 
 **Portfolio / Case Studies:**
+
 - `https://www.baaz.pro/work1` - AI-powered visual inspection platform
 - `https://www.baaz.pro/work2` - Tech hiring automation platform
 
 **Contact Page:** https://www.baaz.pro/get-in-touch
 
-**Logo:** Use `public/assets/Logo.svg` from the project (export as PNG if the platform requires it)
+**Logo:** Use `public/assets/Logo.png` from the project (export as PNG if the platform requires it)
 
 ---
 

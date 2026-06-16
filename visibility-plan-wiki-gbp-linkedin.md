@@ -137,7 +137,7 @@ Businesses with photos get **45% more direction requests and 31% more website cl
 
 | Photo Type              | What to Upload                                                                                    | Qty |
 | ----------------------- | ------------------------------------------------------------------------------------------------- | --- |
-| **Logo**                | Baaz logo (from `public/assets/Logo.svg`, export as PNG)                                          | 1   |
+| **Logo**                | Baaz logo (from `public/assets/Logo.png`, export as PNG)                                          | 1   |
 | **Cover**               | Office exterior or a branded banner showing "Baaz - Product Engineering Agency"                   | 1   |
 | **Interior**            | Office workspace, meeting rooms, whiteboards with product designs                                 | 3-4 |
 | **Team**                | Team photos, working sessions, sprint demos, standups                                             | 3-4 |

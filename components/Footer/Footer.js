@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="footer-brand">
             <Link href="/">
               <img
-                src="/assets/Logo.svg"
+                src="/assets/Logo.png"
                 alt="Baaz logo"
                 className="footer-logo"
                 width={120}
