@@ -196,6 +196,45 @@
     flex-wrap: wrap;
   }
 
+  .home-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 6px;
+    text-decoration: none;
+    transition:
+      background 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+    cursor: pointer;
+
+    &--primary {
+      background: var(--home-accent);
+      color: var(--home-bg);
+      border: 1px solid var(--home-accent);
+
+      &:hover {
+        background: transparent;
+        color: var(--home-accent);
+      }
+    }
+
+    &--outline {
+      background: transparent;
+      color: var(--home-text);
+      border: 1px solid var(--home-border-h);
+
+      &:hover {
+        border-color: var(--home-accent);
+        color: var(--home-accent);
+      }
+    }
+  }
+
   .home-hero-cta-note {
     font-size: 12px;
     color: var(--home-text-3);
