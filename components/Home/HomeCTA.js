@@ -10,7 +10,6 @@ export default function HomeCTA() {
     <section className="home-cta-section" aria-labelledby="home-cta-heading">
       <div className="home-cta-wrap">
         <Reveal className="home-cta-panel">
-          <span className="home-cta-eyebrow">Start a project</span>
           <h2 id="home-cta-heading" className="home-cta-heading">
             {heading}
           </h2>

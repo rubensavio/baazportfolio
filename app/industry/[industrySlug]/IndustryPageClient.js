@@ -63,6 +63,20 @@ export default function IndustryPageClient({
             </div>
           )}
 
+          {data.relatedCaseStudies && data.relatedCaseStudies.length > 0 && (
+            <div className="industry-related">
+              <p className="industry-related-text">
+                Case studies:{" "}
+                {data.relatedCaseStudies.map((cs, index) => (
+                  <span key={cs.href}>
+                    {index > 0 && ", "}
+                    <Link href={cs.href}>{cs.label}</Link>
+                  </span>
+                ))}
+              </p>
+            </div>
+          )}
+
           <div className="industry-erp-cross">
             <p className="industry-erp-cross-text">
               <strong>ERP & operations:</strong>{" "}

@@ -497,6 +497,16 @@
     }
   }
 
+  /* Social icons: white by default, apple-green on hover */
+  .footer-social-link svg {
+    color: var(--v2-text);
+    transition: color 0.2s ease;
+  }
+
+  .footer-social-link:hover svg {
+    color: var(--v2-accent);
+  }
+
   .footer-bottom {
     border-top: 1px solid var(--v2-border);
     padding-top: 32px;
