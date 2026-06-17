@@ -98,14 +98,27 @@ export default function HomeTestimonials() {
                   <p className="home-testimonial-text">{item.text}</p>
                   <div className="home-testimonial-user">
                     <div className="home-testimonial-avatar">
-                      <Image
-                        src={item.avatar}
-                        alt={item.name}
-                        fill
-                        className="home-testimonial-avatar-img"
-                        sizes="48px"
-                        loading="lazy"
-                      />
+                      {item.avatar ? (
+                        <Image
+                          src={item.avatar}
+                          alt={item.name}
+                          fill
+                          className="home-testimonial-avatar-img"
+                          sizes="48px"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span
+                          className="home-testimonial-avatar-initials"
+                          aria-hidden="true"
+                        >
+                          {item.name
+                            .split(" ")
+                            .map((part) => part[0])
+                            .slice(0, 2)
+                            .join("")}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <h3 className="home-testimonial-name">{item.name}</h3>
