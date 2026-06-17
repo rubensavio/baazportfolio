@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 import { TESTIMONIALS } from "../../lib/testimonialsData";
 import "./Testimonials.scss";
@@ -123,23 +122,6 @@ const Testimonials = () => {
 
                   {/* User Info */}
                   <div className="testimonial-user">
-                    <div className="user-avatar">
-                      {testimonial.avatar ? (
-                        <Image
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          width={96}
-                          height={96}
-                          sizes="48px"
-                          className="testimonial-avatar-img"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="avatar-placeholder">
-                          {testimonial.name.charAt(0)}
-                        </div>
-                      )}
-                    </div>
                     <div className="user-info">
                       <h4 className="user-name">{testimonial.name}</h4>
                       <p className="user-title">{testimonial.title}</p>

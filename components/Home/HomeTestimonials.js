@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Reveal from "./Reveal";
 import { TESTIMONIALS } from "../../lib/testimonialsData";
 
@@ -97,29 +96,6 @@ export default function HomeTestimonials() {
                   </div>
                   <p className="home-testimonial-text">{item.text}</p>
                   <div className="home-testimonial-user">
-                    <div className="home-testimonial-avatar">
-                      {item.avatar ? (
-                        <Image
-                          src={item.avatar}
-                          alt={item.name}
-                          fill
-                          className="home-testimonial-avatar-img"
-                          sizes="48px"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <span
-                          className="home-testimonial-avatar-initials"
-                          aria-hidden="true"
-                        >
-                          {item.name
-                            .split(" ")
-                            .map((part) => part[0])
-                            .slice(0, 2)
-                            .join("")}
-                        </span>
-                      )}
-                    </div>
                     <div>
                       <h3 className="home-testimonial-name">{item.name}</h3>
                       <p className="home-testimonial-title">{item.title}</p>
