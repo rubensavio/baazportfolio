@@ -80,6 +80,9 @@ export default function HomeTestimonials() {
             >
               {TESTIMONIALS.map((item) => (
                 <article key={item.id} className="home-testimonial-card">
+                  <span className="home-testimonial-quote" aria-hidden="true">
+                    &ldquo;
+                  </span>
                   <p className="home-testimonial-text">{item.text}</p>
                   <div className="home-testimonial-user">
                     <div>
