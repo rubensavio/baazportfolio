@@ -612,8 +612,12 @@
         color: var(--home-accent);
       }
 
+      .home-wi-title {
+        color: var(--home-accent);
+      }
+
       .home-wi-arrow {
-        color: var(--home-text);
+        color: var(--home-accent);
         transform: translate(3px, -3px);
       }
     }
@@ -645,6 +649,7 @@
     letter-spacing: -0.02em;
     line-height: 1.2;
     margin-bottom: 10px;
+    transition: color 0.2s;
   }
 
   .home-wi-meta {
