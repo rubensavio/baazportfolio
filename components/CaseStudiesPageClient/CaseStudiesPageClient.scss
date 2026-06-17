@@ -118,6 +118,19 @@
 
     &:hover {
       background: var(--v2-bg-1);
+
+      .cs-featured-title {
+        color: var(--v2-accent);
+      }
+
+      .cs-featured-tag {
+        color: var(--v2-text);
+      }
+
+      .cs-featured-initials {
+        color: var(--v2-accent);
+        opacity: 0.7;
+      }
     }
 
     @media (max-width: 768px) {
@@ -146,6 +159,7 @@
     line-height: 1;
     color: var(--v2-text-3);
     opacity: 0.4;
+    transition: color 0.2s, opacity 0.2s;
   }
 
   .cs-featured-body {
@@ -163,12 +177,14 @@
     color: var(--v2-text-3);
     margin-bottom: 20px;
     display: block;
+    transition: color 0.2s;
   }
 
   .cs-featured-title {
     font-size: clamp(22px, 3vw, 36px);
     line-height: 1.2;
     margin-bottom: 16px;
+    transition: color 0.2s;
   }
 
   .cs-featured-desc {
@@ -238,8 +254,17 @@
         opacity: 1;
       }
 
-      .cs-article-arrow {
+      .cs-article-title {
+        color: var(--v2-accent);
+      }
+
+      .cs-article-type,
+      .cs-article-tags {
         color: var(--v2-text);
+      }
+
+      .cs-article-arrow {
+        color: var(--v2-accent);
         transform: translate(3px, -3px);
       }
     }
@@ -264,12 +289,14 @@
     color: var(--v2-text-3);
     display: block;
     margin-bottom: 6px;
+    transition: color 0.2s;
   }
 
   .cs-article-tags {
     font-size: 12px;
     color: var(--v2-text-3);
     line-height: 1.4;
+    transition: color 0.2s;
   }
 
   .cs-article-content {
@@ -282,6 +309,7 @@
     font-weight: 500;
     line-height: 1.25;
     margin-bottom: 8px;
+    transition: color 0.2s;
   }
 
   .cs-article-metric {
