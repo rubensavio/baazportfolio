@@ -41,25 +41,52 @@ export default function CaseStudyDetailClient({ slug }) {
           <p className="cs-summary">{data.summary}</p>
         </header>
 
-        <section className="cs-results" aria-label="Results">
-          {data.results.map((result) => (
-            <div key={result.label} className="cs-result">
-              <span className="cs-result-value">{result.value}</span>
-              <span className="cs-result-label">{result.label}</span>
+        {data.clientOverview && (
+          <section
+            className="cs-section cs-section--split"
+            aria-labelledby="cs-overview-heading"
+          >
+            <div className="cs-section-aside">
+              <span className="cs-section-index">01</span>
+              <h2 id="cs-overview-heading" className="cs-section-heading">
+                Client overview
+              </h2>
             </div>
-          ))}
-        </section>
+            <p className="cs-section-body">{data.clientOverview}</p>
+          </section>
+        )}
 
-        <section className="cs-section" aria-labelledby="cs-challenge-heading">
-          <h2 id="cs-challenge-heading" className="cs-section-heading">
-            The challenge
-          </h2>
+        <section
+          className="cs-section cs-section--split"
+          aria-labelledby="cs-challenge-heading"
+        >
+          <div className="cs-section-aside">
+            <span className="cs-section-index">02</span>
+            <h2 id="cs-challenge-heading" className="cs-section-heading">
+              The challenge
+            </h2>
+          </div>
           <p className="cs-section-body">{data.challenge}</p>
         </section>
 
+        {data.solution && (
+          <section
+            className="cs-section cs-section--split"
+            aria-labelledby="cs-solution-heading"
+          >
+            <div className="cs-section-aside">
+              <span className="cs-section-index">03</span>
+              <h2 id="cs-solution-heading" className="cs-section-heading">
+                Our solution
+              </h2>
+            </div>
+            <p className="cs-section-body">{data.solution}</p>
+          </section>
+        )}
+
         <section className="cs-section" aria-labelledby="cs-approach-heading">
           <h2 id="cs-approach-heading" className="cs-section-heading">
-            What we built
+            Key deliverables
           </h2>
           <div className="cs-approach-grid">
             {data.approach.map((item) => (
@@ -86,9 +113,28 @@ export default function CaseStudyDetailClient({ slug }) {
           </section>
         )}
 
+        <section className="cs-section" aria-labelledby="cs-results-heading">
+          <h2 id="cs-results-heading" className="cs-section-heading">
+            Results &amp; impact
+          </h2>
+          <div className="cs-results">
+            {data.results.map((result) => (
+              <div key={result.label} className="cs-result">
+                <span className="cs-result-value">{result.value}</span>
+                <span className="cs-result-label">{result.label}</span>
+              </div>
+            ))}
+          </div>
+          {data.closingStatement && (
+            <p className="cs-results-statement">{data.closingStatement}</p>
+          )}
+        </section>
+
         <section className="cs-closing">
           <p className="cs-closing-note">
-            Anonymised, representative engagement. Want results like these?{" "}
+            {data.anonymised === false
+              ? "Want results like these? "
+              : "Anonymised, representative engagement. Want results like these? "}
             <Link href="/get-in-touch">Brief the Baaz squad</Link> or browse{" "}
             <Link href="/case-studies">more case studies</Link>.
           </p>
