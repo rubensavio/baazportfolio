@@ -2,7 +2,6 @@
 
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import HomeHero from "../Home/HomeHero";
-import HomePhilosophy from "../Home/HomePhilosophy";
 import HomeBrands from "../Home/HomeBrands";
 import HomeWork from "../Home/HomeWork";
 import HomeServices from "../Home/HomeServices";
@@ -22,7 +21,6 @@ export default function HomePageClient() {
       <ClientNavbar />
       <main>
         <HomeHero />
-        <HomePhilosophy />
         <HomeBrands />
         <HomeWork />
         <hr className="home-rule" />

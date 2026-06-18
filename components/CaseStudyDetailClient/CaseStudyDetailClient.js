@@ -95,6 +95,9 @@ export default function CaseStudyDetailClient({ slug }) {
                 <p className="cs-approach-desc">{item.description}</p>
               </article>
             ))}
+            {data.approach.length % 2 !== 0 && (
+              <div className="cs-approach-card cs-approach-card--filler" aria-hidden="true" />
+            )}
           </div>
         </section>
 

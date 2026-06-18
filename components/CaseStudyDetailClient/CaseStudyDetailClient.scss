@@ -189,6 +189,16 @@
     padding: clamp(24px, 3vw, 32px);
   }
 
+  /* Fills the trailing cell on an odd card count so the gap-line grid
+     never exposes the border-colored background as a lighter empty block. */
+  .cs-approach-card--filler {
+    padding: 0;
+
+    @media (max-width: 760px) {
+      display: none;
+    }
+  }
+
   .cs-approach-title {
     font-family: var(--v2-sans);
     font-size: 17px;

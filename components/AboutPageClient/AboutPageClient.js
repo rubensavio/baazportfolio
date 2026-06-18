@@ -5,11 +5,11 @@ import FAQ from "../FAQ/FAQ";
 import Footer from "../Footer/Footer";
 import Reveal from "../Home/Reveal";
 import HomeCTA from "../Home/HomeCTA";
+import HomePhilosophy from "../Home/HomePhilosophy";
 import HomeWhyBaaz from "../Home/HomeWhyBaaz";
 import { ABOUT_FAQ_ITEMS } from "../../lib/aboutFaq";
 import {
   ABOUT_HERO,
-  ABOUT_ORIGIN,
   ABOUT_SHOW_UP,
   ABOUT_TEAM,
 } from "../../lib/aboutPageData";
@@ -39,25 +39,7 @@ export default function AboutPageClient() {
         </div>
       </section>
 
-      <section className="about-origin">
-        <div className="v2-wrap">
-          <div className="about-origin-grid">
-            <Reveal className="about-origin-aside">
-              <div className="v2-label about-origin-aside-title">
-                {ABOUT_ORIGIN.label}
-              </div>
-              <p className="about-origin-quote v2-display">
-                &ldquo;{ABOUT_ORIGIN.quote}&rdquo;
-              </p>
-            </Reveal>
-            <Reveal className="about-origin-body" delay={0.1}>
-              {ABOUT_ORIGIN.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-              ))}
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      <HomePhilosophy />
 
       <HomeWhyBaaz />
 
