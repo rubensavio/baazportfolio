@@ -29,10 +29,10 @@ function buildFounderSchema() {
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+  title: `About Baaz - Software factory for the world`,
   description: `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} since 2018-team, values, AI-enabled delivery, and product engineering for clients worldwide.`,
   openGraph: {
-    title: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+    title: `About Baaz - Software factory for the world`,
     description: `${BRAND_POSITIONING_COMBINED}-team, values, and outcome-led builds for global clients since 2018.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
@@ -41,13 +41,13 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+        alt: `About Baaz - Software factory for the world`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+    title: `About Baaz - Software factory for the world`,
     description: `Baaz-${BRAND_POSITIONING_COMBINED} for teams worldwide-team, craft, discovery to launch. Get in touch.`,
     images: [ogImage],
   },
