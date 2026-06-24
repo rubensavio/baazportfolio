@@ -59,10 +59,10 @@ export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
   applicationName: "Baaz",
-  title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
+  title: `The world's software factory, with a taste. | Baaz`,
   description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018. Book a call to scope your build.`,
   openGraph: {
-    title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
+    title: `The world's software factory, with a taste. | Baaz`,
     description: `${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018.`,
     url: baseUrl,
     siteName: "Baaz",
@@ -77,7 +77,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${BRAND_POSITIONING_COMBINED} | Baaz`,
+    title: `The world's software factory, with a taste. | Baaz`,
     description:
       "Software development company for custom software and product engineering worldwide since 2018. Book a call to scope your next build.",
     images: [ogImage],
