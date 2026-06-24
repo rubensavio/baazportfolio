@@ -21,9 +21,11 @@ export default function AboutPageClient() {
       <ClientNavbar />
 
       <section className="about-hero" aria-label="About Baaz">
-        <Reveal as="h1" className="about-hero-statement v2-display">
-          {ABOUT_HERO.statement}
-        </Reveal>
+        <div className="about-hero-body">
+          <Reveal as="h1" className="about-hero-statement">
+            {ABOUT_HERO.statement}
+          </Reveal>
+        </div>
         <div className="about-hero-meta">
           {ABOUT_HERO.stats.map((stat) => (
             <div key={stat.label} className="about-hero-meta-item">

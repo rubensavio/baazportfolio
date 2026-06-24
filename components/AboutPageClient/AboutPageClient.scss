@@ -5,14 +5,30 @@
     overflow: hidden;
   }
 
-  .about-hero-statement {
-    font-size: clamp(40px, 7vw, 96px);
-    letter-spacing: -0.03em;
-    line-height: 0.95;
-    padding: 58px var(--v2-pad) 90px;
+  .about-hero-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px var(--v2-pad) 80px;
     max-width: var(--v2-max-w);
     margin: 0 auto;
-    padding-bottom: 80px;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      padding-top: 28px;
+      padding-bottom: 56px;
+    }
+  }
+
+  .about-hero-statement {
+    font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(60px, 9vw, 120px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    max-width: 960px;
+    color: var(--v2-text);
   }
 
   .about-hero-meta {
@@ -49,13 +65,6 @@
   @media (max-width: 900px) {
     .about-hero-meta {
       grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 600px) {
-    .about-hero-statement {
-      font-size: clamp(36px, 11vw, 64px);
-      padding-bottom: 56px;
     }
   }
 
