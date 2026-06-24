@@ -1,3 +1,5 @@
+@use "../../styles/theme-dark.scss" as theme;
+
 // Headroom wrapper - ensure it stays on top
 .headroom {
   z-index: 9999 !important;
@@ -6,7 +8,8 @@
 
 .navbar {
   width: 100%;
-  background-color: #ffffff;
+  /* theme import - moved to top */
+background-color: theme.$bg-white;
   //   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 9999;
@@ -52,7 +55,7 @@
 .desktop-menu {
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
   gap: 32px;
   align-items: center;
@@ -126,7 +129,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
+  /* theme import - moved to top */
+background-color: theme.$bg-white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   min-width: 300px;
@@ -219,11 +223,62 @@
   }
 }
 
+/* What we do - single column list of group pages */
 .services-mega-menu {
-  min-width: 600px;
-  max-width: 700px;
+  min-width: 260px;
+  max-width: 320px;
+  display: block;
+  padding: 14px 0;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, -10px);
+}
+
+.dropdown:hover .services-mega-menu {
+  transform: translate(-50%, 0);
+}
+
+.mega-column {
+  padding: 0;
+  &:not(:last-child) {
+    border-right: 1px solid #eeeeee;
+  }
+}
+
+.services-mega-grid {
   display: grid;
-  grid-template-columns: 5.5fr 4.5fr;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.wwd-group {
+  padding: 0;
+}
+
+a.wwd-group-title,
+a.wwd-group-title:visited {
+  display: block;
+  padding: 11px 24px;
+  color: #333333 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    color: #333333 !important;
+    background-color: #f5f5f5 !important;
+  }
+}
+
+
+/* Industries we serve - two-column mega menu */
+.industries-mega-menu {
+  min-width: 520px;
+  max-width: 560px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
   gap: 0;
   padding: 14px 0;
   border-radius: 10px;
@@ -232,43 +287,37 @@
   transform: translate(-50%, -10px);
 }
 
-.mega-column {
-  padding: 2px 10px 10px;
-  &:not(:last-child) {
-    border-right: 1px solid #eeeeee;
-  }
-}
-
-.mega-services,
-.mega-tech {
-  display: flex;
-  flex-direction: column;
-}
-
-.mega-services {
-  a,
-  a:visited {
-    padding: 10px 12px;
-    border-radius: 4px;
-  }
-}
-
-.services-mega-menu .dropdown-menu-label {
-  padding: 8px 0 6px;
-}
-
-.services-mega-menu .dropdown-menu-tech-row {
-  padding: 10px 12px;
-  border-top: none;
-  border-radius: 4px;
-}
-
-.dropdown .services-mega-menu {
-  left: 50%;
-}
-
-.dropdown:hover .services-mega-menu {
+.dropdown:hover .industries-mega-menu {
   transform: translate(-50%, 0);
+}
+
+/* Industries we serve - single column list */
+.industries-single-menu {
+  min-width: 240px;
+  max-width: 300px;
+  padding: 14px 0;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, -10px);
+
+  .mega-column {
+    padding: 0;
+    border-right: none;
+  }
+}
+
+.dropdown:hover .industries-single-menu {
+  transform: translate(-50%, 0);
+}
+
+.industries-mega-menu .dropdown-menu-label {
+  padding: 8px 20px 8px;
+}
+
+.industries-mega-menu .dropdown-menu-all-link {
+  margin-top: 6px;
+  color: #4e7d0e !important;
+  font-weight: 600 !important;
 }
 
 .dropdown-tech-link,
@@ -292,6 +341,7 @@
   background-color: #0066ff;
   color: #ffffff;
   border: none;
+  margin-left: 32px;
   width: 134px;
   height: 43px;
   border-radius: 30px;
@@ -359,7 +409,8 @@
   width: 100%;
   max-height: calc(100vh - 64px);
   overflow-y: auto;
-  background-color: #ffffff;
+  /* theme import - moved to top */
+background-color: theme.$bg-white;
   border-top: 1px solid #e5e5e5;
   padding: 24px;
   animation: slideDown 0.3s ease;

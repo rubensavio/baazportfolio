@@ -1,5 +1,5 @@
 /**
- * Submits all sitemap URLs to IndexNow — runs automatically after `npm run build`.
+ * Submits all sitemap URLs to IndexNow - runs automatically after `npm run build`.
  * No env vars required; the key is already public at /afa7decca275bce3fd4e335a4b8ac13a.txt
  */
 

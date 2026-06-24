@@ -9,11 +9,11 @@ export const metadata = {
   alternates: getAlternates("/work1"),
   title: "AI Quality Automation on Manufacturing ERP | Case Study | Baaz",
   description:
-    "Manufacturing ERP plus an AI vision layer on the line: defect detection, QA workflows, and production rollout—how Baaz extended an existing stack with measurable quality outcomes.",
+    "Manufacturing ERP plus an AI vision layer on the line: defect detection, QA workflows, and production rollout-how Baaz extended an existing stack with measurable quality outcomes.",
   openGraph: {
     title: "AI Quality Automation on Manufacturing ERP | Baaz",
     description:
-      "Computer vision and QA automation integrated with manufacturing ERP—not a rip-and-replace. Approach, stack, and factory-floor outcomes in this Baaz case study.",
+      "Computer vision and QA automation integrated with manufacturing ERP-not a rip-and-replace. Approach, stack, and factory-floor outcomes in this Baaz case study.",
     url: `${baseUrl}/work1`,
     siteName: "Baaz",
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Manufacturing AI defect detection case study — Baaz",
+        alt: "Manufacturing AI defect detection case study - Baaz",
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "AI Quality Automation on Manufacturing ERP | Baaz",
     description:
-      "AI defect detection layered on manufacturing ERP: computer vision, QA, and production rollout—outcomes and approach from Baaz’s enterprise case study.",
+      "AI defect detection layered on manufacturing ERP: computer vision, QA, and production rollout-outcomes and approach from Baaz’s enterprise case study.",
     images: [ogImage],
   },
 };

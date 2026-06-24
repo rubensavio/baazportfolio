@@ -1,10 +1,10 @@
-# GEO Technical SEO Audit — baaz.pro
+# GEO Technical SEO Audit - baaz.pro
 
 **Date:** April 16, 2026 (Re-run #3)
 **Auditor:** geo-technical skill v1.0.0
 **Pages tested:** / (homepage), /about, /services, /blog
 **Prior run score:** 82/100
-**Note:** All fixes from this session are in local code — pending deployment to Vercel. Scores reflect the **current live site**; projected post-deploy score shown separately.
+**Note:** All fixes from this session are in local code - pending deployment to Vercel. Scores reflect the **current live site**; projected post-deploy score shown separately.
 
 ---
 
@@ -14,14 +14,14 @@
 
 | Category              | Live Score | Post-Deploy | Max | Status        | Delta vs Run #2 |
 | --------------------- | ---------- | ----------- | --- | ------------- | --------------- |
-| Crawlability          | 15         | 15          | 15  | **Pass**      | —               |
-| Indexability          | 11         | 11          | 12  | **Pass**      | —               |
+| Crawlability          | 15         | 15          | 15  | **Pass**      | -               |
+| Indexability          | 11         | 11          | 12  | **Pass**      | -               |
 | Security              | 9          | **10**      | 10  | Pass → Pass   | +1 (pending)    |
-| URL Structure         | 8          | 8           | 8   | **Pass**      | —               |
-| Mobile Optimization   | 8          | 8           | 10  | Pass          | —               |
-| Core Web Vitals       | 10         | 10          | 15  | Warn          | —               |
+| URL Structure         | 8          | 8           | 8   | **Pass**      | -               |
+| Mobile Optimization   | 8          | 8           | 10  | Pass          | -               |
+| Core Web Vitals       | 10         | 10          | 15  | Warn          | -               |
 | Server-Side Rendering | 9          | **13**      | 15  | Warn → Pass   | +4 (pending)    |
-| Page Speed & Server   | 13         | 13          | 15  | Pass          | —               |
+| Page Speed & Server   | 13         | 13          | 15  | Pass          | -               |
 | **Total**             | **83**     | **88**      | **100** | **Good** | **+1 / +6**    |
 
 Status: Pass = 80%+, Warn = 50–79%, Fail = <50%
@@ -32,13 +32,13 @@ Status: Pass = 80%+, Warn = 50–79%, Fail = <50%
 
 | Issue | Was | Now | Impact |
 |---|---|---|---|
-| SSR: H1 + body text | In RSC stream (disputed) | **Static HTML ✅** — confirmed in raw body | Crawlability for non-JS AIs |
-| SSR: WhoWeAre/OurExpertise/HowWeWork/HomeFaq | 9× `BAILOUT_TO_CLIENT_SIDE_RENDERING` | **8 of 9 eliminated** — static HTML (pending deploy) | +4 SSR (pending) |
+| SSR: H1 + body text | In RSC stream (disputed) | **Static HTML ✅** - confirmed in raw body | Crawlability for non-JS AIs |
+| SSR: WhoWeAre/OurExpertise/HowWeWork/HomeFaq | 9× `BAILOUT_TO_CLIENT_SIDE_RENDERING` | **8 of 9 eliminated** - static HTML (pending deploy) | +4 SSR (pending) |
 | `ssr:false` sections | Navbar, BrandsCarousel, Testimonials, CTA, Footer | Only ClientNavbar remains `ssr:false` (pending deploy) | Reduced JS waterfall |
 | CSP enforcement | `Report-Only` (not enforced) | **Enforced** `Content-Security-Policy` (pending deploy) | +1 Security (pending) |
 | IndexNow key file | 404 | Key file created, `lib/indexnow.js` utility added (pending deploy) | Bing/ChatGPT indexing speed |
 | `bingbot` / `Applebot-Extended` in robots.txt | Wildcard only | **Explicit entries added** (pending deploy) | Clarity for Bing/Apple |
-| Sitemap hreflang trailing slash | `<loc>` = `https://baaz.pro` but hreflang = `https://baaz.pro/` | **Fixed** — both now `https://baaz.pro` (pending deploy) | Indexability consistency |
+| Sitemap hreflang trailing slash | `<loc>` = `https://baaz.pro` but hreflang = `https://baaz.pro/` | **Fixed** - both now `https://baaz.pro` (pending deploy) | Indexability consistency |
 | `@next/bundle-analyzer` | Not installed | Installed; `ANALYZE=true npm run build` available | JS audit tooling |
 
 **Status of prior run fixes (confirmed deployed):**
@@ -66,13 +66,13 @@ Status: Pass = 80%+, Warn = 50–79%, Fail = <50%
 | Bytespider        | Bytespider        | Allowed (wildcard `*`)     | No change                    |
 | Amazonbot         | Amazonbot         | Allowed (wildcard `*`)     | No change                    |
 
-**AI Crawler Access: 5/5 — Excellent.**
+**AI Crawler Access: 5/5 - Excellent.**
 
 ---
 
 ## Critical Issues
 
-### ~~1. Main body content missing from initial HTML~~ — **RESOLVED (pending deploy)**
+### ~~1. Main body content missing from initial HTML~~ - **RESOLVED (pending deploy)**
 
 **Evidence from live site (current):** Homepage raw HTML body now contains:
 ```html
@@ -88,7 +88,7 @@ Status: Pass = 80%+, Warn = 50–79%, Fail = <50%
 <a href="/get-in-touch" class="hero-cta ...">Get in touch</a>
 ```
 
-H1 ✅, intro paragraph ✅, CTA links ✅ — all confirmed in raw HTML.
+H1 ✅, intro paragraph ✅, CTA links ✅ - all confirmed in raw HTML.
 
 **Still present on live site (resolved after deploy):** 9× `BAILOUT_TO_CLIENT_SIDE_RENDERING` templates for WhoWeAre, BrandsCarousel, OurExpertise, HowWeWork, Testimonials, CTA, HomeFaq, Footer sections. After our code changes deploy, these reduce to 1 (ClientNavbar only, which is intentional `ssr: false`).
 
@@ -98,25 +98,25 @@ H1 ✅, intro paragraph ✅, CTA links ✅ — all confirmed in raw HTML.
 |---|---|---|
 | `HomePageClient` | `"use client"` + 9 dynamic imports | Server Component + static imports |
 | `Hero` | `"use client"` + `useState`/`useEffect` | Server Component + `<RegionLabel />` client child |
-| `WhoWeAre` | `"use client"` + `useScrollAnimation` | Server Component — full text in HTML |
-| `OurExpertise` | `"use client"` + `useScrollAnimation` | Server Component — industry links in HTML |
-| `HowWeWork` | `"use client"` + `useScrollAnimation` | Server Component — process steps in HTML |
-| `HomeFaq` | `"use client"` | Server Component — FAQ content in HTML |
-| `BrandsCarousel` | `ssr: false` dynamic import | Static import — SSR'd normally |
-| `Testimonials` | `ssr: false` dynamic import | Static import — SSR'd normally |
-| `CTA` | `ssr: false` dynamic import | Static import — SSR'd normally |
-| `Footer` | `ssr: false` dynamic import | Static import — SSR'd normally |
-| `ClientNavbar` (new) | n/a | `"use client"` wrapper for Headroom+Navbar — only remaining `ssr: false` |
+| `WhoWeAre` | `"use client"` + `useScrollAnimation` | Server Component - full text in HTML |
+| `OurExpertise` | `"use client"` + `useScrollAnimation` | Server Component - industry links in HTML |
+| `HowWeWork` | `"use client"` + `useScrollAnimation` | Server Component - process steps in HTML |
+| `HomeFaq` | `"use client"` | Server Component - FAQ content in HTML |
+| `BrandsCarousel` | `ssr: false` dynamic import | Static import - SSR'd normally |
+| `Testimonials` | `ssr: false` dynamic import | Static import - SSR'd normally |
+| `CTA` | `ssr: false` dynamic import | Static import - SSR'd normally |
+| `Footer` | `ssr: false` dynamic import | Static import - SSR'd normally |
+| `ClientNavbar` (new) | n/a | `"use client"` wrapper for Headroom+Navbar - only remaining `ssr: false` |
 
 ---
 
 ## Warnings
 
-### 2. CSP enforcement — **FIXED in code, pending deploy**
+### 2. CSP enforcement - **FIXED in code, pending deploy**
 
 **Evidence:** Live site still serves `Content-Security-Policy-Report-Only` header. Code change in `next.config.ts` promotes it to `Content-Security-Policy` (enforced). Will activate on next Vercel deployment.
 
-### 3. Core Web Vitals — field data still unvalidated
+### 3. Core Web Vitals - field data still unvalidated
 
 **TTFB measurements (production, April 16):**
 
@@ -127,7 +127,7 @@ H1 ✅, intro paragraph ✅, CTA links ✅ — all confirmed in raw HTML.
 | `/services` | 0.510s | ✅ Pass |
 | `/blog` | 0.593s | ✅ Pass |
 
-All pages under 800ms. `/about` at 0.753s is higher than previous run (0.187s) — likely a cold CDN cache miss at the Mumbai edge, not a regression.
+All pages under 800ms. `/about` at 0.753s is higher than previous run (0.187s) - likely a cold CDN cache miss at the Mumbai edge, not a regression.
 
 **Run PageSpeed Insights** on `https://baaz.pro` for current field LCP/INP data:
 - LCP target: < 2.5s at 75th percentile
@@ -135,11 +135,11 @@ All pages under 800ms. `/about` at 0.753s is higher than previous run (0.187s) �
 
 Post-deploy, the 9→1 `ssr:false` reduction will improve INP and TBT by eliminating the JS waterfall from dynamically loading 8 sections after hydration.
 
-### 4. IndexNow — **FIXED in code, pending deploy**
+### 4. IndexNow - **FIXED in code, pending deploy**
 
 Key file `public/afa7decca275bce3fd4e335a4b8ac13a.txt` created. Will be available at `https://baaz.pro/afa7decca275bce3fd4e335a4b8ac13a.txt` after deployment.
 
-Usage — call `submitToIndexNow()` from `lib/indexnow.js` whenever content is published:
+Usage - call `submitToIndexNow()` from `lib/indexnow.js` whenever content is published:
 ```js
 import { submitToIndexNow } from "../lib/indexnow";
 await submitToIndexNow(["/blog/my-new-post"]);
@@ -155,12 +155,12 @@ The `ClientNavbar` wrapper keeps `ssr: false` for Headroom + Navbar. Navigation 
 
 ## Recommendations
 
-### 6. Sitemap hreflang trailing-slash — **FIXED in code, pending deploy**
+### 6. Sitemap hreflang trailing-slash - **FIXED in code, pending deploy**
 
 Before: `<loc>https://baaz.pro</loc>` vs `href="https://baaz.pro/"` (inconsistent).
 After: Both `<loc>` and all hreflang `href` will use `https://baaz.pro` (no trailing slash), matching the canonical tag in HTML.
 
-### 7. Per-page OG images — still open
+### 7. Per-page OG images - still open
 
 All pages use `/assets/ogdefault.png`. Blog posts and service sub-pages should have unique OG images for social CTR and richer AI image-to-content signal.
 
@@ -176,7 +176,7 @@ Target: < 200KB compressed JS for initial page load.
 
 ## Detailed Findings
 
-### Category 1: Crawlability (15/15 — Pass ✅)
+### Category 1: Crawlability (15/15 - Pass ✅)
 
 | Check | Score | Max | Notes |
 |---|---|---|---|
@@ -188,7 +188,7 @@ Target: < 200KB compressed JS for initial page load.
 
 ---
 
-### Category 2: Indexability (11/12 — Pass)
+### Category 2: Indexability (11/12 - Pass)
 
 | Check | Score | Max | Notes |
 |---|---|---|---|
@@ -207,7 +207,7 @@ http://baaz.pro     → https://baaz.pro/  308 (1 hop) ✓
 **Sitemap hreflang (current, before deploy):**
 ```xml
 <loc>https://baaz.pro</loc>  <!-- no trailing slash -->
-<xhtml:link hreflang="en-US" href="https://baaz.pro/" />  <!-- trailing slash — mismatch -->
+<xhtml:link hreflang="en-US" href="https://baaz.pro/" />  <!-- trailing slash - mismatch -->
 ```
 Fix pending deployment.
 
@@ -237,7 +237,7 @@ Server: Vercel
 
 ---
 
-### Category 4: URL Structure (8/8 — Pass ✅)
+### Category 4: URL Structure (8/8 - Pass ✅)
 
 | Check | Score | Max | Notes |
 |---|---|---|---|
@@ -248,18 +248,18 @@ Server: Vercel
 
 ---
 
-### Category 5: Mobile Optimization (8/10 — Pass)
+### Category 5: Mobile Optimization (8/10 - Pass)
 
 | Check | Score | Max | Notes |
 |---|---|---|---|
 | Viewport meta tag | 3 | 3 | `width=device-width, initial-scale=1` ✓ |
-| Responsive layout | 2 | 3 | Next.js CSS modules; likely responsive — unconfirmed without render |
+| Responsive layout | 2 | 3 | Next.js CSS modules; likely responsive - unconfirmed without render |
 | Tap targets | 1 | 2 | Cannot verify without browser rendering |
 | Font sizes | 2 | 2 | Urbanist + Outfit; no zoom issues ✓ |
 
 ---
 
-### Category 6: Core Web Vitals (10/15 — Warn)
+### Category 6: Core Web Vitals (10/15 - Warn)
 
 | Check | Score | Max | Notes |
 |---|---|---|---|
@@ -270,18 +270,18 @@ Server: Vercel
 **TTFB (production edge, April 16):**
 ```
 /:        0.177s ✅
-/about:   0.753s ✅ (CDN cache miss — not a regression)
+/about:   0.753s ✅ (CDN cache miss - not a regression)
 /services: 0.510s ✅
 /blog:    0.593s ✅
 ```
 
 **Remaining risks:**
-- ClientNavbar is still `ssr: false` — adds one dynamic import waterfall
+- ClientNavbar is still `ssr: false` - adds one dynamic import waterfall
 - Run `ANALYZE=true npm run build` to audit bundle sizes before next performance sprint
 
 ---
 
-### Category 7: Server-Side Rendering (9/15 live → 13/15 post-deploy — Warn → Pass)
+### Category 7: Server-Side Rendering (9/15 live → 13/15 post-deploy - Warn → Pass)
 
 | Check | Score (Live) | Score (Post-Deploy) | Max | Notes |
 |---|---|---|---|---|
@@ -316,14 +316,14 @@ Server: Vercel
 
 ---
 
-### Category 8: Page Speed & Server (13/15 — Pass)
+### Category 8: Page Speed & Server (13/15 - Pass)
 
 | Check | Score | Max | Notes |
 |---|---|---|---|
 | TTFB < 800ms | 3 | 3 | All pages 0.18–0.75s ✅ |
 | Page weight < 2MB | 1 | 2 | HTML 27–32KB brotli; full JS bundle unconfirmed |
 | Images optimized | 3 | 3 | WebP hero, `fetchPriority="high"`, explicit dimensions ✓ |
-| JS bundles < 200KB | 1 | 2 | 8+ async chunks — run `ANALYZE=true npm run build` |
+| JS bundles < 200KB | 1 | 2 | 8+ async chunks - run `ANALYZE=true npm run build` |
 | Compression | 2 | 2 | Brotli confirmed ✓ |
 | Cache headers | 2 | 2 | `max-age=31536000, immutable` on JS/CSS ✓ |
 | CDN in use | 1 | 1 | Vercel CDN (bom1 Mumbai edge) ✓ |
@@ -334,7 +334,7 @@ Server: Vercel
 
 **Pending deploy.** Key `afa7decca275bce3fd4e335a4b8ac13a` created. Utility at `lib/indexnow.js`.
 
-After deploying, verify: `curl https://baaz.pro/afa7decca275bce3fd4e335a4b8ac13a.txt` — should return the key string, not a 404.
+After deploying, verify: `curl https://baaz.pro/afa7decca275bce3fd4e335a4b8ac13a.txt` - should return the key string, not a 404.
 
 ---
 
@@ -342,16 +342,16 @@ After deploying, verify: `curl https://baaz.pro/afa7decca275bce3fd4e335a4b8ac13a
 
 | Priority | Issue | Impact | Effort | Status |
 |---|---|---|---|---|
-| ✅ Done | Fix sitemap 500 | High | — | Resolved (Run #2) |
-| ✅ Done | Fix /about crash | High | — | Resolved (Run #2) |
-| ✅ Done | Fix www redirect chain | Low | — | Resolved (Run #2) |
-| ✅ Done | SSR: Hero H1 + body in HTML | High | — | Confirmed live ✓ |
-| 🟠 Deploy | SSR: WhoWeAre/OurExpertise/HowWeWork/HomeFaq | High — AI citability | **DONE in code** | Deploy to unlock |
+| ✅ Done | Fix sitemap 500 | High | - | Resolved (Run #2) |
+| ✅ Done | Fix /about crash | High | - | Resolved (Run #2) |
+| ✅ Done | Fix www redirect chain | Low | - | Resolved (Run #2) |
+| ✅ Done | SSR: Hero H1 + body in HTML | High | - | Confirmed live ✓ |
+| 🟠 Deploy | SSR: WhoWeAre/OurExpertise/HowWeWork/HomeFaq | High - AI citability | **DONE in code** | Deploy to unlock |
 | 🟠 Deploy | Enforce CSP | Medium | **DONE in code** | Deploy to unlock |
 | 🟠 Deploy | IndexNow key file | Medium | **DONE in code** | Deploy to unlock |
 | 🟠 Deploy | bingbot/Applebot-Extended in robots.txt | Low | **DONE in code** | Deploy to unlock |
 | 🟠 Deploy | Sitemap hreflang trailing-slash fix | Low | **DONE in code** | Deploy to unlock |
 | 🟡 P1 | Run PageSpeed Insights on baaz.pro (production) | Medium | Low effort | Open |
-| 🟡 P1 | Run `ANALYZE=true npm run build` — audit JS bundles | Medium | Low effort | Open |
+| 🟡 P1 | Run `ANALYZE=true npm run build` - audit JS bundles | Medium | Low effort | Open |
 | 🟢 P2 | Server-rendered nav fallback for AI crawlers | Low | Medium | Open |
-| 🟢 P3 | Per-page OG images (blog + services) | Low — social CTR | Medium | Open |
+| 🟢 P3 | Per-page OG images (blog + services) | Low - social CTR | Medium | Open |

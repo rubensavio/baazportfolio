@@ -1,10 +1,10 @@
-# Page optimization framework — SEO, GEO & meta (Baaz)
+# Page optimization framework - SEO, GEO & meta (Baaz)
 
 Use this as the **single checklist** when you add or substantially refresh **blog posts**, **service pages**, **industry pages**, or other **marketing URLs**. It covers:
 
-- **SEO** — titles, descriptions, hierarchy, internal links, technical metadata  
-- **GEO** — content that search and AI systems can extract, quote, and match to questions  
-- **Meta & social** — length targets, where fields live in the repo, `npm run meta-audit`  
+- **SEO** - titles, descriptions, hierarchy, internal links, technical metadata  
+- **GEO** - content that search and AI systems can extract, quote, and match to questions  
+- **Meta & social** - length targets, where fields live in the repo, `npm run meta-audit`  
 
 Targets align with the **meta-tags-optimizer** and **on-page SEO auditor** rubrics where applicable.
 
@@ -14,12 +14,12 @@ For **site-wide technical SEO, SERP analysis, and on-page audit automation** (ag
 
 ## 1. Goals (what “good” looks like)
 
-1. **Direct answer early** — In the first screen of body copy, a standalone sentence or short paragraph answers the main question without requiring the prior paragraph.  
-2. **Quotable facts** — Prefer specific claims with **sources** (reports, regulators, vendors) or explicit **first-party labels** (“per Baaz’s internal project classification”) when citing your own metrics.  
-3. **Structure** — Short sections (roughly 3–5 sentences per idea), **lists** where steps matter, **tables** for comparisons (A vs B, pattern vs pattern). For **blog** posts, also meet the **minimum depth** targets in **§6** (intro length, H2 count, paragraphs per section, body word-count band)—FAQs alone are not sufficient “vast” content.  
-4. **Q&A** — An FAQ block that mirrors real follow-up questions; **visible answers must match JSON-LD** where FAQ schema is used.  
-5. **Schema** — `Article` (blog), `Service` + `FAQPage` (services), `BreadcrumbList` + `FAQPage` (industries), etc., emitted from **server layouts** when possible so crawlers always see them.  
-6. **Meta honesty** — Title and description match what the page delivers (no bait-and-switch); length in sensible bands for SERP and social previews.
+1. **Direct answer early** - In the first screen of body copy, a standalone sentence or short paragraph answers the main question without requiring the prior paragraph.  
+2. **Quotable facts** - Prefer specific claims with **sources** (reports, regulators, vendors) or explicit **first-party labels** (“per Baaz’s internal project classification”) when citing your own metrics.  
+3. **Structure** - Short sections (roughly 3–5 sentences per idea), **lists** where steps matter, **tables** for comparisons (A vs B, pattern vs pattern). For **blog** posts, also meet the **minimum depth** targets in **§6** (intro length, H2 count, paragraphs per section, body word-count band)-FAQs alone are not sufficient “vast” content.  
+4. **Q&A** - An FAQ block that mirrors real follow-up questions; **visible answers must match JSON-LD** where FAQ schema is used.  
+5. **Schema** - `Article` (blog), `Service` + `FAQPage` (services), `BreadcrumbList` + `FAQPage` (industries), etc., emitted from **server layouts** when possible so crawlers always see them.  
+6. **Meta honesty** - Title and description match what the page delivers (no bait-and-switch); length in sensible bands for SERP and social previews.
 
 ---
 
@@ -37,7 +37,7 @@ For **site-wide technical SEO, SERP analysis, and on-page audit automation** (ag
 
 **Global technical rules**
 
-- Canonical + `hreflang` come from `getAlternates(path)` in `lib/regions.js` — no manual canonical tags in JSX.  
+- Canonical + `hreflang` come from `getAlternates(path)` in `lib/regions.js` - no manual canonical tags in JSX.  
 - Site origin for metadata/sitemap uses `NEXT_PUBLIC_SITE_URL` / `lib/siteUrl.js`.  
 - After adding a new slug, confirm `app/sitemap.js` still includes it.
 
@@ -49,14 +49,14 @@ For **site-wide technical SEO, SERP analysis, and on-page audit automation** (ag
 |--------|------------------|
 | **Site default** (OG image, `metadataBase`) | `app/layout.js` |
 | **Blog index** | `app/blog/layout.js` |
-| **Each blog post** | `lib/blogData.js` / `lib/blogPosts/*.js` — `metaTitle`, `metaDescription` |
+| **Each blog post** | `lib/blogData.js` / `lib/blogPosts/*.js` - `metaTitle`, `metaDescription` |
 | **Blog post route** | `app/blog/[slug]/layout.js` → `generateMetadata` reads post data; merges OG/Twitter |
-| **Each service** | `lib/servicesData.js` — `metaTitle`, `metaDescription` |
+| **Each service** | `lib/servicesData.js` - `metaTitle`, `metaDescription` |
 | **Service route** | `app/services/[serviceType]/layout.js` |
-| **Each industry** | `lib/industryData.js` — `metaTitle`, `metaDescription` |
+| **Each industry** | `lib/industryData.js` - `metaTitle`, `metaDescription` |
 | **Industry route** | `app/industry/[industrySlug]/layout.js` |
 | **Other marketing pages** | `app/<route>/layout.js` |
-| **Legal** (`/privacy`, `/terms`) | `app/<route>/layout.js` for metadata + `BreadcrumbScript`; `page.js` uses `app/legal/legal-page.scss` — **legal-document sheet** (Urbanist), `max-width` **42rem** below **64rem** viewport, **`calc(54.6rem * 1.4)`** (~76.44rem) from **64rem** up, then **`CTA`** + **`Footer`**. |
+| **Legal** (`/privacy`, `/terms`) | `app/<route>/layout.js` for metadata + `BreadcrumbScript`; `page.js` uses `app/legal/legal-page.scss` - **legal-document sheet** (Urbanist), `max-width` **42rem** below **64rem** viewport, **`calc(54.6rem * 1.4)`** (~76.44rem) from **64rem** up, then **`CTA`** + **`Footer`**. |
 
 Keep **one set of strings** in the data object (or layout export); `generateMetadata` maps them into `openGraph` and `twitter`.
 
@@ -110,20 +110,20 @@ Rows prefixed with `!` flag a title over **62** characters or a description outs
 
 ## 4. Global checklist (every important URL)
 
-- [ ] **Slug** — Lowercase, hyphenated, stable.  
-- [ ] **`metaTitle`** — ~50–60 characters; primary keyword near the start; `| Baaz` where it fits.  
-- [ ] **`metaDescription`** — ~150–160 characters; unique; value + intent; entity (Baaz), **location** if relevant (Bangalore / global).  
-- [ ] **One H1** — Close to the user’s query phrasing; matches expectation (can differ slightly from a shortened title).  
-- [ ] **`directAnswer`** — See §5; 25–45 words (max ~60), standalone, first screen under H1 for blog/service/industry templates that use it.  
-- [ ] **Definition** (if technical) — Formal 1–3 sentence definition on pillar/service/industry pages where applicable.  
-- [ ] **H2s / H3s** — Descriptive; no skipped levels (H1 → H2 → H3).  
-- [ ] **FAQ** — ≥4 questions for strong pillar content when you use FAQ; answers **40–120 words** unless a list is clearer; **same strings** as JSON-LD.  
-- [ ] **Blog article body** — For `/blog/[slug]`, meet **§6 long-form targets** (sections + intro word band); do not ship pillar posts where the FAQ block is the only long copy.  
-- [ ] **Internal links** — Services, industries, `/project-rescue`, `/get-in-touch`, related posts where natural.  
-- [ ] **Limitations** — For architecture/opinion posts, a short “what this is not / assumptions” section builds trust (GEO).  
-- [ ] **Images** — Meaningful `alt` for content images; decorative backgrounds may use `alt=""`; hero/LCP: dimensions + `fetchPriority` where appropriate (see service pattern).  
-- [ ] **`lib/sitemapLastmod.js`** — Update if you maintain realistic `lastModified` for that section.  
-- [ ] **Validate** — After deploy: [Google Rich Results Test](https://search.google.com/test/rich-results); spot-check View Source for `application/ld+json`.
+- [ ] **Slug** - Lowercase, hyphenated, stable.  
+- [ ] **`metaTitle`** - ~50–60 characters; primary keyword near the start; `| Baaz` where it fits.  
+- [ ] **`metaDescription`** - ~150–160 characters; unique; value + intent; entity (Baaz), **location** if relevant (Bangalore / global).  
+- [ ] **One H1** - Close to the user’s query phrasing; matches expectation (can differ slightly from a shortened title).  
+- [ ] **`directAnswer`** - See §5; 25–45 words (max ~60), standalone, first screen under H1 for blog/service/industry templates that use it.  
+- [ ] **Definition** (if technical) - Formal 1–3 sentence definition on pillar/service/industry pages where applicable.  
+- [ ] **H2s / H3s** - Descriptive; no skipped levels (H1 → H2 → H3).  
+- [ ] **FAQ** - ≥4 questions for strong pillar content when you use FAQ; answers **40–120 words** unless a list is clearer; **same strings** as JSON-LD.  
+- [ ] **Blog article body** - For `/blog/[slug]`, meet **§6 long-form targets** (sections + intro word band); do not ship pillar posts where the FAQ block is the only long copy.  
+- [ ] **Internal links** - Services, industries, `/project-rescue`, `/get-in-touch`, related posts where natural.  
+- [ ] **Limitations** - For architecture/opinion posts, a short “what this is not / assumptions” section builds trust (GEO).  
+- [ ] **Images** - Meaningful `alt` for content images; decorative backgrounds may use `alt=""`; hero/LCP: dimensions + `fetchPriority` where appropriate (see service pattern).  
+- [ ] **`lib/sitemapLastmod.js`** - Update if you maintain realistic `lastModified` for that section.  
+- [ ] **Validate** - After deploy: [Google Rich Results Test](https://search.google.com/test/rich-results); spot-check View Source for `application/ld+json`.
 
 ---
 
@@ -156,12 +156,12 @@ Rows prefixed with `!` flag a title over **62** characters or a description outs
 - **`directAnswer`** (required for new posts)  
 - `intro`  
 - `sections[]`: `heading`, `body[]`, optional `table` (`caption`, `headers`, `rows`)  
-- `faqs[]` — optional; **recommended** for pillars; must match FAQ JSON-LD  
-- `relatedLinks[]` — optional  
+- `faqs[]` - optional; **recommended** for pillars; must match FAQ JSON-LD  
+- `relatedLinks[]` - optional  
 
 ### Long-form body targets (“vast” pillar content)
 
-Use these **minimums for new or fully refreshed posts** so article body depth matches strong SEO/GEO competitors—not just FAQ depth.
+Use these **minimums for new or fully refreshed posts** so article body depth matches strong SEO/GEO competitors-not just FAQ depth.
 
 | Layer | Target | Notes |
 |--------|--------|--------|
@@ -171,38 +171,38 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 | **Total article body** (intro + all `sections[].body`, **excluding** FAQ) | **≥ 2,000 words** for pillars/comparisons/architecture (**stretch 2,400+** for flagship URLs); **≥ 1,400** for narrower guides (**stretch 1,800+**) | Count in an editor before shipping; thin bodies hurt crawl quality and AI extraction. Iteratively raise older posts toward the stretch band. |
 | **Structural variety** | At least **one** of: `table` (comparison), step-like sequences in prose, or **3+** sections that answer distinct sub-questions | Tables: `caption` + clear headers; cite that numbers are ballparks when applicable. |
 | **Evidence** | **≥ 2** explicit references (named report/vendor/book/regulator) **or** **≥ 2** first-party labels (“per Baaz’s project mix…”) where stats appear | Avoid unsourced percentages in body/FAQ; framework §1. |
-| **Limitations / scope** | **Dedicated H2** on technical or buyer guides (“What this is not”, “Assumptions”, “When to get specialist help”) | Short trust win for GEO; already standard on architecture posts—apply to buyer guides too. |
+| **Limitations / scope** | **Dedicated H2** on technical or buyer guides (“What this is not”, “Assumptions”, “When to get specialist help”) | Short trust win for GEO; already standard on architecture posts-apply to buyer guides too. |
 | **Internal links** | **≥ 2** `relatedLinks` or inline `Link` targets where the template supports it | Cross-link services, `/project-rescue`, `/get-in-touch`, related `/blog/[slug]`. |
 
 **Authoring order (repeatable)**
 
-1. **`directAnswer`** — extraction-first, ≤ ~50 words.  
-2. **`intro`** — expand to word target; set reader and boundaries.  
-3. **Outline H2s** — aim for section count target before writing.  
-4. **Draft each section** — minimum paragraph count per H2; add examples, anti-patterns, and transitions.  
+1. **`directAnswer`** - extraction-first, ≤ ~50 words.  
+2. **`intro`** - expand to word target; set reader and boundaries.  
+3. **Outline H2s** - aim for section count target before writing.  
+4. **Draft each section** - minimum paragraph count per H2; add examples, anti-patterns, and transitions.  
 5. **Add table or comparison block** where it reduces ambiguity (options, phases, risks).  
 6. **Limitations H2** + **relatedLinks**.  
-7. **`faqs`** — ≥ **5** items for pillars; align wording with JSON-LD.  
+7. **`faqs`** - ≥ **5** items for pillars; align wording with JSON-LD.  
 8. **Meta** (`metaTitle`, `metaDescription`) + **`npm run meta-audit`**.  
-9. **Word-count pass** — body only; if under target, **deepen** existing H2s before adding thin H2s.
+9. **Word-count pass** - body only; if under target, **deepen** existing H2s before adding thin H2s.
 
 **Anti-patterns**
 
-- **FAQ as the only long copy** — FAQs support the article; they do not replace sections.  
-- **Many H2s with 1–2 short paragraphs** — merge or deepen until averages meet the table.  
-- **Duplicate stacks** — `directAnswer`, `intro`, and first H2 should not repeat the same sentence thrice; vary depth and angle.
+- **FAQ as the only long copy** - FAQs support the article; they do not replace sections.  
+- **Many H2s with 1–2 short paragraphs** - merge or deepen until averages meet the table.  
+- **Duplicate stacks** - `directAnswer`, `intro`, and first H2 should not repeat the same sentence thrice; vary depth and angle.
 
 **Editorial trust (blogs & long guides)**
 
-1. **No mid-article sales CTAs** — Do not drop “contact us”, “book a call”, “free audit”, or “our [service] is built for this” paragraphs inside unrelated H2 bodies. The `/blog/[slug]` template already ends with the `blog-explore` block (services + `/project-rescue` + `/get-in-touch`) and the site CTA. Keep the article body educational; **one** optional Baaz-positioning section is acceptable **only** at the **end** of `sections[]` (immediately before FAQs), or omit and rely on the template footer.  
-2. **Third-party statistics** — Any figure from an external report must include **source + publication year** in the same paragraph or FAQ answer, or soften to directional language (“surveys often find…”, “analyst estimates vary by year…”) so informed buyers are not handed stale numbers without context. Refresh or remove undated **2023-or-older** market stats when you cannot cite a current edition.  
-3. **First-party ranges (e.g. codebase preservation 60–80%)** — Treat as **audit-dependent**, not a universal guarantee. Required pattern: tie the band to **methodology** (e.g. “per Baaz’s internal classification across N takeovers, post-audit”), state that **share varies by codebase**, and note that **salvage vs. replace** is documented in the audit. For buyer diligence, it must be defensible: offer **anonymized patterns and reference conversations under NDA**—do not imply public case studies exist where they do not. Prefer **one** detailed formulation in the canonical rescue content; elsewhere use a **shorter cross-reference** rather than repeating the identical claim in many posts.
+1. **No mid-article sales CTAs** - Do not drop “contact us”, “book a call”, “free audit”, or “our [service] is built for this” paragraphs inside unrelated H2 bodies. The `/blog/[slug]` template already ends with the `blog-explore` block (services + `/project-rescue` + `/get-in-touch`) and the site CTA. Keep the article body educational; **one** optional Baaz-positioning section is acceptable **only** at the **end** of `sections[]` (immediately before FAQs), or omit and rely on the template footer.  
+2. **Third-party statistics** - Any figure from an external report must include **source + publication year** in the same paragraph or FAQ answer, or soften to directional language (“surveys often find…”, “analyst estimates vary by year…”) so informed buyers are not handed stale numbers without context. Refresh or remove undated **2023-or-older** market stats when you cannot cite a current edition.  
+3. **First-party ranges (e.g. codebase preservation 60–80%)** - Treat as **audit-dependent**, not a universal guarantee. Required pattern: tie the band to **methodology** (e.g. “per Baaz’s internal classification across N takeovers, post-audit”), state that **share varies by codebase**, and note that **salvage vs. replace** is documented in the audit. For buyer diligence, it must be defensible: offer **anonymized patterns and reference conversations under NDA**-do not imply public case studies exist where they do not. Prefer **one** detailed formulation in the canonical rescue content; elsewhere use a **shorter cross-reference** rather than repeating the identical claim in many posts.
 
 ### Technical notes
 
 - **Article** + **FAQPage** JSON-LD: `app/blog/[slug]/layout.js` (do not duplicate FAQ script in the client page).  
 - **Breadcrumbs**: Home → Blog → post title (layout).  
-- Invalid slug: metadata still resolves alternates for `/blog/[slug]` — avoid linking to non-existent slugs.
+- Invalid slug: metadata still resolves alternates for `/blog/[slug]` - avoid linking to non-existent slugs.
 
 ### New post workflow
 
@@ -210,7 +210,7 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 2. Register slug for sitemap if your setup requires it (`app/sitemap.js`, exports in `blogData.js`).  
 3. Fill **`directAnswer`**, then **`intro`** (see long-form targets), then **sections** to depth targets; add **FAQ** with the same strings as schema.  
 4. **Meta:** `metaTitle` / `metaDescription` per §3; align with H1 and intro.  
-5. Preview `/blog/your-slug` — order: label → H1 → direct answer → intro → sections → FAQ.  
+5. Preview `/blog/your-slug` - order: label → H1 → direct answer → intro → sections → FAQ.  
 6. Run a **body word-count check** against §6 long-form table before merge.
 
 ### Blog-specific checklist
@@ -237,7 +237,7 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 ### Technical notes
 
 - **Service** + **BreadcrumbList** + **FAQPage** (when `faqs`): `app/services/[serviceType]/layout.js`.  
-- Invalid slug: page may **fall back** to default service content — avoid typos in internal links; new services need a **new key** in `servicesData`.  
+- Invalid slug: page may **fall back** to default service content - avoid typos in internal links; new services need a **new key** in `servicesData`.  
 - Breadcrumb middle item for “Services” follows current code in layout; if you add a `/services` hub, update the schema `item` for position 2.
 
 ### Workflow
@@ -249,7 +249,7 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 
 ### Service-specific checklist
 
-- [ ] **`metaTitle`** set explicitly — do not rely only on short `label` if length suffers.  
+- [ ] **`metaTitle`** set explicitly - do not rely only on short `label` if length suffers.  
 - [ ] **`definition`** is clear and quotable (AI summaries).  
 - [ ] Each card: unique H3 + body.  
 - [ ] `industryLinks` lists industries you want cross-linked.  
@@ -300,7 +300,7 @@ Use these **minimums for new or fully refreshed posts** so article body depth ma
 
 1. Add `app/…/layout.js` with `generateMetadata` or `metadata` and `alternates: getAlternates('/your-path')`.  
 2. Append URL to `app/sitemap.js` (and `withAlternates` if locales matter).  
-3. Add JSON-LD appropriate to the content (`WebPage`, `FAQPage`, `Article`, etc.) — follow existing layouts.  
+3. Add JSON-LD appropriate to the content (`WebPage`, `FAQPage`, `Article`, etc.) - follow existing layouts.  
 4. Extend performance audit scripts if you track CWV per template (e.g. `scripts/page-speed-audit.mjs`).  
 5. Add a short note under this section when the pattern stabilizes.
 
@@ -336,40 +336,40 @@ Target: **4+** on each before shipping major pages.
 
 ---
 
-## 14. Reference audit — template health (March 2026)
+## 14. Reference audit - template health (March 2026)
 
 Snapshot from a **codebase review** of blog, service, and industry templates (not a live crawl). Use it as a **backlog**; re-run `meta-audit` after content changes.
 
-### Blog posts — length table (ideal: title **50–60**, meta **150–160**)
+### Blog posts - length table (ideal: title **50–60**, meta **150–160**)
 
 | Slug | Title chars | Meta desc chars | Notes |
 |------|-------------|-----------------|--------|
-| `thoughtworks-alternatives` | 57 ✓ | 178 — long | Trim meta |
-| `best-software-development-agencies-for-startups` | 54 ✓ | 187 — long | Trim meta |
-| `how-to-choose-software-development-partner` | 59 ✓ | 200 — long | Pillar; tighten meta |
-| `how-to-build-ai-powered-product` | 41 — short | 192 — long | Lengthen title; trim meta |
-| `software-development-outsourcing-vs-in-house` | 51 ✓ | 181 — long | Trim meta |
-| `product-engineering-process-for-enterprises` | 50 ✓ | 187 — long | Trim meta |
-| `signs-your-software-project-is-failing` | 45 — short | 177 — long | Lengthen title; trim meta |
-| `how-to-switch-software-development-vendors` | 57 ✓ | 191 — long | Trim meta |
-| `software-project-rescue-checklist` | 40 — short | 185 — long | Lengthen title; trim meta |
-| `reference-architecture-b2b-saas` | 51 ✓ | 194 — long | Trim meta |
-| `slos-error-budgets-reliability` | 57 ✓ | 188 — long | Trim meta |
-| `reliable-data-integration-events-cdc-outbox` | 54 ✓ | 190 — long | Trim meta |
+| `thoughtworks-alternatives` | 57 ✓ | 178 - long | Trim meta |
+| `best-software-development-agencies-for-startups` | 54 ✓ | 187 - long | Trim meta |
+| `how-to-choose-software-development-partner` | 59 ✓ | 200 - long | Pillar; tighten meta |
+| `how-to-build-ai-powered-product` | 41 - short | 192 - long | Lengthen title; trim meta |
+| `software-development-outsourcing-vs-in-house` | 51 ✓ | 181 - long | Trim meta |
+| `product-engineering-process-for-enterprises` | 50 ✓ | 187 - long | Trim meta |
+| `signs-your-software-project-is-failing` | 45 - short | 177 - long | Lengthen title; trim meta |
+| `how-to-switch-software-development-vendors` | 57 ✓ | 191 - long | Trim meta |
+| `software-project-rescue-checklist` | 40 - short | 185 - long | Lengthen title; trim meta |
+| `reference-architecture-b2b-saas` | 51 ✓ | 194 - long | Trim meta |
+| `slos-error-budgets-reliability` | 57 ✓ | 188 - long | Trim meta |
+| `reliable-data-integration-events-cdc-outbox` | 54 ✓ | 190 - long | Trim meta |
 
 **Blog template gaps:** `openGraph.images` / Twitter images not set per post in blog layout; Article schema may omit dates/image until extended; keep `metaTitle` and H1 **aligned on intent**.
 
-**Approximate template score:** **72–78 / 100** — depth and FAQ/schema strong; losses mostly **title/meta tuning**, **OG images**, **Article completeness**.
+**Approximate template score:** **72–78 / 100** - depth and FAQ/schema strong; losses mostly **title/meta tuning**, **OG images**, **Article completeness**.
 
 ### Service pages
 
 | Key | Title chars | Meta desc chars | Notes |
 |-----|-------------|-----------------|--------|
-| `product-strategy` | 34 — short | 198 — long | Expand title; cut meta |
-| `ui-ux-design` | 26 — short | 189 — long | Same |
-| `web-development` | 41 — short | 158 ✓ | Title still short |
-| `mobile-app` | 60 ✓ | 136 — short | Lengthen meta |
-| `ai-solution` | 49 — short | 140 — short | Lengthen both |
+| `product-strategy` | 34 - short | 198 - long | Expand title; cut meta |
+| `ui-ux-design` | 26 - short | 189 - long | Same |
+| `web-development` | 41 - short | 158 ✓ | Title still short |
+| `mobile-app` | 60 ✓ | 136 - short | Lengthen meta |
+| `ai-solution` | 49 - short | 140 - short | Lengthen both |
 
 **Approximate template score:** **68–74 / 100**.
 
@@ -377,10 +377,10 @@ Snapshot from a **codebase review** of blog, service, and industry templates (no
 
 | Key | Title chars | Meta desc chars | Notes |
 |-----|-------------|-----------------|--------|
-| `fintech` | 35 — short | 172 — long | Lengthen title; trim meta |
-| `construction` | 45 — short | 161 ✓ | Title short |
-| `retail` | 36 — short | 183 — long | Lengthen title; trim meta |
-| `healthcare` | 38 — short | 168 — long | Lengthen title; trim meta |
+| `fintech` | 35 - short | 172 - long | Lengthen title; trim meta |
+| `construction` | 45 - short | 161 ✓ | Title short |
+| `retail` | 36 - short | 183 - long | Lengthen title; trim meta |
+| `healthcare` | 38 - short | 168 - long | Lengthen title; trim meta |
 
 **Approximate template score:** **70–75 / 100**.
 
@@ -398,17 +398,17 @@ Snapshot from a **codebase review** of blog, service, and industry templates (no
 
 ## 15. Pre-publish procedure (on-page + meta)
 
-1. **Keywords** — One primary + 2–3 secondary; note **intent** (informational / commercial).  
-2. **`metaTitle`** — Per §3.  
-3. **`metaDescription`** — Per §3; optional explicit CTA.  
-4. **H1** — One; matches user expectation.  
-5. **Body** — Primary term in **first ~100 words** where natural; internal links per §4.  
-6. **`directAnswer`**, **definition**, **FAQ** — Per §§5–9.  
-7. **Images** — Alt text and LCP hints per §4.  
-8. **Technical** — Slug in sitemap; `getAlternates` path correct.  
-9. **Live** — Render check + Rich Results Test.
+1. **Keywords** - One primary + 2–3 secondary; note **intent** (informational / commercial).  
+2. **`metaTitle`** - Per §3.  
+3. **`metaDescription`** - Per §3; optional explicit CTA.  
+4. **H1** - One; matches user expectation.  
+5. **Body** - Primary term in **first ~100 words** where natural; internal links per §4.  
+6. **`directAnswer`**, **definition**, **FAQ** - Per §§5–9.  
+7. **Images** - Alt text and LCP hints per §4.  
+8. **Technical** - Slug in sitemap; `getAlternates` path correct.  
+9. **Live** - Render check + Rich Results Test.
 
-**Character counting** — Editor/IDE or `meta-audit`; SERP display is **pixel-approximate**.
+**Character counting** - Editor/IDE or `meta-audit`; SERP display is **pixel-approximate**.
 
 ---
 

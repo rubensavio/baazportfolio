@@ -34,7 +34,7 @@ const UnexpectedWins = () => {
         >
           <div className="win-category">
             <h3 className="win-subtitle">
-              Supply Chain Intelligence: Viz Pro didn't just find defects—it
+              Supply Chain Intelligence: Viz Pro didn't just find defects-it
               revealed patterns:
             </h3>
             <ul className="win-list">

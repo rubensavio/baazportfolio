@@ -7,13 +7,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/book-call"),
-  title: "Book a Call — Product Engineering with Baaz",
+  title: "Book a Call - Product Engineering with Baaz",
   description:
-    "Book a call on vision, risk, timelines, and scope—fast replies from Baaz since 2018. Product engineering for teams worldwide. Book today.",
+    "Book a call on vision, risk, timelines, and scope-fast replies from Baaz since 2018. Product engineering for teams worldwide. Book today.",
   openGraph: {
-    title: "Book a Call — Product Engineering with Baaz",
+    title: "Book a Call - Product Engineering with Baaz",
     description:
-      "Schedule a strategy or scoping call: product vision, stack, rescue, or greenfield. Baaz replies quickly—book your slot and get clarity on next steps.",
+      "Schedule a strategy or scoping call: product vision, stack, rescue, or greenfield. Baaz replies quickly-book your slot and get clarity on next steps.",
     url: `${baseUrl}/book-call`,
     siteName: "Baaz",
     images: [
@@ -27,9 +27,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book a Call — Product Engineering with Baaz",
+    title: "Book a Call - Product Engineering with Baaz",
     description:
-      "Book a call for product vision, technical risk, rescue, or greenfield scope—fast response from Baaz. Secure your slot today.",
+      "Book a call for product vision, technical risk, rescue, or greenfield scope-fast response from Baaz. Secure your slot today.",
     images: [ogImage],
   },
 };

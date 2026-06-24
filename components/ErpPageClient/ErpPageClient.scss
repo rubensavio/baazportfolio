@@ -1,0 +1,414 @@
+/* ERP industry pages - v2 editorial dark overrides */
+
+.baaz-v2.erp-v2 {
+  .erp-back-wrap {
+    padding-top: 27px;
+    padding-bottom: 8px;
+  }
+
+  .erp-back {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    .erp-back-icon {
+      display: inline-flex;
+      align-items: center;
+      transition: transform 0.2s;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &:hover .erp-back-icon {
+      transform: translateX(-4px);
+    }
+  }
+
+  .erp-main {
+    padding-bottom: 0;
+  }
+
+  .erp-page {
+    width: 100% !important;
+    min-height: 0 !important;
+    background: transparent !important;
+  }
+
+  .erp-section-container {
+    width: 100% !important;
+    max-width: min(var(--v2-max-w), 100%) !important;
+    margin: 0 auto !important;
+    padding: 0 var(--v2-pad) !important;
+    box-sizing: border-box;
+  }
+
+  .erp-section-title,
+  .erp-editorial-intro-title {
+    font-family: var(--v2-serif) !important;
+    font-style: italic !important;
+    font-weight: 500 !important;
+    font-size: clamp(28px, 3.5vw, 40px) !important;
+    letter-spacing: -0.02em !important;
+    color: var(--v2-text) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .erp-section-lead,
+  .erp-editorial-intro-lead,
+  .erp-editorial-p,
+  .erp-ai-ehr-strategic-lead,
+  .erp-ai-ehr-arch-intro,
+  .erp-ai-ehr-flywheel {
+    font-family: var(--v2-sans) !important;
+    font-weight: 300 !important;
+    color: var(--v2-text-2) !important;
+    line-height: 1.75 !important;
+  }
+
+  .erp-hero {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 24px 0 56px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  .erp-hero-background {
+    display: none !important;
+  }
+
+  .erp-hero-wrapper {
+    max-width: min(var(--v2-max-w), 100%) !important;
+    margin: 0 auto !important;
+    padding: 0 var(--v2-pad) !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    box-sizing: border-box;
+  }
+
+  .erp-heading {
+    font-family: var(--v2-serif) !important;
+    font-style: italic !important;
+    font-size: clamp(36px, 5vw, 56px) !important;
+    font-weight: 700 !important;
+    color: var(--v2-text) !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.05 !important;
+  }
+
+  .erp-hero-subtitle {
+    font-family: var(--v2-sans) !important;
+    font-weight: 300 !important;
+    color: var(--v2-text-2) !important;
+    max-width: 42rem !important;
+  }
+
+  .erp-hero-cta {
+    font-family: var(--v2-sans) !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: var(--v2-bg) !important;
+    background: var(--v2-text) !important;
+    border-radius: 0 !important;
+    padding: 16px 36px !important;
+    margin-top: 8px !important;
+
+    &:hover {
+      background: var(--v2-text) !important;
+      opacity: 0.85;
+      transform: none !important;
+    }
+  }
+
+  .erp-editorial,
+  .erp-challenges,
+  .erp-features,
+  .erp-ai-ehr,
+  .erp-modules,
+  .erp-benefits,
+  .erp-usecases,
+  .erp-case-study,
+  .erp-related-solutions {
+    padding: 56px 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .erp-editorial-block-title,
+  .erp-challenge-title,
+  .erp-feature-title,
+  .erp-module-name,
+  .erp-benefit-title,
+  .erp-usecase-title,
+  .erp-ai-ehr-card-title,
+  .erp-ai-ehr-layer-name,
+  .erp-ai-ehr-subheading {
+    font-family: var(--v2-sans) !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: var(--v2-text) !important;
+  }
+
+  .erp-challenge-desc,
+  .erp-feature-desc,
+  .erp-module-desc,
+  .erp-benefit-desc,
+  .erp-usecase-desc,
+  .erp-ai-ehr-card-desc,
+  .erp-editorial-list,
+  .erp-editorial-list li,
+  .erp-ai-ehr-layer-list li {
+    font-family: var(--v2-sans) !important;
+    font-weight: 300 !important;
+    color: var(--v2-text-2) !important;
+  }
+
+  .erp-challenges-grid,
+  .erp-modules-grid,
+  .erp-benefits-grid,
+  .erp-ai-ehr-grid,
+  .erp-ai-ehr-layers {
+    display: grid !important;
+    gap: clamp(20px, 3vw, 28px) !important;
+    background: transparent !important;
+  }
+
+  .erp-ai-ehr-layers {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .erp-challenges-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .erp-modules-grid,
+  .erp-benefits-grid,
+  .erp-ai-ehr-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .erp-challenge-card,
+  .erp-module-card,
+  .erp-benefit-card,
+  .erp-ai-ehr-card,
+  .erp-ai-ehr-layer {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transform: none !important;
+
+    &::before {
+      display: none !important;
+    }
+
+    &:hover {
+      transform: none !important;
+      box-shadow: none !important;
+      border-color: transparent !important;
+    }
+  }
+
+  .erp-ai-ehr-flywheel {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .erp-challenge-number,
+  .erp-usecase-index,
+  .erp-ai-ehr-eyebrow {
+    font-family: var(--v2-sans) !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: var(--v2-text-2) !important;
+  }
+
+  .erp-features-grid {
+    gap: clamp(24px, 4vw, 32px) !important;
+    background: transparent !important;
+  }
+
+  .erp-feature-card {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .erp-usecases-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: clamp(24px, 4vw, 32px) !important;
+  }
+
+  .erp-usecase-card {
+    display: grid !important;
+    grid-template-columns: 52px 1fr !important;
+    gap: 24px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  .erp-usecase-index {
+    width: auto !important;
+    height: auto !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    color: var(--v2-text-3) !important;
+  }
+
+  .erp-related-solutions__grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: clamp(20px, 3vw, 28px) !important;
+    background: transparent !important;
+  }
+
+  .erp-related-solutions__link {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transform: none !important;
+
+    &:hover {
+      background: transparent !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    &:hover .erp-related-solutions__title {
+      color: var(--v2-accent) !important;
+    }
+  }
+
+  .erp-related-solutions__title {
+    font-family: var(--v2-sans) !important;
+    font-weight: 500 !important;
+    color: var(--v2-text) !important;
+  }
+
+  .erp-case-study-cta {
+    font-family: var(--v2-sans) !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: var(--v2-text-2) !important;
+    border-bottom: 1px solid var(--v2-border) !important;
+    padding-bottom: 2px !important;
+
+    &:hover {
+      color: var(--v2-text) !important;
+      border-bottom-color: var(--v2-text-2) !important;
+    }
+  }
+
+  .erp-related {
+    width: 100% !important;
+    max-width: min(var(--v2-max-w), 100%) !important;
+    padding: 32px var(--v2-pad) !important;
+    box-sizing: border-box;
+    border: none !important;
+  }
+
+  .erp-related-text {
+    font-family: var(--v2-sans) !important;
+    font-weight: 300 !important;
+    color: var(--v2-text-2) !important;
+
+    a {
+      color: var(--v2-text) !important;
+      border-bottom: 1px solid var(--v2-border-h);
+      text-decoration: none !important;
+
+      &:hover {
+        color: var(--v2-accent) !important;
+        border-bottom-color: var(--v2-accent);
+      }
+    }
+  }
+
+  .erp-closing {
+    padding: 80px var(--v2-pad);
+    max-width: min(var(--v2-max-w), 100%);
+    margin: 0 auto;
+    border: none;
+  }
+
+  .erp-closing-text {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.75;
+    margin: 0 0 32px;
+
+    a {
+      color: var(--v2-text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--v2-border-h);
+
+      &:hover {
+        color: var(--v2-accent);
+        border-bottom-color: var(--v2-accent);
+      }
+    }
+  }
+
+  .erp-closing-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.75;
+    margin: 0 0 24px;
+    max-width: 36rem;
+  }
+
+  @media (max-width: 900px) {
+    .erp-challenges-grid,
+    .erp-modules-grid,
+    .erp-benefits-grid,
+    .erp-ai-ehr-grid,
+    .erp-ai-ehr-layers,
+    .erp-related-solutions__grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .erp-hero,
+    .erp-editorial,
+    .erp-challenges,
+    .erp-features,
+    .erp-ai-ehr,
+    .erp-modules,
+    .erp-benefits,
+    .erp-usecases,
+    .erp-case-study,
+    .erp-related-solutions {
+      padding: 32px 0 !important;
+    }
+
+    .erp-hero {
+      padding-top: 16px !important;
+    }
+
+    .erp-usecase-card {
+      grid-template-columns: 40px 1fr !important;
+      gap: 16px !important;
+    }
+  }
+}

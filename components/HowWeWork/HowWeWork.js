@@ -63,7 +63,7 @@ const HowWeWork = () => {
             What is Baaz&apos;s process from discovery to delivery?
           </h2>
           <p className="how-we-work-lede">
-            Regular demos and clear handoffs between phases—so you always have
+            Regular demos and clear handoffs between phases-so you always have
             something concrete to review before we advance.
           </p>
         </div>

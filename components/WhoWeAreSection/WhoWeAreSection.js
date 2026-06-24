@@ -17,7 +17,7 @@ const WhoWeAreSection = () => {
           <p className="who-we-are-section-direct-answer">
             <strong>Baaz</strong> is a {BRAND_POSITIONING_COMBINED}, based in
             Bangalore, India, with a US office at {US_ADDRESS_LINE}, operating
-            since 2018—shipping purposeful custom software for startups,
+            since 2018-shipping purposeful custom software for startups,
             scale-ups, and enterprises worldwide.
           </p>
           <p className="who-we-are-section-paragraph">
@@ -36,8 +36,8 @@ const WhoWeAreSection = () => {
               Our team brings deep technical expertise, strategic thinking, and a
               collaborative mindset to every project. We follow a founder-first,
               product-led approach that helps businesses move from idea to
-              prototype, MVP to scale — quickly and efficiently. At Baaz, we don't
-              just write code — we craft scalable solutions that solve real
+              prototype, MVP to scale - quickly and efficiently. At Baaz, we don't
+              just write code - we craft scalable solutions that solve real
               problems and create long-term value.
             </p>
           </details>

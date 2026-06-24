@@ -28,12 +28,7 @@ const EnterpriseCTA = () => {
             <p className="enterprise-cta-description">
               Talk to our enterprise specialists about your project requirements
             </p>
-            <Link
-              href="https://calendar.app.google/BBo3UYaic9yomaSo7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="enterprise-cta-button"
-            >
+            <Link href="/book-call" className="enterprise-cta-button">
               Talk to Our Enterprise Consultant
             </Link>
           </div>

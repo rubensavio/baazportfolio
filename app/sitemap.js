@@ -39,9 +39,7 @@ export default function sitemap() {
               path === "/healthcare-patient-app-case-study" ||
               path === "/education-training-portal-case-study"
             ? 0.85
-            : path === "/ecommerce" ||
-                path === "/gtm-engineering" ||
-                path === "/project-rescue"
+            : path === "/ecommerce" || path === "/gtm-engineering"
               ? 0.9
               : 0.8;
     const changeFrequency =

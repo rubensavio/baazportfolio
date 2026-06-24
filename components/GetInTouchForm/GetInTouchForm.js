@@ -22,7 +22,6 @@ const CONTACT_CAPABILITY_LINKS = [
   { href: "/services/web-development", label: "Custom software" },
   { href: "/services/mobile-app", label: "Mobile apps" },
   { href: "/services/ai-solution", label: "AI solutions" },
-  { href: "/project-rescue", label: "Project rescue" },
   { href: "/enterprise", label: "Enterprise" },
   { href: "/gtm-engineering", label: "GTM engineering" },
   { href: "/ecommerce", label: "E-commerce" },
@@ -55,7 +54,7 @@ const CONTACT_FAQ_ITEMS = [
   },
   {
     question: "Where are you based, and how do time zones work?",
-    answer: `We collaborate asynchronously with clients worldwide—with overlapping hours for key reviews and decisions across the Americas, Europe, and Asia-Pacific. HQ is in Bangalore, India, with a US office at ${US_ADDRESS_LINE}.`,
+    answer: `We collaborate asynchronously with clients worldwide-with overlapping hours for key reviews and decisions across the Americas, Europe, and Asia-Pacific. HQ is in Bangalore, India, with a US office at ${US_ADDRESS_LINE}.`,
   },
 ];
 
@@ -72,7 +71,7 @@ function ContactSupplemental() {
             Capabilities, proof, and other ways to reach us
           </h2>
           <p className="contact-more-lede">
-            Same product engineering focus as the rest of the site—organized so
+            Same product engineering focus as the rest of the site-organized so
             you can skim, click through, or book time without hunting through
             long paragraphs.
           </p>
@@ -83,7 +82,7 @@ function ContactSupplemental() {
             <h3 className="contact-info-card-title">Services &amp; programs</h3>
             <p className="contact-info-card-text">
               End-to-end delivery from discovery through launch: strategy, UX,
-              engineering, mobile, and AI where it earns its place—plus rescue,
+              engineering, mobile, and AI where it earns its place-plus rescue,
               enterprise, and go-to-market support when scope demands it.
             </p>
             <ul className="contact-pill-row">
@@ -124,7 +123,7 @@ function ContactSupplemental() {
               Prefer email or a live call?
             </h3>
             <p className="contact-reach-text">
-              Use whichever channel fits your workflow—we monitor both and
+              Use whichever channel fits your workflow-we monitor both and
               respond on the same cadence as form submissions.
             </p>
           </div>
@@ -202,7 +201,7 @@ function Form() {
             </h1>
             <p className="form-subtitle">
               Baaz works with founders, engineering leaders, and enterprise
-              product teams who need to ship production-grade software—whether
+              product teams who need to ship production-grade software-whether
               that is a greenfield product, a platform rescue, or AI features
               built on top of existing infrastructure. Tell us what you are
               building and we will respond with a direct assessment and proposed

@@ -10,7 +10,7 @@ const OurExpertise = () => {
       number: "01",
       title: "Enterprise Product Engineering",
       description:
-        "Greenfield products, major releases, and platform modules with production-grade architecture—from discovery through shipped software, as phased programs or embedded pods.",
+        "Greenfield products, major releases, and platform modules with production-grade architecture-from discovery through shipped software, as phased programs or embedded pods.",
       icon: "/assets/Product-Engineering.svg",
     },
     {
@@ -18,7 +18,7 @@ const OurExpertise = () => {
       number: "02",
       title: "Emerging Technologies",
       description:
-        "AI/ML, AR/VR, and generative features when they improve measurable outcomes—with evaluation, data boundaries, and governance agreed before anything ships.",
+        "AI/ML, AR/VR, and generative features when they improve measurable outcomes-with evaluation, data boundaries, and governance agreed before anything ships.",
       icon: "/assets/Engineering-Technologies.svg",
     },
     {
@@ -26,7 +26,7 @@ const OurExpertise = () => {
       number: "03",
       title: "Enterprise Solutions",
       description:
-        "Custom apps, workflows, portals, and integrations your teams use every day—when SaaS no longer matches policy, operations, or how work actually happens.",
+        "Custom apps, workflows, portals, and integrations your teams use every day-when SaaS no longer matches policy, operations, or how work actually happens.",
       icon: "/assets/Enterprise-Solutions.svg",
     },
   ];
@@ -39,7 +39,7 @@ const OurExpertise = () => {
           Enterprise product engineering for teams that cannot afford toy demos.
         </h2>
         <p className="our-expertise-lede">
-          We ship and evolve products under real enterprise constraints—uptime,
+          We ship and evolve products under real enterprise constraints-uptime,
           security reviews, regulated data, legacy systems, and cross-team
           coordination. Same approach across{" "}
           <Link href="/industry/fintech">FinTech</Link>,{" "}
@@ -102,8 +102,7 @@ const OurExpertise = () => {
             building AI-powered products
           </Link>
           , and more on the <Link href="/blog">Blog</Link>. Roughly half of our
-          engagements started as{" "}
-          <Link href="/project-rescue">project rescues</Link>
+          engagements started as mid-project takeovers
           <span className="our-expertise-footnote"> .</span>
         </p>
       </div>

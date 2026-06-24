@@ -1,0 +1,322 @@
+.about-v2 {
+  .about-hero {
+    // padding: calc(var(--v2-nav-h) + 96px) 0 0;
+    border-bottom: 1px solid var(--v2-border);
+    overflow: hidden;
+  }
+
+  .about-hero-statement {
+    font-size: clamp(40px, 7vw, 96px);
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    padding: 58px var(--v2-pad) 90px;
+    max-width: var(--v2-max-w);
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+
+  .about-hero-meta {
+    border-top: 1px solid var(--v2-border);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--v2-bg-2);
+    gap: 1px;
+  }
+
+  .about-hero-meta-item {
+    background-color: var(--v2-bg);
+    padding: 32px var(--v2-pad);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-hero-meta-val {
+    font-size: 32px;
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .about-hero-meta-label {
+    font-size: 12px;
+    color: var(--v2-text-2);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .about-hero-meta {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-hero-statement {
+      font-size: clamp(36px, 11vw, 64px);
+      padding-bottom: 56px;
+    }
+  }
+
+  .about-origin {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--v2-border);
+
+    @media (max-width: 768px) {
+      padding: 80px 0;
+    }
+  }
+
+  .about-origin-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 96px;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  .about-origin-aside-title {
+    margin-bottom: 24px;
+  }
+
+  .about-origin-quote {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    border-left: 2px solid var(--v2-border-h);
+    padding-left: 20px;
+  }
+
+  .about-origin-body p {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.85;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .about-values {
+    padding: 0 0 120px;
+    border-bottom: 1px solid var(--v2-border);
+
+    @media (max-width: 768px) {
+      padding-bottom: 80px;
+    }
+
+    &:not(.about-show-up) {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .about-values-header {
+    padding: 64px 0 56px;
+    border-bottom: 1px solid var(--v2-border);
+
+    h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      margin-bottom: 12px;
+      color: var(--v2-text);
+    }
+  }
+
+  .about-values-sub {
+    font-size: 16px;
+    color: var(--v2-text-2);
+    font-weight: 300;
+  }
+
+  .about-show-up {
+    padding-top: 0;
+    padding-bottom: 120px;
+    border-top: 1px solid var(--v2-border);
+    border-bottom: 1px solid var(--v2-border);
+
+    @media (max-width: 768px) {
+      padding-bottom: 80px;
+    }
+  }
+
+  .about-show-up-header {
+    border-bottom: 1px solid var(--v2-border);
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .about-value-row {
+    display: grid;
+    grid-template-columns: 52px 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--v2-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+
+  .about-value-num {
+    font-family: var(--v2-serif);
+    font-size: 13px;
+    color: var(--v2-text-3);
+    padding-top: 6px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .about-value-title {
+    font-size: clamp(22px, 3vw, 34px);
+    line-height: 1.15;
+  }
+
+  .about-value-body {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.75;
+    padding-top: 6px;
+  }
+
+  .about-team {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--v2-border);
+
+    @media (max-width: 768px) {
+      padding: 80px 0;
+    }
+  }
+
+  .about-team-header {
+    margin-bottom: 64px;
+
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--v2-border);
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about-team-card {
+    background: var(--v2-bg);
+    padding: 40px 36px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: var(--v2-bg-1);
+    }
+  }
+
+  .about-team-initial {
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--v2-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--v2-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--v2-text-2);
+    margin-bottom: 24px;
+
+    &--large {
+      font-size: 28px;
+    }
+  }
+
+  .about-team-name {
+    font-family: var(--v2-serif);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+
+  .about-team-role {
+    font-size: 13px;
+    color: var(--v2-text-2);
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .about-team-bio {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.7;
+  }
+
+  .about-closing {
+    padding: 120px 0;
+
+    @media (max-width: 768px) {
+      padding: 80px 0;
+    }
+  }
+
+  .about-closing-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .about-closing-quote {
+    font-size: clamp(24px, 3.5vw, 44px);
+    line-height: 1.2;
+  }
+
+  .about-closing-right {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--v2-text-2);
+    line-height: 1.75;
+
+    p {
+      margin-bottom: 20px;
+
+      &:last-of-type {
+        margin-bottom: 28px;
+      }
+    }
+  }
+}

@@ -28,7 +28,7 @@ const RealWorldImpact = () => {
       title: "Success Story 3:",
       subtitle: "The Solder Bridge Sleuth",
       description:
-        "Human inspectors missed solder bridges smaller than 0.1mm—too small to see clearly but large enough to cause short circuits. Viz Pro caught 100% of these defects, reducing field failures by 89% for automotive clients where component failure could mean literal life-or-death situations.",
+        "Human inspectors missed solder bridges smaller than 0.1mm-too small to see clearly but large enough to cause short circuits. Viz Pro caught 100% of these defects, reducing field failures by 89% for automotive clients where component failure could mean literal life-or-death situations.",
     },
   ];
 

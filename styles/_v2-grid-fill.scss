@@ -1,0 +1,19 @@
+@mixin v2-grid-fill-empty-cells($item-selector, $columns: 2) {
+  @if $columns == 2 {
+    &:has(#{$item-selector}:last-child:nth-child(odd))::after {
+      content: "";
+      background: var(--v2-bg);
+    }
+  } @else if $columns == 3 {
+    &:has(#{$item-selector}:last-child:nth-child(3n + 2))::after {
+      content: "";
+      background: var(--v2-bg);
+    }
+
+    &:has(#{$item-selector}:last-child:nth-child(3n + 1))::after {
+      content: "";
+      background: var(--v2-bg);
+      grid-column: span 2;
+    }
+  }
+}

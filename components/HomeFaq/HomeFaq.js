@@ -5,10 +5,7 @@ import "./HomeFaq.scss";
 
 const HomeFaq = () => (
   <div className="home-faq">
-    <FAQ
-      faqs={HOME_FAQ_ITEMS}
-      heading="Enterprise product engineering — direct answers"
-    />
+    <FAQ faqs={HOME_FAQ_ITEMS} heading="Frequently Asked Questions" />
   </div>
 );
 

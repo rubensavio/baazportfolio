@@ -33,7 +33,7 @@ export async function generateMetadata({ params }) {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${data.label} — Baaz`,
+          alt: `${data.label} - Baaz`,
         },
       ],
     },

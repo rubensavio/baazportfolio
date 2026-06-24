@@ -10,7 +10,7 @@ const painPoints = [
   {
     title: "High Retainers Before Results",
     description:
-      "Brands pay agencies upfront — before a single performance improvement is proven.",
+      "Brands pay agencies upfront - before a single performance improvement is proven.",
     color: "#2E68FD",
   },
   {
@@ -42,7 +42,7 @@ const approachItems = [
   {
     title: "Free Audit First",
     description:
-      "We analyze wasted spend, keyword gaps, structural inefficiencies, and growth levers — before you pay a single rupee.",
+      "We analyze wasted spend, keyword gaps, structural inefficiencies, and growth levers - before you pay a single rupee.",
   },
   {
     title: "Proprietary Optimization Tools",
@@ -67,7 +67,7 @@ const approachItems = [
   {
     title: "Operator-Led Execution",
     description:
-      "We operate our own brands. Our marketplace advertising management strategies are battle-tested — not theoretical.",
+      "We operate our own brands. Our marketplace advertising management strategies are battle-tested - not theoretical.",
   },
 ];
 
@@ -206,7 +206,7 @@ const ecommerceFaqs = [
   {
     question: "What does your Amazon marketplace management service include?",
     answer:
-      "Our Amazon seller management services cover the full spectrum — PPC advertising (Sponsored Products, Brands, Display), listing optimization, backend search term structuring, A+ content, inventory planning, pricing strategy, and real-time performance dashboards. We manage your Amazon account like it's our own business.",
+      "Our Amazon seller management services cover the full spectrum - PPC advertising (Sponsored Products, Brands, Display), listing optimization, backend search term structuring, A+ content, inventory planning, pricing strategy, and real-time performance dashboards. We manage your Amazon account like it's our own business.",
   },
   {
     question: "Do you also manage Flipkart accounts?",
@@ -216,7 +216,7 @@ const ecommerceFaqs = [
   {
     question: "How is Baaz different from other marketplace agencies?",
     answer:
-      "Three things set us apart: (1) We start with a free audit — no retainers upfront, (2) We use proprietary PPC and analytics tools for real-time bid control and keyword-level insights, and (3) We operate our own brands, so our strategies are battle-tested, not theoretical. We're operators first, agency second.",
+      "Three things set us apart: (1) We start with a free audit - no retainers upfront, (2) We use proprietary PPC and analytics tools for real-time bid control and keyword-level insights, and (3) We operate our own brands, so our strategies are battle-tested, not theoretical. We're operators first, agency second.",
   },
   {
     question: "What kind of results can I expect?",
@@ -270,7 +270,7 @@ const serviceSchema = {
 
 export default function Ecommerce() {
   return (
-    <div className="ecommerce-page">
+    <div className="baaz-v2 ecommerce-v2">
       <ClientNavbar />
 
       <script
@@ -349,7 +349,7 @@ export default function Ecommerce() {
             </div>
           </div>
           <p className="ecom-pain-conclusion">
-            Amazon marketplace management requires operator thinking — not
+            Amazon marketplace management requires operator thinking - not
             account management.
           </p>
         </div>
@@ -399,7 +399,7 @@ export default function Ecommerce() {
               End-to-End E-commerce Marketplace Management
             </h2>
             <p className="ecom-services-subtext">
-              We manage your marketplace like it&apos;s our own business — from
+              We manage your marketplace like it&apos;s our own business - from
               Amazon PPC management to Flipkart advertising optimization and
               everything in between.
             </p>
@@ -527,7 +527,7 @@ export default function Ecommerce() {
             ))}
           </ul>
           <p className="ecom-audience-tagline">
-            If you want structured, predictable marketplace growth — this
+            If you want structured, predictable marketplace growth - this
             full-service marketplace agency is for you.
           </p>
         </div>
@@ -565,7 +565,9 @@ export default function Ecommerce() {
         </div>
       </section>
 
-      <FAQ faqs={ecommerceFaqs} heading="Marketplace Management FAQs" />
+      <div className="v2-faq">
+        <FAQ faqs={ecommerceFaqs} heading="Marketplace Management FAQs" />
+      </div>
       <Footer />
     </div>
   );

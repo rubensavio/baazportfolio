@@ -1,26 +1,38 @@
+"use client";
+
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
-import Hero from "../Hero/Hero";
-import WhoWeAre from "../WhoWeAre/WhoWeAre";
-import BrandsCarousel from "../BrandsCarousel/BrandsCarousel";
-import OurExpertise from "../OurExpertise/OurExpertise";
-import HowWeWork from "../HowWeWork/HowWeWork";
-import Testimonials from "../Testimonials/Testimonials";
-import CTA from "../CTA/CTA";
+import HomeHero from "../Home/HomeHero";
+import HomeBrands from "../Home/HomeBrands";
+import HomeWork from "../Home/HomeWork";
+import HomeServices from "../Home/HomeServices";
+import HomeIndustriesBento from "../Home/HomeIndustriesBento";
+import HomeImpact from "../Home/HomeImpact";
+import HomeWhyBaaz from "../Home/HomeWhyBaaz";
+import HomeStats from "../Home/HomeStats";
+import HomeTestimonials from "../Home/HomeTestimonials";
+import HomeCTA from "../Home/HomeCTA";
 import HomeFaq from "../HomeFaq/HomeFaq";
 import Footer from "../Footer/Footer";
+import "./HomePageClient.scss";
 
 export default function HomePageClient() {
   return (
-    <div className="home">
+    <div className="baaz-v2 home-v2">
       <ClientNavbar />
-      <Hero />
-      <WhoWeAre />
-      <BrandsCarousel />
-      <OurExpertise />
-      <HowWeWork />
-      <Testimonials />
-      <CTA />
-      <HomeFaq />
+      <main>
+        <HomeHero />
+        <HomeBrands />
+        <HomeWork />
+        <hr className="home-rule" />
+        <HomeServices />
+        <HomeIndustriesBento />
+        <HomeImpact />
+        <HomeWhyBaaz />
+        <HomeStats />
+        <HomeTestimonials />
+        <HomeFaq />
+        <HomeCTA />
+      </main>
       <Footer />
     </div>
   );

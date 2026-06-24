@@ -1,9 +1,5 @@
-import React from "react";
-import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
+import CaseStudyPageClient from "../../components/CaseStudyPageClient/CaseStudyPageClient";
 import EducationTrainingPortalCaseStudy from "../../components/EducationTrainingPortalCaseStudy/EducationTrainingPortalCaseStudy";
-import CaseStudyCrossLinks from "../../components/CaseStudyCrossLinks/CaseStudyCrossLinks";
-import FAQ from "../../components/FAQ/FAQ";
-import Footer from "../../components/Footer/Footer";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import {
   EDUCATION_TRAINING_PORTAL_CASE_STUDY_FAQ_HEADING,
@@ -34,40 +30,41 @@ const caseStudyBreadcrumbs = [
 
 export default function EducationTrainingPortalCaseStudyPage() {
   return (
-    <div className="work2 education-training-portal-case-study-page">
+    <>
       <BreadcrumbScript items={caseStudyBreadcrumbs} />
-      <ClientNavbar />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <EducationTrainingPortalCaseStudy />
-      <CaseStudyCrossLinks
-        eyebrow="More from Baaz"
-        title="Connect this LMS story to ERP & programmes"
-        description="Many education teams pair learner-facing portals with back-office ERP, finance integrations, and long-lifecycle roadmap planning—browse the adjacent pillars below."
-        links={[
-          {
-            href: "/erp/education-training-companies",
-            label:
-              "ERP for Education & Training Companies — rollout patterns & FAQs",
-          },
-          {
-            href: "/services/web-development",
-            label: "Custom web portals & LMS ecosystems",
-          },
-          {
-            href: "/enterprise",
-            label: "Enterprise digital transformation engagements",
-          },
-          { href: "/blog/product-engineering-process-for-enterprises", label: "Enterprise product engineering process" },
-        ]}
-      />
-      <FAQ
+      <CaseStudyPageClient
+        className="work2 education-training-portal-case-study-page"
         faqs={EDUCATION_TRAINING_PORTAL_CASE_STUDY_FAQ_ITEMS}
-        heading={EDUCATION_TRAINING_PORTAL_CASE_STUDY_FAQ_HEADING}
-      />
-      <Footer />
-    </div>
+        faqHeading={EDUCATION_TRAINING_PORTAL_CASE_STUDY_FAQ_HEADING}
+        faqSchema={faqSchema}
+        crossLinks={{
+          eyebrow: "More from Baaz",
+          title: "Connect this LMS story to ERP & programmes",
+          description:
+            "Many education teams pair learner-facing portals with back-office ERP, finance integrations, and long-lifecycle roadmap planning-browse the adjacent pillars below.",
+          links: [
+            {
+              href: "/erp/education-training-companies",
+              label:
+                "ERP for Education & Training Companies - rollout patterns & FAQs",
+            },
+            {
+              href: "/services/web-development",
+              label: "Custom web portals & LMS ecosystems",
+            },
+            {
+              href: "/enterprise",
+              label: "Enterprise digital transformation engagements",
+            },
+            {
+              href: "/blog/product-engineering-process-for-enterprises",
+              label: "Enterprise product engineering process",
+            },
+          ],
+        }}
+      >
+        <EducationTrainingPortalCaseStudy />
+      </CaseStudyPageClient>
+    </>
   );
 }

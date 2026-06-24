@@ -58,7 +58,7 @@ const IndustryComparison = () => {
               ))}
             </ul>
             <p className="comparison-quote">
-              "Viz Pro didn't just improve our quality—it revolutionized how we
+              "Viz Pro didn't just improve our quality-it revolutionized how we
               think about manufacturing," Rajesh reflects. "We went from reactive
               quality control to predictive quality intelligence."
             </p>

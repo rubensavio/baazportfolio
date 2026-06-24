@@ -13,11 +13,11 @@
 
 ---
 
-## Part 1: Wikidata Entity (Month 1 — Week 1-2)
+## Part 1: Wikidata Entity (Month 1 - Week 1-2)
 
 ### Why Wikidata First (Not Wikipedia)
 
-Wikipedia requires strict notability criteria (multiple independent reliable sources covering the company in depth). Baaz likely does not meet Wikipedia's General Notability Guideline yet. However, **Wikidata has much lower barriers** — any business with verifiable information from independent sources qualifies. And critically, **Google's Knowledge Graph and AI Overviews pull directly from Wikidata**, making this the highest-ROI first step.
+Wikipedia requires strict notability criteria (multiple independent reliable sources covering the company in depth). Baaz likely does not meet Wikipedia's General Notability Guideline yet. However, **Wikidata has much lower barriers** - any business with verifiable information from independent sources qualifies. And critically, **Google's Knowledge Graph and AI Overviews pull directly from Wikidata**, making this the highest-ROI first step.
 
 ### Step-by-Step: Create the Baaz Wikidata Entity
 
@@ -43,16 +43,16 @@ Wikipedia requires strict notability criteria (multiple independent reliable sou
 | **Founder (P112)**                       | Chitresh Parihar                                             | Create a separate Wikidata item for the founder if none exists |
 | **Described by source**                  | link to Clutch profile, GoodFirms listing, IndiaMART listing | These serve as independent references                          |
 
-### Sources to Cite (Critical — Every Claim Needs a Reference)
+### Sources to Cite (Critical - Every Claim Needs a Reference)
 
 You need **independent, verifiable sources**. Use these:
 
-1. **Clutch.co profile** — already created (provides founding year, location, services, reviews)
-2. **GoodFirms profile** — already created
-3. **IndiaMART listing** — shows legal name "atiiad Technologies Private Limited"
-4. **JustDial listing** — confirms Bangalore location
-5. **DesignRush profile** — if live
-6. **MCA (Ministry of Corporate Affairs)** — search for company registration at https://www.mca.gov.in/mcafoportal/showCheckCompanyName.do to get incorporation date, registered address, directors
+1. **Clutch.co profile** - already created (provides founding year, location, services, reviews)
+2. **GoodFirms profile** - already created
+3. **IndiaMART listing** - shows legal name "atiiad Technologies Private Limited"
+4. **JustDial listing** - confirms Bangalore location
+5. **DesignRush profile** - if live
+6. **MCA (Ministry of Corporate Affairs)** - search for company registration at https://www.mca.gov.in/mcafoportal/showCheckCompanyName.do to get incorporation date, registered address, directors
 
 ### What You Cannot Add (Yet)
 
@@ -70,12 +70,12 @@ To eventually qualify for a Wikipedia article, Baaz needs:
 
 ---
 
-## Part 2: Google Business Profile (Month 1 — Week 1-3)
+## Part 2: Google Business Profile (Month 1 - Week 1-3)
 
 ### Step 1: Claim or Create the Profile
 
 1. Go to https://business.google.com
-2. Search for "Baaz" or "atiiad Technologies" — if the JustDial-linked listing appears, claim it
+2. Search for "Baaz" or "atiiad Technologies" - if the JustDial-linked listing appears, claim it
 3. If not, click **"Add your business"**
 4. **Business name:** Baaz
 5. **Category (Primary):** `Software Company`
@@ -99,7 +99,7 @@ To eventually qualify for a Wikipedia article, Baaz needs:
 
 #### Business Description (750 chars max)
 
-> Baaz is a product engineering agency founded in 2018 in Bangalore, India. We build world-class digital products for startups, scale-ups, and enterprises — covering product strategy, UI/UX design, custom software development, mobile apps (iOS, Android, Flutter, React Native), and AI/ML solutions. Since 2018, we've shipped 100+ products across FinTech, healthcare, retail, eCommerce, and construction tech. Our clients include brands like Uber, Decathlon, Livpure, Nalli, Damas, and Pestle. We don't just write code — we craft scalable solutions that solve real problems.
+> Baaz is a product engineering agency founded in 2018 in Bangalore, India. We build world-class digital products for startups, scale-ups, and enterprises - covering product strategy, UI/UX design, custom software development, mobile apps (iOS, Android, Flutter, React Native), and AI/ML solutions. Since 2018, we've shipped 100+ products across FinTech, healthcare, retail, eCommerce, and construction tech. Our clients include brands like Uber, Decathlon, Livpure, Nalli, Damas, and Pestle. We don't just write code - we craft scalable solutions that solve real problems.
 
 ### Step 3: Services (Add All)
 
@@ -107,46 +107,46 @@ Google lets you add structured services under each category. Add these:
 
 **Under "Software Company":**
 
-- Custom Software Development — End-to-end software development for web and cloud platforms, from architecture to deployment.
-- SaaS Product Development — Design and build multi-tenant SaaS platforms with subscription billing, analytics, and scalable infrastructure.
-- Legacy System Modernization — Migrate, re-platform, or rebuild legacy applications using modern cloud-native architectures.
-- Enterprise Software Development — Large-scale applications with compliance, role-based access, audit logging, and legacy integration.
+- Custom Software Development - End-to-end software development for web and cloud platforms, from architecture to deployment.
+- SaaS Product Development - Design and build multi-tenant SaaS platforms with subscription billing, analytics, and scalable infrastructure.
+- Legacy System Modernization - Migrate, re-platform, or rebuild legacy applications using modern cloud-native architectures.
+- Enterprise Software Development - Large-scale applications with compliance, role-based access, audit logging, and legacy integration.
 
 **Under "Mobile App Developer":**
 
-- iOS App Development — Native and cross-platform apps for iPhone and iPad.
-- Android App Development — Native and cross-platform Android applications.
-- Flutter App Development — Cross-platform mobile apps with a single codebase using Flutter.
-- React Native App Development — Cross-platform mobile apps using React Native.
+- iOS App Development - Native and cross-platform apps for iPhone and iPad.
+- Android App Development - Native and cross-platform Android applications.
+- Flutter App Development - Cross-platform mobile apps with a single codebase using Flutter.
+- React Native App Development - Cross-platform mobile apps using React Native.
 
 **Under "AI Consulting Firm":**
 
-- AI/ML Development — Computer vision, NLP, predictive analytics, and AI-powered automation.
-- AI Strategy Consulting — Assess AI readiness, define use cases, and build AI roadmaps for enterprises.
-- AI Proof of Concept to Production — Move AI experiments into production-grade, scalable systems.
+- AI/ML Development - Computer vision, NLP, predictive analytics, and AI-powered automation.
+- AI Strategy Consulting - Assess AI readiness, define use cases, and build AI roadmaps for enterprises.
+- AI Proof of Concept to Production - Move AI experiments into production-grade, scalable systems.
 
 **Under "UX Design Agency":**
 
-- Product Strategy & Discovery — User research, competitive analysis, and product roadmapping.
-- UI/UX Design — Interface design, design systems, prototyping, and usability testing.
-- Design Sprints — Rapid prototyping and validation in 1-2 week cycles.
+- Product Strategy & Discovery - User research, competitive analysis, and product roadmapping.
+- UI/UX Design - Interface design, design systems, prototyping, and usability testing.
+- Design Sprints - Rapid prototyping and validation in 1-2 week cycles.
 
-### Step 4: Photos (Upload 20+ — Critical for Visibility)
+### Step 4: Photos (Upload 20+ - Critical for Visibility)
 
 Businesses with photos get **45% more direction requests and 31% more website clicks**. Google's Vision AI now reads images to categorize your services.
 
 | Photo Type              | What to Upload                                                                                    | Qty |
 | ----------------------- | ------------------------------------------------------------------------------------------------- | --- |
-| **Logo**                | Baaz logo (from `public/assets/Logo.svg`, export as PNG)                                          | 1   |
-| **Cover**               | Office exterior or a branded banner showing "Baaz — Product Engineering Agency"                   | 1   |
+| **Logo**                | Baaz logo (from `public/assets/Logo.png`, export as PNG)                                          | 1   |
+| **Cover**               | Office exterior or a branded banner showing "Baaz - Product Engineering Agency"                   | 1   |
 | **Interior**            | Office workspace, meeting rooms, whiteboards with product designs                                 | 3-4 |
 | **Team**                | Team photos, working sessions, sprint demos, standups                                             | 3-4 |
 | **At work**             | Screens showing products you've built (blur sensitive data), design reviews, code reviews         | 3-4 |
 | **Product screenshots** | Screenshots from case studies (work1, work2), dashboards, mobile apps                             | 4-5 |
 | **Events**              | Team at tech meetups, conferences, hackathons                                                     | 2-3 |
-| **Client logos**        | A collage or individual images of client brands (Uber, Decathlon, etc.) — check usage permissions | 1-2 |
+| **Client logos**        | A collage or individual images of client brands (Uber, Decathlon, etc.) - check usage permissions | 1-2 |
 
-### Step 5: Posts (Weekly — Ongoing)
+### Step 5: Posts (Weekly - Ongoing)
 
 Post types to rotate weekly:
 
@@ -155,25 +155,25 @@ Post types to rotate weekly:
 | 1    | **Update** | "We just shipped a real-time visual inspection platform powered by computer vision for a manufacturing client. [Link to case study]" |
 | 2    | **Update** | "How we reduced time-to-hire by 60% by automating tech assessments with AI. Read the case study →"                                   |
 | 3    | **Update** | Blog post share: "Legacy Modernization: When to Rebuild vs. Re-Platform [link to blog]"                                              |
-| 4    | **Offer**  | "Book a free product strategy session — we'll map your MVP in 60 minutes. [Link to /get-in-touch]"                                   |
-| 5    | **Update** | "AI in production: Why 85% of AI PoCs never make it — and how to beat the odds [link to blog]"                                       |
-| 6    | **Event**  | "Join us at [local tech event] — Chitresh Parihar on building products that scale"                                                   |
+| 4    | **Offer**  | "Book a free product strategy session - we'll map your MVP in 60 minutes. [Link to /get-in-touch]"                                   |
+| 5    | **Update** | "AI in production: Why 85% of AI PoCs never make it - and how to beat the odds [link to blog]"                                       |
+| 6    | **Event**  | "Join us at [local tech event] - Chitresh Parihar on building products that scale"                                                   |
 
 ### Step 6: Q&A Section (Pre-Seed Questions)
 
-Google retired the public Q&A feature in late 2025 and is replacing it with AI-powered "Ask Maps" (Gemini). However, **FAQ schema on your website feeds directly into this**. You already have FAQ schema on the enterprise page — extend this to all service pages. The AI will pull from your structured data.
+Google retired the public Q&A feature in late 2025 and is replacing it with AI-powered "Ask Maps" (Gemini). However, **FAQ schema on your website feeds directly into this**. You already have FAQ schema on the enterprise page - extend this to all service pages. The AI will pull from your structured data.
 
 ### Step 7: Reviews (Most Important Signal)
 
 - **Target:** 10+ reviews in the first 60 days
 - **Ask:** Past clients (Uber team, Decathlon team, Livpure team, Nalli team, etc.)
 - **How:** Send a direct Google review link (generate from your GBP dashboard)
-- **Respond:** Reply to every review within 24 hours — Google uses response speed as a trust signal
+- **Respond:** Reply to every review within 24 hours - Google uses response speed as a trust signal
 - **Keywords in responses:** Naturally include terms like "product engineering," "AI development," "mobile app," "Bangalore" in your replies
 
 ---
 
-## Part 3: LinkedIn Company Page (Ongoing — Starting Month 1)
+## Part 3: LinkedIn Company Page (Ongoing - Starting Month 1)
 
 ### Step 1: Audit & Complete the Company Page
 
@@ -189,7 +189,7 @@ Google retired the public Q&A feature in late 2025 and is replacing it with AI-p
 | **Specialties**   | Product Engineering, Custom Software Development, Mobile App Development, AI/ML Development, UI/UX Design, SaaS Development, Enterprise Software, Legacy Modernization, Flutter, React Native |
 | **About section** | Use the long description from the reusable profile content (see `technical-seo-steps.md` section 6)                                                                                           |
 | **Logo**          | High-res Baaz logo                                                                                                                                                                            |
-| **Cover image**   | Branded banner — "We build unfair advantage" or similar tagline with visual                                                                                                                   |
+| **Cover image**   | Branded banner - "We build unfair advantage" or similar tagline with visual                                                                                                                   |
 | **CTA button**    | "Visit website" → https://www.baaz.pro/get-in-touch                                                                                                                                           |
 
 ### Step 2: Content Strategy (Value-Led, Not Self-Promotional)
@@ -202,7 +202,7 @@ The key insight from competitor research: **personal profiles of founders/leader
 
 ---
 
-**COMPANY — MONDAY (Industry Insight)**
+**COMPANY - MONDAY (Industry Insight)**
 
 A factory in Chennai was producing 847,000 electronic components per day.
 
@@ -211,7 +211,7 @@ Customer returns? 12.3%.
 Annual cost of returns and warranty claims? $2.8 million.
 47 quality inspectors working in shifts. 156 hours per week of manual visual inspection.
 
-And still — 23% of defects were getting missed. Human eyes get tired.
+And still - 23% of defects were getting missed. Human eyes get tired.
 
 We built Viz Pro, an AI-powered visual inspection system using computer vision.
 
@@ -224,7 +224,7 @@ The results after deployment:
 
 The model didn't replace the inspectors. It replaced the fatigue. 47 people moved to higher-value roles.
 
-That's what production AI looks like — not a demo, not a dashboard. A system running 24/7 on a factory floor, catching defects the human eye literally cannot see.
+That's what production AI looks like - not a demo, not a dashboard. A system running 24/7 on a factory floor, catching defects the human eye literally cannot see.
 
 Full case study → https://www.baaz.pro/work1
 
@@ -232,7 +232,7 @@ Full case study → https://www.baaz.pro/work1
 
 ---
 
-**COMPANY — TUESDAY (Case Study / Build Story)**
+**COMPANY - TUESDAY (Case Study / Build Story)**
 
 A SaaS company in San Francisco was drowning in resumes.
 
@@ -241,7 +241,7 @@ A SaaS company in San Francisco was drowning in resumes.
 34% of qualified candidates missed due to screening fatigue.
 $47,000 average cost per hire. 89 days to fill a role.
 
-We built Suprflow — an AI-powered hiring automation platform.
+We built Suprflow - an AI-powered hiring automation platform.
 
 What changed:
 → Screening time: 156 hrs/month → 23 hrs/month (85% reduction)
@@ -262,7 +262,7 @@ Full case study → https://www.baaz.pro/work2
 
 ---
 
-**COMPANY — THURSDAY (Technical Deep Dive)**
+**COMPANY - THURSDAY (Technical Deep Dive)**
 
 85% of AI projects never make it to production. (Gartner)
 87% of data science projects die in the PoC phase. (VentureBeat)
@@ -273,13 +273,13 @@ Here's the pattern we see in the 15% that actually ship:
 
 1. They scope brutally. One workflow. One metric. One user type. Not "add AI to our platform."
 
-2. They spend 60-80% of time on data engineering, not model tuning. Pipelines, quality checks, labeling, versioning — this is where projects live or die.
+2. They spend 60-80% of time on data engineering, not model tuning. Pipelines, quality checks, labeling, versioning - this is where projects live or die.
 
 3. They start with the simplest model that could work. A gradient-boosted tree you can deploy in a week beats a transformer that takes three months to train and serve.
 
 4. They keep humans in the loop at launch. AI recommends, human decides. Remove the human only when the model has earned trust.
 
-5. They own monitoring from day one. Infrastructure metrics, model metrics, and business metrics — all three, continuously.
+5. They own monitoring from day one. Infrastructure metrics, model metrics, and business metrics - all three, continuously.
 
 The model is the easy part. The product engineering around it is the hard part.
 
@@ -293,7 +293,7 @@ If you're stuck between PoC and production, this is almost always where the gap 
 
 ---
 
-**CHITRESH — MONDAY (Founder Perspective / Business Insight)**
+**CHITRESH - MONDAY (Founder Perspective / Business Insight)**
 
 Everyone asks: "How much does it cost to build enterprise software?"
 
@@ -315,7 +315,7 @@ If you're about to greenlight a $500K build, spend $30K on discovery first. It's
 
 ---
 
-**CHITRESH — TUESDAY (Industry Take / Contrarian)**
+**CHITRESH - TUESDAY (Industry Take / Contrarian)**
 
 Unpopular opinion: Most companies don't need AI. They need better software.
 
@@ -329,7 +329,7 @@ Will a human trust this system enough to act on it? → If no, the AI doesn't ma
 
 The projects where AI actually moved the needle for our clients had something in common: the problem was clearly defined before anyone mentioned a model.
 
-A manufacturing client losing $2.8M/year to defects? That's an AI problem — and we built a system that saves them $4.2M/year.
+A manufacturing client losing $2.8M/year to defects? That's an AI problem - and we built a system that saves them $4.2M/year.
 
 A company that wants "an AI dashboard"? That's a strategy problem, not a technology problem.
 
@@ -339,7 +339,7 @@ Don't start with AI. Start with the problem. The right solution might be AI. It 
 
 ---
 
-**CHITRESH — WEDNESDAY (Client Win / Story)**
+**CHITRESH - WEDNESDAY (Client Win / Story)**
 
 A hiring team was spending $47,000 per hire and taking 89 days to fill a single engineering role.
 
@@ -362,19 +362,19 @@ The CFO noticed. The candidates noticed. The hiring managers went from 6.2/10 sa
 
 What I learned: the best products don't just save money. They make people's work life measurably better.
 
-If your hiring process feels broken, it probably is. And the fix isn't more recruiters — it's better product thinking applied to recruitment.
+If your hiring process feels broken, it probably is. And the fix isn't more recruiters - it's better product thinking applied to recruitment.
 
 #Hiring #HRTech #Recruitment #ProductThinking #AI
 
 ---
 
-**CHITRESH — FRIDAY (Framework / Lessons)**
+**CHITRESH - FRIDAY (Framework / Lessons)**
 
-After 100+ products built since 2018, here's the framework I use to decide whether a client project will succeed or fail — before we write a single line of code.
+After 100+ products built since 2018, here's the framework I use to decide whether a client project will succeed or fail - before we write a single line of code.
 
 I call it the 3-Owner Test:
 
-1. Is there a Problem Owner? Someone who can describe the pain in dollars, hours, or user drop-off — not in features.
+1. Is there a Problem Owner? Someone who can describe the pain in dollars, hours, or user drop-off - not in features.
 
 2. Is there a Decision Owner? One person who can say yes or no without a 6-week committee review.
 
@@ -398,7 +398,7 @@ Save this. Use it in your next kickoff.
 
 ---
 
-**RUBEN — MONDAY (Architecture Decision / Deep Dive)**
+**RUBEN - MONDAY (Architecture Decision / Deep Dive)**
 
 We built a computer vision system that inspects 847,000 electronic components per day on a factory floor.
 
@@ -412,7 +412,7 @@ Here's what we had to get right architecturally:
 
 → Edge inference, not cloud. You can't send 847K images to a cloud API per day and meet sub-second latency. We deployed the model directly on edge devices at the inspection stations.
 
-→ Lightweight model architecture. We started with a ResNet variant and distilled it down. The production model is 12x smaller than our best-accuracy model — and only 0.3% less accurate. That 0.3% trade-off bought us the latency budget.
+→ Lightweight model architecture. We started with a ResNet variant and distilled it down. The production model is 12x smaller than our best-accuracy model - and only 0.3% less accurate. That 0.3% trade-off bought us the latency budget.
 
 → Continuous data pipeline. The factory produces new defect patterns over time (new suppliers, new component batches). We built an automated pipeline: capture → label → retrain → validate → deploy. The model improves every week without manual intervention.
 
@@ -426,7 +426,7 @@ The lesson: production AI is an engineering problem, not a data science problem.
 
 ---
 
-**RUBEN — TUESDAY (Technical Opinion / Contrarian)**
+**RUBEN - TUESDAY (Technical Opinion / Contrarian)**
 
 Hot take: "Let's just rewrite it" is the most expensive sentence in enterprise software.
 
@@ -445,7 +445,7 @@ What we do instead: the Strangler Fig pattern.
 5. Cut over. The old module becomes the fallback.
 6. Repeat for the next context. Each cycle gets faster.
 
-One manufacturing client saved $15M annually by phasing their supply chain modernization this way — replacing legacy batch processing with predictive analytics, one module at a time. No big bang. No parallel systems burning budget.
+One manufacturing client saved $15M annually by phasing their supply chain modernization this way - replacing legacy batch processing with predictive analytics, one module at a time. No big bang. No parallel systems burning budget.
 
 If someone on your team is pitching a rewrite, ask them:
 
@@ -459,7 +459,7 @@ Most enterprise systems fail all three tests. Phase it.
 
 ---
 
-**RUBEN — WEDNESDAY (Behind-the-Build / Technical Story)**
+**RUBEN - WEDNESDAY (Behind-the-Build / Technical Story)**
 
 We built an AI-powered hiring platform that reduced cost-per-hire from $47,000 to $18,500.
 
@@ -469,13 +469,13 @@ Here's the technical architecture that made it work:
 The system handles 156 different resume formats (PDF, DOCX, images, even one submitted as a haiku). We built a multi-format extraction pipeline using a combination of OCR, structural parsing, and an LLM-based normalization step that converts any format into a structured candidate profile.
 
 **Blind Assessment Engine**
-This was the key design decision. The AI evaluates candidates without seeing names, photos, universities, or previous employers. Just skills, experience patterns, and assessment responses. This is what drove the 43% increase in diverse candidate shortlisting — not a diversity filter, but the removal of bias vectors.
+This was the key design decision. The AI evaluates candidates without seeing names, photos, universities, or previous employers. Just skills, experience patterns, and assessment responses. This is what drove the 43% increase in diverse candidate shortlisting - not a diversity filter, but the removal of bias vectors.
 
 **Scoring & Ranking**
-Not a single score. A multi-dimensional skill map that matches against role requirements. Hiring managers see where candidates are strong and where there are gaps — not just "87% match." This transparency is what drove hiring manager satisfaction from 6.2/10 to 9.1/10.
+Not a single score. A multi-dimensional skill map that matches against role requirements. Hiring managers see where candidates are strong and where there are gaps - not just "87% match." This transparency is what drove hiring manager satisfaction from 6.2/10 to 9.1/10.
 
 **Feedback Loop**
-Every hiring decision (accept, reject, 90-day performance review) feeds back into the model. The system gets better with every hire. 90-day retention went from 71% to 94% — partly because the model learned what "succeeds in this role at this company" actually looks like, not just what looks good on paper.
+Every hiring decision (accept, reject, 90-day performance review) feeds back into the model. The system gets better with every hire. 90-day retention went from 71% to 94% - partly because the model learned what "succeeds in this role at this company" actually looks like, not just what looks good on paper.
 
 The real insight: AI hiring tools fail when they try to replace human judgment. They succeed when they remove the noise so humans can make better judgments faster.
 
@@ -483,11 +483,11 @@ The real insight: AI hiring tools fail when they try to replace human judgment. 
 
 ---
 
-**RUBEN — FRIDAY (Engineering Culture / Practical Advice)**
+**RUBEN - FRIDAY (Engineering Culture / Practical Advice)**
 
 The question I get asked most by technical founders: "Should we build in-house or hire an agency?"
 
-After being on both sides — running engineering teams and now running the CTO side of an agency that's shipped 100+ products — here's my honest framework:
+After being on both sides - running engineering teams and now running the CTO side of an agency that's shipped 100+ products - here's my honest framework:
 
 **Build in-house when:**
 
@@ -526,11 +526,11 @@ If your agency builds something only they can maintain, they're not a partner. T
 
 ### Step 3: Engagement Tactics
 
-- **Employee advocacy:** Have 5-10 team members reshare and comment on company posts — this 5-10x the reach
+- **Employee advocacy:** Have 5-10 team members reshare and comment on company posts - this 5-10x the reach
 - **Tag clients** (with permission) in case study posts
-- **LinkedIn newsletters:** Launch a monthly newsletter titled something like "The Build Log" — subscribers get notified directly
+- **LinkedIn newsletters:** Launch a monthly newsletter titled something like "The Build Log" - subscribers get notified directly
 - **Carousel posts:** Convert blog content into visual carousels (highest engagement format on LinkedIn in 2026)
-- **Polls:** "What's your biggest bottleneck: hiring engineers, managing legacy code, or shipping faster?" — polls get 3-5x engagement
+- **Polls:** "What's your biggest bottleneck: hiring engineers, managing legacy code, or shipping faster?" - polls get 3-5x engagement
 
 ---
 
@@ -540,11 +540,11 @@ If your agency builds something only they can maintain, they're not a partner. T
 
 | Company          | Wikipedia                                                             | Wikidata                   | Knowledge Panel                     |
 | ---------------- | --------------------------------------------------------------------- | -------------------------- | ----------------------------------- |
-| **Thoughtworks** | Full article (revenue, history, key people, acquisitions, 49 offices) | Complete entity            | Yes — rich panel                    |
-| **Freshworks**   | Full article (Nasdaq-listed, $596M revenue, founding story)           | Complete entity            | Yes — rich panel                    |
-| **Postman**      | Full article (30M users, funding rounds, products)                    | Complete entity            | Yes — rich panel                    |
+| **Thoughtworks** | Full article (revenue, history, key people, acquisitions, 49 offices) | Complete entity            | Yes - rich panel                    |
+| **Freshworks**   | Full article (Nasdaq-listed, $596M revenue, founding story)           | Complete entity            | Yes - rich panel                    |
+| **Postman**      | Full article (30M users, funding rounds, products)                    | Complete entity            | Yes - rich panel                    |
 | **Simform**      | No Wikipedia article                                                  | Likely has Wikidata entity | Partial panel from Clutch/GoodFirms |
-| **Baaz**         | No article                                                            | No entity                  | No panel — **this is the gap**      |
+| **Baaz**         | No article                                                            | No entity                  | No panel - **this is the gap**      |
 
 ### Google Business Profile
 
@@ -552,7 +552,7 @@ If your agency builds something only they can maintain, they're not a partner. T
 | -------------------------- | -------------------- | ------------ | ---------- | --------------------------- |
 | **Thoughtworks Bangalore** | Verified, complete   | 100+ reviews | 50+ photos | Regular updates             |
 | **Simform**                | Verified             | 50+ reviews  | 30+ photos | Monthly posts               |
-| **Baaz**                   | Unverified / missing | 0 reviews    | 0 photos   | No posts — **critical gap** |
+| **Baaz**                   | Unverified / missing | 0 reviews    | 0 photos   | No posts - **critical gap** |
 
 ### LinkedIn
 
@@ -609,7 +609,7 @@ If your agency builds something only they can maintain, they're not a partner. T
 
 ## Part 6: Content Templates
 
-### Wikidata — Exact Claims to Add (done)
+### Wikidata - Exact Claims to Add (done)
 
 ```
 Label: Baaz
@@ -628,41 +628,41 @@ P1056 (product or material produced) → Q7397 (software)
 P1056 (product or material produced) → Q620615 (mobile application)
 ```
 
-### GBP — 5 Posts (done)
+### GBP - 5 Posts (done)
 
-**Post 1 — Case Study (Visual inspection / AI):**
+**Post 1 - Case Study (Visual inspection / AI):**
 
 > We built an AI-powered visual inspection platform that automates quality control using computer vision. Manufacturers using it reduced manual QA time by 80%. From model training to production deployment in 14 weeks.
 > See the full case study → https://www.baaz.pro/work1
 > [Attach: screenshot of the product]
 
-**Post 2 — Service Highlight:**
+**Post 2 - Service Highlight:**
 
-> Looking for a product engineering partner? Baaz builds custom software, mobile apps, and AI solutions for startups and enterprises. From strategy to deployment — we've shipped 100+ products since 2018.
+> Looking for a product engineering partner? Baaz builds custom software, mobile apps, and AI solutions for startups and enterprises. From strategy to deployment - we've shipped 100+ products since 2018.
 > Book a free consultation → https://www.baaz.pro/get-in-touch
 > [Attach: team photo or product collage]
 
-**Post 3 — Thought Leadership:**
+**Post 3 - Thought Leadership:**
 
-> 85% of enterprise AI projects never make it to production. The gap isn't the model — it's the engineering. Infrastructure, data pipelines, monitoring, and team readiness matter more than algorithm choice.
+> 85% of enterprise AI projects never make it to production. The gap isn't the model - it's the engineering. Infrastructure, data pipelines, monitoring, and team readiness matter more than algorithm choice.
 > Read our take → [link to blog/guest article when live]
 > [Attach: optional blog thumbnail]
 
-**Post 4 — Offer:**
+**Post 4 - Offer:**
 
-> Free Product Strategy Session: Book a 60-minute call with our engineering leads. We'll map your MVP scope, tech stack, and timeline — no strings attached.
+> Free Product Strategy Session: Book a 60-minute call with our engineering leads. We'll map your MVP scope, tech stack, and timeline - no strings attached.
 > Book now → https://www.baaz.pro/get-in-touch
 > [Attach: branded graphic]
 
-**Post 5 — Case Study (Hiring / HR tech):**
+**Post 5 - Case Study (Hiring / HR tech):**
 
-> We built an AI-powered hiring platform that cut cost-per-hire by 61% and time-to-hire from 89 days to 31. Better candidates, faster decisions, less bias — product engineering applied to recruitment.
+> We built an AI-powered hiring platform that cut cost-per-hire by 61% and time-to-hire from 89 days to 31. Better candidates, faster decisions, less bias - product engineering applied to recruitment.
 > Full case study → https://www.baaz.pro/work2
 > [Attach: screenshot or team graphic]
 
 ---
 
-### GBP — 20 Review Templates (Share with Customers)
+### GBP - 20 Review Templates (Share with Customers)
 
 _Send these to clients so they can pick one, copy-paste, or tweak. Each is written to sound human and includes relevant keywords (product engineering, custom software, mobile app, AI, Bangalore, etc.) for SEO/local (GEO). Customers can leave as-is or personalize._
 
@@ -680,7 +680,7 @@ _Send these to clients so they can pick one, copy-paste, or tweak. Each is writt
 
 4. **AI / discovery**
 
-   > We came with a vague “we want AI” brief. Baaz ran a short discovery, narrowed the scope, and built something that actually went to production. No fluff — real product engineering. Happy with the outcome.
+   > We came with a vague “we want AI” brief. Baaz ran a short discovery, narrowed the scope, and built something that actually went to production. No fluff - real product engineering. Happy with the outcome.
 
 5. **Enterprise / timeline**
 
@@ -688,7 +688,7 @@ _Send these to clients so they can pick one, copy-paste, or tweak. Each is writt
 
 6. **Design + build**
 
-   > We needed both design and development. Baaz did the UI/UX first, then built it. No handoff drama — same team from strategy to launch. That’s rare. Would recommend for product strategy and development.
+   > We needed both design and development. Baaz did the UI/UX first, then built it. No handoff drama - same team from strategy to launch. That’s rare. Would recommend for product strategy and development.
 
 7. **Startup / MVP**
 
@@ -696,7 +696,7 @@ _Send these to clients so they can pick one, copy-paste, or tweak. Each is writt
 
 8. **Ongoing relationship**
 
-   > We’ve done two projects with Baaz — first a web app, then a mobile app. Consistent quality and they remember our context. Feels like a long-term partner, not a one-off vendor. Recommended for custom software and mobile.
+   > We’ve done two projects with Baaz - first a web app, then a mobile app. Consistent quality and they remember our context. Feels like a long-term partner, not a one-off vendor. Recommended for custom software and mobile.
 
 9. **Technical / architecture**
 
@@ -708,11 +708,11 @@ _Send these to clients so they can pick one, copy-paste, or tweak. Each is writt
 
 11. **Design focus**
 
-    > The UI/UX work stood out. They didn’t just make it look good — they improved flows and reduced clicks. Our conversion improved after the redesign. Strong design and development combo in Bangalore.
+    > The UI/UX work stood out. They didn’t just make it look good - they improved flows and reduced clicks. Our conversion improved after the redesign. Strong design and development combo in Bangalore.
 
 12. **AI / production**
 
-    > We had an AI PoC that never made it to production. Baaz took it over — data pipelines, deployment, monitoring. Now it runs in production and we’re scaling it. If you need AI that actually ships, talk to them.
+    > We had an AI PoC that never made it to production. Baaz took it over - data pipelines, deployment, monitoring. Now it runs in production and we’re scaling it. If you need AI that actually ships, talk to them.
 
 13. **Scope and budget**
 
@@ -720,7 +720,7 @@ _Send these to clients so they can pick one, copy-paste, or tweak. Each is writt
 
 14. **Post-launch support**
 
-    > The app launched on time. What we didn’t expect was how helpful they were after launch — bug fixes, small tweaks, and solid documentation. We still reach out when we need product engineering support.
+    > The app launched on time. What we didn’t expect was how helpful they were after launch - bug fixes, small tweaks, and solid documentation. We still reach out when we need product engineering support.
 
 15. **Bangalore / local**
 
@@ -732,22 +732,22 @@ _Send these to clients so they can pick one, copy-paste, or tweak. Each is writt
 
 17. **Speed and quality**
 
-    > Needed to get to market quickly without cutting corners. Baaz balanced speed and quality — we had a usable MVP in weeks and then iterated. Good fit if you need custom software development that can move fast.
+    > Needed to get to market quickly without cutting corners. Baaz balanced speed and quality - we had a usable MVP in weeks and then iterated. Good fit if you need custom software development that can move fast.
 
 18. **Discovery first**
 
-    > We almost built the wrong thing. Baaz insisted on a short discovery phase. They were right — we changed scope and saved time and money. Their product strategy and discovery process are worth it.
+    > We almost built the wrong thing. Baaz insisted on a short discovery phase. They were right - we changed scope and saved time and money. Their product strategy and discovery process are worth it.
 
 19. **Flutter / cross-platform**
 
     > We chose Flutter and wanted a team that knew it. Baaz built our app in Flutter for iOS and Android. Single codebase, consistent experience. Recommend for mobile app development, especially cross-platform.
 
 20. **End-to-end**
-    > From idea to live product — strategy, design, development, and deployment. Baaz handled it all. We’re a non-tech company and they made the process clear. One of the best product engineering experiences we’ve had. Based in Bangalore, work with clients globally.
+    > From idea to live product - strategy, design, development, and deployment. Baaz handled it all. We’re a non-tech company and they made the process clear. One of the best product engineering experiences we’ve had. Based in Bangalore, work with clients globally.
 
 ---
 
-### LinkedIn — First Week Posts
+### LinkedIn - First Week Posts
 
 All 11 posts (3 company, 4 Chitresh, 4 Ruben) are written in full above in Step 2.
 
@@ -756,32 +756,32 @@ All 11 posts (3 company, 4 Chitresh, 4 Ruben) are written in full above in Step 
 | Day           | Company Page                                            | Chitresh (CEO)                                     | Ruben (CTO)                                     |
 | ------------- | ------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- |
 | **Monday**    | Viz Pro case study (AI defect detection, $4.2M savings) | 3-Owner Test framework for project success         | Edge inference architecture for computer vision |
-| **Tuesday**   | Suprflow case study (hiring automation, 340% ROI)       | "Most companies don't need AI" contrarian take     | "Let's just rewrite it" — Strangler Fig pattern |
-| **Wednesday** | —                                                       | Suprflow client win story ($47K → $18.5K per hire) | Suprflow technical architecture deep dive       |
-| **Thursday**  | AI in production — why 85% fail (technical deep dive)   | —                                                  | —                                               |
-| **Friday**    | —                                                       | Discovery framework for enterprise clients         | Build in-house vs agency — honest framework     |
+| **Tuesday**   | Suprflow case study (hiring automation, 340% ROI)       | "Most companies don't need AI" contrarian take     | "Let's just rewrite it" - Strangler Fig pattern |
+| **Wednesday** | -                                                       | Suprflow client win story ($47K → $18.5K per hire) | Suprflow technical architecture deep dive       |
+| **Thursday**  | AI in production - why 85% fail (technical deep dive)   | -                                                  | -                                               |
+| **Friday**    | -                                                       | Discovery framework for enterprise clients         | Build in-house vs agency - honest framework     |
 
 ---
 
-### LinkedIn — Week 2 Posts (Chitresh & Ruben)
+### LinkedIn - Week 2 Posts (Chitresh & Ruben)
 
-**Theme alignment:** Month 1 — AI in production + enterprise software decisions (new angles vs Week 1).
+**Theme alignment:** Month 1 - AI in production + enterprise software decisions (new angles vs Week 1).
 
 **Posting schedule:**
 
 | Day           | Chitresh (CEO)                                                   | Ruben (CTO)                                              |
 | ------------- | ---------------------------------------------------------------- | -------------------------------------------------------- |
-| **Monday**    | AI production — business definition (workflow, metric, rollback) | Data contracts, lineage, drift — pipelines before models |
-| **Tuesday**   | Legacy modernization — continuity vs big bang freeze             | PoC vs production — SLOs, fallback, monitoring           |
-| **Wednesday** | Trust & failure modes — buyer/builder lens                       | Anti-corruption layers & safe strangler integration      |
-| **Thursday**  | —                                                                | —                                                        |
-| **Friday**    | 5-question vendor / build sanity check                           | AI roadmap readable by on-call — runbooks & shadow mode  |
+| **Monday**    | AI production - business definition (workflow, metric, rollback) | Data contracts, lineage, drift - pipelines before models |
+| **Tuesday**   | Legacy modernization - continuity vs big bang freeze             | PoC vs production - SLOs, fallback, monitoring           |
+| **Wednesday** | Trust & failure modes - buyer/builder lens                       | Anti-corruption layers & safe strangler integration      |
+| **Thursday**  | -                                                                | -                                                        |
+| **Friday**    | 5-question vendor / build sanity check                           | AI roadmap readable by on-call - runbooks & shadow mode  |
 
 #### Chitresh Parihar (CEO): Week 2
 
 ---
 
-**CHITRESH — MONDAY (Founder / Business — AI That Ships)**
+**CHITRESH - MONDAY (Founder / Business - AI That Ships)**
 
 Gartner-style stats are everywhere: most enterprise AI never reaches production.
 
@@ -789,7 +789,7 @@ After years of builds, the pattern I see on the **business** side is simpler: **
 
 It succeeds when success is **a workflow with an owner, a number that moves, and a rollback plan.**
 
-If your AI initiative doesn't have those three, you don't have a product bet — you have a science fair.
+If your AI initiative doesn't have those three, you don't have a product bet - you have a science fair.
 
 We've seen the gap close when teams stop asking "what's the best model?" and start asking "what happens on Tuesday when this is wrong?"
 
@@ -799,7 +799,7 @@ That's not pessimism. It's how software that actually runs gets funded the secon
 
 ---
 
-**CHITRESH — TUESDAY (Industry Take — Legacy vs Big Bang)**
+**CHITRESH - TUESDAY (Industry Take - Legacy vs Big Bang)**
 
 The most expensive legacy mistake isn't old code. **It's pausing the business while you "finish" the replacement.**
 
@@ -815,9 +815,9 @@ If your roadmap says "freeze features for nine months," ask what happens to reve
 
 ---
 
-**CHITRESH — WEDNESDAY (Story / Client Angle — Trust + AI)**
+**CHITRESH - WEDNESDAY (Story / Client Angle - Trust + AI)**
 
-The AI projects that made it to production for our clients had one thing in common: **someone senior could explain what "wrong" looks like** — and what the business does when the system is uncertain.
+The AI projects that made it to production for our clients had one thing in common: **someone senior could explain what "wrong" looks like** - and what the business does when the system is uncertain.
 
 We didn't win on model novelty. We won on **clarity**: who decides, what's automated vs assisted, and how we measure quality after launch.
 
@@ -831,17 +831,17 @@ Trust is the real deployment bottleneck.
 
 ---
 
-**CHITRESH — FRIDAY (Framework — Vendor / Build Decisions)**
+**CHITRESH - FRIDAY (Framework - Vendor / Build Decisions)**
 
 Before we take on (or recommend) a major build, I use a **5-question sanity check**:
 
 1. What **metric** moves in 90 days if this works?
 2. Who **owns** the problem if adoption is weak?
-3. What **must** integrate on day one — not "later"?
+3. What **must** integrate on day one - not "later"?
 4. What's the **smallest** release that proves value?
 5. What do we **stop** doing if this succeeds?
 
-If questions 1 and 2 are fuzzy, no proposal should be greenlit yet — agency or in-house.
+If questions 1 and 2 are fuzzy, no proposal should be greenlit yet - agency or in-house.
 
 Cheap discovery beats expensive regret.
 
@@ -853,13 +853,13 @@ Cheap discovery beats expensive regret.
 
 ---
 
-**RUBEN — MONDAY (Architecture / Production AI)**
+**RUBEN - MONDAY (Architecture / Production AI)**
 
 The best ML teams I've worked with spend most of their early cycles on **data contracts**, not architecture diagrams.
 
 **Schema stability** (what a "record" means), **lineage** (where labels came from), **freshness SLAs**, and **drift signals** matter more than the third round of hyperparameter tuning.
 
-Rule of thumb: if you can't answer "what changed in the data since last deploy?" you don't have MLOps — you have a notebook and hope.
+Rule of thumb: if you can't answer "what changed in the data since last deploy?" you don't have MLOps - you have a notebook and hope.
 
 Production AI is **pipeline engineering** with a model in the middle.
 
@@ -867,9 +867,9 @@ Production AI is **pipeline engineering** with a model in the middle.
 
 ---
 
-**RUBEN — TUESDAY (Technical Opinion — PoC → Prod)**
+**RUBEN - TUESDAY (Technical Opinion - PoC → Prod)**
 
-**A PoC that ignores latency, cost per inference, and failure modes isn't a step toward production — it's a fork.**
+**A PoC that ignores latency, cost per inference, and failure modes isn't a step toward production - it's a fork.**
 
 I've seen "successful" demos die because nobody priced **p95 latency** under load or defined **fallback** when confidence is low.
 
@@ -879,17 +879,17 @@ Before you call a PoC "done," define:
 - **Human-in-the-loop** vs full automation boundaries
 - **Monitoring** for data + model + business KPIs
 
-If those aren't written down, the next phase isn't "scale" — it's **rewrite**.
+If those aren't written down, the next phase isn't "scale" - it's **rewrite**.
 
 #AI #SystemDesign #Engineering #TechLeadership #SoftwareDevelopment
 
 ---
 
-**RUBEN — WEDNESDAY (Behind-the-Build — Integration / Legacy)**
+**RUBEN - WEDNESDAY (Behind-the-Build - Integration / Legacy)**
 
 **Anti-corruption layers** sound academic until you're the one debugging why a 2005 batch job and a new service disagree on "customer."
 
-We treat legacy integration like **translation**, not replication: explicit DTOs, bounded contexts, and tests that lock **semantic** behavior — not just field names.
+We treat legacy integration like **translation**, not replication: explicit DTOs, bounded contexts, and tests that lock **semantic** behavior - not just field names.
 
 The goal isn't purity. It's **safe strangulation**: new path live, old path still true until you cut over with evidence.
 
@@ -899,11 +899,11 @@ That's how you modernize without betting the company on a single cutover weekend
 
 ---
 
-**RUBEN — FRIDAY (Engineering Culture / Practical)**
+**RUBEN - FRIDAY (Engineering Culture / Practical)**
 
 Hot take: **your "AI roadmap" should be readable by your on-call rotation.**
 
-If only the data science team understands how a decision gets made in prod, you don't have a platform — you have a **key-person risk**.
+If only the data science team understands how a decision gets made in prod, you don't have a platform - you have a **key-person risk**.
 
 Practices that actually help: **runbooks** for model rollback, **shadow mode** before auto-actions, **feature ownership** across ML + backend + SRE.
 
@@ -930,18 +930,18 @@ Good AI systems are boring to operate. That's the compliment.
 
 ---
 
-## Part 7: Blog runway — this week + next four weeks (checklist)
+## Part 7: Blog runway - this week + next four weeks (checklist)
 
 **Legend**
 
 - `[x]` = **Already generated / live** (treat as correct; link to these from new posts instead of repeating the same angle).
-- `[ ]` = **Not yet** — empty square bracket until the onsite blog is written, published in `blogData`, and you’ve run through `PAGE_OPTIMIZATION_FRAMEWORK.md`.
+- `[ ]` = **Not yet** - empty square bracket until the onsite blog is written, published in `blogData`, and you’ve run through `PAGE_OPTIMIZATION_FRAMEWORK.md`.
 
-**Strategic fit:** Part 3 **Content Pillars** — _AI in production_, _enterprise software decisions_, _legacy modernization_, _mobile_ — so GBP and LinkedIn always have a **baaz.pro** URL to point at.
+**Strategic fit:** Part 3 **Content Pillars** - _AI in production_, _enterprise software decisions_, _legacy modernization_, _mobile_ - so GBP and LinkedIn always have a **baaz.pro** URL to point at.
 
 ---
 
-### A. Onsite posts already live (`lib/blogData.js`) — all `[x]`
+### A. Onsite posts already live (`lib/blogData.js`) - all `[x]`
 
 | ✓   | Slug                                              | Why it stays useful                                                                       |
 | --- | ------------------------------------------------- | ----------------------------------------------------------------------------------------- |
@@ -960,7 +960,7 @@ Good AI systems are boring to operate. That's the compliment.
 
 ---
 
-### B. Long-form drafts already written (not necessarily on baaz.pro yet) — `[x]`
+### B. Long-form drafts already written (not necessarily on baaz.pro yet) - `[x]`
 
 | ✓   | Asset                                     | Notes                                                                                                  |
 | --- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -971,7 +971,7 @@ Good AI systems are boring to operate. That's the compliment.
 
 ---
 
-### C. This week (already planned — social + ops)
+### C. This week (already planned - social + ops)
 
 Use **Part 3** (company + Chitresh + Ruben Week 1 schedules) and **Part 6** GBP templates. Link to existing **`[x]`** blogs where a thread needs a URL.
 
@@ -983,7 +983,7 @@ _If this week’s plan is social-only, leave the row above `[ ]` and pull links 
 
 ---
 
-### D. Next four weeks — new onsite flagship topics (each starts as `[ ]`)
+### D. Next four weeks - new onsite flagship topics (each starts as `[ ]`)
 
 Roll calendar by **Monday start date** (write it in the header when you reuse this block).
 
@@ -993,7 +993,7 @@ Roll calendar by **Monday start date** (write it in the header when you reuse th
 | --- | ----------------------------------------------------------------- |
 | [ ] | **Legacy modernization: rebuild vs re-platform vs strangler fig** |
 
-**Why next:** Ruben’s LinkedIn already teaches this pattern; a dedicated article captures **legacy modernization** and **rewrite** intent in search and AI answers, and gives GBP Week 3–style posts a perfect link. You have adjacent coverage (`software-project-rescue-checklist`, `reference-architecture-b2b-saas`) but **no** single decision-framework URL — this fills that gap without cannibalizing the pillar partner post.
+**Why next:** Ruben’s LinkedIn already teaches this pattern; a dedicated article captures **legacy modernization** and **rewrite** intent in search and AI answers, and gives GBP Week 3–style posts a perfect link. You have adjacent coverage (`software-project-rescue-checklist`, `reference-architecture-b2b-saas`) but **no** single decision-framework URL - this fills that gap without cannibalizing the pillar partner post.
 
 ---
 
@@ -1003,7 +1003,7 @@ Roll calendar by **Monday start date** (write it in the header when you reuse th
 | --- | ---------------------------------------------------------------- |
 | [ ] | **From AI PoC to production: a practical engineering checklist** |
 
-**Why next:** Matches your **guest article 2** thesis and Part 3 “85% never ship” narrative. `how-to-build-ai-powered-product` is broad; this piece owns **PoC → prod**, **SLOs**, **pipelines**, and **monitoring** — exactly what CTOs search when a demo already exists. Pairs with `slos-error-budgets-reliability` via internal links instead of repeating it.
+**Why next:** Matches your **guest article 2** thesis and Part 3 “85% never ship” narrative. `how-to-build-ai-powered-product` is broad; this piece owns **PoC → prod**, **SLOs**, **pipelines**, and **monitoring** - exactly what CTOs search when a demo already exists. Pairs with `slos-error-budgets-reliability` via internal links instead of repeating it.
 
 ---
 

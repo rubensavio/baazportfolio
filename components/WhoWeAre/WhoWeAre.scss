@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* ~1312px — slightly wider than 75rem so the title can breathe */
+  /* ~1312px - slightly wider than 75rem so the title can breathe */
   max-width: min(75rem, 80%);
   padding: 0 clamp(1.5rem, 4vw, 3rem);
 }
@@ -55,7 +55,7 @@
   text-align: center;
 }
 
-/* White panel — wider than header so the capability grid can breathe */
+/* White panel - wider than header so the capability grid can breathe */
 .who-we-are-panel {
   max-width: min(80rem, 90%);
   width: 100%;
@@ -124,7 +124,7 @@
   color: #6b7280;
 }
 
-/* Capabilities — original centered pastel cards */
+/* Capabilities - original centered pastel cards */
 .who-we-are-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

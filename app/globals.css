@@ -38,7 +38,7 @@ code {
   z-index: 9999 !important;
 }
 
-/* Scroll / entrance animations — transform only (no opacity:0) to reduce CLS */
+/* Scroll / entrance animations - transform only (no opacity:0) to reduce CLS */
 @keyframes fadeInUp {
   from {
     transform: translateY(12px);

@@ -1,0 +1,153 @@
+/* Case study body copy - must load after legacy Work2/CaseStudy component SCSS */
+
+.baaz-v2.case-study-v2 .case-study-content {
+  p,
+  li,
+  .comparison-content p,
+  .solution-story p,
+  .finalthoughts-content p,
+  .finalthoughts-content p.closing-cta,
+  .comparison-description,
+  .comparison-conclusion,
+  .comparison-quote,
+  .challenge-item,
+  .success-factor-item,
+  .hiccups p,
+  .benefit-list li,
+  .unexpected-content p,
+  .intro-text {
+    color: var(--v2-text-2, #b8b4ae) !important;
+  }
+
+  .comparison-list li,
+  .challenges-list li,
+  .success-list li,
+  .work2-capability-features li,
+  .casestudy-capability-features li,
+  .result-list li,
+  .benefit-list li,
+  .win-list li,
+  .results-list li,
+  .re-stakeholder-list li,
+  .phase-bullets li {
+    color: var(--v2-text-2, #b8b4ae) !important;
+  }
+
+  strong,
+  b,
+  .problem-title-label,
+  .comparison-list li strong,
+  .challenges-list li strong,
+  .success-list li strong,
+  .result-list li strong,
+  .benefit-list li strong,
+  .work2-capability-features li strong,
+  .casestudy-capability-features li strong {
+    color: var(--v2-text, #f0ece6) !important;
+    font-weight: 500 !important;
+  }
+
+  .work2-capability-features li::before,
+  .casestudy-capability-features li::before,
+  .comparison-list li::before,
+  .results-list li::before,
+  .benefit-list li::before,
+  .win-list li::before,
+  .result-list li::before,
+  .phase-bullets li::before,
+  .phase-results li::before {
+    color: var(--v2-text-3, #8a8a8a) !important;
+  }
+
+  /* Implementation timeline - align Work2 layout/styling with Work1 */
+  .phase-tag,
+  .phase-label,
+  .phase-days {
+    font-family: var(--v2-sans) !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    background: var(--v2-bg-2, #181818) !important;
+    color: var(--v2-text-2, #b8b4ae) !important;
+    border: 1px solid var(--v2-border, rgba(255, 255, 255, 0.07)) !important;
+    border-radius: 0 !important;
+    padding: 6px 12px !important;
+  }
+
+  .phase-description,
+  .phase-description p,
+  p.phase-description {
+    color: var(--v2-text-2, #b8b4ae) !important;
+    font-weight: 300 !important;
+    line-height: 1.75 !important;
+    text-align: left !important;
+  }
+
+  .phase-results-label {
+    color: var(--v2-text, #f0ece6) !important;
+    font-weight: 500 !important;
+  }
+
+  .phase-results li {
+    color: var(--v2-text-2, #b8b4ae) !important;
+  }
+
+  .phase-bullets li::before,
+  .phase-results li::before {
+    color: var(--v2-accent, #c8f135) !important;
+  }
+
+  .phases-timeline {
+    padding-left: 0 !important;
+    gap: 48px !important;
+
+    &::before {
+      display: none !important;
+    }
+  }
+
+  .phase-item {
+    display: grid !important;
+    grid-template-columns: 60px 1fr !important;
+    gap: 24px 32px !important;
+    position: relative !important;
+
+    &:not(:last-child)::after {
+      content: "" !important;
+      position: absolute !important;
+      left: 30px !important;
+      top: 60px !important;
+      bottom: -24px !important;
+      width: 1px !important;
+      background: var(--v2-border, rgba(255, 255, 255, 0.07)) !important;
+    }
+  }
+
+  .phase-number {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: var(--v2-bg-2, #181818) !important;
+    color: var(--v2-text, #f0ece6) !important;
+    border: 1px solid var(--v2-border-h, rgba(255, 255, 255, 0.14)) !important;
+    font-family: var(--v2-serif) !important;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+  }
+
+  .phase-number-circle {
+    box-shadow: none !important;
+    background: var(--v2-bg-2, #181818) !important;
+    color: var(--v2-text, #f0ece6) !important;
+    border: 1px solid var(--v2-border-h, rgba(255, 255, 255, 0.14)) !important;
+  }
+
+  .timeline-phase:not(:last-child)::after {
+    background: var(--v2-border, rgba(255, 255, 255, 0.07)) !important;
+  }
+}

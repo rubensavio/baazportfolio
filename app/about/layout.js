@@ -29,11 +29,11 @@ function buildFounderSchema() {
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
-  description: `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} since 2018—team, values, AI-enabled delivery, and product engineering for clients worldwide.`,
+  title: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+  description: `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} since 2018-team, values, AI-enabled delivery, and product engineering for clients worldwide.`,
   openGraph: {
-    title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
-    description: `${BRAND_POSITIONING_COMBINED}—team, values, and outcome-led builds for global clients since 2018.`,
+    title: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+    description: `${BRAND_POSITIONING_COMBINED}-team, values, and outcome-led builds for global clients since 2018.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
     images: [
@@ -41,14 +41,14 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
+        alt: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `About Baaz — ${BRAND_POSITIONING_COMBINED}`,
-    description: `Baaz—${BRAND_POSITIONING_COMBINED} for teams worldwide—team, craft, discovery to launch. Get in touch.`,
+    title: `About Baaz - ${BRAND_POSITIONING_COMBINED}`,
+    description: `Baaz-${BRAND_POSITIONING_COMBINED} for teams worldwide-team, craft, discovery to launch. Get in touch.`,
     images: [ogImage],
   },
 };

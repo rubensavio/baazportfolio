@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import { TESTIMONIALS } from "../../lib/testimonialsData";
 import "./Testimonials.scss";
 
 const Testimonials = () => {
@@ -10,32 +10,7 @@ const Testimonials = () => {
   const headerRef = useScrollAnimation();
   const cardRef = useScrollAnimation({ threshold: 0.2 });
 
-  const testimonials = [
-    {
-      id: 1,
-      rating: 5,
-      text: "Baaz delivered beyond expectations. Their team truly understands product development and business needs. We launched faster and smarter with their help.",
-      name: "Ravi Verma",
-      title: "Digital Marketing Specialist",
-      avatar: "/assets/RaviVerma.jpeg",
-    },
-    {
-      id: 2,
-      rating: 5,
-      text: "Baaz transformed our early-stage idea into a polished, scalable fintech product. Their attention to detail and communication made all the difference.",
-      name: "Daniel Thompson",
-      title: "Product Designer",
-      avatar: "/assets/DanielThompson.jpeg",
-    },
-    {
-      id: 3,
-      rating: 5,
-      text: "Working with Baaz was a game-changer. They delivered a robust solution on time and within budget. Highly recommended!",
-      name: "Sarah Johnson",
-      title: "CEO, TechStart",
-      avatar: "/assets/SarahJohnson.jpeg",
-    },
-  ];
+  const testimonials = TESTIMONIALS;
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -126,44 +101,11 @@ const Testimonials = () => {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="testimonial-card">
-                  {/* Star Rating */}
-                  <div className="testimonial-rating">
-                    {[...Array(testimonial.rating)].map((_, index) => (
-                      <svg
-                        key={index}
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="#FFB800"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                      </svg>
-                    ))}
-                  </div>
-
                   {/* Testimonial Text */}
                   <p className="testimonial-text">{testimonial.text}</p>
 
                   {/* User Info */}
                   <div className="testimonial-user">
-                    <div className="user-avatar">
-                      {testimonial.avatar ? (
-                        <Image
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          width={96}
-                          height={96}
-                          sizes="48px"
-                          className="testimonial-avatar-img"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="avatar-placeholder">
-                          {testimonial.name.charAt(0)}
-                        </div>
-                      )}
-                    </div>
                     <div className="user-info">
                       <h4 className="user-name">{testimonial.name}</h4>
                       <p className="user-title">{testimonial.title}</p>

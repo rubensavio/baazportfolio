@@ -110,7 +110,7 @@ function extractMetrics(report) {
 }
 
 function formatMs(n) {
-  if (n == null) return "—";
+  if (n == null) return "-";
   if (n >= 1000) return `${(n / 1000).toFixed(2)}s`;
   return `${Math.round(n)}ms`;
 }
@@ -136,22 +136,22 @@ async function main() {
       "|------|-------------|-----|-----|-----|-----|-------------|",
     ];
     data.forEach((r) => {
-      const perf = r.performanceScore != null ? `${r.performanceScore}` : "—";
+      const perf = r.performanceScore != null ? `${r.performanceScore}` : "-";
       const lcp =
         r.largestContentfulPaint != null
           ? formatMs(r.largestContentfulPaint)
-          : "—";
+          : "-";
       const fcp =
         r.firstContentfulPaint != null
           ? formatMs(r.firstContentfulPaint)
-          : "—";
+          : "-";
       const tbt =
-        r.totalBlockingTime != null ? formatMs(r.totalBlockingTime) : "—";
+        r.totalBlockingTime != null ? formatMs(r.totalBlockingTime) : "-";
       const cls =
         r.cumulativeLayoutShift != null
           ? r.cumulativeLayoutShift.toFixed(3)
-          : "—";
-      const si = r.speedIndex != null ? formatMs(r.speedIndex) : "—";
+          : "-";
+      const si = r.speedIndex != null ? formatMs(r.speedIndex) : "-";
       const err = r.error ? ` (error: ${r.error.slice(0, 40)}…)` : "";
       lines.push(
         `| ${r.label || r.url}${err} | ${perf} | ${lcp} | ${fcp} | ${tbt} | ${cls} | ${si} |`

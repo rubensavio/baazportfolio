@@ -1,5 +1,7 @@
-import { Urbanist, Outfit } from "next/font/google";
+import { Urbanist, Outfit, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import "../styles/arrow-icons.scss";
+import "../styles/baaz-v2-global.scss";
 import { getAlternates, AREA_SERVED_COUNTRIES } from "../lib/regions";
 import { getSiteUrl } from "../lib/siteUrl";
 import {
@@ -29,6 +31,27 @@ const outfit = Outfit({
   adjustFontFallback: true,
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  style: ["normal", "italic"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  fallback: ["Georgia", "serif"],
+  preload: true,
+  adjustFontFallback: true,
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500"],
+  display: "swap",
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  preload: true,
+  adjustFontFallback: true,
+});
+
 const ogImage = "/assets/ogdefault.png";
 const gtmId = "GTM-WRXJ3WNB";
 
@@ -48,7 +71,7 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: `Baaz — ${BRAND_POSITIONING_COMBINED}`,
+        alt: `Baaz - ${BRAND_POSITIONING_COMBINED}`,
       },
     ],
   },
@@ -72,11 +95,11 @@ const structuredData = {
       email: "support@baaz.pro",
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/assets/Logo.svg`,
+        url: `${baseUrl}/assets/Logo.png`,
         width: 600,
         height: 60,
       },
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; 100+ shipped applications per Baaz's internal portfolio records. HQ in Bangalore, India; US office in Sheridan, WY.`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018 across 26+ countries. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; $2B in business value generated for customers across 10 industries. HQ in Bangalore, India; US office in Sheridan, WY.`,
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       founder: {
@@ -124,10 +147,10 @@ const structuredData = {
     {
       "@type": "ProfessionalService",
       "@id": `${baseUrl}/#professional-service`,
-      name: `Baaz — ${BRAND_POSITIONING_COMBINED}`,
+      name: `Baaz - ${BRAND_POSITIONING_COMBINED}`,
       url: baseUrl,
-      image: `${baseUrl}/assets/Logo.svg`,
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation—strategy through design, build, and launch—for startups and enterprises worldwide.`,
+      image: `${baseUrl}/assets/Logo.png`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED}. It delivers custom software development, enterprise product engineering, MVP development, and digital transformation-strategy through design, build, and launch-for startups and enterprises worldwide.`,
       serviceType: [
         BRAND_POSITIONING_COMBINED,
         "Software Company",
@@ -225,7 +248,10 @@ export default function RootLayout({ children }) {
   `;
 
   return (
-    <html lang="en" className={`${urbanist.variable} ${outfit.variable}`}>
+    <html
+      lang="en"
+      className={`${urbanist.variable} ${outfit.variable} ${playfair.variable} ${inter.variable}`}
+    >
       <head>
         <link
           rel="preload"
