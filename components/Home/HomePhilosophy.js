@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import { HOME_PHILOSOPHY } from "../../lib/homePageData";
+import "./HomePhilosophy.scss";
 
 export default function HomePhilosophy() {
   const { label, heading, paragraphs } = HOME_PHILOSOPHY;
