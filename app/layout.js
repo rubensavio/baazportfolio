@@ -63,7 +63,7 @@ export const metadata = {
   description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018. Book a call to scope your build.`,
   openGraph: {
     title: `Software factory for the world | Baaz`,
-    description: `${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018.`,
+    description: `Enterprise software solutions, products and services.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -78,8 +78,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: `Software factory for the world | Baaz`,
-    description:
-      "Software development company for custom software and product engineering worldwide since 2018. Book a call to scope your next build.",
+    description: "Enterprise software solutions, products and services.",
     images: [ogImage],
   },
 };
