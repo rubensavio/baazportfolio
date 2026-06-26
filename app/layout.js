@@ -104,10 +104,9 @@ const structuredData = {
       founder: {
         "@type": "Person",
         "@id": `${baseUrl}/#founder`,
-        name: "Chitresh",
+        name: "Chitresh Parihar",
         url: `${baseUrl}/about`,
         jobTitle: "Co-founder",
-        sameAs: ["https://in.linkedin.com/company/baazpro"],
       },
       address: COMPANY_SCHEMA_ADDRESSES,
       areaServed: AREA_SERVED_COUNTRIES,
@@ -141,7 +140,10 @@ const structuredData = {
           url: `${baseUrl}/get-in-touch`,
         },
       ],
-      sameAs: ["https://in.linkedin.com/company/baazpro"],
+      sameAs: [
+        "https://in.linkedin.com/company/baazpro",
+        "https://x.com/baaz_hq",
+      ],
     },
     {
       "@type": "ProfessionalService",
