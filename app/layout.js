@@ -60,7 +60,7 @@ export const metadata = {
   alternates: getAlternates("/"),
   applicationName: "Baaz",
   title: `Software factory for the world | Baaz`,
-  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile, and AI since 2018. Book a call to scope your build.`,
+  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a call.`,
   openGraph: {
     title: `Software factory for the world | Baaz`,
     description: `Enterprise software solutions, products and services.`,
@@ -176,6 +176,20 @@ const structuredData = {
       provider: { "@id": `${baseUrl}/#organization` },
       areaServed: AREA_SERVED_COUNTRIES,
       address: COMPANY_SCHEMA_ADDRESSES,
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/#webpage`,
+      url: baseUrl,
+      name: `Software factory for the world | Baaz`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018.`,
+      isPartOf: { "@id": `${baseUrl}/#website` },
+      about: { "@id": `${baseUrl}/#organization` },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/assets/ogdefault.png`,
+      },
+      inLanguage: "en",
     },
     {
       "@type": "WebSite",
