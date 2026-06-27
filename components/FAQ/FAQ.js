@@ -22,19 +22,21 @@ const FAQ = ({ faqs, heading }) => {
               key={index}
               className={`faq-item ${openIndex === index ? "faq-item--open" : ""}`}
             >
-              <button
-                type="button"
-                id={`faq-question-${index}`}
-                className="faq-question"
-                onClick={() => toggle(index)}
-                aria-expanded={openIndex === index}
-                aria-controls={`faq-answer-${index}`}
-              >
-                <span className="faq-question-text">{faq.question}</span>
-                <span className="faq-icon" aria-hidden="true">
-                  {openIndex === index ? "−" : "+"}
-                </span>
-              </button>
+              <h3 className="faq-question-heading">
+                <button
+                  type="button"
+                  id={`faq-question-${index}`}
+                  className="faq-question"
+                  onClick={() => toggle(index)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
+                >
+                  <span className="faq-question-text">{faq.question}</span>
+                  <span className="faq-icon" aria-hidden="true">
+                    {openIndex === index ? "−" : "+"}
+                  </span>
+                </button>
+              </h3>
               <div
                 id={`faq-answer-${index}`}
                 className="faq-answer"
