@@ -7,7 +7,7 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/work1"),
-  title: "AI Quality Automation on Manufacturing ERP | Case Study | Baaz",
+  title: "AI Quality Automation on Manufacturing ERP | Baaz",
   description:
     "Manufacturing ERP plus an AI vision layer on the line: defect detection, QA workflows, and production rollout-how Baaz extended an existing stack with measurable quality outcomes.",
   openGraph: {
