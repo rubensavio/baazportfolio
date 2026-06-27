@@ -13,7 +13,26 @@ import {
   FILTER_ALL,
 } from "../../lib/servicesHubData";
 import { SERVICES_HUB } from "../../lib/servicesHubPageData";
+import FaqJsonLd from "../../components/FaqJsonLd";
 import "./page.scss";
+
+const SERVICES_FAQS = [
+  {
+    question: "What services does Baaz offer?",
+    answer:
+      "Baaz offers end-to-end product engineering: product strategy, UI/UX design, web and mobile development, AI solutions, and post-launch scaling. We cover everything from MVP builds to enterprise digital transformation.",
+  },
+  {
+    question: "Does Baaz build custom software or use templates?",
+    answer:
+      "Baaz builds custom software engineered around your specific operations and goals. We map your real workflows first, then design, build, and ship production systems - not template-based products.",
+  },
+  {
+    question: "Which industries does Baaz work with?",
+    answer:
+      "Baaz has delivered software across 10+ industries including manufacturing, BFSI, healthcare, logistics, real estate, education, and D2C commerce, serving startups and enterprises in 26+ countries since 2018.",
+  },
+];
 
 function getServiceInitials(title) {
   return (title || "")
@@ -43,6 +62,7 @@ export default function ServicesHubPage() {
           { name: "Services", url: "/services" },
         ]}
       />
+      <FaqJsonLd items={SERVICES_FAQS} />
       <div className="baaz-v2 services-hub-v2">
         <ClientNavbar />
 
