@@ -100,6 +100,56 @@ export default function TechnologyPageClient({ techSlug }) {
         </section>
 
         <div className="services-content-wrapper">
+          {data.offerings && data.offerings.length > 0 && (
+            <div className="service-offerings">
+              <h2 className="services-section-heading">
+                {data.offeringsHeading ||
+                  `Our offerings in ${labelLower} services`}
+              </h2>
+              {data.offeringsIntro && (
+                <p className="service-tech-intro">{data.offeringsIntro}</p>
+              )}
+              <div className="service-offerings-grid">
+                {data.caseStudies && (
+                  <Link
+                    href={data.caseStudies.href}
+                    className="service-offering-card service-offering-card--link"
+                    aria-label={data.caseStudies.heading}
+                  >
+                    {data.caseStudies.icon &&
+                      CARD_ICON_MAP[data.caseStudies.icon] && (
+                        <span className="service-card-icon" aria-hidden="true">
+                          {React.createElement(
+                            CARD_ICON_MAP[data.caseStudies.icon],
+                          )}
+                        </span>
+                      )}
+                    <h3 className="service-tech-title">
+                      {data.caseStudies.heading}
+                    </h3>
+                    <p className="service-tech-description">
+                      {data.caseStudies.description}
+                    </p>
+                  </Link>
+                )}
+
+                {data.offerings.map((item) => (
+                  <article className="service-offering-card" key={item.title}>
+                    {item.icon && CARD_ICON_MAP[item.icon] && (
+                      <span className="service-card-icon" aria-hidden="true">
+                        {React.createElement(CARD_ICON_MAP[item.icon])}
+                      </span>
+                    )}
+                    <h3 className="service-tech-title">{item.title}</h3>
+                    <p className="service-tech-description">
+                      {item.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
           {stackGroups.length > 0 && (
             <div className="service-services-and-stack">
               <h2 className="services-section-heading">
@@ -204,33 +254,6 @@ export default function TechnologyPageClient({ techSlug }) {
                     <h3 className="service-why-card-title">{point.title}</h3>
                     <p className="service-why-card-description">
                       {point.description}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {data.offerings && data.offerings.length > 0 && (
-            <div className="service-offerings">
-              <h2 className="services-section-heading">
-                {data.offeringsHeading ||
-                  `Our offerings in ${labelLower} services`}
-              </h2>
-              {data.offeringsIntro && (
-                <p className="service-tech-intro">{data.offeringsIntro}</p>
-              )}
-              <div className="service-offerings-grid">
-                {data.offerings.map((item) => (
-                  <article className="service-offering-card" key={item.title}>
-                    {item.icon && CARD_ICON_MAP[item.icon] && (
-                      <span className="service-card-icon" aria-hidden="true">
-                        {React.createElement(CARD_ICON_MAP[item.icon])}
-                      </span>
-                    )}
-                    <h3 className="service-tech-title">{item.title}</h3>
-                    <p className="service-tech-description">
-                      {item.description}
                     </p>
                   </article>
                 ))}

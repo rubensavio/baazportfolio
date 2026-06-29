@@ -54,6 +54,34 @@
     }
   }
 
+  .service-offering-card--link {
+    display: block !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease,
+      box-shadow 0.2s ease !important;
+
+    &:hover {
+      background: var(--v2-bg-1) !important;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+
+      .service-tech-title {
+        color: var(--v2-accent);
+      }
+
+      .service-card-icon {
+        border-color: var(--v2-accent) !important;
+        color: var(--v2-accent) !important;
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--v2-accent);
+      outline-offset: -2px;
+    }
+  }
+
   .service-highlights-grid--four {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
