@@ -1,13 +1,14 @@
 import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import BookCallClient from "./BookCallClient";
 import FaqJsonLd from "../../components/FaqJsonLd";
+import FAQ from "../../components/FAQ/FAQ";
 import "./page.scss";
 
 const BOOK_CALL_FAQS = [
   {
     question: "What happens on the call?",
     answer:
-      "You'll talk directly with a Baaz product engineer about your goals, scope, timeline, budget, and technical risks. By the end you'll have a clearer view of the right approach and next steps - whether that's a greenfield build, a rescue, or scaling an existing product.",
+      "You'll talk directly with the CEO of Baaz about your goals, scope, timeline, budget, and technical risks. By the end you'll have a clearer view of the right approach and next steps - whether that's a greenfield build, a rescue, or scaling an existing product.",
   },
   {
     question: "Is the call free?",
@@ -36,14 +37,20 @@ export default function BookCall() {
         <p className="v2-label book-call-eyebrow">Schedule</p>
         <h1 className="booking-title v2-display">Book Your Call</h1>
         <p className="booking-subtitle">
-          Book a free, no-obligation call with a Baaz product engineer to
+          Book a free, no-obligation call with the CEO of Baaz to
           discuss your goals, scope, timeline, and technical risks. Pick a date
           and time that works for you below - you'll leave with a clear view of
           the right approach and next steps.
         </p>
       </header>
 
-      <BookCallClient />
+      <BookCallClient
+        faqSection={
+          <section className="v2-faq" aria-label="Booking FAQ">
+            <FAQ faqs={BOOK_CALL_FAQS} heading="Questions about booking a call" />
+          </section>
+        }
+      />
     </div>
   );
 }
