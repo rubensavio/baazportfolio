@@ -6,8 +6,7 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/erp"),
-  title:
-    "Custom ERP Development for Global Enterprises | ERP Software | Baaz",
+  title: "Custom ERP Development for Enterprises | Baaz",
   description:
     "Custom ERP development for enterprises worldwide-manufacturing, healthcare, banking, insurance, logistics, construction, real estate & more. Phased ERP implementation with Baaz.",
   openGraph: {
