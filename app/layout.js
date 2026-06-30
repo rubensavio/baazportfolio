@@ -59,6 +59,9 @@ export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
   applicationName: "Baaz",
+  authors: [{ name: "Baaz", url: baseUrl }],
+  creator: "Baaz",
+  publisher: "Baaz",
   title: `Custom Software Development & Product Engineering | Baaz`,
   description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
   openGraph: {
