@@ -74,11 +74,25 @@ function buildArticleSchema(slug, data) {
   };
 }
 
+function buildFaqSchema(data) {
+  if (!data?.faqs?.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+}
+
 export default async function CaseStudyDetailLayout({ children, params }) {
   const resolved = await params;
   const slug = resolved?.slug;
   const data = slug ? selectedWorkData[slug] : null;
   const articleSchema = data ? buildArticleSchema(slug, data) : null;
+  const faqSchema = data ? buildFaqSchema(data) : null;
 
   return (
     <>
@@ -86,6 +100,12 @@ export default async function CaseStudyDetailLayout({ children, params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      )}
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
       {children}
