@@ -64,16 +64,6 @@ export default function ServicesPageClient({ serviceType }) {
 
       <main className="services-main">
         <section className="services-hero">
-          <div className="services-hero-background" aria-hidden="true">
-            <img
-              src="/assets/HomeHeroSectionBg.webp"
-              alt=""
-              className="services-hero-bg-image"
-              width={1200}
-              height={600}
-              fetchPriority="high"
-            />
-          </div>
           <div className="services-hero-wrapper">
             <div className="services-header">
               <span className="services-label">{serviceData.label}</span>
