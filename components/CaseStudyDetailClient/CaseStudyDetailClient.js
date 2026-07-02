@@ -8,6 +8,8 @@ import {
 } from "../icons/ArrowIcons";
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import Footer from "../Footer/Footer";
+import FAQ from "../FAQ/FAQ";
+import FaqJsonLd from "../FaqJsonLd";
 import { HOME_CTA } from "../../lib/homePageData";
 import { selectedWorkData } from "../../lib/selectedWorkData";
 import "./CaseStudyDetailClient.scss";
@@ -132,6 +134,13 @@ export default function CaseStudyDetailClient({ slug }) {
             <p className="cs-results-statement">{data.closingStatement}</p>
           )}
         </section>
+
+        {data.faqs && data.faqs.length > 0 && (
+          <section className="cs-section v2-faq" aria-label="Case study FAQ">
+            <FaqJsonLd items={data.faqs} />
+            <FAQ faqs={data.faqs} heading="Frequently asked questions" />
+          </section>
+        )}
 
         <section className="cs-closing">
           <p className="cs-closing-note">

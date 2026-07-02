@@ -22,7 +22,7 @@ const FAQ = ({ faqs, heading }) => {
               key={index}
               className={`faq-item ${openIndex === index ? "faq-item--open" : ""}`}
             >
-              <h3 className="faq-question-heading">
+              <h2 className="faq-question-heading">
                 <button
                   type="button"
                   id={`faq-question-${index}`}
@@ -36,7 +36,7 @@ const FAQ = ({ faqs, heading }) => {
                     {openIndex === index ? "−" : "+"}
                   </span>
                 </button>
-              </h3>
+              </h2>
               <div
                 id={`faq-answer-${index}`}
                 className="faq-answer"
