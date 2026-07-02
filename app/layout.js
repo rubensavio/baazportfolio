@@ -59,7 +59,7 @@ export const metadata = {
   metadataBase: new URL(baseUrl),
   alternates: getAlternates("/"),
   applicationName: "Baaz",
-  title: `Custom Software Development & Product Engineering | Baaz`,
+  title: `Software factory for the world | Baaz`,
   description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
   openGraph: {
     title: `Custom Software Development & Product Engineering | Baaz`,
