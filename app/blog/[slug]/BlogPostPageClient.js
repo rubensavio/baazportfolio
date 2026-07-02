@@ -240,8 +240,6 @@ export default function BlogPostPageClient({ slug, data }) {
               </Link>
               <Link
                 href={HOME_CTA.callHref}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="v2-arrow-link v2-arrow-link--light v2-cta-call-link"
               >
                 Schedule a call <ArrowLinkIcon />

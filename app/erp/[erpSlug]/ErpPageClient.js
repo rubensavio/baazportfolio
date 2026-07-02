@@ -45,8 +45,6 @@ export default function ErpPageClient({
           )}
           <Link
             href={HOME_CTA.callHref}
-            target="_blank"
-            rel="noopener noreferrer"
             className="erp-hero-cta"
           >
             Book a demo
@@ -412,8 +410,6 @@ export default function ErpPageClient({
             </Link>
             <Link
               href={HOME_CTA.callHref}
-              target="_blank"
-              rel="noopener noreferrer"
               className="v2-arrow-link v2-arrow-link--light v2-cta-call-link"
             >
               Schedule a call <ArrowLinkIcon />
