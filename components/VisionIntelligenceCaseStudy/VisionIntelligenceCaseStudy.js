@@ -114,7 +114,7 @@ export default function VisionIntelligenceCaseStudy() {
             {cs.capabilities.map((cap, i) => (
               <article className="vi-cs-capcard" key={cap.title}>
                 <span className="vi-cs-capnum">
-                  {String(i + 1).padStart(3, "0")}
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="vi-cs-card-title">{cap.title}</h3>
                 <p className="vi-cs-card-desc">{cap.description}</p>
