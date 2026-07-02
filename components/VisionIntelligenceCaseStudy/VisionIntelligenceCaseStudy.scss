@@ -68,6 +68,33 @@
     margin-top: 36px;
   }
 
+  @media (max-width: 600px) {
+    .vi-cs-hero .vi-cs-hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+      width: fit-content;
+      margin-inline: auto;
+
+      .vi-cs-btn {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    .vi-cs-closing .vi-cs-hero-actions {
+      flex-wrap: nowrap;
+      gap: 10px;
+
+      .vi-cs-btn {
+        flex: 1 1 0;
+        min-width: 0;
+        justify-content: center;
+        text-align: center;
+        padding: 14px 14px;
+      }
+    }
+  }
+
   .vi-cs-btn {
     display: inline-flex;
     align-items: center;
@@ -255,6 +282,11 @@
       flex-direction: column;
       gap: 12px;
       padding: 32px 0;
+
+      .vi-cs-process-num,
+      .vi-cs-process-title {
+        flex: 0 0 auto;
+      }
     }
   }
 
