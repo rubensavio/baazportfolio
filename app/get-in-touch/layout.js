@@ -1,6 +1,8 @@
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import { getAlternates } from "../../lib/regions";
 import { getSiteUrl } from "../../lib/siteUrl";
+import { CONTACT_FAQ_ITEMS } from "../../lib/contactPageData";
+import FaqJsonLd from "../../components/FaqJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -43,6 +45,7 @@ export default function GetInTouchLayout({ children }) {
           { name: "Get in Touch", url: "/get-in-touch" },
         ]}
       />
+      <FaqJsonLd items={CONTACT_FAQ_ITEMS} />
       {children}
     </>
   );
