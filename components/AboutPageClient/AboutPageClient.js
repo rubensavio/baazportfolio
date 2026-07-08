@@ -11,7 +11,7 @@ import { ABOUT_FAQ_ITEMS } from "../../lib/aboutFaq";
 import {
   ABOUT_HERO,
   ABOUT_SHOW_UP,
-  ABOUT_TEAM,
+  // ABOUT_TEAM, // team section hidden for now
 } from "../../lib/aboutPageData";
 import "./AboutPageClient.scss";
 
@@ -76,6 +76,7 @@ export default function AboutPageClient() {
         </div>
       </section>
 
+      {/* "The people behind the work" team section - hidden for now
       <section className="about-team" id="team" aria-labelledby="about-team-heading">
         <div className="v2-wrap">
           <Reveal className="about-team-header">
@@ -100,6 +101,7 @@ export default function AboutPageClient() {
           </Reveal>
         </div>
       </section>
+      */}
 
       <div className="v2-faq">
         <FAQ faqs={ABOUT_FAQ_ITEMS} heading="About Baaz - common questions" />
