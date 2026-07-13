@@ -42,15 +42,6 @@ function markServicesHubSource() {
   }
 }
 
-function getServiceInitials(title) {
-  return (title || "")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0]?.toUpperCase() || "")
-    .join("");
-}
-
 export default function ServicesHubPage() {
   const [activeFilter, setActiveFilter] = useState(FILTER_ALL);
 
@@ -58,9 +49,6 @@ export default function ServicesHubPage() {
     if (activeFilter === FILTER_ALL) return servicesHubItems;
     return servicesHubItems.filter((item) => item.category === activeFilter);
   }, [activeFilter]);
-
-  const featuredItem = filteredItems[0];
-  const listItems = filteredItems.slice(1);
 
   return (
     <>
@@ -112,34 +100,11 @@ export default function ServicesHubPage() {
             ))}
           </div>
 
-          {featuredItem && (
-            <Reveal>
-              <Link
-                href={featuredItem.href}
-                className="svc-hub-featured"
-                onClick={markServicesHubSource}
-              >
-                <div className="svc-hub-featured-visual">
-                  <span className="svc-hub-featured-initials v2-display">
-                    {getServiceInitials(featuredItem.title)}
-                  </span>
-                </div>
-                <div className="svc-hub-featured-body">
-                  <span className="svc-hub-featured-tag v2-label">
-                    {featuredItem.categoryLabel}
-                  </span>
-                  <h2 className="svc-hub-featured-title v2-display">{featuredItem.title}</h2>
-                  <p className="svc-hub-featured-desc">{featuredItem.intro}</p>
-                </div>
-              </Link>
-            </Reveal>
-          )}
-
           <div className="svc-hub-list">
-            {listItems.length === 0 && !featuredItem ? (
+            {filteredItems.length === 0 ? (
               <p className="svc-hub-empty">No services in this filter.</p>
             ) : (
-              listItems.map((item, index) => (
+              filteredItems.map((item, index) => (
                 <Reveal key={item.href} delay={index * 0.03}>
                   <Link
                     href={item.href}

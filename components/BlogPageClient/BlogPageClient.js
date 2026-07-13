@@ -31,15 +31,6 @@ function getBlogCategory(contentType) {
   return "guide";
 }
 
-function getPostInitials(title) {
-  return (title || "")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((word) => word[0]?.toUpperCase() || "")
-    .join("");
-}
-
 function formatPostDate(datePublished) {
   if (!datePublished) return "";
   return new Date(datePublished).toLocaleDateString("en-GB", {
@@ -65,14 +56,7 @@ export default function BlogPageClient() {
     [],
   );
 
-  const featuredPost = posts[0];
-  const listPosts = posts.slice(1);
-
-  const filteredFeatured =
-    activeFilter === "all" ||
-    getBlogCategory(featuredPost?.contentType) === activeFilter;
-
-  const filteredList = listPosts.filter(
+  const filteredList = posts.filter(
     (post) =>
       activeFilter === "all" ||
       getBlogCategory(post.contentType) === activeFilter,
@@ -139,38 +123,6 @@ export default function BlogPageClient() {
             </button>
           ))}
         </div>
-
-        {featuredPost && filteredFeatured && (
-          <Reveal>
-            <Link
-              href={`/blog/${featuredPost.slug}`}
-              className="blog-featured"
-              data-category={getBlogCategory(featuredPost.contentType)}
-            >
-              <div className="blog-featured-visual">
-                <span className="blog-featured-initials v2-display">
-                  {getPostInitials(featuredPost.title)}
-                </span>
-              </div>
-              <div className="blog-featured-body">
-                <span className="blog-featured-tag v2-label">
-                  {featuredPost.contentType}
-                  {featuredPost.datePublished &&
-                    ` · ${formatPostDate(featuredPost.datePublished)}`}
-                </span>
-                <h2 className="blog-featured-title v2-display">
-                  {featuredPost.title}
-                </h2>
-                <p className="blog-featured-desc">{featuredPost.intro}</p>
-                <div className="blog-featured-meta">
-                  {formatAuthor(featuredPost) && (
-                    <span>{formatAuthor(featuredPost)}</span>
-                  )}
-                </div>
-              </div>
-            </Link>
-          </Reveal>
-        )}
 
         <div className="blog-list">
           {filteredList.map((post, index) => (
