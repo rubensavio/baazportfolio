@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   ArrowBackIcon,
@@ -16,8 +16,20 @@ const MONO =
   'var(--v2-mono, ui-monospace, "SF Mono", "JetBrains Mono", monospace)';
 
 export default function VisionIntelligenceCaseStudy() {
+  const datasetVideoRefs = useRef([]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Apply each dataset video's individual playback speed once mounted.
+  useEffect(() => {
+    cs.datasets.forEach((d, i) => {
+      const el = datasetVideoRefs.current[i];
+      if (el && d.playbackRate) {
+        el.playbackRate = d.playbackRate;
+      }
+    });
   }, []);
 
   return (
@@ -46,11 +58,44 @@ export default function VisionIntelligenceCaseStudy() {
             >
               Talk to an Expert <ArrowLinkIcon />
             </Link>
-            <a href="#inside" className="vi-cs-btn vi-cs-btn--secondary">
+            <a
+              href="https://d28zn2w1i5lc7m.cloudfront.net/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vi-cs-btn vi-cs-btn--secondary"
+            >
               See the Platform in Action
             </a>
           </div>
         </header>
+
+        <section className="vi-cs-datasets" aria-label="Datasets we've worked on">
+          <div className="vi-cs-datasets-grid">
+            {cs.datasets.map((d, i) => (
+              <figure className="vi-cs-dataset" key={d.title}>
+                <div className="vi-cs-dataset-media">
+                  <video
+                    ref={(el) => (datasetVideoRefs.current[i] = el)}
+                    poster={d.poster}
+                    src={d.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={d.caption}
+                    onLoadedMetadata={(e) => {
+                      if (d.playbackRate) e.currentTarget.playbackRate = d.playbackRate;
+                    }}
+                  />
+                  <figcaption className="vi-cs-dataset-cap">
+                    <span className="vi-cs-dataset-desc">{d.caption}</span>
+                  </figcaption>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </section>
 
         <section className="vi-cs-metrics" aria-label="Key results">
           {cs.metrics.map((m) => (

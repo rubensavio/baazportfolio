@@ -19,10 +19,8 @@ import {
   FiHeart,
   FiTool,
 } from "react-icons/fi";
-import {
-  ArrowBackIcon,
-  ArrowLinkIcon,
-} from "../../../components/icons/ArrowIcons";
+import { ArrowLinkIcon } from "../../../components/icons/ArrowIcons";
+import ServicesBackLink from "../../../components/ServicesBackLink/ServicesBackLink";
 import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../../components/FAQ/FAQ";
 import Footer from "../../../components/Footer/Footer";
@@ -70,12 +68,8 @@ export default function TechnologyPageClient({ techSlug }) {
     <div className="baaz-v2 services-v2 services-page services-page--mobile-app services-page--tech-capabilities">
       <ClientNavbar />
 
-      <div className="v2-wrap services-back-wrap">
-        <Link href="/services" className="services-back v2-arrow-link">
-          <ArrowBackIcon className="services-back-icon" />
-          All services
-        </Link>
-      </div>
+      {/* Back control only on the four "What we do" nav pages */}
+      {whatWeDoGroup && <ServicesBackLink />}
 
       <main className="services-main">
         <section className="services-hero">

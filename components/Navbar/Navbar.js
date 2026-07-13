@@ -39,6 +39,16 @@ const Navbar = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
   };
 
+  // Mark service pages opened from the nav as a "nav" entry (not the /services
+  // hub), so the detail page shows a neutral button instead of a back arrow.
+  const markNavSource = () => {
+    try {
+      sessionStorage.setItem("servicesNavSource", "nav");
+    } catch {
+      /* sessionStorage unavailable — ignore */
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -57,9 +67,8 @@ const Navbar = () => {
         {/* Desktop Navigation - logo links home; no separate Home item */}
         <ul className="navbar-menu desktop-menu">
           <li className="navbar-item dropdown">
-            <Link
-              href="/services"
-              className={`navbar-link ${
+            <span
+              className={`navbar-link navbar-link--trigger ${
                 pathname &&
                 SERVICES_PATHS.some(
                   (p) => pathname === p || pathname.startsWith(`${p}/`),
@@ -70,12 +79,16 @@ const Navbar = () => {
             >
               <span className="link-text">What we do</span>
               <span className="dropdown-icon">▼</span>
-            </Link>
+            </span>
             <div className="dropdown-menu services-mega-menu">
               <div className="services-mega-grid">
                 {WHAT_WE_DO_GROUPS.map((group) => (
                   <div className="wwd-group" key={group.title}>
-                    <Link href={group.href} className="wwd-group-title">
+                    <Link
+                      href={group.href}
+                      className="wwd-group-title"
+                      onClick={markNavSource}
+                    >
                       {group.title}
                     </Link>
                   </div>
@@ -155,13 +168,14 @@ const Navbar = () => {
               </li>
               <li className="mobile-menu-item mobile-dropdown">
                 <div className="mobile-dropdown-row">
-                  <Link
-                    href="/services"
-                    onClick={toggleMenu}
-                    className="mobile-dropdown-label-link"
+                  <button
+                    type="button"
+                    onClick={toggleServicesDropdown}
+                    aria-expanded={isServicesDropdownOpen}
+                    className="mobile-dropdown-label-link mobile-dropdown-label-btn"
                   >
                     What we do
-                  </Link>
+                  </button>
                   <button
                     className="mobile-dropdown-toggle"
                     onClick={toggleServicesDropdown}
@@ -181,7 +195,13 @@ const Navbar = () => {
                   <ul className="mobile-dropdown-menu">
                     {WHAT_WE_DO_GROUPS.map((group) => (
                       <li key={group.title}>
-                        <Link href={group.href} onClick={toggleMenu}>
+                        <Link
+                          href={group.href}
+                          onClick={() => {
+                            markNavSource();
+                            toggleMenu();
+                          }}
+                        >
                           {group.title}
                         </Link>
                       </li>

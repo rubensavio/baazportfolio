@@ -71,6 +71,7 @@ export default function Enterprise() {
   return (
     <div className="baaz-v2 enterprise-v2">
       <ClientNavbar />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

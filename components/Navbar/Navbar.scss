@@ -79,6 +79,11 @@ background-color: theme.$bg-white;
   align-items: center;
   gap: 4px;
 
+  &--trigger {
+    cursor: pointer;
+    user-select: none;
+  }
+
   &:hover {
     color: #000000;
   }
@@ -482,6 +487,14 @@ background-color: theme.$bg-white;
     font-family: var(--font-urbanist), sans-serif;
     font-weight: 500;
     flex: 1;
+  }
+
+  .mobile-dropdown-label-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
   }
 
   .mobile-dropdown-toggle {

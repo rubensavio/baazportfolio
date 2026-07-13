@@ -34,6 +34,14 @@ const SERVICES_FAQS = [
   },
 ];
 
+function markServicesHubSource() {
+  try {
+    sessionStorage.setItem("servicesNavSource", "hub");
+  } catch {
+    /* sessionStorage unavailable — ignore */
+  }
+}
+
 function getServiceInitials(title) {
   return (title || "")
     .split(/\s+/)
@@ -106,7 +114,11 @@ export default function ServicesHubPage() {
 
           {featuredItem && (
             <Reveal>
-              <Link href={featuredItem.href} className="svc-hub-featured">
+              <Link
+                href={featuredItem.href}
+                className="svc-hub-featured"
+                onClick={markServicesHubSource}
+              >
                 <div className="svc-hub-featured-visual">
                   <span className="svc-hub-featured-initials v2-display">
                     {getServiceInitials(featuredItem.title)}
@@ -129,7 +141,11 @@ export default function ServicesHubPage() {
             ) : (
               listItems.map((item, index) => (
                 <Reveal key={item.href} delay={index * 0.03}>
-                  <Link href={item.href} className="svc-hub-article-item">
+                  <Link
+                    href={item.href}
+                    className="svc-hub-article-item"
+                    onClick={markServicesHubSource}
+                  >
                     <div className="svc-hub-article-meta">
                       <span className="svc-hub-article-type v2-label">
                         {item.categoryLabel}

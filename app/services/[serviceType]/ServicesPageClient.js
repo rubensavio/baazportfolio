@@ -15,10 +15,7 @@ import {
   FiWatch,
   FiGlobe,
 } from "react-icons/fi";
-import {
-  ArrowBackIcon,
-  ArrowLinkIcon,
-} from "../../../components/icons/ArrowIcons";
+import { ArrowLinkIcon } from "../../../components/icons/ArrowIcons";
 import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../../components/FAQ/FAQ";
 import Footer from "../../../components/Footer/Footer";
@@ -54,13 +51,6 @@ export default function ServicesPageClient({ serviceType }) {
       className={`baaz-v2 services-v2 services-page${serviceType === "mobile-app" ? " services-page--mobile-app" : ""}`}
     >
       <ClientNavbar />
-
-      <div className="v2-wrap services-back-wrap">
-        <Link href="/services" className="services-back v2-arrow-link">
-          <ArrowBackIcon className="services-back-icon" />
-          All services
-        </Link>
-      </div>
 
       <main className="services-main">
         <section className="services-hero">

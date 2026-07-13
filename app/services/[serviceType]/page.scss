@@ -664,32 +664,6 @@
 /* Core service pages - v2 editorial dark overrides */
 
 .baaz-v2.services-v2 {
-  .services-back-wrap {
-    padding-top: 27px;
-    padding-bottom: 8px;
-  }
-
-  .services-back {
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-
-    .services-back-icon {
-      display: inline-flex;
-      align-items: center;
-      transition: transform 0.2s;
-
-      svg {
-        width: 14px;
-        height: 14px;
-      }
-    }
-
-    &:hover .services-back-icon {
-      transform: translateX(-4px);
-    }
-  }
-
   .services-main {
     padding-bottom: 0;
   }
