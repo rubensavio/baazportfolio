@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowBackIcon,
@@ -16,21 +16,12 @@ const MONO =
   'var(--v2-mono, ui-monospace, "SF Mono", "JetBrains Mono", monospace)';
 
 export default function VisionIntelligenceCaseStudy() {
-  const datasetVideoRefs = useRef([]);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Apply each dataset video's individual playback speed once mounted.
-  useEffect(() => {
-    cs.datasets.forEach((d, i) => {
-      const el = datasetVideoRefs.current[i];
-      if (el && d.playbackRate) {
-        el.playbackRate = d.playbackRate;
-      }
-    });
-  }, []);
+  // Duplicate the datasets so the marquee can loop seamlessly.
+  const marqueeDatasets = [...cs.datasets, ...cs.datasets];
 
   return (
     <div className="baaz-v2 vi-casestudy">
@@ -58,42 +49,52 @@ export default function VisionIntelligenceCaseStudy() {
             >
               Talk to an Expert <ArrowLinkIcon />
             </Link>
-            <a
-              href="https://d28zn2w1i5lc7m.cloudfront.net/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="vi-cs-btn vi-cs-btn--secondary"
-            >
+            <a href="#how-it-works" className="vi-cs-btn vi-cs-btn--secondary">
               See the Platform in Action
             </a>
           </div>
         </header>
 
         <section className="vi-cs-datasets" aria-label="Datasets we've worked on">
-          <div className="vi-cs-datasets-grid">
-            {cs.datasets.map((d, i) => (
-              <figure className="vi-cs-dataset" key={d.title}>
-                <div className="vi-cs-dataset-media">
-                  <video
-                    ref={(el) => (datasetVideoRefs.current[i] = el)}
-                    poster={d.poster}
-                    src={d.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    aria-label={d.caption}
-                    onLoadedMetadata={(e) => {
-                      if (d.playbackRate) e.currentTarget.playbackRate = d.playbackRate;
-                    }}
-                  />
-                  <figcaption className="vi-cs-dataset-cap">
-                    <span className="vi-cs-dataset-desc">{d.caption}</span>
-                  </figcaption>
-                </div>
-              </figure>
-            ))}
+          <div className="vi-cs-datasets-marquee">
+            <div className="vi-cs-datasets-track">
+              {marqueeDatasets.map((d, i) => {
+                const isClone = i >= cs.datasets.length;
+                return (
+                  <Link
+                    href={`/technologies/vision-intelligence/case-studies/${d.slug}`}
+                    className="vi-cs-dataset"
+                    key={`${d.slug}-${i}`}
+                    aria-hidden={isClone ? true : undefined}
+                    tabIndex={isClone ? -1 : undefined}
+                  >
+                    <div className="vi-cs-dataset-media">
+                      {d.poster || d.image ? (
+                        <img
+                          src={d.poster || d.image}
+                          alt={d.caption}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <video
+                          src={d.video}
+                          muted
+                          playsInline
+                          preload="metadata"
+                          aria-label={d.caption}
+                        />
+                      )}
+                      <figcaption className="vi-cs-dataset-cap">
+                        <span className="vi-cs-dataset-desc">{d.caption}</span>
+                        <span className="vi-cs-dataset-arrow">
+                          View dataset →
+                        </span>
+                      </figcaption>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </section>
 
@@ -134,7 +135,11 @@ export default function VisionIntelligenceCaseStudy() {
           </div>
         </section>
 
-        <section className="vi-cs-section" aria-labelledby="vi-cs-workflow-heading">
+        <section
+          id="how-it-works"
+          className="vi-cs-section"
+          aria-labelledby="vi-cs-workflow-heading"
+        >
           <span className="vi-cs-eyebrow">Process</span>
           <h2 id="vi-cs-workflow-heading" className="vi-cs-section-heading">
             How it works
