@@ -49,7 +49,7 @@ export default function VisionIntelligenceCaseStudy() {
             >
               Talk to an Expert <ArrowLinkIcon />
             </Link>
-            <a href="#how-it-works" className="vi-cs-btn vi-cs-btn--secondary">
+            <a href="#inside" className="vi-cs-btn vi-cs-btn--secondary">
               See the Platform in Action
             </a>
           </div>
@@ -135,25 +135,6 @@ export default function VisionIntelligenceCaseStudy() {
           </div>
         </section>
 
-        <section
-          id="how-it-works"
-          className="vi-cs-section"
-          aria-labelledby="vi-cs-workflow-heading"
-        >
-          <span className="vi-cs-eyebrow">Process</span>
-          <h2 id="vi-cs-workflow-heading" className="vi-cs-section-heading">
-            How it works
-          </h2>
-          <div className="vi-cs-process">
-            {cs.workflow.map((step) => (
-              <article className="vi-cs-process-row" key={step.title}>
-                <span className="vi-cs-process-num">{step.step}</span>
-                <h3 className="vi-cs-process-title">{step.title}</h3>
-                <p className="vi-cs-process-desc">{step.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
 
         <section className="vi-cs-section" aria-labelledby="vi-cs-capabilities-heading">
           <span className="vi-cs-eyebrow">Capabilities</span>
