@@ -20,6 +20,12 @@ const SERVICES_PATHS = [
   "/services",
 ];
 
+// External product landing pages - open in a new tab.
+const OUR_PRODUCTS = [
+  { label: "Payana", href: "https://www.payana.ai/" },
+  { label: "Suprflo", href: "https://suprflo.com/" },
+];
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isIndustriesDropdownOpen, setIsIndustriesDropdownOpen] =
@@ -37,6 +43,11 @@ const Navbar = () => {
 
   const toggleServicesDropdown = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
+  };
+
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  const toggleProductsDropdown = () => {
+    setIsProductsDropdownOpen(!isProductsDropdownOpen);
   };
 
   // Mark service pages opened from the nav as a "nav" entry (not the /services
@@ -118,6 +129,26 @@ const Navbar = () => {
                   <Link key={href} href={href}>
                     {label}
                   </Link>
+                ))}
+              </div>
+            </div>
+          </li>
+          <li className="navbar-item dropdown">
+            <span className="navbar-link navbar-link--trigger">
+              <span className="link-text">Our Products</span>
+              <span className="dropdown-icon">▼</span>
+            </span>
+            <div className="dropdown-menu industries-single-menu">
+              <div className="mega-column">
+                {OUR_PRODUCTS.map(({ label, href }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {label}
+                  </a>
                 ))}
               </div>
             </div>
@@ -233,6 +264,40 @@ const Navbar = () => {
                         <Link href={href} onClick={toggleMenu}>
                           {label}
                         </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li className="mobile-menu-item mobile-dropdown">
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleProductsDropdown();
+                  }}
+                >
+                  Our Products
+                  <span
+                    className={`dropdown-icon ${
+                      isProductsDropdownOpen ? "open" : ""
+                    }`}
+                  >
+                    ▼
+                  </span>
+                </a>
+                {isProductsDropdownOpen && (
+                  <ul className="mobile-dropdown-menu">
+                    {OUR_PRODUCTS.map(({ label, href }) => (
+                      <li key={href}>
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={toggleMenu}
+                        >
+                          {label}
+                        </a>
                       </li>
                     ))}
                   </ul>
