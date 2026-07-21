@@ -10,8 +10,15 @@ import { HOME_CTA } from "../../lib/homePageData";
 import "./VisionIntelligenceCaseStudy.scss";
 import "./DatasetDetail.scss";
 
+const PAYANA_FAQ = {
+  question: "Is this a managed service? What is it called?",
+  answer:
+    "Yes. We deliver these datasets as a fully managed data-annotation service called Payana (payana.ai) - you hand us raw images or video and receive training-ready, human-reviewed datasets in the format your pipeline expects.",
+};
+
 export default function DatasetDetail({ data, media }) {
   const videoRef = useRef(null);
+  const faqs = [...(data.faqs || []), PAYANA_FAQ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -119,9 +126,9 @@ export default function DatasetDetail({ data, media }) {
         )}
       </main>
 
-      {data.faqs?.length > 0 && (
+      {faqs.length > 0 && (
         <div className="v2-faq">
-          <FAQ faqs={data.faqs} heading="Frequently asked questions" />
+          <FAQ faqs={faqs} heading="Frequently asked questions" />
         </div>
       )}
 
@@ -132,7 +139,8 @@ export default function DatasetDetail({ data, media }) {
           </h2>
           <p className="vi-cs-closing-sub">
             Tell us what you want to label - we'll tell you how fast we can ship
-            it and what it'll cost.
+            it and what it'll cost. Delivered as Payana (payana.ai), our managed
+            data-annotation service.
           </p>
           <div className="vi-cs-hero-actions">
             <Link

@@ -2,10 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import {
-  ArrowBackIcon,
-  ArrowLinkIcon,
-} from "../icons/ArrowIcons";
+import { ArrowBackIcon, ArrowLinkIcon } from "../icons/ArrowIcons";
 import ClientNavbar from "../ClientNavbar/ClientNavbar";
 import Footer from "../Footer/Footer";
 import { HOME_CTA } from "../../lib/homePageData";
@@ -55,7 +52,10 @@ export default function VisionIntelligenceCaseStudy() {
           </div>
         </header>
 
-        <section className="vi-cs-datasets" aria-label="Datasets we've worked on">
+        <section
+          className="vi-cs-datasets"
+          aria-label="Datasets we've worked on"
+        >
           <div className="vi-cs-datasets-marquee">
             <div className="vi-cs-datasets-track">
               {marqueeDatasets.map((d, i) => {
@@ -107,7 +107,10 @@ export default function VisionIntelligenceCaseStudy() {
           ))}
         </section>
 
-        <section className="vi-cs-section" aria-labelledby="vi-cs-overview-heading">
+        <section
+          className="vi-cs-section"
+          aria-labelledby="vi-cs-overview-heading"
+        >
           <h2 id="vi-cs-overview-heading" className="vi-cs-section-heading">
             Overview
           </h2>
@@ -135,8 +138,10 @@ export default function VisionIntelligenceCaseStudy() {
           </div>
         </section>
 
-
-        <section className="vi-cs-section" aria-labelledby="vi-cs-capabilities-heading">
+        <section
+          className="vi-cs-section"
+          aria-labelledby="vi-cs-capabilities-heading"
+        >
           <span className="vi-cs-eyebrow">Capabilities</span>
           <h2 id="vi-cs-capabilities-heading" className="vi-cs-section-heading">
             Platform capabilities
@@ -780,7 +785,9 @@ export default function VisionIntelligenceCaseStudy() {
                 </div>
               </div>
               <div className="vi-cs-mod-text">
-                <div className="vi-cs-mod-eyebrow">06 - Search &amp; Analytics</div>
+                <div className="vi-cs-mod-eyebrow">
+                  06 - Search &amp; Analytics
+                </div>
                 <h3 className="vi-cs-mod-title">Search &amp; Analytics</h3>
                 <p className="vi-cs-mod-desc">
                   Search episodes by action or annotation, and track episode
@@ -792,7 +799,10 @@ export default function VisionIntelligenceCaseStudy() {
           </div>
         </section>
 
-        <section className="vi-cs-section" aria-labelledby="vi-cs-usecases-heading">
+        <section
+          className="vi-cs-section"
+          aria-labelledby="vi-cs-usecases-heading"
+        >
           <span className="vi-cs-eyebrow">Applications</span>
           <h2 id="vi-cs-usecases-heading" className="vi-cs-section-heading">
             Where it's used
@@ -807,7 +817,10 @@ export default function VisionIntelligenceCaseStudy() {
           </div>
         </section>
 
-        <section className="vi-cs-section" aria-labelledby="vi-cs-formats-heading">
+        <section
+          className="vi-cs-section"
+          aria-labelledby="vi-cs-formats-heading"
+        >
           <h2 id="vi-cs-formats-heading" className="vi-cs-section-heading">
             Exports to every major training format
           </h2>

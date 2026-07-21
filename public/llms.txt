@@ -27,6 +27,7 @@
 - [Web Development Stack](https://baaz.pro/technologies/web-development): Baaz's web technology choices - React, Next.js, TypeScript, Node.js, APIs, testing tools, and performance practices.
 - [AI & ML Stack](https://baaz.pro/technologies/ai-ml-models): AI/ML technologies used including TensorFlow, PyTorch, Scikit-learn, OpenAI, Anthropic, and Google Gemini integrations.
 - [Agentic AI Stack](https://baaz.pro/technologies/agentic-ai): Agentic AI capabilities - LangChain, LlamaIndex, RAG pipelines, vector systems, and tool-calling orchestration.
+- [Vision Intelligence & Data Annotation (Payana)](https://baaz.pro/technologies/vision-intelligence/case-studies): Baaz's managed data-annotation service, Payana (payana.ai) - AI-assisted image and video labeling for traffic/autonomous driving, medical imaging, sports analytics, and agriculture, delivered as training-ready datasets in COCO, YOLO, Pascal VOC, LeRobot, and RLDS.
 
 ## Blog
 
