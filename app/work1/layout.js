@@ -34,9 +34,40 @@ export const metadata = {
   },
 };
 
+const articleUrl = `${baseUrl}/work1`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": `${articleUrl}/#article`,
+  headline: "AI Quality Automation on Manufacturing ERP",
+  description: metadata.description,
+  url: articleUrl,
+  image: [`${baseUrl}${ogImage}`],
+  articleSection: "Case Study",
+  author: { "@id": `${baseUrl}/#organization` },
+  publisher: {
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    name: "Baaz",
+    url: baseUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/assets/Logo.png`,
+      width: 600,
+      height: 60,
+    },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+  isPartOf: { "@id": `${baseUrl}/#website` },
+};
+
 export default function Work1Layout({ children }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },

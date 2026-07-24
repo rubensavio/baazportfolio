@@ -52,6 +52,8 @@ const HowWeWork = () => {
           src="/assets/HowWeWorkBg.svg"
           alt="Decorative background pattern for the How we work section"
           className="how-we-work-bg-image"
+          width={1439}
+          height={657}
           loading="lazy"
           decoding="async"
         />
