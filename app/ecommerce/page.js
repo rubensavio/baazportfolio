@@ -542,6 +542,8 @@ export default function Ecommerce() {
                 src="/assets/readyToBuildBg.webp"
                 alt="Start your marketplace audit background"
                 className="ecom-cta-bg-image"
+                width={1200}
+                height={600}
               />
             </div>
             <div className="ecom-cta-content">

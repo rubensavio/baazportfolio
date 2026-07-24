@@ -88,7 +88,12 @@ const EnterpriseSolutions = () => {
                 style={{ backgroundColor: solution.bgColor }}
               >
                 <div className="solution-icon">
-                  <img src={solution.icon} alt={solution.title} />
+                  <img
+                    src={solution.icon}
+                    alt={solution.title}
+                    width={48}
+                    height={48}
+                  />
                 </div>
                 <h3 className="solution-title">{solution.title}</h3>
               </div>

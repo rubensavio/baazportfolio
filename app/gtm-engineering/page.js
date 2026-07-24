@@ -553,6 +553,8 @@ export default function GtmEngineering() {
                 src="/assets/readyToBuildBg.webp"
                 alt="Start your GTM audit background"
                 className="gtm-cta-bg-image"
+                width={1200}
+                height={600}
               />
             </div>
             <div className="gtm-cta-content">

@@ -34,9 +34,42 @@ export const metadata = {
   },
 };
 
+const articleUrl = `${baseUrl}/work2`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": `${articleUrl}/#article`,
+  headline: "AI Hiring Automation on HRMS",
+  description: metadata.description,
+  url: articleUrl,
+  image: [`${baseUrl}${ogImage}`],
+  articleSection: "Case Study",
+  datePublished: "2025-11-15",
+  dateModified: "2026-05-29",
+  author: { "@id": `${baseUrl}/#organization` },
+  publisher: {
+    "@type": "Organization",
+    "@id": `${baseUrl}/#organization`,
+    name: "Baaz",
+    url: baseUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/assets/Logo.png`,
+      width: 600,
+      height: 60,
+    },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+  isPartOf: { "@id": `${baseUrl}/#website` },
+};
+
 export default function Work2Layout({ children }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },
