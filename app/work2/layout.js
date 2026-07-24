@@ -44,8 +44,6 @@ const articleSchema = {
   url: articleUrl,
   image: [`${baseUrl}${ogImage}`],
   articleSection: "Case Study",
-  datePublished: "2025-11-15",
-  dateModified: "2026-05-29",
   author: { "@id": `${baseUrl}/#organization` },
   publisher: {
     "@type": "Organization",
