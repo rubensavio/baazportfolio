@@ -255,16 +255,6 @@ export default function BookCallWidget() {
                         ? ` A calendar invite has been sent to ${email}.`
                         : " Open the event in Google Calendar for meeting details."}
                     </p>
-                    {bookingResult.htmlLink && (
-                      <a
-                        href={bookingResult.htmlLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="booking-calendar-link"
-                      >
-                        View in Google Calendar
-                      </a>
-                    )}
                   </div>
                 ) : selectedDate ? (
                   <>
