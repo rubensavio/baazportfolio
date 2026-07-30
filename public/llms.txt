@@ -31,6 +31,7 @@
 
 ## Blog
 
+- [Automated Data Labeling: What It Is and When to Use It](https://baaz.pro/blog/automated-data-labeling): What automated data labeling is, how model-assisted labeling, active learning, and programmatic rules work, when to automate vs. label by hand, and the human-in-the-loop workflow - from Baaz's managed annotation service, Payana (payana.ai).
 - [How to Scope an MVP That Actually Ships](https://baaz.pro/blog/how-to-scope-mvp-that-ships): Practical framework for MVP scoping with original Baaz data - 8-week median delivery, 175% calendar penalty for multi-persona scope, 35% lower rework when scope is brief-locked.
 - [ThoughtWorks Alternatives for 2026](https://baaz.pro/blog/thoughtworks-alternatives): Comparison of ThoughtWorks alternatives including boutique studios, SIs, talent networks, and India-based delivery - fit, cost, and engagement model analysis.
 - [Technical Due Diligence for Custom Software](https://baaz.pro/blog/technical-due-diligence-custom-software): How to evaluate a software codebase, vendor, or acquisition target for technical risk, architecture quality, and delivery capability.
