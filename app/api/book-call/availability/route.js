@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { getGoogleCalendarConfig } from "../../../../lib/googleCalendarConfig.js";
-import { getAvailableSlots } from "../../../../lib/googleCalendar.js";
+import {
+  getAvailableSlots,
+  filterSlotsByGoogleBusy,
+} from "../../../../lib/googleCalendar.js";
 import {
   getCalendlyConfig,
   getCalendlyAvailableSlots,
@@ -40,6 +43,18 @@ export async function GET(request) {
     const data = calendly.isConfigured
       ? await getCalendlyAvailableSlots(date, use24h)
       : await getAvailableSlots(date, use24h);
+
+    // Calendly lists slots but doesn't know about meetings this widget books
+    // (those are written to Google Calendar). Subtract Google busy times so a
+    // just-booked slot stops being offered.
+    if (calendly.isConfigured && google.isConfigured) {
+      try {
+        data.slots = await filterSlotsByGoogleBusy(date, data.slots);
+      } catch (err) {
+        console.warn("[book-call/availability] Google busy filter skipped:", err.message);
+      }
+    }
+
     return NextResponse.json(data);
   } catch (error) {
     console.error("[book-call/availability]", error);
