@@ -53,7 +53,7 @@ const inter = Inter({
 });
 
 const ogImage = "/assets/ogdefault.png";
-const gtmId = "GTM-WRXJ3WNB";
+const gaMeasurementId = "G-FS7T05P5SN";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
@@ -257,12 +257,11 @@ const structuredData = {
 };
 
 export default function RootLayout({ children }) {
-  const gtmScript = `
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','${gtmId}');
+  const gtagScript = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${gaMeasurementId}');
   `;
 
   return (
@@ -277,8 +276,13 @@ export default function RootLayout({ children }) {
           as="image"
           type="image/webp"
         />
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {gtmScript}
+        <Script
+          id="ga-gtag-src"
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+        />
+        <Script id="ga-gtag-init" strategy="afterInteractive">
+          {gtagScript}
         </Script>
         <script
           type="application/ld+json"
@@ -288,14 +292,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         {children}
       </body>
     </html>
