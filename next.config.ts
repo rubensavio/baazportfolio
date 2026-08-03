@@ -47,6 +47,11 @@ const nextConfig: NextConfig = {
         destination: "/services/mobile-app",
         permanent: true,
       },
+      {
+        source: "/project-rescue",
+        destination: "/blog/software-project-rescue-checklist",
+        permanent: true,
+      },
     ];
   },
   async headers() {
