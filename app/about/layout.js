@@ -17,6 +17,7 @@ function buildFounderSchema() {
     jobTitle: "Co-founder",
     worksFor: { "@id": `${baseUrl}/#organization` },
     description: `Co-founder at Baaz, a ${BRAND_POSITIONING_COMBINED} headquartered in Bangalore with a US office in Sheridan, WY, delivering enterprise product engineering since 2018.`,
+    disambiguatingDescription: "Co-founder of Baaz (baaz.pro), a software and product engineering company. Not affiliated with any aviation or airline entity.",
     sameAs: ["https://in.linkedin.com/company/baazpro"],
     knowsAbout: [
       "Custom Software Development",
@@ -29,11 +30,11 @@ function buildFounderSchema() {
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: `About Baaz - Software factory for the world`,
-  description: `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} since 2018-team, values, AI-enabled delivery, and product engineering for clients worldwide.`,
+  title: `About Baaz - Software & MVP Development Company`,
+  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} for startups and enterprises since 2018. Meet the team, our values, and AI-enabled delivery model.`,
   openGraph: {
-    title: `About Baaz - Software factory for the world`,
-    description: `${BRAND_POSITIONING_COMBINED}-team, values, and outcome-led builds for global clients since 2018.`,
+    title: `About Baaz - Software & MVP Development Company`,
+    description: `${BRAND_POSITIONING_COMBINED} since 2018-team, values, and outcome-led builds for global clients.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
     images: [
@@ -47,7 +48,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `About Baaz - Software factory for the world`,
+    title: `About Baaz - Software & MVP Development Company`,
     description: `Baaz-${BRAND_POSITIONING_COMBINED} for teams worldwide-team, craft, discovery to launch. Get in touch.`,
     images: [ogImage],
   },

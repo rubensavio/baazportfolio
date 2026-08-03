@@ -62,7 +62,7 @@ export const metadata = {
   authors: [{ name: "Baaz", url: baseUrl }],
   creator: "Baaz",
   publisher: "Baaz",
-  title: `Software factory for the world | Baaz`,
+  title: `Baaz | Custom Software & MVP Development Company`,
   description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
   openGraph: {
     title: `Custom Software Development & Product Engineering | Baaz`,
@@ -102,6 +102,7 @@ const structuredData = {
         height: 60,
       },
       description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018 across 26+ countries. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; $2B in business value generated for customers across 10 industries. HQ in Bangalore, India; US office in Sheridan, WY.`,
+      disambiguatingDescription: "Baaz (baaz.pro) is a software and product engineering company headquartered in Bangalore, India. It is not an airline, aviation company, or any other industry.",
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
       founder: {
