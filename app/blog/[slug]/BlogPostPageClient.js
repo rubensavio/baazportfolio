@@ -165,6 +165,39 @@ export default function BlogPostPageClient({ slug, data }) {
                     </table>
                   </div>
                 )}
+                {section.image &&
+                  (section.image.src ? (
+                    <figure className="blog-section-figure">
+                      <img
+                        className="blog-section-image"
+                        src={section.image.src}
+                        alt={section.image.alt || ""}
+                        loading="lazy"
+                      />
+                      {section.image.caption && (
+                        <figcaption className="blog-section-figcaption">
+                          {section.image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ) : (
+                    <figure className="blog-section-figure blog-section-figure--placeholder">
+                      <div
+                        className="blog-section-image-placeholder"
+                        role="img"
+                        aria-label={section.image.alt || "Image placeholder"}
+                      >
+                        <span className="blog-section-image-placeholder-note">
+                          {section.image.alt || "Screenshot goes here"}
+                        </span>
+                      </div>
+                      {section.image.caption && (
+                        <figcaption className="blog-section-figcaption">
+                          {section.image.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ))}
                 {section.references?.length > 0 && (
                   <div className="blog-section-references-wrap">
                     <p className="blog-section-references-label v2-label">

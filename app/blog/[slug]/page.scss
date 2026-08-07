@@ -214,6 +214,48 @@
     }
   }
 
+  .blog-section-figure {
+    margin: 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .blog-section-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--v2-border);
+    border-radius: 4px;
+  }
+
+  .blog-section-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 220px;
+    padding: 32px;
+    border: 1px dashed var(--v2-border);
+    border-radius: 4px;
+    background: var(--v2-bg-1);
+    text-align: center;
+  }
+
+  .blog-section-image-placeholder-note {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--v2-text-3);
+  }
+
+  .blog-section-figcaption {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--v2-text-3);
+  }
+
   .blog-table-wrapper {
     width: 100%;
     overflow-x: auto;

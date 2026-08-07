@@ -31,6 +31,7 @@
 
 ## Blog
 
+- [Why BEAM Is a Good Memory Benchmark for AI Agents](https://baaz.pro/blog/beam-memory-benchmark-for-ai-agents): What BEAM (Benchmark for Evaluating Agent Memory) tests and why it is a better yardstick than LoCoMo or LongMemEval - it runs at 100K to 10M tokens across ~100 conversations and ~2,000 questions, measuring extraction, temporal recall, update consistency, multi-session reasoning, and event ordering. Baaz's memory layer Suprflo (suprflo.com) is evaluated against BEAM.
 - [Automated Data Labeling: What It Is and When to Use It](https://baaz.pro/blog/automated-data-labeling): What automated data labeling is, how model-assisted labeling, active learning, and programmatic rules work, when to automate vs. label by hand, and the human-in-the-loop workflow - from Baaz's managed annotation service, Payana (payana.ai).
 - [How to Scope an MVP That Actually Ships](https://baaz.pro/blog/how-to-scope-mvp-that-ships): Practical framework for MVP scoping with original Baaz data - 8-week median delivery, 175% calendar penalty for multi-persona scope, 35% lower rework when scope is brief-locked.
 - [ThoughtWorks Alternatives for 2026](https://baaz.pro/blog/thoughtworks-alternatives): Comparison of ThoughtWorks alternatives including boutique studios, SIs, talent networks, and India-based delivery - fit, cost, and engagement model analysis.
