@@ -14,6 +14,50 @@ import { HOME_CTA } from "../../../lib/homePageData";
 import { getBlogPostRootClass } from "../../../lib/blogPostTheme";
 import "./page.scss";
 
+const INLINE_LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
+
+/**
+ * Render prose that may contain markdown-style inline links: [label](href).
+ * External hrefs open in a new tab; internal hrefs use client-side navigation.
+ * Plain strings pass through untouched.
+ */
+function renderInline(text) {
+  if (typeof text !== "string" || !text.includes("](")) return text;
+  const nodes = [];
+  let lastIndex = 0;
+  let match;
+  INLINE_LINK.lastIndex = 0;
+  while ((match = INLINE_LINK.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index));
+    }
+    const [full, label, href] = match;
+    const external = /^https?:\/\//.test(href);
+    nodes.push(
+      external ? (
+        <a
+          key={match.index}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="blog-inline-link"
+        >
+          {label}
+        </a>
+      ) : (
+        <Link key={match.index} href={href} className="blog-inline-link">
+          {label}
+        </Link>
+      ),
+    );
+    lastIndex = match.index + full.length;
+  }
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+  return nodes;
+}
+
 export default function BlogPostPageClient({ slug, data }) {
   const relatedInternalLinks = getBlogRelatedInternalLinks(slug);
   const rootClass = getBlogPostRootClass(data);
@@ -88,9 +132,11 @@ export default function BlogPostPageClient({ slug, data }) {
             )}
 
             {data.directAnswer && (
-              <p className="blog-direct-answer">{data.directAnswer}</p>
+              <p className="blog-direct-answer">
+                {renderInline(data.directAnswer)}
+              </p>
             )}
-            <p className="blog-intro">{data.intro}</p>
+            <p className="blog-intro">{renderInline(data.intro)}</p>
           </div>
         </header>
 
@@ -110,14 +156,14 @@ export default function BlogPostPageClient({ slug, data }) {
               <div className="blog-section-body">
                 {section.body?.map((paragraph, pIndex) => (
                   <p key={pIndex} className="blog-section-paragraph">
-                    {paragraph}
+                    {renderInline(paragraph)}
                   </p>
                 ))}
                 {section.items && (
                   <ul className="blog-section-list">
                     {section.items.map((item, iIndex) => (
                       <li key={iIndex} className="blog-section-list-item">
-                        {item}
+                        {renderInline(item)}
                       </li>
                     ))}
                   </ul>
@@ -126,14 +172,14 @@ export default function BlogPostPageClient({ slug, data }) {
                   <ol className="blog-section-steps">
                     {section.steps.map((step, sIndex) => (
                       <li key={sIndex} className="blog-section-step-item">
-                        {step}
+                        {renderInline(step)}
                       </li>
                     ))}
                   </ol>
                 )}
                 {section.body2?.map((paragraph, pIndex) => (
                   <p key={pIndex} className="blog-section-paragraph">
-                    {paragraph}
+                    {renderInline(paragraph)}
                   </p>
                 ))}
                 {section.table && (
