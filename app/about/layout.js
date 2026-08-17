@@ -12,7 +12,7 @@ function buildFounderSchema() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
-    name: "Chitresh",
+    name: "Chitresh Parihar",
     url: `${baseUrl}/about`,
     jobTitle: "Co-founder",
     worksFor: { "@id": `${baseUrl}/#organization` },
@@ -30,11 +30,11 @@ function buildFounderSchema() {
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: `About Baaz - Software & MVP Development Company`,
-  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} for startups and enterprises since 2018. Meet the team, our values, and AI-enabled delivery model.`,
+  title: `About Baaz - Custom Software Development Company`,
+  description: `Baaz is a custom software development company for startups and enterprises since 2018. Meet the team, our values, and how we ship enterprise-grade products. Book a call.`,
   openGraph: {
-    title: `About Baaz - Software & MVP Development Company`,
-    description: `${BRAND_POSITIONING_COMBINED} since 2018-team, values, and outcome-led builds for global clients.`,
+    title: `About Baaz - Custom Software Development Company`,
+    description: `Baaz is a custom software development company since 2018 — team, values, and outcome-led builds for global clients across 26+ countries. Book a call.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
     images: [
@@ -48,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `About Baaz - Software & MVP Development Company`,
-    description: `Baaz-${BRAND_POSITIONING_COMBINED} for teams worldwide-team, craft, discovery to launch. Get in touch.`,
+    title: `About Baaz - Custom Software Development Company`,
+    description: `Baaz — custom software development company for teams worldwide. Learn about our team, craft, and discovery-to-launch process. Book a call.`,
     images: [ogImage],
   },
 };

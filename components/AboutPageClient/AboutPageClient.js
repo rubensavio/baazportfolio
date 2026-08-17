@@ -101,6 +101,21 @@ export default function AboutPageClient() {
         </div>
       </section>
 
+      <section className="about-aeo-qa v2-wrap" aria-labelledby="about-qa-heading">
+        <Reveal>
+          <h2 id="about-qa-heading" className="v2-display">How does Baaz deliver custom software development?</h2>
+          <p>Baaz follows a discovery-to-launch process: we map your real workflows, define measurable outcomes, then design, engineer, and ship production systems — not templates. Every engagement is organized around named milestones and written acceptance criteria so you track progress, not just hours.</p>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <h2 className="v2-display">Why do enterprises choose Baaz for product engineering?</h2>
+          <p>Enterprises choose Baaz for end-to-end ownership: strategy, UI/UX, full-stack development, AI integration, and post-launch scaling under one roof. With 26+ countries served and $2B in business value generated since 2018, Baaz brings the delivery discipline of a large consultancy at startup speed.</p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="v2-display">How do I hire developers from Baaz?</h2>
+          <p>Start with a <a href="/book-call">free discovery call</a>. We scope the engagement, agree on milestones, and assign a dedicated team for <a href="/services">custom software development</a> or <a href="/enterprise">enterprise solutions</a>. Most projects kick off within two weeks of alignment.</p>
+        </Reveal>
+      </section>
+
       <div className="v2-faq">
         <FAQ faqs={ABOUT_FAQ_ITEMS} heading="About Baaz - common questions" />
       </div>

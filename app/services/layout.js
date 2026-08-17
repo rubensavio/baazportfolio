@@ -6,14 +6,13 @@ const ogImage = "/assets/ogdefault.png";
 
 export const metadata = {
   alternates: getAlternates("/services"),
-  title:
-    "Product Engineering & Enterprise Software Development | Baaz",
+  title: "Custom Software Development Services | Baaz",
   description:
-    "Product engineering and enterprise software development for teams worldwide since 2018-strategy, UI/UX, web, mobile, AI, integrations. Explore Baaz engagements.",
+    "Baaz delivers custom software development and product engineering worldwide: strategy, UI/UX, web, mobile, AI, and integrations since 2018. Book a free call.",
   openGraph: {
-    title: "Product Engineering & Enterprise Software Development | Baaz",
+    title: "Custom Software Development Services | Baaz",
     description:
-      "Partner for product engineering programmes and scalable enterprise software-from discovery and UX to sustained delivery for global teams.",
+      "Baaz delivers custom software development and product engineering worldwide: strategy, UI/UX, web, mobile, AI, and integrations since 2018. Book a free call.",
     url: `${baseUrl}/services`,
     siteName: "Baaz",
     images: [
@@ -21,15 +20,15 @@ export const metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "Baaz product engineering services",
+        alt: "Baaz custom software development services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Engineering & Enterprise Development | Baaz",
+    title: "Custom Software Development Services | Baaz",
     description:
-      "Global product engineering: strategy through build for teams that need disciplined enterprise software shipping.",
+      "Baaz delivers custom software development and product engineering worldwide: strategy, UI/UX, web, mobile, AI, and integrations since 2018. Book a free call.",
     images: [ogImage],
   },
 };

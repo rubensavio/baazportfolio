@@ -62,11 +62,11 @@ export const metadata = {
   authors: [{ name: "Baaz", url: baseUrl }],
   creator: "Baaz",
   publisher: "Baaz",
-  title: `Baaz | Custom Software & MVP Development Company`,
+  title: `Baaz | Custom Software Development Company`,
   description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
   openGraph: {
     title: `Custom Software Development & Product Engineering | Baaz`,
-    description: `Enterprise software solutions, products and services.`,
+    description: `Baaz builds custom software and product engineering solutions for startups and enterprises in 26+ countries. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -81,7 +81,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: `Custom Software Development & Product Engineering | Baaz`,
-    description: "Enterprise software solutions, products and services.",
+    description: `Baaz builds custom software and product engineering solutions for startups and enterprises in 26+ countries. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
     images: [ogImage],
   },
 };
@@ -185,8 +185,8 @@ const structuredData = {
       "@type": "WebPage",
       "@id": `${baseUrl}/#webpage`,
       url: baseUrl,
-      name: `Custom Software Development & Product Engineering | Baaz`,
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018.`,
+      name: `Baaz | Custom Software Development Company`,
+      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
       isPartOf: { "@id": `${baseUrl}/#website` },
       about: { "@id": `${baseUrl}/#organization` },
       primaryImageOfPage: {
