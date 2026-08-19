@@ -65,7 +65,9 @@ export default function TechnologyPageClient({ techSlug }) {
   }, [techSlug]);
 
   return (
-    <div className="baaz-v2 services-v2 services-page services-page--mobile-app services-page--tech-capabilities">
+    <div
+      className={`baaz-v2 services-v2 services-page services-page--mobile-app services-page--tech-capabilities services-page--tech-${techSlug}`}
+    >
       <ClientNavbar />
 
       {/* Back control only on the four "What we do" nav pages */}
@@ -117,19 +119,38 @@ export default function TechnologyPageClient({ techSlug }) {
                   </Link>
                 )}
 
-                {data.offerings.map((item) => (
-                  <article className="service-offering-card" key={item.title}>
-                    {item.icon && CARD_ICON_MAP[item.icon] && (
-                      <span className="service-card-icon" aria-hidden="true">
-                        {React.createElement(CARD_ICON_MAP[item.icon])}
-                      </span>
-                    )}
-                    <h3 className="service-tech-title">{item.title}</h3>
-                    <p className="service-tech-description">
-                      {item.description}
-                    </p>
-                  </article>
-                ))}
+                {data.offerings.map((item) =>
+                  item.href ? (
+                    <Link
+                      href={item.href}
+                      className="service-offering-card service-offering-card--link"
+                      key={item.title}
+                      aria-label={item.title}
+                    >
+                      {item.icon && CARD_ICON_MAP[item.icon] && (
+                        <span className="service-card-icon" aria-hidden="true">
+                          {React.createElement(CARD_ICON_MAP[item.icon])}
+                        </span>
+                      )}
+                      <h3 className="service-tech-title">{item.title}</h3>
+                      <p className="service-tech-description">
+                        {item.description}
+                      </p>
+                    </Link>
+                  ) : (
+                    <article className="service-offering-card" key={item.title}>
+                      {item.icon && CARD_ICON_MAP[item.icon] && (
+                        <span className="service-card-icon" aria-hidden="true">
+                          {React.createElement(CARD_ICON_MAP[item.icon])}
+                        </span>
+                      )}
+                      <h3 className="service-tech-title">{item.title}</h3>
+                      <p className="service-tech-description">
+                        {item.description}
+                      </p>
+                    </article>
+                  ),
+                )}
               </div>
             </div>
           )}

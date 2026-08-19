@@ -240,3 +240,210 @@
     grid-template-columns: 1fr;
   }
 }
+
+// -------------------------------------------------------------------------
+// Geospatial Digital Twin - editorial restyle.
+// This page carries far more long-form content than the other capability
+// pages, so both the default hairline grid and a boxed-card layout read as
+// heavy. Scoped only to this slug: strip card chrome entirely and use
+// numbered hairline dividers, accents, and whitespace instead of boxes.
+// -------------------------------------------------------------------------
+.baaz-v2.services-v2.services-page--tech-geospatial-digital-twin {
+  // No background-bleed gridlines, no gaps that imply tiles.
+  .service-offerings-grid,
+  .service-highlights-grid,
+  .service-workflow-grid,
+  .service-why-choose-grid,
+  .service-tech-grid {
+    background: transparent !important;
+    gap: 0 !important;
+  }
+
+  // Disable the hairline filler cells - they only exist for the tiled look.
+  .service-offerings-grid::after,
+  .service-tech-grid::after,
+  .service-why-choose-grid::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  // Strip every card back to plain text - no surface, border, radius, shadow.
+  .service-offering-card,
+  .service-highlight-card,
+  .service-workflow-card,
+  .service-tech-card,
+  .service-why-card {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  // Offerings: full-width feature rows - a title block on the left, the
+  // paragraph on the right, split by hairline dividers. Reads like a magazine
+  // feature list and carries seven long entries without a wall of text.
+  .service-offerings-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    counter-reset: geo-offer;
+  }
+
+  .service-offering-card {
+    counter-increment: geo-offer;
+    display: grid !important;
+    grid-template-columns: 240px 1fr !important;
+    gap: 44px !important;
+    align-items: start;
+    padding: 30px 0 !important;
+    border-top: 1px solid var(--v2-border) !important;
+  }
+
+  .service-offering-card:last-child {
+    border-bottom: 1px solid var(--v2-border) !important;
+  }
+
+  .service-offering-card .service-card-icon {
+    display: none !important;
+  }
+
+  .service-offering-card .service-tech-title {
+    display: flex !important;
+    gap: 16px;
+    align-items: baseline;
+    font-size: 17px !important;
+    margin: 0 !important;
+  }
+
+  .service-offering-card .service-tech-title::before {
+    content: counter(geo-offer, decimal-leading-zero);
+    font-family: var(--v2-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--v2-accent);
+  }
+
+  .service-offering-card .service-tech-description {
+    max-width: none !important;
+  }
+
+  // Who it's for: a clean two-column divided list, small icon kept inline.
+  .service-highlights-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 56px !important;
+  }
+
+  .service-highlight-card {
+    padding: 22px 0 !important;
+    border-top: 1px solid var(--v2-border) !important;
+  }
+
+  .service-highlight-card .service-card-icon {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    margin: 0 0 10px !important;
+  }
+
+  // Stack: three plain groups in a row, separated by a top hairline each.
+  .service-tech-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 40px !important;
+  }
+
+  .service-tech-card {
+    padding: 24px 0 0 !important;
+    border-top: 1px solid var(--v2-border) !important;
+  }
+
+  // Workflow: a connected vertical timeline - a spine with numbered dots so
+  // the four steps read as an ordered sequence, which is the whole point.
+  .service-workflow-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+    position: relative;
+    padding-left: 34px !important;
+    counter-reset: geo-step;
+  }
+
+  .service-workflow-grid::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: var(--v2-border-h);
+  }
+
+  .service-workflow-card {
+    position: relative;
+    counter-increment: geo-step;
+    padding: 0 0 34px !important;
+    border: none !important;
+  }
+
+  .service-workflow-card:last-child {
+    padding-bottom: 0 !important;
+  }
+
+  .service-workflow-card::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 6px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--v2-bg);
+    border: 2px solid var(--v2-accent);
+  }
+
+  .service-workflow-card .service-card-icon {
+    display: none !important;
+  }
+
+  .service-workflow-title::before {
+    content: "Step " counter(geo-step);
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--v2-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--v2-accent) !important;
+  }
+
+  // Why Baaz: a two-up accent-bar list - the one place a rule aids scanning.
+  .service-why-choose-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 48px !important;
+    row-gap: 28px !important;
+  }
+
+  .service-why-card {
+    border-left: 2px solid var(--v2-accent) !important;
+    padding: 2px 0 2px 20px !important;
+  }
+
+  .service-why-card .service-card-icon {
+    display: none !important;
+  }
+
+  @media (max-width: 768px) {
+    .service-highlights-grid--four,
+    .service-tech-grid,
+    .service-why-choose-grid {
+      grid-template-columns: 1fr !important;
+      column-gap: 0 !important;
+    }
+
+    // Feature rows stack: title block above its paragraph.
+    .service-offering-card {
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+    }
+  }
+}
