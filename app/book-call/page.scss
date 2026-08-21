@@ -215,9 +215,10 @@
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.375rem;
   padding: 0;
+  width: 100%;
 }
 
 .day-header {
@@ -243,6 +244,7 @@
   transition: background 0.15s ease, color 0.15s ease;
   min-height: 2.25rem;
   width: 100%;
+  min-width: 0;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
