@@ -62,11 +62,11 @@ export const metadata = {
   authors: [{ name: "Baaz", url: baseUrl }],
   creator: "Baaz",
   publisher: "Baaz",
-  title: `Baaz | Custom Software Development Company`,
-  description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
+  title: `Baaz: Custom Software Development`,
+  description: `Enterprise-grade custom software solutions. Build scalable apps with Baaz. Trusted by global clients across 26+ countries. Start today.`,
   openGraph: {
-    title: `Custom Software Development & Product Engineering | Baaz`,
-    description: `Baaz builds custom software and product engineering solutions for startups and enterprises in 26+ countries. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
+    title: `Baaz: Custom Software Development & Product Engineering`,
+    description: `Enterprise-grade custom software solutions. Build scalable apps with Baaz. Trusted by global clients across 26+ countries. Start today.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -80,8 +80,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Custom Software Development & Product Engineering | Baaz`,
-    description: `Baaz builds custom software and product engineering solutions for startups and enterprises in 26+ countries. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
+    title: `Baaz: Custom Software Development & Product Engineering`,
+    description: `Enterprise-grade custom software solutions. Build scalable apps with Baaz. Trusted by global clients across 26+ countries. Start today.`,
     images: [ogImage],
   },
 };

@@ -69,6 +69,22 @@ function aboutFaqJsonLd() {
   };
 }
 
+const aboutOrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${baseUrl}/#organization`,
+  name: "Baaz",
+  url: baseUrl,
+  description:
+    "Baaz is a custom software development and product engineering company for startups and enterprises worldwide. It is not an AI-powered content platform or aviation company.",
+  disambiguatingDescription:
+    "Baaz (baaz.pro) builds custom software, web/mobile apps, ERP systems, and AI-powered products for global clients since 2018. Headquartered in Bangalore, India.",
+  sameAs: [
+    "https://in.linkedin.com/company/baazpro",
+    "https://x.com/baaz_hq",
+  ],
+};
+
 export default function AboutLayout({ children }) {
   return (
     <>
@@ -82,6 +98,12 @@ export default function AboutLayout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildFounderSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutOrganizationSchema),
         }}
       />
       <BreadcrumbScript
