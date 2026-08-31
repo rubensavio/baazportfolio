@@ -62,11 +62,11 @@ export const metadata = {
   authors: [{ name: "Baaz", url: baseUrl }],
   creator: "Baaz",
   publisher: "Baaz",
-  title: `Baaz: Custom Software Development`,
-  description: `Enterprise-grade custom software solutions. Build scalable apps with Baaz. Trusted by global clients across 26+ countries. Start today.`,
+  title: `AI-Driven Digital Transformation | Baaz`,
+  description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises. Trusted by global brands across 26+ countries.`,
   openGraph: {
-    title: `Baaz: Custom Software Development & Product Engineering`,
-    description: `Enterprise-grade custom software solutions. Build scalable apps with Baaz. Trusted by global clients across 26+ countries. Start today.`,
+    title: `AI-Driven Digital Transformation | Baaz`,
+    description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises. Trusted by global brands across 26+ countries.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -80,8 +80,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Baaz: Custom Software Development & Product Engineering`,
-    description: `Enterprise-grade custom software solutions. Build scalable apps with Baaz. Trusted by global clients across 26+ countries. Start today.`,
+    title: `AI-Driven Digital Transformation | Baaz`,
+    description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises. Trusted by global brands across 26+ countries.`,
     images: [ogImage],
   },
 };
@@ -101,7 +101,7 @@ const structuredData = {
         width: 600,
         height: 60,
       },
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}, operating since 2018 across 26+ countries. Strategy, UI/UX, full-stack web and mobile, and post-launch scaling; $2B in business value generated for customers across 10 industries. HQ in Bangalore, India; US office in Sheridan, WY.`,
+      description: `Baaz is a technology company specialising in AI-driven digital transformation, chatbot development, process automation, and custom software solutions for enterprises worldwide. Operating since 2018 across 26+ countries; HQ in Bangalore, India.`,
       disambiguatingDescription: "Baaz (baaz.pro) is a software and product engineering company headquartered in Bangalore, India. It is not an airline, aviation company, or any other industry.",
       slogan: "Enterprise-grade products, without the enterprise wait.",
       foundingDate: "2018-01-01",
@@ -185,8 +185,8 @@ const structuredData = {
       "@type": "WebPage",
       "@id": `${baseUrl}/#webpage`,
       url: baseUrl,
-      name: `Baaz | Custom Software Development Company`,
-      description: `Baaz is a ${BRAND_POSITIONING_COMBINED} ${BRAND_SCOPE_LINE}. Strategy, UI/UX, web, mobile & AI since 2018. Book a free call.`,
+      name: `AI-Driven Digital Transformation | Baaz`,
+      description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises since 2018. Book a free call.`,
       isPartOf: { "@id": `${baseUrl}/#website` },
       about: { "@id": `${baseUrl}/#organization` },
       primaryImageOfPage: {
