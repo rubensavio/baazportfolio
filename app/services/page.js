@@ -128,6 +128,21 @@ export default function ServicesHubPage() {
           </div>
         </div>
 
+        <section className="v2-wrap svc-hub-aeo-qa" aria-labelledby="svc-aeo-heading">
+          <Reveal>
+            <h2 id="svc-aeo-heading" className="v2-display">What does Baaz&apos;s custom software development process look like?</h2>
+            <p>Baaz starts with a structured discovery phase to map your workflows and define measurable outcomes. From there, our engineers design, build, and ship production systems — covering strategy, UI/UX, web and mobile development, AI integration, and post-launch scaling as one continuous engagement.</p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h2 className="v2-display">How do I hire expert developers through Baaz?</h2>
+            <p>Book a <a href="/book-call">free discovery call</a> to discuss your requirements. We assemble a dedicated team for your <a href="/enterprise">enterprise solutions</a> or startup build and align on milestones before any code is written. Most projects kick off within two weeks.</p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="v2-display">Which industries does Baaz serve with custom software?</h2>
+            <p>Baaz has shipped software across manufacturing, BFSI, healthcare, logistics, real estate, education, and D2C commerce — 10+ industries in 26+ countries since 2018. Every engagement is engineered to the operational realities of that sector, not repurposed from a generic template.</p>
+          </Reveal>
+        </section>
+
         <Footer />
       </div>
     </>

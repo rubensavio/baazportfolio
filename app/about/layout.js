@@ -12,11 +12,12 @@ function buildFounderSchema() {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
-    name: "Chitresh",
+    name: "Chitresh Parihar",
     url: `${baseUrl}/about`,
     jobTitle: "Co-founder",
     worksFor: { "@id": `${baseUrl}/#organization` },
     description: `Co-founder at Baaz, a ${BRAND_POSITIONING_COMBINED} headquartered in Bangalore with a US office in Sheridan, WY, delivering enterprise product engineering since 2018.`,
+    disambiguatingDescription: "Co-founder of Baaz (baaz.pro), a software and product engineering company. Not affiliated with any aviation or airline entity.",
     sameAs: ["https://in.linkedin.com/company/baazpro"],
     knowsAbout: [
       "Custom Software Development",
@@ -29,11 +30,11 @@ function buildFounderSchema() {
 
 export const metadata = {
   alternates: getAlternates("/about"),
-  title: `About Baaz - Software factory for the world`,
-  description: `Meet Baaz: a ${BRAND_POSITIONING_COMBINED} since 2018-team, values, AI-enabled delivery, and product engineering for clients worldwide.`,
+  title: `About Baaz - Custom Software Development Company`,
+  description: `Baaz is a custom software development company for startups and enterprises since 2018. Meet the team, our values, and how we ship enterprise-grade products. Book a call.`,
   openGraph: {
-    title: `About Baaz - Software factory for the world`,
-    description: `${BRAND_POSITIONING_COMBINED}-team, values, and outcome-led builds for global clients since 2018.`,
+    title: `About Baaz - Custom Software Development Company`,
+    description: `Baaz is a custom software development company since 2018 — team, values, and outcome-led builds for global clients across 26+ countries. Book a call.`,
     url: `${baseUrl}/about`,
     siteName: "Baaz",
     images: [
@@ -47,8 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `About Baaz - Software factory for the world`,
-    description: `Baaz-${BRAND_POSITIONING_COMBINED} for teams worldwide-team, craft, discovery to launch. Get in touch.`,
+    title: `About Baaz - Custom Software Development Company`,
+    description: `Baaz — custom software development company for teams worldwide. Learn about our team, craft, and discovery-to-launch process. Book a call.`,
     images: [ogImage],
   },
 };
@@ -68,6 +69,22 @@ function aboutFaqJsonLd() {
   };
 }
 
+const aboutOrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${baseUrl}/#organization`,
+  name: "Baaz",
+  url: baseUrl,
+  description:
+    "Baaz is a custom software development and product engineering company for startups and enterprises worldwide. It is not an AI-powered content platform or aviation company.",
+  disambiguatingDescription:
+    "Baaz (baaz.pro) builds custom software, web/mobile apps, ERP systems, and AI-powered products for global clients since 2018. Headquartered in Bangalore, India.",
+  sameAs: [
+    "https://in.linkedin.com/company/baazpro",
+    "https://x.com/baaz_hq",
+  ],
+};
+
 export default function AboutLayout({ children }) {
   return (
     <>
@@ -81,6 +98,12 @@ export default function AboutLayout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(buildFounderSchema()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutOrganizationSchema),
         }}
       />
       <BreadcrumbScript
