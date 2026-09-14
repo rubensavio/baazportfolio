@@ -62,11 +62,11 @@ export const metadata = {
   authors: [{ name: "Baaz", url: baseUrl }],
   creator: "Baaz",
   publisher: "Baaz",
-  title: `AI-Driven Digital Transformation | Baaz`,
-  description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises. Trusted by global brands across 26+ countries.`,
+  title: `Baaz: Custom ERP & Software Development`,
+  description: `Baaz delivers custom ERP and software development for enterprises. Scalable solutions across AI, web, mobile, and product engineering since 2018. Book a free call.`,
   openGraph: {
-    title: `AI-Driven Digital Transformation | Baaz`,
-    description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises. Trusted by global brands across 26+ countries.`,
+    title: `Baaz: Custom ERP & Software Development`,
+    description: `Baaz delivers custom ERP and software development for enterprises. Scalable solutions across AI, web, mobile, and product engineering since 2018. Book a free call.`,
     url: baseUrl,
     siteName: "Baaz",
     images: [
@@ -80,8 +80,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `AI-Driven Digital Transformation | Baaz`,
-    description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises. Trusted by global brands across 26+ countries.`,
+    title: `Baaz: Custom ERP & Software Development`,
+    description: `Baaz delivers custom ERP and software development for enterprises. Scalable solutions across AI, web, mobile, and product engineering since 2018. Book a free call.`,
     images: [ogImage],
   },
 };
@@ -185,8 +185,8 @@ const structuredData = {
       "@type": "WebPage",
       "@id": `${baseUrl}/#webpage`,
       url: baseUrl,
-      name: `AI-Driven Digital Transformation | Baaz`,
-      description: `Transform your business with AI, chatbots, and automation. Custom software and product engineering for enterprises since 2018. Book a free call.`,
+      name: `Baaz: Custom ERP & Software Development`,
+      description: `Baaz delivers custom ERP and software development for enterprises. Scalable solutions across AI, web, mobile, and product engineering since 2018. Book a free call.`,
       isPartOf: { "@id": `${baseUrl}/#website` },
       about: { "@id": `${baseUrl}/#organization` },
       primaryImageOfPage: {
@@ -223,6 +223,12 @@ const structuredData = {
         "@type": "ImageObject",
         url: `${baseUrl}/assets/ogdefault.png`,
       },
+    },
+    {
+      "@type": "SpeakableSpecification",
+      "@id": `${baseUrl}/#speakable`,
+      cssSelector: [".brand-description", "h1", ".hero-description"],
+      url: baseUrl,
     },
     {
       "@type": "SiteNavigationElement",
