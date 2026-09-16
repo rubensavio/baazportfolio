@@ -58,6 +58,12 @@ function renderInline(text) {
   return nodes;
 }
 
+/** Normalise `section.code` into an array so a section can carry one or many snippets. */
+function toCodeBlocks(code) {
+  if (!code) return [];
+  return Array.isArray(code) ? code : [code];
+}
+
 export default function BlogPostPageClient({ slug, data }) {
   const relatedInternalLinks = getBlogRelatedInternalLinks(slug);
   const rootClass = getBlogPostRootClass(data);
@@ -158,6 +164,32 @@ export default function BlogPostPageClient({ slug, data }) {
                   <p key={pIndex} className="blog-section-paragraph">
                     {renderInline(paragraph)}
                   </p>
+                ))}
+                {toCodeBlocks(section.code).map((block, cIndex) => (
+                  <figure key={cIndex} className="blog-section-code">
+                    {(block.filename || block.language) && (
+                      <div className="blog-section-code-bar">
+                        {block.filename && (
+                          <span className="blog-section-code-filename">
+                            {block.filename}
+                          </span>
+                        )}
+                        {block.language && (
+                          <span className="blog-section-code-language">
+                            {block.language}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    <pre className="blog-section-code-pre">
+                      <code>{block.content}</code>
+                    </pre>
+                    {block.caption && (
+                      <figcaption className="blog-section-figcaption">
+                        {renderInline(block.caption)}
+                      </figcaption>
+                    )}
+                  </figure>
                 ))}
                 {section.items && (
                   <ul className="blog-section-list">
