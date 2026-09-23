@@ -50,7 +50,8 @@ const CARD_ICON_MAP = {
 
 export default function TechnologyPageClient({ techSlug }) {
   const data = technologyCapabilitiesData[techSlug];
-  const labelLower = data.label.toLowerCase();
+  // Acronym labels (LLM, ERP) read wrong lowercased, so a page can override.
+  const labelLower = data.labelLower ?? data.label.toLowerCase();
   const stackGroups = data.stackGroups ?? [];
   const relatedServiceOfferings = getRelatedServiceOfferingLinks(techSlug);
   // "What we do" group this page heads, if any - its children are the
@@ -263,6 +264,37 @@ export default function TechnologyPageClient({ techSlug }) {
                   </article>
                 ))}
               </div>
+            </div>
+          )}
+
+          {data.engagement?.tiers?.length > 0 && (
+            <div className="service-engagement">
+              <h2 className="services-section-heading">
+                {data.engagement.heading}
+              </h2>
+              {data.engagement.intro && (
+                <p className="service-tech-intro">{data.engagement.intro}</p>
+              )}
+              <ul className="service-engagement-list">
+                {data.engagement.tiers.map((tier) => (
+                  <li className="service-engagement-item" key={tier.title}>
+                    <span className="service-engagement-name">
+                      {tier.title}
+                    </span>
+                    <span className="service-engagement-price">
+                      {tier.price}
+                    </span>
+                    <p className="service-engagement-description">
+                      {tier.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              {data.engagement.note && (
+                <p className="service-engagement-note">
+                  {data.engagement.note}
+                </p>
+              )}
             </div>
           )}
 
