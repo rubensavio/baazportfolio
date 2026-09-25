@@ -167,6 +167,11 @@ export default function TechnologyPageClient({ techSlug }) {
               <div className="service-tech-grid">
                 {stackGroups.map((group) => (
                   <article className="service-tech-card" key={group.title}>
+                    {group.icon && CARD_ICON_MAP[group.icon] && (
+                      <span className="service-card-icon" aria-hidden="true">
+                        {React.createElement(CARD_ICON_MAP[group.icon])}
+                      </span>
+                    )}
                     <h3 className="service-tech-title">{group.title}</h3>
                     <p className="service-tech-description">
                       {group.description}
@@ -280,9 +285,6 @@ export default function TechnologyPageClient({ techSlug }) {
                   <li className="service-engagement-item" key={tier.title}>
                     <span className="service-engagement-name">
                       {tier.title}
-                    </span>
-                    <span className="service-engagement-price">
-                      {tier.price}
                     </span>
                     <p className="service-engagement-description">
                       {tier.description}

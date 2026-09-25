@@ -665,6 +665,20 @@
     padding-top: 26px !important;
     border-top: 1px solid var(--v2-border) !important;
 
+    // Matches the unboxed accent glyph used in the other sections.
+    .service-card-icon {
+      display: flex !important;
+      width: auto !important;
+      height: auto !important;
+      background: transparent !important;
+      border: none !important;
+      color: var(--v2-accent) !important;
+      font-size: 19px !important;
+      margin: 0 0 14px !important;
+      justify-self: start !important;
+      justify-content: flex-start !important;
+    }
+
     .service-tech-title {
       font-size: 18px !important;
     }
@@ -934,27 +948,17 @@
   .service-engagement-name {
     grid-column: 1 !important;
     grid-row: 1 !important;
-    font-family: var(--v2-sans);
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--v2-text);
-  }
-
-  // The number is the thing people came to this section for.
-  .service-engagement-price {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-    margin-top: 10px;
     font-family: var(--v2-serif);
     font-style: italic;
-    font-size: clamp(26px, 2.6vw, 34px);
-    line-height: 1;
-    color: var(--v2-accent);
+    font-size: clamp(21px, 2.1vw, 27px);
+    line-height: 1.2;
+    color: var(--v2-text);
+    padding-right: 24px;
   }
 
   .service-engagement-description {
     grid-column: 2 !important;
-    grid-row: 1 / span 2 !important;
+    grid-row: 1 !important;
     margin: 0 !important;
     font-family: var(--v2-sans);
     font-size: 15px;
@@ -1107,7 +1111,7 @@
 
     .service-engagement-description {
       grid-column: 1 !important;
-      grid-row: 3 !important;
+      grid-row: 2 !important;
     }
 
     // Rows become stacked blocks on a phone.
