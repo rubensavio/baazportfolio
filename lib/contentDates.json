@@ -3,7 +3,7 @@
   "routes": {
     "/": "2026-09-23",
     "/about": "2026-07-08",
-    "/blog": "2026-09-16",
+    "/blog": "2026-10-15",
     "/blog/automated-data-labeling": "2026-07-30",
     "/blog/beam-memory-benchmark-for-ai-agents": "2026-08-07",
     "/blog/best-software-development-agencies-for-startups": "2026-04-06",
@@ -49,7 +49,7 @@
     "/erp/": "2026-07-02",
     "/industry/": "2026-07-02",
     "/services/": "2026-07-13",
-    "/technologies/": "2026-09-25",
+    "/technologies/": "2026-10-15",
     "/technologies/vision-intelligence/case-studies/": "2026-07-21"
   }
 }
