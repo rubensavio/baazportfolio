@@ -3,6 +3,7 @@ import BookCallClient from "./BookCallClient";
 import FaqJsonLd from "../../components/FaqJsonLd";
 import FAQ from "../../components/FAQ/FAQ";
 import "./page.scss";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const BOOK_CALL_FAQS = [
   {
@@ -30,6 +31,7 @@ const BOOK_CALL_FAQS = [
 export default function BookCall() {
   return (
     <div className="baaz-v2 book-call-v2">
+      <PageDatesJsonLd path="/book-call" name="Book a call" />
       <FaqJsonLd items={BOOK_CALL_FAQS} />
       <ClientNavbar />
 

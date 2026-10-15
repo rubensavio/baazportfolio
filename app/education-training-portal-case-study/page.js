@@ -1,6 +1,7 @@
 import CaseStudyPageClient from "../../components/CaseStudyPageClient/CaseStudyPageClient";
 import EducationTrainingPortalCaseStudy from "../../components/EducationTrainingPortalCaseStudy/EducationTrainingPortalCaseStudy";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 import {
   EDUCATION_TRAINING_PORTAL_CASE_STUDY_FAQ_HEADING,
   EDUCATION_TRAINING_PORTAL_CASE_STUDY_FAQ_ITEMS,
@@ -31,6 +32,10 @@ const caseStudyBreadcrumbs = [
 export default function EducationTrainingPortalCaseStudyPage() {
   return (
     <>
+      <PageDatesJsonLd
+        path="/education-training-portal-case-study"
+        name="Education &amp; training portal case study"
+      />
       <BreadcrumbScript items={caseStudyBreadcrumbs} />
       <CaseStudyPageClient
         className="work2 education-training-portal-case-study-page"

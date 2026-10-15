@@ -6,10 +6,12 @@ import {
   US_ADDRESS_LINE,
 } from "../../lib/companyAddresses";
 import "../legal/legal-page.scss";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 export default function PrivacyPage() {
   return (
     <div className="baaz-v2 legal-v2" id="privacy-policy">
+      <PageDatesJsonLd path="/privacy" name="Privacy Policy" />
       <ClientNavbar />
       <main className="legal-doc-main">
         <article className="legal-doc-sheet">

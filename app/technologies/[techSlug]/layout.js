@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
 import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesData";
+import PageDatesJsonLd from "../../../components/PageDatesJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -109,6 +110,7 @@ export default async function TechnologyLayout({ children, params }) {
 
   return (
     <>
+      <PageDatesJsonLd path={`/technologies/${techSlug}`} name={data.label} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}

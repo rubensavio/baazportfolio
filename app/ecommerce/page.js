@@ -5,6 +5,7 @@ import FAQ from "../../components/FAQ/FAQ";
 import Footer from "../../components/Footer/Footer";
 import { AREA_SERVED_COUNTRIES } from "../../lib/regions";
 import "./page.scss";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const painPoints = [
   {
@@ -271,6 +272,7 @@ const serviceSchema = {
 export default function Ecommerce() {
   return (
     <div className="baaz-v2 ecommerce-v2">
+      <PageDatesJsonLd path="/ecommerce" name="eCommerce engineering" />
       <ClientNavbar />
 
       <script

@@ -12,6 +12,7 @@ import {
   lastModService,
   lastModIndustry,
 } from "../lib/sitemapLastmod";
+import { getContentDateObject as lastModFor } from "../lib/contentDates";
 
 const baseUrl = getSiteUrl();
 
@@ -55,7 +56,7 @@ export default function sitemap() {
   const serviceRoutes = Object.keys(servicesData).map((slug) =>
     withAlternates(`/services/${slug}`, {
       url: `${baseUrl}/services/${slug}`,
-      lastModified: lastModService(),
+      lastModified: lastModService(slug),
       changeFrequency: "monthly",
       priority: 0.8,
     })
@@ -64,7 +65,7 @@ export default function sitemap() {
   const industryRoutes = Object.keys(industryData).map((slug) =>
     withAlternates(`/industry/${slug}`, {
       url: `${baseUrl}/industry/${slug}`,
-      lastModified: lastModIndustry(),
+      lastModified: lastModIndustry(slug),
       changeFrequency: "monthly",
       priority: 0.8,
     })
@@ -82,7 +83,7 @@ export default function sitemap() {
   const erpRoutes = Object.keys(erpData).map((slug) =>
     withAlternates(`/erp/${slug}`, {
       url: `${baseUrl}/erp/${slug}`,
-      lastModified: lastModIndustry(),
+      lastModified: lastModFor(`/erp/${slug}`),
       changeFrequency: "monthly",
       priority: 0.8,
     })
@@ -91,7 +92,7 @@ export default function sitemap() {
   const technologyRoutes = Object.keys(technologyCapabilitiesData).map((slug) =>
     withAlternates(`/technologies/${slug}`, {
       url: `${baseUrl}/technologies/${slug}`,
-      lastModified: lastModService(),
+      lastModified: lastModFor(`/technologies/${slug}`),
       changeFrequency: "monthly",
       priority: 0.75,
     })

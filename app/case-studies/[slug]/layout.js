@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
 import { selectedWorkData } from "../../../lib/selectedWorkData";
+import { getContentDate } from "../../../lib/contentDates";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -56,6 +57,8 @@ function buildArticleSchema(slug, data) {
     url: articleUrl,
     image: [`${baseUrl}${ogImage}`],
     articleSection: "Case Study",
+    datePublished: getContentDate(`/case-studies/${slug}`),
+    dateModified: getContentDate(`/case-studies/${slug}`),
     author: { "@id": `${baseUrl}/#organization` },
     publisher: {
       "@type": "Organization",

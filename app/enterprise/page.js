@@ -8,6 +8,7 @@ import FAQ from "../../components/FAQ/FAQ";
 import EnterpriseCTA from "../../components/EnterpriseCTA/EnterpriseCTA";
 import Footer from "../../components/Footer/Footer";
 import "./page.scss";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const enterpriseFaqs = [
   {
@@ -70,6 +71,7 @@ const faqSchema = {
 export default function Enterprise() {
   return (
     <div className="baaz-v2 enterprise-v2">
+      <PageDatesJsonLd path="/enterprise" name="Enterprise solutions" />
       <ClientNavbar />
 
       <script

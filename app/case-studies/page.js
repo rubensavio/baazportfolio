@@ -1,5 +1,6 @@
 import CaseStudiesPageClient from "../../components/CaseStudiesPageClient/CaseStudiesPageClient";
 import FaqJsonLd from "../../components/FaqJsonLd";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const CASE_STUDIES_FAQS = [
   {
@@ -22,6 +23,7 @@ const CASE_STUDIES_FAQS = [
 export default function CaseStudiesIndexPage() {
   return (
     <>
+      <PageDatesJsonLd path="/case-studies" name="Case studies" />
       <FaqJsonLd items={CASE_STUDIES_FAQS} />
       <CaseStudiesPageClient />
     </>

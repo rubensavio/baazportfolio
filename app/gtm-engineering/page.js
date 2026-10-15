@@ -4,6 +4,7 @@ import ClientNavbar from "../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../components/FAQ/FAQ";
 import Footer from "../../components/Footer/Footer";
 import "./page.scss";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const painPoints = [
   {
@@ -284,6 +285,7 @@ const serviceSchema = {
 export default function GtmEngineering() {
   return (
     <div className="baaz-v2 gtm-v2">
+      <PageDatesJsonLd path="/gtm-engineering" name="GTM engineering" />
       <ClientNavbar />
 
       <script

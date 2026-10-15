@@ -3,6 +3,7 @@ import { getAlternates } from "../../../../lib/regions";
 import { BreadcrumbScript } from "../../../../lib/breadcrumbSchema";
 import { VISION_INTELLIGENCE_CASE_STUDY } from "../../../../lib/visionIntelligenceCaseStudy";
 import VisionIntelligenceCaseStudy from "../../../../components/VisionIntelligenceCaseStudy/VisionIntelligenceCaseStudy";
+import PageDatesJsonLd from "../../../../components/PageDatesJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -31,6 +32,10 @@ export const metadata = {
 export default function VisionIntelligenceCaseStudiesPage() {
   return (
     <>
+      <PageDatesJsonLd
+        path="/technologies/vision-intelligence/case-studies"
+        name="Vision intelligence case studies"
+      />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },

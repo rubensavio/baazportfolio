@@ -1,5 +1,6 @@
 import IndustryHubPageClient from "../../components/IndustryHubPageClient/IndustryHubPageClient";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const industryFaqs = [
   {
@@ -42,6 +43,7 @@ const industryFaqSchema = {
 export default function IndustryHubPage() {
   return (
     <>
+      <PageDatesJsonLd path="/industry" name="Industries we serve" />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },
