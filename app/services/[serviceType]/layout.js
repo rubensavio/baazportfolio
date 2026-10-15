@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { servicesData } from "../../../lib/servicesData";
 import { getAlternates, AREA_SERVED_COUNTRIES } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
+import PageDatesJsonLd from "../../../components/PageDatesJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -102,6 +103,10 @@ export default async function ServiceLayout({ children, params }) {
 
   return (
     <>
+      <PageDatesJsonLd
+        path={`/services/${serviceType}`}
+        name={data?.label || data?.heading}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

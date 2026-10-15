@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { erpData } from "../../../lib/erpData";
 import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
+import PageDatesJsonLd from "../../../components/PageDatesJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -89,6 +90,10 @@ export default async function ErpLayout({ children, params }) {
 
   return (
     <>
+      <PageDatesJsonLd
+        path={`/erp/${erpSlug}`}
+        name={data?.label || data?.heading}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -15,6 +15,7 @@ import {
 import { SERVICES_HUB } from "../../lib/servicesHubPageData";
 import FaqJsonLd from "../../components/FaqJsonLd";
 import "./page.scss";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const SERVICES_FAQS = [
   {
@@ -52,6 +53,7 @@ export default function ServicesHubPage() {
 
   return (
     <>
+      <PageDatesJsonLd path="/services" name="Services" />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },

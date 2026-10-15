@@ -1,6 +1,7 @@
 import CaseStudyPageClient from "../../components/CaseStudyPageClient/CaseStudyPageClient";
 import HealthcarePatientAppCaseStudy from "../../components/HealthcarePatientAppCaseStudy/HealthcarePatientAppCaseStudy";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 import {
   HEALTHCARE_PATIENT_APP_CASE_STUDY_FAQ_HEADING,
   HEALTHCARE_PATIENT_APP_CASE_STUDY_FAQ_ITEMS,
@@ -31,6 +32,10 @@ const caseStudyBreadcrumbs = [
 export default function HealthcarePatientAppCaseStudyPage() {
   return (
     <>
+      <PageDatesJsonLd
+        path="/healthcare-patient-app-case-study"
+        name="Healthcare patient app case study"
+      />
       <BreadcrumbScript items={caseStudyBreadcrumbs} />
       <CaseStudyPageClient
         className="work2 healthcare-patient-app-case-study-page"

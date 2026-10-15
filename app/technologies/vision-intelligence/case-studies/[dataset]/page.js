@@ -5,6 +5,7 @@ import { BreadcrumbScript } from "../../../../../lib/breadcrumbSchema";
 import { VISION_INTELLIGENCE_CASE_STUDY } from "../../../../../lib/visionIntelligenceCaseStudy";
 import { DATASET_USE_CASES, getDatasetUseCase } from "../../../../../lib/datasetUseCases";
 import DatasetDetail from "../../../../../components/VisionIntelligenceCaseStudy/DatasetDetail";
+import PageDatesJsonLd from "../../../../../components/PageDatesJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -70,6 +71,7 @@ export default async function DatasetUseCasePage({ params }) {
 
   return (
     <>
+      <PageDatesJsonLd path={path} name={data.title} />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },

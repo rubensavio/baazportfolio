@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { industryData } from "../../../lib/industryData";
 import { getAlternates } from "../../../lib/regions";
 import { getSiteUrl } from "../../../lib/siteUrl";
+import PageDatesJsonLd from "../../../components/PageDatesJsonLd";
 
 const baseUrl = getSiteUrl();
 const ogImage = "/assets/ogdefault.png";
@@ -88,6 +89,10 @@ export default async function IndustryLayout({ children, params }) {
 
   return (
     <>
+      <PageDatesJsonLd
+        path={`/industry/${industrySlug}`}
+        name={data?.label || data?.heading}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

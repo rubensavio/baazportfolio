@@ -1,6 +1,7 @@
 import BlogPageClient from "../../components/BlogPageClient/BlogPageClient";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
 import FaqJsonLd from "../../components/FaqJsonLd";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const BLOG_FAQS = [
   {
@@ -23,6 +24,7 @@ const BLOG_FAQS = [
 export default function BlogIndexPage() {
   return (
     <>
+      <PageDatesJsonLd path="/blog" name="Baaz blog" />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },

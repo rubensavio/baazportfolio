@@ -8,6 +8,7 @@ import Work2Challenges from "../../components/Work2Challenges/Work2Challenges";
 import Work2Comparison from "../../components/Work2Comparison/Work2Comparison";
 import Work2BottomLine from "../../components/Work2BottomLine/Work2BottomLine";
 import Work2FinalThoughts from "../../components/Work2FinalThoughts/Work2FinalThoughts";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 import {
   WORK2_CASE_STUDY_FAQ_HEADING,
   WORK2_CASE_STUDY_FAQ_ITEMS,
@@ -34,6 +35,7 @@ export default function Work2() {
       faqHeading={WORK2_CASE_STUDY_FAQ_HEADING}
       faqSchema={faqSchema}
     >
+      <PageDatesJsonLd path="/work2" name="Work" />
       <Work2Hero />
       <Work2Solution />
       <Work2Implementation />

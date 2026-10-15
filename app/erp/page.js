@@ -1,5 +1,6 @@
 import ErpHubPageClient from "../../components/ErpHubPageClient/ErpHubPageClient";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 
 const erpFaqs = [
   {
@@ -42,6 +43,7 @@ const erpFaqSchema = {
 export default function ErpHubPage() {
   return (
     <>
+      <PageDatesJsonLd path="/erp" name="ERP &amp; CRM solutions" />
       <BreadcrumbScript
         items={[
           { name: "Home", url: "/" },

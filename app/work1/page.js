@@ -9,6 +9,7 @@ import ChallengesLessons from "../../components/ChallengesLessons/ChallengesLess
 import IndustryComparison from "../../components/IndustryComparison/IndustryComparison";
 import BottomLine from "../../components/BottomLine/BottomLine";
 import FinalThoughts from "../../components/FinalThoughts/FinalThoughts";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 import {
   WORK1_CASE_STUDY_FAQ_HEADING,
   WORK1_CASE_STUDY_FAQ_ITEMS,
@@ -35,6 +36,7 @@ export default function Work1() {
       faqHeading={WORK1_CASE_STUDY_FAQ_HEADING}
       faqSchema={faqSchema}
     >
+      <PageDatesJsonLd path="/work1" name="Work" />
       <CaseStudyHero />
       <SolutionSection />
       <ImplementationJourney />

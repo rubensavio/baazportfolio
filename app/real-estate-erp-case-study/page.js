@@ -1,6 +1,7 @@
 import CaseStudyPageClient from "../../components/CaseStudyPageClient/CaseStudyPageClient";
 import RealEstateErpCaseStudy from "../../components/RealEstateErpCaseStudy/RealEstateErpCaseStudy";
 import { BreadcrumbScript } from "../../lib/breadcrumbSchema";
+import PageDatesJsonLd from "../../components/PageDatesJsonLd";
 import {
   REAL_ESTATE_ERP_CASE_STUDY_FAQ_HEADING,
   REAL_ESTATE_ERP_CASE_STUDY_FAQ_ITEMS,
@@ -31,6 +32,10 @@ const caseStudyBreadcrumbs = [
 export default function RealEstateErpCaseStudyPage() {
   return (
     <>
+      <PageDatesJsonLd
+        path="/real-estate-erp-case-study"
+        name="Real estate ERP case study"
+      />
       <BreadcrumbScript items={caseStudyBreadcrumbs} />
       <CaseStudyPageClient
         className="work2 real-estate-erp-case-study-page"
