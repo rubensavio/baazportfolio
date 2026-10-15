@@ -20,6 +20,23 @@ import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
+/**
+ * Commits that touched many pages without changing a word anyone reads -
+ * sitewide refactors, boilerplate, schema plumbing. They are skipped so a
+ * mechanical change cannot make the whole site look freshly written, which
+ * is the exact false freshness signal this file exists to avoid.
+ *
+ * Add a hash here when a commit edits page files but not page content.
+ */
+const IGNORED_COMMITS = new Set([
+  // "fixed lastmodified date issue" - added the dateModified JSON-LD tag and
+  // its import to every page; no prose changed.
+  "46c9ac1",
+]);
+
+const ignored = (hash) =>
+  [...IGNORED_COMMITS].some((h) => hash.startsWith(h) || h.startsWith(hash));
+
 /** Last commit date (YYYY-MM-DD) touching any of these paths, or null. */
 function lastCommitDate(paths) {
   const existing = paths.filter((p) => existsSync(resolve(root, p)));
@@ -27,10 +44,15 @@ function lastCommitDate(paths) {
   try {
     const out = execFileSync(
       "git",
-      ["log", "-1", "--format=%cs", "--", ...existing],
+      ["log", "--format=%H %cs", "--", ...existing],
       { cwd: root, encoding: "utf8" },
     ).trim();
-    return out || null;
+    if (!out) return null;
+    for (const line of out.split("\n")) {
+      const [hash, date] = line.trim().split(/\s+/);
+      if (hash && date && !ignored(hash)) return date;
+    }
+    return null;
   } catch {
     return null;
   }
