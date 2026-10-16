@@ -12,7 +12,8 @@
     "optimize-images": "node scripts/optimize-hero-images.mjs",
     "meta-audit": "node scripts/meta-length-audit.mjs",
     "content-dates": "node scripts/generate-content-dates.mjs",
-    "prebuild": "node scripts/generate-content-dates.mjs || echo \"content-dates: keeping committed manifest\""
+    "prebuild": "node scripts/generate-content-dates.mjs || echo \"content-dates: keeping committed manifest\"",
+    "sentence-audit": "node scripts/sentence-length-audit.mjs"
   },
   "dependencies": {
     "googleapis": "^173.0.0",
