@@ -18,6 +18,17 @@ import {
   FiShoppingCart,
   FiHeart,
   FiTool,
+  FiServer,
+  FiCloud,
+  FiWifiOff,
+  FiHardDrive,
+  FiCpu,
+  FiMonitor,
+  FiRotateCcw,
+  FiEyeOff,
+  FiSend,
+  FiArchive,
+  FiRepeat,
 } from "react-icons/fi";
 import { ArrowLinkIcon } from "../../../components/icons/ArrowIcons";
 import ServicesBackLink from "../../../components/ServicesBackLink/ServicesBackLink";
@@ -29,6 +40,8 @@ import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesD
 import { getRelatedServiceOfferingLinks } from "../../../lib/technologyServiceRoutes";
 import "../../services/[serviceType]/page.scss";
 import "./page.scss";
+import Reveal from "../../../components/Home/Reveal";
+import OrbitWorkflow from "../../../components/WorkflowVariants/OrbitWorkflow";
 
 const CARD_ICON_MAP = {
   users: FiUsers,
@@ -46,6 +59,18 @@ const CARD_ICON_MAP = {
   retail: FiShoppingCart,
   healthcare: FiHeart,
   construction: FiTool,
+  // Deployment options
+  server: FiServer,
+  cloud: FiCloud,
+  offline: FiWifiOff,
+  drive: FiHardDrive,
+  cpu: FiCpu,
+  monitor: FiMonitor,
+  rollback: FiRotateCcw,
+  mask: FiEyeOff,
+  send: FiSend,
+  archive: FiArchive,
+  repeat: FiRepeat,
 };
 
 export default function TechnologyPageClient({ techSlug }) {
@@ -219,25 +244,38 @@ export default function TechnologyPageClient({ techSlug }) {
           )}
 
           {data.workflow && data.workflow.length > 0 && (
-            <div className="service-workflow">
+            <div
+              className={`service-workflow${
+                data.workflowStyle ? ` service-workflow--${data.workflowStyle}` : ""
+              }`}
+            >
               <h2 className="services-section-heading">
                 {data.workflowHeading || `Our ${labelLower} workflow`}
               </h2>
-              <div className="service-workflow-grid">
-                {data.workflow.map((step) => (
-                  <article className="service-workflow-card" key={step.title}>
-                    {step.icon && CARD_ICON_MAP[step.icon] && (
-                      <span className="service-card-icon" aria-hidden="true">
-                        {React.createElement(CARD_ICON_MAP[step.icon])}
-                      </span>
-                    )}
-                    <h3 className="service-workflow-title">{step.title}</h3>
-                    <p className="service-workflow-description">
-                      {step.description}
-                    </p>
-                  </article>
-                ))}
-              </div>
+              {data.workflowStyle === "orbit" ? (
+                <OrbitWorkflow steps={data.workflow} />
+              ) : (
+                <div className="service-workflow-grid">
+                  {data.workflow.map((step, stepIndex) => (
+                    <Reveal
+                      as="article"
+                      className="service-workflow-card"
+                      key={step.title}
+                      delay={stepIndex * 0.06}
+                    >
+                      {step.icon && CARD_ICON_MAP[step.icon] && (
+                        <span className="service-card-icon" aria-hidden="true">
+                          {React.createElement(CARD_ICON_MAP[step.icon])}
+                        </span>
+                      )}
+                      <h3 className="service-workflow-title">{step.title}</h3>
+                      <p className="service-workflow-description">
+                        {step.description}
+                      </p>
+                    </Reveal>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -301,17 +339,38 @@ export default function TechnologyPageClient({ techSlug }) {
           )}
 
           {data.deployment && (
-            <div className="service-services-and-stack">
-              <h2 className="services-section-heading">
-                {data.deployment.title}
-              </h2>
-              <p className="service-tech-intro">
-                {data.deployment.description}
-              </p>
-              <ul className="service-tech-tools service-tech-tools--block">
-                {data.deployment.tools.map((tool) => (
-                  <li key={tool}>{tool}</li>
-                ))}
+            <div className="service-deploy">
+              <div className="service-deploy-intro">
+                <h2 className="services-section-heading">
+                  {data.deployment.title}
+                </h2>
+                <p className="service-tech-intro">
+                  {data.deployment.description}
+                </p>
+              </div>
+              <ul className="service-deploy-list">
+                {data.deployment.tools.map((tool, toolIndex) => {
+                  const item = typeof tool === "string" ? { label: tool } : tool;
+                  const Icon = (item.icon && CARD_ICON_MAP[item.icon]) || FiServer;
+                  return (
+                    <Reveal
+                      as="li"
+                      className="service-deploy-item"
+                      key={item.label}
+                      delay={toolIndex * 0.05}
+                    >
+                      <span className="service-deploy-icon" aria-hidden="true">
+                        <Icon />
+                      </span>
+                      <div className="service-deploy-body">
+                        <span className="service-deploy-label">{item.label}</span>
+                        {item.note && (
+                          <p className="service-deploy-note">{item.note}</p>
+                        )}
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </ul>
             </div>
           )}

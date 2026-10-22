@@ -1,0 +1,264 @@
+// Scroll-driven radial workflow. The tall wrapper provides the scroll
+// distance; the stage pins inside it and the ring responds to progress.
+
+.wf-orbit-scroll {
+  position: relative;
+}
+
+.wf-orbit-stage {
+  position: sticky;
+  top: var(--v2-nav-h);
+  height: calc(100vh - var(--v2-nav-h));
+  display: flex;
+  align-items: center;
+}
+
+.wf-orbit {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  column-gap: 72px;
+  align-items: center;
+}
+
+.wf-orbit-ring {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 400px;
+
+  svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    overflow: visible;
+  }
+}
+
+.wf-orbit-track {
+  fill: none;
+  stroke: var(--v2-border-h);
+  stroke-width: 0.6;
+}
+
+// Follows scroll directly; the short transition only smooths between frames.
+.wf-orbit-arc {
+  fill: none;
+  stroke: var(--v2-accent);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(200, 241, 53, 0.55));
+}
+
+.wf-orbit-node {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid var(--v2-border-h);
+  background: var(--v2-bg);
+  color: var(--v2-text-3);
+  font-family: var(--v2-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
+
+  &:hover {
+    border-color: var(--v2-accent);
+    color: var(--v2-text);
+  }
+
+  &.is-past {
+    border-color: var(--v2-accent);
+    color: var(--v2-accent);
+  }
+
+  &.is-active {
+    background: var(--v2-accent);
+    border-color: var(--v2-accent);
+    color: #080808;
+    transform: translate(-50%, -50%) scale(1.18);
+    box-shadow:
+      0 0 0 8px rgba(200, 241, 53, 0.12),
+      0 0 24px rgba(200, 241, 53, 0.45);
+  }
+}
+
+.wf-orbit-tip {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--v2-accent);
+  box-shadow: 0 0 0 5px rgba(200, 241, 53, 0.18), 0 0 16px rgba(200, 241, 53, 0.7);
+  pointer-events: none;
+}
+
+.wf-orbit-centre {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 56%;
+  text-align: center;
+  animation: wf-centre-in 0.32s ease-out both;
+}
+
+@keyframes wf-centre-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.wf-orbit-num {
+  display: block;
+  font-family: var(--v2-serif);
+  font-style: italic;
+  font-size: clamp(44px, 5vw, 64px);
+  line-height: 0.9;
+  color: var(--v2-accent);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+
+.wf-orbit-title {
+  font-family: var(--v2-serif);
+  font-style: italic;
+  font-size: clamp(15px, 1.4vw, 19px);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--v2-text);
+}
+
+.wf-orbit-detail {
+  animation: wf-detail-in 0.36s ease-out both;
+}
+
+@keyframes wf-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.wf-orbit-kicker {
+  display: block;
+  font-family: var(--v2-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v2-text-3);
+  margin-bottom: 14px;
+}
+
+.wf-orbit-detail-title {
+  font-family: var(--v2-serif);
+  font-style: italic;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0 0 18px;
+  color: var(--v2-text);
+}
+
+.wf-orbit-desc {
+  font-family: var(--v2-sans);
+  font-size: 16.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--v2-text-2);
+  margin: 0;
+  max-width: 36rem;
+}
+
+.wf-orbit-hint {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: var(--v2-sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--v2-text-3);
+  animation: wf-hint 1.8s ease-in-out infinite;
+}
+
+@keyframes wf-hint {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 64rem) {
+  .wf-orbit {
+    grid-template-columns: 1fr;
+    row-gap: 28px;
+    justify-items: center;
+  }
+  .wf-orbit-ring {
+    max-width: 300px;
+  }
+  .wf-orbit-detail {
+    text-align: center;
+    .wf-orbit-desc {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wf-orbit-stage {
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+  .wf-orbit-ring {
+    max-width: 230px;
+  }
+  .wf-orbit-node {
+    width: 34px;
+    height: 34px;
+    font-size: 10px;
+  }
+  .wf-orbit-centre .wf-orbit-title {
+    display: none;
+  }
+  .wf-orbit-desc {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .wf-orbit-hint {
+    margin-top: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-orbit-centre,
+  .wf-orbit-detail,
+  .wf-orbit-hint {
+    animation: none;
+  }
+}
