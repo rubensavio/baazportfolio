@@ -98,6 +98,497 @@
     font-size: 16.5px !important;
   }
 
+  // --- Stack as full-width rows --------------------------------------------
+  // Used when a page sets stackStyle: "rows". One stage per row: a step
+  // number, the title in the display face, the one-line description and the
+  // icon, separated by hairlines. Rows slide in with a stagger.
+  .service-stack-rows {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--v2-border);
+  }
+
+  .service-stack-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 0.9fr) minmax(0, 1.1fr) 56px;
+    column-gap: 32px;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--v2-border);
+    transition: border-color 0.3s ease;
+
+    &.reveal {
+      transform: translateY(14px);
+    }
+
+    &.reveal.visible {
+      transform: none;
+    }
+
+    &:hover {
+      border-bottom-color: var(--v2-border-h);
+
+      .service-stack-row-num {
+        color: var(--v2-accent);
+      }
+
+      .service-stack-row-title {
+        color: var(--v2-accent) !important;
+      }
+
+      .service-stack-row-icon {
+        border-color: var(--v2-accent);
+        color: var(--v2-accent);
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  .service-stack-row-num {
+    font-family: var(--v2-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--v2-text-3);
+    transition: color 0.3s ease;
+  }
+
+  .service-stack-row-title {
+    margin: 0 !important;
+    font-family: var(--v2-serif) !important;
+    font-style: italic !important;
+    font-size: clamp(24px, 2.2vw, 30px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.15 !important;
+    color: var(--v2-text) !important;
+    transition: color 0.3s ease !important;
+  }
+
+  .service-stack-row-text {
+    margin: 0;
+    max-width: 34rem;
+    font-family: var(--v2-sans);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--v2-text-2);
+  }
+
+  .service-stack-row-icon {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--v2-border-h);
+    border-radius: 50%;
+    color: var(--v2-text-2);
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+  }
+
+  // --- Hero with a demo video ----------------------------------------------
+  // Four layouts, picked by heroVideo.layout in the data file:
+  //   rail (default): compact copy, then the clip in a console frame beside a
+  //     numbered list of what the clip shows.
+  //   backdrop: the clip runs edge to edge behind the title.
+  //   split: copy left, framed clip right.
+  //   stack: copy on top, framed clip full width beneath.
+  .services-hero--media {
+    .services-header {
+      min-width: 0;
+    }
+
+    .services-direct-answer {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .services-hero--media-unavailable .service-hero-video {
+    opacity: 0 !important;
+  }
+
+  // Rail -------------------------------------------------------------------
+  .services-hero--media-rail {
+    padding-bottom: 72px !important;
+
+    .services-hero-wrapper {
+      gap: 16px !important;
+    }
+
+    .services-direct-answer {
+      max-width: 50rem !important;
+      font-size: 18px !important;
+    }
+  }
+
+  .service-hero-demo {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    column-gap: 56px;
+    align-items: start;
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid var(--v2-border);
+  }
+
+  .service-hero-console {
+    margin: 0;
+    min-width: 0;
+  }
+
+  .service-hero-console-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--v2-border-h);
+    border-bottom: 0;
+    background: var(--v2-bg-1);
+  }
+
+  .service-hero-console-dots {
+    display: inline-flex;
+    gap: 6px;
+
+    i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--v2-border-h);
+    }
+  }
+
+  .service-hero-console-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--v2-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--v2-text-2);
+  }
+
+  .service-hero-console-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--v2-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--v2-accent);
+  }
+
+  .service-hero-console-screen {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--v2-border-h);
+    background: #050505;
+    overflow: hidden;
+    box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9);
+
+    .service-hero-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #050505;
+    }
+  }
+
+  .service-hero-console .service-hero-media-caption {
+    margin-top: 14px;
+  }
+
+  .service-hero-rail {
+    min-width: 0;
+  }
+
+  .service-hero-rail-eyebrow {
+    display: block;
+    padding-bottom: 14px;
+    font-family: var(--v2-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--v2-text-2);
+  }
+
+  .service-hero-rail-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--v2-border);
+  }
+
+  .service-hero-rail-item {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--v2-border);
+  }
+
+  .service-hero-rail-num {
+    padding-top: 3px;
+    font-family: var(--v2-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--v2-accent);
+  }
+
+  .service-hero-rail-title {
+    margin: 0 0 6px !important;
+    font-family: var(--v2-sans) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    letter-spacing: 0 !important;
+    line-height: 1.3 !important;
+    color: var(--v2-text) !important;
+  }
+
+  .service-hero-rail-text {
+    margin: 0;
+    font-family: var(--v2-sans);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--v2-text-2);
+  }
+
+  // Backdrop ---------------------------------------------------------------
+  .services-hero--media-backdrop {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    // One viewport tall minus the navbar, so the hero ends at the fold.
+    min-height: calc(100vh - 100px) !important;
+    max-height: calc(100vh - 100px) !important;
+    box-sizing: border-box;
+    padding: 96px 0 40px !important;
+    overflow: hidden !important;
+    isolation: isolate;
+
+    // Copy sits at the top, the label and caption sit on the bottom edge.
+    .services-hero-wrapper {
+      flex: 1 1 auto !important;
+      gap: 44px !important;
+    }
+
+    .service-hero-backdrop-meta {
+      margin-top: auto;
+    }
+
+    .services-label {
+      color: var(--v2-text-2) !important;
+    }
+
+    .services-heading {
+      max-width: 13ch;
+      font-size: clamp(42px, 5.8vw, 76px) !important;
+      line-height: 0.98 !important;
+      letter-spacing: -0.035em !important;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85), 0 6px 32px rgba(0, 0, 0, 0.7);
+    }
+
+    .services-direct-answer {
+      max-width: 44rem !important;
+      font-size: 18px !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      color: var(--v2-text) !important;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9), 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .service-hero-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--v2-bg-1);
+
+    .service-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      // Whole frame stays visible at its own aspect ratio, no crop or stretch.
+      object-fit: contain;
+      object-position: center;
+      opacity: 1;
+    }
+  }
+
+  .service-hero-backdrop-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(5, 5, 5, 0.72) 0%,
+        rgba(5, 5, 5, 0.42) 32%,
+        rgba(5, 5, 5, 0.06) 58%,
+        rgba(5, 5, 5, 0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(5, 5, 5, 0.38) 0%,
+        rgba(5, 5, 5, 0) 22%,
+        rgba(5, 5, 5, 0) 62%,
+        rgba(5, 5, 5, 0.78) 100%
+      );
+  }
+
+  .service-hero-backdrop-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+
+    .service-hero-media-label {
+      position: static;
+      flex: none;
+    }
+
+    .service-hero-media-caption {
+      margin: 0;
+      max-width: 48rem;
+      color: var(--v2-text-2);
+    }
+  }
+
+  // Split ------------------------------------------------------------------
+  .services-hero--media-split {
+    padding-bottom: 64px !important;
+
+    .services-hero-wrapper {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr) !important;
+      column-gap: 64px !important;
+      align-items: center !important;
+    }
+
+    .services-heading {
+      font-size: clamp(34px, 3.6vw, 50px) !important;
+    }
+
+    .services-direct-answer {
+      font-size: 17px !important;
+      max-width: none !important;
+    }
+
+    .service-hero-media-frame {
+      aspect-ratio: 16 / 10;
+    }
+  }
+
+  // Stack ------------------------------------------------------------------
+  .services-hero--media-stack {
+    padding-bottom: 64px !important;
+
+    .services-hero-wrapper {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      row-gap: 48px !important;
+    }
+
+    .service-hero-media-frame {
+      aspect-ratio: 16 / 8;
+    }
+  }
+
+  // Framed clip shared by split and stack ------------------------------------
+  .service-hero-media {
+    margin: 0;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .service-hero-media-frame {
+    position: relative;
+    border: 1px solid var(--v2-border-h);
+    background:
+      radial-gradient(120% 90% at 20% 0%, rgba(200, 241, 53, 0.08), transparent 55%),
+      var(--v2-bg-1);
+    overflow: hidden;
+
+    .service-hero-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #050505;
+    }
+  }
+
+  .service-hero-media-label {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border: 1px solid var(--v2-border-h);
+    background: rgba(8, 8, 8, 0.72);
+    backdrop-filter: blur(6px);
+    font-family: var(--v2-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--v2-text);
+  }
+
+  .service-hero-media-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--v2-accent);
+    box-shadow: 0 0 0 4px rgba(200, 241, 53, 0.18);
+    animation: hero-dot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes hero-dot {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .service-hero-media-caption {
+    margin: 12px 0 0;
+    font-family: var(--v2-sans);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(240, 236, 230, 0.78);
+  }
+
   // --- Deployment options: intro beside a two-column list of reasons -------
   .service-deploy {
     width: 100% !important;
@@ -183,6 +674,70 @@
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
 
+    .service-stack-row {
+      grid-template-columns: 48px minmax(0, 1fr) 48px;
+      grid-template-areas:
+        "num title icon"
+        "num text icon";
+      column-gap: 20px;
+      row-gap: 8px;
+      padding: 26px 0;
+    }
+
+    .service-stack-row-num {
+      grid-area: num;
+      align-self: start;
+      padding-top: 8px;
+    }
+
+    .service-stack-row-title {
+      grid-area: title;
+    }
+
+    .service-stack-row-text {
+      grid-area: text;
+      max-width: none;
+    }
+
+    .service-stack-row-icon {
+      grid-area: icon;
+      width: 44px;
+      height: 44px;
+    }
+
+    .service-hero-demo {
+      grid-template-columns: 1fr;
+      row-gap: 36px;
+    }
+
+    .service-hero-rail-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 32px;
+    }
+
+    .services-hero--media-backdrop {
+      min-height: min(72vh, 640px) !important;
+      padding-top: 72px !important;
+    }
+
+    .services-hero--media-split .services-hero-wrapper,
+    .services-hero--media-stack .services-hero-wrapper {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      row-gap: 32px !important;
+    }
+
+    .services-hero--media-split .services-heading {
+      font-size: clamp(36px, 5vw, 56px) !important;
+    }
+
+    .services-hero--media-split .service-hero-media-frame,
+    .services-hero--media-stack .service-hero-media-frame {
+      aspect-ratio: 16 / 9;
+    }
+
     .service-deploy {
       grid-template-columns: 1fr !important;
       row-gap: 28px !important;
@@ -196,6 +751,102 @@
   @media (max-width: 768px) {
     .service-highlights-grid--four {
       grid-template-columns: 1fr !important;
+    }
+
+    .service-stack-row {
+      grid-template-columns: 36px minmax(0, 1fr);
+      grid-template-areas:
+        "num title"
+        "num text";
+      column-gap: 14px;
+      padding: 22px 0;
+    }
+
+    .service-stack-row-num {
+      padding-top: 6px;
+    }
+
+    .service-stack-row-title {
+      font-size: 22px !important;
+    }
+
+    .service-stack-row-text {
+      font-size: 15px;
+    }
+
+    .service-stack-row-icon {
+      display: none;
+    }
+
+    .services-hero--media-rail {
+      padding-bottom: 48px !important;
+
+      .services-hero-wrapper {
+        gap: 12px !important;
+      }
+    }
+
+    .service-hero-demo {
+      padding-top: 12px;
+      row-gap: 28px;
+    }
+
+    .service-hero-rail-list {
+      grid-template-columns: 1fr;
+    }
+
+    .service-hero-console-title {
+      font-size: 11px;
+    }
+
+    .services-hero--media-backdrop {
+      min-height: min(78vh, 620px) !important;
+      padding: 48px 0 28px !important;
+
+      .services-hero-wrapper {
+        gap: 28px !important;
+      }
+
+      .services-heading {
+        max-width: none;
+      }
+
+      .services-direct-answer {
+        font-size: 16px !important;
+      }
+    }
+
+    .service-hero-backdrop .service-hero-video {
+      object-fit: cover;
+    }
+
+    .service-hero-backdrop-shade {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5, 5, 5, 0.5) 0%,
+          rgba(5, 5, 5, 0.2) 28%,
+          rgba(5, 5, 5, 0.55) 58%,
+          rgba(5, 5, 5, 0.92) 100%
+        );
+    }
+
+    .service-hero-backdrop-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 16px;
+    }
+
+    .services-hero--media-split .service-hero-media-frame,
+    .services-hero--media-stack .service-hero-media-frame {
+      aspect-ratio: 16 / 10;
+    }
+
+    .service-hero-media-label {
+      left: 10px;
+      bottom: 10px;
+      font-size: 10px;
     }
 
     .service-deploy-list {
