@@ -1181,3 +1181,57 @@
     }
   }
 }
+
+// Offering cards that link to a capability page (used by /services/ai-solution).
+.baaz-v2.services-v2 .service-offering-card--link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+
+  .service-offering-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-family: var(--v2-sans);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--v2-text-3);
+    transition: color 0.25s;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.25s;
+    }
+  }
+
+  &:hover {
+    background: var(--v2-bg-1);
+
+    .service-tech-title {
+      color: var(--v2-accent);
+    }
+
+    .service-card-icon {
+      border-color: var(--v2-accent);
+      color: var(--v2-accent);
+    }
+
+    .service-offering-more {
+      color: var(--v2-accent);
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--v2-accent);
+    outline-offset: -2px;
+  }
+}

@@ -18,6 +18,17 @@ import {
   FiShoppingCart,
   FiHeart,
   FiTool,
+  FiServer,
+  FiCloud,
+  FiWifiOff,
+  FiHardDrive,
+  FiCpu,
+  FiMonitor,
+  FiRotateCcw,
+  FiEyeOff,
+  FiSend,
+  FiArchive,
+  FiRepeat,
 } from "react-icons/fi";
 import { ArrowLinkIcon } from "../../../components/icons/ArrowIcons";
 import ServicesBackLink from "../../../components/ServicesBackLink/ServicesBackLink";
@@ -29,6 +40,8 @@ import { technologyCapabilitiesData } from "../../../lib/technologyCapabilitiesD
 import { getRelatedServiceOfferingLinks } from "../../../lib/technologyServiceRoutes";
 import "../../services/[serviceType]/page.scss";
 import "./page.scss";
+import Reveal from "../../../components/Home/Reveal";
+import OrbitWorkflow from "../../../components/WorkflowVariants/OrbitWorkflow";
 
 const CARD_ICON_MAP = {
   users: FiUsers,
@@ -46,6 +59,18 @@ const CARD_ICON_MAP = {
   retail: FiShoppingCart,
   healthcare: FiHeart,
   construction: FiTool,
+  // Deployment options
+  server: FiServer,
+  cloud: FiCloud,
+  offline: FiWifiOff,
+  drive: FiHardDrive,
+  cpu: FiCpu,
+  monitor: FiMonitor,
+  rollback: FiRotateCcw,
+  mask: FiEyeOff,
+  send: FiSend,
+  archive: FiArchive,
+  repeat: FiRepeat,
 };
 
 export default function TechnologyPageClient({ techSlug }) {
@@ -59,6 +84,31 @@ export default function TechnologyPageClient({ techSlug }) {
   const whatWeDoGroup = HOME_SERVICES.find(
     (service) => service.href === `/technologies/${techSlug}`,
   );
+  const heroLayout = data.heroVideo ? data.heroVideo.layout || "rail" : null;
+  const heroVideoEl = data.heroVideo ? (
+    <video
+      className="service-hero-video"
+      src={data.heroVideo.src}
+      poster={data.heroVideo.poster || undefined}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-label={data.heroVideo.label || data.heading}
+      onLoadedMetadata={(e) => {
+        if (data.heroVideo.playbackRate) {
+          e.currentTarget.playbackRate = data.heroVideo.playbackRate;
+        }
+      }}
+      onError={(e) => {
+        e.currentTarget
+          .closest(".services-hero")
+          ?.classList.add("services-hero--media-unavailable");
+      }}
+    />
+  ) : null;
+
   const relatedCapabilities = whatWeDoGroup?.children ?? [];
 
   useEffect(() => {
@@ -75,14 +125,113 @@ export default function TechnologyPageClient({ techSlug }) {
       {whatWeDoGroup && <ServicesBackLink />}
 
       <main className="services-main">
-        <section className="services-hero">
+        <section
+          className={`services-hero${
+            heroLayout
+              ? ` services-hero--media services-hero--media-${heroLayout}`
+              : ""
+          }`}
+        >
+          {heroLayout === "backdrop" && (
+            <div className="service-hero-backdrop" aria-hidden="true">
+              {heroVideoEl}
+              <span className="service-hero-backdrop-shade" />
+            </div>
+          )}
+
           <div className="services-hero-wrapper">
             <div className="services-header">
               <span className="services-label">Technology capabilities</span>
               <h1 className="services-heading">{data.heading}</h1>
               <p className="services-direct-answer">{data.directAnswer}</p>
-              <p className="services-description">{data.overview}</p>
+              {!data.heroVideo && (
+                <p className="services-description">{data.overview}</p>
+              )}
             </div>
+
+            {heroLayout === "rail" && (
+              <div className="service-hero-demo">
+                <figure className="service-hero-console">
+                  <div className="service-hero-console-bar">
+                    <span className="service-hero-console-dots" aria-hidden="true">
+                      <i />
+                      <i />
+                      <i />
+                    </span>
+                    <span className="service-hero-console-title">
+                      {data.heroVideo.label || data.heading}
+                    </span>
+                    <span className="service-hero-console-live">
+                      <span className="service-hero-media-dot" aria-hidden="true" />
+                      Live
+                    </span>
+                  </div>
+                  <div className="service-hero-console-screen">{heroVideoEl}</div>
+                  {data.heroVideo.caption && (
+                    <figcaption className="service-hero-media-caption">
+                      {data.heroVideo.caption}
+                    </figcaption>
+                  )}
+                </figure>
+
+                {data.heroVideo.steps && data.heroVideo.steps.length > 0 && (
+                  <aside className="service-hero-rail" aria-label="What the demo shows">
+                    <span className="service-hero-rail-eyebrow">
+                      What you are watching
+                    </span>
+                    <ol className="service-hero-rail-list">
+                      {data.heroVideo.steps.map((step, index) => (
+                        <li className="service-hero-rail-item" key={step.title}>
+                          <span className="service-hero-rail-num" aria-hidden="true">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <div className="service-hero-rail-body">
+                            <h2 className="service-hero-rail-title">{step.title}</h2>
+                            <p className="service-hero-rail-text">{step.text}</p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  </aside>
+                )}
+              </div>
+            )}
+
+            {(heroLayout === "split" || heroLayout === "stack") && (
+              <figure className="service-hero-media">
+                <div className="service-hero-media-frame">
+                  {heroVideoEl}
+                  {data.heroVideo.label && (
+                    <span className="service-hero-media-label">
+                      <span className="service-hero-media-dot" aria-hidden="true" />
+                      {data.heroVideo.label}
+                    </span>
+                  )}
+                </div>
+                {data.heroVideo.caption && (
+                  <figcaption className="service-hero-media-caption">
+                    {data.heroVideo.caption}
+                  </figcaption>
+                )}
+              </figure>
+            )}
+
+            {heroLayout === "backdrop" &&
+              (data.heroVideo.label || data.heroVideo.caption) && (
+                <div className="service-hero-backdrop-meta">
+                  {data.heroVideo.label && (
+                    <span className="service-hero-media-label">
+                      <span className="service-hero-media-dot" aria-hidden="true" />
+                      {data.heroVideo.label}
+                    </span>
+                  )}
+                  {data.heroVideo.caption && (
+                    <p className="service-hero-media-caption">
+                      {data.heroVideo.caption}
+                    </p>
+                  )}
+                </div>
+              )}
           </div>
         </section>
 
@@ -164,6 +313,29 @@ export default function TechnologyPageClient({ techSlug }) {
               {data.stackIntro && (
                 <p className="service-tech-intro">{data.stackIntro}</p>
               )}
+              {data.stackStyle === "rows" ? (
+                <ol className="service-stack-rows">
+                  {stackGroups.map((group, index) => (
+                    <Reveal
+                      as="li"
+                      className="service-stack-row"
+                      key={group.title}
+                      delay={index * 0.08}
+                    >
+                      <span className="service-stack-row-num" aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="service-stack-row-title">{group.title}</h3>
+                      <p className="service-stack-row-text">{group.description}</p>
+                      {group.icon && CARD_ICON_MAP[group.icon] && (
+                        <span className="service-stack-row-icon" aria-hidden="true">
+                          {React.createElement(CARD_ICON_MAP[group.icon])}
+                        </span>
+                      )}
+                    </Reveal>
+                  ))}
+                </ol>
+              ) : (
               <div className="service-tech-grid">
                 {stackGroups.map((group) => (
                   <article className="service-tech-card" key={group.title}>
@@ -186,6 +358,7 @@ export default function TechnologyPageClient({ techSlug }) {
                   </article>
                 ))}
               </div>
+              )}
             </div>
           )}
 
@@ -219,25 +392,38 @@ export default function TechnologyPageClient({ techSlug }) {
           )}
 
           {data.workflow && data.workflow.length > 0 && (
-            <div className="service-workflow">
+            <div
+              className={`service-workflow${
+                data.workflowStyle ? ` service-workflow--${data.workflowStyle}` : ""
+              }`}
+            >
               <h2 className="services-section-heading">
                 {data.workflowHeading || `Our ${labelLower} workflow`}
               </h2>
-              <div className="service-workflow-grid">
-                {data.workflow.map((step) => (
-                  <article className="service-workflow-card" key={step.title}>
-                    {step.icon && CARD_ICON_MAP[step.icon] && (
-                      <span className="service-card-icon" aria-hidden="true">
-                        {React.createElement(CARD_ICON_MAP[step.icon])}
-                      </span>
-                    )}
-                    <h3 className="service-workflow-title">{step.title}</h3>
-                    <p className="service-workflow-description">
-                      {step.description}
-                    </p>
-                  </article>
-                ))}
-              </div>
+              {data.workflowStyle === "orbit" ? (
+                <OrbitWorkflow steps={data.workflow} />
+              ) : (
+                <div className="service-workflow-grid">
+                  {data.workflow.map((step, stepIndex) => (
+                    <Reveal
+                      as="article"
+                      className="service-workflow-card"
+                      key={step.title}
+                      delay={stepIndex * 0.06}
+                    >
+                      {step.icon && CARD_ICON_MAP[step.icon] && (
+                        <span className="service-card-icon" aria-hidden="true">
+                          {React.createElement(CARD_ICON_MAP[step.icon])}
+                        </span>
+                      )}
+                      <h3 className="service-workflow-title">{step.title}</h3>
+                      <p className="service-workflow-description">
+                        {step.description}
+                      </p>
+                    </Reveal>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -301,17 +487,38 @@ export default function TechnologyPageClient({ techSlug }) {
           )}
 
           {data.deployment && (
-            <div className="service-services-and-stack">
-              <h2 className="services-section-heading">
-                {data.deployment.title}
-              </h2>
-              <p className="service-tech-intro">
-                {data.deployment.description}
-              </p>
-              <ul className="service-tech-tools service-tech-tools--block">
-                {data.deployment.tools.map((tool) => (
-                  <li key={tool}>{tool}</li>
-                ))}
+            <div className="service-deploy">
+              <div className="service-deploy-intro">
+                <h2 className="services-section-heading">
+                  {data.deployment.title}
+                </h2>
+                <p className="service-tech-intro">
+                  {data.deployment.description}
+                </p>
+              </div>
+              <ul className="service-deploy-list">
+                {data.deployment.tools.map((tool, toolIndex) => {
+                  const item = typeof tool === "string" ? { label: tool } : tool;
+                  const Icon = (item.icon && CARD_ICON_MAP[item.icon]) || FiServer;
+                  return (
+                    <Reveal
+                      as="li"
+                      className="service-deploy-item"
+                      key={item.label}
+                      delay={toolIndex * 0.05}
+                    >
+                      <span className="service-deploy-icon" aria-hidden="true">
+                        <Icon />
+                      </span>
+                      <div className="service-deploy-body">
+                        <span className="service-deploy-label">{item.label}</span>
+                        {item.note && (
+                          <p className="service-deploy-note">{item.note}</p>
+                        )}
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </ul>
             </div>
           )}

@@ -14,6 +14,13 @@ import {
   FiLayers,
   FiWatch,
   FiGlobe,
+  FiEye,
+  FiCpu,
+  FiMessageSquare,
+  FiFileText,
+  FiTrendingUp,
+  FiDatabase,
+  FiLock,
 } from "react-icons/fi";
 import { ArrowLinkIcon } from "../../../components/icons/ArrowIcons";
 import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
@@ -36,6 +43,13 @@ const CARD_ICON_MAP = {
   enterprise: FiLayers,
   wearable: FiWatch,
   web: FiGlobe,
+  eye: FiEye,
+  cpu: FiCpu,
+  agent: FiMessageSquare,
+  document: FiFileText,
+  trend: FiTrendingUp,
+  database: FiDatabase,
+  lock: FiLock,
 };
 
 export default function ServicesPageClient({ serviceType }) {
@@ -137,7 +151,7 @@ export default function ServicesPageClient({ serviceType }) {
             serviceData.mobileHighlights.length > 0 && (
               <div className="service-highlights">
                 <h2 className="services-section-heading">
-                  Our mobile app highlights
+                  {serviceData.highlightsHeading || "Our mobile app highlights"}
                 </h2>
                 <div className="service-highlights-grid">
                   {serviceData.mobileHighlights.map((item) => (
@@ -164,7 +178,8 @@ export default function ServicesPageClient({ serviceType }) {
             serviceData.mobileWorkflow.length > 0 && (
               <div className="service-workflow">
                 <h2 className="services-section-heading">
-                  Our mobile app development workflow
+                  {serviceData.workflowHeading ||
+                    "Our mobile app development workflow"}
                 </h2>
                 <div className="service-workflow-grid">
                   {serviceData.mobileWorkflow.map((step) => (
@@ -223,19 +238,43 @@ export default function ServicesPageClient({ serviceType }) {
                 {serviceData.mobileOfferings.intro}
               </p>
               <div className="service-offerings-grid">
-                {serviceData.mobileOfferings.items.map((item) => (
-                  <article className="service-offering-card" key={item.title}>
-                    {item.icon && CARD_ICON_MAP[item.icon] && (
-                      <span className="service-card-icon" aria-hidden="true">
-                        {React.createElement(CARD_ICON_MAP[item.icon])}
-                      </span>
-                    )}
-                    <h3 className="service-tech-title">{item.title}</h3>
-                    <p className="service-tech-description">
-                      {item.description}
-                    </p>
-                  </article>
-                ))}
+                {serviceData.mobileOfferings.items.map((item) => {
+                  const body = (
+                    <>
+                      {item.icon && CARD_ICON_MAP[item.icon] && (
+                        <span className="service-card-icon" aria-hidden="true">
+                          {React.createElement(CARD_ICON_MAP[item.icon])}
+                        </span>
+                      )}
+                      <h3 className="service-tech-title">{item.title}</h3>
+                      <p className="service-tech-description">
+                        {item.description}
+                      </p>
+                      {item.href && (
+                        <span
+                          className="service-offering-more"
+                          aria-hidden="true"
+                        >
+                          Explore <ArrowLinkIcon />
+                        </span>
+                      )}
+                    </>
+                  );
+                  return item.href ? (
+                    <Link
+                      href={item.href}
+                      className="service-offering-card service-offering-card--link"
+                      key={item.title}
+                      aria-label={item.title}
+                    >
+                      {body}
+                    </Link>
+                  ) : (
+                    <article className="service-offering-card" key={item.title}>
+                      {body}
+                    </article>
+                  );
+                })}
               </div>
             </div>
           )}

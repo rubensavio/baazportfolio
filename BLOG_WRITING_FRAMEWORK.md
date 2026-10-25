@@ -150,7 +150,76 @@ Register: **`lib/blogData.js`** (or `lib/blogPosts/*.js` + import), **`lib/sitem
 7. **Limitations H2** - Trust + GEO.  
 8. **`faqs`** - Mirror real follow-ups; align wording with layout FAQ schema.  
 9. **Copy pass** - Principles in **§2** (clarity, specificity, no mid-article CTA).  
-10. **Technical** - `npm run meta-audit`; word-count on body only; Rich Results Test after deploy (PAGE_OPTIMIZATION **§§3–4, 13**).
+10. **Quality gates** - every check in **Section 5a**. Mandatory, not optional.
+11. **Technical** - word-count on body only; Rich Results Test after deploy (PAGE_OPTIMIZATION **§§3–4, 13**).
+
+---
+
+## 5a. Quality gates (run these every time)
+
+Four checks, in this order. A post is not finished until all four pass. Each one
+exists because it caught a real defect that would otherwise have shipped.
+
+### 1. Humanizer (mandatory, every post)
+
+Run the `humanizer` skill over the prose before calling a draft done, for new
+posts and rewrites alike. The global instructions require it, so it is not
+optional.
+
+What it reliably catches in this codebase:
+
+- A single phrase turning into a tic. Recent drafts had "rather than" nine times
+  and "actually" seven times before the pass.
+- `not X but Y` staging, one-line closers, and "that is the trap" flourishes.
+- Em and en dashes. House style is a spaced hyphen or a rewrite.
+- Prose semicolons. House style never uses them: period, comma, or spaced hyphen.
+
+### 2. Sentence length
+
+```
+npm start                 # in another shell
+npm run sentence-audit    # prose mode: what a reader actually quotes
+```
+
+Aim for an average near 20 words and keep sentences over 30 words rare. Add
+`--top=10` to list the worst offenders, or `--mode=page` for the noisier
+whole-page figure that third-party auditors report.
+
+A warning about that second number. Whole-page mode concatenates card grids and
+list items, which carry no terminal punctuation, into enormous pseudo-sentences.
+That is why an external audit reported "70 of 70 pages" with long sentences while
+the real prose averaged 15.5 words. Prose mode is the truth. Page mode is only
+context for someone else's report, and chasing it means punctuating fragments.
+
+### 3. Meta lengths
+
+```
+npm run meta-audit
+```
+
+Title at or under 60 characters, description 150-160. Measure the **unescaped**
+title: `&amp;` is one character, not five. Counting the escape inflates the number
+and sends you trimming titles that were already fine.
+
+### 4. Content dates
+
+```
+npm run content-dates
+```
+
+Regenerates `lib/contentDates.json` from git history, which feeds both
+`dateModified` in the page schema and `lastmod` in the sitemap, so the two can
+never disagree. It also runs on `prebuild`.
+
+Two rules it enforces, worth understanding before touching it:
+
+- Dates are never defaulted to today. An invented freshness date is worse than no
+  date, and it is the specific thing freshness audits penalise.
+- Sitewide mechanical commits are skipped via `IGNORED_COMMITS` in
+  `scripts/generate-content-dates.mjs`. **Add a hash there whenever a commit edits
+  many page files without changing a word anyone reads**, such as a refactor, a
+  schema tag, or a lint sweep. Without it, that one commit makes every page on the
+  site claim it was rewritten that day.
 
 ---
 
@@ -161,7 +230,9 @@ Register: **`lib/blogData.js`** (or `lib/blogPosts/*.js` + import), **`lib/sitem
 - [ ] **`directAnswer`** present and not duplicated as entire intro  
 - [ ] **FAQ ≥ 4–5** for pillars; visible = schema  
 - [ ] **Meta** unique; `meta-audit` clean for this slug  
-- [ ] **`sitemapLastmod`** updated for slug  
+- [ ] **`humanizer`** skill run over the prose (Section 5a.1)  
+- [ ] **`npm run sentence-audit`** - average near 20 words, few over 30  
+- [ ] **`npm run content-dates`** run and `lib/contentDates.json` committed  
 - [ ] **No mid-article sales CTA** in sections  
 - [ ] Preview **`/blog/{slug}`** - label → H1 → direct answer → intro → sections → FAQ → explore → CTA  
 
@@ -176,7 +247,9 @@ Register: **`lib/blogData.js`** (or `lib/blogPosts/*.js` + import), **`lib/sitem
 | Schema + metadata | `app/blog/[slug]/layout.js` |
 | Post data | `lib/blogData.js`, `lib/blogPosts/*.js` |
 | Index sort / listing | `app/blog/page.js` |
-| Sitemap | `app/sitemap.js`, `lib/sitemapLastmod.js` |
+| Sitemap | `app/sitemap.js`, `lib/sitemapLastmod.js` (derives from `contentDates`) |
+| Quality-gate scripts | `scripts/sentence-length-audit.mjs`, `scripts/meta-length-audit.mjs`, `scripts/generate-content-dates.mjs` |
+| Page dates / freshness | `lib/contentDates.js`, `lib/contentDates.json`, `components/PageDatesJsonLd.js` |
 
 **External copy references (optional):** Headline formulas and transition phrases - `seomachine\.claude\skills\copywriting\references\copy-frameworks.md` and `natural-transitions.md`.
 
@@ -190,7 +263,7 @@ Register: **`lib/blogData.js`** (or `lib/blogPosts/*.js` + import), **`lib/sitem
 - [ ] Copy framework §2–3 satisfied  
 - [ ] PAGE_OPTIMIZATION §6 depth + §3 meta satisfied  
 - [ ] FAQ/schema aligned  
-- [ ] Lastmod + meta-audit done  
+- [ ] **All four Section 5a gates passed** (humanizer, sentence-audit, meta-audit, content-dates)  
 
 **Reviewer / date:**
 

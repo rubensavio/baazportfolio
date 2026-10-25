@@ -9,6 +9,7 @@ import {
 import ClientNavbar from "../../../components/ClientNavbar/ClientNavbar";
 import FAQ from "../../../components/FAQ/FAQ";
 import Footer from "../../../components/Footer/Footer";
+import Reveal from "../../../components/Home/Reveal";
 import { HOME_CTA } from "../../../lib/homePageData";
 import "../../../components/IndustryPageClient/IndustryPageClient.scss";
 import "./page.scss";
@@ -93,6 +94,118 @@ export default function IndustryPageClient({
               .
             </p>
           </div>
+
+          {data.capabilities && data.capabilities.length > 0 && (
+            <section
+              className="industry-capabilities"
+              aria-labelledby="industry-capabilities-heading"
+            >
+              <h2
+                id="industry-capabilities-heading"
+                className="industry-capabilities-heading"
+              >
+                {data.capabilitiesHeading || "What we build"}
+              </h2>
+              <div className="industry-capabilities-grid">
+                {data.capabilities.map((item, index) => {
+                  const inner = (
+                    <>
+                      <span
+                        className="industry-capability-index"
+                        aria-hidden="true"
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h3 className="industry-capability-title">
+                        {item.title}
+                      </h3>
+                      <p className="industry-capability-description">
+                        {item.description}
+                      </p>
+                      {item.href && (
+                        <span
+                          className="industry-capability-more"
+                          aria-hidden="true"
+                        >
+                          Learn more <ArrowLinkIcon />
+                        </span>
+                      )}
+                    </>
+                  );
+                  return (
+                    <Reveal
+                      as="article"
+                      className={`industry-capability${
+                        item.href ? " industry-capability--linked" : ""
+                      }`}
+                      key={item.title}
+                      delay={index * 0.05}
+                    >
+                      {item.href ? (
+                        <Link
+                          href={item.href}
+                          className="industry-capability-link"
+                          aria-label={item.title}
+                        >
+                          {inner}
+                        </Link>
+                      ) : (
+                        <div className="industry-capability-static">{inner}</div>
+                      )}
+                    </Reveal>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          {data.proof && (
+            <section
+              className="industry-proof"
+              aria-labelledby="industry-proof-heading"
+            >
+              <Reveal className="industry-proof-copy">
+                {data.proof.eyebrow && (
+                  <span className="industry-proof-eyebrow">
+                    {data.proof.eyebrow}
+                  </span>
+                )}
+                <h2 id="industry-proof-heading" className="industry-proof-title">
+                  {data.proof.title}
+                </h2>
+                <p className="industry-proof-description">
+                  {data.proof.description}
+                </p>
+                {data.proof.href && (
+                  <Link
+                    href={data.proof.href}
+                    className="v2-arrow-link industry-proof-link"
+                  >
+                    {data.proof.label || "Read the case study"} <ArrowLinkIcon />
+                  </Link>
+                )}
+              </Reveal>
+              {data.proof.metrics && data.proof.metrics.length > 0 && (
+                <dl className="industry-proof-metrics">
+                  {data.proof.metrics.map((metric, index) => (
+                    <Reveal
+                      as="div"
+                      className="industry-proof-metric"
+                      key={metric.label}
+                      delay={0.1 + index * 0.06}
+                    >
+                      <dt className="industry-proof-metric-label">
+                        {metric.label}
+                      </dt>
+                      <dd className="industry-proof-metric-value">
+                        {metric.value}
+                      </dd>
+                    </Reveal>
+                  ))}
+                </dl>
+              )}
+            </section>
+          )}
 
           <div className="industry-sections">
             {data.sections.map((section, index) => (
