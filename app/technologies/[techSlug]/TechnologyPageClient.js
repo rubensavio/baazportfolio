@@ -370,6 +370,42 @@ export default function TechnologyPageClient({ techSlug }) {
               {data.webServicesIntro && (
                 <p className="service-tech-intro">{data.webServicesIntro}</p>
               )}
+              {data.challengesVideo && (
+                <figure className="service-section-console">
+                  <div className="service-hero-console-bar">
+                    <span className="service-hero-console-dots" aria-hidden="true">
+                      <i />
+                      <i />
+                      <i />
+                    </span>
+                    <span className="service-hero-console-title">
+                      {data.challengesVideo.label || data.webServicesHeading}
+                    </span>
+                    <span className="service-hero-console-live">
+                      <span className="service-hero-media-dot" aria-hidden="true" />
+                      Pipeline Demo
+                    </span>
+                  </div>
+                  <div className="service-hero-console-screen">
+                    <video
+                      className="service-hero-video"
+                      src={data.challengesVideo.src}
+                      poster={data.challengesVideo.poster || undefined}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={data.challengesVideo.label || data.webServicesHeading}
+                    />
+                  </div>
+                  {data.challengesVideo.caption && (
+                    <figcaption className="service-hero-media-caption">
+                      {data.challengesVideo.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
               <div className="service-highlights-grid service-highlights-grid--four">
                 {data.webServices.map((service) => (
                   <article
@@ -400,6 +436,42 @@ export default function TechnologyPageClient({ techSlug }) {
               <h2 className="services-section-heading">
                 {data.workflowHeading || `Our ${labelLower} workflow`}
               </h2>
+              {data.workflowVideo && (
+                <figure className="service-section-console">
+                  <div className="service-hero-console-bar">
+                    <span className="service-hero-console-dots" aria-hidden="true">
+                      <i />
+                      <i />
+                      <i />
+                    </span>
+                    <span className="service-hero-console-title">
+                      {data.workflowVideo.label || data.workflowHeading}
+                    </span>
+                    <span className="service-hero-console-live">
+                      <span className="service-hero-media-dot" aria-hidden="true" />
+                      Architecture Demo
+                    </span>
+                  </div>
+                  <div className="service-hero-console-screen">
+                    <video
+                      className="service-hero-video"
+                      src={data.workflowVideo.src}
+                      poster={data.workflowVideo.poster || undefined}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={data.workflowVideo.label || data.workflowHeading}
+                    />
+                  </div>
+                  {data.workflowVideo.caption && (
+                    <figcaption className="service-hero-media-caption">
+                      {data.workflowVideo.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
               {data.workflowStyle === "orbit" ? (
                 <OrbitWorkflow steps={data.workflow} />
               ) : (
